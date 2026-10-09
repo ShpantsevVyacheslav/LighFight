@@ -18,3 +18,47 @@ public class CombatTests {
  [Test]public void InvalidInputDoesNotCorruptPosition(){var m=new Match();m.Walk(m.A,float.NaN);Assert.AreEqual(-1.4f,m.A.X);Assert.IsFalse(m.A.Start(-1));Assert.IsFalse(m.A.Start(99));}
  [Test]public void WallStopsWalk(){var m=new Match();for(int i=0;i<500;i++)m.Walk(m.A,-1);Assert.AreEqual(-5f,m.A.X);}
 }
+
+public class FightSessionTests
+{
+ [Test] public void BufferedAttackStartsAfterRecovery() {
+  var s=new FightSession(); s.Match.A.Start(0);
+  for(int i=0;i<Moves.All[0].Duration-3;i++)s.Step();
+  s.QueueAttack(true,1); for(int i=0;i<4;i++)s.Step();
+  Assert.AreEqual("cross",s.Match.A.Attack.Value.Id);
+ }
+ [Test] public void ExpiredBufferDoesNotFireLater() {
+  var s=new FightSession();s.Match.A.Start(10);s.QueueAttack(true,1);
+  for(int i=0;i<100;i++)s.Step();Assert.IsNull(s.Match.A.Attack);
+ }
+ [Test] public void TimeoutAwardsHealthLeaderAtExactTick() {
+  var s=new FightSession();s.Match.B.Health=140;
+  for(int i=0;i<FightSession.RoundTicks-1;i++)s.Step();
+  Assert.AreEqual(FightPhase.Fighting,s.Phase);s.Step();
+  Assert.AreEqual(1,s.WinsA);Assert.AreEqual(FightPhase.RoundOver,s.Phase);
+ }
+ [Test] public void NextRoundResetsHealthAndPendingAttack() {
+  var s=new FightSession();s.Match.B.Health=0;s.QueueAttack(true,1);s.Step();
+  Assert.IsFalse(s.QueueAttack(true,2));
+  for(int i=0;i<FightSession.BreakTicks-1;i++)s.Step();
+  Assert.AreEqual(FightPhase.RoundOver,s.Phase);s.Step();
+  Assert.AreEqual(2,s.Round);Assert.AreEqual(150,s.Match.B.Health);
+  s.Step();Assert.IsNull(s.Match.A.Attack);
+ }
+ [Test] public void TwoWinsCompleteAndFreezeSession() {
+  var s=new FightSession();s.Match.A.Health=0;s.Step();
+  for(int i=0;i<FightSession.BreakTicks;i++)s.Step();
+  s.Match.A.Health=0;s.Step();Assert.AreEqual(FightPhase.Complete,s.Phase);
+  Assert.AreEqual(1,s.Winner);int clock=s.RemainingTicks;s.Step();
+  Assert.AreEqual(clock,s.RemainingTicks);Assert.IsFalse(s.QueueAttack(false,0));
+ }
+ [Test] public void DrawAwardsNeitherFighter() {
+  var s=new FightSession();s.Match.A.Health=s.Match.B.Health=0;s.Step();
+  Assert.AreEqual(-1,s.RoundWinner);Assert.AreEqual(0,s.WinsA+s.WinsB);
+  Assert.AreEqual(FightPhase.RoundOver,s.Phase);
+ }
+ [Test] public void InvalidQueueDoesNotReplaceValidInput() {
+  var s=new FightSession();s.QueueAttack(true,0);Assert.IsFalse(s.QueueAttack(true,99));
+  s.Step();Assert.AreEqual("jab",s.Match.A.Attack.Value.Id);
+ }
+}

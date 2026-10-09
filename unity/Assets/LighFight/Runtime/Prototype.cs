@@ -7,8 +7,9 @@ namespace LighFight.Runtime
     public sealed class Prototype : MonoBehaviour
     {
         private static readonly KeyCode[] AttackKeys = { KeyCode.J, KeyCode.K, KeyCode.U, KeyCode.I };
-        private Match match;
-        private Transform player, opponent;
+        private FightSession session;
+        private Match match => session.Match;
+        private FighterView player, opponent;
         private float accumulator;
         private int botCooldown, pendingAttack = -1;
         private bool paused, backgrounded;
@@ -17,9 +18,9 @@ namespace LighFight.Runtime
 
         private void Start()
         {
-            match = new Match();
-            player = Body("Player", Color.cyan);
-            opponent = Body("CPU", new Color(1, .35f, .25f));
+            session = new FightSession();
+            player = FighterView.Create("Player", new Color(.04f,.3f,.32f), false);
+            opponent = FighterView.Create("CPU", new Color(.8f,.35f,.45f), true);
             var floor = GameObject.CreatePrimitive(PrimitiveType.Cube);
             floor.transform.localScale = new Vector3(12, .2f, 6);
             floor.transform.position = new Vector3(0, -.1f, 0);
@@ -46,16 +47,8 @@ namespace LighFight.Runtime
         }
         private void Reset()
         {
-            match = new Match(); accumulator = 0; botCooldown = 0;
+            session = new FightSession(); accumulator = 0; botCooldown = 0;
             pendingAttack = -1; paused = false;
-        }
-
-        private Transform Body(string label, Color color)
-        {
-            var body = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-            body.name = label;
-            body.GetComponent<Renderer>().material.color = color;
-            return body.transform;
         }
 
         // All touch positions converted into the same logical coordinates as GUI.
@@ -103,41 +96,34 @@ namespace LighFight.Runtime
             {
                 accumulator -= 1f / Match.TickRate;
                 match.A.Guard = guard; match.A.Crouch = crouch;
-                if (pendingAttack >= 0) { match.Attack(match.A, pendingAttack); pendingAttack = -1; }
+                if (pendingAttack >= 0) { session.QueueAttack(true, pendingAttack); pendingAttack = -1; }
                 match.Walk(match.A, direction);
-                if (!match.Finished)
+                if (session.Phase == FightPhase.Fighting)
                 {
                     if (Mathf.Abs(match.A.X - match.B.X) > 1.3f)
                         match.Walk(match.B, Mathf.Sign(match.A.X - match.B.X));
                     match.B.Guard = botCooldown > 35;
-                    if (--botCooldown <= 0) { match.Attack(match.B, random.Next(Moves.All.Length)); botCooldown = 60; }
+                    if (--botCooldown <= 0) { session.QueueAttack(false, random.Next(Moves.All.Length)); botCooldown = 60; }
                 }
-                match.Step();
+                session.Step();
             }
-            Pose(player, match.A); Pose(opponent, match.B);
-        }
-
-        private void Pose(Transform body, Fighter fighter)
-        {
-            body.position = new Vector3(fighter.X, fighter.Crouch ? .65f : 1, 0);
-            body.localScale = new Vector3(.7f, fighter.Crouch ? .65f : 1, .7f);
-            float lean = fighter.Attack.HasValue ? Mathf.Sin(Mathf.PI *
-                Mathf.Clamp01((float)fighter.Frame / fighter.Attack.Value.Duration)) * 15 : 0;
-            body.rotation = Quaternion.Euler(0,0,lean * (fighter == match.A ? -1 : 1));
+            player.Pose(match.A, match.B.X - match.A.X, Time.deltaTime);
+            opponent.Pose(match.B, match.A.X - match.B.X, Time.deltaTime);
         }
 
         private void OnGUI()
         {
-            if (match == null) return;
+            if (session == null) return;
             var saved = GUI.matrix;
             GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(Screen.width / 960f, Screen.height / 540f, 1));
-            GUI.Label(new Rect(20,20,330,40), $"LighFight prototype    {match.A.Health} : {match.B.Health}");
+            GUI.Label(new Rect(20,20,330,40), $"LighFight  R{session.Round}   {session.WinsA} : {session.WinsB}   {match.A.Health} : {match.B.Health}");
             GUI.Box(new Rect(360,20,90,45), paused ? "Resume" : "Pause");
             GUI.Box(new Rect(460,20,90,45), "Restart");
             GUI.Box(new Rect(560,20,90,45), "Exit");
             GUI.Label(new Rect(20,80,900,35), "Arrows + J K U I. Up/Down: alternate attacks. Shift: guard.");
             if (paused) GUI.Label(new Rect(430,160,150,35), "PAUSED");
-            if (match.Finished) GUI.Label(new Rect(410,200,200,35), match.A.Health == match.B.Health ? "DRAW" : match.A.Health > 0 ? "PLAYER WINS" : "CPU WINS");
+            GUI.Label(new Rect(700,20,180,40), $"{(session.RemainingTicks + 59) / 60}");
+            if (session.Phase != FightPhase.Fighting) GUI.Label(new Rect(410,200,240,35), session.Phase == FightPhase.Complete ? (session.Winner == 0 ? "MATCH WON" : "MATCH LOST") : session.RoundWinner < 0 ? "DRAW" : session.RoundWinner == 0 ? "ROUND WON" : "ROUND LOST");
             GUI.Box(new Rect(25,440,70,70), "←"); GUI.Box(new Rect(100,440,70,70), "→");
             GUI.Box(new Rect(175,440,70,70), "↓"); GUI.Box(new Rect(100,365,70,65), "↑");
             GUI.Box(new Rect(250,440,80,70), "Guard");
