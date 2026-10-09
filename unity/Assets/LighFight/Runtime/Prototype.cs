@@ -15,26 +15,43 @@ namespace LighFight.Runtime
         private bool paused, backgrounded;
         private readonly System.Random random = new System.Random(42);
         private HostBridge bridge;
+        private OfficeArena arena;
+        private bool selecting = true;
+        private int selectedFighter, selectedArena;
+        private static readonly string[] FighterNames = { "Костяная леди", "Ночная ведьма", "Мастер стихий", "Островной боец", "Розовая пантера", "Рейнджер", "Гала-боец", "Кобальтовый чемпион" };
+        private static readonly string[] ArenaNames = { "Переговорная", "Кухня", "Рабочий кабинет", "Тесный угол", "Офисный двор" };
+        private static readonly Color[] OutfitColors = { new Color(.5f,.65f,.25f), new Color(.3f,.18f,.5f), new Color(.05f,.3f,.32f), new Color(.68f,.58f,.36f), new Color(.85f,.42f,.55f), new Color(.26f,.32f,.17f), new Color(.10f,.18f,.32f), new Color(.05f,.25f,.65f) };
 
         private void Start()
         {
             session = new FightSession();
-            player = FighterView.Create("Player", new Color(.04f,.3f,.32f), false);
-            opponent = FighterView.Create("CPU", new Color(.8f,.35f,.45f), true);
-            var floor = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            floor.transform.localScale = new Vector3(12, .2f, 6);
-            floor.transform.position = new Vector3(0, -.1f, 0);
+            RebuildViews();
             var camera = new GameObject("Camera").AddComponent<Camera>();
-            camera.transform.position = new Vector3(0, 3.2f, -8);
+            camera.transform.position = new Vector3(0, 2.4f, -9);
+            camera.fieldOfView = 42;
+            camera.backgroundColor = new Color(.08f,.09f,.12f);
             camera.transform.LookAt(new Vector3(0, 1, 0));
             var light = new GameObject("Light").AddComponent<Light>();
             light.type = LightType.Directional;
+            light.intensity = 1.2f; light.shadows = LightShadows.Soft;
+            RenderSettings.ambientLight = new Color(.45f,.43f,.4f);
             light.transform.rotation = Quaternion.Euler(45, -30, 0);
             bridge = FindFirstObjectByType<HostBridge>();
             if (bridge != null) bridge.LaunchRequested += OnLaunch;
         }
 
-        private void OnLaunch(LaunchRequest request) => Reset();
+        private void OnLaunch(LaunchRequest request) { Reset(); selecting = true; }
+        private void RebuildViews()
+        {
+            if (player != null) Destroy(player.gameObject);
+            if (opponent != null) Destroy(opponent.gameObject);
+            if (arena != null) Destroy(arena.gameObject);
+            player = FighterView.Create(FighterNames[selectedFighter], OutfitColors[selectedFighter], selectedFighter == 0 || selectedFighter == 1 || selectedFighter == 4);
+            int cpu = (selectedFighter + 3) % FighterNames.Length;
+            opponent = FighterView.Create(FighterNames[cpu], OutfitColors[cpu], cpu == 0 || cpu == 1 || cpu == 4);
+            arena = OfficeArena.Create((OfficeLocation)selectedArena);
+            player.Pose(match.A,1,0); opponent.Pose(match.B,-1,0);
+        }
         private void OnDestroy()
         {
             if (bridge != null) bridge.LaunchRequested -= OnLaunch;
@@ -82,6 +99,11 @@ namespace LighFight.Runtime
             if (Input.GetKeyDown(KeyCode.R) || Pressed(new Rect(460, 20, 90, 45))) Reset();
             if (Pressed(new Rect(560, 20, 90, 45)) || Input.GetKeyDown(KeyCode.Q))
             { if (bridge != null) bridge.Exit(""); return; }
+            if (selecting)
+            {
+                player.Pose(match.A,1,Time.deltaTime); opponent.Pose(match.B,-1,Time.deltaTime);
+                return;
+            }
             if (paused || backgrounded || Time.timeScale == 0) return;
             bool crouch = Held(new Rect(175, 440, 70, 70)) || Input.GetKey(KeyCode.DownArrow);
             bool upper = Held(new Rect(100, 365, 70, 65)) || Input.GetKey(KeyCode.UpArrow);
@@ -116,6 +138,19 @@ namespace LighFight.Runtime
             if (session == null) return;
             var saved = GUI.matrix;
             GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(Screen.width / 960f, Screen.height / 540f, 1));
+            if (selecting)
+            {
+                GUI.Box(new Rect(15,15,930,510), "LighFight — выбери бойца и арену");
+                for (int i=0;i<FighterNames.Length;i++)
+                    if (GUI.Button(new Rect(35+i%4*222,65+i/4*70,210,60),(i==selectedFighter?"● ":"")+FighterNames[i]))
+                    { selectedFighter=i; RebuildViews(); }
+                for (int i=0;i<ArenaNames.Length;i++)
+                    if (GUI.Button(new Rect(35+i*178,235,168,60),(i==selectedArena?"● ":"")+ArenaNames[i]))
+                    { selectedArena=i; RebuildViews(); }
+                GUI.Label(new Rect(45,325,850,60), "Стрелки: движение и приседание. J / K / U / I: удары.\n↑ или ↓ + удар: альтернативный приём. Shift: блок. Победа — два раунда.");
+                if (GUI.Button(new Rect(330,410,300,70), "НАЧАТЬ БОЙ")) { Reset(); selecting=false; }
+                GUI.matrix=saved; return;
+            }
             GUI.Label(new Rect(20,20,330,40), $"LighFight  R{session.Round}   {session.WinsA} : {session.WinsB}   {match.A.Health} : {match.B.Health}");
             GUI.Box(new Rect(360,20,90,45), paused ? "Resume" : "Pause");
             GUI.Box(new Rect(460,20,90,45), "Restart");

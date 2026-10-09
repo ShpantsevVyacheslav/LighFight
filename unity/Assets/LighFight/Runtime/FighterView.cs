@@ -29,7 +29,7 @@ namespace LighFight.Runtime
         {
             var obj = GameObject.CreatePrimitive(type); obj.transform.SetParent(parent, false);
             obj.transform.localPosition = position; obj.transform.localScale = scale;
-            obj.GetComponent<Renderer>().sharedMaterial = material; Destroy(obj.GetComponent<Collider>());
+            obj.GetComponent<Renderer>().sharedMaterial = material; if(Application.isPlaying)Destroy(obj.GetComponent<Collider>());else DestroyImmediate(obj.GetComponent<Collider>());
         }
         private void Limb(Transform joint, float length, float width, Material material)
             => Mesh(joint, PrimitiveType.Capsule, new Vector3(0,-length/2,0), new Vector3(width,length/2,width),material);
@@ -93,7 +93,7 @@ namespace LighFight.Runtime
             if(kick)
             {
                 float height=move.Level==Level.Low?35:move.Id=="knee"?95:110;
-                Rotate(legR,preparation*35+strike*height,0,move.Id=="spinKick"?-35:0);
+                Rotate(legR,-preparation*35-strike*height,0,move.Id=="spinKick"?-35:0);
                 Rotate(shinR,-70*(1-strike));Rotate(armR,-70,0,40*strike);
                 if(move.Id=="jumpKick")transform.position+=Vector3.up*Mathf.Sin(preparation*Mathf.PI)*.28f;
             }
