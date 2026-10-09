@@ -170,7 +170,11 @@ Unity runtime, IL2CPP-код и загрузчик входят в прилож�
 - Starter GameContent с prefabs/materials вынесен в remote Addressables group.
 - Bootstrap: manifest, compatibility, catalog, size, download/progress/retry, open + handles.
 - Собраны Android/iOS bundles; они ещё не опубликованы.
-- 35/35 Unity tests, 34 .NET tests; новые проверки подвергнуты 18 мутациям суммарно.
+- 46/46 Unity tests, 40 .NET tests; новые проверки подвергнуты мутациям в изолированных копиях.
 - Packed desktop smoke реально скачал bundle по HTTP; повтор без сервера открыл кэш.
 - Финальная профессиональная 3D-графика, CDN, full client/device smoke остаются обязательными.
 - Реестр текущих задач: `backlog/solo-release.md`; доставка: `docs/CONTENT_DELIVERY.md`.
+
+Добавлены тренировочный режим, бот с задержкой реакции, RU/EN, звук/эффекты,
+проверка места и замена устаревшего каталога. Финальные модели подключаются
+через artist overrides и Humanoid Animator; временная геометрия остаётся временной.

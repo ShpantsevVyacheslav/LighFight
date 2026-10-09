@@ -14,6 +14,7 @@ public sealed class HostBridge : MonoBehaviour {
  public event Action<LaunchRequest> LaunchRequested;
  public event Action ExitRequested;
  private string sessionId;
+ public LaunchRequest CurrentLaunch {get; private set;}
 #if UNITY_IOS && !UNITY_EDITOR
  [DllImport("__Internal")] private static extern void LighFightEmit(string json);
 #endif
@@ -24,7 +25,7 @@ public sealed class HostBridge : MonoBehaviour {
    var r = JsonUtility.FromJson<LaunchRequest>(json);
    if (r == null || r.protocolVersion != 1 || string.IsNullOrWhiteSpace(r.sessionId) || r.mode != "bot")
     throw new ArgumentException("invalid_launch");
-   sessionId = r.sessionId; Time.timeScale = 1;
+   sessionId = r.sessionId; CurrentLaunch = r; Time.timeScale = 1;
    LaunchRequested?.Invoke(r); Emit("launched");
   } catch (Exception e) { Debug.LogWarning("LighFight launch rejected: " + e.GetType().Name); Emit("failed"); }
  }

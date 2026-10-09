@@ -103,3 +103,26 @@ public class ContentManifestTests
  [Test] public void LocalHttpRequiresDevelopment(){var m=Valid();m.catalogUrl="http://127.0.0.1:8765/catalog.json";Assert.IsNotNull(m.Validate("iOS","6000.3.26f1"));Assert.IsNull(m.Validate("iOS","6000.3.26f1",true));}
  [Test] public void RejectsInvalidVersionAndExcessiveSize(){var m=Valid();m.contentVersion="../x";Assert.AreEqual("invalid_version",m.Validate("iOS","6000.3.26f1"));m=Valid();m.downloadBytes=long.MaxValue;Assert.AreEqual("invalid_size",m.Validate("iOS","6000.3.26f1"));}
 }
+
+public class TrainingTests
+{
+ [Test] public void TrainingDoesNotTimeoutOrLoseHealth() {
+  var s=new FightSession(true);s.Match.A.X=-1;s.Match.B.X=0;s.QueueAttack(true,0);
+  for(int i=0;i<FightSession.RoundTicks+1;i++)s.Step();
+  Assert.AreEqual(150,s.Match.B.Health);Assert.AreEqual(FightPhase.Fighting,s.Phase);
+  Assert.AreEqual(FightSession.RoundTicks,s.RemainingTicks);Assert.AreEqual(1,s.Match.B.HitSerial);
+ }
+}
+
+public class BotTests
+{
+ [Test] public void BotApproachesBeforeAttacking(){var s=new FightSession();var b=new BotController();b.Step(s);Assert.Less(s.Match.B.X,1.4f);Assert.IsNull(s.Match.B.Attack);}
+ [Test] public void BotHasReactionDelay(){var s=new FightSession();s.Match.A.Start(10);var b=new BotController();for(int i=0;i<13;i++){b.Step(s);s.Step();Assert.IsFalse(s.Match.B.Guard);}}
+ [Test] public void TrainingDummyDoesNotAttackOrMove(){var s=new FightSession(true);var b=new BotController();for(int i=0;i<100;i++){b.Step(s);s.Step();}Assert.AreEqual(1.4f,s.Match.B.X);Assert.IsNull(s.Match.B.Attack);}
+}
+
+public class ContentBudgetTests
+{
+ [Test] public void RequiresTemporarySpaceButAllowsCachedContent() { Assert.IsFalse(ContentBudget.CanDownload(1024,1024));Assert.IsTrue(ContentBudget.CanDownload(1024,32L*1024*1024+2048));Assert.IsTrue(ContentBudget.CanDownload(0,0)); }
+ [Test] public void RejectsUnboundedSizeEvenWhenFreeSpaceUnknown() { Assert.IsFalse(ContentBudget.CanDownload(long.MaxValue,-1));Assert.IsFalse(ContentBudget.CanDownload(-1,-1));Assert.IsTrue(ContentBudget.CanDownload(1024,-1)); }
+}

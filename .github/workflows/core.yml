@@ -1,0 +1,21 @@
+name: Combat core
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet run --project verification/Combat/Combat.csproj -- --result=core-tests.xml
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: combat-test-results
+          path: core-tests.xml

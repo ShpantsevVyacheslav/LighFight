@@ -2,7 +2,7 @@
 
 Open this directory with Unity 6.3 LTS. Pinned Editor: 6000.3.26f1 (Apple Silicon).
 Imported and compiled with Editor 6000.3.26f1; prototype scene generated.
-All 17 EditMode tests passed in Unity. Device execution still needs verification.
+All 46 EditMode tests passed in Unity (2026-10-10); standalone core: 40/40. Device execution still needs verification.
 Android Gradle export (`unityLibrary`, ARM64 IL2CPP) and iOS Xcode export
 (`UnityFramework`) completed successfully. These are source exports, not verified
 APK/IPA builds or an integrated LighChat release.
@@ -17,8 +17,8 @@ APK/IPA builds or an integrated LighChat release.
 This is source scaffolding plus a playable primitive prototype, not production art.
 Unity compilation and package resolution are verified locally. Device builds and
 visual behavior on phones still need verification.
-ContentDownloader needs an actual Addressables catalog and starter label; it is not
-wired to prototype launch. HostBridge now emits ready/launched/exit events to the native LighChat plugin.
+ContentBootstrap uses a versioned manifest and Addressables catalog to download the
+remote starter before creating the game. The CDN is not published yet. HostBridge now emits ready/launched/exit events to the native LighChat plugin.
 The Flutter host integration lives in LighChat/mobile/packages/lighfight_host;
 physical-device lifecycle verification is still required. No CDN or production credentials included.
 
@@ -37,8 +37,8 @@ Set `UNITY_EDITOR` to the installed Unity executable, then run:
 ```sh
 ./scripts/unity-stage.sh setup
 ./scripts/unity-stage.sh test
-./scripts/unity-stage.sh android
-./scripts/unity-stage.sh ios
+LIGHFIGHT_EMBED_PROTOTYPE=1 ./scripts/unity-stage.sh android
+LIGHFIGHT_EMBED_PROTOTYPE=1 ./scripts/unity-stage.sh ios
 ```
 
 Run from the LighFight root. Exports are development projects under `unity/Builds`;
@@ -56,3 +56,7 @@ Debug Android AAR or device iOS UnityFramework, and copies it into the local
 LighChat plugin. Set UNITY_EDITOR and LIGHCHAT_ROOT before running. Generated
 binaries are ignored. See LighChat/docs/arcitecture/lighfight-unity.md for the
 MethodChannel protocol, iOS CocoaPods opt-in, and device acceptance checks.
+
+Production exports require `LIGHFIGHT_MANIFEST_URL` for the target platform.
+The `LIGHFIGHT_EMBED_PROTOTYPE=1` flag explicitly exports the local preview.
+See `../docs/CONTENT_DELIVERY.md` and `../docs/ART_PIPELINE.md`.

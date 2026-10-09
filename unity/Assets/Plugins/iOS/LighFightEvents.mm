@@ -5,3 +5,9 @@ extern "C" void LighFightEmit(const char *json) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LighFightEvent" object:payload];
     });
 }
+
+extern "C" long long LighFightAvailableBytes() {
+    NSError *error = nil;
+    NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    return attributes ? [attributes[NSFileSystemFreeSize] longLongValue] : -1;
+}

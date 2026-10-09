@@ -35,12 +35,37 @@ namespace LighFight.Editor
         public static void ExportAndroid() => Export(BuildTarget.Android, "Builds/Android");
         public static void ExportIos() => Export(BuildTarget.iOS, "Builds/iOS");
 
+        private static void IncludeRuntimeShaders()
+        {
+            var settings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")[0]);
+            var included = settings.FindProperty("m_AlwaysIncludedShaders");
+            foreach (string name in new[] { "LighFight/OfficeLit", "Unlit/Color" })
+            {
+                var shader = Shader.Find(name);
+                if (shader == null) throw new System.InvalidOperationException("Missing runtime shader: " + name);
+                bool found = false;
+                for (int i = 0; i < included.arraySize; i++) if (included.GetArrayElementAtIndex(i).objectReferenceValue == shader) found = true;
+                if (!found) { int i = included.arraySize; included.arraySize++; included.GetArrayElementAtIndex(i).objectReferenceValue = shader; }
+            }
+            settings.ApplyModifiedPropertiesWithoutUndo();AssetDatabase.SaveAssets();
+        }
+
         private static void Export(BuildTarget target, string output)
         {
             if (!BuildPipeline.IsBuildTargetSupported(BuildPipeline.GetBuildTargetGroup(target), target))
                 throw new System.InvalidOperationException("Required Unity platform module is not installed: " + target);
-            string scenePath = File.Exists("Assets/LighFight/Scenes/Bootstrap.unity") ? "Assets/LighFight/Scenes/Bootstrap.unity" : ScenePath;
-            if (!File.Exists(scenePath)) Create();
+            bool preview = System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_PROTOTYPE") == "1";
+            string scenePath;
+            if (preview) { scenePath = ScenePath; if (!File.Exists(scenePath)) Create(); }
+            else
+            {
+                if (string.IsNullOrWhiteSpace(System.Environment.GetEnvironmentVariable("LIGHFIGHT_MANIFEST_URL")))
+                    throw new System.InvalidOperationException("Set LIGHFIGHT_MANIFEST_URL for downloadable content; local preview requires LIGHFIGHT_EMBED_PROTOTYPE=1");
+                ContentBuild.Bootstrap();scenePath = "Assets/LighFight/Scenes/Bootstrap.unity";
+            }
+            var addresses = UnityEditor.AddressableAssets.AddressableAssetSettingsDefaultObject.GetSettings(true);
+            addresses.BuildAddressablesWithPlayerBuild = UnityEditor.AddressableAssets.Settings.AddressableAssetSettings.PlayerBuildOption.DoNotBuildWithPlayer;
+            IncludeRuntimeShaders();
             Directory.CreateDirectory(output);
             if (target == BuildTarget.Android) EditorUserBuildSettings.exportAsGoogleAndroidProject = true;
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {

@@ -16,8 +16,20 @@ from pathlib import Path
 root, plugin = map(Path, sys.argv[1:])
 source = root / '.tools/ios-framework/Build/Products/Debug-iphoneos/UnityFramework.framework'
 dest = plugin / 'ios/Frameworks/UnityFramework.framework'
-shutil.copytree(source, dest, dirs_exist_ok=True)
-shutil.copytree(root / 'unity/Builds/iOS/Data', dest / 'Data', dirs_exist_ok=True)
+import uuid
+staging = dest.with_name(dest.name + '.next-' + uuid.uuid4().hex)
+backup = dest.with_name(dest.name + '.previous-' + uuid.uuid4().hex)
+dest.parent.mkdir(parents=True, exist_ok=True)
+shutil.copytree(source, staging)
+if (staging / 'Data').exists(): shutil.rmtree(staging / 'Data')
+shutil.copytree(root / 'unity/Builds/iOS/Data', staging / 'Data')
+had_previous = dest.exists()
+if had_previous: dest.rename(backup)
+try: staging.rename(dest)
+except Exception:
+    if had_previous: backup.rename(dest)
+    raise
+if had_previous: shutil.rmtree(backup)
 PY
   ;;
  android)

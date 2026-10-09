@@ -17,7 +17,7 @@ namespace LighFight.Runtime
         }
         private Material Mat(Color color, float smooth=.2f)
         {
-            var m=new Material(Shader.Find("Standard"));m.color=color;m.SetFloat("_Glossiness",smooth);
+            var m=new Material(Shader.Find("LighFight/OfficeLit"));m.color=color;m.SetFloat("_Glossiness",smooth);
             materials.Add(m);return m;
         }
         private Transform Box(string name, Vector3 position, Vector3 size, Material m)

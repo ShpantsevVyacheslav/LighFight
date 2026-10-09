@@ -44,15 +44,25 @@ namespace LighFight.Editor
             if(content==null){content=ScriptableObject.CreateInstance<GameContent>();AssetDatabase.CreateAsset(content,Folder+"/GameContent.asset");}
             content.fighters=new GameObject[8];content.arenas=new GameObject[5];
             Color[] colors={new Color(.5f,.65f,.25f),new Color(.3f,.18f,.5f),new Color(.05f,.3f,.32f),new Color(.68f,.58f,.36f),new Color(.85f,.42f,.55f),new Color(.26f,.32f,.17f),new Color(.1f,.18f,.32f),new Color(.05f,.25f,.65f)};
-            for(int i=0;i<8;i++)content.fighters[i]=Save(FighterView.Create("Fighter "+i,colors[i],i==0||i==1||i==4).gameObject,"fighter-"+i);
-            for(int i=0;i<5;i++)content.arenas[i]=Save(OfficeArena.Create((OfficeLocation)i).gameObject,"arena-"+i);
+            for(int i=0;i<8;i++)
+            {
+                var custom=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-"+i+".prefab");
+                if(custom!=null && (custom.GetComponent<FighterView>()==null || !custom.GetComponent<FighterView>().IsReady))throw new InvalidOperationException("Invalid artist rig "+i);
+                content.fighters[i]=custom!=null?custom:Save(FighterView.Create("Fighter "+i,colors[i],i==0||i==1||i==4).gameObject,"fighter-"+i);
+            }
+            for(int i=0;i<5;i++)
+            {
+                var custom=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Arenas/arena-"+i+".prefab");
+                if(custom!=null && custom.GetComponent<OfficeArena>()==null)throw new InvalidOperationException("Invalid artist arena "+i);
+                content.arenas[i]=custom!=null?custom:Save(OfficeArena.Create((OfficeLocation)i).gameObject,"arena-"+i);
+            }
             EditorUtility.SetDirty(content);
             var settings=AddressableAssetSettingsDefaultObject.GetSettings(true);
             var group=settings.FindGroup("LighFight Remote Starter")??settings.CreateGroup("LighFight Remote Starter",false,false,false,null,typeof(BundledAssetGroupSchema),typeof(ContentUpdateGroupSchema));
             var schema=group.GetSchema<BundledAssetGroupSchema>();schema.BuildPath.SetVariableByName(settings,AddressableAssetSettings.kRemoteBuildPath);schema.LoadPath.SetVariableByName(settings,AddressableAssetSettings.kRemoteLoadPath);
             settings.profileSettings.SetValue(settings.activeProfileId,AddressableAssetSettings.kRemoteBuildPath,"[UnityEngine.Application.dataPath]/../../.tools/content/[BuildTarget]/"+version);
             settings.profileSettings.SetValue(settings.activeProfileId,AddressableAssetSettings.kRemoteLoadPath,url.TrimEnd('/'));
-            settings.BuildRemoteCatalog=true;settings.OverridePlayerVersion=version;settings.RemoteCatalogBuildPath.SetVariableByName(settings,AddressableAssetSettings.kRemoteBuildPath);settings.RemoteCatalogLoadPath.SetVariableByName(settings,AddressableAssetSettings.kRemoteLoadPath);
+            settings.BuildRemoteCatalog=true;settings.BuildAddressablesWithPlayerBuild=AddressableAssetSettings.PlayerBuildOption.DoNotBuildWithPlayer;settings.OverridePlayerVersion=version;settings.RemoteCatalogBuildPath.SetVariableByName(settings,AddressableAssetSettings.kRemoteBuildPath);settings.RemoteCatalogLoadPath.SetVariableByName(settings,AddressableAssetSettings.kRemoteLoadPath);
             var entry=settings.CreateOrMoveEntry(AssetDatabase.AssetPathToGUID(Folder+"/GameContent.asset"),group);entry.address="lighfight-content";entry.SetLabel("lighfight-starter",true,true);
             var used=AssetDatabase.GetDependencies(Folder+"/GameContent.asset",true);
             foreach(var material in Directory.GetFiles(Folder,"*-material*.mat"))
@@ -66,7 +76,8 @@ namespace LighFight.Editor
         }
         public static void Bootstrap()
         {
-            string url=Environment.GetEnvironmentVariable("LIGHFIGHT_MANIFEST_URL")??"";
+            string url=Environment.GetEnvironmentVariable("LIGHFIGHT_MANIFEST_URL");
+            if(string.IsNullOrWhiteSpace(url))throw new InvalidOperationException("Set LIGHFIGHT_MANIFEST_URL");
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             new GameObject("Host Bridge").AddComponent<HostBridge>();
             new GameObject("Content Bootstrap").AddComponent<ContentBootstrap>().manifestUrl=url;

@@ -1,1 +1,15 @@
-{"name": "LighFight.Tests", "references": ["LighFight.Core"], "optionalUnityReferences": ["TestAssemblies"], "includePlatforms": ["Editor"]}
+{
+  "name": "LighFight.Tests",
+  "references": [
+    "LighFight.Core",
+    "LighFight.Runtime",
+    "Unity.Addressables",
+    "Unity.ResourceManager"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

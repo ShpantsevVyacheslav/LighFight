@@ -8,9 +8,11 @@ namespace LighFight.Runtime
     {
         [SerializeField] private Transform hips, chest, head, armL, armR, foreL, foreR, legL, legR, shinL, shinR;
         private Material skin, cloth, dark;
-        private float previousX, stride;
+        [SerializeField] private Animator animator;
+        private float previousX, stride, motionHold;
         [SerializeField] private bool ownsMaterials = true;
         public void UseSharedMaterials() => ownsMaterials = false;
+        public bool IsReady => animator!=null ? (animator.runtimeAnimatorController!=null && animator.avatar!=null && animator.avatar.isValid) : (hips!=null && chest!=null && head!=null && armL!=null && armR!=null && foreL!=null && foreR!=null && legL!=null && legR!=null && shinL!=null && shinR!=null);
 
         public static FighterView Create(string name, Color outfit, bool longHair)
         {
@@ -20,7 +22,7 @@ namespace LighFight.Runtime
         }
         private Material Material(Color color)
         {
-            var m = new Material(Shader.Find("Standard")); m.color = color;
+            var m = new Material(Shader.Find("LighFight/OfficeLit")); m.color = color;
             m.SetFloat("_Glossiness", .26f); return m;
         }
         private Transform Joint(string name, Transform parent, Vector3 position)
@@ -70,11 +72,24 @@ namespace LighFight.Runtime
             => joint.localRotation = Quaternion.Euler(x,y,z);
         public void Pose(Fighter fighter, float facing, float delta)
         {
-            bool moving = Mathf.Abs(previousX-fighter.X) > .0001f;
+            if(Mathf.Abs(previousX-fighter.X)>.0001f)motionHold=.06f;else motionHold=Mathf.Max(0,motionHold-delta);
+            bool moving = motionHold>0;
             previousX = fighter.X; stride += moving ? delta*12 : delta*2;
             float gait = moving ? Mathf.Sin(stride)*25 : Mathf.Sin(stride)*2;
             transform.position = new Vector3(fighter.X,0,0);
             transform.rotation = Quaternion.Euler(0,facing>0?90:-90,0);
+            if(animator!=null)
+            {
+                animator.applyRootMotion=false;
+                string motion=fighter.Health<=0?"Fall":fighter.DownTicks>16?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?"Hit":fighter.Attack.HasValue?fighter.Attack.Value.Id:fighter.Guard?"Guard":fighter.Crouch?"Crouch":moving?"Walk":"Idle";
+                int state=Animator.StringToHash("Base Layer."+motion);
+                if(animator.HasState(0,state))
+                {
+                    float phase=fighter.Attack.HasValue?(float)fighter.Frame/fighter.Attack.Value.Duration:fighter.DownTicks>16?1-(fighter.DownTicks-16)/48f:fighter.DownTicks>0?1-fighter.DownTicks/16f:Mathf.Repeat(stride*.1f,1);
+                    animator.Play(state,0,phase);
+                }
+                return;
+            }
             hips.localPosition = new Vector3(0,fighter.Crouch?.70f:.92f,0);
             Rotate(hips,0);Rotate(chest,-5);Rotate(head,5);
             Rotate(armL,-58,0,-18);Rotate(armR,-65,0,20);
@@ -84,7 +99,7 @@ namespace LighFight.Runtime
             if(fighter.Crouch){Rotate(legL,65);Rotate(legR,65);Rotate(shinL,-90);Rotate(shinR,-90);}
             if(fighter.Guard){Rotate(armL,-110,0,-10);Rotate(armR,-110,0,10);Rotate(foreL,-35);Rotate(foreR,-35);}
             if(fighter.Stun>0){Rotate(chest,18,0,8);Rotate(head,-15);}
-            if(fighter.Health<=0 || fighter.DownTicks>0){transform.rotation *= Quaternion.Euler(0,0,78);hips.localPosition=new Vector3(0,.20f,0);return;}
+            if(fighter.Health<=0 || fighter.DownTicks>0){float fall=fighter.Health<=0?1:Mathf.Clamp01(fighter.DownTicks/16f);transform.rotation *= Quaternion.Euler(0,0,78*fall);hips.localPosition=new Vector3(0,Mathf.Lerp(.92f,.20f,fall),0);return;}
             if(!fighter.Attack.HasValue)return;
             var move=fighter.Attack.Value;
             float preparation=Mathf.Clamp01((float)fighter.Frame/move.Startup);
@@ -94,10 +109,10 @@ namespace LighFight.Runtime
             Rotate(chest,-5,twist);
             if(kick)
             {
-                float height=move.Level==Level.Low?35:move.Id=="knee"?95:110;
-                Rotate(legR,-preparation*35-strike*height,0,move.Id=="spinKick"?-35:0);
-                Rotate(shinR,-70*(1-strike));Rotate(armR,-70,0,40*strike);
-                if(move.Id=="jumpKick")transform.position+=Vector3.up*Mathf.Sin(preparation*Mathf.PI)*.28f;
+                float height=move.Level==Level.Low?35:move.Level==Level.High?115:95;
+                Rotate(legR,-preparation*35*(1-strike)-strike*height,0,move.Id=="spinKick"?-35:0);
+                Rotate(shinR,move.Id=="knee"?-95:-70*(1-strike));Rotate(armR,-70,0,40*strike);
+                if(move.Id=="jumpKick")transform.position+=Vector3.up*Mathf.Sin(Mathf.Clamp01((float)fighter.Frame/move.Duration)*Mathf.PI)*.35f;
             }
             else
             {

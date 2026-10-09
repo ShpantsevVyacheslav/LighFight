@@ -43,3 +43,7 @@ iOS Support ~1.4 GB. Инсталлятор Editor ~5.2 GB; дополнител
 - https://docs.unity.com/en-us/hub/manage-license
 - https://unity.com/legal/editor-terms-of-service/software
 - https://services.api.unity.com/unity/editor/release/v1/releases?version=6000.3&limit=1&architecture=ARM64&platform=MAC_OS
+
+Актуальная проверка 2026-10-10: 46/46 Unity, 40/40 .NET. Debug AAR и
+UnityFramework пересобраны. Экспорт требует платформенный LIGHFIGHT_MANIFEST_URL
+или явный LIGHFIGHT_EMBED_PROTOTYPE=1 для preview.

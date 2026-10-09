@@ -16,6 +16,8 @@ namespace LighFight.Core
         public int Round { get; private set; } = 1;
         public int RoundWinner { get; private set; } = -1;
         public int Winner => Phase != FightPhase.Complete ? -1 : WinsA > WinsB ? 0 : 1;
+        public bool Training { get; }
+        public FightSession(bool training = false) { Training = training; }
         private int breakRemaining;
         private int attackA = -1, attackB = -1, lifeA, lifeB;
 
@@ -48,6 +50,7 @@ namespace LighFight.Core
             Consume(Match.A, ref attackA, ref lifeA);
             Consume(Match.B, ref attackB, ref lifeB);
             Match.Step();
+            if (Training) { Match.A.Health = Match.B.Health = 150; return; }
             RemainingTicks--;
             if (!Match.Finished && RemainingTicks > 0) return;
             RoundWinner = Match.A.Health == Match.B.Health ? -1 : Match.A.Health > Match.B.Health ? 0 : 1;

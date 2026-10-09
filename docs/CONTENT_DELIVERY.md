@@ -41,13 +41,14 @@ HTTPS обязателен; только development разрешает HTTP н�
 проверяет полный набор prefab и компоненты. Handles освобождаются.
 
 После успешного открытия сохраняет manifest атомарно; при ошибке сети пробует его
-из кэша. Addressables отвечает за кэш bundles/catalog. Свободное место ещё не
-проверяется, возобновление частичного скачивания не обещается. Выход во время
+из кэша. Addressables отвечает за кэш bundles/catalog. Свободное место проверяется через Android StatFs / iOS filesystem attributes;
+требуется удвоенный размер загрузки плюс 32 MiB. Неизвестный объём допускает попытку
+скачивания. Возобновление частичного скачивания не обещается. Выход во время
 операции завершает Unity host; это не API отмены Addressables.
 
 ## Проверки 2026-10-10
 
-- Unity 35/35 и 34 теста .NET; шесть новых manifest-тестов обнаруживают намеренные дефекты.
+- Unity 46/46 и 40 тестов .NET; шесть новых manifest-тестов обнаруживают намеренные дефекты.
 - Packed HTTP smoke: каталог и bundle реально запрошены у локального сервера,
   GameContent содержит 8 бойцов / 5 арен; загруженный rig создаётся и позируется.
 - Offline packed smoke после остановки HTTP сервера: PASS, download size 0.
@@ -61,3 +62,26 @@ HTTPS обязателен; только development разрешает HTTP н�
 Репозиторий GitHub private. Push, публикация bundles и изменения облачного
 хранилища требуют явной команды владельца по правилам автономной работы.
 Никаких фотографий сотрудников в текущем starter-пакете нет.
+
+## Изолированный Firebase Hosting
+
+`content-hosting/firebase.json` предназначен для отдельного сайта
+`lighfight-assets-72b24` проекта `project-72b24`. Этот сайт пока не создан.
+Существующий сайт LighChat не используется. Публичный доступ ко всему Storage
+bucket не требуется.
+
+```sh
+LIGHFIGHT_CONTENT_VERSION=starter-4 scripts/prepare-content-hosting.sh
+```
+
+Скрипт собирает Android и iOS, сохраняет content state отдельно и готовит
+`.tools/publish`. Версионные bundles/catalogs неизменяемы; `latest.json` —
+коротко кэшируемый указатель manifest. Сам скрипт ничего не публикует.
+Нативный export требует `LIGHFIGHT_MANIFEST_URL`, например
+`https://lighfight-assets-72b24.web.app/lighfight/Android/latest.json`.
+URL станет рабочим после создания сайта и публикации.
+Для локального preview используется только явный `LIGHFIGHT_EMBED_PROTOTYPE=1`.
+
+Перед облачным выпуском: разрешение владельца, публикация, проверка доступности
+обоих manifests и bundles, exports с соответствующими URLs, полный клиент,
+первое скачивание / кэш / возврат / повторный вход на Android и iOS.
