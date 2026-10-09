@@ -161,3 +161,16 @@ Unity runtime, IL2CPP-код и загрузчик входят в прилож�
 - 8 тестов Flutter прошли; 17/17 EditMode-тестов Unity повторно прошли.
 - Скачать контент через Addressables, собрать полный клиент и проверить цикл на
   физических телефонах ещё требуется. Прототип пока использует примитивные модели.
+
+## Автономная работа — 2026-10-10
+
+- GitHub private origin создан: ShpantsevVyacheslav/LighFight; push не выполнен.
+- Раунды до двух побед, 60 секунд, буфер на 8 тиков; 20 приёмов, counter hit, knockdown/recovery.
+- Сочленённые временные модели, выбор восьми вариантов бойцов и пяти офисных арен.
+- Starter GameContent с prefabs/materials вынесен в remote Addressables group.
+- Bootstrap: manifest, compatibility, catalog, size, download/progress/retry, open + handles.
+- Собраны Android/iOS bundles; они ещё не опубликованы.
+- 35/35 Unity tests, 34 .NET tests; новые проверки подвергнуты 18 мутациям суммарно.
+- Packed desktop smoke реально скачал bundle по HTTP; повтор без сервера открыл кэш.
+- Финальная профессиональная 3D-графика, CDN, full client/device smoke остаются обязательными.
+- Реестр текущих задач: `backlog/solo-release.md`; доставка: `docs/CONTENT_DELIVERY.md`.

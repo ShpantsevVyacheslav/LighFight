@@ -39,11 +39,12 @@ namespace LighFight.Editor
         {
             if (!BuildPipeline.IsBuildTargetSupported(BuildPipeline.GetBuildTargetGroup(target), target))
                 throw new System.InvalidOperationException("Required Unity platform module is not installed: " + target);
-            if (!File.Exists(ScenePath)) Create();
+            string scenePath = File.Exists("Assets/LighFight/Scenes/Bootstrap.unity") ? "Assets/LighFight/Scenes/Bootstrap.unity" : ScenePath;
+            if (!File.Exists(scenePath)) Create();
             Directory.CreateDirectory(output);
             if (target == BuildTarget.Android) EditorUserBuildSettings.exportAsGoogleAndroidProject = true;
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
-                scenes = new[] { ScenePath }, locationPathName = output,
+                scenes = new[] { scenePath }, locationPathName = output,
                 target = target, options = BuildOptions.Development
             });
             if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)

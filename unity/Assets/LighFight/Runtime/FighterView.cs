@@ -6,9 +6,11 @@ namespace LighFight.Runtime
     // Procedural articulated stand-in; replace meshes without changing simulation timing.
     public sealed class FighterView : MonoBehaviour
     {
-        private Transform hips, chest, head, armL, armR, foreL, foreR, legL, legR, shinL, shinR;
+        [SerializeField] private Transform hips, chest, head, armL, armR, foreL, foreR, legL, legR, shinL, shinR;
         private Material skin, cloth, dark;
         private float previousX, stride;
+        [SerializeField] private bool ownsMaterials = true;
+        public void UseSharedMaterials() => ownsMaterials = false;
 
         public static FighterView Create(string name, Color outfit, bool longHair)
         {
@@ -106,6 +108,6 @@ namespace LighFight.Runtime
                 Rotate(fore,Mathf.Lerp(-85,move.Id=="elbow"?-100:-8,strike));
             }
         }
-        private void OnDestroy(){Destroy(skin);Destroy(cloth);Destroy(dark);}
+        private void OnDestroy(){if(ownsMaterials){Destroy(skin);Destroy(cloth);Destroy(dark);}}
     }
 }

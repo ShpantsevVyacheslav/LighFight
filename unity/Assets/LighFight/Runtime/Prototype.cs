@@ -14,6 +14,7 @@ namespace LighFight.Runtime
         private int botCooldown, pendingAttack = -1;
         private bool paused, backgrounded;
         private readonly System.Random random = new System.Random(42);
+        public GameContent content;
         private HostBridge bridge;
         private OfficeArena arena;
         private bool selecting = true;
@@ -46,10 +47,19 @@ namespace LighFight.Runtime
             if (player != null) Destroy(player.gameObject);
             if (opponent != null) Destroy(opponent.gameObject);
             if (arena != null) Destroy(arena.gameObject);
-            player = FighterView.Create(FighterNames[selectedFighter], OutfitColors[selectedFighter], selectedFighter == 0 || selectedFighter == 1 || selectedFighter == 4);
             int cpu = (selectedFighter + 3) % FighterNames.Length;
-            opponent = FighterView.Create(FighterNames[cpu], OutfitColors[cpu], cpu == 0 || cpu == 1 || cpu == 4);
-            arena = OfficeArena.Create((OfficeLocation)selectedArena);
+            if (content != null)
+            {
+                player = Instantiate(content.fighters[selectedFighter]).GetComponent<FighterView>();
+                opponent = Instantiate(content.fighters[cpu]).GetComponent<FighterView>();
+                arena = Instantiate(content.arenas[selectedArena]).GetComponent<OfficeArena>();
+            }
+            else
+            {
+                player = FighterView.Create(FighterNames[selectedFighter], OutfitColors[selectedFighter], selectedFighter == 0 || selectedFighter == 1 || selectedFighter == 4);
+                opponent = FighterView.Create(FighterNames[cpu], OutfitColors[cpu], cpu == 0 || cpu == 1 || cpu == 4);
+                arena = OfficeArena.Create((OfficeLocation)selectedArena);
+            }
             player.Pose(match.A,1,0); opponent.Pose(match.B,-1,0);
         }
         private void OnDestroy()
@@ -94,10 +104,10 @@ namespace LighFight.Runtime
 
         private void Update()
         {
-            if (Pressed(new Rect(360, 20, 90, 45)) || Input.GetKeyDown(KeyCode.Escape))
+            if (!selecting && (Pressed(new Rect(360, 20, 90, 45)) || Input.GetKeyDown(KeyCode.Escape)))
             { paused = !paused; accumulator = 0; pendingAttack = -1; }
-            if (Input.GetKeyDown(KeyCode.R) || Pressed(new Rect(460, 20, 90, 45))) Reset();
-            if (Pressed(new Rect(560, 20, 90, 45)) || Input.GetKeyDown(KeyCode.Q))
+            if (!selecting && (Input.GetKeyDown(KeyCode.R) || Pressed(new Rect(460, 20, 90, 45)))) Reset();
+            if ((!selecting && Pressed(new Rect(560, 20, 90, 45))) || Input.GetKeyDown(KeyCode.Q))
             { if (bridge != null) bridge.Exit(""); return; }
             if (selecting)
             {
@@ -151,6 +161,7 @@ namespace LighFight.Runtime
                     { selectedArena=i; RebuildViews(); }
                 GUI.Label(new Rect(45,325,850,60), "Стрелки: движение и приседание. J / K / U / I: удары.\n↑ или ↓ + удар: альтернативный приём. Shift: блок. Победа — два раунда.");
                 if (GUI.Button(new Rect(330,410,300,70), "НАЧАТЬ БОЙ")) { Reset(); selecting=false; }
+                if (GUI.Button(new Rect(770,410,150,70), "ВЫХОД")) bridge?.Exit("");
                 GUI.matrix=saved; return;
             }
             GUI.Label(new Rect(20,20,330,40), $"LighFight  R{session.Round}   {session.WinsA} : {session.WinsB}   {match.A.Health} : {match.B.Health}");

@@ -7,6 +7,8 @@ namespace LighFight.Runtime
     public sealed class OfficeArena : MonoBehaviour
     {
         private readonly List<Material> materials = new List<Material>();
+        [SerializeField] private bool ownsMaterials = true;
+        public void UseSharedMaterials() => ownsMaterials = false;
         private Material wood, beige, white, black, metal, glass, leaf;
         public static OfficeArena Create(OfficeLocation location)
         {
@@ -107,6 +109,6 @@ namespace LighFight.Runtime
                 Plant(6,3);Plant(-6,3);
             }
         }
-        private void OnDestroy(){foreach(var material in materials)if(Application.isPlaying)Destroy(material);else DestroyImmediate(material);}
+        private void OnDestroy(){if(!ownsMaterials)return;foreach(var material in materials)if(Application.isPlaying)Destroy(material);else DestroyImmediate(material);}
     }
 }
