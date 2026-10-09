@@ -62,3 +62,33 @@ public class FightSessionTests
   s.Step();Assert.AreEqual("jab",s.Match.A.Attack.Value.Id);
  }
 }
+
+public class CombatReactionTests
+{
+ [Test] public void CounterHitDealsExtraDamageAndLongerStun() {
+  var m=new Match();m.B.X=0;m.A.Start(0);m.B.Start(10);
+  for(int i=0;i<11;i++)m.Step();
+  Assert.AreEqual(143,m.B.Health);Assert.IsTrue(m.B.LastCounter);Assert.AreEqual(25,m.B.Stun);
+ }
+ [Test] public void SweepKnocksDownAndRecoveryRestoresControl() {
+  var m=new Match();m.A.X=-1;m.B.X=0;m.A.Start(6);
+  for(int i=0;i<26;i++)m.Step();Assert.AreEqual(63,m.B.DownTicks);
+  float x=m.B.X;m.Walk(m.B,1);Assert.AreEqual(x,m.B.X);Assert.IsFalse(m.B.Start(0));
+  for(int i=0;i<63;i++)m.Step();Assert.AreEqual(0,m.B.DownTicks);Assert.IsTrue(m.B.Start(0));
+ }
+ [Test] public void BlockedSweepDoesNotKnockDown() {
+  var m=new Match();m.A.X=-1;m.B.X=0;m.B.Guard=m.B.Crouch=true;m.A.Start(6);
+  for(int i=0;i<26;i++)m.Step();Assert.AreEqual(0,m.B.DownTicks);Assert.IsTrue(m.B.LastBlocked);Assert.AreEqual(150,m.B.Health);
+ }
+ [Test] public void GroundedFighterCannotBeHitRepeatedly() {
+  var m=new Match();m.A.X=-1;m.B.X=0;m.B.DownTicks=30;m.A.Start(0);
+  for(int i=0;i<15;i++)m.Step();Assert.AreEqual(150,m.B.Health);
+ }
+ [Test] public void EveryMoveHasReachableDamageWindow() {
+  Assert.AreEqual(20,Moves.All.Length);
+  foreach(var move in Moves.All) { var m=new Match();m.A.X=-.8f;m.B.X=0;
+   m.A.Start(System.Array.IndexOf(Moves.All,move));for(int i=0;i<move.Duration;i++)m.Step();
+   Assert.AreEqual(150-move.Damage,m.B.Health,move.Id);
+  }
+ }
+}

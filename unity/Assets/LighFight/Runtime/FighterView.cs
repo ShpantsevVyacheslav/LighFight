@@ -82,7 +82,7 @@ namespace LighFight.Runtime
             if(fighter.Crouch){Rotate(legL,65);Rotate(legR,65);Rotate(shinL,-90);Rotate(shinR,-90);}
             if(fighter.Guard){Rotate(armL,-110,0,-10);Rotate(armR,-110,0,10);Rotate(foreL,-35);Rotate(foreR,-35);}
             if(fighter.Stun>0){Rotate(chest,18,0,8);Rotate(head,-15);}
-            if(fighter.Health<=0){transform.rotation *= Quaternion.Euler(0,0,78);hips.localPosition=new Vector3(0,.20f,0);return;}
+            if(fighter.Health<=0 || fighter.DownTicks>0){transform.rotation *= Quaternion.Euler(0,0,78);hips.localPosition=new Vector3(0,.20f,0);return;}
             if(!fighter.Attack.HasValue)return;
             var move=fighter.Attack.Value;
             float preparation=Mathf.Clamp01((float)fighter.Frame/move.Startup);

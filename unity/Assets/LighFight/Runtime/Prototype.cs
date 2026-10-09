@@ -90,7 +90,7 @@ namespace LighFight.Runtime
             }
             return Input.touchCount == 0 && Input.GetMouseButtonDown(0) && area.Contains(Position(Input.mousePosition));
         }
-        private static Rect AttackArea(int index) => new Rect(630 + index % 4 * 78, 330 + index / 4 * 60, 75, 55);
+        private static Rect AttackArea(int index) => new Rect(630 + index % 5 * 62, 285 + index / 5 * 54, 60, 50);
 
         private void Update()
         {
@@ -110,6 +110,8 @@ namespace LighFight.Runtime
             for (int i = 0; i < AttackKeys.Length; i++)
                 if (Input.GetKeyDown(AttackKeys[i])) pendingAttack = i + (crouch ? 4 : upper ? 8 : 0);
             for (int i = 0; i < Moves.All.Length; i++) if (Pressed(AttackArea(i))) pendingAttack = i;
+            var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V };
+            for (int i = 0; i < extras.Length; i++) if (Input.GetKeyDown(extras[i])) pendingAttack = 16+i;
             float direction = (Held(new Rect(100,440,70,70)) || Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
                 (Held(new Rect(25,440,70,70)) || Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
             bool guard = Held(new Rect(250,440,80,70)) || Input.GetKey(KeyCode.LeftShift);
