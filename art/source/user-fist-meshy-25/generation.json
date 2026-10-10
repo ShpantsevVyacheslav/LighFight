@@ -1,0 +1,50 @@
+{
+  "images": [
+    {
+      "file": "fist-front.jpg",
+      "pose": "closed",
+      "source": "user supplied"
+    },
+    {
+      "file": "open-palm.jpg",
+      "pose": "open",
+      "source": "user supplied"
+    },
+    {
+      "file": "open-back.jpg",
+      "pose": "open",
+      "source": "user supplied"
+    },
+    {
+      "file": "fist-side.jpg",
+      "pose": "closed",
+      "source": "user supplied"
+    },
+    {
+      "file": "fist-oblique.jpg",
+      "pose": "closed",
+      "source": "user supplied"
+    }
+  ],
+  "generationStarted": true,
+  "creditsSpent": 25,
+  "notes": "Closed fist generation uses closed-pose references only. Open hand references are anatomy/proportion references, not views of the same closed mesh.",
+  "taskId": "01a1279c-70ec-7092-afaa-c431c4491114",
+  "approvedCredits": 25,
+  "model": "meshy-7.1",
+  "geometryResolution": "2k",
+  "generationInputs": [
+    "fist-front.jpg",
+    "fist-side.jpg"
+  ],
+  "formats": [
+    "fbx",
+    "glb",
+    "obj"
+  ],
+  "shouldTexture": false,
+  "status": "SUCCEEDED",
+  "downloadedFbx": ".tools/meshy/user-fist-25/model.fbx",
+  "sha256": "39113eb3502d9a8de786ee1172ab3f8897f91c6ffef51f196c14ad644558b6ef",
+  "reviewStatus": "Original generation preserved. Cleaned/reduced static-fist candidate integrated into isolated IslandMeshyStaticFists scene. Both rigid fists and left impact wrist pass Unity audit; visual/device acceptance pending. Not promoted into combat."
+}

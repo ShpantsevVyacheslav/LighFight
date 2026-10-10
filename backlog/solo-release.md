@@ -230,3 +230,32 @@ overlaps reduced from 288 to zero on both hands (excludes palm/web surfaces).
 Skin transition and visual/device acceptance remain pending. No phone build or
 installation performed: owner is «Нативная лента IOS». Select this scene explicitly;
 existing ExportIosReview uses the older scene. Combat/CDN asset unchanged.
+
+## Photo-generated closed fist integration — 2026-10-11
+
+One authorized Meshy 7.1 multi-image geometry generation completed: task
+`01a1279c-70ec-7092-afaa-c431c4491114`, 25 credits, fist front/side references.
+No additional paid tasks. Original FBX retained in `art/source/user-fist-meshy-25`.
+
+Removed proximal stub and straightened axial section centers. Reduced closed
+fist from 160188 to 16002 triangles, zero nonmanifold edges. Two-direction
+vertex-to-surface sampling: maximum original vertex to reduced surface 0.01128 cm;
+reverse 0.00813 cm. This is vertex sampling, not a full Hausdorff bound.
+
+Both fists rigidly bind to existing wrist bones, keeping 24 source bones.
+Existing ClosedFists blendshape is intentionally constant: this candidate cannot
+open its fingers. Jab left wrist aligned at impact. Wrist bridges are closed;
+removing a bridge face is detected. Watch rebuilt and rigidly weighted to left
+forearm; wrong-bone mutation detected (1.657 cm distortion).
+
+Skin albedo/normal detail copied from original forearm atlas. Smart-projected
+detail UV replaces collapsed planar projection and removes longitudinal streaks.
+Skin crease placement is generic copied detail, not photo-specific hand texturing.
+
+Isolated scene: `unity/Assets/LighFight/Art/Drafts/IslandMeshyStaticFists/FingerArtReview.unity`.
+Rebuild/import checks: `LighFight.Editor.StaticFistAudit.Verify`.
+Blender previews: `art/previews/user-fist-meshy-25/integrated/`.
+Not promoted into combat or remote asset package; no phone acceptance claimed.
+This supersedes the earlier 'generation not started' status above.
+
+Verification 2026-10-11: both imported rigid fists pass 25 jab samples; left impact wrist 0 degrees; wrong-bone mutation detected. Unity EditMode 46/46 passed. Local review only, device/visual acceptance pending.

@@ -104,3 +104,16 @@ overlaps reduced from 288 to zero on both hands (excludes palm/web surfaces).
 Skin transition and visual/device acceptance remain pending. No phone build or
 installation performed: owner is «Нативная лента IOS». Select this scene explicitly;
 existing ExportIosReview uses the older scene. Combat/CDN asset unchanged.
+
+## Closed Meshy fist candidate — 2026-10-11
+
+Current optional review scene: `Assets/LighFight/Art/Drafts/IslandMeshyStaticFists/FingerArtReview.unity`.
+Run `LighFight.Editor.StaticFistAudit.Verify` to recreate scene/materials and audit
+rigid fists. New character is still inactive by default; enable candidate comparison
+in the review UI. Existing ExportIosReview targets the original scene, so select
+this scene explicitly for a separate review build. Do not replace LighChat assets.
+
+24 original bones; closed static fists (no opening), neutral left wrist at jab impact,
+source body skin maps, rebuilt rigid watch. Check both wrist seams, thumb placement,
+skin detail scale, silhouette and shadows at actual phone resolution.
+Build/install remains owned by «Нативная лента IOS»; no device verification performed.
