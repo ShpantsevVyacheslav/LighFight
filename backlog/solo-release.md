@@ -152,3 +152,21 @@ spent; no iPhone build/install. Phone handoff updated. Unity EditMode: 46/46 pas
 
 Самопроверка: changes are subtle. These corrections do not establish professional
 anatomy, solve fingers/hair, or prove other strike poses. Remains a review candidate.
+
+## Closed-fist study — 2026-10-10
+
+Four local curl trials on a copy of the corrected Meshy mesh were rendered.
+All rejected on visual review: first mixed thumb/finger regions, subsequent
+trials retained hooked fingers or produced overlapping thin folds under the palm.
+The existing surface and 24-bone rig do not provide separate finger articulation.
+No fist asset imported into Unity or promoted to combat/CDN. Prototype script is
+explicitly experimental; reproducible source and rejected close-up retained.
+5,506 vertices affected in the last trial; wrist boundary displacement 0 m;
+49,344 source vertices retained. These numbers do not establish fist quality.
+
+Next: rebuild hand topology with separate thumb/finger loops and transfer skin
+texture/weights, then inspect closed pose and jab across the full clip.
+
+Самопроверка: visual rejection is the result, not a completed fist fix.
+No Meshy credits consumed, no iOS build/install, no game runtime changes;
+phone build responsibility remains with «Нативная лента IOS».
