@@ -117,3 +117,21 @@ build or install executed here. Separate export recipe and findings in
 `docs/handoffs/MESHY_IPHONE_REVIEW.md`; output is `Builds/ArtReviewiOS`, not
 LighChat's Unity export. Самопроверка: touch controls and iOS export are not
 device-verified; elbows, left calf, palms and hair remain open art issues.
+
+## Joint weights candidate — 2026-10-10
+
+Reproduced bent-elbow/calf appearance in matched close-ups. First local smoothing
+trial split coincident UV vertices; rejected. Revised algorithm shares weights
+across 2,271 coincident-vertex groups and limits parent/end-bone influence to joint
+regions. 10,970 of 49,344 vertices changed; topology and source mesh preserved.
+Maximum 4 influences, weight-sum error 1.35e-7, seam-weight difference zero in the
+treated groups. Local weight roughness decreased from 0.008305 to 0.005999.
+
+Added original/candidate toggle to the phone review scene, preserving camera/time.
+Unity 25-pose audit: max difference 0.06546 m. Replacing candidate weights with
+original weights makes the audit reject it; mutation detected. No Meshy credits
+spent. Existing Unity EditMode tests: 46/46 passed. Updated handoff for «Нативная лента IOS»; no phone build/install run here.
+
+Самопроверка: smoother weights do not establish anatomical quality. The candidate
+is available for comparison, not promoted into combat or CDN. Calf silhouette,
+elbow folds, open palms and hair remain art issues; device verification pending.

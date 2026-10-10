@@ -10,8 +10,12 @@ namespace LighFight.Runtime
         public Animator fighter;
         public AnimationClip clip;
         public Camera reviewCamera;
+        public Animator candidate;
+        public AnimationClip candidateClip;
         PlayableGraph graph;
         AnimationClipPlayable motion;
+        AnimationClipPlayable candidateMotion;
+        bool showCandidate;
         float time, speed = 1, yaw = 215, distance = 3, focusHeight = .9f;
         bool paused;
         Vector2 drag;
@@ -26,11 +30,21 @@ namespace LighFight.Runtime
             motion.SetApplyFootIK(false); // Inspect provider weights without corrective IK.
             motion.SetSpeed(0);
             AnimationPlayableOutput.Create(graph, "Island", fighter).SetSourcePlayable(motion);
+            if(candidate!=null && candidateClip!=null)
+            {
+                candidate.applyRootMotion=false;candidate.cullingMode=AnimatorCullingMode.AlwaysAnimate;
+                candidateMotion=AnimationClipPlayable.Create(graph,candidateClip);
+                candidateMotion.SetApplyFootIK(false);candidateMotion.SetSpeed(0);
+                AnimationPlayableOutput.Create(graph,"Joint candidate",candidate).SetSourcePlayable(candidateMotion);
+                candidate.gameObject.SetActive(false);
+            }
             graph.Play(); Evaluate();
         }
         void Evaluate()
         {
-            motion.SetTime(time); graph.Evaluate(0);
+            motion.SetTime(time);
+            if(candidateMotion.IsValid())candidateMotion.SetTime(time);
+            graph.Evaluate(0);
             var focus = new Vector3(0, focusHeight, 0);
             reviewCamera.transform.position = focus + Quaternion.Euler(8, yaw, 0) * new Vector3(0, 0, -distance);
             reviewCamera.transform.LookAt(focus);
@@ -57,6 +71,10 @@ namespace LighFight.Runtime
             if (GUI.Button(new Rect(10,y-50,180,42), "Весь персонаж")) { focusHeight=.9f; distance=3; }
             if (GUI.Button(new Rect(200,y-50,180,42), "Локти / кисти")) { focusHeight=1.25f; distance=1.6f; }
             if (GUI.Button(new Rect(390,y-50,180,42), "Икры / колени")) { focusHeight=.45f; distance=1.6f; }
+            if(candidate!=null && GUI.Button(new Rect(580,y-50,300,42),showCandidate ? "Вариант: правка весов" : "Вариант: исходник Meshy"))
+            {
+                showCandidate=!showCandidate;fighter.gameObject.SetActive(!showCandidate);candidate.gameObject.SetActive(showCandidate);
+            }
             if (GUI.Button(new Rect(10,y,140,46), paused ? "Продолжить" : "Пауза")) paused = !paused;
             if (GUI.Button(new Rect(160,y,140,46), "Сначала")) time = 0;
             if (GUI.Button(new Rect(310,y,140,46), "Кадр +")) { paused=true; time=Mathf.Min(clip.length, time+1f/60); }
