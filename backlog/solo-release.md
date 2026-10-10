@@ -58,3 +58,11 @@ Starter-4 подготовлен: Android 151628 байт, iOS 147791 байт b
 Первый deploy выявил запрет Firebase на public вне каталога конфигурации;
 конфигурация перенесена в корень как firebase.lighfight.json.
 Полный клиент с Bootstrap и запуск на телефонах всё ещё не проверены.
+
+
+## Island movement review — 2026-10-10
+
+12 local draft clips, including locomotion, crouch, recoil, fall and recovery.
+Separate keyboard review scene; no Meshy quota used. Art audit covers mesh/floor
+penetration and Fall/GetUp continuity. Main combat prefab still awaits all move
+states and animation polish. Device verification: no.

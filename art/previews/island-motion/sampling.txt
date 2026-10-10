@@ -1,6 +1,11 @@
-Guard max displacement=0m; return error=0m; torso angle=0deg; support drift=0m
-jab max displacement=0.2100495m; return error=0.0001431559m; torso angle=28.0703deg; support drift=0.0008658604m
-frontKick max displacement=1.054496m; return error=0m; torso angle=0deg; support drift=0.0005944847m
-cross max displacement=0.2399046m; return error=0m; torso angle=28.0322deg; support drift=0.001187488m
-hook max displacement=0.252783m; return error=0m; torso angle=40.09499deg; support drift=0.0005683166m
-uppercut max displacement=0.1752189m; return error=0m; torso angle=21.94722deg; support drift=0.000715622m
+Guard max displacement=0m; return error=0m; torso angle=0deg; support drift=0m; minimum height=0.008972287m
+jab max displacement=0.2100495m; return error=0.0001431559m; torso angle=28.0703deg; support drift=0.0008658604m; minimum height=0.008824587m
+frontKick max displacement=1.054496m; return error=0m; torso angle=0deg; support drift=0.0005944847m; minimum height=0.008752465m
+cross max displacement=0.2399046m; return error=0m; torso angle=28.0322deg; support drift=0.001187488m; minimum height=0.008777261m
+hook max displacement=0.252783m; return error=0m; torso angle=40.09499deg; support drift=0.0005683166m; minimum height=0.008972287m
+uppercut max displacement=0.1752189m; return error=0m; torso angle=21.94722deg; support drift=0.000715622m; minimum height=0.008953929m
+Walk max displacement=0.003298467m; return error=0m; torso angle=0deg; support drift=0.1343626m; minimum height=0.003767133m
+Crouch max displacement=0m; return error=0m; torso angle=0deg; support drift=0m; minimum height=0.01090527m
+Hit max displacement=0.1396325m; return error=0m; torso angle=20.12463deg; support drift=0.00352561m; minimum height=0.008972287m
+Fall max displacement=0.9334068m; return error=0.9334068m; torso angle=88.20001deg; support drift=0.5952505m; minimum height=0.01735198m
+GetUp max displacement=0.933407m; return error=0.933407m; torso angle=88.20001deg; support drift=0.5952505m; minimum height=0.01748252m

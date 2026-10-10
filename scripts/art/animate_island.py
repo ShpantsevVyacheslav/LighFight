@@ -57,7 +57,51 @@ def pose(strike=0, kick=0, breath=0, cross=0, hook=0, uppercut=0):
     p=arm.pose.bones['Spine']; p.rotation_quaternion.rotate(Vector((0,0,1)).rotation_difference(Vector((0,-breath*.006,1))))
     bpy.context.view_layer.update()
 
-motions = [('Idle',90),('Guard',90),('jab',32),('frontKick',52),('cross',38),('hook',44),('uppercut',44)]
+def transition(name, t):
+    if name == 'Walk':
+        cycle=math.sin(t*math.tau)
+        for side, sign in [('Left',1),('Right',-1)]:
+            step=cycle*sign
+            limb(side+'UpperLeg',side+'LowerLeg',(sign*.14,-.005+step*.13,.10+max(0,step)*.055),(sign*.15,-.16,.46))
+            aim(side+'Foot',(0,-1,0))
+    elif name == 'Crouch':
+        # Lower the pelvis while keeping both soles planted.
+        hips=arm.pose.bones['Hips']
+        hips.location.y=-.22
+        bpy.context.view_layer.update()
+        for side, sign in [('Left',1),('Right',-1)]:
+            limb(side+'UpperLeg',side+'LowerLeg',(sign*.14,-.005,.10),(sign*.15,-.28,.40))
+            aim(side+'Foot',(0,-1,0))
+        for side, sign in [('Left',1),('Right',-1)]:
+            limb(side+'UpperArm',side+'LowerArm',(sign*.14,-.26,1.12),(sign*.33,-.10,.90))
+            aim(side+'Hand',(0,-1,.1))
+    elif name == 'Hit':
+        recoil=math.sin(math.pi*t)*(1-t)
+        arm.pose.bones['Spine'].rotation_quaternion=Quaternion((1,0,0),-.36*recoil)
+        arm.pose.bones['Chest'].rotation_quaternion=Quaternion((1,0,0),-.25*recoil)
+    elif name in ('Fall','GetUp'):
+        # Shared continuous ground pose; the recovery reverses the fall blocking.
+        u=t if name=='Fall' else 1-t
+        u=u*u*(3-2*u)
+        for side in ('Left','Right'):
+            for part in ('UpperArm','LowerArm'):
+                bone=arm.pose.bones[side+part]
+                bone.rotation_quaternion=bone.rotation_quaternion.slerp(Quaternion(),u*.85)
+        bpy.context.view_layer.update()
+        hips=arm.pose.bones['Hips']
+        pivot=hips.head.copy()
+        rotation=Matrix.Rotation(-math.pi*.49*u,4,'X')
+        hips.matrix=Matrix.Translation((0,.18*u,-.44*u)) @ Matrix.Translation(pivot) @ rotation @ Matrix.Translation(-pivot) @ hips.matrix
+        bpy.context.view_layer.update()
+        deps=bpy.context.evaluated_depsgraph_get()
+        minimum=min((obj.matrix_world @ vertex.co).z
+                    for obj in bpy.context.scene.objects if obj.type=='MESH'
+                    for vertex in obj.evaluated_get(deps).data.vertices)
+        if minimum < .018:
+            hips.matrix=Matrix.Translation((0,0,.018-minimum)) @ hips.matrix
+    bpy.context.view_layer.update()
+
+motions = [('Walk',60),('Crouch',60),('Hit',30),('Fall',64),('GetUp',48),('Idle' ,90),('Guard',90),('jab',32),('frontKick',52),('cross',38),('hook',44),('uppercut',44)]
 for name, count in motions:
     action=bpy.data.actions.new(name); action.use_fake_user=True
     arm.animation_data_create(); arm.animation_data.action=action
@@ -69,6 +113,7 @@ for name, count in motions:
         pose(envelope if name=='jab' else 0,envelope if name=='frontKick' else 0,
              math.sin(t*math.tau) if name in ('Idle','Guard') else 0,
              envelope if name=='cross' else 0,envelope if name=='hook' else 0,envelope if name=='uppercut' else 0)
+        transition(name,t)
         for p in arm.pose.bones:
             p.keyframe_insert(data_path='rotation_quaternion',frame=frame,group=p.name)
             p.keyframe_insert(data_path='location',frame=frame,group=p.name)
@@ -86,4 +131,4 @@ bpy.ops.export_scene.fbx(filepath=str(out/'island-motion-draft.fbx'),use_selecti
                          bake_anim=True,bake_anim_use_all_actions=True,bake_anim_use_nla_strips=False,
                          bake_anim_simplify_factor=0,axis_forward='-Z',axis_up='Y')
 (out/'motion-audit.json').write_text(json.dumps({'fps':60,'clips':dict(motions),
-    'status':'blocking drafts with combat hand variant and torso rotation; visual review required'},indent=2))
+    'status':'blocking drafts: combat hands, strikes, locomotion, recoil and floor-constrained fall/recovery; not release-ready'},indent=2))

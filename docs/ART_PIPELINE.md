@@ -114,3 +114,28 @@ Unity import фиксирует исходную ориентацию и зап�
 Следующие гейты: проверить деформации, Humanoid Avatar, клипы по контракту,
 LOD/материалы и производительность на телефонах. Нельзя закрывать эту задачу
 скриншотом концепта, статическим мешем или примитивами.
+
+
+### Island: movement and recovery review (2026-10-10)
+
+Added local Walk, Crouch, Hit, Fall and GetUp blocking clips (12 clips total).
+Fall and GetUp share the same ground pose. A per-frame deformed-mesh floor
+constraint lifts the pelvis where needed. Unity rejects mesh penetration deeper
+than 2 cm, stationary walk/reaction clips, and a Fall/GetUp pelvis seam >2 cm.
+The first floor check failed at -0.216 m, then -0.111 m after lowering the hands;
+these failures demonstrated that the geometry check detects the defect.
+
+Open `Assets/LighFight/Art/Drafts/Island/IslandMotionReview.unity` and press Play:
+left/right arrows move, down crouches; J/K/L/U/I select jab/cross/hook/uppercut/kick;
+H shows recoil, F falls, R gets up after falling. Clip changes blend over 120 ms.
+This isolated art review uses a PlayableGraph; it is not the combat simulation
+and does not award damage. The incomplete fighter is not promoted to the roster.
+
+Самопроверка: recovery is still blocking (reversed fall), not a polished kneeling
+get-up. Walk needs foot-contact timing and backward locomotion polish. The scene
+and graph are checked in batch Unity; interactive input and phones remain unchecked.
+
+Final mesh minimum height in Unity: Fall 0.01735 m, GetUp 0.01748 m;
+Walk 0.00377 m. All 11 selectable motions switched through a live PlayableGraph
+without exceptions in the review scene. This is not a keyboard/device test.
+Unity EditMode suite: 46/46 passed after this stage.

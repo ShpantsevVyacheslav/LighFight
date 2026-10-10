@@ -11,6 +11,20 @@ namespace LighFight.Editor
 {
     public static class IslandMotionAudit
     {
+        public static void VerifyReview()
+        {
+            var scene=EditorSceneManager.OpenScene("Assets/LighFight/Art/Drafts/Island/IslandMotionReview.unity");
+            var review=UnityEngine.Object.FindFirstObjectByType<LighFight.Runtime.IslandMotionSandbox>();
+            if(review==null || review.clips.Length!=12 || !review.fighter.avatar.isValid)
+                throw new Exception("Incomplete review scene");
+            review.SendMessage("Start");
+            var method=review.GetType().GetMethod("Switch",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic);
+            foreach(var name in new[]{"Walk","Crouch","jab","cross","hook","uppercut","frontKick","Hit","Fall","GetUp","Guard"})
+                method.Invoke(review,new object[]{name});
+            review.SendMessage("Update");
+            UnityEngine.Object.DestroyImmediate(review.gameObject);
+            Debug.Log("Island review: all 11 selectable motions switched through a live PlayableGraph");
+        }
         public static void Run()
         {
             const string path="Assets/LighFight/Art/Drafts/Island/island-motion-draft.fbx";
@@ -54,15 +68,17 @@ namespace LighFight.Editor
             var camera=new GameObject("Camera").AddComponent<Camera>();camera.fieldOfView=33;
             camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.055f,.065f,.085f);
             camera.transform.position=new Vector3(2.4f,1.25f,3.2f);camera.transform.LookAt(new Vector3(0,.9f,0));
-            foreach(string name in new[]{"Guard","jab","frontKick","cross","hook","uppercut"})
+            Vector3 fallEnd=Vector3.zero;
+            foreach(string name in new[]{"Guard","jab","frontKick","cross","hook","uppercut","Walk","Crouch","Hit","Fall","GetUp"})
             {
                 var clip=clips.Single(x=>x.name==name || x.name.EndsWith("|"+name));
                 var graph=PlayableGraph.Create("Motion audit");graph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
                 var playable=AnimationClipPlayable.Create(graph,clip);
                 playable.SetApplyFootIK(true);
                 AnimationPlayableOutput.Create(graph,"Model",animator).SetSourcePlayable(playable);graph.Play();
+                bool transition=name=="Walk" || name=="Crouch" || name=="Hit" || name=="Fall" || name=="GetUp";
                 int frames=name=="Guard"?1:12;
-                Vector3 start=Vector3.zero,end=Vector3.zero,supportStart=Vector3.zero;float displacement=0,torsoAngle=0,supportDrift=0;
+                Vector3 start=Vector3.zero,end=Vector3.zero,supportStart=Vector3.zero;float displacement=0,torsoAngle=0,supportDrift=0,minHeight=float.PositiveInfinity;
                 Quaternion torsoStart=Quaternion.identity;
                 var chest=animator.GetBoneTransform(HumanBodyBones.Chest);
                 var tracked=animator.GetBoneTransform(name=="frontKick"?HumanBodyBones.RightFoot:
@@ -72,7 +88,11 @@ namespace LighFight.Editor
                 for(int frame=0;frame<frames;frame++)
                 {
                     playable.SetTime(clip.length*(frames==1?0:(float)frame/(frames-1)));graph.Evaluate(.00001f);
-                    if(frame==0){start=tracked.position;torsoStart=chest.rotation;supportStart=support.position;}
+                    if(frame==0){start=tracked.position;torsoStart=chest.rotation;supportStart=support.position;
+                        if(name=="GetUp" && Vector3.Distance(fallEnd,animator.GetBoneTransform(HumanBodyBones.Hips).position)>.02f)
+                            throw new Exception("Fall/GetUp pelvis discontinuity");
+                    }
+                    if(name=="Fall" && frame==frames-1)fallEnd=animator.GetBoneTransform(HumanBodyBones.Hips).position;
                     end=tracked.position;displacement=Mathf.Max(displacement,Vector3.Distance(start,end));
                     torsoAngle=Mathf.Max(torsoAngle,Quaternion.Angle(torsoStart,chest.rotation));
                     supportDrift=Mathf.Max(supportDrift,Vector3.Distance(supportStart,support.position));
@@ -89,7 +109,8 @@ namespace LighFight.Editor
                                 matrices[w.boneIndex2].MultiplyPoint3x4(p)*w.weight2+matrices[w.boneIndex3].MultiplyPoint3x4(p)*w.weight3;
                         }
                         mesh.vertices=vertices;mesh.RecalculateBounds();mesh.RecalculateNormals();
-                        if((!skin.name.StartsWith("CombatFist") && mesh.bounds.size.y<1) || mesh.bounds.size.y>2.5f)throw new Exception("Invalid sampled height: "+mesh.bounds);
+                        minHeight=Mathf.Min(minHeight,mesh.bounds.min.y);
+                        if((!skin.name.StartsWith("CombatFist") && mesh.bounds.size.y<(name=="Fall" || name=="GetUp"?.25f:1f)) || mesh.bounds.size.y>2.5f)throw new Exception("Invalid sampled height: "+mesh.bounds);
                         var obj=new GameObject("Sample");obj.AddComponent<MeshFilter>().sharedMesh=mesh;
                         obj.AddComponent<MeshRenderer>().sharedMaterials=Enumerable.Repeat(skin.name.StartsWith("CombatFist")?fistMaterial:material,skin.sharedMaterials.Length).ToArray();previews.Add(obj);
                     }
@@ -109,17 +130,33 @@ namespace LighFight.Editor
                     }
                     foreach(var obj in previews){UnityEngine.Object.DestroyImmediate(obj.GetComponent<MeshFilter>().sharedMesh);UnityEngine.Object.DestroyImmediate(obj);}
                 }
-                if(frames>1 && displacement<(name=="frontKick"?.3f:.08f))throw new Exception(name+" motion did not move: "+displacement);
-                if(frames>1 && Vector3.Distance(start,end)>.03f)throw new Exception(name+" did not return to guard");
-                if(supportDrift>.005f)throw new Exception(name+" support foot drifted: "+supportDrift);
+                if(minHeight<-.02f)throw new Exception(name+" penetrates floor: "+minHeight);
+                if(name=="Walk" && supportDrift<.08f)throw new Exception("Walk feet did not step");
+                if((name=="Fall" || name=="GetUp" || name=="Hit") && displacement<.08f)throw new Exception(name+" did not animate");
+                if(!transition && frames>1 && displacement<(name=="frontKick"?.3f:.08f))throw new Exception(name+" motion did not move: "+displacement);
+                if(!transition && frames>1 && Vector3.Distance(start,end)>.03f)throw new Exception(name+" did not return to guard");
+                if(!transition && supportDrift>.005f)throw new Exception(name+" support foot drifted: "+supportDrift);
                 if((name=="jab" || name=="cross" || name=="hook" || name=="uppercut") && torsoAngle<15)
                     throw new Exception(name+" torso rotation missing: "+torsoAngle);
-                File.AppendAllText(Path.Combine(output,"sampling.txt"),name+" max displacement="+displacement+"m; return error="+Vector3.Distance(start,end)+"m; torso angle="+torsoAngle+"deg; support drift="+supportDrift+"m\n");
+                File.AppendAllText(Path.Combine(output,"sampling.txt"),name+" max displacement="+displacement+"m; return error="+Vector3.Distance(start,end)+"m; torso angle="+torsoAngle+"deg; support drift="+supportDrift+"m; minimum height="+minHeight+"m\n");
                 graph.Destroy();
             }
-            UnityEngine.Object.DestroyImmediate(material);
-            UnityEngine.Object.DestroyImmediate(fistMaterial);
-            Debug.Log("Island motion audit: valid Humanoid, six motions sampled");
+            // Save a separate review scene, never promote an incomplete fighter to the roster.
+            foreach(var skin in model.GetComponentsInChildren<SkinnedMeshRenderer>())
+            {
+                skin.enabled=true;
+                skin.sharedMaterials=Enumerable.Repeat(skin.name.StartsWith("CombatFist")?fistMaterial:material,skin.sharedMaterials.Length).ToArray();
+            }
+            const string folder="Assets/LighFight/Art/Drafts/Island";
+            AssetDatabase.DeleteAsset(folder+"/review-body.mat");AssetDatabase.DeleteAsset(folder+"/review-fist.mat");
+            AssetDatabase.CreateAsset(material,folder+"/review-body.mat");
+            AssetDatabase.CreateAsset(fistMaterial,folder+"/review-fist.mat");
+            var review=model.AddComponent<LighFight.Runtime.IslandMotionSandbox>();review.fighter=animator;review.clips=clips;
+            var floor=GameObject.CreatePrimitive(PrimitiveType.Plane);floor.transform.localScale=Vector3.one*.65f;
+            camera.tag="MainCamera";
+            EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(),folder+"/IslandMotionReview.unity");
+
+            Debug.Log("Island motion audit: valid Humanoid, eleven motions sampled");
         }
     }
 }

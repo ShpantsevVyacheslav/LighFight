@@ -1,6 +1,11 @@
 {
   "fps": 60,
   "clips": {
+    "Walk": 60,
+    "Crouch": 60,
+    "Hit": 30,
+    "Fall": 64,
+    "GetUp": 48,
     "Idle": 90,
     "Guard": 90,
     "jab": 32,
@@ -9,5 +14,5 @@
     "hook": 44,
     "uppercut": 44
   },
-  "status": "blocking drafts with combat hand variant and torso rotation; visual review required"
+  "status": "blocking drafts: combat hands, strikes, locomotion, recoil and floor-constrained fall/recovery; not release-ready"
 }
