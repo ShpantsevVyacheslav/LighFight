@@ -139,3 +139,24 @@ Final mesh minimum height in Unity: Fall 0.01735 m, GetUp 0.01748 m;
 Walk 0.00377 m. All 11 selectable motions switched through a live PlayableGraph
 without exceptions in the review scene. This is not a keyboard/device test.
 Unity EditMode suite: 46/46 passed after this stage.
+
+
+### Wrist repair / single jab iteration (2026-10-10)
+
+The old hand variant was physically disconnected from the forearm. Rebuilt from
+preserved source: welded UV duplicate positions, opened both fist wrist caps,
+joined meshes and bridged wrist loops with shared vertices (Left 130 faces,
+Right 134 faces; zero remaining open boundary edges in the wrist region).
+A smoothstep Hand/LowerArm weight field covers the joined wrist band. Original
+UVs outside the bridge remain; the bridge uses the draft fist skin material.
+This is a local geometry repair, not a replacement high-quality character.
+
+Jab now uses 28 samples at 60 fps, with contact poses on samples 10–12,
+matching core startup=10, active=3, recovery=15; preparation/return use eased
+trajectories. FBX length is 27/60 s (first-to-last sample, not 28/60).
+Close-up wrist sequence: art/previews/island-motion/jab-wrist-preview.gif.
+
+Самопроверка: shared topology removes the disconnected-hand defect, but the
+hand shape, wrist shading, elbow skinning and overall character still need art
+work. This does not make the clip professional motion capture. Blender/Meshy
+MCP are not connected in this session; no remote generation or credits used.

@@ -66,3 +66,11 @@ Starter-4 подготовлен: Android 151628 байт, iOS 147791 байт b
 Separate keyboard review scene; no Meshy quota used. Art audit covers mesh/floor
 penetration and Fall/GetUp continuity. Main combat prefab still awaits all move
 states and animation polish. Device verification: no.
+
+
+## Wrist/jab correction — 2026-10-10
+
+Local mesh bridge on both wrists; zero open wrist edges. Smooth wrist weights;
+jab timing aligned with 10/3/15 combat frames. Close-up sequence for review.
+Overall character quality remains below target. Meshy MCP researched, requires
+API key and available API balance; not connected. Phone verification: no.

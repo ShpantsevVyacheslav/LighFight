@@ -101,7 +101,7 @@ def transition(name, t):
             hips.matrix=Matrix.Translation((0,0,.018-minimum)) @ hips.matrix
     bpy.context.view_layer.update()
 
-motions = [('Walk',60),('Crouch',60),('Hit',30),('Fall',64),('GetUp',48),('Idle' ,90),('Guard',90),('jab',32),('frontKick',52),('cross',38),('hook',44),('uppercut',44)]
+motions = [('Walk',60),('Crouch',60),('Hit',30),('Fall',64),('GetUp',48),('Idle' ,90),('Guard',90),('jab',28),('frontKick',52),('cross',38),('hook',44),('uppercut',44)]
 for name, count in motions:
     action=bpy.data.actions.new(name); action.use_fake_user=True
     arm.animation_data_create(); arm.animation_data.action=action
@@ -110,7 +110,17 @@ for name, count in motions:
         t=(frame-1)/(count-1)
         # Anticipation, fast extension, brief contact, controlled recovery.
         envelope = max(0, min((t-.12)/.24, (1-t)/.40, 1))
-        pose(envelope if name=='jab' else 0,envelope if name=='frontKick' else 0,
+        if name=='jab':
+            # 10 startup / 3 contact / 15 recovery frames, matching the combat move.
+            f=frame-1
+            if f<4:
+                x=f/4;envelope=-.055*(x*x*(3-2*x))
+            elif f<10:
+                x=(f-4)/6;envelope=-.055+1.055*(x*x*(3-2*x))
+            elif f<13:envelope=1
+            else:
+                x=min(1,(f-13)/14);envelope=1-x*x*(3-2*x)
+        pose(envelope if name=='jab'  else 0,envelope if name=='frontKick' else 0,
              math.sin(t*math.tau) if name in ('Idle','Guard') else 0,
              envelope if name=='cross' else 0,envelope if name=='hook' else 0,envelope if name=='uppercut' else 0)
         transition(name,t)

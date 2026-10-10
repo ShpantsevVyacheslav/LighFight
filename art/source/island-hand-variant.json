@@ -1,6 +1,17 @@
 {
-  "method": "separate closed-hand mesh variant",
+  "method": "stitched hand/forearm mesh with continuous wrist weights",
   "sourceOpenHandsPreserved": true,
+  "seams": [
+    {
+      "side": "Left",
+      "bridgeFaces": 130
+    },
+    {
+      "side": "Right",
+      "bridgeFaces": 134
+    }
+  ],
+  "openWristEdges": 0,
   "bones": 21,
   "skinColor": [
     0.68,

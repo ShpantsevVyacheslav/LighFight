@@ -112,19 +112,21 @@ namespace LighFight.Editor
                         minHeight=Mathf.Min(minHeight,mesh.bounds.min.y);
                         if((!skin.name.StartsWith("CombatFist") && mesh.bounds.size.y<(name=="Fall" || name=="GetUp"?.25f:1f)) || mesh.bounds.size.y>2.5f)throw new Exception("Invalid sampled height: "+mesh.bounds);
                         var obj=new GameObject("Sample");obj.AddComponent<MeshFilter>().sharedMesh=mesh;
-                        obj.AddComponent<MeshRenderer>().sharedMaterials=Enumerable.Repeat(skin.name.StartsWith("CombatFist")?fistMaterial:material,skin.sharedMaterials.Length).ToArray();previews.Add(obj);
+                        obj.AddComponent<MeshRenderer>().sharedMaterials=skin.sharedMaterials.Select(m=>m!=null && m.name.StartsWith("FistSkin")?fistMaterial:material).ToArray();previews.Add(obj);
                     }
                     var rt=new RenderTexture(640,720,24);camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;
                     var image=new Texture2D(640,720,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,640,720),0,0);image.Apply();
                     File.WriteAllBytes(Path.Combine(output,name+"-"+frame.ToString("D2")+".png"),image.EncodeToPNG());
                     RenderTexture.active=null;camera.targetTexture=null;UnityEngine.Object.DestroyImmediate(image);UnityEngine.Object.DestroyImmediate(rt);
-                    if(name=="Guard")
+                    if(name=="Guard" || name=="jab")
                     {
                         var oldPosition=camera.transform.position;var oldRotation=camera.transform.rotation;float oldFov=camera.fieldOfView;
-                        camera.transform.position=tracked.position+new Vector3(.32f,.12f,.65f);camera.transform.LookAt(tracked.position);camera.fieldOfView=22;
+                        var wrist=animator.GetBoneTransform(HumanBodyBones.LeftLowerArm).position;
+                        var center=(wrist+tracked.position)*.5f;
+                        camera.transform.position=center+new Vector3(.32f,.12f,.65f);camera.transform.LookAt(center);camera.fieldOfView=38;
                         rt=new RenderTexture(480,480,24);camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;
                         image=new Texture2D(480,480,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,480,480),0,0);image.Apply();
-                        File.WriteAllBytes(Path.Combine(output,"fist-closeup.png"),image.EncodeToPNG());
+                        File.WriteAllBytes(Path.Combine(output,name=="Guard"?"fist-closeup.png":"jab-wrist-"+frame.ToString("D2")+".png"),image.EncodeToPNG());
                         RenderTexture.active=null;camera.targetTexture=null;UnityEngine.Object.DestroyImmediate(image);UnityEngine.Object.DestroyImmediate(rt);
                         camera.transform.SetPositionAndRotation(oldPosition,oldRotation);camera.fieldOfView=oldFov;
                     }
@@ -145,7 +147,7 @@ namespace LighFight.Editor
             foreach(var skin in model.GetComponentsInChildren<SkinnedMeshRenderer>())
             {
                 skin.enabled=true;
-                skin.sharedMaterials=Enumerable.Repeat(skin.name.StartsWith("CombatFist")?fistMaterial:material,skin.sharedMaterials.Length).ToArray();
+                skin.sharedMaterials=skin.sharedMaterials.Select(m=>m!=null && m.name.StartsWith("FistSkin")?fistMaterial:material).ToArray();
             }
             const string folder="Assets/LighFight/Art/Drafts/Island";
             AssetDatabase.DeleteAsset(folder+"/review-body.mat");AssetDatabase.DeleteAsset(folder+"/review-fist.mat");
