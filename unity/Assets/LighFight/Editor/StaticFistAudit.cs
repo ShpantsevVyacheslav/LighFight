@@ -50,6 +50,32 @@ public static void Verify() {
             UnityEditor.SceneManagement.EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(),System.IO.Path.GetDirectoryName(Path)+"/FingerArtReview.unity");
             AssetDatabase.SaveAssets();
         }
+public static void RenderPreview() {
+ UnityEditor.SceneManagement.EditorSceneManager.OpenScene(System.IO.Path.GetDirectoryName(Path)+"/FingerArtReview.unity");
+ if(SystemInfo.graphicsDeviceType==UnityEngine.Rendering.GraphicsDeviceType.Null)throw new Exception("Preview requires graphics device");
+ var review=UnityEngine.Object.FindFirstObjectByType<LighFight.Runtime.MeshyArtReview>();
+ review.fighter.gameObject.SetActive(false);review.candidate.gameObject.SetActive(true);
+ review.candidateClip.SampleAnimation(review.candidate.gameObject,9f/24f);
+ review.candidate.GetComponent<LighFight.Runtime.JointCorrectives>().Apply();
+ var camera=review.reviewCamera;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.13f,.15f,.18f);
+ var skin=review.candidate.GetComponentInChildren<SkinnedMeshRenderer>();
+ var wrist=skin.bones.First(b=>b.name=="LeftHand");
+ int wristIndex=Array.IndexOf(skin.bones,wrist);var deform=wrist.localToWorldMatrix*skin.sharedMesh.bindposes[wristIndex];
+ var isolatedMesh=new Mesh();skin.BakeMesh(isolatedMesh);var rest=skin.sharedMesh.vertices;
+ for(int sub=0;sub<isolatedMesh.subMeshCount;sub++) {var triangles=isolatedMesh.GetTriangles(sub);var kept=new System.Collections.Generic.List<int>();for(int i=0;i<triangles.Length;i+=3)if(rest[triangles[i]].x<-.52f && rest[triangles[i+1]].x<-.52f && rest[triangles[i+2]].x<-.52f){kept.Add(triangles[i]);kept.Add(triangles[i+1]);kept.Add(triangles[i+2]);}isolatedMesh.SetTriangles(kept,sub);}
+ var isolated=new GameObject("Isolated wrist preview");isolated.transform.SetPositionAndRotation(skin.transform.position,skin.transform.rotation);isolated.transform.localScale=skin.transform.lossyScale;isolated.AddComponent<MeshFilter>().sharedMesh=isolatedMesh;isolated.AddComponent<MeshRenderer>().sharedMaterials=skin.sharedMaterials;
+ var studio=new GameObject("Review fill light");var fill=studio.AddComponent<Light>();fill.type=LightType.Directional;fill.intensity=.65f;fill.color=new Color(.95f,.97f,1);studio.transform.rotation=Quaternion.Euler(35,150,0);
+ foreach(string view in new[]{"unity-whole","unity-fist","unity-front"}) {
+ Vector3 focus=view=="unity-whole"?new Vector3(0,.9f,0):wrist.position+deform.MultiplyVector(Vector3.left)*.065f;
+ camera.transform.position=focus+(view=="unity-whole"?new Vector3(1.4f,.3f,2.8f):deform.MultiplyVector(view=="unity-front"?new Vector3(-.4f,.05f,.1f):new Vector3(0,.1f,.4f)));camera.transform.LookAt(focus);
+ skin.enabled=view=="unity-whole";isolated.SetActive(view!="unity-whole");
+ var rt=new RenderTexture(900,700,24);var old=RenderTexture.active;var previous=camera.targetTexture;var tex=new Texture2D(900,700,TextureFormat.RGB24,false);
+ try {camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;tex.ReadPixels(new Rect(0,0,900,700),0,0);tex.Apply();
+ Directory.CreateDirectory("../art/previews/user-fist-meshy-25/integrated");File.WriteAllBytes("../art/previews/user-fist-meshy-25/integrated/"+view+".png",tex.EncodeToPNG());}
+ finally {camera.targetTexture=previous;RenderTexture.active=old;UnityEngine.Object.DestroyImmediate(tex);rt.Release();UnityEngine.Object.DestroyImmediate(rt);}
+ }
+ UnityEngine.Object.DestroyImmediate(isolated);UnityEngine.Object.DestroyImmediate(isolatedMesh);UnityEngine.Object.DestroyImmediate(studio);
+}
 static void Check(bool mutation,string side="Left") {
  var root=UnityEngine.Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(Path));var skin=root.GetComponentInChildren<SkinnedMeshRenderer>();var mesh=UnityEngine.Object.Instantiate(skin.sharedMesh);skin.sharedMesh=mesh;var baked=new Mesh();
  try {

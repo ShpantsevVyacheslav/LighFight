@@ -54,3 +54,5 @@ Rebuild/import checks: `LighFight.Editor.StaticFistAudit.Verify`.
 Blender previews: `art/previews/user-fist-meshy-25/integrated/`.
 Not promoted into combat or remote asset package; no phone acceptance claimed.
 This supersedes the earlier 'generation not started' status above.
+
+Unity graphics-device renders added via `StaticFistAudit.RenderPreview`: unity-front, unity-fist and unity-whole PNGs. Close views isolate baked lower-arm geometry to avoid camera/garment occlusion. Studio fill light is preview-only. Full-body source art and skin shading still need quality work; passing rig tests does not imply professional art acceptance.
