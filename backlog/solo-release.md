@@ -170,3 +170,32 @@ texture/weights, then inspect closed pose and jab across the full clip.
 Самопроверка: visual rejection is the result, not a completed fist fix.
 No Meshy credits consumed, no iOS build/install, no game runtime changes;
 phone build responsibility remains with «Нативная лента IOS».
+
+## Rebuilt separate-finger hands — 2026-10-10
+
+Built two replacement hand surfaces with four separated fingers and a radial
+thumb, then added 14 digit bones per hand to the existing 24-bone Meshy rig (52
+bones total). A captured ClosedFists shape allows the original provider jab to
+use closed hands without requiring finger animation channels in that clip.
+The new digit bones remain available for later authored finger animation; do not
+apply full bone curl and full ClosedFists simultaneously.
+
+Stitched the hands into the source mesh, tapered the proximal palm cross-section,
+and preserved the four existing body corrective shapes. Initial wrist cuts
+intersected the watch/surrounding skin and were rejected. Final cut is distal to
+that region; 255/243 bridge faces, zero open boundary edges in rebuilt palm/hand
+region. Two pre-existing tiny edges proximal to the rebuilt region are outside
+this scoped audit. Removing a bridge face on a disposable mesh is detected.
+
+Unity: 52 bones imported, five corrective shapes; 25 jab samples have finite
+geometry, closure displacement about 0.1214 m and source wrist shape displacement
+0 m. Zeroing the fist shape is rejected by the audit. Separate FingerArtReview
+scene keeps original default and exposes candidate through the existing toggle.
+Unity EditMode suite: 46/46 passed. No Meshy credits used, no iOS build/install,
+no push/deploy. Phone handoff updated for «Нативная лента IOS».
+
+Самопроверка: this completes a draft geometry/rig replacement, not professional
+hand anatomy or final art. Skin material is flat, nails/creases not authored,
+palm-to-wrist silhouette and collision at tight closure still require art review.
+Only the supplied jab has been evaluated; device verification pending. The
+previous original and joint-only review scene are preserved.

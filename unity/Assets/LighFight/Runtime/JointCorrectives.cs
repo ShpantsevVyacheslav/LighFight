@@ -11,6 +11,7 @@ namespace LighFight.Runtime
         Transform[] parent, joint, end;
         int[] shapes;
         int calf;
+        int fists;
         void Initialize()
         {
             skin=GetComponentInChildren<SkinnedMeshRenderer>(true);
@@ -26,6 +27,7 @@ namespace LighFight.Runtime
                 shapes[i]=FindShape(names[i]);
             }
             calf=FindShape("LeftCalfContour");
+            fists=FindShape("ClosedFists");
         }
         int FindShape(string name)
         {
@@ -45,6 +47,7 @@ namespace LighFight.Runtime
                 skin.SetBlendShapeWeight(shapes[i],100*Mathf.Clamp01(bend/Mathf.Max(1,referenceAngles[i])));
             }
             if(calf>=0)skin.SetBlendShapeWeight(calf,100);
+            if(fists>=0)skin.SetBlendShapeWeight(fists,100);
         }
     }
 }

@@ -66,3 +66,20 @@ Unity сравнил 25 поз: максимальная разница поло
 максимальное влияние коррекции в 25 позах — 3.49 мм. Проверки выявляют
 отключение коррекции и возврат исходных весов. Проверять прежние дефекты,
 особенно на максимальном сгибании. Другие удары этой коррекцией не проверены.
+
+## Separate finger geometry candidate — 2026-10-10
+
+New isolated scene: `Assets/LighFight/Art/Drafts/IslandFingers/FingerArtReview.unity`.
+Regenerate/import/audit with `LighFight.Editor.FingerHandAudit.Verify`.
+52 deform bones: original 24 + 28 digit bones (14 per hand), five distinct digits
+per hand; closed pose captured as ClosedFists shape. The optional shape is driven
+by JointCorrectives; older four-shape model remains supported.
+
+This scene is an art draft, not combat/CDN promotion. Source/default view remains
+original; candidate toggle shows rebuilt hands. Palm skin is a flat draft
+material; skin details, nails, palmar creases and final wrist silhouette require
+further work. Frame through jab, compare thumb position/finger collisions and
+wrist join from both sides. Phone build/install belongs to «Нативная лента IOS».
+The existing ExportIosReview exports the older scene; do not assume it exports
+FingerArtReview. Select the new scene explicitly in a separate review build.
+No phone verification is claimed here.
