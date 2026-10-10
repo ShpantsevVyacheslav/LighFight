@@ -12,6 +12,9 @@ namespace LighFight.Runtime
         public Camera reviewCamera;
         public Animator candidate;
         public AnimationClip candidateClip;
+        public bool startWithCandidate;
+        public string candidateLabel = "правка суставов";
+        public string reviewDescription = "Локти · левая икра · открытые ладони";
         PlayableGraph graph;
         AnimationClipPlayable motion;
         AnimationClipPlayable candidateMotion;
@@ -36,7 +39,7 @@ namespace LighFight.Runtime
                 candidateMotion=AnimationClipPlayable.Create(graph,candidateClip);
                 candidateMotion.SetApplyFootIK(false);candidateMotion.SetSpeed(0);
                 AnimationPlayableOutput.Create(graph,"Joint candidate",candidate).SetSourcePlayable(candidateMotion);
-                candidate.gameObject.SetActive(false);
+                showCandidate=startWithCandidate;candidate.gameObject.SetActive(showCandidate);fighter.gameObject.SetActive(!showCandidate);
             }
             graph.Play(); Evaluate();
         }
@@ -67,12 +70,12 @@ namespace LighFight.Runtime
             var old = GUI.matrix;
             float scale = Mathf.Min(safe.width / 900f, safe.height / 500f);
             GUI.matrix = Matrix4x4.TRS(new Vector3(safe.x, Screen.height-safe.yMax, 0), Quaternion.identity, Vector3.one * scale);
-            GUI.Box(new Rect(10, 10, 880, 58), "LighFight · Island / Meshy · ПРОВЕРКА ГРАФИКИ\nЛокти · левая икра · открытые ладони. Перетащи персонажа для поворота камеры.");
+            GUI.Box(new Rect(10, 10, 880, 58), "LighFight · Island / Meshy · ПРОВЕРКА ГРАФИКИ\n"+reviewDescription+". Перетащи персонажа для поворота камеры.");
             float y = safe.height / scale - 110;
             if (GUI.Button(new Rect(10,y-50,180,42), "Весь персонаж")) { focusHeight=.9f; distance=3; }
             if (GUI.Button(new Rect(200,y-50,180,42), "Локти / кисти")) { focusHeight=1.25f; distance=1.6f; }
             if (GUI.Button(new Rect(390,y-50,180,42), "Икры / колени")) { focusHeight=.45f; distance=1.6f; }
-            if(candidate!=null && GUI.Button(new Rect(580,y-50,300,42),showCandidate ? "Вариант: правка суставов" : "Вариант: исходник Meshy"))
+            if(candidate!=null && GUI.Button(new Rect(580,y-50,300,42),showCandidate ? "Модель: "+candidateLabel : "Модель: исходник Meshy"))
             {
                 showCandidate=!showCandidate;fighter.gameObject.SetActive(!showCandidate);candidate.gameObject.SetActive(showCandidate);
             }

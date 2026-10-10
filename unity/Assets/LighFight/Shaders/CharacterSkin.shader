@@ -8,6 +8,7 @@ Shader "LighFight/CharacterSkin"
         _DetailNormalMap ("Hand detail normal",2D)="bump"{}
         _NormalMap ("Skin normal",2D)="bump"{}
         _NormalStrength ("Normal strength",Range(0,1))=.35
+        _DetailNormalStrength ("Hand detail normal strength",Range(0,1))=.12
         _Glossiness ("Smoothness",Range(0,1))=.25
     }
     SubShader
@@ -26,7 +27,7 @@ Shader "LighFight/CharacterSkin"
             #include "AutoLight.cginc"
             struct appdata { float4 vertex:POSITION; float3 normal:NORMAL; float4 tangent:TANGENT; float2 uv:TEXCOORD0;float2 detailUV:TEXCOORD1;float4 color:COLOR; };
             struct v2f { float4 pos:SV_POSITION; float3 normal:TEXCOORD0; float3 world:TEXCOORD1; float2 uv:TEXCOORD2; float3 tangent:TEXCOORD3; float3 bitangent:TEXCOORD4; float2 detailUV:TEXCOORD6;half blend:TEXCOORD7; SHADOW_COORDS(5) };
-            sampler2D _DetailSkinTex;sampler2D _DetailNormalMap;sampler2D _NormalMap;half _NormalStrength;sampler2D _MainTex; float4 _MainTex_ST; fixed4 _Color; half _Glossiness;
+            sampler2D _DetailSkinTex;sampler2D _DetailNormalMap;sampler2D _NormalMap;half _NormalStrength;half _DetailNormalStrength;sampler2D _MainTex; float4 _MainTex_ST; fixed4 _Color; half _Glossiness;
             v2f vert(appdata v)
             {
                 v2f o; o.pos=UnityObjectToClipPos(v.vertex);
@@ -37,8 +38,17 @@ Shader "LighFight/CharacterSkin"
             }
             fixed4 frag(v2f i):SV_Target
             {
-                half3 detail=normalize(lerp(UnpackNormal(tex2D(_NormalMap,i.uv)),UnpackNormal(tex2D(_DetailNormalMap,i.detailUV)),i.blend));detail.xy*=_NormalStrength;detail=normalize(detail);
-                half3 n=normalize(normalize(i.tangent)*detail.x+normalize(i.bitangent)*detail.y+normalize(i.normal)*detail.z);half3 l=normalize(_WorldSpaceLightPos0.xyz);
+                half3 geometricNormal=normalize(i.normal);
+                half3 baseNormal=UnpackNormal(tex2D(_NormalMap,i.uv));baseNormal.xy*=_NormalStrength;baseNormal=normalize(baseNormal);
+                half3 bodyNormal=normalize(normalize(i.tangent)*baseNormal.x+normalize(i.bitangent)*baseNormal.y+geometricNormal*baseNormal.z);
+                // UV1 has its own chart orientation; UV0 tangents cannot orient its normal map.
+                float3 dp1=ddx(i.world),dp2=ddy(i.world);float2 duv1=ddx(i.detailUV),duv2=ddy(i.detailUV);
+                float3 dp2perp=cross(dp2,geometricNormal),dp1perp=cross(geometricNormal,dp1);
+                float3 detailT=dp2perp*duv1.x+dp1perp*duv2.x,detailB=dp2perp*duv1.y+dp1perp*duv2.y;
+                float basisScale=rsqrt(max(max(dot(detailT,detailT),dot(detailB,detailB)),1e-16));
+                half3 detail=UnpackNormal(tex2D(_DetailNormalMap,i.detailUV));detail.xy*=_DetailNormalStrength;detail=normalize(detail);
+                half3 handNormal=normalize(detailT*basisScale*detail.x+detailB*basisScale*detail.y+geometricNormal*detail.z);
+                half3 n=normalize(lerp(bodyNormal,handNormal,i.blend));half3 l=normalize(_WorldSpaceLightPos0.xyz);
                 half diffuse=max(0,dot(n,l));half shadow=SHADOW_ATTENUATION(i);
                 half3 v=normalize(_WorldSpaceCameraPos-i.world);
                 half spec=pow(max(0,dot(n,normalize(l+v))),lerp(8,64,_Glossiness))*.18;

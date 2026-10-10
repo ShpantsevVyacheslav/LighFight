@@ -117,3 +117,11 @@ this scene explicitly for a separate review build. Do not replace LighChat asset
 source body skin maps, rebuilt rigid watch. Check both wrist seams, thumb placement,
 skin detail scale, silhouette and shadows at actual phone resolution.
 Build/install remains owned by «Нативная лента IOS»; no device verification performed.
+
+Surface update 2026-10-11: StaticFistAudit.Verify imports authored blendshape
+normals and checks unchanged fists receive no normal deformation. Candidate is
+now selected at review Start; labels refer to closed fists. UV1 normal details
+have their own shading frame. Use regenerated scene from this revision.
+Normal-import mutation: `LighFight.Editor.StaticFistAudit.VerifySurfaceNormals`.
+Local motion preview: `art/previews/user-fist-meshy-25/integrated/unity-jab.mp4`.
+Phone acceptance remains pending.

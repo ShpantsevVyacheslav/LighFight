@@ -56,3 +56,29 @@ Not promoted into combat or remote asset package; no phone acceptance claimed.
 This supersedes the earlier 'generation not started' status above.
 
 Unity graphics-device renders added via `StaticFistAudit.RenderPreview`: unity-front, unity-fist and unity-whole PNGs. Close views isolate baked lower-arm geometry to avoid camera/garment occlusion. Studio fill light is preview-only. Full-body source art and skin shading still need quality work; passing rig tests does not imply professional art acceptance.
+
+## Unity surface-normal repair — 2026-10-11
+
+Reproduced coarse facets with body correctives enabled. Disabling normal-map
+strength did not remove them; disabling correctives did. The FBX importer
+was calculating blendshape normals separately from imported smooth base normals.
+Even unchanged fist vertices received normal deltas (maximum 1.999434).
+Importing authored blendshape normals makes the unchanged-fist delta zero.
+`StaticFistAudit.VerifySurfaceNormals` deliberately restores Calculate, detects
+regression, then restores Import in finally. Regular Verify also guards zero
+normal deformation on static fists. Body corrective geometry remains enabled.
+
+CharacterSkin now transforms body UV0 and hand UV1 normal maps using separate
+frames before blending world normals. UV1 frame comes from fragment derivatives;
+using the body UV0 tangent for the hand UV1 was incorrect. Hand detail strength
+0.12, body strength 0.25. Same copied skin textures; no new generation credits.
+
+Review starts with candidate selected; description correctly says closed fists,
+not open palms. Full-character `unity-jab.mp4` is a 42-frame/24fps graphics-device
+render of the imported clip with correctives. Hand closeups use isolated baked
+geometry; these are inspection previews, not device/combat captures.
+
+Samoproverka: no additional Meshy tasks, no device build/install, no push/deploy.
+Full-body art quality and opening-finger animation remain outstanding.
+
+Runtime review selection verified by invoking Start and checking active models; reversing startWithCandidate detects regression. Unity EditMode after runtime UI update: 46/46 passed. Shader compiles and Unity graphics renders complete.

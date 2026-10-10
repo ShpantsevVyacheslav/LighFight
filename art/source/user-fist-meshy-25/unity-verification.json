@@ -9,5 +9,8 @@
   "combatPromoted": false,
   "leftRigidFistAudit": "24 source bones; 25 jab samples; rigid fist distance error 2.253801E-07 m; minimum wrist angle 0 deg; 70639 vertices; skin detail channels present. Device and visual acceptance pending.",
   "rightRigidFistAudit": "24 source bones; 25 jab samples; rigid fist distance error 2.831221E-07 m; minimum wrist angle 9.798238 deg; 70639 vertices; skin detail channels present. Device and visual acceptance pending.",
-  "wrongBoneMutation": "PASS: rigid fist vertex bound to forearm detected"
+  "wrongBoneMutation": "PASS: rigid fist vertex bound to forearm detected",
+  "surfaceNormalAudit": "Unchanged fist blendshape maximum normal delta: 0; calculated-normal regression mutation: 1.999434; mutation detected; imported normals restored.",
+  "shader": "UV1 skin normal uses derivative cotangent frame, separate 0.12 detail strength; original body normal strength 0.25",
+  "reviewSelectionAudit": "Candidate selected at runtime Start; original-selection mutation detected. Scene changes not saved."
 }
