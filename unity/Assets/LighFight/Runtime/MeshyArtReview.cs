@@ -45,6 +45,7 @@ namespace LighFight.Runtime
             motion.SetTime(time);
             if(candidateMotion.IsValid())candidateMotion.SetTime(time);
             graph.Evaluate(0);
+            if(candidate!=null){var correction=candidate.GetComponent<JointCorrectives>();if(correction!=null)correction.Apply();}
             var focus = new Vector3(0, focusHeight, 0);
             reviewCamera.transform.position = focus + Quaternion.Euler(8, yaw, 0) * new Vector3(0, 0, -distance);
             reviewCamera.transform.LookAt(focus);
@@ -71,7 +72,7 @@ namespace LighFight.Runtime
             if (GUI.Button(new Rect(10,y-50,180,42), "Весь персонаж")) { focusHeight=.9f; distance=3; }
             if (GUI.Button(new Rect(200,y-50,180,42), "Локти / кисти")) { focusHeight=1.25f; distance=1.6f; }
             if (GUI.Button(new Rect(390,y-50,180,42), "Икры / колени")) { focusHeight=.45f; distance=1.6f; }
-            if(candidate!=null && GUI.Button(new Rect(580,y-50,300,42),showCandidate ? "Вариант: правка весов" : "Вариант: исходник Meshy"))
+            if(candidate!=null && GUI.Button(new Rect(580,y-50,300,42),showCandidate ? "Вариант: правка суставов" : "Вариант: исходник Meshy"))
             {
                 showCandidate=!showCandidate;fighter.gameObject.SetActive(!showCandidate);candidate.gameObject.SetActive(showCandidate);
             }

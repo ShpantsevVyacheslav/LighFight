@@ -135,3 +135,20 @@ spent. Existing Unity EditMode tests: 46/46 passed. Updated handoff for «Нат
 Самопроверка: smoother weights do not establish anatomical quality. The candidate
 is available for comparison, not promoted into combat or CDN. Calf silhouette,
 elbow folds, open palms and hair remain art issues; device verification pending.
+
+## Bend corrective candidate — 2026-10-10
+
+Rejected full dual-quaternion volume preservation after close-up showed excessive
+elbow bulging. Added four small local blend-shape candidates: LeftElbow,
+RightElbow, LeftKnee, LeftCalfContour. Bend shapes are driven by geometric joint
+angles; calf contour is a smoothed partial symmetry target. Original asset and
+previous weights candidate retained. Source references/geometry are not replaced.
+
+Unity imports four shapes and evaluates 25 poses: maximum corrective effect
+0.003493 m. Audit compares source positions rather than vertex indices because
+FBX blend-shape export changes render-vertex splits. Both mutations detected:
+original weight substitution and disabled corrective driver. No provider credits
+spent; no iPhone build/install. Phone handoff updated. Unity EditMode: 46/46 passed.
+
+Самопроверка: changes are subtle. These corrections do not establish professional
+anatomy, solve fingers/hair, or prove other strike poses. Remains a review candidate.

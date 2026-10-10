@@ -11,6 +11,7 @@ namespace LighFight.Editor
     {
         public const string ScenePath="Assets/LighFight/Art/Drafts/IslandPremium/MeshyArtReview.unity";
         public static void Verify() => VerifyCore(false);
+        public static void VerifyAllCorrectives() { Verify(); VerifyWeightsReversionMutation(); VerifyCorrectiveMutation(); }
         public static void VerifyWeightsReversionMutation()
         {
             try { VerifyCore(true); }
@@ -21,7 +22,16 @@ namespace LighFight.Editor
             }
             throw new Exception("Audit did not detect reverted skin weights");
         }
-        static void VerifyCore(bool revertWeights)
+        public static void VerifyCorrectiveMutation()
+        {
+            try { VerifyCore(false,true); }
+            catch(Exception error) when(error.Message=="Corrective shapes have no effect")
+            {
+                File.WriteAllText("../.tools/reports/meshy-corrective-mutation.txt","PASS: disabled corrective driver detected");return;
+            }
+            throw new Exception("Audit did not detect disabled corrective driver");
+        }
+        static void VerifyCore(bool revertWeights, bool disableCorrectives=false)
         {
             EditorSceneManager.OpenScene(ScenePath);
             var review=UnityEngine.Object.FindFirstObjectByType<LighFight.Runtime.MeshyArtReview>();
@@ -37,7 +47,22 @@ namespace LighFight.Editor
             }
             if(review.candidate!=null)review.candidate.gameObject.SetActive(true);
             var mesh=new Mesh();skin.BakeMesh(mesh);var initial=mesh.vertices;
-            var candidateMesh=new Mesh();float maxVariantDifference=0;
+            int[] correspondence=null;
+            if(candidateSkin!=null)
+            {
+                var positions=new System.Collections.Generic.Dictionary<Vector3Int,int>();
+                var originalRest=skin.sharedMesh.vertices;
+                System.Func<Vector3,Vector3Int> key=p=>new Vector3Int(Mathf.RoundToInt(p.x*100000),Mathf.RoundToInt(p.y*100000),Mathf.RoundToInt(p.z*100000));
+                for(int i=0;i<originalRest.Length;i++)positions[key(originalRest[i])]=i;
+                var revisedRest=candidateSkin.sharedMesh.vertices;correspondence=new int[revisedRest.Length];
+                for(int i=0;i<revisedRest.Length;i++)if(!positions.TryGetValue(key(revisedRest[i]),out correspondence[i]))throw new Exception("Candidate base position has no source match: "+revisedRest[i]);
+            }
+            if(disableCorrectives)
+            {
+                var correction=review.candidate.GetComponent<LighFight.Runtime.JointCorrectives>();correction.enabled=false;
+                for(int i=0;i<candidateSkin.sharedMesh.blendShapeCount;i++)candidateSkin.SetBlendShapeWeight(i,0);
+            }
+            var candidateMesh=new Mesh();var uncorrectedMesh=new Mesh();float maxCorrectiveDifference=0;float maxVariantDifference=0;
             float maxDisplacement=0;
             for(int frame=0;frame<=24;frame++)
             {
@@ -47,8 +72,15 @@ namespace LighFight.Editor
                 if(candidateSkin!=null)
                 {
                     candidateSkin.BakeMesh(candidateMesh);var revised=candidateMesh.vertices;
-                    if(revised.Length!=vertices.Length)throw new Exception("Comparison topology differs");
-                    for(int i=0;i<vertices.Length;i++)maxVariantDifference=Mathf.Max(maxVariantDifference,Vector3.Distance(vertices[i],revised[i]));
+                    if(!revertWeights && review.candidate.GetComponent<LighFight.Runtime.JointCorrectives>()!=null)
+                    {
+                        if(candidateSkin.sharedMesh.blendShapeCount!=4)throw new Exception("Expected four joint corrective shapes");
+                        for(int shape=0;shape<4;shape++)candidateSkin.SetBlendShapeWeight(shape,0);
+                        candidateSkin.BakeMesh(uncorrectedMesh);var uncorrected=uncorrectedMesh.vertices;
+                        for(int i=0;i<revised.Length;i++)maxCorrectiveDifference=Mathf.Max(maxCorrectiveDifference,Vector3.Distance(revised[i],uncorrected[i]));
+                        review.candidate.GetComponent<LighFight.Runtime.JointCorrectives>().Apply();
+                    }
+                    for(int i=0;i<revised.Length;i++)maxVariantDifference=Mathf.Max(maxVariantDifference,Vector3.Distance(vertices[correspondence[i]],revised[i]));
                 }
                 for(int i=0;i<vertices.Length;i++)
                 {
@@ -58,6 +90,7 @@ namespace LighFight.Editor
             }
             if(maxDisplacement<.05f)throw new Exception("Provider clip does not deform the model");
             if(candidateSkin!=null && maxVariantDifference<.001f)throw new Exception("Joint repair candidate has no visible deformation change");
+            if(!revertWeights && review.candidate!=null && review.candidate.GetComponent<LighFight.Runtime.JointCorrectives>()!=null && maxCorrectiveDifference<.0001f)throw new Exception("Corrective shapes have no effect");
             if(review.candidate!=null)review.candidate.gameObject.SetActive(false);
             if(SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)
             {
@@ -70,9 +103,9 @@ namespace LighFight.Editor
                 RenderTexture.active=old;review.reviewCamera.targetTexture=null;
                 UnityEngine.Object.DestroyImmediate(image);rt.Release();UnityEngine.Object.DestroyImmediate(rt);
             }
-            string result="Meshy review: "+skin.bones.Length+" bones; "+review.clip.length+" sec; max vertex displacement "+maxDisplacement+" m; max candidate difference "+maxVariantDifference+" m; 25 samples";
+            string result="Meshy review: "+skin.bones.Length+" bones; "+review.clip.length+" sec; max vertex displacement "+maxDisplacement+" m; max candidate difference "+maxVariantDifference+" m; corrective displacement "+maxCorrectiveDifference+" m; 25 samples";
             Directory.CreateDirectory("../.tools/reports");File.WriteAllText("../.tools/reports/meshy-unity-audit.txt",result);
-            Debug.Log(result);UnityEngine.Object.DestroyImmediate(mesh);UnityEngine.Object.DestroyImmediate(candidateMesh);UnityEngine.Object.DestroyImmediate(review.gameObject);
+            Debug.Log(result);UnityEngine.Object.DestroyImmediate(mesh);UnityEngine.Object.DestroyImmediate(candidateMesh);UnityEngine.Object.DestroyImmediate(uncorrectedMesh);UnityEngine.Object.DestroyImmediate(review.gameObject);
         }
         // Build owner runs this explicitly; never overwrites LighChat exports.
         public static void ExportIosReview()
@@ -133,7 +166,7 @@ namespace LighFight.Editor
             var floorMat=new Material(Shader.Find("LighFight/OfficeLit"));floorMat.color=new Color(.065f,.075f,.09f);
             AssetDatabase.DeleteAsset(folder+"/floor.mat");AssetDatabase.CreateAsset(floorMat,folder+"/floor.mat");floor.GetComponent<Renderer>().sharedMaterial=floorMat;
             var review=new GameObject("Art review controls").AddComponent<LighFight.Runtime.MeshyArtReview>();review.fighter=animator;review.clip=clip;review.reviewCamera=camera;
-            const string candidatePath=folder+"/island-joints-candidate.fbx";
+            string candidatePath=File.Exists(folder+"/island-joint-correctives.fbx")?folder+"/island-joint-correctives.fbx":folder+"/island-joints-candidate.fbx";
             if(File.Exists(candidatePath))
             {
                 var candidateImporter=(ModelImporter)AssetImporter.GetAtPath(candidatePath);
@@ -143,6 +176,7 @@ namespace LighFight.Editor
                 candidateModel.name="Island joint repair candidate";
                 var candidateAnimator=candidateModel.GetComponent<Animator>();if(candidateAnimator==null)candidateAnimator=candidateModel.AddComponent<Animator>();
                 foreach(var skin in candidateModel.GetComponentsInChildren<SkinnedMeshRenderer>())skin.sharedMaterial=material;
+                if(candidatePath.Contains("correctives")){var correction=candidateModel.AddComponent<LighFight.Runtime.JointCorrectives>();correction.referenceAngles=new[]{135.99724f,111.25128f,73.56264f};}
                 review.candidate=candidateAnimator;review.candidateClip=AssetDatabase.LoadAllAssetsAtPath(candidatePath).OfType<AnimationClip>().First(c=>!c.name.StartsWith("__preview"));
                 candidateModel.SetActive(false);
             }
