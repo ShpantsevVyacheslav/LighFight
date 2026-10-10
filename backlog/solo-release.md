@@ -199,3 +199,22 @@ hand anatomy or final art. Skin material is flat, nails/creases not authored,
 palm-to-wrist silhouette and collision at tight closure still require art review.
 Only the supplied jab has been evaluated; device verification pending. The
 previous original and joint-only review scene are preserved.
+
+## Hand anatomy revision after owner rejection — 2026-10-10
+
+Owner rejected the first procedural replacement. Built a separate V2 study:
+flattened/tapered palm cross-sections, arched distal palm, unequal finger roots,
+explicit tapered elliptical phalanges and localized knuckle volumes. Finger
+weights now use only the nearest digit chain instead of mixing neighboring digits.
+Closed morph capture preserves joint volume locally and uses a tighter curl.
+
+Integrated into separate IslandFingersV2/FingerArtReview scene. Source and first
+candidate retained. Unity audit: 52 bones, 25 jab samples, finite vertices, closure
+0.1181181 m, wrist morph displacement zero. Bridge audit: 282/270 faces, zero new
+hand boundary edges; bridge-face removal mutation detected. Unity closure-zero
+mutation detected. No provider credits, phone build, push or CDN promotion.
+
+Самопроверка: geometric revision is not professional anatomical acceptance.
+Visual review still shows angular thenar folds and gaps in tight closure. Skin,
+nails and creases remain absent. This variant is a separate study, not promoted
+into combat. Denser hand surface also needs later mobile optimization.

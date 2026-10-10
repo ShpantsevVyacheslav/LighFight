@@ -7,7 +7,8 @@ namespace LighFight.Editor
 {
     public static class FingerHandAudit
     {
-        const string Path="Assets/LighFight/Art/Drafts/IslandFingers/island-finger-candidate.fbx";
+        static string Path="Assets/LighFight/Art/Drafts/IslandFingers/island-finger-candidate.fbx";
+        public static void VerifyAnatomyV2() { Path="Assets/LighFight/Art/Drafts/IslandFingersV2/island-finger-candidate.fbx";Verify(); }
         public static void Verify()
         {
             AssetDatabase.Refresh();
@@ -31,7 +32,7 @@ namespace LighFight.Editor
             var animator=model.GetComponent<Animator>()??model.AddComponent<Animator>();
             var skin=model.GetComponentInChildren<SkinnedMeshRenderer>();
             var plain=new Material(Shader.Find("LighFight/OfficeLit"));plain.color=new Color(.78f,.63f,.57f);
-            const string materialPath="Assets/LighFight/Art/Drafts/IslandFingers/hand-skin.mat";
+            string materialPath=System.IO.Path.GetDirectoryName(Path)+"/hand-skin.mat";
             var existing=AssetDatabase.LoadAssetAtPath<Material>(materialPath);
             if(existing==null)AssetDatabase.CreateAsset(plain,materialPath);else {UnityEngine.Object.DestroyImmediate(plain);plain=existing;}
             var bodyMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/LighFight/Art/Drafts/IslandPremium/review.mat");
@@ -39,7 +40,7 @@ namespace LighFight.Editor
             var correction=model.AddComponent<LighFight.Runtime.JointCorrectives>();correction.referenceAngles=new[]{135.99724f,111.25128f,73.56264f};
             review.candidate=animator;review.candidateClip=AssetDatabase.LoadAllAssetsAtPath(Path).OfType<AnimationClip>().First(c=>!c.name.StartsWith("__preview"));
             model.SetActive(false);
-            UnityEditor.SceneManagement.EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(),"Assets/LighFight/Art/Drafts/IslandFingers/FingerArtReview.unity");
+            UnityEditor.SceneManagement.EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene(),System.IO.Path.GetDirectoryName(Path)+"/FingerArtReview.unity");
             AssetDatabase.SaveAssets();
         }
         static void Check(bool mutation)

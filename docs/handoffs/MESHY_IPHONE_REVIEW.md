@@ -83,3 +83,12 @@ wrist join from both sides. Phone build/install belongs to «Нативная л
 The existing ExportIosReview exports the older scene; do not assume it exports
 FingerArtReview. Select the new scene explicitly in a separate review build.
 No phone verification is claimed here.
+
+### Anatomy V2 study (owner rejected first hands)
+
+Optional comparison scene:
+`Assets/LighFight/Art/Drafts/IslandFingersV2/FingerArtReview.unity`.
+Recreate and audit via `LighFight.Editor.FingerHandAudit.VerifyAnatomyV2`.
+This revision has tapered phalanges, flatter palm and isolated digit weight fields.
+It still has angular thumb-base folds and gaps at tight closure; no final art
+acceptance or combat promotion. Preserve both earlier scenes for comparison.
