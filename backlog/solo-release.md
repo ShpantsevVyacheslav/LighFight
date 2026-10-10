@@ -74,3 +74,23 @@ Local mesh bridge on both wrists; zero open wrist edges. Smooth wrist weights;
 jab timing aligned with 10/3/15 combat frames. Close-up sequence for review.
 Overall character quality remains below target. Meshy MCP researched, requires
 API key and available API balance; not connected. Phone verification: no.
+
+## Meshy Premium pipeline — 2026-10-10
+
+Official Meshy MCP 0.6.1 connected through its SDK. API key stays outside the
+repository in a private local file. Premium Island candidate generated from the
+approved reference: Meshy 7.1, 4K geometry and PBR textures. Original mesh:
+305,044 triangles. Remesh target: 60,000 triangles; actual count awaits import.
+Provider automatic rig and preset Left_Jab_from_Guard (191), 60 fps, completed.
+Total confirmed spend: 48 credits (35 generation + 5 remesh + 5 rig + 3 motion).
+Downloaded GLBs validated by header length and SHA256. Mobile mesh: 61,801
+triangles; animated mesh: 61,881. Reviewed 24 frames of the full 1.733-second jab:
+wrist separation not observed, but open palms remain. Provider rig has 24 bones,
+zero finger bones. Hair clumps remain visible. Candidate is not promoted to the
+final roster. Preview: `art/previews/island-premium/jab.gif`.
+Device verification: no. No push or resource publication during this stage.
+
+Самопроверка: это рабочий кандидат, не профессиональная финальная модель.
+Следующая задача — боевые кисти с сохранением непрерывной геометрии запястий,
+затем волосы и проверка локтей на других ударах. Генерация остальных персонажей
+ждёт проверки этого шаблона, чтобы не повторять дефекты и расходовать кредиты.

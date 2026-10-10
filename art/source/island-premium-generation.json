@@ -1,0 +1,65 @@
+{
+  "taskId": "01a124d3-8a5f-76b8-9f78-0969d1bf2cfe",
+  "model": "meshy-7.1",
+  "geometryResolution": "4k",
+  "textureResolution": "4k",
+  "consumedCredits": 35,
+  "source": "employee-tropical-apose-v2.png",
+  "stage": "animated-candidate-reviewed-needs-fists-and-hair",
+  "rigging": {
+    "taskId": "01a124e9-8f53-7205-98aa-8fd59ad24ab1",
+    "provider": "Meshy automatic rig",
+    "consumedCredits": 5
+  },
+  "animations": [
+    {
+      "taskId": "01a124eb-a57f-7297-bc2c-eafdd6390ee4",
+      "actionId": 191,
+      "name": "Left_Jab_from_Guard",
+      "fps": 60,
+      "consumedCredits": 3
+    }
+  ],
+  "remesh": {
+    "taskId": "01a124e3-5c60-72ff-9060-e4b26a602373",
+    "targetTriangles": 60000,
+    "consumedCredits": 5,
+    "actualTriangles": 61801
+  },
+  "totalConsumedCredits": 48,
+  "qualityReview": {
+    "professionalQuality": false,
+    "issues": [
+      "Hair clumps visible in close-up",
+      "Finger topology and skinning require animated review",
+      "24-bone automatic rig has no finger bones; palms remain open during jab"
+    ],
+    "deviceVerified": false
+  },
+  "localFiles": {
+    "island-high.glb": {
+      "path": ".tools/meshy/island-premium/island-high.glb",
+      "bytes": 35557916,
+      "sha256": "0304835979ac462145bb3afbb2a4efcce8da36a64ecde74784b13f5ee8baba2e"
+    },
+    "island-mobile.glb": {
+      "path": ".tools/meshy/island-premium/island-mobile.glb",
+      "bytes": 51456612,
+      "sha256": "79f19e68e25a8863005592b4221486b591116000350f26a729e0a9dfdefdfb50"
+    },
+    "island-jab.glb": {
+      "path": ".tools/meshy/island-premium/island-jab.glb",
+      "bytes": 53311876,
+      "sha256": "f53dd54d72f7e615e2cb48c2910f86ce1889f7660e83333f58fc2d7c1ec196b9"
+    }
+  },
+  "animationAudit": {
+    "bones": 24,
+    "fingerBones": 0,
+    "triangles": 61881,
+    "clipDurationSeconds": 1.7333332,
+    "reviewFrames": 24,
+    "wristSeparationObserved": false,
+    "palmsOpen": true
+  }
+}
