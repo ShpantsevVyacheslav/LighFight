@@ -1,0 +1,26 @@
+{
+  "task_id": "01a127f4-e2e4-75c1-9366-3ee61dec1573",
+  "task_type": "image-to-3d",
+  "reference": "art/references/employee-rose-tpose-v1.png",
+  "reference_sha256": "00f2ce0cf2de08dad576b49188f5314009548d2483a8dad442c0dfc0850a2d54",
+  "model": "meshy-7.1",
+  "geometry_resolution": "4k",
+  "texture_resolution": "4k",
+  "pose_mode": "t-pose",
+  "generation_credits": 35,
+  "status": "SUCCEEDED_VISUALLY_MATCHES_REFERENCE",
+  "changes": "Added explicit texture prompt; 4k geometry matches successful first character; no rig until visual acceptance",
+  "triangles": 350168,
+  "model_sha256": "95bf413b83062d691b0e49a2520fe71e999ed15d76d5667c5d11597263dd767f",
+  "quality_review": {
+    "subject_matches": true,
+    "professional_quality": false,
+    "issues": [
+      "Hair strands/clumps need cleanup",
+      "Hands/fingers need close-up review",
+      "Above 300000 face rig limit; prepare reduced copy before rigging"
+    ],
+    "device_verified": false,
+    "rig_started": false
+  }
+}
