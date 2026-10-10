@@ -1,0 +1,53 @@
+{
+  "network_requests": 0,
+  "note": "Offline interception of current MCP; does not prove historical server received bytes",
+  "requests": [
+    {
+      "endpoint": "/openapi/v1/image-to-3d",
+      "parameters": {
+        "enable_pbr": true,
+        "moderation": false,
+        "ai_model": "meshy-7.1",
+        "model_type": "standard",
+        "geometry_resolution": "2k",
+        "pose_mode": "t-pose",
+        "should_remesh": false,
+        "should_texture": true,
+        "texture_resolution": "4k",
+        "image_enhancement": false,
+        "target_formats": [
+          "fbx",
+          "glb"
+        ]
+      },
+      "image_bytes": 1802574,
+      "image_sha256": "00f2ce0cf2de08dad576b49188f5314009548d2483a8dad442c0dfc0850a2d54",
+      "file": "art/references/employee-rose-tpose-v1.png",
+      "file_sha256": "00f2ce0cf2de08dad576b49188f5314009548d2483a8dad442c0dfc0850a2d54",
+      "match": true
+    },
+    {
+      "endpoint": "/openapi/v1/image-to-3d",
+      "parameters": {
+        "enable_pbr": true,
+        "moderation": false,
+        "ai_model": "meshy-7.1",
+        "model_type": "standard",
+        "geometry_resolution": "2k",
+        "should_remesh": false,
+        "should_texture": true,
+        "texture_resolution": "4k",
+        "image_enhancement": false,
+        "target_formats": [
+          "fbx",
+          "glb"
+        ]
+      },
+      "image_bytes": 7587421,
+      "image_sha256": "c33e3fe34ff5d859a01417affc3073bdb0fe3b33318c706a00fc2fabd06e30a8",
+      "file": "assets/references/photo-05.jpg",
+      "file_sha256": "c33e3fe34ff5d859a01417affc3073bdb0fe3b33318c706a00fc2fabd06e30a8",
+      "match": true
+    }
+  ]
+}
