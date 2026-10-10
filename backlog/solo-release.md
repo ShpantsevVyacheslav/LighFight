@@ -218,3 +218,15 @@ mutation detected. No provider credits, phone build, push or CDN promotion.
 Visual review still shows angular thenar folds and gaps in tight closure. Skin,
 nails and creases remain absent. This variant is a separate study, not promoted
 into combat. Denser hand surface also needs later mobile optimization.
+
+
+## MakeHuman anatomical hand candidate — 2026-10-10
+
+Isolated scene: `unity/Assets/LighFight/Art/Drafts/IslandMakeHumanHands/FingerArtReview.unity`.
+62 bones, 38 added finger/palm bones; authored CC0 anatomy and weights.
+25 Unity jab samples pass; zeroed fist morph mutation detected. Both wrist seams
+closed; deleted bridge face mutation detected. Scoped thumb/finger base-face
+overlaps reduced from 288 to zero on both hands (excludes palm/web surfaces).
+Skin transition and visual/device acceptance remain pending. No phone build or
+installation performed: owner is «Нативная лента IOS». Select this scene explicitly;
+existing ExportIosReview uses the older scene. Combat/CDN asset unchanged.

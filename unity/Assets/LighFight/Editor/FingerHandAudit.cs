@@ -8,6 +8,7 @@ namespace LighFight.Editor
     public static class FingerHandAudit
     {
         static string Path="Assets/LighFight/Art/Drafts/IslandFingers/island-finger-candidate.fbx";
+        public static void VerifyMakeHuman() { Path="Assets/LighFight/Art/Drafts/IslandMakeHumanHands/island-finger-candidate.fbx";Verify(); }
         public static void VerifyAnatomyV2() { Path="Assets/LighFight/Art/Drafts/IslandFingersV2/island-finger-candidate.fbx";Verify(); }
         public static void Verify()
         {
@@ -35,6 +36,7 @@ namespace LighFight.Editor
             string materialPath=System.IO.Path.GetDirectoryName(Path)+"/hand-skin.mat";
             var existing=AssetDatabase.LoadAssetAtPath<Material>(materialPath);
             if(existing==null)AssetDatabase.CreateAsset(plain,materialPath);else {UnityEngine.Object.DestroyImmediate(plain);plain=existing;}
+            if(Path.Contains("MakeHuman")) { plain.color=new Color(.5042126f,.3934709f,.3709596f).gamma;EditorUtility.SetDirty(plain); }
             var bodyMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/LighFight/Art/Drafts/IslandPremium/review.mat");
             skin.sharedMaterials=new[]{bodyMaterial,plain};
             var correction=model.AddComponent<LighFight.Runtime.JointCorrectives>();correction.referenceAngles=new[]{135.99724f,111.25128f,73.56264f};
@@ -51,7 +53,8 @@ namespace LighFight.Editor
             var a=new Mesh();var b=new Mesh();float difference=0;
             try
             {
-                if(skin.bones.Length!=52)throw new Exception("Expected 52 deform bones");
+                int expectedBones=Path.Contains("MakeHuman")?62:52;
+                if(skin.bones.Length!=expectedBones)throw new Exception("Unexpected deform bone count");
                 int shape=Enumerable.Range(0,skin.sharedMesh.blendShapeCount).First(i=>skin.sharedMesh.GetBlendShapeName(i).Contains("ClosedFists"));
                 var dv=new Vector3[skin.sharedMesh.vertexCount];skin.sharedMesh.GetBlendShapeFrameVertices(shape,0,dv,null,null);
                 float wristDelta=0;var restVertices=skin.sharedMesh.vertices;
@@ -76,7 +79,7 @@ namespace LighFight.Editor
                 }
                 if(difference<.02f)throw new Exception("Closed fist shape has no effect");
                 Directory.CreateDirectory("../.tools/reports");
-                File.WriteAllText("../.tools/reports/finger-hand-audit.txt",$"52 bones; 28 added finger bones; 25 jab poses; closure displacement {difference} m; wrist shape displacement {wristDelta} m; finite vertices. Visual anatomy/device acceptance pending.");
+                File.WriteAllText("../.tools/reports/finger-hand-audit.txt",$"{expectedBones} bones; {expectedBones-24} added finger/palm bones; 25 jab poses; closure displacement {difference} m; wrist shape displacement {wristDelta} m; finite vertices. Visual anatomy/device acceptance pending.");
             }
             finally {UnityEngine.Object.DestroyImmediate(root);UnityEngine.Object.DestroyImmediate(a);UnityEngine.Object.DestroyImmediate(b);}
         }
