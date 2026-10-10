@@ -13,6 +13,10 @@ namespace LighFight.Runtime
         public Animator candidate;
         public AnimationClip candidateClip;
         public bool startWithCandidate;
+        public bool embeddedHost;
+        HostBridge host;
+        public bool HasAcceptedHostLaunch { get; private set; }
+        public float ReviewTime => time;
         public string candidateLabel = "правка суставов";
         public string reviewDescription = "Локти · левая икра · открытые ладони";
         PlayableGraph graph;
@@ -25,6 +29,12 @@ namespace LighFight.Runtime
         bool dragging;
         void Start()
         {
+            if(embeddedHost)
+            {
+                host=FindFirstObjectByType<HostBridge>();
+                if(host==null)throw new System.InvalidOperationException("Embedded review requires host bridge");
+                host.LaunchRequested+=OnHostLaunch;
+            }
             fighter.applyRootMotion = false;
             fighter.cullingMode = AnimatorCullingMode.AlwaysAnimate;
             graph = PlayableGraph.Create("Meshy art review");
@@ -42,6 +52,7 @@ namespace LighFight.Runtime
                 showCandidate=startWithCandidate;candidate.gameObject.SetActive(showCandidate);fighter.gameObject.SetActive(!showCandidate);
             }
             graph.Play(); Evaluate();
+            if(embeddedHost && host.CurrentLaunch!=null)OnHostLaunch(host.CurrentLaunch);
         }
         void Evaluate()
         {
@@ -53,8 +64,15 @@ namespace LighFight.Runtime
             reviewCamera.transform.position = focus + Quaternion.Euler(8, yaw, 0) * new Vector3(0, 0, -distance);
             reviewCamera.transform.LookAt(focus);
         }
+        void OnHostLaunch(LaunchRequest request) { HasAcceptedHostLaunch=true;time=0;paused=false;Evaluate(); }
+        public void ReturnToHost()
+        {
+            if(!embeddedHost || host==null || !HasAcceptedHostLaunch)return;
+            HasAcceptedHostLaunch=false;host.Exit("");
+        }
         void Update()
         {
+            if(embeddedHost && (!HasAcceptedHostLaunch || Time.timeScale==0))return;
             if (!paused) time = Mathf.Repeat(time + Time.unscaledDeltaTime * speed, clip.length);
             // Mouse also receives the primary touch on the legacy mobile input backend.
             if (Input.GetMouseButtonDown(0) && Input.mousePosition.y > Screen.height * .36f)
@@ -66,11 +84,13 @@ namespace LighFight.Runtime
         }
         void OnGUI()
         {
+            if(embeddedHost && !HasAcceptedHostLaunch)return;
             var safe = Screen.safeArea;
             var old = GUI.matrix;
             float scale = Mathf.Min(safe.width / 900f, safe.height / 500f);
             GUI.matrix = Matrix4x4.TRS(new Vector3(safe.x, Screen.height-safe.yMax, 0), Quaternion.identity, Vector3.one * scale);
             GUI.Box(new Rect(10, 10, 880, 58), "LighFight · Island / Meshy · ПРОВЕРКА ГРАФИКИ\n"+reviewDescription+". Перетащи персонажа для поворота камеры.");
+            if(embeddedHost && GUI.Button(new Rect(690,80,190,42),host.CurrentLaunch?.locale?.StartsWith("ru")==false?"Back to Game Hub":"В Game Hub"))ReturnToHost();
             float y = safe.height / scale - 110;
             if (GUI.Button(new Rect(10,y-50,180,42), "Весь персонаж")) { focusHeight=.9f; distance=3; }
             if (GUI.Button(new Rect(200,y-50,180,42), "Локти / кисти")) { focusHeight=1.25f; distance=1.6f; }
@@ -89,6 +109,6 @@ namespace LighFight.Runtime
             if(scrub!=time) { time=scrub; paused=true; }
             GUI.matrix=old;
         }
-        void OnDestroy() { if(graph.IsValid()) graph.Destroy(); }
+        void OnDestroy() { if(host!=null)host.LaunchRequested-=OnHostLaunch;if(graph.IsValid()) graph.Destroy(); }
     }
 }

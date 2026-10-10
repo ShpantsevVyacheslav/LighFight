@@ -7,6 +7,37 @@ using LighFight.Runtime;
 using LighFight.Core;
 public class RuntimeTests
 {
+    static int hostExitCount;
+    static void CountHostExit()=>hostExitCount++;
+    [UnityTest]
+    public IEnumerator EmbeddedArtReviewWaitsForHostAndReturnsThroughBridge()
+    {
+        EditorSceneManager.OpenScene("Assets/LighFight/Scenes/HostArtReview.unity");
+        yield return new EnterPlayMode();
+        yield return null;yield return null;
+        var review=Object.FindFirstObjectByType<MeshyArtReview>();
+        var host=Object.FindFirstObjectByType<HostBridge>();
+        Assert.IsTrue(review.embeddedHost);
+        Assert.IsFalse(review.HasAcceptedHostLaunch);
+        float waitingTime=review.ReviewTime;
+        yield return null;yield return null;
+        Assert.AreEqual(waitingTime,review.ReviewTime,"Animation must wait for host launch");
+        host.Launch("{\"protocolVersion\":1,\"sessionId\":\"review-session\",\"mode\":\"bot\",\"locale\":\"ru\"}");
+        Assert.IsTrue(review.HasAcceptedHostLaunch);
+        Assert.IsTrue(review.candidate.gameObject.activeSelf);
+        Assert.IsFalse(review.fighter.gameObject.activeSelf);
+        yield return null;yield return null;
+        Assert.Greater(review.ReviewTime,0);
+        hostExitCount=0;host.ExitRequested+=CountHostExit;
+        review.ReturnToHost();review.ReturnToHost();
+        Assert.AreEqual(1,hostExitCount,"Return emits exactly one native exit");
+        Assert.IsFalse(review.HasAcceptedHostLaunch);
+        Assert.AreEqual("review-session",host.CurrentLaunch.sessionId);
+        Time.timeScale=1;
+        Object.Destroy(host.gameObject);
+        yield return null;
+        yield return new ExitPlayMode();
+    }
     [UnityTest]
     public IEnumerator PrototypeOwnsAndDestroysItsWorld()
     {

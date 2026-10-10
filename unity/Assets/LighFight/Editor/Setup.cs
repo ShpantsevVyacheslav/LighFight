@@ -39,7 +39,7 @@ namespace LighFight.Editor
         {
             var settings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")[0]);
             var included = settings.FindProperty("m_AlwaysIncludedShaders");
-            foreach (string name in new[] { "LighFight/OfficeLit", "Unlit/Color" })
+            foreach (string name in new[] { "LighFight/OfficeLit", "LighFight/CharacterSkin", "Unlit/Color" })
             {
                 var shader = Shader.Find(name);
                 if (shader == null) throw new System.InvalidOperationException("Missing runtime shader: " + name);
@@ -56,7 +56,12 @@ namespace LighFight.Editor
                 throw new System.InvalidOperationException("Required Unity platform module is not installed: " + target);
             bool preview = System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_PROTOTYPE") == "1";
             string scenePath;
-            if (preview) { scenePath = ScenePath; if (!File.Exists(scenePath)) Create(); }
+            if (System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_ART_REVIEW")=="1")
+            {
+                if(preview)throw new System.InvalidOperationException("Choose only one embedded preview profile");
+                HostArtReviewSetup.Create();scenePath=HostArtReviewSetup.ScenePath;
+            }
+            else if (preview) { scenePath = ScenePath; if (!File.Exists(scenePath)) Create(); }
             else
             {
                 if (string.IsNullOrWhiteSpace(System.Environment.GetEnvironmentVariable("LIGHFIGHT_MANIFEST_URL")))
