@@ -46,3 +46,12 @@ Android AAR и iOS UnityFramework пересобраны с OfficeLit и ско�
 Starter-4 подготовлен: Android 151628 байт, iOS 147791 байт bundles.
 Пакет содержит временные модели; объём финальной графики будет больше.
 Проверки ловят 29 намеренных дефектов: 24 core и 5 Unity runtime/catalog.
+
+## Публикация 2026-10-10
+
+По явному разрешению владельца main отправлен в закрытый GitHub.
+Отдельный Hosting site создан, starter-4 опубликован. Android/iOS manifests,
+каталоги и bundles отвечают HTTP 200; bundles совпадают с локальными файлами.
+Первый deploy выявил запрет Firebase на public вне каталога конфигурации;
+конфигурация перенесена в корень как firebase.lighfight.json.
+Полный клиент с Bootstrap и запуск на телефонах всё ещё не проверены.

@@ -65,7 +65,7 @@ HTTPS обязателен; только development разрешает HTTP н�
 
 ## Изолированный Firebase Hosting
 
-`content-hosting/firebase.json` предназначен для отдельного сайта
+`firebase.lighfight.json` предназначен для отдельного сайта
 `lighfight-assets-72b24` проекта `project-72b24`. Этот сайт пока не создан.
 Существующий сайт LighChat не используется. Публичный доступ ко всему Storage
 bucket не требуется.
