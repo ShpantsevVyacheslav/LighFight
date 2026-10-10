@@ -101,3 +101,19 @@ Device verification: no. No push or resource publication during this stage.
 ещё не импортирован в Unity и не входит в опубликованный starter bundle.
 Первую проверку кандидата на телефоне делать в отдельной Unity art-review сборке
 с поворотом камеры, паузой и замедлением; затем проверять внутри LighChat.
+
+## Unity Meshy review — 2026-10-10
+
+Imported provider FBX, Generic rig and jab into an isolated review scene. Touch
+camera orbit, joint close-up presets, pause, quarter speed, frame stepping and
+timeline scrub implemented. Unity sampled 25 poses: 24 bones, 1.75-second clip,
+0.986 m maximum vertex displacement. Existing EditMode tests: 46/46 passed.
+Initial import had a missing Animator; fixed and playback audit passed.
+Source animation scale tracks remain constant for both calves and forearms.
+This does not establish correct weights/topology or resolve the reported defects.
+
+Phone build/install belongs to agent «Нативная лента IOS», per owner. No device
+build or install executed here. Separate export recipe and findings in
+`docs/handoffs/MESHY_IPHONE_REVIEW.md`; output is `Builds/ArtReviewiOS`, not
+LighChat's Unity export. Самопроверка: touch controls and iOS export are not
+device-verified; elbows, left calf, palms and hair remain open art issues.
