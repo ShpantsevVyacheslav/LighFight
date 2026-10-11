@@ -35,3 +35,15 @@ Other characters have not yet been migrated to this native web export path. Phon
 ## iOS handoff
 
 Native framework exported and built successfully for iphoneos from commit `74db1b98dbd561cdbfa3eaea226ac4e20d6e3a72`. Delivery: `.tools/delivery/74db1b9/UnityFramework.framework`, including Data; stamp alongside. Binary SHA256: `4618ad99d0e227efd8a058b02b4d8e031419a33724eb1025f28d4ddab1704332`. Sent to the «Нативная лента iOS» thread for its next LighChat build; shared plugin framework was not overwritten during that agent's work. New phone acceptance remains pending.
+
+## Current source revision (12 October 2026)
+
+The later visible web source is task `01a12cb8-8e0d-75b1-973b-6f75e4c7cbcf`: 103,074 triangles. This supersedes the 66,364-triangle source for the quality investigation, but has **not** yet replaced the game fighter. Direct web Wave FBX preserves this surface and its native rig; the Blender import has 80 bones including FBX end bones. The production fighter still uses the previous 66-joint export.
+
+`merge_visible_web_fbx.py` refuses differing bone inventories, parents, rest matrices or object transforms. It requires explicit names for multi-action files because FBX names may be truncated. Single-action filenames with `_Animation_` provide an unambiguous provider clip name. A successful merge is not visual acceptance or a round-trip geometry/weight proof: the audit reports this separately.
+
+The web exporter limits All Added to 20 motions, including default Running/Walking/Spartan. Removed motions remain in the library. First export group currently contains 11 custom strikes, these three defaults, forward/backward fight walk, left/right jab, left hook and right uppercut. Remaining motions must be restored and exported separately. No additional credits consumed in this web selection/export pass; balance remained 3,739.
+
+Selection no longer forces Guard on a resting preview. It uses Greeting when present, otherwise native Idle. Dance remains an icon. Import permits explicit optional Greeting and Victory states without inventing or aliasing them to unrelated movements.
+
+Verification: 119 Unity EditMode checks passed on this change; two bind-compatibility tests reject modified parents/rest transforms/root scale/non-finite matrices. Direct Wave merge reports 103,074 triangles and the semantic `Wave_One_Hand` action. Device delivery remains separate and pending.

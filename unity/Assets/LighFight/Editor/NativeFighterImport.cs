@@ -21,7 +21,7 @@ namespace LighFight.Editor {
    string[] required=Moves.All.Select(m=>m.Id).Concat(new[]{"Idle","Guard","Walk","WalkBack","Crouch","Hit","Fall","GetUp"}).ToArray();
    foreach(string state in required)if(manifest.states.Count(s=>s.state==state)!=1)throw new InvalidOperationException("Require explicit native clip for "+state);
    if(manifest.states.Select(s=>s.state).Distinct().Count()!=manifest.states.Length)throw new InvalidOperationException("Duplicate native state");
-   if(manifest.states.Any(s=>!required.Contains(s.state)&&s.state!="Dance" || s.start<0 || s.end>1 || s.start>=s.end || s.contactPhase<0 || s.contactPhase>1))throw new InvalidOperationException("Invalid native state mapping");
+   if(manifest.states.Any(s=>!required.Contains(s.state)&&!new[]{"Dance","Greeting","Victory"}.Contains(s.state) || s.start<0 || s.end>1 || s.start>=s.end || s.contactPhase<0 || s.contactPhase>1))throw new InvalidOperationException("Invalid native state mapping");
    var importer=AssetImporter.GetAtPath(manifest.modelPath) as ModelImporter;
    if(!importer)throw new InvalidOperationException("Native character must be an imported model");
    if(importer.skinWeights!=ModelImporterSkinWeights.Custom||importer.avatarSetup!=ModelImporterAvatarSetup.CreateFromThisModel||importer.animationType!=ModelImporterAnimationType.Generic||importer.animationCompression!=ModelImporterAnimationCompression.Off||importer.meshCompression!=ModelImporterMeshCompression.Off||importer.maxBonesPerVertex!=8||importer.minBoneWeight!=0||!importer.isReadable){

@@ -13,7 +13,7 @@ namespace LighFight.Runtime
   private float previewYaw=15,previewDistance=2.65f,previewClock,previewFrame;
   private Vector2 dragPrevious;
   private bool dragging;
-  private Fighter previewFighter=new Fighter{Guard=true};
+  private Fighter previewFighter=new Fighter{Guard=false};
   private GUIStyle selectionText;
   private readonly Color selectionAccent=new Color(.28f,.82f,1),selectionPanel=new Color(.045f,.085f,.15f,.96f);
   private Rect PreviewArea=>new Rect(245,54,430,378);
@@ -31,10 +31,10 @@ namespace LighFight.Runtime
    var center=new Vector3(match.A.X,1,0);
    fightCamera.transform.position=center+new Vector3(0,.18f,-previewDistance);fightCamera.transform.LookAt(center);
    previewClock+=Time.deltaTime;
-   previewFighter.X=match.A.X;previewFighter.Guard=previewMove<0;
+   previewFighter.X=match.A.X;previewFighter.Guard=false;
    if(previewMove>=0){if(!previewFighter.Attack.HasValue)previewFighter.Start(previewMove);previewFrame+=Time.deltaTime*60;previewFighter.Frame=(int)previewFrame;if(previewFighter.Frame>=previewFighter.Attack.Value.Duration){previewFrame=0;previewFighter.Attack=null;}}
    else {previewFighter.Attack=null;previewFrame=0;}
-   player.Pose(previewFighter,1,Time.deltaTime);if(previewMove==-2)player.PreviewNativeMotion("Dance",previewClock);player.transform.rotation=Quaternion.Euler(0,(player.UsesNativeMotion?180:90)+previewYaw,0);
+   player.Pose(previewFighter,1,Time.deltaTime);if(previewMove==-2)player.PreviewNativeMotion("Dance",previewClock);else if(previewMove==-1&&player.HasNativeMotion("Greeting"))player.PreviewNativeMotion("Greeting",previewClock);player.transform.rotation=Quaternion.Euler(0,(player.UsesNativeMotion?180:90)+previewYaw,0);
    if(previewMove==-1)player.transform.position+=Vector3.up*Mathf.Sin(previewClock*2)*.004f;
    if(rulesOpen||arenaOpen||opponentOpen||optionsOpen){dragging=false;return;}
    UpdateStrikeGestures();
@@ -122,7 +122,7 @@ namespace LighFight.Runtime
     Card(new Rect(rect.x-1,rect.y-1,rect.width+2,rect.height+2),active?selectionAccent:new Color(.20f,.29f,.40f));Card(rect,selectionPanel);
     if(portraits[i]!=null)GUI.DrawTexture(rect,portraits[i],ScaleMode.ScaleAndCrop,true);
     Card(new Rect(rect.x,rect.y+27,rect.width,16),new Color(.02f,.05f,.09f,.88f));Text(new Rect(rect.x,rect.y+27,rect.width,16),russian?shortNames[i]:FighterEnglish[i],8,active?selectionAccent:Color.white,TextAnchor.MiddleCenter);
-    if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedFighter=i;previewFighter=new Fighter{Guard=true};previewMove=-1;previewYaw=15;RebuildViews();}
+    if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedFighter=i;previewFighter=new Fighter{Guard=false};previewMove=-1;previewYaw=15;RebuildViews();}
    }
    GUI.enabled=previousEnabled;
    if(arenaOpen||rulesOpen)RulesSheet();
