@@ -58,9 +58,27 @@ namespace LighFight.Runtime
    }
    if(!found){stickFinger=-1;stickInput=Vector2.zero;}
   }
+  private void DrawTrainingAdvice()
+  {
+   if(!training)return;
+   var fighter=match.A;string title=T("ПРОБУЙ УДАРЫ И СЕРИИ","TRY STRIKES AND CHAINS"),hint=T("Начни с джеба → кросса","Start with jab → cross");
+   if(fighter.LastStrikeIndex>=0)
+   {
+    title=T(MoveNames[fighter.LastStrikeIndex],Moves.All[fighter.LastStrikeIndex].Id);
+    switch(fighter.Outcome)
+    {
+     case StrikeOutcome.Hit:hint=T("Попадание · ","Hit · ");if(fighter.Attack.HasValue && fighter.Frame<=fighter.Attack.Value.Startup+fighter.Attack.Value.Active+6 && fighter.ComboCount<Combos.MaxHits){string next="";for(int i=0;i<Moves.All.Length;i++)if(Combos.CanFollow(fighter.Attack.Value.Id,i))next+=(next.Length>0?" / ":"")+T(MoveNames[i],Moves.All[i].Id);hint+=next.Length>0?T("Продолжай: ","Continue: ")+next:T("Заверши движение","Finish recovery");}else hint+=T("Дождись стойки","Wait for guard stance");break;
+     case StrikeOutcome.Blocked:hint=T("Блок · серия прервана, смени уровень удара","Blocked · chain stopped, change strike level");break;
+     case StrikeOutcome.Miss:hint=T("Промах · проверь дистанцию и направление","Miss · check distance and direction");break;
+     case StrikeOutcome.Interrupted:hint=T("Удар прерван · сначала защита","Interrupted · defend first");break;
+     default:hint=T("Подготовка · продолжение вводи ближе к попаданию","Startup · input follow-up near contact");break;
+    }
+   }
+   Card(new Rect(215,220,370,75),new Color(.03f,.08f,.14f,.8f));Text(new Rect(228,223,345,28),title,15,selectionAccent);Text(new Rect(228,253,345,35),hint,12);
+  }
   private void DrawBattleControls()
   {
-   SelectionResources();Disc(StickArea,new Color(.03f,.08f,.14f,.75f));
+   SelectionResources();DrawTrainingAdvice();Disc(StickArea,new Color(.03f,.08f,.14f,.75f));
    Vector2 knob=StickArea.center+new Vector2(stickInput.x,-stickInput.y)*50;
    Disc(new Rect(knob.x-24,knob.y-24,48,48),selectionAccent);
    Text(new Rect(30,515,175,23),T("Движение + шаг в сторону","Move + sidestep"),11,Color.white,TextAnchor.MiddleCenter);

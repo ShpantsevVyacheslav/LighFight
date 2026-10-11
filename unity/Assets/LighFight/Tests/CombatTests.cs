@@ -195,3 +195,11 @@ public class GestureAndComboTests
  [Test] public void ChainStepCannotCrossDefender(){var m=new Match();m.A.X=0;m.B.X=.64f;m.Attack(m.A,0);for(int i=0;i<13;i++)m.Step();Assert.IsTrue(m.Attack(m.A,1));for(int i=0;i<8;i++)m.Step();Assert.GreaterOrEqual(Match.Distance(m.A,m.B),Match.MinimumSeparation);}
  [Test] public void HitReactionTracksLevelAndSimulationTicks(){foreach(int index in new[]{0,3,5}){var m=new Match();m.A.X=0;m.B.X=1;m.Attack(m.A,index);for(int i=0;i<=Moves.All[index].Startup;i++)m.Step();Assert.AreEqual(Moves.All[index].Level,m.B.LastHitLevel);Assert.AreEqual(1,m.B.ReactionTicks);Assert.Greater(m.B.ReactionDuration,m.B.Stun);}}
 }
+
+public class StrikeOutcomeTests
+{
+ [Test] public void ContactBlockAndMissProduceDifferentTrainingResults(){foreach(int scenario in new[]{0,1,2}){var m=new Match();m.A.X=0;m.B.X=scenario==2?4:.8f;m.B.Guard=scenario==1;m.Attack(m.A,0);for(int i=0;i<14;i++)m.Step();Assert.AreEqual(scenario==0?StrikeOutcome.Hit:scenario==1?StrikeOutcome.Blocked:StrikeOutcome.Miss,m.A.Outcome);Assert.AreEqual(0,m.A.LastStrikeIndex);}}
+ [Test] public void InterruptedStartupDoesNotBecomeAMiss(){var m=new Match();m.A.X=0;m.B.X=.8f;m.Attack(m.A,10);m.Attack(m.B,0);for(int i=0;i<35;i++)m.Step();Assert.AreEqual(StrikeOutcome.Interrupted,m.A.Outcome);}
+ [Test] public void NewAttackClearsOldTrainingResult(){var m=new Match();m.Attack(m.A,0);for(int i=0;i<30;i++)m.Step();Assert.AreEqual(StrikeOutcome.Miss,m.A.Outcome);m.Attack(m.A,1);Assert.AreEqual(StrikeOutcome.None,m.A.Outcome);Assert.AreEqual(1,m.A.LastStrikeIndex);}
+ [Test] public void BotRespectsCalibratedReach(){var s=new FightSession();s.Match.A.X=0;s.Match.B.X=1.3f;s.Match.EffectiveReach=(f,i)=>.6f;var bot=new BotController();for(int i=0;i<14;i++){bot.Step(s);s.Step();}Assert.IsNull(s.Match.B.Attack);}
+}

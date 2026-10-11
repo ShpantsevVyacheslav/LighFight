@@ -24,11 +24,12 @@ namespace LighFight.Runtime
     if(!ready){for(int i=0;i<8;i++)before[i]=now[i];ready=true;}
    }
   }
+  private static readonly float[] CalibratedReach={.85f,.85f,.7f,.7f,1,1,.85f,.6f,.7f,.6f,1,1,.85f,1,.85f,1,.85f,.6f,1,1,1,.7f,.85f,1,.7f};
   private readonly Body a=new Body(),b=new Body();
   private readonly FighterView viewA,viewB;
   private readonly Match match;
   public Vector3 ImpactA {get;private set;} public Vector3 ImpactB {get;private set;}
-  public PhysicalContacts(Match value,FighterView player,FighterView opponent){match=value;viewA=player;viewB=opponent;value.RequirePhysicalContact=true;value.BeforeContact=Sample;value.ContactValidator=Touches;}
+  public PhysicalContacts(Match value,FighterView player,FighterView opponent){match=value;viewA=player;viewB=opponent;value.EffectiveReach=(fighter,index)=>CalibratedReach[index];value.RequirePhysicalContact=true;value.BeforeContact=Sample;value.ContactValidator=Touches;}
   private void Sample(Match value){a.Sample(viewA,value.A,value.B);b.Sample(viewB,value.B,value.A);}
   private bool Touches(Fighter attacker,Fighter defender)
   {

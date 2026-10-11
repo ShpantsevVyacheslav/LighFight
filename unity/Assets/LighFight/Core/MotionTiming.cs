@@ -3,6 +3,10 @@ namespace LighFight.Core
 {
     public static class MotionTiming
     {
+        public static float ContactPhase(string id,float measured)
+        {
+            switch(id){case "elbow":return .25f;case "jumpKick":return .5f;case "hammer":return .3f;case "uppercut":return .7f;default:return measured;}
+        }
         // Align the observed contact pose with the deterministic first active combat frame.
         public static float Phase(Move move,int frame,float contact)
         {

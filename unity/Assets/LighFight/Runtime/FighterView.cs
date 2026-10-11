@@ -124,7 +124,7 @@ namespace LighFight.Runtime
                         if(contact.phase>0)
                         {
                             float end=contact.end>contact.start?contact.end:1;
-                            float normalized=(contact.phase-contact.start)/(end-contact.start);
+                            float normalized=(MotionTiming.ContactPhase(motion,contact.phase)-contact.start)/(end-contact.start);
                             phase=Mathf.Lerp(contact.start,end,MotionTiming.Phase(fighter.Attack.Value,fighter.Frame,normalized));
                         }
                     }
@@ -187,7 +187,7 @@ namespace LighFight.Runtime
         {
             if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
             Pose(fighter,fighter.FacingX,delta);
-            if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f)transform.rotation=Quaternion.LookRotation(direction);}
+            if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f){transform.rotation=Quaternion.LookRotation(direction);if(animator!=null && fighter.Attack.HasValue && fighter.Attack.Value.Id=="uppercut"){var move=fighter.Attack.Value;float torque=fighter.Frame<move.Startup?Mathf.Clamp01((float)fighter.Frame/move.Startup):1-Mathf.Clamp01((float)(fighter.Frame-move.Startup-move.Active)/move.Recovery);transform.rotation*=Quaternion.Euler(0,-30*torque,0);}}}
         }
         public Vector3 BonePoint(string name,Vector3 fallback)
         {

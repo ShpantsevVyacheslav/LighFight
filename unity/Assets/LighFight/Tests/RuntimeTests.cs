@@ -84,6 +84,23 @@ public class RuntimeTests
         try{var view=a.GetComponent<FighterView>();var fighter=new Fighter{Stun=18,ReactionDuration=18,ReactionTicks=4,LastHitLevel=Level.Mid};var other=new Fighter{X=1};view.PoseTowards(fighter,other,0);var spine=System.Array.Find(a.GetComponentsInChildren<Transform>(),t=>t.name=="Spine");var rotation=spine.localRotation;for(int i=0;i<10;i++)view.SampleContactPose(fighter,other);Assert.Less(Quaternion.Angle(rotation,spine.localRotation),.05f);}
         finally{Object.DestroyImmediate(a);}
     }
+    [Test] public void AuditEveryArtistStrikeAtPlayableDistances()
+    {
+        var lines=new System.Collections.Generic.List<string>{"fighter,move,closestHit,farthestHit"};
+        foreach(int artist in new[]{3,4})foreach(var move in Moves.All)
+        {
+            float closest=-1,farthest=-1;
+            foreach(float distance in new[]{.60f,.70f,.85f,1f,1.2f,1.4f,1.6f,1.8f,2f,2.4f,4f})
+            {
+                var a=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-"+artist+".prefab"));
+                var b=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-"+(artist==3?4:3)+".prefab"));
+                try{var m=new Match();m.A.X=0;m.B.X=distance;new PhysicalContacts(m,a.GetComponent<FighterView>(),b.GetComponent<FighterView>());m.Attack(m.A,System.Array.IndexOf(Moves.All,move));for(int tick=0;tick<move.Duration;tick++)m.Step();if(distance==4)Assert.AreEqual(150,m.B.Health,artist+" "+move.Id+" must miss at 4m");if(m.B.HitSerial>0){if(closest<0)closest=distance;farthest=distance;}}
+                finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
+            }
+            Assert.GreaterOrEqual(closest,.6f,artist+" "+move.Id+" must have a playable contact distance");lines.Add(artist+","+move.Id+","+closest.ToString(System.Globalization.CultureInfo.InvariantCulture)+","+farthest.ToString(System.Globalization.CultureInfo.InvariantCulture));
+        }
+        var path=System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath,"../../.tools/reports/strike-audit.csv"));System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));System.IO.File.WriteAllLines(path,lines);
+    }
     [UnityTest]
     public IEnumerator EmbeddedBattleUsesArtistRigsAndReturnsOnce()
     {

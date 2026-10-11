@@ -38,7 +38,7 @@ namespace LighFight.Core
                     else if(attackCooldown<=0 && !bot.Attack.HasValue)
                     {
                         int count=0;
-                        for(int i=0;i<Moves.All.Length;i++)if(Moves.All[i].Reach>=distance && !(target.Crouch && Moves.All[i].Level==Level.High) && (!whiff || Moves.All[i].Startup<=18))candidates[count++]=i;
+                        for(int i=0;i<Moves.All.Length;i++)if(match.Reach(bot,i)>=distance && !(target.Crouch && Moves.All[i].Level==Level.High) && (!whiff || Moves.All[i].Startup<=18))candidates[count++]=i;
                         if(count>0){session.QueueAttack(false,candidates[random.Next(count)]);attackCooldown=38+random.Next(20);}
                         else if(distance<2.4f && random.NextDouble()<.4){sideTicks=10;sideDirection=bot.Z>0?-1:1;}
                     }
@@ -46,8 +46,8 @@ namespace LighFight.Core
             }
             bot.Guard=guard;bot.Crouch=crouch;
             if(sideTicks>0){sideTicks--;if(distance>.001f)match.Walk(bot,-(target.Z-bot.Z)/distance*sideDirection,(target.X-bot.X)/distance*sideDirection);}
-            else if(!guard && distance>1.4f)match.Walk(bot,(target.X-bot.X)/distance,(target.Z-bot.Z)/distance);
-            else if(!guard && distance<1.05f && distance>.001f && attackCooldown>0)match.Walk(bot,(bot.X-target.X)/distance,(bot.Z-target.Z)/distance);
+            else if(!guard && distance>.8f)match.Walk(bot,(target.X-bot.X)/distance,(target.Z-bot.Z)/distance);
+            else if(!guard && distance<.65f && distance>.001f && attackCooldown>0)match.Walk(bot,(bot.X-target.X)/distance,(bot.Z-target.Z)/distance);
         }
     }
 }

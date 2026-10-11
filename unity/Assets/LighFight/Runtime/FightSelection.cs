@@ -75,7 +75,7 @@ namespace LighFight.Runtime
    Text(new Rect(28,100,225,80),T(FighterNames[selectedFighter],FighterEnglish[selectedFighter]),29);
    Text(new Rect(28,198,225,45),T("Боевые параметры","Combat stats"),14,new Color(.65f,.76f,.87f));
    // These values describe shared combat mechanics, not invented progression ratings.
-   string[] labels={T("Здоровье","Health"),T("Урон ударов","Damage"),T("Дальность","Reach")};string[] values={"150","6–25","1.1–2.35 м"};
+   string[] labels={T("Здоровье","Health"),T("Урон ударов","Damage"),T("Дальность","Reach")};string[] values={"150","6–25","0.6–1.2 м"};
    for(int i=0;i<3;i++){Text(new Rect(28,250+i*44,140,30),labels[i],14);Text(new Rect(165,250+i*44,90,30),values[i],17,selectionAccent);}
    Text(new Rect(290,393,360,25),T("Вращай пальцем · Приближай двумя пальцами","Drag to rotate · Pinch to zoom"),11,new Color(.65f,.76f,.87f),TextAnchor.MiddleCenter);
    if(Pill(new Rect(293,428,98,35),T("Стойка","Guard"),previewMove<0))previewMove=-1;

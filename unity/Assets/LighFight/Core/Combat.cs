@@ -3,6 +3,7 @@ using System;
 namespace LighFight.Core
 {
     public enum Level { High, Mid, Low }
+    public enum StrikeOutcome { None, Hit, Blocked, Miss, Interrupted }
 
     public readonly struct Move
     {
@@ -49,6 +50,8 @@ namespace LighFight.Core
         public bool LastBlocked, LastCounter;
         public bool Guard, Crouch;
         public Move? Attack;
+        public StrikeOutcome Outcome;
+        public int LastStrikeIndex=-1;
         public int Frame;
         internal bool Connected, CleanHit;
         internal int ChainStepTicks;
@@ -61,14 +64,14 @@ namespace LighFight.Core
             if (Frame < move.Startup + move.Active || Frame > move.Startup + move.Active + 6) return false;
             bool allowed = Combos.CanFollow(move.Id,index);
             if (!allowed) return false;
-            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount++; ChainStepTicks=12; return true;
+            LastStrikeIndex=index;Outcome=StrikeOutcome.None;Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount++; ChainStepTicks=12; return true;
         }
 
         public bool Start(int index)
         {
             if (Health <= 0 || index < 0 || index >= Moves.All.Length || Stun > 0 || DownTicks > 0 || Attack.HasValue)
                 return false;
-            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1; ChainStepTicks=0;
+            LastStrikeIndex=index;Outcome=StrikeOutcome.None;Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1; ChainStepTicks=0;
             return true;
         }
     }
@@ -83,6 +86,8 @@ namespace LighFight.Core
         public Action<Match> BeforeContact;
         public Func<Fighter,Fighter,bool> ContactValidator;
         public bool RequirePhysicalContact;
+        public Func<Fighter,int,float> EffectiveReach;
+        public float Reach(Fighter fighter,int index)=>EffectiveReach!=null?EffectiveReach(fighter,index):Moves.All[index].Reach;
         public bool Finished => A.Health <= 0 || B.Health <= 0;
 
         private readonly struct Contact
@@ -126,7 +131,7 @@ namespace LighFight.Core
         private static void Apply(Fighter attacker, Fighter defender, Contact contact)
         {
             if (!contact.Hit) return;
-            attacker.Connected = true; attacker.CleanHit = !contact.Blocked;
+            attacker.Connected = true; attacker.CleanHit = !contact.Blocked;attacker.Outcome=contact.Blocked?StrikeOutcome.Blocked:StrikeOutcome.Hit;
             defender.LastHitLevel=contact.Level;
             defender.HitSerial++; defender.LastDamage = contact.Blocked ? 0 : contact.Damage;
             defender.LastBlocked = contact.Blocked; defender.LastCounter = contact.Counter;
@@ -139,6 +144,7 @@ namespace LighFight.Core
             float distance=Distance(attacker,defender);
             if(distance>.0001f){defender.X = Math.Max(-5, Math.Min(5, defender.X + (defender.X-attacker.X)/distance*.12f));defender.Z = Math.Max(-1.5f,Math.Min(1.5f,defender.Z+(defender.Z-attacker.Z)/distance*.12f));}
             // A hit cancels startup/recovery. A simultaneous contact was captured above.
+            if(defender.Attack.HasValue && defender.Outcome==StrikeOutcome.None)defender.Outcome=StrikeOutcome.Interrupted;
             defender.Attack = null;
             defender.Frame = 0;
         }
@@ -156,8 +162,7 @@ namespace LighFight.Core
             else fighter.ChainStepTicks=0;
             if (fighter.Stun > 0) {fighter.Stun--;fighter.ReactionTicks++;}
             if (fighter.DownTicks > 0) fighter.DownTicks--;
-            if (fighter.Attack.HasValue && ++fighter.Frame >= fighter.Attack.Value.Duration)
-            { fighter.Attack = null; fighter.Frame = 0; }
+            if(fighter.Attack.HasValue){fighter.Frame++;if(!fighter.Connected && fighter.Frame>=fighter.Attack.Value.Startup+fighter.Attack.Value.Active)fighter.Outcome=StrikeOutcome.Miss;if(fighter.Frame>=fighter.Attack.Value.Duration){fighter.Attack=null;fighter.Frame=0;}}
         }
 
         public bool Attack(Fighter fighter, int index)
