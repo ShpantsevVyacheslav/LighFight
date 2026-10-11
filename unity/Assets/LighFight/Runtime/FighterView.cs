@@ -13,6 +13,7 @@ namespace LighFight.Runtime
         [SerializeField] private ContactPose[] contactPoses = new ContactPose[0];
         public ContactPose[] CopyContactPoses() => (ContactPose[])contactPoses.Clone();
         public void ConfigureAnimation(Animator value,ContactPose[] poses) { animator=value;contactPoses=poses;ownsMaterials=false; }
+        private float previousZ;
         private float previousX, stride, motionHold, deathTime, reactionTime;
         private int previousHitSerial;
         private bool hasPosition, backing;
@@ -89,12 +90,12 @@ namespace LighFight.Runtime
             => joint.localRotation = Quaternion.Euler(x,y,z);
         public void Pose(Fighter fighter, float facing, float delta)
         {
-            if(!hasPosition){previousX=fighter.X;hasPosition=true;if(animator!=null){animator.applyRootMotion=false;animator.speed=0;animator.Rebind();animator.Update(0);}}
-            if(Mathf.Abs(previousX-fighter.X)>.0001f){motionHold=.06f;backing=(fighter.X-previousX)*facing<0;}else motionHold=Mathf.Max(0,motionHold-delta);
+            if(!hasPosition){previousX=fighter.X;previousZ=fighter.Z;hasPosition=true;if(animator!=null){animator.applyRootMotion=false;animator.speed=0;animator.Rebind();animator.Update(0);}}
+            if(Mathf.Abs(previousX-fighter.X)+Mathf.Abs(previousZ-fighter.Z)>.0001f){motionHold=.06f;backing=(fighter.X-previousX)*facing+(fighter.Z-previousZ)*fighter.FacingZ<0;}else motionHold=Mathf.Max(0,motionHold-delta);
             bool moving = motionHold>0;
-            previousX = fighter.X; stride += moving ? delta*12 : delta*2;
+            previousX = fighter.X; previousZ=fighter.Z; stride += moving ? delta*12 : delta*2;
             float gait = moving ? Mathf.Sin(stride)*25 : Mathf.Sin(stride)*2;
-            transform.position = new Vector3(fighter.X,0,0);
+            transform.position = new Vector3(fighter.X,0,fighter.Z);
             transform.rotation = Quaternion.Euler(0,facing>0?90:-90,0);
             if(animator!=null)
             {
@@ -163,6 +164,25 @@ namespace LighFight.Runtime
                 Rotate(arm,Mathf.Lerp(-45,angle,strike),0,move.Id=="hook"?-45*strike:0);
                 Rotate(fore,Mathf.Lerp(-85,move.Id=="elbow"?-100:-8,strike));
             }
+        }
+        public void PoseTowards(Fighter fighter,Fighter other,float delta)
+        {
+            if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
+            Pose(fighter,fighter.FacingX,delta);
+            if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f)transform.rotation=Quaternion.LookRotation(direction);}
+        }
+        public Vector3 BonePoint(string name,Vector3 fallback)
+        {
+            if(contactBones==null){contactBones=new System.Collections.Generic.Dictionary<string,Transform>();foreach(var t in GetComponentsInChildren<Transform>())if(!contactBones.ContainsKey(t.name))contactBones.Add(t.name,t);}
+            if(contactBones.TryGetValue(name,out var bone))return bone.position;
+            if(animator!=null)return new Vector3(float.NaN,float.NaN,float.NaN);
+            switch(name){case "LeftHand":return foreL.TransformPoint(0,-.30f,0);case "RightHand":return foreR.TransformPoint(0,-.30f,0);case "LeftForeArm":return foreL.position;case "RightForeArm":return foreR.position;case "LeftToeBase":case "LeftFoot":return shinL.TransformPoint(0,-.36f,.065f);case "RightToeBase":case "RightFoot":return shinR.TransformPoint(0,-.36f,.065f);case "LeftLeg":return shinL.position;case "RightLeg":return shinR.position;case "Head":return head.position;case "Spine":return chest.TransformPoint(0,.16f,0);case "Hips":return hips.position;}
+            return transform.TransformPoint(fallback);
+        }
+        private System.Collections.Generic.Dictionary<string,Transform> contactBones;
+        public void SampleContactPose(Fighter fighter,Fighter other)
+        {
+            PoseTowards(fighter,other,0);if(animator!=null){animator.Update(0);if(fighter.Attack.HasValue && fighter.Frame>=fighter.Attack.Value.Startup && fighter.Frame<fighter.Attack.Value.Startup+fighter.Attack.Value.Active)blendElapsed=blendDuration;}
         }
         private void OnDestroy(){if(ownsMaterials){Destroy(skin);Destroy(cloth);Destroy(dark);}}
     }

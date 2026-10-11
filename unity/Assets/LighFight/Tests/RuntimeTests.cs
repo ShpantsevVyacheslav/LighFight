@@ -51,6 +51,26 @@ public class RuntimeTests
             finally{Object.DestroyImmediate(obj);}
         }
     }
+    [Test]
+    public void ArtistJabUsesActualContactAndMissesOutsideItsTrajectory()
+    {
+        var prefabA=UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-4.prefab");
+        var prefabB=UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-3.prefab");
+        foreach(bool dodge in new[]{false,true})
+        {
+            var a=Object.Instantiate(prefabA);var b=Object.Instantiate(prefabB);
+            try
+            {
+                var m=new Match();m.A.X=0;m.B.X=.85f;
+                var contacts=new PhysicalContacts(m,a.GetComponent<FighterView>(),b.GetComponent<FighterView>());
+                m.Attack(m.A,0);if(dodge)m.B.Z=1;
+                for(int tick=0;tick<Moves.All[0].Duration;tick++)m.Step();
+                if(dodge)Assert.AreEqual(150,m.B.Health,"A sidestep out of the locked jab path must miss");
+                else Assert.Less(m.B.Health,150,"Close-range jab should connect with animated body");
+            }
+            finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
+        }
+    }
     [UnityTest]
     public IEnumerator EmbeddedBattleUsesArtistRigsAndReturnsOnce()
     {

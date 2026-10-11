@@ -167,3 +167,14 @@ public class MatchConfigurationTests
  [Test] public void TimerResetsToChosenLength(){var s=new FightSession(false,3,90);s.Match.B.Health=0;s.Step();for(int i=0;i<FightSession.BreakTicks;i++)s.Step();Assert.AreEqual(5400,s.RemainingTicks);Assert.AreEqual(2,s.Round);}
  [Test] public void InvalidConfigurationIsBounded(){var s=new FightSession(false,100,-1);Assert.AreEqual(3,s.TargetWins);Assert.AreEqual(1800,s.RemainingTicks);}
 }
+
+public class SpatialCombatTests
+{
+ [Test] public void SidestepHasBoundedNormalizedSpeed(){var m=new Match();float x=m.A.X;m.Walk(m.A,1,1);Assert.That(Match.Distance(m.A,new Fighter{X=x}),Is.EqualTo(.045f).Within(.0001));for(int i=0;i<200;i++)m.Walk(m.A,0,1);Assert.AreEqual(1.5f,m.A.Z);}
+ [Test] public void DepthSeparationPreventsDistanceHit(){var m=new Match();m.A.X=0;m.B.X=1;m.B.Z=1.5f;m.Attack(m.A,0);for(int i=0;i<20;i++)m.Step();Assert.AreEqual(150,m.B.Health);}
+ [Test] public void RequiredPhysicalContactFailsClosed(){var m=new Match{RequirePhysicalContact=true};m.A.X=0;m.B.X=1;m.Attack(m.A,0);for(int i=0;i<20;i++)m.Step();Assert.AreEqual(150,m.B.Health);}
+ [Test] public void GeometricMissCannotDealDamage(){var m=new Match{RequirePhysicalContact=true,ContactValidator=(a,b)=>false};m.A.X=0;m.B.X=1;m.Attack(m.A,0);for(int i=0;i<20;i++)m.Step();Assert.AreEqual(150,m.B.Health);}
+ [Test] public void GeometricContactOnlyDamagesOnce(){var m=new Match{RequirePhysicalContact=true,ContactValidator=(a,b)=>true};m.A.X=0;m.B.X=1;m.Attack(m.A,0);for(int i=0;i<30;i++)m.Step();Assert.AreEqual(144,m.B.Health);Assert.AreEqual(1,m.B.HitSerial);}
+ [Test] public void SweptLimbCrossesBodyEvenWhenEndpointsMiss(){Assert.That(HitGeometry.SegmentDistanceSquared(-1,1,0,1,1,0,0,.5f,0,0,1.5f,0),Is.EqualTo(0).Within(.0001));Assert.Greater(HitGeometry.SegmentDistanceSquared(-1,1,1,1,1,1,0,.5f,0,0,1.5f,0),.9f);}
+ [Test] public void FacingLocksDuringAttack(){var m=new Match();m.Attack(m.A,0);m.B.Z=1;Assert.AreEqual(0,m.A.FacingZ);Assert.IsFalse(m.Attack(m.A,1));Assert.AreEqual(0,m.A.FacingZ);}
+}

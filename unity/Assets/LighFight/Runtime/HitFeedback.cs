@@ -25,19 +25,20 @@ namespace LighFight.Runtime
             for(int i=0;i<data.Length;i++){float decay=1-(float)i/data.Length;data[i]=(Mathf.Sin(2*Mathf.PI*frequency*i/rate)*.6f+((float)random.NextDouble()*2-1)*.4f)*decay*decay;}
             var clip=AudioClip.Create(name,data.Length,1,rate,false);clip.SetData(data,0);return clip;
         }
-        public void Observe(Match match)
+        public void Observe(Match match)=>Observe(match,new Vector3(match.A.X,1.2f,match.A.Z),new Vector3(match.B.X,1.2f,match.B.Z));
+        public void Observe(Match match,Vector3 impactA,Vector3 impactB)
         {
             if(previous!=match){previous=match;serialA=serialB=0;}
-            if(match.A.HitSerial!=serialA){serialA=match.A.HitSerial;Play(match.A);}
-            if(match.B.HitSerial!=serialB){serialB=match.B.HitSerial;Play(match.B);}
+            if(match.A.HitSerial!=serialA){serialA=match.A.HitSerial;Play(match.A,impactA);}
+            if(match.B.HitSerial!=serialB){serialB=match.B.HitSerial;Play(match.B,impactB);}
         }
-        private void Play(Fighter fighter)
+        private void Play(Fighter fighter,Vector3 impactPoint)
         {
             source.PlayOneShot(fighter.LastBlocked?block:impact);Shake=fighter.LastBlocked?.025f:.07f;
             for(int i=0;i<8;i++)
             {
                 var obj=GameObject.CreatePrimitive(PrimitiveType.Sphere);obj.transform.SetParent(transform,false);
-                obj.transform.position=new Vector3(fighter.X,1.2f,-.15f);obj.transform.localScale=Vector3.one*.055f;
+                obj.transform.position=impactPoint;obj.transform.localScale=Vector3.one*.055f;
                 obj.GetComponent<Renderer>().sharedMaterial=glow;Destroy(obj.GetComponent<Collider>());
                 sparks.Add(new Spark{body=obj.transform,velocity=new Vector3(Mathf.Sin(i*2.3f)*2,Mathf.Cos(i*1.7f)*2,.1f),life=.22f});
             }

@@ -17,7 +17,7 @@ namespace LighFight.Core
             var match=session.Match;var bot=match.B;var target=match.A;
             if(previous!=match){previous=match;reaction=reactionDelay;guard=crouch=false;attackCooldown=0;}
             if(attackCooldown>0)attackCooldown--;
-            float distance=Math.Abs(bot.X-target.X);
+            float distance=Match.Distance(bot,target);
             if(--reaction<=0)
             {
                 reaction=reactionDelay;
@@ -34,8 +34,8 @@ namespace LighFight.Core
                 }
             }
             bot.Guard=guard;bot.Crouch=crouch;
-            if(!guard && distance>1.4f)match.Walk(bot,Math.Sign(target.X-bot.X));
-            else if(!guard && distance<1.05f && attackCooldown>0)match.Walk(bot,Math.Sign(bot.X-target.X));
+            if(!guard && distance>1.4f)match.Walk(bot,(target.X-bot.X)/distance,(target.Z-bot.Z)/distance);
+            else if(!guard && distance<1.05f && attackCooldown>0)match.Walk(bot,(bot.X-target.X)/distance,(bot.Z-target.Z)/distance);
         }
     }
 }

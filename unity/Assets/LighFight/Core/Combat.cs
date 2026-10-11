@@ -41,7 +41,9 @@ namespace LighFight.Core
 
     public sealed class Fighter
     {
-        public float X;
+        public float X, Z;
+        public float FacingX=1,FacingZ;
+        public Level LastHitLevel;
         public int Health = 150, Stun, DownTicks;
         public int HitSerial, LastDamage;
         public bool LastBlocked, LastCounter;
@@ -73,8 +75,11 @@ namespace LighFight.Core
     {
         public const int TickRate = 60;
         public const int KnockdownTicks = 90, GetUpTicks = 30;
-        public readonly Fighter A = new Fighter { X = -1.4f }, B = new Fighter { X = 1.4f };
+        public readonly Fighter A = new Fighter { X = -1.4f }, B = new Fighter { X = 1.4f, FacingX=-1 };
         public int Tick { get; private set; }
+        public Action<Match> BeforeContact;
+        public Func<Fighter,Fighter,bool> ContactValidator;
+        public bool RequirePhysicalContact;
         public bool Finished => A.Health <= 0 || B.Health <= 0;
 
         private readonly struct Contact
@@ -82,14 +87,16 @@ namespace LighFight.Core
             public readonly bool Hit, Blocked, Counter, Knockdown;
             public readonly int Damage;
             public readonly float Push;
-            public Contact(bool hit, bool blocked, bool counter, bool knockdown, int damage, float push)
-            { Hit = hit; Blocked = blocked; Counter = counter; Knockdown = knockdown; Damage = damage; Push = push; }
+            public readonly Level Level;
+            public Contact(bool hit, bool blocked, bool counter, bool knockdown, int damage, float push,Level level)
+            { Hit = hit; Blocked = blocked; Counter = counter; Knockdown = knockdown; Damage = damage; Push = push; Level=level; }
         }
 
         public void Step()
         {
             if (Finished) return;
             Tick++;
+            BeforeContact?.Invoke(this);
             // Capture both outcomes before mutating either fighter: real simultaneous trades.
             var outgoingA = Resolve(A, B);
             var outgoingB = Resolve(B, A);
@@ -98,24 +105,26 @@ namespace LighFight.Core
             Advance(A); Advance(B);
         }
 
-        private static Contact Resolve(Fighter attacker, Fighter defender)
+        private Contact Resolve(Fighter attacker, Fighter defender)
         {
             if (!attacker.Attack.HasValue || attacker.Connected || defender.DownTicks > 0) return default;
             var move = attacker.Attack.Value;
             if (attacker.Frame < move.Startup || attacker.Frame >= move.Startup + move.Active ||
-                Math.Abs(attacker.X - defender.X) > move.Reach ||
+                (!RequirePhysicalContact && Distance(attacker,defender) > move.Reach) ||
                 (defender.Crouch && move.Level == Level.High)) return default;
+            if(RequirePhysicalContact && (ContactValidator==null || !ContactValidator(attacker,defender)))return default;
             bool blocked = defender.Guard && !defender.Attack.HasValue &&
                 (move.Level == Level.Low ? defender.Crouch : !defender.Crouch);
             bool counter = !blocked && defender.Attack.HasValue && defender.Frame < defender.Attack.Value.Startup;
             bool knockdown = move.Id == "sweep" || move.Id == "axeKick" || move.Id == "heelKick" || move.Id == "jumpKick";
-            return new Contact(true, blocked, counter, knockdown, move.Damage + (counter ? move.Damage / 4 : 0), Math.Sign(defender.X - attacker.X) * .12f);
+            return new Contact(true, blocked, counter, knockdown, move.Damage + (counter ? move.Damage / 4 : 0), Math.Sign(defender.X - attacker.X) * .12f,move.Level);
         }
 
         private static void Apply(Fighter attacker, Fighter defender, Contact contact)
         {
             if (!contact.Hit) return;
             attacker.Connected = true; attacker.CleanHit = !contact.Blocked;
+            defender.LastHitLevel=contact.Level;
             defender.HitSerial++; defender.LastDamage = contact.Blocked ? 0 : contact.Damage;
             defender.LastBlocked = contact.Blocked; defender.LastCounter = contact.Counter;
             defender.Stun = Math.Max(defender.Stun, contact.Blocked ? 8 : contact.Counter ? 26 : 18);
@@ -138,16 +147,22 @@ namespace LighFight.Core
 
         public bool Attack(Fighter fighter, int index)
         {
-            return !Finished && (fighter == A || fighter == B) && (fighter.Chain(index) || fighter.Start(index));
+            if(Finished || (fighter!=A && fighter!=B) || index<0 || index>=Moves.All.Length)return false;
+            if(!fighter.Attack.HasValue){var other=fighter==A?B:A;float distance=Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
+            return fighter.Chain(index) || fighter.Start(index);
         }
 
-        public void Walk(Fighter fighter, float direction)
+        public static float Distance(Fighter a,Fighter b) => (float)Math.Sqrt((a.X-b.X)*(a.X-b.X)+(a.Z-b.Z)*(a.Z-b.Z));
+        public void Walk(Fighter fighter,float direction) => Walk(fighter,direction,0);
+        public void Walk(Fighter fighter,float xDirection,float zDirection)
         {
-            if (Finished || (fighter != A && fighter != B) || fighter.Stun > 0 || fighter.DownTicks > 0 || fighter.Attack.HasValue ||
-                float.IsNaN(direction) || float.IsInfinity(direction)) return;
-            var other = fighter == A ? B : A;
-            var x = Math.Max(-5, Math.Min(5, fighter.X + Math.Max(-1, Math.Min(1, direction)) * (fighter.Guard || fighter.Crouch ? .025f : .045f)));
-            if (Math.Abs(x - other.X) >= .75f) fighter.X = x;
+            if(Finished || (fighter!=A && fighter!=B) || fighter.Stun>0 || fighter.DownTicks>0 || fighter.Attack.HasValue ||
+               float.IsNaN(xDirection)||float.IsInfinity(xDirection)||float.IsNaN(zDirection)||float.IsInfinity(zDirection))return;
+            float magnitude=(float)Math.Sqrt(xDirection*xDirection+zDirection*zDirection);if(magnitude>1){xDirection/=magnitude;zDirection/=magnitude;}
+            float speed=fighter.Guard||fighter.Crouch?.025f:.045f;
+            float x=Math.Max(-5,Math.Min(5,fighter.X+xDirection*speed)),z=Math.Max(-1.5f,Math.Min(1.5f,fighter.Z+zDirection*speed));
+            var other=fighter==A?B:A;
+            if(HitGeometry.SegmentDistanceSquared(fighter.X,0,fighter.Z,x,0,z,other.X,0,other.Z,other.X,0,other.Z)>=.75f*.75f){fighter.X=x;fighter.Z=z;}
         }
     }
 }
