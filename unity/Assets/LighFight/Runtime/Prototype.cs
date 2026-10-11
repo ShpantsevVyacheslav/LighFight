@@ -12,6 +12,7 @@ namespace LighFight.Runtime
         private Match match => session.Match;
         private FighterView player, opponent;
         private float accumulator;
+        private int contactFreeze;
         private int pendingAttack = -1;
         private BotController bot = new BotController();
         private bool paused, backgrounded, advancedMoves;
@@ -93,7 +94,7 @@ namespace LighFight.Runtime
         private void Reset()
         {
             session = new FightSession(training); accumulator = 0; bot = new BotController();
-            pendingAttack = -1; paused = false;
+            pendingAttack = -1; paused = false; contactFreeze=0;
         }
 
         // All touch positions converted into the same logical coordinates as GUI.
@@ -152,19 +153,22 @@ namespace LighFight.Runtime
             while (accumulator >= 1f / Match.TickRate)
             {
                 accumulator -= 1f / Match.TickRate;
+                if(contactFreeze>0){contactFreeze--;continue;}
                 match.A.Guard = guard; match.A.Crouch = crouch;
                 if (pendingAttack >= 0) { session.QueueAttack(true, pendingAttack); pendingAttack = -1; }
                 match.Walk(match.A, direction);
                 bot.Step(session);
+                int contactA=match.A.HitSerial, contactB=match.B.HitSerial;
                 session.Step();feedback.Observe(match);
+                if(match.A.HitSerial!=contactA || match.B.HitSerial!=contactB)contactFreeze=(match.A.HitSerial!=contactA && match.A.LastCounter)||(match.B.HitSerial!=contactB && match.B.LastCounter)?5:3;
             }
             float center=(match.A.X+match.B.X)*.5f;
             float distance=FitCameraDistance(match.A.X,match.B.X,fightCamera.aspect);
             fightCamera.transform.position=Vector3.Lerp(fightCamera.transform.position,new Vector3(center,1.6f,-distance),Time.deltaTime*4);
             fightCamera.transform.LookAt(new Vector3(center,1,0));
             fightCamera.transform.position+=Vector3.right*Mathf.Sin(Time.time*87)*feedback.Shake;
-            player.Pose(match.A, match.B.X - match.A.X, Time.deltaTime);
-            opponent.Pose(match.B, match.A.X - match.B.X, Time.deltaTime);
+            player.Pose(match.A, match.B.X - match.A.X, contactFreeze>0?0:Time.deltaTime);
+            opponent.Pose(match.B, match.A.X - match.B.X, contactFreeze>0?0:Time.deltaTime);
         }
 
         private void OnGUI()

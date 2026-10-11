@@ -16,6 +16,17 @@ namespace LighFight.Runtime
         private float previousX, stride, motionHold, deathTime, reactionTime;
         private int previousHitSerial;
         private bool hasPosition, backing;
+        private Transform[] blendBones;
+        private Quaternion[] blendRotations;
+        private Vector3[] blendPositions;
+        private string previousMotion;
+        private float blendElapsed, blendDuration;
+        private void LateUpdate()
+        {
+            if(blendBones==null || blendElapsed>=blendDuration || blendDuration<=0)return;
+            float weight=Mathf.SmoothStep(0,1,blendElapsed/blendDuration);
+            for(int i=0;i<blendBones.Length;i++){if(blendBones[i]==animator.transform)continue;blendBones[i].localRotation=Quaternion.Slerp(blendRotations[i],blendBones[i].localRotation,weight);blendBones[i].localPosition=Vector3.Lerp(blendPositions[i],blendBones[i].localPosition,weight);}
+        }
         [SerializeField] private bool ownsMaterials = true;
         public void UseSharedMaterials() => ownsMaterials = false;
         public bool IsReady => animator!=null ? (animator.runtimeAnimatorController!=null && animator.avatar!=null && animator.avatar.isValid) : (hips!=null && chest!=null && head!=null && armL!=null && armR!=null && foreL!=null && foreR!=null && legL!=null && legR!=null && shinL!=null && shinR!=null);
@@ -90,7 +101,14 @@ namespace LighFight.Runtime
                 deathTime=fighter.Health<=0?deathTime+delta:0;
                 if(previousHitSerial!=fighter.HitSerial){previousHitSerial=fighter.HitSerial;reactionTime=0;}else reactionTime+=delta;
                 animator.applyRootMotion=false;animator.speed=0;
-                string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?"Hit":fighter.Attack.HasValue?fighter.Attack.Value.Id:fighter.Guard?"Guard":fighter.Crouch?"Crouch":moving?(backing?"WalkBack":"Walk"):"Idle";
+                string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?(fighter.LastBlocked?"Guard":"Hit"):fighter.Attack.HasValue?fighter.Attack.Value.Id:fighter.Guard?"Guard":fighter.Crouch?"Crouch":moving?(backing?"WalkBack":"Walk"):"Idle";
+                if(motion!=previousMotion)
+                {
+                    if(blendBones==null){blendBones=animator.GetComponentsInChildren<Transform>();blendRotations=new Quaternion[blendBones.Length];blendPositions=new Vector3[blendBones.Length];}
+                    for(int i=0;i<blendBones.Length;i++){blendRotations[i]=blendBones[i].localRotation;blendPositions[i]=blendBones[i].localPosition;}
+                    blendElapsed=0;blendDuration=previousMotion==null?0:motion=="Hit"||motion=="Fall"?.04f:fighter.Attack.HasValue?.06f:.10f;previousMotion=motion;
+                }
+                blendElapsed+=delta;
                 int state=Animator.StringToHash("Base Layer."+motion);
                 if(animator.HasState(0,state))
                 {

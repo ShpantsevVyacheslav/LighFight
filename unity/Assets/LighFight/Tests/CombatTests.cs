@@ -147,3 +147,16 @@ public class MotionTimingTests
             }
         }
 }
+
+public class ChainTests
+{
+ [Test] public void CleanJabCanChainCrossButWhiffAndBlockCannot(){
+  foreach(int situation in new[]{0,1,2}){var m=new Match();m.A.X=0;m.B.X=situation==1?4:1;m.B.Guard=situation==2;m.Attack(m.A,0);
+   for(int n=0;n<14;n++)m.Step();
+   Assert.AreEqual(situation==0,m.Attack(m.A,1));
+   if(situation==0){Assert.AreEqual("cross",m.A.Attack.Value.Id);Assert.AreEqual(2,m.A.ComboCount);}
+  }
+ }
+ [Test] public void ChainCannotCancelStartupOrUseUnlistedMove(){var m=new Match();m.A.X=0;m.B.X=1;m.Attack(m.A,0);Assert.IsFalse(m.Attack(m.A,1));for(int n=0;n<14;n++)m.Step();Assert.IsFalse(m.Attack(m.A,10));}
+ [Test] public void ChainWindowExpires(){var m=new Match();m.A.X=0;m.B.X=1;m.Attack(m.A,0);for(int n=0;n<21;n++)m.Step();Assert.IsFalse(m.Attack(m.A,1));}
+}

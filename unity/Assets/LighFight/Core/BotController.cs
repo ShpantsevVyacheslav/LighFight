@@ -20,8 +20,9 @@ namespace LighFight.Core
             if(--reaction<=0)
             {
                 reaction=ReactionTicks;
-                guard=target.Attack.HasValue && random.NextDouble()<.8;
+                guard=target.Attack.HasValue && target.Frame < target.Attack.Value.Startup + target.Attack.Value.Active && random.NextDouble()<.8;
                 crouch=guard && target.Attack.Value.Level==Level.Low;
+                if(!guard && target.Attack.HasValue && target.Frame >= target.Attack.Value.Startup + target.Attack.Value.Active) attackCooldown=0;
                 if(!guard && attackCooldown<=0 && bot.Stun==0 && bot.DownTicks==0 && !bot.Attack.HasValue)
                 {
                     var candidates=new List<int>();
@@ -33,6 +34,7 @@ namespace LighFight.Core
             }
             bot.Guard=guard;bot.Crouch=crouch;
             if(!guard && distance>1.4f)match.Walk(bot,Math.Sign(target.X-bot.X));
+            else if(!guard && distance<1.05f && attackCooldown>0)match.Walk(bot,Math.Sign(bot.X-target.X));
         }
     }
 }

@@ -19,3 +19,7 @@ The battle needs landscape layout. Unity already uses LandscapeLeft; the LighCha
 Device verification owned by the build agent: launch, both character skins/fists/cuffs, hold movement while tapping attacks, block high/mid/low, KO fall and getup, pause/resume, background/foreground, exit to Game Hub, relaunch twice. Observe actual frame rate, memory and load time before selecting mobile LOD/texture budgets. Editor tests cannot prove device performance or the native unload path.
 
 Editor checks: all 32 motions sampled over 61 phases; all 25 attacks on each rig sampled over their complete combat timeline (1290 frames each), no nonfinite or oversized deformation, 9 support states; core timing tests and contact-timing mutation; embedded battle launch/exit/relaunch test.
+
+## Combat polish follow-up
+Clean-hit chains: jab → cross → hook/body; body → knee. Cancel window is first six recovery ticks, maximum three attacks. Whiffs/blocks cannot cancel. Input buffer remains eight ticks. Renderer blends pose changes for 40–100 ms, excluding the actor root, while contact simulation is unchanged. Block uses Guard pose rather than damage Hit. Runtime contact freeze lasts three ticks (five for counter), preserving queued input. Bot approaches at distance, retreats inside 1.05 m between attacks and can punish recovery after its reaction delay.
+Verification: 44 core tests, mutation removing clean-hit requirement fails. Device acceptance still pending; check chain input, stance transitions and contact feedback at 30/60 FPS. No Meshy credits used by this update.

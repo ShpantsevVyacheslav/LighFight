@@ -48,13 +48,23 @@ namespace LighFight.Core
         public bool Guard, Crouch;
         public Move? Attack;
         public int Frame;
-        internal bool Connected;
+        internal bool Connected, CleanHit;
+        public int ComboCount { get; private set; }
+        public bool Chain(int index)
+        {
+            if (!Attack.HasValue || !CleanHit || ComboCount >= 3 || Stun > 0 || DownTicks > 0 || Health <= 0) return false;
+            var move = Attack.Value;
+            if (Frame < move.Startup + move.Active || Frame > move.Startup + move.Active + 6) return false;
+            bool allowed = move.Id == "jab" && index == 1 || move.Id == "cross" && (index == 2 || index == 3) || move.Id == "body" && index == 8;
+            if (!allowed) return false;
+            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount++; return true;
+        }
 
         public bool Start(int index)
         {
             if (Health <= 0 || index < 0 || index >= Moves.All.Length || Stun > 0 || DownTicks > 0 || Attack.HasValue)
                 return false;
-            Attack = Moves.All[index]; Frame = 0; Connected = false;
+            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1;
             return true;
         }
     }
@@ -105,7 +115,7 @@ namespace LighFight.Core
         private static void Apply(Fighter attacker, Fighter defender, Contact contact)
         {
             if (!contact.Hit) return;
-            attacker.Connected = true;
+            attacker.Connected = true; attacker.CleanHit = !contact.Blocked;
             defender.HitSerial++; defender.LastDamage = contact.Blocked ? 0 : contact.Damage;
             defender.LastBlocked = contact.Blocked; defender.LastCounter = contact.Counter;
             defender.Stun = Math.Max(defender.Stun, contact.Blocked ? 8 : contact.Counter ? 26 : 18);
@@ -128,7 +138,7 @@ namespace LighFight.Core
 
         public bool Attack(Fighter fighter, int index)
         {
-            return !Finished && (fighter == A || fighter == B) && fighter.Start(index);
+            return !Finished && (fighter == A || fighter == B) && (fighter.Chain(index) || fighter.Start(index));
         }
 
         public void Walk(Fighter fighter, float direction)
