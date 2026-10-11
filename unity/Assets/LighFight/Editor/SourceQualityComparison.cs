@@ -18,6 +18,13 @@ namespace LighFight.Editor {
    // Fixed normalized framing of original neutral surface, no Animator or FighterView.
    var head=new Vector3(bounds.center.x,bounds.max.y-bounds.size.y*.085f,bounds.center.z);camera.orthographicSize=bounds.size.y*.13f;camera.transform.position=head+Vector3.back*bounds.size.y*2;camera.transform.LookAt(head);
    Capture(camera,"../art/previews/source-quality/island-visible-source-portrait.png",1024);
+   // Isolate material contributions using unchanged geometry, camera and lights.
+   var noNormal=new Material(material);noNormal.DisableKeyword("_NORMALMAP");noNormal.SetTexture("_BumpMap",null);
+   foreach(var r in renderers)r.sharedMaterials=r.sharedMaterials.Select(_=>noNormal).ToArray();
+   Capture(camera,"../art/previews/source-quality/island-visible-no-normal.png",1024);
+   var diffuse=new Material(noNormal);diffuse.DisableKeyword("_METALLICGLOSSMAP");diffuse.SetTexture("_MetallicGlossMap",null);diffuse.SetFloat("_Metallic",0);diffuse.SetFloat("_Glossiness",0);diffuse.SetFloat("_SpecularHighlights",0);diffuse.SetFloat("_GlossyReflections",0);
+   foreach(var r in renderers)r.sharedMaterials=r.sharedMaterials.Select(_=>diffuse).ToArray();
+   Capture(camera,"../art/previews/source-quality/island-visible-diffuse.png",1024);
    var unlit=new Material(Shader.Find("Unlit/Texture"));unlit.mainTexture=material.mainTexture;foreach(var r in renderers)r.sharedMaterials=r.sharedMaterials.Select(_=>unlit).ToArray();
    Capture(camera,"../art/previews/source-quality/island-visible-source-unlit.png",1024);
    Capture(camera,"Assets/LighFight/Resources/Selection/fighter-3.png",512);

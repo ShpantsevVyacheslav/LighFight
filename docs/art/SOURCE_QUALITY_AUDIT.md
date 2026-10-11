@@ -58,3 +58,5 @@ roster capture cannot replace the neutral source portrait with the old combat ri
 Unity source capture compiled/executed successfully; 119 EditMode tests passed,
 2 source merge tests passed, wrong-joint-target mutation detected. New web rig and
 wave are diagnostic candidates; game actor has not yet been replaced by them.
+
+Material ablation now captures full PBR, no normal map, diffuse-only and unlit with identical camera/mesh/light. Disabling normals exposes stronger face facets; disabling metallic/specular reduces highlights but does not repair deformation. Thus blanket removal of normal maps is rejected. Images: `island-visible-no-normal.png`, `island-visible-diffuse.png`. Source capture batch exited 0; no production material altered.
