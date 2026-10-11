@@ -58,7 +58,11 @@ public class RuntimeTests
         yield return new EnterPlayMode();yield return null;yield return null;
         var game=Object.FindFirstObjectByType<Prototype>();var host=Object.FindFirstObjectByType<HostBridge>();
         host.Launch("{\"protocolVersion\":1,\"sessionId\":\"fight-review\",\"mode\":\"bot\",\"locale\":\"ru\"}");
+        yield return null;
+        Assert.AreEqual(1,Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None).Length,"Selection must hide the opponent");
+        Assert.Less(Object.FindFirstObjectByType<Camera>().rect.width,1,"Selection uses central model viewport");
         game.BeginFight();yield return null;yield return null;
+        Assert.AreEqual(new Rect(0,0,1,1),Object.FindFirstObjectByType<Camera>().rect,"Battle must restore full viewport");
         var views=Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None);Assert.AreEqual(2,views.Length);
         foreach(var view in views)
         {
@@ -106,10 +110,10 @@ public class RuntimeTests
         yield return new EnterPlayMode();
         var root=new GameObject("Test battle");root.AddComponent<Prototype>();
         yield return null;yield return null;
-        Assert.AreEqual(2,Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None).Length);
+        Assert.AreEqual(2,Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
         Object.Destroy(root);yield return null;yield return null;
-        Assert.AreEqual(0,Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None).Length);
-        Assert.AreEqual(0,Object.FindObjectsByType<OfficeArena>(FindObjectsSortMode.None).Length);
+        Assert.AreEqual(0,Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
+        Assert.AreEqual(0,Object.FindObjectsByType<OfficeArena>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
         Assert.AreEqual(0,Object.FindObjectsByType<Camera>(FindObjectsSortMode.None).Length);
         yield return new ExitPlayMode();
     }

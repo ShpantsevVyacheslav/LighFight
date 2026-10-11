@@ -17,7 +17,9 @@ namespace LighFight.Core
         public int RoundWinner { get; private set; } = -1;
         public int Winner => Phase != FightPhase.Complete ? -1 : WinsA > WinsB ? 0 : 1;
         public bool Training { get; }
-        public FightSession(bool training = false) { Training = training; }
+        public int TargetWins { get; }
+        private readonly int configuredRoundTicks;
+        public FightSession(bool training = false, int targetWins = 2, int roundSeconds = 60) { Training = training; TargetWins = System.Math.Max(1,System.Math.Min(3,targetWins)); configuredRoundTicks = System.Math.Max(30,System.Math.Min(120,roundSeconds))*Match.TickRate; RemainingTicks=configuredRoundTicks; }
         private int breakRemaining;
         private int attackA = -1, attackB = -1, lifeA, lifeB;
 
@@ -42,7 +44,7 @@ namespace LighFight.Core
             {
                 if (--breakRemaining <= 0)
                 {
-                    Match = new Match(); RemainingTicks = RoundTicks;
+                    Match = new Match(); RemainingTicks = configuredRoundTicks;
                     Phase = FightPhase.Fighting; Round++; RoundWinner = -1;
                 }
                 return;
@@ -57,7 +59,7 @@ namespace LighFight.Core
             if (RoundWinner == 0) WinsA++;
             if (RoundWinner == 1) WinsB++;
             attackA = attackB = -1; lifeA = lifeB = 0;
-            Phase = WinsA >= 2 || WinsB >= 2 ? FightPhase.Complete : FightPhase.RoundOver;
+            Phase = WinsA >= TargetWins || WinsB >= TargetWins ? FightPhase.Complete : FightPhase.RoundOver;
             breakRemaining = BreakTicks;
         }
     }

@@ -4,7 +4,7 @@ using LighFight.Core;
 namespace LighFight.Runtime
 {
     // Explicit scene component; never auto-spawn in downloaded production scenes.
-    public sealed class Prototype : MonoBehaviour
+    public sealed partial class Prototype : MonoBehaviour
     {
         private static readonly string[] MoveNames = { "Джеб", "Кросс", "Хук", "Корпус", "Фронт", "Лоу", "Подсечка", "Апперкот", "Колено", "Локоть", "Разворот", "Прыжок", "Бэкфист", "Топор", "Боковой", "Круговой", "Молот", "Толчок", "Пятка", "Смена", "Высокий", "Короткий хук", "Двойной", "Шаг + нога", "Контрудар" };
         private static readonly KeyCode[] AttackKeys = { KeyCode.J, KeyCode.K, KeyCode.U, KeyCode.I };
@@ -57,7 +57,7 @@ namespace LighFight.Runtime
             if (bridge != null) { bridge.LaunchRequested += OnLaunch; if(bridge.CurrentLaunch!=null)OnLaunch(bridge.CurrentLaunch); }
         }
 
-        public void BeginFight() { Reset(); selecting=false; advancedMoves=false; }
+        public void BeginFight() { Reset(); selecting=false; advancedMoves=false; rulesOpen=false; opponent.gameObject.SetActive(true);arena.gameObject.SetActive(true);fightCamera.rect=new Rect(0,0,1,1); }
         public static float FitCameraDistance(float a,float b,float aspect) => Mathf.Max(3.6f,(Mathf.Abs(a-b)+2.2f)/(2*Mathf.Tan(21*Mathf.Deg2Rad)*Mathf.Max(.3f,aspect)));
         private void OnLaunch(LaunchRequest request) { russian=string.IsNullOrEmpty(request.locale)||request.locale.StartsWith("ru"); Reset(); selecting = true; }
         private void RebuildViews()
@@ -84,6 +84,7 @@ namespace LighFight.Runtime
         private void OnDestroy()
         {
             if (bridge != null) bridge.LaunchRequested -= OnLaunch;
+            if(rounded!=null)Destroy(rounded);
         }
         private void OnApplicationPause(bool value)
         {
@@ -93,7 +94,7 @@ namespace LighFight.Runtime
         }
         private void Reset()
         {
-            session = new FightSession(training); accumulator = 0; bot = new BotController();
+            session = new FightSession(training,targetWins,roundSeconds); accumulator = 0; bot = new BotController(42,difficulty);
             pendingAttack = -1; paused = false; contactFreeze=0;
         }
 
@@ -132,7 +133,7 @@ namespace LighFight.Runtime
             { if (bridge != null) bridge.Exit(""); return; }
             if (selecting)
             {
-                player.Pose(match.A,1,Time.deltaTime); opponent.Pose(match.B,-1,Time.deltaTime);
+                previewMessageTime=Mathf.Max(0,previewMessageTime-Time.deltaTime);UpdateSelection();
                 return;
             }
             if (paused || backgrounded || Time.timeScale == 0) return;
@@ -178,18 +179,8 @@ namespace LighFight.Runtime
             GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, new Vector3(Screen.width / 960f, Screen.height / 540f, 1));
             if (selecting)
             {
-                GUI.Box(new Rect(15,15,930,510), Title);
-                for (int i=0;i<FighterNames.Length;i++)
-                    if (GUI.Button(new Rect(35+i%4*222,65+i/4*70,210,60),(i==selectedFighter?"● ":"")+T(FighterNames[i],FighterEnglish[i])))
-                    { selectedFighter=i; RebuildViews(); }
-                for (int i=0;i<ArenaNames.Length;i++)
-                    if (GUI.Button(new Rect(35+i*178,235,168,60),(i==selectedArena?"● ":"")+T(ArenaNames[i],ArenaEnglish[i])))
-                    { selectedArena=i; RebuildViews(); }
-                GUI.Label(new Rect(45,325,850,60), T("Стрелки: движение. J / K / U / I: удары. Shift: блок.\n↑ / ↓ / ← + удар: другие приёмы. Z / X / C / V / B / N / M / , / .: ещё девять. Победа — два раунда.","Arrows: move. J / K / U / I: attacks. Shift: guard.\nUp / Down / Left + attack: alternate moves. Z / X / C / V / B / N / M / , / .: nine more. First to two rounds wins."));
-                training=GUI.Toggle(new Rect(45,375,280,35),training,T("Тренировка без таймера и урона","Practice — unlimited time and health"));
-                if (GUI.Button(new Rect(330,410,300,70), T("НАЧАТЬ БОЙ","START FIGHT"))) { BeginFight(); }
-                if (GUI.Button(new Rect(770,410,150,70), T("ВЫХОД","EXIT"))) bridge?.Exit("");
-                GUI.matrix=saved; return;
+                SelectionGUI(); GUI.matrix=saved; return;
+
             }
             GUI.Label(new Rect(20,20,330,40), $"LighFight  R{session.Round}   {session.WinsA} : {session.WinsB}   {match.A.Health} : {match.B.Health}");
             GUI.Box(new Rect(360,20,90,45), paused ? T("Продолжить","Resume") : T("Пауза","Pause"));

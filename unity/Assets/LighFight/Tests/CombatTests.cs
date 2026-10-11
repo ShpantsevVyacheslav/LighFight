@@ -160,3 +160,10 @@ public class ChainTests
  [Test] public void ChainCannotCancelStartupOrUseUnlistedMove(){var m=new Match();m.A.X=0;m.B.X=1;m.Attack(m.A,0);Assert.IsFalse(m.Attack(m.A,1));for(int n=0;n<14;n++)m.Step();Assert.IsFalse(m.Attack(m.A,10));}
  [Test] public void ChainWindowExpires(){var m=new Match();m.A.X=0;m.B.X=1;m.Attack(m.A,0);for(int n=0;n<21;n++)m.Step();Assert.IsFalse(m.Attack(m.A,1));}
 }
+
+public class MatchConfigurationTests
+{
+ [Test] public void ChosenTimerAndWinsAreAppliedAcrossRounds(){var s=new FightSession(false,1,90);Assert.AreEqual(5400,s.RemainingTicks);Assert.AreEqual(1,s.TargetWins);s.Match.B.Health=0;s.Step();Assert.AreEqual(FightPhase.Complete,s.Phase);}
+ [Test] public void TimerResetsToChosenLength(){var s=new FightSession(false,3,90);s.Match.B.Health=0;s.Step();for(int i=0;i<FightSession.BreakTicks;i++)s.Step();Assert.AreEqual(5400,s.RemainingTicks);Assert.AreEqual(2,s.Round);}
+ [Test] public void InvalidConfigurationIsBounded(){var s=new FightSession(false,100,-1);Assert.AreEqual(3,s.TargetWins);Assert.AreEqual(1800,s.RemainingTicks);}
+}

@@ -6,20 +6,21 @@ namespace LighFight.Core
     {
         public const int ReactionTicks = 14;
         private readonly Random random;
+        private readonly int reactionDelay;
         private int reaction=ReactionTicks, attackCooldown;
         private bool guard,crouch;
         private Match previous;
-        public BotController(int seed=42){random=new Random(seed);}
+        public BotController(int seed=42,int difficulty=1){random=new Random(seed);reactionDelay=difficulty<=0?24:difficulty>=2?10:ReactionTicks;reaction=reactionDelay;}
         public void Step(FightSession session)
         {
             if(session.Phase!=FightPhase.Fighting || session.Training)return;
             var match=session.Match;var bot=match.B;var target=match.A;
-            if(previous!=match){previous=match;reaction=ReactionTicks;guard=crouch=false;attackCooldown=0;}
+            if(previous!=match){previous=match;reaction=reactionDelay;guard=crouch=false;attackCooldown=0;}
             if(attackCooldown>0)attackCooldown--;
             float distance=Math.Abs(bot.X-target.X);
             if(--reaction<=0)
             {
-                reaction=ReactionTicks;
+                reaction=reactionDelay;
                 guard=target.Attack.HasValue && target.Frame < target.Attack.Value.Startup + target.Attack.Value.Active && random.NextDouble()<.8;
                 crouch=guard && target.Attack.Value.Level==Level.Low;
                 if(!guard && target.Attack.HasValue && target.Frame >= target.Attack.Value.Startup + target.Attack.Value.Active) attackCooldown=0;
