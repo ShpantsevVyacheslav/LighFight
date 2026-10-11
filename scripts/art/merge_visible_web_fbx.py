@@ -6,12 +6,24 @@ No remeshing, weight normalization, geometry edits or animation retargeting.
 import bpy, json, sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-from native_fbx_compat import require_same_rig
+from native_fbx_compat import require_same_rig, check_round_trip
 
 def rig_signature(arm):
     result = {b.name: (b.parent.name if b.parent else None, list(sum((list(row) for row in b.matrix_local), []))) for b in arm.data.bones}
     result["__object_transform__"]=(None, list(sum((list(row) for row in arm.matrix_world), [])))
     return result
+
+def surface_snapshot(meshes):
+    assert len(meshes)==1, 'Round-trip gate currently requires one source surface'
+    obj=meshes[0]
+    group_names={g.index:g.name for g in obj.vertex_groups}
+    return {
+        'positions':[list(obj.matrix_world@v.co) for v in obj.data.vertices],
+        'weights':[{group_names[g.group]:g.weight for g in v.groups} for v in obj.data.vertices],
+        'uv':[list(loop.uv) for loop in obj.data.uv_layers.active.data],
+        'triangles':sum(len(p.vertices)-2 for p in obj.data.polygons)
+    }
+
 
 def main():
     args=sys.argv[sys.argv.index('--')+1:]; folder, target=map(Path,args)
@@ -56,10 +68,16 @@ def main():
     for mesh in meshes:mesh.select_set(True)
     bpy.context.view_layer.objects.active=base
     target.parent.mkdir(parents=True,exist_ok=True)
+    surface=surface_snapshot(meshes)
     bpy.ops.export_scene.fbx(filepath=str(target),use_selection=True,add_leaf_bones=False,
         bake_anim=True,bake_anim_use_all_actions=True,bake_anim_use_nla_strips=False,
         bake_anim_simplify_factor=0,path_mode='COPY')
     report={'triangles':103074,'bones':len(signature)-1,'actions':[a.name for a in actions],
             'files':[str(f) for f in files],'retargeted':False,'geometryEditsRequested':False,'weightEditsRequested':False,'roundTripVerified':False}
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    bpy.ops.import_scene.fbx(filepath=str(target))
+    result_meshes=[o for o in bpy.data.objects if o.type=='MESH' and len(o.data.vertices)>1000]
+    report.update(check_round_trip(surface,surface_snapshot(result_meshes)))
+    report['roundTripVerified']=True
     target.with_suffix('.audit.json').write_text(json.dumps(report,indent=2));print(report)
 if __name__=='__main__':main()

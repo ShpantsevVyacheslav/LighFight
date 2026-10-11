@@ -47,3 +47,5 @@ The web exporter limits All Added to 20 motions, including default Running/Walki
 Selection no longer forces Guard on a resting preview. It uses Greeting when present, otherwise native Idle. Dance remains an icon. Import permits explicit optional Greeting and Victory states without inventing or aliasing them to unrelated movements.
 
 Verification: 119 Unity EditMode checks passed on this change; two bind-compatibility tests reject modified parents/rest transforms/root scale/non-finite matrices. Direct Wave merge reports 103,074 triangles and the semantic `Wave_One_Hand` action. Device delivery remains separate and pending.
+
+The Wave FBX export now has a verified Blender round trip: 103074 triangles, maximum world-position delta `2.384185791015625e-7` m, UV delta `0`, weight delta `0`. The gate compares original vertex ordering, named influence assignments and UV loops after reimport and fails on mismatch. This validates geometry/UV/weights for this file; it does not establish artistic pose acceptance, normal-map parity or animation-curve equality. External textures are assigned explicitly in Unity, not silently copied from missing `.fbm` paths.
