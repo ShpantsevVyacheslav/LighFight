@@ -9,10 +9,25 @@ namespace LighFight.Runtime
         [SerializeField] private Transform hips, chest, head, armL, armR, foreL, foreR, legL, legR, shinL, shinR;
         private Material skin, cloth, dark;
         [SerializeField] private Animator animator;
-        [System.Serializable] public struct ContactPose { public string moveId; public float phase,start,end; }
+        [System.Serializable] public struct ContactPose { public string moveId; public float phase,start,end; public int strikeSide;public float headingOffset; }
         [SerializeField] private ContactPose[] contactPoses = new ContactPose[0];
         public ContactPose[] CopyContactPoses() => (ContactPose[])contactPoses.Clone();
         public void ConfigureAnimation(Animator value,ContactPose[] poses) { animator=value;contactPoses=poses;ownsMaterials=false; }
+        [SerializeField] private bool nativeMotion;
+        [System.Serializable] public struct NativeClip { public string state; public AnimationClip clip; }
+        [SerializeField] private NativeClip[] nativeClips = new NativeClip[0];
+        public bool UsesNativeMotion => nativeMotion;
+        public bool HasNativeMotion(string state)=>nativeMotion&&System.Array.Exists(nativeClips,c=>c.state==state&&c.clip);
+        public bool PreviewNativeMotion(string state,float seconds){if(!HasNativeMotion(state)||!animator)return false;animator.Play("Base Layer."+state,0,NativeLoopPhase(seconds,NativeDuration(state)));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        public void UseNativeMotion(NativeClip[] clips = null) { nativeMotion=true; if(clips!=null)nativeClips=clips; }
+        public static float NativeLoopPhase(float seconds,float duration) => Mathf.Repeat(seconds/Mathf.Max(.001f,duration),1);
+        private float NativeDuration(string motion) { var entry=System.Array.Find(nativeClips,c=>c.state==motion);return entry.clip?entry.clip.length:1; }
+        private float nativeTime;
+        private Transform nativeRoot;
+        private Vector3 nativeRootRest;
+        private void AnchorNativeRoot() { if(!nativeRoot)return;var p=animator.transform.InverseTransformPoint(nativeRoot.position);p.x=nativeRootRest.x;p.z=nativeRootRest.z;nativeRoot.position=animator.transform.TransformPoint(p); }
+        private Quaternion NativeHeading(Fighter fighter){if(!nativeMotion||!fighter.Attack.HasValue)return Quaternion.identity;var move=fighter.Attack.Value;float weight=fighter.Frame<=move.Startup?Mathf.SmoothStep(0,1,(float)fighter.Frame/Mathf.Max(1,move.Startup)):fighter.Frame<move.Startup+move.Active?1:1-Mathf.SmoothStep(0,1,(float)(fighter.Frame-move.Startup-move.Active)/Mathf.Max(1,move.Recovery));return Quaternion.Euler(0,System.Array.Find(contactPoses,p=>p.moveId==move.Id).headingOffset*weight,0);}
+        public int NativeStrikeSide(string move) => nativeMotion?System.Array.Find(contactPoses,p=>p.moveId==move).strikeSide:0;
         private float previousZ;
         private float previousX, stride, motionHold, deathTime, reactionTime;
         private int previousHitSerial;
@@ -90,10 +105,10 @@ namespace LighFight.Runtime
             => joint.localRotation = Quaternion.Euler(x,y,z);
         public void Pose(Fighter fighter, float facing, float delta)
         {
-            if(!hasPosition){previousX=fighter.X;previousZ=fighter.Z;hasPosition=true;if(animator!=null){animator.applyRootMotion=false;animator.speed=0;animator.Rebind();animator.Update(0);}}
+            if(!hasPosition){previousX=fighter.X;previousZ=fighter.Z;hasPosition=true;if(animator!=null){if(nativeMotion)QualitySettings.skinWeights=SkinWeights.Unlimited;animator.applyRootMotion=false;animator.speed=0;animator.Rebind();if(nativeMotion){nativeRoot=System.Array.Find(animator.GetComponentsInChildren<Transform>(),t=>t.name.Substring(t.name.LastIndexOf(':')+1)=="Hips");if(nativeRoot)nativeRootRest=animator.transform.InverseTransformPoint(nativeRoot.position);}animator.Update(0);}}
             if(Mathf.Abs(previousX-fighter.X)+Mathf.Abs(previousZ-fighter.Z)>.0001f){motionHold=.06f;backing=(fighter.X-previousX)*facing+(fighter.Z-previousZ)*fighter.FacingZ<0;}else motionHold=Mathf.Max(0,motionHold-delta);
             bool moving = motionHold>0;
-            previousX = fighter.X; previousZ=fighter.Z; stride += moving ? delta*12 : delta*2;
+            nativeTime+=delta; previousX = fighter.X; previousZ=fighter.Z; stride += moving ? delta*12 : delta*2;
             float gait = moving ? Mathf.Sin(stride)*25 : Mathf.Sin(stride)*2;
             transform.position = new Vector3(fighter.X,0,fighter.Z);
             transform.rotation = Quaternion.Euler(0,facing>0?90:-90,0);
@@ -114,9 +129,10 @@ namespace LighFight.Runtime
                 if(animator.HasState(0,state))
                 {
                     float phase=fighter.Attack.HasValue?(float)fighter.Frame/fighter.Attack.Value.Duration:fighter.DownTicks>Match.GetUpTicks?1-(fighter.DownTicks-Match.GetUpTicks)/(float)(Match.KnockdownTicks-Match.GetUpTicks):fighter.DownTicks>0?1-fighter.DownTicks/(float)Match.GetUpTicks:Mathf.Repeat(stride*.1f,1);
-                    if(fighter.Health<=0)phase=Mathf.Clamp01(deathTime);
+                    if(fighter.Health<=0)phase=Mathf.Clamp01(deathTime/(nativeMotion?NativeDuration("Fall"):1));
                     if(motion=="Hit")phase=Mathf.Clamp01((float)fighter.ReactionTicks/Mathf.Max(1,fighter.ReactionDuration));
-                    if(motion=="Idle" || motion=="Guard")phase=0;
+                    if(motion=="Idle" || motion=="Guard")phase=nativeMotion?NativeLoopPhase(nativeTime,NativeDuration(motion)):0;
+                    if(nativeMotion && (motion=="Walk" || motion=="WalkBack")){phase=NativeLoopPhase(nativeTime,NativeDuration(motion));}
                     if(motion=="Crouch" && !moving)phase=.3f;
                     if(fighter.Attack.HasValue)
                     {
@@ -124,13 +140,13 @@ namespace LighFight.Runtime
                         if(contact.phase>0)
                         {
                             float end=contact.end>contact.start?contact.end:1;
-                            float normalized=(MotionTiming.ContactPhase(motion,contact.phase)-contact.start)/(end-contact.start);
+                            float normalized=((nativeMotion?contact.phase:MotionTiming.ContactPhase(motion,contact.phase))-contact.start)/(end-contact.start);
                             phase=Mathf.Lerp(contact.start,end,MotionTiming.Phase(fighter.Attack.Value,fighter.Frame,normalized));
                         }
                     }
                     animator.Play(state,0,phase);
                 }
-                animator.Update(0);ApplyArtistReaction(fighter);
+                animator.Update(0);if(nativeMotion){AnchorNativeRoot();transform.rotation*=NativeHeading(fighter);}else ApplyArtistReaction(fighter);
                 return;
             }
             hips.localPosition = new Vector3(0,fighter.Crouch?.70f:.92f,0);
@@ -187,15 +203,21 @@ namespace LighFight.Runtime
         {
             if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
             Pose(fighter,fighter.FacingX,delta);
-            if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f){transform.rotation=Quaternion.LookRotation(direction);if(animator!=null && fighter.Attack.HasValue && fighter.Attack.Value.Id=="uppercut"){var move=fighter.Attack.Value;float torque=fighter.Frame<move.Startup?Mathf.Clamp01((float)fighter.Frame/move.Startup):1-Mathf.Clamp01((float)(fighter.Frame-move.Startup-move.Active)/move.Recovery);transform.rotation*=Quaternion.Euler(0,-30*torque,0);}}}
+            if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f){transform.rotation=Quaternion.LookRotation(direction)*NativeHeading(fighter);if(animator!=null && fighter.Attack.HasValue && !nativeMotion && fighter.Attack.Value.Id=="uppercut"){var move=fighter.Attack.Value;float torque=fighter.Frame<move.Startup?Mathf.Clamp01((float)fighter.Frame/move.Startup):1-Mathf.Clamp01((float)(fighter.Frame-move.Startup-move.Active)/move.Recovery);transform.rotation*=Quaternion.Euler(0,-30*torque,0);}}}
         }
         public Vector3 BonePoint(string name,Vector3 fallback)
         {
-            if(contactBones==null){contactBones=new System.Collections.Generic.Dictionary<string,Transform>();foreach(var t in GetComponentsInChildren<Transform>())if(!contactBones.ContainsKey(t.name))contactBones.Add(t.name,t);}
+            if(contactBones==null){contactBones=new System.Collections.Generic.Dictionary<string,Transform>();foreach(var t in GetComponentsInChildren<Transform>()){if(!contactBones.ContainsKey(t.name))contactBones.Add(t.name,t);string canonical=t.name.Substring(t.name.LastIndexOf(':')+1);if(!contactBones.ContainsKey(canonical))contactBones.Add(canonical,t);}}
             if(contactBones.TryGetValue(name,out var bone))return bone.position;
             if(animator!=null)return new Vector3(float.NaN,float.NaN,float.NaN);
             switch(name){case "LeftHand":return foreL.TransformPoint(0,-.30f,0);case "RightHand":return foreR.TransformPoint(0,-.30f,0);case "LeftForeArm":return foreL.position;case "RightForeArm":return foreR.position;case "LeftToeBase":case "LeftFoot":return shinL.TransformPoint(0,-.36f,.065f);case "RightToeBase":case "RightFoot":return shinR.TransformPoint(0,-.36f,.065f);case "LeftLeg":return shinL.position;case "RightLeg":return shinR.position;case "Head":return head.position;case "Spine":return chest.TransformPoint(0,.16f,0);case "Hips":return hips.position;}
             return transform.TransformPoint(fallback);
+        }
+        public Vector3 StrikeHandCenter(bool left)
+        {
+            string side=left?"Left":"Right";var wrist=BonePoint(side+"Hand",Vector3.zero);
+            if(nativeMotion){var middle=BonePoint(side+"HandMiddle1",Vector3.zero);var index=BonePoint(side+"HandIndex1",Vector3.zero);var ring=BonePoint(side+"HandRing1",Vector3.zero);if(!float.IsNaN(middle.x)&&!float.IsNaN(index.x)&&!float.IsNaN(ring.x))return (middle+index+ring)/3;}
+            return wrist+(wrist-BonePoint(side+"ForeArm",Vector3.zero)).normalized*.05f;
         }
         private System.Collections.Generic.Dictionary<string,Transform> contactBones;
         public void SampleContactPose(Fighter fighter,Fighter other)

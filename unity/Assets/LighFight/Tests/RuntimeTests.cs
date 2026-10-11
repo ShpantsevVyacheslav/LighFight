@@ -43,7 +43,7 @@ public class RuntimeTests
             {
                 var view=obj.GetComponent<FighterView>();var animator=obj.GetComponent<Animator>();var fighter=new Fighter{Guard=true};
                 view.Pose(fighter,1,0);animator.Update(0);
-                var bones=obj.GetComponentsInChildren<Transform>();var left=System.Array.Find(bones,t=>t.name=="LeftHand");var right=System.Array.Find(bones,t=>t.name=="RightHand");
+                var bones=obj.GetComponentsInChildren<Transform>();var left=System.Array.Find(bones,t=>t.name=="LeftHand"||t.name.EndsWith(":LeftHand"));var right=System.Array.Find(bones,t=>t.name=="RightHand"||t.name.EndsWith(":RightHand"));
                 Assert.Greater(Mathf.Min(left.position.y,right.position.y),1.2f,"Guard hands below chest on fighter "+id);
                 float guard=Mathf.Max(left.position.x,right.position.x);fighter.Guard=false;fighter.Start(0);fighter.Frame=Moves.All[0].Startup;
                 view.Pose(fighter,1,0);animator.Update(0);Assert.Greater(Mathf.Max(left.position.x,right.position.x),guard+.1f,"Jab does not reach forward on fighter "+id);
@@ -100,6 +100,7 @@ public class RuntimeTests
     [Test] public void AuditEveryArtistStrikeAtPlayableDistances()
     {
         var lines=new System.Collections.Generic.List<string>{"fighter,move,closestHit,farthestHit"};
+        var failures=new System.Collections.Generic.List<string>();
         foreach(int artist in new[]{3,4})foreach(var move in Moves.All)
         {
             float closest=-1,farthest=-1;
@@ -110,9 +111,10 @@ public class RuntimeTests
                 try{var m=new Match();m.A.X=0;m.B.X=distance;new PhysicalContacts(m,a.GetComponent<FighterView>(),b.GetComponent<FighterView>());m.Attack(m.A,System.Array.IndexOf(Moves.All,move));for(int tick=0;tick<move.Duration;tick++)m.Step();if(distance==4)Assert.AreEqual(150,m.B.Health,artist+" "+move.Id+" must miss at 4m");if(m.B.HitSerial>0){if(closest<0)closest=distance;farthest=distance;}}
                 finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
             }
-            Assert.GreaterOrEqual(closest,.6f,artist+" "+move.Id+" must have a playable contact distance");lines.Add(artist+","+move.Id+","+closest.ToString(System.Globalization.CultureInfo.InvariantCulture)+","+farthest.ToString(System.Globalization.CultureInfo.InvariantCulture));
+            if(closest<.6f)failures.Add(artist+" "+move.Id+" must have a playable contact distance");lines.Add(artist+","+move.Id+","+closest.ToString(System.Globalization.CultureInfo.InvariantCulture)+","+farthest.ToString(System.Globalization.CultureInfo.InvariantCulture));
         }
         var path=System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath,"../../.tools/reports/strike-audit.csv"));System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(path));System.IO.File.WriteAllLines(path,lines);
+        Assert.IsEmpty(failures,string.Join("; ",failures));
     }
     [UnityTest]
     public IEnumerator EmbeddedBattleUsesArtistRigsAndReturnsOnce()

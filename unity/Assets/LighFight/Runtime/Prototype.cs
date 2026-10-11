@@ -70,7 +70,7 @@ namespace LighFight.Runtime
             if (player != null) Destroy(player.gameObject);
             if (opponent != null) Destroy(opponent.gameObject);
             if (arena != null) Destroy(arena.gameObject);
-            int cpu = selectedFighter==4?3:(selectedFighter + 3) % FighterNames.Length;
+            int cpu = selectedFighter==4?3:selectedFighter==3?4:(selectedFighter + 3) % FighterNames.Length;
             if (content != null)
             {
                 player = Instantiate(content.fighters[selectedFighter]).GetComponent<FighterView>();

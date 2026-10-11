@@ -283,3 +283,26 @@ geometry; these are inspection previews, not device/combat captures.
 
 Samoproverka: no additional Meshy tasks, no device build/install, no push/deploy.
 Full-body art quality and opening-finger animation remain outstanding.
+
+## Native Meshy web pipeline — 2026-10-11
+
+Implemented the original web rig path for Island fighter slot 3: 66 joints,
+66,364 triangles, native finger animation and exact 2K source textures.
+No local fists, corrective torso deformation or foreign-skeleton retargeting.
+25 attacks plus guard, forward/back walking, crouch, hit/fall/get-up and dance
+are mapped to native clips. Whole-root heading/timing calibration keeps the
+authored bone deformation. Palm collision centre comes from finger knuckles.
+Two short generated attacks were rejected and replaced, without widening
+hit radii. Raw exports, native channel identity and rest checks preserved.
+
+Character Rig Inspector now overlays joints on the exact animated surface,
+with playback, speed, rest pose and frame stepping; its FBX bake scale is
+covered by a regression test. Meshy Scene Compose import preserves separate
+objects/materials/TRS and rejects obstructed combat floors. A merged photo
+diorama still needs authored floor separation before becoming playable.
+
+Samoproverka: Unity EditMode 118/118; Python pipeline 2/2; wrong-joint
+mutation detected. Device acceptance of this new pipeline is pending.
+The previous iPhone pass belongs to 239eb0c. Other fighters are not yet
+migrated. 120 new motion credits this stage, cumulative 347/400.
+No push/deploy. Native framework delivery follows after local visual capture.

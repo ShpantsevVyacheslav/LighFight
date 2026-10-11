@@ -17,9 +17,9 @@ namespace LighFight.Runtime
     now[0]=view.BonePoint("LeftHand",new Vector3(-.2f,1.4f,.3f));now[1]=view.BonePoint("RightHand",new Vector3(.2f,1.4f,.3f));
     now[2]=view.BonePoint("LeftToeBase",new Vector3(-.14f,.1f,.1f));now[3]=view.BonePoint("RightToeBase",new Vector3(.14f,.1f,.1f));
     now[4]=view.BonePoint("LeftForeArm",new Vector3(-.2f,1.25f,.2f));now[5]=view.BonePoint("RightForeArm",new Vector3(.2f,1.25f,.2f));
-    // Hand bones begin at the wrist; move the strike centre into the closed fist.
-    now[0]+=(now[0]-now[4]).normalized*.05f;now[1]+=(now[1]-now[5]).normalized*.05f;
-    head=view.BonePoint("Head",new Vector3(0,1.7f,0));chest=view.BonePoint("Spine",new Vector3(0,1.3f,0));hips=view.BonePoint("Hips",new Vector3(0,.9f,0));
+    // Native rigs locate the palm using finger knuckles; wrist-only rigs use their existing offset.
+    now[0]=view.StrikeHandCenter(true);now[1]=view.StrikeHandCenter(false);
+    head=view.BonePoint("Head",new Vector3(0,1.7f,0));chest=view.BonePoint(view.UsesNativeMotion?"Spine2":"Spine",new Vector3(0,1.3f,0));hips=view.BonePoint("Hips",new Vector3(0,.9f,0));
     leftKnee=now[6]=view.BonePoint("LeftLeg",new Vector3(-.14f,.5f,0));rightKnee=now[7]=view.BonePoint("RightLeg",new Vector3(.14f,.5f,0));leftFoot=now[2];rightFoot=now[3];
     if(!ready){for(int i=0;i<8;i++)before[i]=now[i];ready=true;}
    }
@@ -40,6 +40,7 @@ namespace LighFight.Runtime
    else if(id=="jab"||id=="hook"||id=="shortHook"){first=last=0;}
    else if(id=="cross"||id=="uppercut"||id=="backfist"){first=last=1;}
    if(id=="knee")return HitKnee(strike,body,attacker);
+   int side=(attacker==match.A?viewA:viewB).NativeStrikeSide(id);if(side>0){first=(id.Contains("Kick")||id=="sweep"?2:id=="elbow"?4:0)+(side-1);last=first;}
    for(int i=first;i<=last;i++)if(Intersects(strike.before[i],strike.now[i],radius,body)){SetImpact(attacker,strike.now[i]);return true;}
    return false;
   }

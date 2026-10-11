@@ -30,8 +30,8 @@ namespace LighFight.Runtime
    previewFighter.X=match.A.X;previewFighter.Guard=previewMove<0;
    if(previewMove>=0){if(!previewFighter.Attack.HasValue)previewFighter.Start(previewMove);previewFrame+=Time.deltaTime*60;previewFighter.Frame=(int)previewFrame;if(previewFighter.Frame>=previewFighter.Attack.Value.Duration){previewFrame=0;previewFighter.Attack=null;}}
    else {previewFighter.Attack=null;previewFrame=0;}
-   player.Pose(previewFighter,1,Time.deltaTime);player.transform.rotation=Quaternion.Euler(0,90+previewYaw,0);
-   if(previewMove<0)player.transform.position+=Vector3.up*Mathf.Sin(previewClock*2)*.004f;
+   player.Pose(previewFighter,1,Time.deltaTime);if(previewMove==-2)player.PreviewNativeMotion("Dance",previewClock);player.transform.rotation=Quaternion.Euler(0,(player.UsesNativeMotion?180:90)+previewYaw,0);
+   if(previewMove==-1)player.transform.position+=Vector3.up*Mathf.Sin(previewClock*2)*.004f;
    if(rulesOpen||arenaOpen){dragging=false;return;}
    if(Input.touchCount>=2)
    {
@@ -94,9 +94,9 @@ namespace LighFight.Runtime
    string[] labels={T("Урон ударов","Damage"),T("Дальность","Reach"),T("Серия","Chain")};string[] values={"6–25","0.6–1.2 м","4"};float[] fills={.76f,.65f,1};
    for(int i=0;i<3;i++){float y=320+i*41;Text(new Rect(30,y,130,24),labels[i],12);Text(new Rect(158,y,78,24),values[i],12,new Color(.76f,.91f,.98f),TextAnchor.MiddleRight);Card(new Rect(30,y+28,205,4),new Color(.12f,.19f,.29f));Card(new Rect(30,y+28,205*fills[i],4),selectionAccent);}
    Text(new Rect(279,415,360,22),T("Вращай · Приближай двумя пальцами","Rotate · Pinch to zoom"),10,new Color(.60f,.73f,.84f),TextAnchor.MiddleCenter);
-   if(Pill(new Rect(300,443,96,32),T("Стойка","Guard"),previewMove<0))previewMove=-1;
+   if(Pill(new Rect(300,443,96,32),T("Стойка","Guard"),previewMove==-1))previewMove=-1;
    if(Pill(new Rect(402,443,96,32),T("Удары","Attacks"),previewMove>=0)){previewMove=previewMove==0?1:previewMove==1?4:0;previewFrame=0;previewFighter.Attack=null;}
-   if(Pill(new Rect(504,443,96,32),T("Танец","Dance")))previewMessageTime=3;
+   if(Pill(new Rect(504,443,96,32),T("Танец","Dance"),previewMove==-2)){if(player.HasNativeMotion("Dance")){previewMove=-2;previewClock=0;}else previewMessageTime=3;}
    if(previewMessageTime>0)Text(new Rect(265,382,400,30),T("Танец пока не добавлен","Dance not available yet"),12,selectionAccent,TextAnchor.MiddleCenter);
    Text(new Rect(713,100,214,24),T("АРЕНА","ARENA"),11,new Color(.60f,.70f,.82f));
    Rect arenaCard=new Rect(710,133,220,126);Card(arenaCard,selectionPanel);

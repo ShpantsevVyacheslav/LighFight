@@ -22,9 +22,9 @@ namespace LighFight.Editor
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
             new GameObject("LighFight Host Bridge").AddComponent<HostBridge>();
             var prototype=new GameObject("LighFight Battle").AddComponent<Prototype>();prototype.content=content;
-            var settings=new SerializedObject(prototype);settings.FindProperty("selectedFighter").intValue=4;settings.ApplyModifiedPropertiesWithoutUndo();
+            var settings=new SerializedObject(prototype);settings.FindProperty("selectedFighter").intValue=3;settings.ApplyModifiedPropertiesWithoutUndo();
             EditorSceneManager.SaveScene(scene,ScenePath);AssetDatabase.SaveAssets();
-            Debug.Log("Embedded fight review created with Rose and 25 attacks");
+            Debug.Log("Embedded fight review created with native Island, Rose and 25 attacks");
         }
     }
 }

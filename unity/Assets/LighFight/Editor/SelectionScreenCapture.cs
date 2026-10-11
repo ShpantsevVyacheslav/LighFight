@@ -9,6 +9,7 @@ namespace LighFight.Editor {
   static int frames,stage;static double captureTime;
   static SelectionScreenCapture(){EditorApplication.update+=Tick;}
   public static void Run(){ShaderUtil.allowAsyncCompilation=false;EditorSceneManager.OpenScene(HostFightReviewSetup.ScenePath);SessionState.SetBool("LighFightCapture",true);var type=typeof(EditorWindow).Assembly.GetType("UnityEditor.GameView");var game=EditorWindow.GetWindow(type);game.position=new Rect(50,50,1440,810);game.Show();game.Focus();EditorApplication.isPlaying=true;}
+  public static void RunNative(){Run();var prototype=Object.FindFirstObjectByType<Prototype>();var properties=new SerializedObject(prototype);properties.FindProperty("selectedFighter").intValue=3;properties.ApplyModifiedPropertiesWithoutUndo();}
   static void Capture(string name){Directory.CreateDirectory("../art/previews/selection-unity");ScreenCapture.CaptureScreenshot(Path.GetFullPath("../art/previews/selection-unity/"+name+".png"));captureTime=EditorApplication.timeSinceStartup;}
   static void Tick(){
    if(!SessionState.GetBool("LighFightCapture",false)||!EditorApplication.isPlaying)return;
