@@ -203,3 +203,15 @@ public class StrikeOutcomeTests
  [Test] public void NewAttackClearsOldTrainingResult(){var m=new Match();m.Attack(m.A,0);for(int i=0;i<30;i++)m.Step();Assert.AreEqual(StrikeOutcome.Miss,m.A.Outcome);m.Attack(m.A,1);Assert.AreEqual(StrikeOutcome.None,m.A.Outcome);Assert.AreEqual(1,m.A.LastStrikeIndex);}
  [Test] public void BotRespectsCalibratedReach(){var s=new FightSession();s.Match.A.X=0;s.Match.B.X=1.3f;s.Match.EffectiveReach=(f,i)=>.6f;var bot=new BotController();for(int i=0;i<14;i++){bot.Step(s);s.Step();}Assert.IsNull(s.Match.B.Attack);}
 }
+
+public class TrainingDummyDefenceTests
+{
+ [TestCase(0,0,StrikeOutcome.Hit)] [TestCase(1,0,StrikeOutcome.Blocked)]
+ [TestCase(1,5,StrikeOutcome.Hit)] [TestCase(2,5,StrikeOutcome.Blocked)]
+ [TestCase(2,3,StrikeOutcome.Hit)] [TestCase(2,0,StrikeOutcome.Miss)]
+ public void ChosenDefenceChangesActualStrikeResult(int defence,int move,StrikeOutcome expected){var s=new FightSession(true);s.Match.A.X=0;s.Match.B.X=.8f;Assert.IsTrue(s.SetDummyDefence(defence));s.QueueAttack(true,move);for(int i=0;i<Moves.All[move].Startup+Moves.All[move].Active+1;i++)s.Step();Assert.AreEqual(expected,s.Match.A.Outcome);Assert.AreEqual(150,s.Match.B.Health);Assert.AreEqual(FightPhase.Fighting,s.Phase);}
+ [Test] public void SwitchingBackToOpenClearsBothGuardAndCrouch(){var s=new FightSession(true);s.SetDummyDefence(2);s.Step();Assert.IsTrue(s.Match.B.Guard);Assert.IsTrue(s.Match.B.Crouch);s.SetDummyDefence(0);s.Step();Assert.IsFalse(s.Match.B.Guard);Assert.IsFalse(s.Match.B.Crouch);Assert.IsFalse(s.QueueAttack(false,0));}
+ [Test] public void NormalFightRejectsDummySettingsAndKeepsDefence(){var s=new FightSession();s.Match.B.Guard=true;s.Match.B.Crouch=true;Assert.IsFalse(s.SetDummyDefence(2));s.Step();Assert.IsTrue(s.Match.B.Guard);Assert.IsTrue(s.Match.B.Crouch);}
+ [Test] public void InvalidDefenceCannotOverwriteChosenMode(){var s=new FightSession(true);s.SetDummyDefence(1);Assert.IsFalse(s.SetDummyDefence(-1));Assert.IsFalse(s.SetDummyDefence(3));Assert.AreEqual(DummyDefence.StandingGuard,s.Defence);}
+ [Test] public void BlockedDummyContactCannotContinueChain(){var s=new FightSession(true);s.Match.A.X=0;s.Match.B.X=.8f;s.SetDummyDefence(1);s.QueueAttack(true,0);for(int i=0;i<14;i++)s.Step();Assert.AreEqual(StrikeOutcome.Blocked,s.Match.A.Outcome);Assert.IsFalse(s.Match.Attack(s.Match.A,1));}
+}

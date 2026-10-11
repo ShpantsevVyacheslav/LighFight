@@ -74,6 +74,9 @@ namespace LighFight.Runtime
      default:hint=T("Подготовка · продолжение вводи ближе к попаданию","Startup · input follow-up near contact");break;
     }
    }
+   string[] labels={T("Без защиты","Open"),T("Блок стоя","Stand block"),T("Низкий блок","Low block")};
+   for(int i=0;i<3;i++)if(Pill(new Rect(215+i*124,303,118,34),labels[i],(int)session.Defence==i))session.SetDummyDefence(i);
+   if(Pill(new Rect(215,344,165,34),T("Сброс дистанции","Reset spacing")))Reset();
    Card(new Rect(215,220,370,75),new Color(.03f,.08f,.14f,.8f));Text(new Rect(228,223,345,28),title,15,selectionAccent);Text(new Rect(228,253,345,35),hint,12);
   }
   private void DrawBattleControls()

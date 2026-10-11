@@ -99,7 +99,8 @@ namespace LighFight.Runtime
         }
         private void Reset()
         {
-            session = new FightSession(training,targetWins,roundSeconds); accumulator = 0; bot = new BotController(42,difficulty);
+            var defence=session!=null?(int)session.Defence:0;
+            session = new FightSession(training,targetWins,roundSeconds);session.SetDummyDefence(defence); accumulator = 0; bot = new BotController(42,difficulty);
             pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();
         }
 

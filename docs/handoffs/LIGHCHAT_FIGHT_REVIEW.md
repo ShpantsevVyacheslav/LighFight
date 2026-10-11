@@ -54,3 +54,8 @@ Training reports preparation, actual contact, block, miss, interrupted attack an
 Device status: new phase not verified on iPhone; no competing device export and no Meshy credits.
 
 Validation: 93/93 Unity EditMode and 76/76 core. Removing miss outcome causes 2 core failures; restoring the old elbow phase makes artist audit fail on the unreachable elbow. Source restored. Self-review: found 4 unreachable moves on both rigs and overstated bot attack ranges, corrected with measured contacts. Phone touch/performance remains unverified.
+
+## Training dummy defence controls
+Practice now has three rounded segments beneath the advice card: Open, Stand block, Low block. FightSession applies the chosen guard/crouch on simulation ticks before resolving contact. Dummy attack input is rejected; normal bot matches reject dummy configuration and preserve their own defence. Low guard evades high strikes and blocks low strikes, but mid attacks connect; standing guard blocks high/mid but allows lows. Existing outcome advice now naturally displays blocked strings. Reset spacing restores the match and clears attack/stun/input with the selected defence retained; it does not recreate art/world objects. Mode is session-local, not persisted to account settings. Phone layout/touch verification pending. No Meshy spend.
+
+Validation: Unity107/107, core86/86. Artist-rig tests verify open jab contact, standing blocked jab and crouching blocked low kick; reset test verifies retained defence and cleared spacing/attack. Disabling dummy guard causes4 core failures (82/86); restored source86/86. Self-review: dummy configuration restricted to practice, switching to Open clears both crouch/guard, controls stay outside joystick/swipe rectangles.

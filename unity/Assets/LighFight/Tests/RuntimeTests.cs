@@ -84,6 +84,19 @@ public class RuntimeTests
         try{var view=a.GetComponent<FighterView>();var fighter=new Fighter{Stun=18,ReactionDuration=18,ReactionTicks=4,LastHitLevel=Level.Mid};var other=new Fighter{X=1};view.PoseTowards(fighter,other,0);var spine=System.Array.Find(a.GetComponentsInChildren<Transform>(),t=>t.name=="Spine");var rotation=spine.localRotation;for(int i=0;i<10;i++)view.SampleContactPose(fighter,other);Assert.Less(Quaternion.Angle(rotation,spine.localRotation),.05f);}
         finally{Object.DestroyImmediate(a);}
     }
+    [Test] public void PracticeSpacingResetPreservesDefenceAndClearsAttack()
+    {
+        var root=new GameObject("Practice reset test");
+        try{var game=root.AddComponent<Prototype>();var flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;typeof(Prototype).GetField("training",flags).SetValue(game,true);var sessionField=typeof(Prototype).GetField("session",flags);var old=new FightSession(true);old.SetDummyDefence(2);old.Match.A.X=4;old.Match.A.Z=1;old.Match.Attack(old.Match.A,0);sessionField.SetValue(game,old);typeof(Prototype).GetMethod("Reset",flags).Invoke(game,null);var current=(FightSession)sessionField.GetValue(game);Assert.AreNotSame(old,current);Assert.AreEqual(DummyDefence.LowGuard,current.Defence);Assert.AreEqual(-1.4f,current.Match.A.X);Assert.AreEqual(0,current.Match.A.Z);Assert.IsNull(current.Match.A.Attack);current.Step();Assert.IsTrue(current.Match.B.Crouch);Assert.IsTrue(current.Match.B.Guard);}
+        finally{Object.DestroyImmediate(root);}
+    }
+    [TestCase(0,0,StrikeOutcome.Hit)] [TestCase(1,0,StrikeOutcome.Blocked)] [TestCase(2,5,StrikeOutcome.Blocked)]
+    public void ArtistDummyDefenceUsesPhysicalContact(int defence,int move,StrikeOutcome expected)
+    {
+        var a=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-4.prefab"));var b=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-3.prefab"));
+        try{var s=new FightSession(true);s.Match.A.X=0;s.Match.B.X=.7f;s.SetDummyDefence(defence);new PhysicalContacts(s.Match,a.GetComponent<FighterView>(),b.GetComponent<FighterView>());s.QueueAttack(true,move);for(int i=0;i<Moves.All[move].Duration;i++)s.Step();Assert.AreEqual(expected,s.Match.A.Outcome);Assert.AreEqual(1,s.Match.B.HitSerial);Assert.AreEqual(150,s.Match.B.Health);}
+        finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
+    }
     [Test] public void AuditEveryArtistStrikeAtPlayableDistances()
     {
         var lines=new System.Collections.Generic.List<string>{"fighter,move,closestHit,farthestHit"};
