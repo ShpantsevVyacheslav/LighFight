@@ -45,28 +45,30 @@ namespace LighFight.Core
         public float FacingX=1,FacingZ;
         public Level LastHitLevel;
         public int Health = 150, Stun, DownTicks;
-        public int HitSerial, LastDamage;
+        public int HitSerial, LastDamage, ReactionTicks, ReactionDuration;
         public bool LastBlocked, LastCounter;
         public bool Guard, Crouch;
         public Move? Attack;
         public int Frame;
         internal bool Connected, CleanHit;
+        internal int ChainStepTicks;
         public int ComboCount { get; private set; }
         public bool Chain(int index)
         {
-            if (!Attack.HasValue || !CleanHit || ComboCount >= 3 || Stun > 0 || DownTicks > 0 || Health <= 0) return false;
+            if (!Attack.HasValue || !CleanHit || ComboCount >= Combos.MaxHits || Stun > 0 || DownTicks > 0 || Health <= 0) return false;
+            if(index<0 || index>=Moves.All.Length)return false;
             var move = Attack.Value;
             if (Frame < move.Startup + move.Active || Frame > move.Startup + move.Active + 6) return false;
-            bool allowed = move.Id == "jab" && index == 1 || move.Id == "cross" && (index == 2 || index == 3) || move.Id == "body" && index == 8;
+            bool allowed = Combos.CanFollow(move.Id,index);
             if (!allowed) return false;
-            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount++; return true;
+            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount++; ChainStepTicks=12; return true;
         }
 
         public bool Start(int index)
         {
             if (Health <= 0 || index < 0 || index >= Moves.All.Length || Stun > 0 || DownTicks > 0 || Attack.HasValue)
                 return false;
-            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1;
+            Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1; ChainStepTicks=0;
             return true;
         }
     }
@@ -74,6 +76,7 @@ namespace LighFight.Core
     public sealed class Match
     {
         public const int TickRate = 60;
+        public const float MinimumSeparation=.60f;
         public const int KnockdownTicks = 90, GetUpTicks = 30;
         public readonly Fighter A = new Fighter { X = -1.4f }, B = new Fighter { X = 1.4f, FacingX=-1 };
         public int Tick { get; private set; }
@@ -117,7 +120,7 @@ namespace LighFight.Core
                 (move.Level == Level.Low ? defender.Crouch : !defender.Crouch);
             bool counter = !blocked && defender.Attack.HasValue && defender.Frame < defender.Attack.Value.Startup;
             bool knockdown = move.Id == "sweep" || move.Id == "axeKick" || move.Id == "heelKick" || move.Id == "jumpKick";
-            return new Contact(true, blocked, counter, knockdown, move.Damage + (counter ? move.Damage / 4 : 0), Math.Sign(defender.X - attacker.X) * .12f,move.Level);
+            return new Contact(true, blocked, counter, knockdown, Combos.Damage(move.Damage + (counter ? move.Damage / 4 : 0),attacker.ComboCount), Math.Sign(defender.X - attacker.X) * .12f,move.Level);
         }
 
         private static void Apply(Fighter attacker, Fighter defender, Contact contact)
@@ -127,19 +130,31 @@ namespace LighFight.Core
             defender.LastHitLevel=contact.Level;
             defender.HitSerial++; defender.LastDamage = contact.Blocked ? 0 : contact.Damage;
             defender.LastBlocked = contact.Blocked; defender.LastCounter = contact.Counter;
-            defender.Stun = Math.Max(defender.Stun, contact.Blocked ? 8 : contact.Counter ? 26 : 18);
+            defender.ReactionTicks=0;
+            defender.ReactionDuration=contact.Blocked?8:contact.Counter?26:contact.Level==Level.Low?22:contact.Level==Level.Mid?20:18;
+            defender.Stun = Math.Max(defender.Stun, defender.ReactionDuration);
             if (contact.Blocked) return;
             defender.Health = Math.Max(0, defender.Health - contact.Damage);
             if (contact.Knockdown) { defender.DownTicks = KnockdownTicks; defender.Stun = KnockdownTicks; }
-            defender.X = Math.Max(-5, Math.Min(5, defender.X + contact.Push));
+            float distance=Distance(attacker,defender);
+            if(distance>.0001f){defender.X = Math.Max(-5, Math.Min(5, defender.X + (defender.X-attacker.X)/distance*.12f));defender.Z = Math.Max(-1.5f,Math.Min(1.5f,defender.Z+(defender.Z-attacker.Z)/distance*.12f));}
             // A hit cancels startup/recovery. A simultaneous contact was captured above.
             defender.Attack = null;
             defender.Frame = 0;
         }
 
-        private static void Advance(Fighter fighter)
+        private void Advance(Fighter fighter)
         {
-            if (fighter.Stun > 0) fighter.Stun--;
+            // A confirmed link adds a small committed step over startup, without homing or crossing bodies.
+            if(fighter.ChainStepTicks>0 && fighter.Attack.HasValue && fighter.Frame<fighter.Attack.Value.Startup && fighter.Stun==0)
+            {
+                fighter.ChainStepTicks--;
+                float x=Math.Max(-5,Math.Min(5,fighter.X+fighter.FacingX*.02f)),z=Math.Max(-1.5f,Math.Min(1.5f,fighter.Z+fighter.FacingZ*.02f));
+                var other=fighter==A?B:A;
+                if(HitGeometry.SegmentDistanceSquared(fighter.X,0,fighter.Z,x,0,z,other.X,0,other.Z,other.X,0,other.Z)>=MinimumSeparation*MinimumSeparation){fighter.X=x;fighter.Z=z;}
+            }
+            else fighter.ChainStepTicks=0;
+            if (fighter.Stun > 0) {fighter.Stun--;fighter.ReactionTicks++;}
             if (fighter.DownTicks > 0) fighter.DownTicks--;
             if (fighter.Attack.HasValue && ++fighter.Frame >= fighter.Attack.Value.Duration)
             { fighter.Attack = null; fighter.Frame = 0; }
@@ -162,7 +177,7 @@ namespace LighFight.Core
             float speed=fighter.Guard||fighter.Crouch?.025f:.045f;
             float x=Math.Max(-5,Math.Min(5,fighter.X+xDirection*speed)),z=Math.Max(-1.5f,Math.Min(1.5f,fighter.Z+zDirection*speed));
             var other=fighter==A?B:A;
-            if(HitGeometry.SegmentDistanceSquared(fighter.X,0,fighter.Z,x,0,z,other.X,0,other.Z,other.X,0,other.Z)>=.75f*.75f){fighter.X=x;fighter.Z=z;}
+            if(HitGeometry.SegmentDistanceSquared(fighter.X,0,fighter.Z,x,0,z,other.X,0,other.Z,other.X,0,other.Z)>=MinimumSeparation*MinimumSeparation){fighter.X=x;fighter.Z=z;}
         }
     }
 }

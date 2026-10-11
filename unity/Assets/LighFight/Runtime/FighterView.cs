@@ -115,7 +115,7 @@ namespace LighFight.Runtime
                 {
                     float phase=fighter.Attack.HasValue?(float)fighter.Frame/fighter.Attack.Value.Duration:fighter.DownTicks>Match.GetUpTicks?1-(fighter.DownTicks-Match.GetUpTicks)/(float)(Match.KnockdownTicks-Match.GetUpTicks):fighter.DownTicks>0?1-fighter.DownTicks/(float)Match.GetUpTicks:Mathf.Repeat(stride*.1f,1);
                     if(fighter.Health<=0)phase=Mathf.Clamp01(deathTime);
-                    if(motion=="Hit")phase=Mathf.Clamp01(reactionTime/.35f);
+                    if(motion=="Hit")phase=Mathf.Clamp01((float)fighter.ReactionTicks/Mathf.Max(1,fighter.ReactionDuration));
                     if(motion=="Idle" || motion=="Guard")phase=0;
                     if(motion=="Crouch" && !moving)phase=.3f;
                     if(fighter.Attack.HasValue)
@@ -130,6 +130,7 @@ namespace LighFight.Runtime
                     }
                     animator.Play(state,0,phase);
                 }
+                animator.Update(0);ApplyArtistReaction(fighter);
                 return;
             }
             hips.localPosition = new Vector3(0,fighter.Crouch?.70f:.92f,0);
@@ -140,7 +141,7 @@ namespace LighFight.Runtime
             Rotate(shinL,-15);Rotate(shinR,-15);
             if(fighter.Crouch){Rotate(legL,65);Rotate(legR,65);Rotate(shinL,-90);Rotate(shinR,-90);}
             if(fighter.Guard){Rotate(armL,-110,0,-10);Rotate(armR,-110,0,10);Rotate(foreL,-35);Rotate(foreR,-35);}
-            if(fighter.Stun>0){Rotate(chest,18,0,8);Rotate(head,-15);}
+            if(fighter.Stun>0){var r=ReactionAngles(fighter);Rotate(chest,r.x,0,r.z);Rotate(head,fighter.LastHitLevel==Level.High?-r.x:0);}
             if(fighter.Health<=0 || fighter.DownTicks>0){float fall=fighter.Health<=0?1:Mathf.Clamp01(fighter.DownTicks/16f);transform.rotation *= Quaternion.Euler(0,0,78*fall);hips.localPosition=new Vector3(0,Mathf.Lerp(.92f,.20f,fall),0);return;}
             if(!fighter.Attack.HasValue)return;
             var move=fighter.Attack.Value;
@@ -165,6 +166,23 @@ namespace LighFight.Runtime
                 Rotate(fore,Mathf.Lerp(-85,move.Id=="elbow"?-100:-8,strike));
             }
         }
+        public static Vector3 ReactionAngles(Fighter fighter)
+        {
+            if(fighter.Stun<=0 || fighter.DownTicks>0 || fighter.Health<=0)return Vector3.zero;
+            float phase=Mathf.Clamp01((float)fighter.ReactionTicks/Mathf.Max(1,fighter.ReactionDuration));
+            float envelope=phase<.25f?Mathf.Lerp(.35f,1,phase/.25f):1-Mathf.SmoothStep(0,1,(phase-.25f)/.75f);
+            float strength=envelope*(fighter.LastCounter?1.2f:1);
+            if(fighter.LastBlocked)return new Vector3(-4,0,2)*strength;
+            return (fighter.LastHitLevel==Level.High?new Vector3(-9,0,6):fighter.LastHitLevel==Level.Mid?new Vector3(18,0,3):new Vector3(7,0,-10))*strength;
+        }
+        private void ApplyArtistReaction(Fighter fighter)
+        {
+            var r=ReactionAngles(fighter);if(r.sqrMagnitude==0)return;
+            if(contactBones==null)BonePoint("Head",Vector3.zero);
+            string pivot=fighter.LastHitLevel==Level.Low?"Hips":"Spine";
+            if(contactBones.TryGetValue(pivot,out var joint))joint.localRotation*=Quaternion.Euler(r);
+            if(!fighter.LastBlocked && fighter.LastHitLevel==Level.High && contactBones.TryGetValue("Head",out var headBone))headBone.localRotation*=Quaternion.Euler(-12*r.magnitude/11f,0,0);
+        }
         public void PoseTowards(Fighter fighter,Fighter other,float delta)
         {
             if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
@@ -182,7 +200,7 @@ namespace LighFight.Runtime
         private System.Collections.Generic.Dictionary<string,Transform> contactBones;
         public void SampleContactPose(Fighter fighter,Fighter other)
         {
-            PoseTowards(fighter,other,0);if(animator!=null){animator.Update(0);if(fighter.Attack.HasValue && fighter.Frame>=fighter.Attack.Value.Startup && fighter.Frame<fighter.Attack.Value.Startup+fighter.Attack.Value.Active)blendElapsed=blendDuration;}
+            PoseTowards(fighter,other,0);if(animator!=null){if(fighter.Attack.HasValue && fighter.Frame>=fighter.Attack.Value.Startup && fighter.Frame<fighter.Attack.Value.Startup+fighter.Attack.Value.Active)blendElapsed=blendDuration;}
         }
         private void OnDestroy(){if(ownsMaterials){Destroy(skin);Destroy(cloth);Destroy(dark);}}
     }

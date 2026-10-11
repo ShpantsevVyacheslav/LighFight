@@ -8,7 +8,7 @@ public class CombatTests {
  [Test]public void CrouchingGuardBlocksLow(){var m=new Match();m.B.X=0;m.B.Guard=true;m.B.Crouch=true;m.A.Start(5);for(int i=0;i<40;i++)m.Step();Assert.AreEqual(150,m.B.Health);}
  [Test]public void SimultaneousJabsTrade(){var m=new Match();m.B.X=0;m.A.Start(0);m.B.Start(0);for(int i=0;i<20;i++)m.Step();Assert.AreEqual(144,m.A.Health);Assert.AreEqual(144,m.B.Health);}
  [Test]public void RecoveryPreventsAttackSpam(){var f=new Fighter();Assert.IsTrue(f.Start(0));Assert.IsFalse(f.Start(1));}
- [Test]public void FightersCannotWalkThroughEachOther(){var m=new Match();for(int i=0;i<200;i++)m.Walk(m.A,1);Assert.GreaterOrEqual(m.B.X-m.A.X,.75f);}
+ [Test]public void FightersCannotWalkThroughEachOther(){var m=new Match();for(int i=0;i<200;i++)m.Walk(m.A,1);Assert.GreaterOrEqual(m.B.X-m.A.X,Match.MinimumSeparation);}
  [Test]public void HitInterruptsSlowerAttack(){var m=new Match();m.B.X=0;m.A.Start(0);m.B.Start(10);for(int i=0;i<50;i++)m.Step();Assert.AreEqual(150,m.A.Health);Assert.IsNull(m.B.Attack);}
  [Test]public void StandingGuardBlocksMid(){var m=new Match();m.A.X=-1;m.B.X=0;m.B.Guard=true;m.A.Start(3);for(int i=0;i<40;i++)m.Step();Assert.AreEqual(150,m.B.Health);}
  [Test]public void CrouchingGuardDoesNotBlockMid(){var m=new Match();m.A.X=-1;m.B.X=0;m.B.Guard=true;m.B.Crouch=true;m.A.Start(3);for(int i=0;i<40;i++)m.Step();Assert.AreEqual(140,m.B.Health);}
@@ -177,4 +177,21 @@ public class SpatialCombatTests
  [Test] public void GeometricContactOnlyDamagesOnce(){var m=new Match{RequirePhysicalContact=true,ContactValidator=(a,b)=>true};m.A.X=0;m.B.X=1;m.Attack(m.A,0);for(int i=0;i<30;i++)m.Step();Assert.AreEqual(144,m.B.Health);Assert.AreEqual(1,m.B.HitSerial);}
  [Test] public void SweptLimbCrossesBodyEvenWhenEndpointsMiss(){Assert.That(HitGeometry.SegmentDistanceSquared(-1,1,0,1,1,0,0,.5f,0,0,1.5f,0),Is.EqualTo(0).Within(.0001));Assert.Greater(HitGeometry.SegmentDistanceSquared(-1,1,1,1,1,1,0,.5f,0,0,1.5f,0),.9f);}
  [Test] public void FacingLocksDuringAttack(){var m=new Match();m.Attack(m.A,0);m.B.Z=1;Assert.AreEqual(0,m.A.FacingZ);Assert.IsFalse(m.Attack(m.A,1));Assert.AreEqual(0,m.A.FacingZ);}
+}
+
+public class GestureAndComboTests
+{
+ [TestCase(80,0,1)] [TestCase(-80,0,2)] [TestCase(0,80,7)] [TestCase(0,-80,3)]
+ [TestCase(60,60,15)] [TestCase(-60,60,14)] [TestCase(60,-60,5)] [TestCase(-60,-60,6)]
+ public void SwipeDirectionChoosesStrike(float x,float y,int move){Assert.AreEqual(move,StrikeGesture.Classify(x,y,.2f));}
+ [Test] public void TapJitterHoldAndCancelDoNotBecomeSwipes(){Assert.AreEqual(0,StrikeGesture.Classify(2,3,.1f));Assert.AreEqual(-1,StrikeGesture.Classify(20,0,.2f));Assert.AreEqual(-1,StrikeGesture.Classify(1,1,.4f));Assert.AreEqual(-1,StrikeGesture.Classify(80,0,.9f));Assert.AreEqual(-1,StrikeGesture.Classify(float.NaN,0,.1f));var g=new StrikeGesture();g.Begin(7,0,0,0);Assert.AreEqual(-1,g.End(7,80,0,.2f,true));}
+ [Test] public void GestureOwnsOneFingerAndFiresOnce(){var g=new StrikeGesture();g.Begin(7,0,0,0);g.Begin(8,0,0,0);Assert.AreEqual(-1,g.End(8,80,0,.2f));Assert.AreEqual(1,g.End(7,80,0,.2f));Assert.AreEqual(-1,g.End(7,80,0,.2f));g.Begin(9,0,0,0);g.Cancel();Assert.AreEqual(-1,g.End(9,80,0,.2f));}
+ [Test] public void FourStrikeChainUsesConfirmedHitsAndScaledDamage(){var m=new Match();m.A.X=0;m.B.X=1;int[] sequence={0,1,2,5};for(int n=0;n<sequence.Length;n++){Assert.IsTrue(m.Attack(m.A,sequence[n]));while(m.A.Frame<m.A.Attack.Value.Startup+m.A.Attack.Value.Active)m.Step();}Assert.AreEqual(4,m.A.ComboCount);Assert.AreEqual(4,m.B.HitSerial);Assert.AreEqual(118,m.B.Health);Assert.IsFalse(m.Attack(m.A,3));}
+ [Test] public void BodyChainBranchesIntoKneeAndElbow(){var m=new Match();m.A.X=0;m.B.X=.6f;foreach(int index in new[]{1,3,8,9}){Assert.IsTrue(m.Attack(m.A,index));while(m.A.Frame<m.A.Attack.Value.Startup+m.A.Attack.Value.Active)m.Step();}Assert.AreEqual(4,m.B.HitSerial);Assert.IsFalse(m.A.Chain(-1));}
+ [Test] public void EarlyBufferedCrossWaitsForConfirmedRecovery(){var s=new FightSession();s.Match.A.X=0;s.Match.B.X=1;s.QueueAttack(true,0);for(int i=0;i<8;i++)s.Step();s.QueueAttack(true,1);for(int i=0;i<7;i++)s.Step();Assert.AreEqual("cross",s.Match.A.Attack.Value.Id);Assert.AreEqual(2,s.Match.A.ComboCount);}
+ [Test] public void LateralImpactPushesAwayInDepth(){var m=new Match();m.A.X=m.B.X=0;m.A.Z=-.5f;m.B.Z=.5f;m.Attack(m.A,0);for(int i=0;i<11;i++)m.Step();Assert.Greater(m.B.Z,.5f);Assert.AreEqual(0,m.B.X);}
+ [Test] public void BotSidestepsAgainstCommittedAttack(){var s=new FightSession();s.Match.A.X=0;s.Match.B.X=1.7f;s.Match.A.Start(10);var bot=new BotController(1);float most=0;for(int i=0;i<50;i++){bot.Step(s);s.Step();most=System.Math.Max(most,System.Math.Abs(s.Match.B.Z));}Assert.Greater(most,.05f);}
+ [Test] public void ChainStepIsGradualBoundedAndDoesNotHome(){var m=new Match();m.A.X=0;m.B.X=1;m.Attack(m.A,0);for(int i=0;i<13;i++)m.Step();Assert.IsTrue(m.Attack(m.A,1));Assert.AreEqual(0,m.A.X);m.B.Z=1;for(int i=0;i<12;i++)m.Step();Assert.That(m.A.X,Is.EqualTo(.24f).Within(.0001));Assert.AreEqual(0,m.A.Z);for(int i=0;i<6;i++)m.Step();Assert.That(m.A.X,Is.EqualTo(.24f).Within(.0001));}
+ [Test] public void ChainStepCannotCrossDefender(){var m=new Match();m.A.X=0;m.B.X=.64f;m.Attack(m.A,0);for(int i=0;i<13;i++)m.Step();Assert.IsTrue(m.Attack(m.A,1));for(int i=0;i<8;i++)m.Step();Assert.GreaterOrEqual(Match.Distance(m.A,m.B),Match.MinimumSeparation);}
+ [Test] public void HitReactionTracksLevelAndSimulationTicks(){foreach(int index in new[]{0,3,5}){var m=new Match();m.A.X=0;m.B.X=1;m.Attack(m.A,index);for(int i=0;i<=Moves.All[index].Startup;i++)m.Step();Assert.AreEqual(Moves.All[index].Level,m.B.LastHitLevel);Assert.AreEqual(1,m.B.ReactionTicks);Assert.Greater(m.B.ReactionDuration,m.B.Stun);}}
 }

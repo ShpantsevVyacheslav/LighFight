@@ -93,14 +93,14 @@ namespace LighFight.Runtime
         }
         private void OnApplicationPause(bool value)
         {
-            backgrounded = value;stickFinger=-1;stickInput=Vector2.zero;
+            backgrounded = value;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();
             accumulator = 0;
             pendingAttack = -1;
         }
         private void Reset()
         {
             session = new FightSession(training,targetWins,roundSeconds); accumulator = 0; bot = new BotController(42,difficulty);
-            pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;
+            pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();
         }
 
         // All touch positions converted into the same logical coordinates as GUI.
@@ -132,7 +132,7 @@ namespace LighFight.Runtime
         private void Update()
         {
             if (!selecting && (Pressed(new Rect(360, 20, 90, 45)) || Input.GetKeyDown(KeyCode.Escape)))
-            { paused = !paused; accumulator = 0; pendingAttack = -1;stickFinger=-1;stickInput=Vector2.zero; }
+            { paused = !paused; accumulator = 0; pendingAttack = -1;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel(); }
             if (!selecting && (Input.GetKeyDown(KeyCode.R) || Pressed(new Rect(460, 20, 90, 45)))) Reset();
             if ((!selecting && Pressed(new Rect(560, 20, 90, 45))) || Input.GetKeyDown(KeyCode.Q))
             { if (bridge != null) bridge.Exit(""); return; }
@@ -143,10 +143,11 @@ namespace LighFight.Runtime
             }
             if (paused || backgrounded || Time.timeScale == 0) return;
             UpdateJoystick();
+            UpdateStrikeGestures();
             bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(new Rect(270,455,78,52));
-            bool upper = stickInput.y>.55f || Input.GetKey(KeyCode.UpArrow);
-            bool backVariant=stickInput.x<-.55f || Input.GetKey(KeyCode.LeftArrow);
-            attackModifier=crouch?4:upper?8:backVariant?12:0;
+            bool upper = Input.GetKey(KeyCode.UpArrow);
+            bool backVariant=Input.GetKey(KeyCode.LeftArrow);
+            attackModifier=Input.GetKey(KeyCode.DownArrow)?4:upper?8:backVariant?12:0;
             if(Pressed(MoveMenuArea))advancedMoves=!advancedMoves;
             for (int i = 0; i < AttackKeys.Length; i++)
                 if (Input.GetKeyDown(AttackKeys[i]) || (!advancedMoves && Pressed(MainAttackArea(i)))) pendingAttack=MainMove(i)+attackModifier;
@@ -165,7 +166,7 @@ namespace LighFight.Runtime
                 if (pendingAttack >= 0) { session.QueueAttack(true, pendingAttack); pendingAttack = -1; }
                 match.Walk(match.A, direction,side);
                 bot.Step(session);
-                if(contactMatch!=match){contactMatch=match;physicalContacts=new PhysicalContacts(match,player,opponent);}
+                if(contactMatch!=match){strikeGesture.Cancel();contactMatch=match;physicalContacts=new PhysicalContacts(match,player,opponent);}
                 int contactA=match.A.HitSerial, contactB=match.B.HitSerial;
                 session.Step();feedback.Observe(match,physicalContacts.ImpactA,physicalContacts.ImpactB);
                 if(match.A.HitSerial!=contactA || match.B.HitSerial!=contactB)contactFreeze=(match.A.HitSerial!=contactA && match.A.LastCounter)||(match.B.HitSerial!=contactB && match.B.LastCounter)?5:3;

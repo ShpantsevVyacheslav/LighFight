@@ -71,6 +71,19 @@ public class RuntimeTests
             finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
         }
     }
+    [TestCase(0,1)] [TestCase(0,1,2,5)] public void ArtistConfirmedChainUsesActualContacts(params int[] sequence)
+    {
+        var a=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-4.prefab"));
+        var b=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-3.prefab"));
+        try{var m=new Match();m.A.X=0;m.B.X=.85f;new PhysicalContacts(m,a.GetComponent<FighterView>(),b.GetComponent<FighterView>());foreach(int index in sequence){Assert.IsTrue(m.Attack(m.A,index),Moves.All[index].Id);while(m.A.Frame<m.A.Attack.Value.Startup+m.A.Attack.Value.Active)m.Step();}Assert.AreEqual(sequence.Length,m.B.HitSerial);int damage=0;for(int i=0;i<sequence.Length;i++)damage+=Combos.Damage(Moves.All[sequence[i]].Damage,i+1);Assert.AreEqual(150-damage,m.B.Health);}
+        finally{Object.DestroyImmediate(a);Object.DestroyImmediate(b);}
+    }
+    [Test] public void ArtistReactionDoesNotAccumulateWhenPoseIsSampledAgain()
+    {
+        var a=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-4.prefab"));
+        try{var view=a.GetComponent<FighterView>();var fighter=new Fighter{Stun=18,ReactionDuration=18,ReactionTicks=4,LastHitLevel=Level.Mid};var other=new Fighter{X=1};view.PoseTowards(fighter,other,0);var spine=System.Array.Find(a.GetComponentsInChildren<Transform>(),t=>t.name=="Spine");var rotation=spine.localRotation;for(int i=0;i<10;i++)view.SampleContactPose(fighter,other);Assert.Less(Quaternion.Angle(rotation,spine.localRotation),.05f);}
+        finally{Object.DestroyImmediate(a);}
+    }
     [UnityTest]
     public IEnumerator EmbeddedBattleUsesArtistRigsAndReturnsOnce()
     {
@@ -169,4 +182,9 @@ public class RuntimeTests
         Assert.Less(Quaternion.Angle(before,thigh.localRotation),3f);
         Object.DestroyImmediate(view.gameObject);
     }
+}
+
+public class ReactionPoseTests
+{
+ [Test] public void HeadBodyLegAndBlockHaveDistinctResponsesAndSettle(){var f=new Fighter{Stun=18,ReactionDuration=18,ReactionTicks=4};f.LastHitLevel=Level.High;var high=FighterView.ReactionAngles(f);f.LastHitLevel=Level.Mid;var mid=FighterView.ReactionAngles(f);f.LastHitLevel=Level.Low;var low=FighterView.ReactionAngles(f);Assert.Less(high.x,0);Assert.Greater(mid.x,10);Assert.Less(low.z,-5);f.LastBlocked=true;Assert.Less(FighterView.ReactionAngles(f).magnitude,low.magnitude);f.Stun=0;Assert.AreEqual(Vector3.zero,FighterView.ReactionAngles(f));}
 }
