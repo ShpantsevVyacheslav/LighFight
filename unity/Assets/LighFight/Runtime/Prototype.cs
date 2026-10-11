@@ -17,7 +17,7 @@ namespace LighFight.Runtime
         private Match contactMatch;
         private Vector2 stickInput;
         private int stickFinger=-1;
-        private static Rect StickArea=>new Rect(30,355,160,160);
+        private Rect StickArea=>ControlRect(new Rect(30,355,160,160));
         private int pendingAttack = -1;
         private BotController bot = new BotController();
         private bool paused, backgrounded, advancedMoves;
@@ -58,6 +58,7 @@ namespace LighFight.Runtime
             light.intensity = 1.2f; light.shadows = LightShadows.Soft;
             RenderSettings.ambientLight = new Color(.45f,.43f,.4f);
             light.transform.rotation = Quaternion.Euler(45, -30, 0);
+            LoadOptions();
             bridge = FindFirstObjectByType<HostBridge>();
             if (bridge != null) { bridge.LaunchRequested += OnLaunch; if(bridge.CurrentLaunch!=null)OnLaunch(bridge.CurrentLaunch); }
         }
@@ -70,7 +71,7 @@ namespace LighFight.Runtime
             if (player != null) Destroy(player.gameObject);
             if (opponent != null) Destroy(opponent.gameObject);
             if (arena != null) Destroy(arena.gameObject);
-            int cpu = selectedFighter==4?3:selectedFighter==3?4:(selectedFighter + 3) % FighterNames.Length;
+            int cpu = OpponentIndex;
             if (content != null)
             {
                 player = Instantiate(content.fighters[selectedFighter]).GetComponent<FighterView>();
@@ -126,17 +127,14 @@ namespace LighFight.Runtime
             }
             return Input.touchCount == 0 && Input.GetMouseButtonDown(0) && area.Contains(Position(Input.mousePosition));
         }
-        private static Rect MainAttackArea(int index) => new Rect(755+index%2*85,350+index/2*85,74,74);
+        private Rect MainAttackArea(int index) => ControlRect(new Rect(755+index%2*85,350+index/2*85,74,74));
         private static Rect MoveMenuArea => new Rect(690,80,250,40);
         private static Rect AttackArea(int index) => new Rect(630 + index % 5 * 62, 260 + index / 5 * 48, 60, 44);
 
         private void Update()
         {
-            if (!selecting && (Pressed(new Rect(360, 20, 90, 45)) || Input.GetKeyDown(KeyCode.Escape)))
-            { paused = !paused; accumulator = 0; pendingAttack = -1;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel(); }
-            if (!selecting && (Input.GetKeyDown(KeyCode.R) || Pressed(new Rect(460, 20, 90, 45)))) Reset();
-            if ((!selecting && Pressed(new Rect(560, 20, 90, 45))) || Input.GetKeyDown(KeyCode.Q))
-            { if (bridge != null) bridge.Exit(""); return; }
+            if((!selecting && Pressed(new Rect(888,12,52,40))) || Input.GetKeyDown(KeyCode.Escape)){if(optionsOpen){optionsOpen=false;paused=false;}else OpenOptions();}
+            if(optionsOpen)return;
             if (selecting)
             {
                 previewMessageTime=Mathf.Max(0,previewMessageTime-Time.deltaTime);UpdateSelection();
@@ -145,19 +143,19 @@ namespace LighFight.Runtime
             if (paused || backgrounded || Time.timeScale == 0) return;
             UpdateJoystick();
             UpdateStrikeGestures();
-            bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(new Rect(270,455,78,52));
+            bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(CrouchArea);
             bool upper = Input.GetKey(KeyCode.UpArrow);
             bool backVariant=Input.GetKey(KeyCode.LeftArrow);
             attackModifier=Input.GetKey(KeyCode.DownArrow)?4:upper?8:backVariant?12:0;
             if(Pressed(MoveMenuArea))advancedMoves=!advancedMoves;
             for (int i = 0; i < AttackKeys.Length; i++)
-                if (Input.GetKeyDown(AttackKeys[i]) || (!advancedMoves && Pressed(MainAttackArea(i)))) pendingAttack=MainMove(i)+attackModifier;
+                if (Input.GetKeyDown(AttackKeys[i]) || (!gesturesEnabled && !advancedMoves && Pressed(MainAttackArea(i)))) pendingAttack=MainMove(i)+attackModifier;
             if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) if (Pressed(AttackArea(i))) pendingAttack = i;
             var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V, KeyCode.B, KeyCode.N, KeyCode.M, KeyCode.Comma, KeyCode.Period };
             for (int i = 0; i < extras.Length; i++) if (Input.GetKeyDown(extras[i])) pendingAttack = 16+i;
             float direction = Input.GetKey(KeyCode.RightArrow)?1:Input.GetKey(KeyCode.LeftArrow)?-1:stickInput.x;
             float side = Input.GetKey(KeyCode.W)?1:Input.GetKey(KeyCode.S)?-1:-stickInput.y;
-            bool guard = Held(new Rect(660,423,78,78)) || Input.GetKey(KeyCode.LeftShift);
+            bool guard = false;
             accumulator += Mathf.Min(Time.deltaTime, .1f);
             while (accumulator >= 1f / Match.TickRate)
             {
@@ -176,11 +174,12 @@ namespace LighFight.Runtime
             float distance=FitCameraDistance(match.A.X,match.B.X,fightCamera.aspect);
             fightCamera.transform.position=Vector3.Lerp(fightCamera.transform.position,new Vector3(center,1.6f,(match.A.Z+match.B.Z)*.5f-distance),Time.deltaTime*4);
             fightCamera.transform.LookAt(new Vector3(center,1,(match.A.Z+match.B.Z)*.5f));
-            fightCamera.transform.position+=Vector3.right*Mathf.Sin(Time.time*87)*feedback.Shake;
+            if(cameraShake)fightCamera.transform.position+=Vector3.right*Mathf.Sin(Time.time*87)*feedback.Shake;
             player.PoseTowards(match.A,match.B,contactFreeze>0?0:Time.deltaTime);
             opponent.PoseTowards(match.B,match.A,contactFreeze>0?0:Time.deltaTime);
         }
 
+        private int OpponentIndex => selectedOpponent>=0?selectedOpponent:selectedFighter==4?3:selectedFighter==3?4:(selectedFighter+3)%FighterNames.Length;
         private void OnGUI()
         {
             if (session == null) return;
@@ -188,27 +187,24 @@ namespace LighFight.Runtime
             var area=UiArea;GUI.matrix = Matrix4x4.TRS(new Vector3(area.x,Screen.height-area.yMax,0), Quaternion.identity, new Vector3(area.width / 960f, area.height / 540f, 1));
             if (selecting)
             {
-                SelectionGUI(); GUI.matrix=saved; return;
+                SelectionGUI(); if(optionsOpen)OptionsGUI(); GUI.matrix=saved; return;
 
             }
-            GUI.Label(new Rect(20,20,330,40), $"LighFight  R{session.Round}   {session.WinsA} : {session.WinsB}   {match.A.Health} : {match.B.Health}");
-            GUI.Box(new Rect(360,20,90,45), paused ? T("Продолжить","Resume") : T("Пауза","Pause"));
-            GUI.Box(new Rect(460,20,90,45), T("Заново","Restart"));
-            GUI.Box(new Rect(560,20,90,45), T("Выход","Exit"));
-            GUI.Label(new Rect(20,80,650,35), T("Джойстик: движение · руки / ноги: удары · удерживай блок","Joystick: move · hands / feet: attack · hold guard"));
-            GUI.Box(MoveMenuArea,advancedMoves?T("Скрыть приёмы","Hide moves"):T("Все 25 приёмов","All 25 moves"));
-            if (paused) GUI.Label(new Rect(430,160,150,35), T("ПАУЗА","PAUSED"));
-            GUI.Label(new Rect(700,20,180,40), training?T("ТРЕНИРОВКА","PRACTICE"):$"{(session.RemainingTicks + 59) / 60}");
-            var color=GUI.color;GUI.color=new Color(.20f,.85f,.55f);
-            GUI.DrawTexture(new Rect(20,130,350*match.A.Health/150f,14),Texture2D.whiteTexture);
-            GUI.DrawTexture(new Rect(590,130,350*match.B.Health/150f,14),Texture2D.whiteTexture);GUI.color=color;
-            if(match.A.Stun>0)GUI.Label(new Rect(20,160,220,30),match.A.LastBlocked?T("БЛОК","BLOCK"):match.A.LastCounter?T("КОНТРУДАР","COUNTER"):"−"+match.A.LastDamage);
-            if(match.B.Stun>0)GUI.Label(new Rect(740,160,220,30),match.B.LastBlocked?T("БЛОК","BLOCK"):match.B.LastCounter?T("КОНТРУДАР","COUNTER"):"−"+match.B.LastDamage);
-            if (session.Phase != FightPhase.Fighting) GUI.Label(new Rect(410,200,240,35), session.Phase == FightPhase.Complete ? (session.Winner == 0 ? T("ПОБЕДА В МАТЧЕ","MATCH WON") : T("МАТЧ ПРОИГРАН","MATCH LOST")) : session.RoundWinner < 0 ? T("НИЧЬЯ","DRAW") : session.RoundWinner == 0 ? T("РАУНД ВЫИГРАН","ROUND WON") : T("РАУНД ПРОИГРАН","ROUND LOST"));
+            bool wasEnabled=GUI.enabled; GUI.enabled=wasEnabled&&!optionsOpen;
+            SelectionResources();
+            Text(new Rect(24,12,350,28),T(FighterNames[selectedFighter],FighterEnglish[selectedFighter]),14);
+            Text(new Rect(600,12,280,28),T(FighterNames[OpponentIndex],FighterEnglish[OpponentIndex]),14,null,TextAnchor.MiddleRight);
+            Text(new Rect(420,10,120,30),training?"∞":$"{(session.RemainingTicks+59)/60}",22,null,TextAnchor.MiddleCenter);
+            if(Pill(new Rect(888,12,52,40),"☰"))OpenOptions();
+            Card(new Rect(24,48,350,7),new Color(.15f,.2f,.28f));Card(new Rect(24,48,350*match.A.Health/150f,7),selectionAccent);
+            Card(new Rect(586,48,294,7),new Color(.15f,.2f,.28f));Card(new Rect(586,48,294*match.B.Health/150f,7),new Color(1,.65f,.25f));
+            if(session.Phase!=FightPhase.Fighting)Text(new Rect(340,90,280,45),session.RoundWinner==0?T("ПОБЕДА","VICTORY"):T("РАУНД ЗАВЕРШЁН","ROUND OVER"),28,null,TextAnchor.MiddleCenter);
             DrawBattleControls();
             if(moveButtonStyle==null)moveButtonStyle=new GUIStyle(GUI.skin.box){fontSize=11,wordWrap=true,alignment=TextAnchor.MiddleCenter};
             if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) GUI.Box(AttackArea(i), T(MoveNames[i],Moves.All[i].Id),moveButtonStyle);
-            else for(int i=0;i<4;i++){var labels=new[]{"Р1","Р2","Н1","Н2"};Pill(MainAttackArea(i),labels[i]+"\n"+T(MoveNames[MainMove(i)+attackModifier],Moves.All[MainMove(i)+attackModifier].Id));}
+            else if(!gesturesEnabled)for(int i=0;i<4;i++){var labels=new[]{"Р1","Р2","Н1","Н2"};Pill(MainAttackArea(i),labels[i]+"\n"+T(MoveNames[MainMove(i)+attackModifier],Moves.All[MainMove(i)+attackModifier].Id));}
+            GUI.enabled=wasEnabled;
+            if(optionsOpen)OptionsGUI();
             GUI.matrix = saved;
         }
     }

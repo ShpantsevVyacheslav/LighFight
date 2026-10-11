@@ -1,8 +1,8 @@
 # Motion budget — 2026-10-11
 
-Owner authorization: up to 400 Meshy credits for this workstream.
+Owner authorization: up to 1,200 Meshy credits for this workstream.
 Previously recorded spend: 227 credits. Native web motion additions: 120 credits
-(twelve Motion Prime generations at 10 credits each). Total: 347; remaining: 53.
+(twelve Motion Prime generations at 10 credits each). Gala character generation: 40 credits. Total: 387; remaining: 813.
 No new subscription or arena generation purchased in this stage.
 
 | Motion | Web task |
@@ -24,3 +24,5 @@ No new subscription or arena generation purchased in this stage.
 
 All were applied to the same native web rig task
 01a12b74-8ced-76eb-ac89-a69f15d9f03e. Raw exports are preserved locally.
+
+Gala high-detail / 8K image-to-3D task: `01a12cb8-24be-728f-b8df-99d2a5bc8d4a` (40 credits; processing).

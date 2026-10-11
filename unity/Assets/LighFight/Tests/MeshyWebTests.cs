@@ -6,6 +6,16 @@ using System;
 using System.Linq;
 public class MeshyWebTests
 {
+ [Test] public void RulesAndArenaSheetsAreMutuallyExclusive()
+ {
+  var obj=new GameObject("Sheet transition test");try {
+   var prototype=obj.AddComponent<Prototype>();var flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+   var rules=typeof(Prototype).GetField("rulesOpen",flags);var arenas=typeof(Prototype).GetField("arenaOpen",flags);
+   prototype.OpenArenas();Assert.IsTrue((bool)arenas.GetValue(prototype));
+   prototype.OpenRules();Assert.IsTrue((bool)rules.GetValue(prototype));Assert.IsFalse((bool)arenas.GetValue(prototype));
+   prototype.OpenArenas();Assert.IsFalse((bool)rules.GetValue(prototype));Assert.IsTrue((bool)arenas.GetValue(prototype));
+  }finally{UnityEngine.Object.DestroyImmediate(obj);}
+ }
  [Test] public void WebExportRetainsActualSourceAndFingerAnimation()
  {
   const string path="Assets/LighFight/Art/Drafts/MeshyWebIsland/web-motions.fbx";
