@@ -306,3 +306,5 @@ mutation detected. Device acceptance of this new pipeline is pending.
 The previous iPhone pass belongs to 239eb0c. Other fighters are not yet
 migrated. 120 new motion credits this stage, cumulative 347/400.
 No push/deploy. Native framework delivery follows after local visual capture.
+
+- Native Meshy iOS delivery: export + Xcode BUILD SUCCEEDED, commit 74db1b9; separate framework with Data handed to «Нативная лента iOS». Device acceptance pending for this exact version.

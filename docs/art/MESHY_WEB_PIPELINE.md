@@ -31,3 +31,7 @@ Contact calibration records the striking side and a reachable phase at the oppon
 The Character Rig Inspector supports playback, pause, frame stepping, speed, rest pose and skeleton overlay on the same posed surface. Its baked mesh scale compensates for FBX's centimetre import transform, preventing misleading oversized preview geometry.
 
 Other characters have not yet been migrated to this native web export path. Phone acceptance of the new Island rig is pending; prior device results belong to the previous pipeline. No push or asset deployment.
+
+## iOS handoff
+
+Native framework exported and built successfully for iphoneos from commit `74db1b98dbd561cdbfa3eaea226ac4e20d6e3a72`. Delivery: `.tools/delivery/74db1b9/UnityFramework.framework`, including Data; stamp alongside. Binary SHA256: `4618ad99d0e227efd8a058b02b4d8e031419a33724eb1025f28d4ddab1704332`. Sent to the «Нативная лента iOS» thread for its next LighChat build; shared plugin framework was not overwritten during that agent's work. New phone acceptance remains pending.
