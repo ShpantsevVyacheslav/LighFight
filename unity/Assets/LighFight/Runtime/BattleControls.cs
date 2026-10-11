@@ -5,6 +5,14 @@ namespace LighFight.Runtime
  public sealed partial class Prototype
  {
   private Texture2D circle;
+  public static bool StickContains(Rect area,Vector2 position)=>Vector2.Distance(area.center,position)<=Mathf.Min(area.width,area.height)*.5f;
+  public static Vector2 NormalizeStick(Rect area,Vector2 position)
+  {
+   float radius=Mathf.Min(area.width,area.height)*.375f;
+   if(radius<=0)return Vector2.zero;
+   var value=(position-area.center)/radius;value.y=-value.y;
+   value=Vector2.ClampMagnitude(value,1);return value.magnitude<.14f?Vector2.zero:value;
+  }
   private readonly StrikeGesture strikeGesture=new StrikeGesture();
   private bool gesturesEnabled=true;
   private Rect GestureArea=>selecting?new Rect(300,442,265,36):leftHanded?new Rect(25,175,340,340):new Rect(595,175,340,340);
@@ -40,20 +48,19 @@ namespace LighFight.Runtime
   }
   private Vector2 StickVector(Vector2 position)
   {
-   var value=(position-StickArea.center)/60f;value.y=-value.y;
-   value=Vector2.ClampMagnitude(value,1);return value.magnitude<.14f?Vector2.zero:value;
+   return NormalizeStick(StickArea,position);
   }
   private void UpdateJoystick()
   {
    if(Input.touchCount==0)
    {
-    stickFinger=-1;stickInput=Input.GetMouseButton(0)&&StickArea.Contains(Position(Input.mousePosition))?StickVector(Position(Input.mousePosition)):Vector2.zero;return;
+    stickFinger=-1;stickInput=Input.GetMouseButton(0)&&StickContains(StickArea,Position(Input.mousePosition))?StickVector(Position(Input.mousePosition)):Vector2.zero;return;
    }
    bool found=false;
    for(int i=0;i<Input.touchCount;i++)
    {
     var t=Input.GetTouch(i);
-    if(stickFinger<0 && t.phase==TouchPhase.Began && StickArea.Contains(Position(t.position)))stickFinger=t.fingerId;
+    if(stickFinger<0 && t.phase==TouchPhase.Began && StickContains(StickArea,Position(t.position)))stickFinger=t.fingerId;
     if(t.fingerId!=stickFinger)continue;found=true;
     if(t.phase==TouchPhase.Ended||t.phase==TouchPhase.Canceled){stickFinger=-1;stickInput=Vector2.zero;}else stickInput=StickVector(Position(t.position));
    }
@@ -83,8 +90,8 @@ namespace LighFight.Runtime
   private void DrawBattleControls()
   {
    SelectionResources();DrawTrainingAdvice();Disc(StickArea,new Color(.03f,.08f,.14f,controlsOpacity));
-   Vector2 knob=StickArea.center+new Vector2(stickInput.x,-stickInput.y)*50;
-   Disc(new Rect(knob.x-24,knob.y-24,48,48),selectionAccent);
+   Vector2 knob=StickArea.center+new Vector2(stickInput.x,-stickInput.y)*(Mathf.Min(StickArea.width,StickArea.height)*.3125f);
+   Disc(new Rect(knob.x-24*controlsScale,knob.y-24*controlsScale,48*controlsScale,48*controlsScale),selectionAccent);
 
    Disc(CrouchArea,new Color(.08f,.2f,.29f,controlsOpacity));Text(CrouchArea,"↓",28,selectionAccent,TextAnchor.MiddleCenter);
    if(gesturesEnabled){Disc(ControlRect(new Rect(660,335,220,170)),new Color(.04f,.12f,.19f,controlsOpacity*.45f));Text(ControlRect(new Rect(720,383,110,60)),"↑  →\n←  ↓",22,selectionAccent,TextAnchor.MiddleCenter);}

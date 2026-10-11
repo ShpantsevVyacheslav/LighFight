@@ -10,6 +10,30 @@ public class RuntimeTests
     static int hostExitCount;
     static void CountHostExit()=>hostExitCount++;
     [Test]
+    public void MaximumPreviewUsesActualPhonePixelsAndAspect()
+    {
+        var size=Prototype.SelectionPreviewSize(new Vector2(2868,1320),2);
+        Assert.AreEqual(new Vector2Int(1285,924),size);
+        Assert.That((float)size.x/size.y,Is.EqualTo((430f*2868/960)/(378f*1320/540)).Within(.001f),"Character render target must match its physical screen rectangle");
+        var low=Prototype.SelectionPreviewSize(new Vector2(2868,1320),0);
+        Assert.Less(low.x,size.x);Assert.Less(low.y,size.y);
+        var capped=Prototype.SelectionPreviewSize(Vector2.one*10000,2);Assert.AreEqual(2048,capped.y);Assert.That((float)capped.x/capped.y,Is.EqualTo((430f/960)/(378f/540)).Within(.001f));
+    }
+    [Test]
+    public void JoystickMatchesItsCircleAndKeepsSensitivityWhenResized()
+    {
+        foreach(float scale in new[]{.8f,1f,1.25f})
+        {
+            var area=new Rect(30,355,160*scale,160*scale);
+            Assert.IsFalse(Prototype.StickContains(area,area.min),"Invisible square corners must not capture a thumb");
+            Assert.IsTrue(Prototype.StickContains(area,area.center+Vector2.right*area.width*.49f));
+            Assert.AreEqual(Vector2.zero,Prototype.NormalizeStick(area,area.center));
+            var input=Prototype.NormalizeStick(area,area.center+new Vector2(30,-30)*scale);
+            Assert.That(input.x,Is.EqualTo(.5f).Within(.0001f));Assert.That(input.y,Is.EqualTo(.5f).Within(.0001f));
+            Assert.That(Prototype.NormalizeStick(area,area.center+Vector2.one*1000).magnitude,Is.EqualTo(1).Within(.0001f));
+        }
+    }
+    [Test]
     public void FightCameraKeepsBothBodiesInsideHorizontalView()
     {
         foreach(float aspect in new[]{16f/9,19.5f/9,.5f})foreach(float separation in new[]{1f,2.8f,8f})
@@ -181,7 +205,8 @@ public class RuntimeTests
         yield return null;yield return null;
         Assert.AreEqual(2,Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
         Object.Destroy(root);yield return null;yield return null;
-        Assert.AreEqual(0,Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
+        var remaining=Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None);
+        Assert.AreEqual(0,remaining.Length,string.Join("; ",System.Array.ConvertAll(remaining,v=>v.name+" parent="+(v.transform.parent?v.transform.parent.name:"none"))));
         Assert.AreEqual(0,Object.FindObjectsByType<OfficeArena>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
         Assert.AreEqual(0,Object.FindObjectsByType<Camera>(FindObjectsSortMode.None).Length);
         yield return new ExitPlayMode();

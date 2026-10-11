@@ -18,6 +18,13 @@ namespace LighFight.Runtime
   private readonly Color selectionAccent=new Color(.28f,.82f,1),selectionPanel=new Color(.045f,.085f,.15f,.96f);
   private Rect PreviewArea=>new Rect(245,54,430,378);
   private RenderTexture selectionRender;
+  public static Vector2Int SelectionPreviewSize(Vector2 safePixels,int quality)
+  {
+   float scale=quality==0?.65f:quality==1?.85f:1f;
+   var size=new Vector2(430*Mathf.Max(1,safePixels.x)/960,378*Mathf.Max(1,safePixels.y)/540)*scale;
+   size*=Mathf.Min(1,2048/Mathf.Max(size.x,size.y));
+   return new Vector2Int(Mathf.Max(1,Mathf.RoundToInt(size.x)),Mathf.Max(1,Mathf.RoundToInt(size.y)));
+  }
   private Texture2D selectionBackdrop,selectionHalo;
   private Texture2D[] arenaImages,portraits;
   private void ReleaseSelectionRender(){if(fightCamera!=null){fightCamera.targetTexture=null;fightCamera.clearFlags=CameraClearFlags.Skybox;}if(selectionRender!=null){selectionRender.Release();Destroy(selectionRender);selectionRender=null;}}
@@ -25,7 +32,9 @@ namespace LighFight.Runtime
   private void UpdateSelection()
   {
    opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
-   if(selectionRender==null && SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null){selectionRender=new RenderTexture(800,720,24,RenderTextureFormat.ARGB32);selectionRender.Create();}
+   var previewSize=SelectionPreviewSize(UiArea.size,graphicsQuality);
+   if(selectionRender!=null && (selectionRender.width!=previewSize.x || selectionRender.height!=previewSize.y || selectionRender.antiAliasing!=(graphicsQuality==2?4:2)))ReleaseSelectionRender();
+   if(selectionRender==null && SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null){selectionRender=new RenderTexture(previewSize.x,previewSize.y,24,RenderTextureFormat.ARGB32){antiAliasing=graphicsQuality==2?4:2};selectionRender.Create();}
    fightCamera.targetTexture=selectionRender;fightCamera.rect=new Rect(0,0,1,1);
    fightCamera.clearFlags=CameraClearFlags.SolidColor;fightCamera.backgroundColor=Color.clear;
    var center=new Vector3(match.A.X,1,0);
