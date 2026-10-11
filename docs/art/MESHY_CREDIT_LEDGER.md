@@ -2,7 +2,7 @@
 
 Owner authorization: up to 1,200 Meshy credits for this workstream.
 Previously recorded spend: 227 credits. Native web motion additions: 120 credits
-(twelve Motion Prime generations at 10 credits each). Gala character generation: 40 credits. Source-comparison rig: 5 credits. Total: 392; remaining: 808.
+(twelve Motion Prime generations at 10 credits each). Gala character generation: 40 credits. Source-comparison rig: 5 credits. Two source-comparison animations: 6 credits. Total: 398; remaining: 802.
 No new subscription or arena generation purchased in this stage.
 
 | Motion | Web task |
@@ -25,6 +25,10 @@ No new subscription or arena generation purchased in this stage.
 All were applied to the same native web rig task
 01a12b74-8ced-76eb-ac89-a69f15d9f03e. Raw exports are preserved locally.
 
-Gala high-detail / 8K image-to-3D task: `01a12cb8-24be-728f-b8df-99d2a5bc8d4a` (40 credits; processing).
+Gala high-detail / 8K image-to-3D task: `01a12cb8-24be-728f-b8df-99d2a5bc8d4a` (40 credits; source downloaded, visual review pending).
 
 Visible web source comparison rig: `01a12cce-fe74-76da-a18c-87a071282081` (5 credits, no remesh requested).
+
+Source-native jab (191): `01a12cd6-d038-7559-b2a4-c140e54f50c2`; greeting (290): `01a12cd6-d295-707a-af89-befb6ea827f3` (3 each).
+
+Web corrected humanoid rig: `01a12ce8-2266-7554-86ad-e0d5f2017332`; connector status reports **0 credits**. Web stock Wave_One_Hand applied/downloaded; no balance change observed. API animation against this web rig rejected Invalid task mode; no task created, no charge. Budget remains 398 spent / 802 remaining.

@@ -12,6 +12,8 @@ namespace LighFight.Editor {
    var camera=new GameObject("Portrait camera").AddComponent<Camera>();camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.04f,.08f,.14f);camera.orthographic=true;camera.orthographicSize=.24f;
    var content=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
    for(int id=0;id<content.fighters.Length;id++) {
+    // Island portrait comes from the exact neutral web source, never the combat rig.
+    if(id==3)continue;
     var obj=Object.Instantiate(id==3?AssetDatabase.LoadAssetAtPath<GameObject>(NativeIslandSetup.Folder+"/web-motions.fbx"):content.fighters[id]);var view=obj.GetComponent<FighterView>()??obj.AddComponent<FighterView>();if(id!=3)view.Pose(new LighFight.Core.Fighter(),1,0);
     // Face the camera without raising fists into the portrait.
     obj.transform.rotation=Quaternion.Euler(0,id==3?180:90,0);
@@ -27,6 +29,7 @@ namespace LighFight.Editor {
     File.WriteAllBytes($"Assets/LighFight/Resources/Selection/fighter-{id}.png",png.EncodeToPNG());
     RenderTexture.active=null;camera.targetTexture=null;Object.DestroyImmediate(png);Object.DestroyImmediate(rt);Object.DestroyImmediate(obj);
    }
+   SourceQualityComparison.Run();
    AssetDatabase.Refresh();
   }
  }
