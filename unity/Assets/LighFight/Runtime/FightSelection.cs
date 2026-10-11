@@ -6,19 +6,24 @@ namespace LighFight.Runtime
  {
   private int targetWins=2,roundSeconds=60,difficulty=1,previewMove=-1;
   private bool rulesOpen,arenaOpen;
-  private float previewYaw=15,previewDistance=3.2f,previewClock,previewFrame;
+  private float previewYaw=15,previewDistance=2.65f,previewClock,previewFrame;
   private Vector2 dragPrevious;
   private bool dragging;
   private Fighter previewFighter=new Fighter{Guard=true};
-  private Texture2D rounded;
   private GUIStyle selectionText;
   private readonly Color selectionAccent=new Color(.28f,.82f,1),selectionPanel=new Color(.045f,.085f,.15f,.96f);
-  private Rect PreviewArea=>new Rect(250,65,430,365);
+  private Rect PreviewArea=>new Rect(245,54,430,378);
+  private RenderTexture selectionRender;
+  private Texture2D selectionBackdrop,selectionHalo;
+  private Texture2D[] arenaImages,portraits;
+  private void ReleaseSelectionRender(){if(fightCamera!=null){fightCamera.targetTexture=null;fightCamera.clearFlags=CameraClearFlags.Skybox;}if(selectionRender!=null){selectionRender.Release();Destroy(selectionRender);selectionRender=null;}}
+
   private void UpdateSelection()
   {
    opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
-   fightCamera.rect=new Rect(.25f,.15f,.47f,.75f);
-   fightCamera.backgroundColor=new Color(.035f,.055f,.10f);
+   if(selectionRender==null && SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null){selectionRender=new RenderTexture(800,720,24,RenderTextureFormat.ARGB32);selectionRender.Create();}
+   fightCamera.targetTexture=selectionRender;fightCamera.rect=new Rect(0,0,1,1);
+   fightCamera.clearFlags=CameraClearFlags.SolidColor;fightCamera.backgroundColor=Color.clear;
    var center=new Vector3(match.A.X,1,0);
    fightCamera.transform.position=center+new Vector3(0,.18f,-previewDistance);fightCamera.transform.LookAt(center);
    previewClock+=Time.deltaTime;
@@ -51,12 +56,18 @@ namespace LighFight.Runtime
   private void SelectionResources()
   {
    if(selectionText==null)selectionText=new GUIStyle(GUI.skin.label){fontSize=16,alignment=TextAnchor.MiddleLeft,wordWrap=true};
-   if(rounded!=null)return;rounded=new Texture2D(64,64,TextureFormat.RGBA32,false);rounded.hideFlags=HideFlags.HideAndDontSave;
-   for(int y=0;y<64;y++)for(int x=0;x<64;x++){float dx=Mathf.Max(12-x,x-51),dy=Mathf.Max(12-y,y-51);float d=new Vector2(Mathf.Max(0,dx),Mathf.Max(0,dy)).magnitude;rounded.SetPixel(x,y,new Color(1,1,1,Mathf.Clamp01(12.5f-d)));}rounded.Apply();
+   if(selectionBackdrop!=null)return;
+   arenaImages=new Texture2D[5];portraits=new Texture2D[8];
+   for(int i=0;i<5;i++)arenaImages[i]=Resources.Load<Texture2D>("Selection/arena-"+i);
+   for(int i=0;i<8;i++)portraits[i]=Resources.Load<Texture2D>("Selection/fighter-"+i);
+   selectionBackdrop=new Texture2D(256,144,TextureFormat.RGBA32,false);
+   for(int y=0;y<144;y++)for(int x=0;x<256;x++){float d=Vector2.Distance(new Vector2(x/256f,y/144f),new Vector2(.48f,.45f));selectionBackdrop.SetPixel(x,y,Color.Lerp(new Color(.14f,.20f,.32f),new Color(.025f,.045f,.085f),Mathf.Clamp01(d*2)));}selectionBackdrop.Apply();
+   selectionHalo=new Texture2D(512,512,TextureFormat.RGBA32,false);
+   for(int y=0;y<512;y++)for(int x=0;x<512;x++){float r=Vector2.Distance(new Vector2(x,y),new Vector2(256,256));float ring=Mathf.Clamp01(1-Mathf.Abs(r-232)/2);float inner=Mathf.Clamp01(1-Mathf.Abs(r-217)/1.2f)*.3f;float glow=Mathf.Exp(-Mathf.Abs(r-232)/14)*.14f;selectionHalo.SetPixel(x,y,new Color(1,.48f,.16f,Mathf.Max(ring*.45f,inner)+glow));}selectionHalo.Apply();
   }
-  private void Card(Rect rect,Color color){var old=GUI.color;GUI.color=color;GUI.DrawTexture(rect,rounded,ScaleMode.StretchToFill);GUI.color=old;}
+  private void Card(Rect rect,Color color){GUI.DrawTexture(rect,Texture2D.whiteTexture,ScaleMode.StretchToFill,true,0,color,0,Mathf.Min(14,rect.height*.5f));}
   private void Text(Rect rect,string text,int size=16,Color? color=null,TextAnchor align=TextAnchor.MiddleLeft)
-  {selectionText.fontSize=size;selectionText.alignment=align;selectionText.normal.textColor=color??Color.white;GUI.Label(rect,text,selectionText);}
+  {selectionText.fontStyle=size>=25?FontStyle.BoldAndItalic:FontStyle.Normal;selectionText.fontSize=size;selectionText.alignment=align;selectionText.normal.textColor=color??Color.white;GUI.Label(rect,text,selectionText);}
   private bool Pill(Rect rect,string label,bool active=false,bool primary=false)
   {
    Card(rect,primary?new Color(1,.62f,.16f):active?new Color(.07f,.26f,.36f):selectionPanel);
@@ -66,47 +77,70 @@ namespace LighFight.Runtime
   private void SelectionGUI()
   {
    SelectionResources();
-   Card(new Rect(0,0,960,52),new Color(.015f,.03f,.055f,.98f));
-   if(Pill(new Rect(16,8,80,36),"‹ Назад"))bridge?.Exit("");
-   Text(new Rect(115,4,200,45),"LighFight",27,selectionAccent);
-   Text(new Rect(605,5,230,40),T("ПОДГОТОВКА БОЯ","FIGHT SETUP"),13,new Color(.65f,.76f,.87f));
-   if(Pill(new Rect(860,8,84,36),"⚙"))rulesOpen=true;
-   Text(new Rect(28,66,225,26),T("ВЫБЕРИ БОЙЦА","CHOOSE FIGHTER"),12,selectionAccent);
-   Text(new Rect(28,100,225,80),T(FighterNames[selectedFighter],FighterEnglish[selectedFighter]),29);
-   Text(new Rect(28,198,225,45),T("Боевые параметры","Combat stats"),14,new Color(.65f,.76f,.87f));
-   // These values describe shared combat mechanics, not invented progression ratings.
-   string[] labels={T("Здоровье","Health"),T("Урон ударов","Damage"),T("Дальность","Reach")};string[] values={"150","6–25","0.6–1.2 м"};
-   for(int i=0;i<3;i++){Text(new Rect(28,250+i*44,140,30),labels[i],14);Text(new Rect(165,250+i*44,90,30),values[i],17,selectionAccent);}
-   Text(new Rect(290,393,360,25),T("Вращай пальцем · Приближай двумя пальцами","Drag to rotate · Pinch to zoom"),11,new Color(.65f,.76f,.87f),TextAnchor.MiddleCenter);
-   if(Pill(new Rect(293,428,98,35),T("Стойка","Guard"),previewMove<0))previewMove=-1;
-   if(Pill(new Rect(400,428,98,35),T("Удары","Attacks"),previewMove>=0)){previewMove=previewMove==0?1:previewMove==1?4:0;previewFrame=0;previewFighter.Attack=null;}
-   if(Pill(new Rect(508,428,98,35),T("Танец","Dance")))previewMessageTime=3;
-   if(previewMessageTime>0)Text(new Rect(265,355,400,35),T("Танец пока не добавлен","Dance not available yet"),13,selectionAccent,TextAnchor.MiddleCenter);
-   Text(new Rect(713,70,200,30),T("АРЕНА","ARENA"),12,selectionAccent);
-   if(Pill(new Rect(710,108,220,75),T(ArenaNames[selectedArena],ArenaEnglish[selectedArena])+"  ›"))arenaOpen=true;
-   Text(new Rect(713,220,220,26),training?T("ТРЕНИРОВКА","PRACTICE"):T("ПРОТИВ БОТА","VS BOT"),14);
-   Text(new Rect(713,256,220,45),$"{targetWins} "+T("победы","wins")+$" · {roundSeconds} "+T("сек.","sec"),13,new Color(.65f,.76f,.87f));
-   if(Pill(new Rect(710,309,220,36),T("Правила боя  ›","Fight rules  ›")))rulesOpen=true;
-   if(Pill(new Rect(710,390,220,65),T("В БОЙ  →","FIGHT  →"),false,true))BeginFight();
-   Card(new Rect(0,480,960,60),selectionPanel);
-   for(int i=0;i<FighterNames.Length;i++)if(Pill(new Rect(12+i*117,491,110,38),T(FighterNames[i],FighterEnglish[i]),selectedFighter==i)){selectedFighter=i;previewFighter=new Fighter{Guard=true};previewMove=-1;previewYaw=15;RebuildViews();}
+   GUI.DrawTexture(new Rect(0,0,960,540),selectionBackdrop);
+   GUI.DrawTexture(new Rect(267,69,365,365),selectionHalo);
+   var platformColor=GUI.color;GUI.color=new Color(.28f,.78f,1,.65f);GUI.DrawTexture(new Rect(275,388,350,30),selectionHalo);GUI.color=platformColor;
+   if(selectionRender!=null)GUI.DrawTexture(PreviewArea,selectionRender,ScaleMode.StretchToFill,true);
+   Card(new Rect(0,0,960,48),new Color(.01f,.025f,.05f,.95f));
+   if(Pill(new Rect(16,7,73,34),T("‹ Назад","‹ Back")))bridge?.Exit("");
+   Text(new Rect(109,2,155,43),"LIGH",25,Color.white);Text(new Rect(168,2,140,43),"FIGHT",25,new Color(1,.68f,.28f));
+   Text(new Rect(642,4,220,38),T("ПОДГОТОВКА БОЯ","FIGHT SETUP"),11,new Color(.60f,.70f,.82f),TextAnchor.MiddleRight);
+   if(Pill(new Rect(880,7,62,34),T("Правила","Rules")))rulesOpen=true;
+   Text(new Rect(30,65,212,24),T("ВЫБЕРИ БОЙЦА","CHOOSE FIGHTER"),11,selectionAccent);
+   Text(new Rect(30,96,212,92),T(FighterNames[selectedFighter],FighterEnglish[selectedFighter]).ToUpperInvariant(),30);
+   Text(new Rect(30,190,210,32),T("25 приёмов · серии до 4 ударов","25 moves · up to 4-hit chains"),11,new Color(.60f,.70f,.82f));
+   Text(new Rect(30,233,210,22),T("ЗДОРОВЬЕ","HEALTH"),11,new Color(.60f,.70f,.82f));
+   Text(new Rect(30,255,210,49),"150",38,new Color(1,.89f,.54f));
+   string[] labels={T("Урон ударов","Damage"),T("Дальность","Reach"),T("Серия","Chain")};string[] values={"6–25","0.6–1.2 м","4"};float[] fills={.76f,.65f,1};
+   for(int i=0;i<3;i++){float y=320+i*41;Text(new Rect(30,y,130,24),labels[i],12);Text(new Rect(158,y,78,24),values[i],12,new Color(.76f,.91f,.98f),TextAnchor.MiddleRight);Card(new Rect(30,y+28,205,4),new Color(.12f,.19f,.29f));Card(new Rect(30,y+28,205*fills[i],4),selectionAccent);}
+   Text(new Rect(279,415,360,22),T("Вращай · Приближай двумя пальцами","Rotate · Pinch to zoom"),10,new Color(.60f,.73f,.84f),TextAnchor.MiddleCenter);
+   if(Pill(new Rect(300,443,96,32),T("Стойка","Guard"),previewMove<0))previewMove=-1;
+   if(Pill(new Rect(402,443,96,32),T("Удары","Attacks"),previewMove>=0)){previewMove=previewMove==0?1:previewMove==1?4:0;previewFrame=0;previewFighter.Attack=null;}
+   if(Pill(new Rect(504,443,96,32),T("Танец","Dance")))previewMessageTime=3;
+   if(previewMessageTime>0)Text(new Rect(265,382,400,30),T("Танец пока не добавлен","Dance not available yet"),12,selectionAccent,TextAnchor.MiddleCenter);
+   Text(new Rect(713,100,214,24),T("АРЕНА","ARENA"),11,new Color(.60f,.70f,.82f));
+   Rect arenaCard=new Rect(710,133,220,126);Card(arenaCard,selectionPanel);
+   if(arenaImages[selectedArena]!=null){var old=GUI.color;GUI.color=new Color(.62f,.68f,.76f);GUI.DrawTexture(arenaCard,arenaImages[selectedArena],ScaleMode.ScaleAndCrop,true,0,Color.white,0,14);GUI.color=old;}
+   Card(new Rect(710,203,220,56),new Color(.02f,.04f,.07f,.84f));
+   Text(new Rect(723,204,195,28),T(ArenaNames[selectedArena],ArenaEnglish[selectedArena]).ToUpperInvariant(),15);
+   Text(new Rect(723,232,195,20),T("Изменить арену  ›","Change arena  ›"),10,selectionAccent);
+   if(GUI.Button(arenaCard,GUIContent.none,GUIStyle.none))arenaOpen=true;
+   Text(new Rect(713,288,220,26),training?T("ТРЕНИРОВКА","PRACTICE"):T("ПРОТИВ БОТА","VS BOT"),13,new Color(.60f,.70f,.82f));
+   string level=difficulty==0?T("Легко","Easy"):difficulty==2?T("Сложно","Hard"):T("Обычно","Normal");
+   Text(new Rect(713,318,220,28),level+$" · {targetWins} "+T("победы","wins")+$" · {roundSeconds} "+T("сек.","sec"),11);
+   if(Pill(new Rect(710,350,220,32),T("Изменить правила  ›","Change rules  ›")))rulesOpen=true;
+   if(Pill(new Rect(710,416,220,58),T("В БОЙ  →","FIGHT  →"),false,true))BeginFight();
+   Card(new Rect(0,488,960,52),new Color(.015f,.035f,.065f,.97f));
+   string[] shortNames={"ЛЕДИ","ВЕДЬМА","МАСТЕР","ОСТРОВНОЙ","ПАНТЕРА","РЕЙНДЖЕР","ГАЛА","ЧЕМПИОН"};
+   for(int i=0;i<FighterNames.Length;i++){
+    var rect=new Rect(179+i*75,493,67,43);bool active=selectedFighter==i;
+    Card(new Rect(rect.x-1,rect.y-1,rect.width+2,rect.height+2),active?selectionAccent:new Color(.20f,.29f,.40f));Card(rect,selectionPanel);
+    if(portraits[i]!=null)GUI.DrawTexture(rect,portraits[i],ScaleMode.ScaleAndCrop,true);
+    Card(new Rect(rect.x,rect.y+27,rect.width,16),new Color(.02f,.05f,.09f,.88f));Text(new Rect(rect.x,rect.y+27,rect.width,16),russian?shortNames[i]:FighterEnglish[i],8,active?selectionAccent:Color.white,TextAnchor.MiddleCenter);
+    if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedFighter=i;previewFighter=new Fighter{Guard=true};previewMove=-1;previewYaw=15;RebuildViews();}
+   }
    if(arenaOpen||rulesOpen)RulesSheet();
   }
   private float previewMessageTime;
   private void RulesSheet()
   {
-   Card(new Rect(0,52,960,488),new Color(.015f,.025f,.05f,.94f));Card(new Rect(250,75,460,385),selectionPanel);
-   if(Pill(new Rect(646,87,45,35),"✕")){arenaOpen=rulesOpen=false;return;}
-   Text(new Rect(276,88,340,45),arenaOpen?T("Выбери арену","Choose arena"):T("Настройки боя","Fight settings"),25);
-   if(arenaOpen){for(int i=0;i<ArenaNames.Length;i++)if(Pill(new Rect(276,143+i*54,408,44),T(ArenaNames[i],ArenaEnglish[i]),i==selectedArena)){selectedArena=i;RebuildViews();arenaOpen=false;}return;}
-   Text(new Rect(276,143,90,35),T("Режим","Mode"),14);
-   if(Pill(new Rect(378,143,143,35),T("Бот","Bot"),!training))training=false;
-   if(Pill(new Rect(531,143,153,35),T("Тренировка","Practice"),training))training=true;
-   Text(new Rect(276,196,100,35),T("Сложность","Difficulty"),14);
-   string[] levels={T("Легко","Easy"),T("Обычно","Normal"),T("Сложно","Hard")};for(int i=0;i<3;i++)if(Pill(new Rect(378+i*103,196,96,35),levels[i],difficulty==i))difficulty=i;
-   Text(new Rect(276,249,100,35),T("До побед","Wins"),14);for(int i=1;i<=3;i++)if(Pill(new Rect(378+(i-1)*103,249,96,35),i.ToString(),targetWins==i))targetWins=i;
-   Text(new Rect(276,302,100,35),T("Раунд","Round"),14);for(int i=0;i<2;i++){int secs=i==0?60:90;if(Pill(new Rect(378+i*155,302,145,35),secs+T(" сек."," sec"),roundSeconds==secs))roundSeconds=secs;}
-   if(Pill(new Rect(276,377,408,50),T("ПРИМЕНИТЬ  ✓","APPLY  ✓"),false,true))rulesOpen=false;
+   Card(new Rect(0,48,960,492),new Color(0,0,0,.72f));Card(new Rect(550,48,410,492),selectionPanel);
+   if(Pill(new Rect(889,64,48,32),T("Назад","Back"))){arenaOpen=rulesOpen=false;return;}
+   Text(new Rect(578,73,300,45),arenaOpen?T("Место встречи","Choose arena"):T("Твои правила","Your rules"),27);
+   if(arenaOpen){for(int i=0;i<ArenaNames.Length;i++){
+    var rect=new Rect(578,135+i*73,350,62);Card(rect,i==selectedArena?new Color(.08f,.27f,.36f):new Color(.04f,.09f,.16f));
+    if(arenaImages[i]!=null)GUI.DrawTexture(new Rect(rect.x+5,rect.y+5,100,52),arenaImages[i],ScaleMode.ScaleAndCrop);
+    Text(new Rect(rect.x+119,rect.y,220,62),T(ArenaNames[i],ArenaEnglish[i]),15);
+    if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedArena=i;RebuildViews();arenaOpen=false;}
+   }return;}
+   Text(new Rect(578,151,100,35),T("Режим","Mode"),13);
+   if(Pill(new Rect(681,151,104,35),T("Бот","Bot"),!training))training=false;
+   if(Pill(new Rect(790,151,138,35),T("Тренировка","Practice"),training))training=true;
+   Text(new Rect(578,216,100,35),T("Сложность","Difficulty"),13);
+   string[] levels={T("Легко","Easy"),T("Обычно","Normal"),T("Сложно","Hard")};for(int i=0;i<3;i++)if(Pill(new Rect(681+i*84,216,79,35),levels[i],difficulty==i))difficulty=i;
+   Text(new Rect(578,281,100,35),T("До побед","Wins"),13);for(int i=1;i<=3;i++)if(Pill(new Rect(681+(i-1)*84,281,79,35),i.ToString(),targetWins==i))targetWins=i;
+   Text(new Rect(578,346,100,35),T("Раунд","Round"),13);for(int i=0;i<2;i++){int secs=i==0?60:90;if(Pill(new Rect(681+i*126,346,121,35),secs+T(" сек."," sec"),roundSeconds==secs))roundSeconds=secs;}
+   if(Pill(new Rect(578,442,350,57),T("ПРИМЕНИТЬ","APPLY"),false,true))rulesOpen=false;
   }
  }
 }
