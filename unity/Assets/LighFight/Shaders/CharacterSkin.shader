@@ -40,7 +40,15 @@ Shader "LighFight/CharacterSkin"
             {
                 half3 geometricNormal=normalize(i.normal);
                 half3 baseNormal=UnpackNormal(tex2D(_NormalMap,i.uv));baseNormal.xy*=_NormalStrength;baseNormal=normalize(baseNormal);
-                half3 bodyNormal=normalize(normalize(i.tangent)*baseNormal.x+normalize(i.bitangent)*baseNormal.y+geometricNormal*baseNormal.z);
+                // Derive the atlas basis from the deformed surface: imported tangents may
+                // belong to the original mesh before the replacement hands were welded.
+                float3 atlasDP1=ddx(i.world),atlasDP2=ddy(i.world);
+                float2 atlasUV1=ddx(i.uv),atlasUV2=ddy(i.uv);
+                float3 atlasP2=cross(atlasDP2,geometricNormal),atlasP1=cross(geometricNormal,atlasDP1);
+                float3 atlasT=atlasP2*atlasUV1.x+atlasP1*atlasUV2.x;
+                float3 atlasB=atlasP2*atlasUV1.y+atlasP1*atlasUV2.y;
+                float atlasScale=rsqrt(max(max(dot(atlasT,atlasT),dot(atlasB,atlasB)),1e-16));
+                half3 bodyNormal=normalize(atlasT*atlasScale*baseNormal.x+atlasB*atlasScale*baseNormal.y+geometricNormal*baseNormal.z);
                 // UV1 has its own chart orientation; UV0 tangents cannot orient its normal map.
                 float3 dp1=ddx(i.world),dp2=ddy(i.world);float2 duv1=ddx(i.detailUV),duv2=ddy(i.detailUV);
                 float3 dp2perp=cross(dp2,geometricNormal),dp1perp=cross(geometricNormal,dp1);
@@ -51,10 +59,14 @@ Shader "LighFight/CharacterSkin"
                 half3 n=normalize(lerp(bodyNormal,handNormal,i.blend));half3 l=normalize(_WorldSpaceLightPos0.xyz);
                 half diffuse=max(0,dot(n,l));half shadow=SHADOW_ATTENUATION(i);
                 half3 v=normalize(_WorldSpaceCameraPos-i.world);
-                half spec=pow(max(0,dot(n,normalize(l+v))),lerp(8,64,_Glossiness))*.18;
+                // Broad diffuse with a restrained dielectric highlight. Matte cloth
+                // must not receive the same strong highlight as glossy surfaces.
+                half spec=pow(max(0,dot(n,normalize(l+v))),lerp(32,192,_Glossiness))
+                    *lerp(.015,.16,_Glossiness)*diffuse;
+                half3 diffuseLight=_LightColor0.rgb*diffuse*shadow*.78;
                 fixed3 baseColor=lerp(tex2D(_MainTex,i.uv).rgb,tex2D(_DetailSkinTex,i.detailUV).rgb,i.blend)*_Color.rgb;
                 fixed3 ambient=max(half3(.08,.08,.08),ShadeSH9(half4(n,1)));
-                return fixed4(baseColor*(ambient+_LightColor0.rgb*diffuse*shadow)+spec*_LightColor0.rgb*shadow,1);
+                return fixed4(baseColor*(ambient+diffuseLight)+spec*_LightColor0.rgb*shadow,1);
             }
             ENDCG
         }
