@@ -72,9 +72,9 @@ public class CombatReactionTests
  }
  [Test] public void SweepKnocksDownAndRecoveryRestoresControl() {
   var m=new Match();m.A.X=-1;m.B.X=0;m.A.Start(6);
-  for(int i=0;i<26;i++)m.Step();Assert.AreEqual(63,m.B.DownTicks);
+  for(int i=0;i<26;i++)m.Step();Assert.AreEqual(Match.KnockdownTicks-1,m.B.DownTicks);
   float x=m.B.X;m.Walk(m.B,1);Assert.AreEqual(x,m.B.X);Assert.IsFalse(m.B.Start(0));
-  for(int i=0;i<63;i++)m.Step();Assert.AreEqual(0,m.B.DownTicks);Assert.IsTrue(m.B.Start(0));
+  for(int i=0;i<Match.KnockdownTicks-1;i++)m.Step();Assert.AreEqual(0,m.B.DownTicks);Assert.IsTrue(m.B.Start(0));
  }
  [Test] public void BlockedSweepDoesNotKnockDown() {
   var m=new Match();m.A.X=-1;m.B.X=0;m.B.Guard=m.B.Crouch=true;m.A.Start(6);
@@ -85,7 +85,7 @@ public class CombatReactionTests
   for(int i=0;i<15;i++)m.Step();Assert.AreEqual(150,m.B.Health);
  }
  [Test] public void EveryMoveHasReachableDamageWindow() {
-  Assert.AreEqual(20,Moves.All.Length);
+  Assert.AreEqual(25,Moves.All.Length);
   foreach(var move in Moves.All) { var m=new Match();m.A.X=-.8f;m.B.X=0;
    m.A.Start(System.Array.IndexOf(Moves.All,move));for(int i=0;i<move.Duration;i++)m.Step();
    Assert.AreEqual(150-move.Damage,m.B.Health,move.Id);
@@ -125,4 +125,25 @@ public class ContentBudgetTests
 {
  [Test] public void RequiresTemporarySpaceButAllowsCachedContent() { Assert.IsFalse(ContentBudget.CanDownload(1024,1024));Assert.IsTrue(ContentBudget.CanDownload(1024,32L*1024*1024+2048));Assert.IsTrue(ContentBudget.CanDownload(0,0)); }
  [Test] public void RejectsUnboundedSizeEvenWhenFreeSpaceUnknown() { Assert.IsFalse(ContentBudget.CanDownload(long.MaxValue,-1));Assert.IsFalse(ContentBudget.CanDownload(-1,-1));Assert.IsTrue(ContentBudget.CanDownload(1024,-1)); }
+}
+
+public class MotionTimingTests
+{
+        [NUnit.Framework.Test]
+        public void AnimatedContactAlignsWithTheFirstDamagingTick()
+        {
+            foreach(var move in Moves.All)
+            {
+                var match=new Match();match.A.X=0;match.B.X=.5f;
+                match.A.Start(System.Array.IndexOf(Moves.All,move));
+                for(int n=0;n<move.Startup;n++)match.Step();
+                NUnit.Framework.Assert.That(match.B.Health,NUnit.Framework.Is.EqualTo(150));
+                NUnit.Framework.Assert.That(MotionTiming.Phase(move,match.A.Frame,.43f),NUnit.Framework.Is.EqualTo(.43f).Within(.0001));
+                match.Step();NUnit.Framework.Assert.That(match.B.Health,NUnit.Framework.Is.LessThan(150));
+                float previous=-1;
+                for(int frame=0;frame<=move.Duration;frame++)
+                { var phase=MotionTiming.Phase(move,frame,.43f);NUnit.Framework.Assert.That(phase,NUnit.Framework.Is.GreaterThanOrEqualTo(previous));previous=phase; }
+                NUnit.Framework.Assert.That(previous,NUnit.Framework.Is.EqualTo(1).Within(.0001));
+            }
+        }
 }

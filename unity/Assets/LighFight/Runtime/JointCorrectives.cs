@@ -34,6 +34,7 @@ namespace LighFight.Runtime
             for(int i=0;i<skin.sharedMesh.blendShapeCount;i++)if(skin.sharedMesh.GetBlendShapeName(i).Contains(name))return i;
             return -1;
         }
+        void LateUpdate() => Apply();
         public void Apply()
         {
             if(!enabled)return;

@@ -55,10 +55,13 @@ namespace LighFight.Editor
             if (!BuildPipeline.IsBuildTargetSupported(BuildPipeline.GetBuildTargetGroup(target), target))
                 throw new System.InvalidOperationException("Required Unity platform module is not installed: " + target);
             bool preview = System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_PROTOTYPE") == "1";
+            bool art=System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_ART_REVIEW")=="1";
+            bool fight=System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_FIGHT_REVIEW")=="1";
+            if((preview?1:0)+(art?1:0)+(fight?1:0)>1)throw new System.InvalidOperationException("Choose only one embedded preview profile");
             string scenePath;
-            if (System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_ART_REVIEW")=="1")
+            if(fight){HostFightReviewSetup.Create();scenePath=HostFightReviewSetup.ScenePath;}
+            else if (art)
             {
-                if(preview)throw new System.InvalidOperationException("Choose only one embedded preview profile");
                 HostArtReviewSetup.Create();scenePath=HostArtReviewSetup.ScenePath;
             }
             else if (preview) { scenePath = ScenePath; if (!File.Exists(scenePath)) Create(); }

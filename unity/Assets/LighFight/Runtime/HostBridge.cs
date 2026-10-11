@@ -14,6 +14,7 @@ public sealed class HostBridge : MonoBehaviour {
  public event Action<LaunchRequest> LaunchRequested;
  public event Action ExitRequested;
  private string sessionId;
+ private bool exited;
  public LaunchRequest CurrentLaunch {get; private set;}
 #if UNITY_IOS && !UNITY_EDITOR
  [DllImport("__Internal")] private static extern void LighFightEmit(string json);
@@ -25,12 +26,12 @@ public sealed class HostBridge : MonoBehaviour {
    var r = JsonUtility.FromJson<LaunchRequest>(json);
    if (r == null || r.protocolVersion != 1 || string.IsNullOrWhiteSpace(r.sessionId) || r.mode != "bot")
     throw new ArgumentException("invalid_launch");
-   sessionId = r.sessionId; CurrentLaunch = r; Time.timeScale = 1;
+   sessionId = r.sessionId; CurrentLaunch = r; exited=false; Time.timeScale = 1;
    LaunchRequested?.Invoke(r); Emit("launched");
   } catch (Exception e) { Debug.LogWarning("LighFight launch rejected: " + e.GetType().Name); Emit("failed"); }
  }
  public void Pause(string value) { Time.timeScale = value == "true" ? 0 : 1; }
- public void Exit(string ignored) { Time.timeScale = 0; ExitRequested?.Invoke(); Emit("exit"); }
+ public void Exit(string ignored) { if(exited)return;exited=true;Time.timeScale = 0; ExitRequested?.Invoke(); Emit("exit"); }
  private void Emit(string type) {
   var json = JsonUtility.ToJson(new HostEvent { type = type, sessionId = sessionId });
 #if UNITY_ANDROID && !UNITY_EDITOR

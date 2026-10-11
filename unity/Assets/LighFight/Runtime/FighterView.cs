@@ -9,7 +9,13 @@ namespace LighFight.Runtime
         [SerializeField] private Transform hips, chest, head, armL, armR, foreL, foreR, legL, legR, shinL, shinR;
         private Material skin, cloth, dark;
         [SerializeField] private Animator animator;
-        private float previousX, stride, motionHold;
+        [System.Serializable] public struct ContactPose { public string moveId; public float phase,start,end; }
+        [SerializeField] private ContactPose[] contactPoses = new ContactPose[0];
+        public ContactPose[] CopyContactPoses() => (ContactPose[])contactPoses.Clone();
+        public void ConfigureAnimation(Animator value,ContactPose[] poses) { animator=value;contactPoses=poses;ownsMaterials=false; }
+        private float previousX, stride, motionHold, deathTime, reactionTime;
+        private int previousHitSerial;
+        private bool hasPosition, backing;
         [SerializeField] private bool ownsMaterials = true;
         public void UseSharedMaterials() => ownsMaterials = false;
         public bool IsReady => animator!=null ? (animator.runtimeAnimatorController!=null && animator.avatar!=null && animator.avatar.isValid) : (hips!=null && chest!=null && head!=null && armL!=null && armR!=null && foreL!=null && foreR!=null && legL!=null && legR!=null && shinL!=null && shinR!=null);
@@ -72,7 +78,8 @@ namespace LighFight.Runtime
             => joint.localRotation = Quaternion.Euler(x,y,z);
         public void Pose(Fighter fighter, float facing, float delta)
         {
-            if(Mathf.Abs(previousX-fighter.X)>.0001f)motionHold=.06f;else motionHold=Mathf.Max(0,motionHold-delta);
+            if(!hasPosition){previousX=fighter.X;hasPosition=true;if(animator!=null){animator.applyRootMotion=false;animator.speed=0;animator.Rebind();animator.Update(0);}}
+            if(Mathf.Abs(previousX-fighter.X)>.0001f){motionHold=.06f;backing=(fighter.X-previousX)*facing<0;}else motionHold=Mathf.Max(0,motionHold-delta);
             bool moving = motionHold>0;
             previousX = fighter.X; stride += moving ? delta*12 : delta*2;
             float gait = moving ? Mathf.Sin(stride)*25 : Mathf.Sin(stride)*2;
@@ -80,12 +87,28 @@ namespace LighFight.Runtime
             transform.rotation = Quaternion.Euler(0,facing>0?90:-90,0);
             if(animator!=null)
             {
-                animator.applyRootMotion=false;
-                string motion=fighter.Health<=0?"Fall":fighter.DownTicks>16?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?"Hit":fighter.Attack.HasValue?fighter.Attack.Value.Id:fighter.Guard?"Guard":fighter.Crouch?"Crouch":moving?"Walk":"Idle";
+                deathTime=fighter.Health<=0?deathTime+delta:0;
+                if(previousHitSerial!=fighter.HitSerial){previousHitSerial=fighter.HitSerial;reactionTime=0;}else reactionTime+=delta;
+                animator.applyRootMotion=false;animator.speed=0;
+                string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?"Hit":fighter.Attack.HasValue?fighter.Attack.Value.Id:fighter.Guard?"Guard":fighter.Crouch?"Crouch":moving?(backing?"WalkBack":"Walk"):"Idle";
                 int state=Animator.StringToHash("Base Layer."+motion);
                 if(animator.HasState(0,state))
                 {
-                    float phase=fighter.Attack.HasValue?(float)fighter.Frame/fighter.Attack.Value.Duration:fighter.DownTicks>16?1-(fighter.DownTicks-16)/48f:fighter.DownTicks>0?1-fighter.DownTicks/16f:Mathf.Repeat(stride*.1f,1);
+                    float phase=fighter.Attack.HasValue?(float)fighter.Frame/fighter.Attack.Value.Duration:fighter.DownTicks>Match.GetUpTicks?1-(fighter.DownTicks-Match.GetUpTicks)/(float)(Match.KnockdownTicks-Match.GetUpTicks):fighter.DownTicks>0?1-fighter.DownTicks/(float)Match.GetUpTicks:Mathf.Repeat(stride*.1f,1);
+                    if(fighter.Health<=0)phase=Mathf.Clamp01(deathTime);
+                    if(motion=="Hit")phase=Mathf.Clamp01(reactionTime/.35f);
+                    if(motion=="Idle" || motion=="Guard")phase=0;
+                    if(motion=="Crouch" && !moving)phase=.3f;
+                    if(fighter.Attack.HasValue)
+                    {
+                        var contact=System.Array.Find(contactPoses,p=>p.moveId==motion);
+                        if(contact.phase>0)
+                        {
+                            float end=contact.end>contact.start?contact.end:1;
+                            float normalized=(contact.phase-contact.start)/(end-contact.start);
+                            phase=Mathf.Lerp(contact.start,end,MotionTiming.Phase(fighter.Attack.Value,fighter.Frame,normalized));
+                        }
+                    }
                     animator.Play(state,0,phase);
                 }
                 return;

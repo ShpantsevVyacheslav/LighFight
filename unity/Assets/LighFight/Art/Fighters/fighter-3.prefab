@@ -1,0 +1,265 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8283424424654702600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_Name
+      value: fighter-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 52c472379125f4507962c9853f84072c, type: 2}
+    - target: {fileID: 5866666021909216657, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111781155169087978, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b39f12268ee64fae9166030a20d94e0, type: 2}
+    - target: {fileID: 8111781155169087978, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c484ad9e98d844eb489fdc578dd24aaa, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8418319663081996579}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4577352590009402195}
+  m_SourcePrefab: {fileID: 100100000, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+--- !u!95 &2566549351733540249 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+  m_PrefabInstance: {fileID: 8283424424654702600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9094398711275697497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb3028dd437dc4dce8dd2b8c20e00bb6, type: 3}
+  m_PrefabInstance: {fileID: 8283424424654702600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8418319663081996579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094398711275697497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1a2be5a4d0f445db7390ec418c21e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LighFight.Runtime::LighFight.Runtime.FighterView
+  hips: {fileID: 0}
+  chest: {fileID: 0}
+  head: {fileID: 0}
+  armL: {fileID: 0}
+  armR: {fileID: 0}
+  foreL: {fileID: 0}
+  foreR: {fileID: 0}
+  legL: {fileID: 0}
+  legR: {fileID: 0}
+  shinL: {fileID: 0}
+  shinR: {fileID: 0}
+  animator: {fileID: 2566549351733540249}
+  contactPoses:
+  - moveId: jab
+    phase: 0.3
+    start: 0
+    end: 1
+  - moveId: cross
+    phase: 0.33333334
+    start: 0
+    end: 1
+  - moveId: hook
+    phase: 0.28333333
+    start: 0
+    end: 1
+  - moveId: uppercut
+    phase: 0.6666667
+    start: 0
+    end: 1
+  - moveId: frontKick
+    phase: 0.5
+    start: 0
+    end: 1
+  - moveId: roundhouseKick
+    phase: 0.51666665
+    start: 0
+    end: 1
+  - moveId: knee
+    phase: 0.36666667
+    start: 0
+    end: 1
+  - moveId: elbow
+    phase: 0.51666665
+    start: 0
+    end: 1
+  - moveId: sweep
+    phase: 0.35
+    start: 0
+    end: 1
+  - moveId: highKick
+    phase: 0.5
+    start: 0
+    end: 1
+  - moveId: spinKick
+    phase: 0.78333336
+    start: 0
+    end: 1
+  - moveId: Hit
+    phase: 0.5833333
+    start: 0
+    end: 1
+  - moveId: Dodge
+    phase: 0.41666666
+    start: 0
+    end: 1
+  - moveId: shortHook
+    phase: 0.31666666
+    start: 0
+    end: 1
+  - moveId: doublePunch
+    phase: 0.8666667
+    start: 0
+    end: 1
+  - moveId: stepKick
+    phase: 0.36666667
+    start: 0
+    end: 1
+  - moveId: counterstrike
+    phase: 0.8666667
+    start: 0
+    end: 1
+  - moveId: Fall
+    phase: 0.06666667
+    start: 0
+    end: 1
+  - moveId: GetUp
+    phase: 0.6166667
+    start: 0
+    end: 1
+  - moveId: Crouch
+    phase: 0.45
+    start: 0
+    end: 1
+  - moveId: Walk
+    phase: 0.5
+    start: 0
+    end: 1
+  - moveId: WalkBack
+    phase: 0.5833333
+    start: 0
+    end: 1
+  - moveId: body
+    phase: 0.26666668
+    start: 0
+    end: 1
+  - moveId: lowKick
+    phase: 0.15
+    start: 0
+    end: 1
+  - moveId: jumpKick
+    phase: 0.45
+    start: 0
+    end: 1
+  - moveId: backfist
+    phase: 0.25
+    start: 0
+    end: 1
+  - moveId: axeKick
+    phase: 0.6166667
+    start: 0
+    end: 1
+  - moveId: sideKick
+    phase: 0.16666667
+    start: 0
+    end: 1
+  - moveId: hammer
+    phase: 0.33333334
+    start: 0
+    end: 1
+  - moveId: palm
+    phase: 0.23333333
+    start: 0
+    end: 1
+  - moveId: heelKick
+    phase: 0.4
+    start: 0
+    end: 1
+  - moveId: switchKick
+    phase: 0.36666667
+    start: 0
+    end: 1
+  - moveId: _guard
+    phase: 0.16666667
+    start: 0
+    end: 0
+  ownsMaterials: 0
+--- !u!114 &4577352590009402195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9094398711275697497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c7136981eeb4fdca6c14b2fbcf3fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: LighFight.Runtime::LighFight.Runtime.JointCorrectives
+  referenceAngles:
+  - 135.99724
+  - 111.25128
+  - 73.56264

@@ -9,6 +9,67 @@ public class RuntimeTests
 {
     static int hostExitCount;
     static void CountHostExit()=>hostExitCount++;
+    [Test]
+    public void FightCameraKeepsBothBodiesInsideHorizontalView()
+    {
+        foreach(float aspect in new[]{16f/9,19.5f/9,.5f})foreach(float separation in new[]{1f,2.8f,8f})
+        {
+            float distance=Prototype.FitCameraDistance(-separation/2,separation/2,aspect);
+            float visible=2*distance*Mathf.Tan(21*Mathf.Deg2Rad)*aspect;
+            Assert.GreaterOrEqual(visible,separation+2.19f);
+        }
+        Assert.Less(Prototype.FitCameraDistance(-1.4f,1.4f,16f/9),4f,"Nearby fighters should fill the screen");
+    }
+    [Test]
+    public void ArtistSpawnIsIdleAndRetreatUsesBackstep()
+    {
+        var prefab=UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-4.prefab");var obj=Object.Instantiate(prefab);
+        try
+        {
+            var view=obj.GetComponent<FighterView>();var animator=obj.GetComponent<Animator>();var fighter=new Fighter{X=-1.4f};
+            view.Pose(fighter,1,0);animator.Update(0);Assert.IsTrue(animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"),"Spawning is not walking");
+            fighter.X-=.045f;view.Pose(fighter,1,1f/60);animator.Update(0);Assert.IsTrue(animator.GetCurrentAnimatorStateInfo(0).IsName("WalkBack"),"Retreat must use the backward step");
+            fighter.X+=.045f;view.Pose(fighter,1,1f/60);animator.Update(0);Assert.IsTrue(animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"));
+        }
+        finally{Object.DestroyImmediate(obj);}
+    }
+    [Test]
+    public void ArtistGuardProtectsChestAndJabExtendsTowardOpponent()
+    {
+        foreach(int id in new[]{3,4})
+        {
+            var prefab=UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-"+id+".prefab");var obj=Object.Instantiate(prefab);
+            try
+            {
+                var view=obj.GetComponent<FighterView>();var animator=obj.GetComponent<Animator>();var fighter=new Fighter{Guard=true};
+                view.Pose(fighter,1,0);animator.Update(0);
+                var bones=obj.GetComponentsInChildren<Transform>();var left=System.Array.Find(bones,t=>t.name=="LeftHand");var right=System.Array.Find(bones,t=>t.name=="RightHand");
+                Assert.Greater(Mathf.Min(left.position.y,right.position.y),1.2f,"Guard hands below chest on fighter "+id);
+                float guard=Mathf.Max(left.position.x,right.position.x);fighter.Guard=false;fighter.Start(0);fighter.Frame=Moves.All[0].Startup;
+                view.Pose(fighter,1,0);animator.Update(0);Assert.Greater(Mathf.Max(left.position.x,right.position.x),guard+.1f,"Jab does not reach forward on fighter "+id);
+            }
+            finally{Object.DestroyImmediate(obj);}
+        }
+    }
+    [UnityTest]
+    public IEnumerator EmbeddedBattleUsesArtistRigsAndReturnsOnce()
+    {
+        EditorSceneManager.OpenScene("Assets/LighFight/Scenes/HostFightReview.unity");
+        yield return new EnterPlayMode();yield return null;yield return null;
+        var game=Object.FindFirstObjectByType<Prototype>();var host=Object.FindFirstObjectByType<HostBridge>();
+        host.Launch("{\"protocolVersion\":1,\"sessionId\":\"fight-review\",\"mode\":\"bot\",\"locale\":\"ru\"}");
+        game.BeginFight();yield return null;yield return null;
+        var views=Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None);Assert.AreEqual(2,views.Length);
+        foreach(var view in views)
+        {
+            var animator=view.GetComponent<Animator>();Assert.NotNull(animator);
+            foreach(var move in Moves.All)Assert.IsTrue(animator.HasState(0,Animator.StringToHash("Base Layer."+move.Id)),move.Id);
+        }
+        hostExitCount=0;host.ExitRequested+=CountHostExit;host.Exit("");host.Exit("");Assert.AreEqual(1,hostExitCount);
+        host.Launch("{\"protocolVersion\":1,\"sessionId\":\"fight-relaunch\",\"mode\":\"bot\"}");host.Exit("");Assert.AreEqual(2,hostExitCount);
+        host.ExitRequested-=CountHostExit;Time.timeScale=1;Object.Destroy(game.gameObject);Object.Destroy(host.gameObject);
+        yield return null;yield return null;yield return new ExitPlayMode();
+    }
     [UnityTest]
     public IEnumerator EmbeddedArtReviewWaitsForHostAndReturnsThroughBridge()
     {

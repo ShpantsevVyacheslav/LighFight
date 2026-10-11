@@ -32,7 +32,10 @@ namespace LighFight.Core
             new Move("backfist",16,3,21,12,1.6f,Level.High), new Move("axeKick",31,5,32,25,1.8f,Level.Mid),
             new Move("sideKick",22,4,26,18,2.2f,Level.Mid), new Move("roundhouseKick",24,4,29,20,2.1f,Level.High),
             new Move("hammer",24,4,26,18,1.5f,Level.Mid), new Move("palm",13,3,18,8,1.4f,Level.Mid),
-            new Move("heelKick",28,5,30,22,2.0f,Level.Low), new Move("switchKick",20,4,25,16,1.9f,Level.Mid)
+            new Move("heelKick",28,5,30,22,2.0f,Level.High), new Move("switchKick",20,4,25,16,1.9f,Level.Mid),
+            new Move("highKick",24,4,29,19,2.1f,Level.High), new Move("shortHook",13,3,22,9,1.15f,Level.High),
+            new Move("doublePunch",27,4,31,22,1.55f,Level.Mid), new Move("stepKick",28,4,33,23,2.35f,Level.High),
+            new Move("counterstrike",19,3,26,15,1.55f,Level.Mid)
         };
     }
 
@@ -59,6 +62,7 @@ namespace LighFight.Core
     public sealed class Match
     {
         public const int TickRate = 60;
+        public const int KnockdownTicks = 90, GetUpTicks = 30;
         public readonly Fighter A = new Fighter { X = -1.4f }, B = new Fighter { X = 1.4f };
         public int Tick { get; private set; }
         public bool Finished => A.Health <= 0 || B.Health <= 0;
@@ -107,7 +111,7 @@ namespace LighFight.Core
             defender.Stun = Math.Max(defender.Stun, contact.Blocked ? 8 : contact.Counter ? 26 : 18);
             if (contact.Blocked) return;
             defender.Health = Math.Max(0, defender.Health - contact.Damage);
-            if (contact.Knockdown) { defender.DownTicks = 64; defender.Stun = 64; }
+            if (contact.Knockdown) { defender.DownTicks = KnockdownTicks; defender.Stun = KnockdownTicks; }
             defender.X = Math.Max(-5, Math.Min(5, defender.X + contact.Push));
             // A hit cancels startup/recovery. A simultaneous contact was captured above.
             defender.Attack = null;

@@ -12,7 +12,7 @@ namespace LighFight.Editor
         public static Avatar ConfigureHumanoid(string path)
         {
             var importer=(ModelImporter)AssetImporter.GetAtPath(path);
-            importer.animationType=ModelImporterAnimationType.Human;
+            importer.animationType=ModelImporterAnimationType.Generic;
             importer.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;
             importer.importAnimation=true;importer.isReadable=true;
             importer.materialImportMode=ModelImporterMaterialImportMode.None;
@@ -23,7 +23,7 @@ namespace LighFight.Editor
             var description=importer.humanDescription;
             description.human=mapping.Select(pair=>pair.Split(':')).Where(p=>transforms.Any(t=>t.name==p[1])).Select(p=>new HumanBone{humanName=p[0],boneName=p[1],limit=new HumanLimit{useDefaultValues=true}}).ToArray();
             description.skeleton=transforms.Select(t=>new SkeletonBone{name=t.name,position=t.localPosition,rotation=t.localRotation,scale=t.localScale}).ToArray();
-            importer.humanDescription=description;
+            importer.animationType=ModelImporterAnimationType.Human;importer.humanDescription=description;
             var clips=importer.defaultClipAnimations;
             foreach(var clip in clips){clip.lockRootRotation=true;clip.lockRootPositionXZ=true;clip.lockRootHeightY=true;clip.keepOriginalPositionY=true;}
             importer.clipAnimations=clips;importer.SaveAndReimport();

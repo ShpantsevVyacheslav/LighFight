@@ -6,7 +6,7 @@ namespace LighFight.Runtime
     // Explicit scene component; never auto-spawn in downloaded production scenes.
     public sealed class Prototype : MonoBehaviour
     {
-        private static readonly string[] MoveNames = { "Джеб", "Кросс", "Хук", "Корпус", "Фронт", "Лоу", "Подсечка", "Апперкот", "Колено", "Локоть", "Разворот", "Прыжок", "Бэкфист", "Топор", "Боковой", "Круговой", "Молот", "Ладонь", "Пятка", "Смена" };
+        private static readonly string[] MoveNames = { "Джеб", "Кросс", "Хук", "Корпус", "Фронт", "Лоу", "Подсечка", "Апперкот", "Колено", "Локоть", "Разворот", "Прыжок", "Бэкфист", "Топор", "Боковой", "Круговой", "Молот", "Толчок", "Пятка", "Смена", "Высокий", "Короткий хук", "Двойной", "Шаг + нога", "Контрудар" };
         private static readonly KeyCode[] AttackKeys = { KeyCode.J, KeyCode.K, KeyCode.U, KeyCode.I };
         private FightSession session;
         private Match match => session.Match;
@@ -14,7 +14,9 @@ namespace LighFight.Runtime
         private float accumulator;
         private int pendingAttack = -1;
         private BotController bot = new BotController();
-        private bool paused, backgrounded;
+        private bool paused, backgrounded, advancedMoves;
+        private int attackModifier;
+        private GUIStyle moveButtonStyle;
                 public GameContent content;
         private HitFeedback feedback;
         private Camera fightCamera;
@@ -25,7 +27,7 @@ namespace LighFight.Runtime
         private HostBridge bridge;
         private OfficeArena arena;
         private bool selecting = true;
-        private int selectedFighter, selectedArena;
+        [SerializeField] private int selectedFighter, selectedArena;
         private static readonly string[] FighterNames = { "Костяная леди", "Ночная ведьма", "Мастер стихий", "Островной боец", "Розовая пантера", "Рейнджер", "Гала-боец", "Кобальтовый чемпион" };
         private static readonly string[] FighterEnglish = { "Bone Lady", "Night Witch", "Element Master", "Island Fighter", "Pink Panther", "Ranger", "Gala Fighter", "Cobalt Champion" };
         private static readonly string[] ArenaEnglish = { "Meeting room", "Kitchen", "Office", "Tight corner", "Courtyard" };
@@ -38,7 +40,7 @@ namespace LighFight.Runtime
             RebuildViews();
             var camera = new GameObject("Camera").AddComponent<Camera>();
             camera.transform.SetParent(transform,false);
-            camera.transform.position = new Vector3(0, 2.4f, -9);
+            camera.transform.position = new Vector3(0, 1.6f, -FitCameraDistance(match.A.X,match.B.X,camera.aspect));
             camera.fieldOfView = 42;
             camera.gameObject.AddComponent<AudioListener>();fightCamera=camera;
             feedback=gameObject.AddComponent<HitFeedback>();
@@ -54,13 +56,15 @@ namespace LighFight.Runtime
             if (bridge != null) { bridge.LaunchRequested += OnLaunch; if(bridge.CurrentLaunch!=null)OnLaunch(bridge.CurrentLaunch); }
         }
 
+        public void BeginFight() { Reset(); selecting=false; advancedMoves=false; }
+        public static float FitCameraDistance(float a,float b,float aspect) => Mathf.Max(3.6f,(Mathf.Abs(a-b)+2.2f)/(2*Mathf.Tan(21*Mathf.Deg2Rad)*Mathf.Max(.3f,aspect)));
         private void OnLaunch(LaunchRequest request) { russian=string.IsNullOrEmpty(request.locale)||request.locale.StartsWith("ru"); Reset(); selecting = true; }
         private void RebuildViews()
         {
             if (player != null) Destroy(player.gameObject);
             if (opponent != null) Destroy(opponent.gameObject);
             if (arena != null) Destroy(arena.gameObject);
-            int cpu = (selectedFighter + 3) % FighterNames.Length;
+            int cpu = selectedFighter==4?3:(selectedFighter + 3) % FighterNames.Length;
             if (content != null)
             {
                 player = Instantiate(content.fighters[selectedFighter]).GetComponent<FighterView>();
@@ -114,7 +118,9 @@ namespace LighFight.Runtime
             }
             return Input.touchCount == 0 && Input.GetMouseButtonDown(0) && area.Contains(Position(Input.mousePosition));
         }
-        private static Rect AttackArea(int index) => new Rect(630 + index % 5 * 62, 285 + index / 5 * 54, 60, 50);
+        private static Rect MainAttackArea(int index) => new Rect(735+index%2*110,370+index/2*70,100,60);
+        private static Rect MoveMenuArea => new Rect(690,80,250,40);
+        private static Rect AttackArea(int index) => new Rect(630 + index % 5 * 62, 260 + index / 5 * 48, 60, 44);
 
         private void Update()
         {
@@ -131,10 +137,13 @@ namespace LighFight.Runtime
             if (paused || backgrounded || Time.timeScale == 0) return;
             bool crouch = Held(new Rect(175, 440, 70, 70)) || Input.GetKey(KeyCode.DownArrow);
             bool upper = Held(new Rect(100, 365, 70, 65)) || Input.GetKey(KeyCode.UpArrow);
+            bool backVariant=Held(new Rect(25,440,70,70)) || Input.GetKey(KeyCode.LeftArrow);
+            attackModifier=crouch?4:upper?8:backVariant?12:0;
+            if(Pressed(MoveMenuArea))advancedMoves=!advancedMoves;
             for (int i = 0; i < AttackKeys.Length; i++)
-                if (Input.GetKeyDown(AttackKeys[i])) pendingAttack = i + (crouch ? 4 : upper ? 8 : Input.GetKey(KeyCode.LeftArrow) ? 12 : 0);
-            for (int i = 0; i < Moves.All.Length; i++) if (Pressed(AttackArea(i))) pendingAttack = i;
-            var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V };
+                if (Input.GetKeyDown(AttackKeys[i]) || (!advancedMoves && Pressed(MainAttackArea(i)))) pendingAttack=i+attackModifier;
+            if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) if (Pressed(AttackArea(i))) pendingAttack = i;
+            var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V, KeyCode.B, KeyCode.N, KeyCode.M, KeyCode.Comma, KeyCode.Period };
             for (int i = 0; i < extras.Length; i++) if (Input.GetKeyDown(extras[i])) pendingAttack = 16+i;
             float direction = (Held(new Rect(100,440,70,70)) || Input.GetKey(KeyCode.RightArrow) ? 1 : 0) -
                 (Held(new Rect(25,440,70,70)) || Input.GetKey(KeyCode.LeftArrow) ? 1 : 0);
@@ -150,8 +159,8 @@ namespace LighFight.Runtime
                 session.Step();feedback.Observe(match);
             }
             float center=(match.A.X+match.B.X)*.5f;
-            float distance=Mathf.Max(7.2f,Mathf.Abs(match.A.X-match.B.X)*1.3f+5.5f);
-            fightCamera.transform.position=Vector3.Lerp(fightCamera.transform.position,new Vector3(center,2.4f,-distance),Time.deltaTime*4);
+            float distance=FitCameraDistance(match.A.X,match.B.X,fightCamera.aspect);
+            fightCamera.transform.position=Vector3.Lerp(fightCamera.transform.position,new Vector3(center,1.6f,-distance),Time.deltaTime*4);
             fightCamera.transform.LookAt(new Vector3(center,1,0));
             fightCamera.transform.position+=Vector3.right*Mathf.Sin(Time.time*87)*feedback.Shake;
             player.Pose(match.A, match.B.X - match.A.X, Time.deltaTime);
@@ -172,9 +181,9 @@ namespace LighFight.Runtime
                 for (int i=0;i<ArenaNames.Length;i++)
                     if (GUI.Button(new Rect(35+i*178,235,168,60),(i==selectedArena?"● ":"")+T(ArenaNames[i],ArenaEnglish[i])))
                     { selectedArena=i; RebuildViews(); }
-                GUI.Label(new Rect(45,325,850,60), T("Стрелки: движение. J / K / U / I: удары. Shift: блок.\n↑ / ↓ / ← + удар: другие приёмы. Z / X / C / V: ещё четыре. Победа — два раунда.","Arrows: move. J / K / U / I: attacks. Shift: guard.\nUp / Down / Left + attack: alternate moves. Z / X / C / V: four more. First to two rounds wins."));
+                GUI.Label(new Rect(45,325,850,60), T("Стрелки: движение. J / K / U / I: удары. Shift: блок.\n↑ / ↓ / ← + удар: другие приёмы. Z / X / C / V / B / N / M / , / .: ещё девять. Победа — два раунда.","Arrows: move. J / K / U / I: attacks. Shift: guard.\nUp / Down / Left + attack: alternate moves. Z / X / C / V / B / N / M / , / .: nine more. First to two rounds wins."));
                 training=GUI.Toggle(new Rect(45,375,280,35),training,T("Тренировка без таймера и урона","Practice — unlimited time and health"));
-                if (GUI.Button(new Rect(330,410,300,70), T("НАЧАТЬ БОЙ","START FIGHT"))) { Reset(); selecting=false; }
+                if (GUI.Button(new Rect(330,410,300,70), T("НАЧАТЬ БОЙ","START FIGHT"))) { BeginFight(); }
                 if (GUI.Button(new Rect(770,410,150,70), T("ВЫХОД","EXIT"))) bridge?.Exit("");
                 GUI.matrix=saved; return;
             }
@@ -182,7 +191,8 @@ namespace LighFight.Runtime
             GUI.Box(new Rect(360,20,90,45), paused ? T("Продолжить","Resume") : T("Пауза","Pause"));
             GUI.Box(new Rect(460,20,90,45), T("Заново","Restart"));
             GUI.Box(new Rect(560,20,90,45), T("Выход","Exit"));
-            GUI.Label(new Rect(20,80,900,35), T("Стрелки + J K U I. ↑ / ↓ / ←: другие удары. Z X C V: дополнительные. Shift: блок.","Arrows + J K U I. Up / Down / Left: alternate attacks. Z X C V: extra moves. Shift: guard."));
+            GUI.Label(new Rect(20,80,650,35), T("Стрелки + J K U I · Shift: блок · направления меняют приём","Arrows + J K U I · Shift: guard · direction selects alternate attacks"));
+            GUI.Box(MoveMenuArea,advancedMoves?T("Скрыть приёмы","Hide moves"):T("Все 25 приёмов","All 25 moves"));
             if (paused) GUI.Label(new Rect(430,160,150,35), T("ПАУЗА","PAUSED"));
             GUI.Label(new Rect(700,20,180,40), training?T("ТРЕНИРОВКА","PRACTICE"):$"{(session.RemainingTicks + 59) / 60}");
             var color=GUI.color;GUI.color=new Color(.20f,.85f,.55f);
@@ -194,7 +204,9 @@ namespace LighFight.Runtime
             GUI.Box(new Rect(25,440,70,70), "←"); GUI.Box(new Rect(100,440,70,70), "→");
             GUI.Box(new Rect(175,440,70,70), "↓"); GUI.Box(new Rect(100,365,70,65), "↑");
             GUI.Box(new Rect(250,440,80,70), T("Блок","Guard"));
-            for (int i = 0; i < Moves.All.Length; i++) GUI.Box(AttackArea(i), T(MoveNames[i],Moves.All[i].Id));
+            if(moveButtonStyle==null)moveButtonStyle=new GUIStyle(GUI.skin.box){fontSize=11,wordWrap=true,alignment=TextAnchor.MiddleCenter};
+            if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) GUI.Box(AttackArea(i), T(MoveNames[i],Moves.All[i].Id),moveButtonStyle);
+            else for(int i=0;i<4;i++)GUI.Box(MainAttackArea(i),T(MoveNames[i+attackModifier],Moves.All[i+attackModifier].Id));
             GUI.matrix = saved;
         }
     }
