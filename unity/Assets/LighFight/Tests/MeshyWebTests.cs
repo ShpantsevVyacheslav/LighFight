@@ -30,8 +30,8 @@ public class MeshyWebTests
  {
   const string path="Assets/LighFight/Art/Drafts/MeshyWebIsland/web-motions.fbx";
   foreach(var clip in AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>().Where(c=>!c.name.StartsWith("__preview"))) {
-   float variation=AnimationUtility.GetCurveBindings(clip).Where(b=>b.propertyName.StartsWith("m_LocalRotation")).Select(b=>{
-    var curve=AnimationUtility.GetEditorCurve(clip,b);float[] values=Enumerable.Range(0,61).Select(i=>curve.Evaluate(clip.length*i/60f)).ToArray();return values.Max()-values.Min();
+   float variation=AnimationUtility.GetCurveBindings(clip).Where(b=>b.propertyName.StartsWith("m_LocalRotation")||b.propertyName.StartsWith("localEulerAngles")).Select(b=>{
+    var curve=AnimationUtility.GetEditorCurve(clip,b);float[] values=Enumerable.Range(0,61).Select(i=>curve.Evaluate(clip.length*i/60f)).ToArray();return (values.Max()-values.Min())*(b.propertyName.StartsWith("localEulerAngles")?Mathf.Deg2Rad:1);
    }).DefaultIfEmpty(0).Max();
    Assert.Greater(variation,.02f,"Named clip contains a frozen pose: "+clip.name);
   }
@@ -56,17 +56,19 @@ public class MeshyWebTests
  }
  [Test] public void NativeImporterPreservesDirectSourceCurves()
  {
-  const string path="Assets/LighFight/Art/Drafts/IslandWebVisible/direct-jab.fbx";
+  const string path="Assets/NativeCurveTestFixture.fbx";
+  Assert.IsTrue(AssetDatabase.CopyAsset("Assets/LighFight/Art/Drafts/MeshyWebIsland/web-motions.fbx",path));
   var importer=(ModelImporter)AssetImporter.GetAtPath(path);Assert.IsNotNull(importer);
   var type=AppDomain.CurrentDomain.GetAssemblies().Select(a=>a.GetType("LighFight.Editor.NativeFighterImport")).First(t=>t!=null);
   try {
-   importer.resampleCurves=true;importer.SaveAndReimport();
+   importer.resampleCurves=true;importer.weldVertices=true;importer.SaveAndReimport();
    type.GetMethod("PrepareImporter").Invoke(null,new object[]{importer});
    Assert.IsFalse(importer.resampleCurves,"Native source rotations must not be resampled again");
-   var clip=AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>().Single(c=>!c.name.StartsWith("__preview"));
+   Assert.IsFalse(importer.weldVertices,"Original seam vertices and skin weights must remain distinct");
+   var clip=AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>().First(c=>!c.name.StartsWith("__preview"));
    Assert.IsTrue(AnimationUtility.GetCurveBindings(clip).Any(b=>b.propertyName.StartsWith("localEulerAngles")));
    ValidateNativeClip(AssetDatabase.LoadAssetAtPath<GameObject>(path),clip);
-  }finally{importer.resampleCurves=false;importer.SaveAndReimport();}
+  }finally{AssetDatabase.DeleteAsset(path);}
  }
  [Test] public void NativeImporterAcceptsUnresampledEulerMotionAndRejectsFrozenEuler()
  {

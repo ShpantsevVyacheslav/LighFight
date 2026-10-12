@@ -35,6 +35,8 @@ def main():
  bpy.ops.import_scene.gltf(filepath=str(source));arm,meshes=character();actions=list(bpy.data.actions)
  assert len(actions)==1,'One direct native clip required';action=actions[0];name=action.name
  reference,duration,bone_samples=poses(arm,meshes[0],action);surface=rest(arm,meshes)
+ vertex_uv={}
+ for loop in meshes[0].data.loops:vertex_uv.setdefault(loop.vertex_index,list(meshes[0].data.uv_layers.active.data[loop.index].uv))
  bone_names=[bone.name for bone in arm.pose.bones];rest_bones=[list(arm.matrix_world@bone.matrix.translation) for bone in arm.pose.bones]
  # Exporter needs a live action binding; fake-user alone silently exports no motion.
  arm.animation_data_create();arm.animation_data.action=action
@@ -47,6 +49,6 @@ def main():
  report={'clip':name,'triangles':result['triangles'],'vertices':len(result['positions']),'sampleCount':37,'bakeStep':args.step,'durationSeconds':duration,'durationError':abs(actual_duration-duration),'geometryModified':False,'retargeted':False}
  report.update(check_round_trip(surface,result));error=max(abs(x-y) for left,right in zip(reference,actual) for p,q in zip(left,right) for x,y in zip(p,q))
  report['maxAnimatedVertexErrorMeters']=error;report['animationPoseParityVerified']=error<0.0001 and report['durationError']<0.0001
- target.with_suffix('.reference.json').write_text(json.dumps({'duration':duration,'boneNames':bone_names,'rest':[{'x':p[0],'y':p[1],'z':p[2]} for p in rest_bones],'samples':[{'points':[{'x':p[0],'y':p[1],'z':p[2]} for p in frame]} for frame in bone_samples]},separators=(',',':')))
+ target.with_suffix('.reference.json').write_text(json.dumps({'duration':duration,'vertexIndices':list(range(0,len(surface['positions']),31)),'vertexRest':[{'x':surface['positions'][i][0],'y':surface['positions'][i][1],'z':surface['positions'][i][2]} for i in range(0,len(surface['positions']),31)],'vertexUV':[{'x':vertex_uv[i][0],'y':vertex_uv[i][1]} for i in range(0,len(surface['positions']),31)],'vertexSamples':[{'points':[{'x':p[0],'y':p[1],'z':p[2]} for p in frame]} for frame in reference],'boneNames':bone_names,'rest':[{'x':p[0],'y':p[1],'z':p[2]} for p in rest_bones],'samples':[{'points':[{'x':p[0],'y':p[1],'z':p[2]} for p in frame]} for frame in bone_samples]},separators=(',',':')))
  target.with_suffix('.audit.json').write_text(json.dumps(report,indent=2));print(report);assert report['animationPoseParityVerified'],'FBX motion changed'
 if __name__=='__main__':main()

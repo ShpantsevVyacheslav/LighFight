@@ -44,9 +44,14 @@ namespace LighFight.Editor {
     var prefab=PrefabUtility.SaveAsPrefabAsset(obj,manifest.outputPath);AssetDatabase.SaveAssets();return prefab;
    } finally {UnityEngine.Object.DestroyImmediate(obj);}
   }
+  public static void PreserveKnownNativeIsland() {
+   var importer=(ModelImporter)AssetImporter.GetAtPath(NativeIslandSetup.Folder+"/web-motions.fbx");
+   if(!importer)throw new InvalidOperationException("Missing existing native Island source");
+   PrepareImporter(importer);AssetDatabase.SaveAssets();
+  }
   public static void PrepareImporter(ModelImporter importer) {
-   if(importer.skinWeights!=ModelImporterSkinWeights.Custom||importer.avatarSetup!=ModelImporterAvatarSetup.CreateFromThisModel||importer.animationType!=ModelImporterAnimationType.Generic||importer.animationCompression!=ModelImporterAnimationCompression.Off||importer.meshCompression!=ModelImporterMeshCompression.Off||importer.maxBonesPerVertex!=8||importer.minBoneWeight!=0||!importer.isReadable||importer.resampleCurves){
-    importer.animationType=ModelImporterAnimationType.Generic;importer.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;importer.animationCompression=ModelImporterAnimationCompression.Off;importer.meshCompression=ModelImporterMeshCompression.Off;importer.skinWeights=ModelImporterSkinWeights.Custom;importer.maxBonesPerVertex=8;importer.minBoneWeight=0;importer.isReadable=true;importer.resampleCurves=false;importer.SaveAndReimport();
+   if(importer.skinWeights!=ModelImporterSkinWeights.Custom||importer.avatarSetup!=ModelImporterAvatarSetup.CreateFromThisModel||importer.animationType!=ModelImporterAnimationType.Generic||importer.animationCompression!=ModelImporterAnimationCompression.Off||importer.meshCompression!=ModelImporterMeshCompression.Off||importer.maxBonesPerVertex!=8||importer.minBoneWeight!=0||!importer.isReadable||importer.resampleCurves||importer.weldVertices){
+    importer.animationType=ModelImporterAnimationType.Generic;importer.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;importer.animationCompression=ModelImporterAnimationCompression.Off;importer.meshCompression=ModelImporterMeshCompression.Off;importer.skinWeights=ModelImporterSkinWeights.Custom;importer.maxBonesPerVertex=8;importer.minBoneWeight=0;importer.isReadable=true;importer.resampleCurves=false;importer.weldVertices=false;importer.SaveAndReimport();
    }
   }
   public static void ValidateClip(GameObject model,AnimationClip clip) {

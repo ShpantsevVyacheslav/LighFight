@@ -11,10 +11,9 @@ namespace LighFight.Editor {
    const string folder="Assets/LighFight/Art/Drafts/IslandWebVisible/";
    var original=AssetDatabase.LoadAssetAtPath<Material>(folder+"Pbr/native.mat");
    var unlit=new Material(Shader.Find("LighFight/Native Unlit")){mainTexture=original.mainTexture};
-   foreach(var item in new[]{new[]{"source-wave.fbx","Wave_One_Hand","wave"},new[]{"direct-jab.fbx","","jab"}}){
+   foreach(var item in new[]{new[]{"source-wave.fbx","","wave"},new[]{"direct-jab.fbx","","jab"}}){
     var path=folder+item[0];var importer=(ModelImporter)AssetImporter.GetAtPath(path);
-    importer.animationType=ModelImporterAnimationType.Generic;importer.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;
-    importer.meshCompression=ModelImporterMeshCompression.Off;importer.animationCompression=ModelImporterAnimationCompression.Off;importer.resampleCurves=false;importer.skinWeights=ModelImporterSkinWeights.Custom;importer.maxBonesPerVertex=8;importer.minBoneWeight=0;importer.isReadable=true;importer.SaveAndReimport();
+    NativeFighterImport.PrepareImporter(importer);
     var actor=Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(path));
     foreach(var animator in actor.GetComponentsInChildren<Animator>()){animator.Rebind();animator.Update(0);animator.enabled=false;}
     var skins=actor.GetComponentsInChildren<SkinnedMeshRenderer>();
