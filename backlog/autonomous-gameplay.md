@@ -1,6 +1,6 @@
 # Autonomous LighFight work — 2026-10-11
 
-Budget: 1200 Meshy credits total, 433 spent, 767 available. No push without fresh authorization.
+Budget: 1200 Meshy credits total, 468 spent, 732 available. No push without fresh authorization.
 
 | Task | Implementation | Device |
 |---|---|---|
@@ -33,3 +33,5 @@ Exact visible web source acquired: task 01a12cb8-8e0d-75b1-973b-6f75e4c7cbcf, 10
 2026-10-12 surface/production importer pass: sampled 2040 vertices ×37 frames after Unity, preserved curves error 0.469204 mm; resampled 8.121496 mm. Four-weight mutation fails (1.936589 mm); original restored. Welding merges 5 seam vertices, disable to preserve 63240; not cause of residual error. Existing native Island metadata now disables resampling/welding without changing source FBX/textures. Regression fixture made portable with disposable tracked FBX copy; weld mutation 1/1 red, full restored 125/125 green, Python3/3. Source Wave single-clip33pose audit green. Device/complete high-source motion pack pending; no spending or push.
 
 2026-10-12 iOS delivery: standalone UnityFramework Debug iphoneos built successfully, Data staged under `.tools/artifacts/ios-native-quality/UnityFramework.framework`, 328 MB; authorized iOS integration thread notified. Plugin not overwritten; device acceptance remains pending. Courtyard retry task01a12d96-139b-73a5-8e37-dd4d8de3fcde consumed35 and generated soldier again. Original local photo visually verified as courtyard; output rejected, no further paid retry until reference routing investigated. MCP0.6.1 source reads exact file_path into request.image_url; this source inspection does not prove actual provider-side request content. Budget433/1200,767left.
+
+Web reference control: photo05 uploaded, visible thumbnail verified as yard; web generation35credits confirmed by3754→3719balance. Output pending. Budget468/1200,732left.
