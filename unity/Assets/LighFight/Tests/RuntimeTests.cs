@@ -218,7 +218,12 @@ public class RuntimeTests
         var root=new GameObject("Test battle");root.AddComponent<Prototype>();
         yield return null;yield return null;
         Assert.AreEqual(2,Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
-        int destroyFrame=Time.frameCount;Object.Destroy(root);yield return null;yield return null;
+        int destroyFrame=Time.frameCount;Object.Destroy(root);
+        // Editor test-runner yields can resume within the same player frame.
+        // Wait for Unity's deferred destruction, rather than counting editor ticks.
+        float destructionDeadline=Time.realtimeSinceStartup+3;
+        while(root!=null&&Time.realtimeSinceStartup<destructionDeadline)yield return null;
+        Assert.IsTrue(root==null,"Unity did not complete deferred destruction within 3 seconds");
         var remaining=Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None);
         Assert.AreEqual(0,remaining.Length,$"Destroy frame {destroyFrame}, assertion frame {Time.frameCount}; "+string.Join("; ",System.Array.ConvertAll(remaining,v=>v.name+" parent="+(v.transform.parent?v.transform.parent.name:"none"))));
         Assert.AreEqual(0,Object.FindObjectsByType<OfficeArena>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);

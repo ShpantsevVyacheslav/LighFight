@@ -54,6 +54,31 @@ public class MeshyWebTests
   var converted=(Color)type.GetMethod("ConvertChannels").Invoke(null,new object[]{new Color(.7f,.8f,.2f,1)});
   Assert.That(converted.r,Is.EqualTo(.2f).Within(.00001f));Assert.That(converted.a,Is.EqualTo(.2f).Within(.00001f));
  }
+ [Test] public void NativeImporterPreservesDirectSourceCurves()
+ {
+  const string path="Assets/LighFight/Art/Drafts/IslandWebVisible/direct-jab.fbx";
+  var importer=(ModelImporter)AssetImporter.GetAtPath(path);Assert.IsNotNull(importer);
+  var type=AppDomain.CurrentDomain.GetAssemblies().Select(a=>a.GetType("LighFight.Editor.NativeFighterImport")).First(t=>t!=null);
+  try {
+   importer.resampleCurves=true;importer.SaveAndReimport();
+   type.GetMethod("PrepareImporter").Invoke(null,new object[]{importer});
+   Assert.IsFalse(importer.resampleCurves,"Native source rotations must not be resampled again");
+   var clip=AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>().Single(c=>!c.name.StartsWith("__preview"));
+   Assert.IsTrue(AnimationUtility.GetCurveBindings(clip).Any(b=>b.propertyName.StartsWith("localEulerAngles")));
+   ValidateNativeClip(AssetDatabase.LoadAssetAtPath<GameObject>(path),clip);
+  }finally{importer.resampleCurves=false;importer.SaveAndReimport();}
+ }
+ [Test] public void NativeImporterAcceptsUnresampledEulerMotionAndRejectsFrozenEuler()
+ {
+  var model=new GameObject("Euler native model");var bone=new GameObject("Hand");bone.transform.SetParent(model.transform);
+  var clip=new AnimationClip();
+  try {
+   AnimationUtility.SetEditorCurve(clip,EditorCurveBinding.FloatCurve("Hand",typeof(Transform),"localEulerAnglesRaw.x"),AnimationCurve.Linear(0,0,1,30));
+   Assert.DoesNotThrow(()=>ValidateNativeClip(model,clip));
+   AnimationUtility.SetEditorCurve(clip,EditorCurveBinding.FloatCurve("Hand",typeof(Transform),"localEulerAnglesRaw.x"),AnimationCurve.Linear(0,30,1,30));
+   Assert.Throws<InvalidOperationException>(()=>ValidateNativeClip(model,clip));
+  }finally{UnityEngine.Object.DestroyImmediate(clip);UnityEngine.Object.DestroyImmediate(model);}
+ }
  [Test] public void NativeImporterRejectsFrozenOrForeignRigClips()
  {
   var model=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/MeshyWebIsland/web-motions.fbx");

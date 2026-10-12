@@ -71,3 +71,9 @@ Cull Off and reversed back-face shading normals; original PBR channels and all
 textures remain. Native Unlit offers the same source culling for controlled web
 viewer comparison. This restores hidden inward-facing surfaces but does not
 repair skin weights, raised shoulders, thin fingers or stretched cloth.
+
+### Unity direct-motion import parity (2026-10-12)
+
+Compared 66 original GLB joints at 37 times against the converted FBX imported in Unity, using a single coordinate basis selected from bind poses (not the first animated frame). Rest error: 4.807e-7 m; duration unchanged. With Unity curve resampling: maximum joint error 0.007869966 m. Without resampling: 0.000020253 m. Native importer now preserves exported curves, eight influences and uncompressed geometry. Validation accepts changing Euler as well as quaternion channels and rejects frozen/foreign clips. This is a measured conversion loss, not proof that every visible deformation came from this setting. Production's old source remains distinct; the complete high-source motion pack is still required before promotion.
+
+Self-check: initial audit confused the instantiated first animation pose with bind rest; it now reconstructs rest from inverse bind matrices. Initial rotation validator treated unresampled Euler motion as frozen; regression includes moving and constant Euler clips. No source mesh reduction or texture replacement.

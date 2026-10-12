@@ -24,9 +24,7 @@ namespace LighFight.Editor {
    if(manifest.states.Any(s=>!required.Contains(s.state)&&!new[]{"Dance","Greeting","Victory"}.Contains(s.state) || s.start<0 || s.end>1 || s.start>=s.end || s.contactPhase<0 || s.contactPhase>1))throw new InvalidOperationException("Invalid native state mapping");
    var importer=AssetImporter.GetAtPath(manifest.modelPath) as ModelImporter;
    if(!importer)throw new InvalidOperationException("Native character must be an imported model");
-   if(importer.skinWeights!=ModelImporterSkinWeights.Custom||importer.avatarSetup!=ModelImporterAvatarSetup.CreateFromThisModel||importer.animationType!=ModelImporterAnimationType.Generic||importer.animationCompression!=ModelImporterAnimationCompression.Off||importer.meshCompression!=ModelImporterMeshCompression.Off||importer.maxBonesPerVertex!=8||importer.minBoneWeight!=0||!importer.isReadable){
-    importer.animationType=ModelImporterAnimationType.Generic;importer.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;importer.animationCompression=ModelImporterAnimationCompression.Off;importer.meshCompression=ModelImporterMeshCompression.Off;importer.skinWeights=ModelImporterSkinWeights.Custom;importer.maxBonesPerVertex=8;importer.minBoneWeight=0;importer.isReadable=true;importer.SaveAndReimport();
-   }
+   PrepareImporter(importer);
    var material=AssetDatabase.LoadAssetAtPath<Material>(manifest.materialPath);if(!material)throw new InvalidOperationException("Missing source material");
    var model=AssetDatabase.LoadAssetAtPath<GameObject>(manifest.modelPath);if(!model)throw new InvalidOperationException("Missing native rig");
    var clips=AssetDatabase.LoadAllAssetsAtPath(manifest.modelPath).OfType<AnimationClip>().Where(c=>!c.name.StartsWith("__preview")).ToArray();
@@ -46,14 +44,20 @@ namespace LighFight.Editor {
     var prefab=PrefabUtility.SaveAsPrefabAsset(obj,manifest.outputPath);AssetDatabase.SaveAssets();return prefab;
    } finally {UnityEngine.Object.DestroyImmediate(obj);}
   }
+  public static void PrepareImporter(ModelImporter importer) {
+   if(importer.skinWeights!=ModelImporterSkinWeights.Custom||importer.avatarSetup!=ModelImporterAvatarSetup.CreateFromThisModel||importer.animationType!=ModelImporterAnimationType.Generic||importer.animationCompression!=ModelImporterAnimationCompression.Off||importer.meshCompression!=ModelImporterMeshCompression.Off||importer.maxBonesPerVertex!=8||importer.minBoneWeight!=0||!importer.isReadable||importer.resampleCurves){
+    importer.animationType=ModelImporterAnimationType.Generic;importer.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;importer.animationCompression=ModelImporterAnimationCompression.Off;importer.meshCompression=ModelImporterMeshCompression.Off;importer.skinWeights=ModelImporterSkinWeights.Custom;importer.maxBonesPerVertex=8;importer.minBoneWeight=0;importer.isReadable=true;importer.resampleCurves=false;importer.SaveAndReimport();
+   }
+  }
   public static void ValidateClip(GameObject model,AnimationClip clip) {
    if(clip.length<=0)throw new InvalidOperationException("Empty native clip");
    float variation=0;
    foreach(var b in AnimationUtility.GetCurveBindings(clip)) {
     if(b.type!=typeof(Transform))continue;
     if(!model.transform.Find(b.path)&&b.path!="")throw new InvalidOperationException("Clip uses another rig: "+b.path);
-    if(!b.propertyName.StartsWith("m_LocalRotation"))continue;
-    var curve=AnimationUtility.GetEditorCurve(clip,b);var values=Enumerable.Range(0,61).Select(i=>curve.Evaluate(clip.length*i/60f)).ToArray();variation=Mathf.Max(variation,values.Max()-values.Min());
+    bool euler=b.propertyName.StartsWith("localEulerAngles");
+    if(!b.propertyName.StartsWith("m_LocalRotation")&&!euler)continue;
+    var curve=AnimationUtility.GetEditorCurve(clip,b);var values=Enumerable.Range(0,61).Select(i=>curve.Evaluate(clip.length*i/60f)).ToArray();variation=Mathf.Max(variation,(values.Max()-values.Min())*(euler?Mathf.Deg2Rad:1));
    }
    if(variation<.002f)throw new InvalidOperationException("Frozen native motion: "+clip.name);
   }
