@@ -10,6 +10,20 @@ public class RuntimeTests
     static int hostExitCount;
     static void CountHostExit()=>hostExitCount++;
     [Test]
+    public void AttackControlsKeepTheirGapsAtEverySupportedSizeAndHandedness()
+    {
+        foreach(float scale in new[]{.8f,1f,1.25f})foreach(bool mirrored in new[]{false,true}) {
+            for(int i=0;i<4;i++) {
+                var rect=Prototype.MainAttackRect(i,scale,mirrored);
+                Assert.GreaterOrEqual(rect.xMin,0);Assert.LessOrEqual(rect.xMax,960);Assert.LessOrEqual(rect.yMax,540);
+                Assert.IsTrue(Prototype.ControlContains(rect,rect.center,true));
+                Assert.IsFalse(Prototype.ControlContains(rect,new Vector2(rect.xMin+1,rect.yMin+1),true),"Invisible corners must not trigger round buttons");
+                for(int j=i+1;j<4;j++)Assert.IsFalse(rect.Overlaps(Prototype.MainAttackRect(j,scale,mirrored)),"Expanded attack controls overlap");
+                Assert.That(rect.center.x+Prototype.MainAttackRect(i,scale,!mirrored).center.x,Is.EqualTo(960).Within(.001f));
+            }
+        }
+    }
+    [Test]
     public void MaximumPreviewUsesActualPhonePixelsAndAspect()
     {
         var size=Prototype.SelectionPreviewSize(new Vector2(2868,1320),2);
@@ -204,9 +218,9 @@ public class RuntimeTests
         var root=new GameObject("Test battle");root.AddComponent<Prototype>();
         yield return null;yield return null;
         Assert.AreEqual(2,Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
-        Object.Destroy(root);yield return null;yield return null;
+        int destroyFrame=Time.frameCount;Object.Destroy(root);yield return null;yield return null;
         var remaining=Object.FindObjectsByType<FighterView>(FindObjectsInactive.Include,FindObjectsSortMode.None);
-        Assert.AreEqual(0,remaining.Length,string.Join("; ",System.Array.ConvertAll(remaining,v=>v.name+" parent="+(v.transform.parent?v.transform.parent.name:"none"))));
+        Assert.AreEqual(0,remaining.Length,$"Destroy frame {destroyFrame}, assertion frame {Time.frameCount}; "+string.Join("; ",System.Array.ConvertAll(remaining,v=>v.name+" parent="+(v.transform.parent?v.transform.parent.name:"none"))));
         Assert.AreEqual(0,Object.FindObjectsByType<OfficeArena>(FindObjectsInactive.Include,FindObjectsSortMode.None).Length);
         Assert.AreEqual(0,Object.FindObjectsByType<Camera>(FindObjectsSortMode.None).Length);
         yield return new ExitPlayMode();

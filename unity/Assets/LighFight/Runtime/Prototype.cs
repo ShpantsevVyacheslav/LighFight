@@ -108,26 +108,26 @@ namespace LighFight.Runtime
         // All touch positions converted into the same logical coordinates as GUI.
         private static Rect UiArea => Screen.safeArea.width>1 && Screen.safeArea.height>1?Screen.safeArea:new Rect(0,0,Screen.width,Screen.height);
         private Vector2 Position(Vector2 screen) {var area=UiArea;return new Vector2((screen.x-area.x)*960/area.width,(area.yMax-screen.y)*540/area.height);}
-        private bool Held(Rect area)
+        private bool Held(Rect area,bool circular=false)
         {
             for (int i = 0; i < Input.touchCount; i++)
             {
                 var touch = Input.GetTouch(i);
                 if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled &&
-                    area.Contains(Position(touch.position))) return true;
+                    ControlContains(area,Position(touch.position),circular)) return true;
             }
-            return Input.touchCount == 0 && Input.GetMouseButton(0) && area.Contains(Position(Input.mousePosition));
+            return Input.touchCount == 0 && Input.GetMouseButton(0) && ControlContains(area,Position(Input.mousePosition),circular);
         }
-        private bool Pressed(Rect area)
+        private bool Pressed(Rect area,bool circular=false)
         {
             for (int i = 0; i < Input.touchCount; i++)
             {
                 var touch = Input.GetTouch(i);
-                if (touch.phase == TouchPhase.Began && area.Contains(Position(touch.position))) return true;
+                if (touch.phase == TouchPhase.Began && ControlContains(area,Position(touch.position),circular)) return true;
             }
-            return Input.touchCount == 0 && Input.GetMouseButtonDown(0) && area.Contains(Position(Input.mousePosition));
+            return Input.touchCount == 0 && Input.GetMouseButtonDown(0) && ControlContains(area,Position(Input.mousePosition),circular);
         }
-        private Rect MainAttackArea(int index) => ControlRect(new Rect(755+index%2*85,350+index/2*85,74,74));
+        private Rect MainAttackArea(int index) => MainAttackRect(index,controlsScale,leftHanded);
         private static Rect MoveMenuArea => new Rect(690,80,250,40);
         private static Rect AttackArea(int index) => new Rect(630 + index % 5 * 62, 260 + index / 5 * 48, 60, 44);
 
@@ -143,13 +143,13 @@ namespace LighFight.Runtime
             if (paused || backgrounded || Time.timeScale == 0) return;
             UpdateJoystick();
             UpdateStrikeGestures();
-            bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(CrouchArea);
+            bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(CrouchArea,true);
             bool upper = Input.GetKey(KeyCode.UpArrow);
             bool backVariant=Input.GetKey(KeyCode.LeftArrow);
             attackModifier=Input.GetKey(KeyCode.DownArrow)?4:upper?8:backVariant?12:0;
             if(Pressed(MoveMenuArea))advancedMoves=!advancedMoves;
             for (int i = 0; i < AttackKeys.Length; i++)
-                if (Input.GetKeyDown(AttackKeys[i]) || (!gesturesEnabled && !advancedMoves && Pressed(MainAttackArea(i)))) pendingAttack=MainMove(i)+attackModifier;
+                if (Input.GetKeyDown(AttackKeys[i]) || (!gesturesEnabled && !advancedMoves && Pressed(MainAttackArea(i),true))) pendingAttack=MainMove(i)+attackModifier;
             if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) if (Pressed(AttackArea(i))) pendingAttack = i;
             var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V, KeyCode.B, KeyCode.N, KeyCode.M, KeyCode.Comma, KeyCode.Period };
             for (int i = 0; i < extras.Length; i++) if (Input.GetKeyDown(extras[i])) pendingAttack = 16+i;
@@ -202,7 +202,7 @@ namespace LighFight.Runtime
             DrawBattleControls();
             if(moveButtonStyle==null)moveButtonStyle=new GUIStyle(GUI.skin.box){fontSize=11,wordWrap=true,alignment=TextAnchor.MiddleCenter};
             if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) GUI.Box(AttackArea(i), T(MoveNames[i],Moves.All[i].Id),moveButtonStyle);
-            else if(!gesturesEnabled)for(int i=0;i<4;i++){var labels=new[]{"Р1","Р2","Н1","Н2"};Pill(MainAttackArea(i),labels[i]+"\n"+T(MoveNames[MainMove(i)+attackModifier],Moves.All[MainMove(i)+attackModifier].Id));}
+            else if(!gesturesEnabled)DrawMainAttackControls();
             GUI.enabled=wasEnabled;
             if(optionsOpen)OptionsGUI();
             GUI.matrix = saved;

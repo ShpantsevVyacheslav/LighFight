@@ -4,6 +4,22 @@ namespace LighFight.Runtime
 {
  public sealed partial class Prototype
  {
+  public static bool ControlContains(Rect area,Vector2 position,bool circular)=>circular?StickContains(area,position):area.Contains(position);
+  public static Rect MainAttackRect(int index,float scale,bool mirrored) {
+   if(index<0||index>=4)throw new System.ArgumentOutOfRangeException(nameof(index));
+   var anchor=new Vector2(834.5f,429.5f);var original=new Vector2(792+index%2*85,387+index/2*85);
+   var center=anchor+(original-anchor)*scale;float size=74*scale;var rect=new Rect(center.x-size/2,center.y-size/2,size,size);
+   if(mirrored)rect.x=960-rect.xMax;return rect;
+  }
+  private void DrawMainAttackControls() {
+   for(int i=0;i<4;i++) {
+    var area=MainAttackArea(i);int move=MainMove(i)+attackModifier;var tint=i<2?selectionAccent:new Color(1,.65f,.25f);
+    bool active=match.A.Attack.HasValue&&match.A.Attack.Value.Id==Moves.All[move].Id;
+    Disc(area,new Color(tint.r,tint.g,tint.b,controlsOpacity*(active?1:.65f)));
+    var inner=area;inner.xMin+=2;inner.yMin+=2;inner.xMax-=2;inner.yMax-=2;Disc(inner,new Color(.03f,.08f,.14f,controlsOpacity));
+    Text(inner,T(MoveNames[move],Moves.All[move].Id),Mathf.RoundToInt(12*controlsScale),active?Color.white:tint,TextAnchor.MiddleCenter);
+   }
+  }
   private Texture2D circle;
   public static bool StickContains(Rect area,Vector2 position)=>Vector2.Distance(area.center,position)<=Mathf.Min(area.width,area.height)*.5f;
   public static Vector2 NormalizeStick(Rect area,Vector2 position)
