@@ -1,6 +1,6 @@
 # Autonomous LighFight work — 2026-10-11
 
-Budget: 1200 Meshy credits total, 468 spent, 732 available. No push without fresh authorization.
+Budget: 1200 Meshy credits total, 503 spent, 697 available. No push without fresh authorization.
 
 | Task | Implementation | Device |
 |---|---|---|
@@ -39,3 +39,5 @@ Web reference control: photo05 uploaded, visible thumbnail verified as yard; web
 2026-10-12 native Right Jab continuation: delayed GLB file acquired; denseFBX roundtrip37poses green, no weights/UV change,103074tris. ReusableUnityaudit acceptsmodel/reportpaths and invokesstrictproductionimporter (default4influence initialcandidate caught at1.936mm; corrected8/noresampling0.493mm). Native Victory webexport GLB/FBX produced no file after attempts; unchanged budget732. Full Unity nographics124/125 failedGPUbackface check; rerun withgraphics125/125green; Pythonroundtrip3/3green.
 
 2026-10-12 configurable button strikes: four persisted assignments,25movepicker,reset,default contextualcombo behavior retained; custom assignments ignore unrelated modifier/context.128/128Unity restored aftermutation(two fail),86/86core, Unitylandscape settings screenshots visually checked. Devicepending; no push/credits.
+
+2026-10-12 component courtyard: complete sedan35credits,720238triangles; Blender scene and Unity draft imported at761778tris, flatFightFloor11.02x4.02 covers required11x4m, decorations clear. Native embedded material links lost inFBX; original photo extraction and explicit original carPBR restored in draft. No catalog promotion/device proof; repeated gravel and foliage/art quality pending. Budget503/1200,697left.

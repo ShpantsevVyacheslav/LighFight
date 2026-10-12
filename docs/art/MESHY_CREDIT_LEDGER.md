@@ -2,7 +2,7 @@
 
 Owner authorization: up to 1,200 Meshy credits for this workstream.
 Previously recorded spend: 227 credits. Native web motion additions: 120 credits
-(twelve Motion Prime generations at 10 credits each). Gala character generation: 40 credits. Source-comparison rig: 5 credits. Two source-comparison animations: 6 credits. Total: 468; remaining: 732.
+(twelve Motion Prime generations at 10 credits each). Gala character generation: 40 credits. Source-comparison rig: 5 credits. Two source-comparison animations: 6 credits. Total: 503; remaining: 697.
 Courtyard retry added 35 credits on 2026-10-12; no new subscription.
 
 | Motion | Web task |
@@ -36,3 +36,9 @@ Web corrected humanoid rig: `01a12ce8-2266-7554-86ad-e0d5f2017332`; connector st
 Courtyard original-photo retry: `01a12d96-139b-73a5-8e37-dd4d8de3fcde`, Meshy 7.1 / geometry 4K / texture 4K, no pose or rig, no remesh. Status SUCCEEDED, consumed_credits=35; account balance 3754. Visual subject review rejected: soldier instead of courtyard; local source photograph independently verified. Not promoted. Total 433 spent / 767 remaining.
 
 Web courtyard control on2026-10-12: original photo05 uploaded through visible file chooser, thumbnail independently confirmed as yard. High detail7.1/Ultra4K/texture on/pose off/image enhancement off/private. Quoted35, balance3754→3729geometry→3719texture, actual35. Geometry task01a12d9f-cc95-7410-b7f7-656ed0d032a8; texture task01a12da1-0a84-76b5-b8a1-2c5d2bc8e9b4. Output fantasy fighter, rejected in web viewer and local GLB review. Total468spent/732remaining. No rig.
+
+Sedan environment prop preview:01a12e86-7d63-748d-95a8-f3232045d924, text-to-3D7.1/geometry4K/no remesh, SUCCEEDED consumed25; account3719→3694. Texturing10 reserved but not launched before visual review. Actualtotal493spent/707remaining.
+
+Sedan refine01a12ee6-b81b-7467-a029-33e62342d657 consumed10; balance3684.4Kbase/PBRmaps downloaded,720238triangles preserved. Actualtotal503spent/697remaining.
+
+Victory native web URL conversion01a12f2a-2ed1-7371-a5d4-a553656a5596: FAILED invalid_input / No valid objects found; consumed_credits=0, no output adopted. Total503/1200 remains. Initial malformed URL rejected before task creation; corrected URL accepted as a task then failed provider validation.
