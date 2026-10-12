@@ -7,6 +7,28 @@ using LighFight.Runtime;
 using LighFight.Core;
 public class RuntimeTests
 {
+    [TestCase(0)][TestCase(1)][TestCase(2)]
+    public void GraphicsOptionsNeverEnableGameplayShadows(int quality)
+    {
+        var ints=new[]{"lf.swipes","lf.graphics","lf.fps","lf.sound","lf.shake","lf.left","lf.attackButton.0","lf.attackButton.1","lf.attackButton.2","lf.attackButton.3"};
+        var floats=new[]{"lf.controlScale","lf.controlOpacity"};
+        var present=new System.Collections.Generic.HashSet<string>();var values=new System.Collections.Generic.Dictionary<string,float>();
+        foreach(var key in ints){if(PlayerPrefs.HasKey(key))present.Add(key);values[key]=PlayerPrefs.GetInt(key);}
+        foreach(var key in floats){if(PlayerPrefs.HasKey(key))present.Add(key);values[key]=PlayerPrefs.GetFloat(key);}
+        var shadows=QualitySettings.shadows;var aa=QualitySettings.antiAliasing;var weights=QualitySettings.skinWeights;var lod=QualitySettings.lodBias;var mip=QualitySettings.globalTextureMipmapLimit;var fps=Application.targetFrameRate;var root=new GameObject("Shadow options regression");
+        try{
+            var host=root.AddComponent<Prototype>();var light=new GameObject("Authored shadow light").AddComponent<Light>();light.transform.SetParent(root.transform);light.shadows=LightShadows.Soft;
+            var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
+            typeof(Prototype).GetField("graphicsQuality",flags).SetValue(host,quality);QualitySettings.shadows=ShadowQuality.All;
+            typeof(Prototype).GetMethod("ApplyOptions",flags).Invoke(host,null);
+            Assert.AreEqual(ShadowQuality.Disable,QualitySettings.shadows,"Quality tier restored shadows");
+            Assert.AreEqual(LightShadows.None,light.shadows,"Scene light still emits shadows");
+        }finally{
+            Object.DestroyImmediate(root);QualitySettings.shadows=shadows;QualitySettings.antiAliasing=aa;QualitySettings.skinWeights=weights;QualitySettings.lodBias=lod;QualitySettings.globalTextureMipmapLimit=mip;Application.targetFrameRate=fps;
+            foreach(var key in ints)if(present.Contains(key))PlayerPrefs.SetInt(key,(int)values[key]);else PlayerPrefs.DeleteKey(key);
+            foreach(var key in floats)if(present.Contains(key))PlayerPrefs.SetFloat(key,values[key]);else PlayerPrefs.DeleteKey(key);PlayerPrefs.Save();
+        }
+    }
     static int hostExitCount;
     static void CountHostExit()=>hostExitCount++;
     [Test]
@@ -238,7 +260,10 @@ public class RuntimeTests
         var hostObject=new GameObject("Test host");var host=hostObject.AddComponent<HostBridge>();
         host.Launch("{\"protocolVersion\":1,\"sessionId\":\"test-session\",\"mode\":\"bot\",\"locale\":\"en\"}");
         var root=new GameObject("Downloaded battle");var game=root.AddComponent<Prototype>();
-        yield return null;yield return null;
+        var bridgeField=typeof(Prototype).GetField("bridge",System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance);
+        float deadline=Time.realtimeSinceStartup+3;
+        while(bridgeField.GetValue(game)==null&&Time.realtimeSinceStartup<deadline)yield return null;
+        Assert.AreSame(host,bridgeField.GetValue(game),"Prototype did not finish its startup or attached to another host");
         Assert.AreEqual("LighFight — choose fighter and arena",game.Title);
         Object.Destroy(root);Object.Destroy(hostObject);yield return null;yield return null;
         yield return new ExitPlayMode();

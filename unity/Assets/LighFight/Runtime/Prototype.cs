@@ -55,7 +55,7 @@ namespace LighFight.Runtime
             var light = new GameObject("Light").AddComponent<Light>();
             light.transform.SetParent(transform,false);
             light.type = LightType.Directional;
-            light.intensity = 1.2f; light.shadows = LightShadows.Soft;
+            light.intensity = 1.2f; light.shadows = LightShadows.None;
             RenderSettings.ambientLight = new Color(.45f,.43f,.4f);
             light.transform.rotation = Quaternion.Euler(45, -30, 0);
             LoadOptions();
