@@ -37,7 +37,7 @@ namespace LighFight.Editor {
    var prefab=NativeFighterImport.Import(new NativeFighterImport.Manifest{modelPath=Folder+"/web-motions.fbx",materialPath=Folder+"/Pbr/native.mat",outputPath=path,states=states});
    var content=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");content.fighters[3]=prefab;EditorUtility.SetDirty(content);AssetDatabase.SaveAssets();
    File.WriteAllLines("../art/source/original-island/native-gameplay-map.txt",audit);
-   HostFightReviewSetup.Create();
+   NativeIdleSetup.Apply();HostFightReviewSetup.Create();
   }
  }
 }

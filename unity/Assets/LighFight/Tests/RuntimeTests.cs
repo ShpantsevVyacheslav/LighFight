@@ -7,6 +7,15 @@ using LighFight.Runtime;
 using LighFight.Core;
 public class RuntimeTests
 {
+    [Test] public void IslandIdleDoesNotShrugUpperArmsAboveItsNeck(){
+        var actor=Object.Instantiate(UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Fighters/fighter-3.prefab"));
+        try{var view=actor.GetComponent<FighterView>();view.Pose(new Fighter(),1,0);
+            foreach(float seconds in new[]{0f,.2f,.4f,.6f,.8f,1f,1.2f,1.4f}){
+                Assert.IsTrue(view.PreviewNativeMotion("Idle",seconds));var neck=view.BonePoint("Neck",Vector3.zero);
+                foreach(string arm in new[]{"LeftArm","RightArm"})Assert.Less(view.BonePoint(arm,Vector3.zero).y,neck.y-.015f,"Shrugged "+arm+" at "+seconds);
+            }
+        }finally{Object.DestroyImmediate(actor);}
+    }
     [TestCase(0)][TestCase(1)][TestCase(2)]
     public void GraphicsOptionsNeverEnableGameplayShadows(int quality)
     {

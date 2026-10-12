@@ -39,7 +39,7 @@ namespace LighFight.Editor
         {
             var settings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")[0]);
             var included = settings.FindProperty("m_AlwaysIncludedShaders");
-            foreach (string name in new[] { "LighFight/OfficeLit", "LighFight/CharacterSkin", "Unlit/Color" })
+            foreach (string name in new[] { "LighFight/OfficeLit", "LighFight/CharacterSkin", "LighFight/Shadowless Character", "Unlit/Color" })
             {
                 var shader = Shader.Find(name);
                 if (shader == null) throw new System.InvalidOperationException("Missing runtime shader: " + name);
