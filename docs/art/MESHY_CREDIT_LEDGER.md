@@ -2,8 +2,8 @@
 
 Owner authorization: up to 1,200 Meshy credits for this workstream.
 Previously recorded spend: 227 credits. Native web motion additions: 120 credits
-(twelve Motion Prime generations at 10 credits each). Gala character generation: 40 credits. Source-comparison rig: 5 credits. Two source-comparison animations: 6 credits. Total: 398; remaining: 802.
-No new subscription or arena generation purchased in this stage.
+(twelve Motion Prime generations at 10 credits each). Gala character generation: 40 credits. Source-comparison rig: 5 credits. Two source-comparison animations: 6 credits. Total: 433; remaining: 767.
+Courtyard retry added 35 credits on 2026-10-12; no new subscription.
 
 | Motion | Web task |
 |---|---|
@@ -32,3 +32,5 @@ Visible web source comparison rig: `01a12cce-fe74-76da-a18c-87a071282081` (5 cre
 Source-native jab (191): `01a12cd6-d038-7559-b2a4-c140e54f50c2`; greeting (290): `01a12cd6-d295-707a-af89-befb6ea827f3` (3 each).
 
 Web corrected humanoid rig: `01a12ce8-2266-7554-86ad-e0d5f2017332`; connector status reports **0 credits**. Web stock Wave_One_Hand applied/downloaded; no balance change observed. API animation against this web rig rejected Invalid task mode; no task created, no charge. Budget remains 398 spent / 802 remaining.
+
+Courtyard original-photo retry: `01a12d96-139b-73a5-8e37-dd4d8de3fcde`, Meshy 7.1 / geometry 4K / texture 4K, no pose or rig, no remesh. Status SUCCEEDED, consumed_credits=35; account balance 3754. Visual subject review rejected: soldier instead of courtyard; local source photograph independently verified. Not promoted. Total 433 spent / 767 remaining.
