@@ -24,3 +24,5 @@ Run scripts/art/build_courtyard_reference.py through Blender, then CourtyardRefe
 Self-review: the initial Unity draft lost photo and car textures; photo recovered by explicit ExtractTextures, car by explicit PBR material creation. Car remains excessively dense for a mobile background prop; retained original is the fidelity baseline, not a performance approval. Gravel repetition and trees are still blockout quality. Do not call this arena final.
 
 Applied the review loop to rawGLB/convertedFBX/currentactor: measuredshoulderheight, strictbindcompatibility, sampledposeparity, fourmaterialablations, visualcapture, GPUhandmaskmutation. SourceStance native clip retained as auditableFBX; no restbone modification. RenderingmatchingMeshy unlit is distinct fromgeometryrestoration.
+
+UnityCLI updatedthroughofficialself-update frombeta.12 tobeta.13, verifiedunity--version; Editorversionunchanged.
