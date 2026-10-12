@@ -60,3 +60,40 @@ Unity source capture compiled/executed successfully; 119 EditMode tests passed,
 wave are diagnostic candidates; game actor has not yet been replaced by them.
 
 Material ablation now captures full PBR, no normal map, diffuse-only and unlit with identical camera/mesh/light. Disabling normals exposes stronger face facets; disabling metallic/specular reduces highlights but does not repair deformation. Thus blanket removal of normal maps is rejected. Images: `island-visible-no-normal.png`, `island-visible-diffuse.png`. Source capture batch exited 0; no production material altered.
+
+## Direct native export and source material parity — continuation
+
+Direct single-current GLB download succeeded for Left_Jab_from_Guard. It has
+103074 triangles, 63240 vertices and 66 joints. POSITION, NORMAL, TEXCOORD_0,
+JOINTS_0/1, WEIGHTS_0/1 and index buffer payloads are byte-identical to the
+provider's original web rig. Bulk GLB and current Idle/Wave download attempts
+returned no file; this does not establish an HTTP error cause.
+
+`export_native_web_glb.py` keeps eight influences, exports the exact action range,
+and checks original/rest/animated data after FBX reimport. The initial default
+scene range incorrectly extended a 1.75-second jab to 10.375 seconds. Fixed.
+Default frame baking introduced 0.0101954 m intermediate vertex error. Dense
+0.0625-frame baking reduces this to 6.4969e-6 m at 37 independent sample moments;
+weight and UV deltas are zero. A coarse-step mutation fails the pose gate.
+These are conversion checks, not artistic approval or Unity/device motion parity.
+
+The source-preserving Wave assembly uses only verified bone namespace aliases,
+with observed bind serialization tolerance 2e-5. All original 63240 vertices,
+weights and UVs remain. A separate 33-pose core-bone matrix comparison against
+web FBX passes with maximum component difference 2.12044e-5. End bones have no
+weights. Neither candidate has been promoted as the complete game actor.
+
+Both old and current GLBs declare material.doubleSided=true. Unity Standard was
+single-sided. Native PBR now preserves the original albedo, normal and metallic/
+smoothness channels with Cull Off and reversed back-face normals; known native
+Island material is migrated without modifying its textures or mesh.
+The controlled unlit jab at 35% changes 10273 pixels (Wave: 9110), keeping the
+same camera, frozen skin, textures and pose. This restores inward-facing cloth
+surfaces; it does not solve waist/shoulder weights or rough native fingers.
+A rendered reverse-side regression includes a Cull Back mutation.
+
+Headless sample capture must freeze the evaluated skin and compensate the FBX
+mesh local centimetre scale. Camera.Render alone showed stale GPU skin poses;
+raw BakeMesh vertices followed by the mesh transform applied its scale twice.
+The existing CharacterRigInspector compensation is reused in NativeWebMotionReview.
+Do not interpret those initial stale/tiny captures as a game quality defect.

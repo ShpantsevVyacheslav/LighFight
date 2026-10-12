@@ -12,7 +12,7 @@ namespace LighFight.Editor {
    var light=new GameObject("Soft key").AddComponent<Light>();light.type=LightType.Directional;light.intensity=.55f;light.transform.rotation=Quaternion.Euler(20,-25,0);
    var camera=new GameObject("Comparison camera").AddComponent<Camera>();camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.04f,.08f,.14f);camera.orthographic=true;
    Directory.CreateDirectory("../art/previews/source-quality");
-   var material=NativeMaterialImport.Create("Assets/LighFight/Art/Drafts/IslandWebVisible/Pbr","../art/source/island-web-visible/model_textures/base_color.png","../art/source/island-web-visible/model_textures/normal.png","../art/source/island-web-visible/model_textures/metallic_roughness.png");
+   var material=NativeMaterialImport.Create("Assets/LighFight/Art/Drafts/IslandWebVisible/Pbr","../art/source/island-web-visible/model_textures/base_color.png","../art/source/island-web-visible/model_textures/normal.png","../art/source/island-web-visible/model_textures/metallic_roughness.png",true);
    var source=Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/IslandWebVisible/source.fbx"));foreach(var r in source.GetComponentsInChildren<Renderer>())r.sharedMaterials=r.sharedMaterials.Select(_=>material).ToArray();source.transform.rotation=Quaternion.Euler(0,180,0)*source.transform.rotation;
    var renderers=source.GetComponentsInChildren<Renderer>();var bounds=renderers[0].bounds;foreach(var r in renderers)bounds.Encapsulate(r.bounds);
    // Fixed normalized framing of original neutral surface, no Animator or FighterView.
@@ -25,7 +25,7 @@ namespace LighFight.Editor {
    var diffuse=new Material(noNormal);diffuse.DisableKeyword("_METALLICGLOSSMAP");diffuse.SetTexture("_MetallicGlossMap",null);diffuse.SetFloat("_Metallic",0);diffuse.SetFloat("_Glossiness",0);diffuse.SetFloat("_SpecularHighlights",0);diffuse.SetFloat("_GlossyReflections",0);
    foreach(var r in renderers)r.sharedMaterials=r.sharedMaterials.Select(_=>diffuse).ToArray();
    Capture(camera,"../art/previews/source-quality/island-visible-diffuse.png",1024);
-   var unlit=new Material(Shader.Find("Unlit/Texture"));unlit.mainTexture=material.mainTexture;foreach(var r in renderers)r.sharedMaterials=r.sharedMaterials.Select(_=>unlit).ToArray();
+   var unlit=new Material(Shader.Find("LighFight/Native Unlit"));unlit.mainTexture=material.mainTexture;foreach(var r in renderers)r.sharedMaterials=r.sharedMaterials.Select(_=>unlit).ToArray();
    Capture(camera,"../art/previews/source-quality/island-visible-source-unlit.png",1024);
    Capture(camera,"Assets/LighFight/Resources/Selection/fighter-3.png",512);
    foreach(var r in renderers)r.sharedMaterials=r.sharedMaterials.Select(_=>material).ToArray();

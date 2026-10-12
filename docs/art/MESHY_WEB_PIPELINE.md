@@ -53,3 +53,21 @@ The Wave FBX export now has a verified Blender round trip: 103074 triangles, max
 Web bindings have now been restored: Added shows all 40 original motion cards again (including Wave, Fight Idle, reactions, throws, dance and victory); balance remains 3739. The first group is documented for future export splitting, not the current web state. The connector supplied the exact native rig GLB/FBX for independent audit; it contains 66 joints and no clips. It cannot substitute for the missing strike exports. Comparison of old/new rig node transforms rejects a direct clip transplant despite their 66 common bone names.
 
 Selection rendering also had a separate resolution/aspect defect: fixed 800×720 was stretched into the physical preview rectangle. Maximum now sizes the render target from safe-area pixels and preserves aspect when capping at 2048. A 2868×1320 safe area maps to 1285×924 (2.06× more pixels). This increases preview clarity; it does not fix skin deformation or prove phone quality acceptance.
+
+### Direct-current GLB route and material parity
+
+Single-current Left_Jab export succeeds where bulk export is still unverified.
+`audit_native_glb_payload.py` checks every original mesh attribute, including both
+skin influence sets, plus indices and embedded images. The direct GLB retains the
+original 103074-triangle rig payload. `export_native_web_glb.py` exports only the
+live action's time range, preserving eight weights, and verifies rest data plus
+37 evaluated pose moments after FBX round trip. Default scene-range export and
+coarse baking are explicitly rejected. Dense baking is an intermediate fidelity
+step; candidate Unity import disables curve resampling. It has not replaced the
+complete production animation set.
+
+Source GLB materials explicitly use doubleSided. Native PBR now honors this with
+Cull Off and reversed back-face shading normals; original PBR channels and all
+textures remain. Native Unlit offers the same source culling for controlled web
+viewer comparison. This restores hidden inward-facing surfaces but does not
+repair skin weights, raised shoulders, thin fingers or stretched cloth.

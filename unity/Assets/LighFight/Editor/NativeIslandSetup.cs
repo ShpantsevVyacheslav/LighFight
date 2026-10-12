@@ -12,7 +12,7 @@ namespace LighFight.Editor {
   static readonly string[] Map={"jab:Left_Jab_from_Guard","cross:Right_Jab_from_Guard","hook:Left_Hook_from_Guard","body:body","frontKick:Spartan_Kick","lowKick:lowKick","sweep:Sweep_Kick","uppercut:Right_Uppercut_from_Guard","knee:Boxing_Guard_Step_Knee_Strike","elbow:Elbow_Strike","spinKick:spinKick","jumpKick:Rising_Flying_Kick","backfist:backfist","axeKick:axeKick","sideKick:sideKick","roundhouseKick:Roundhouse_Kick","hammer:hammerReach","palm:palmReach","heelKick:heelKick","switchKick:switchKick","highKick:High_Kick","shortHook:Left_Short_Hook_from_Guard","doublePunch:Punch_Forward_with_Both_Fists","stepKick:Step_in_High_Kick","counterstrike:Counterstrike","Idle:Boxing_Guard","Guard:Boxing_Guard","Walk:Walk_Fight_Forward","WalkBack:Walk_Fight_Back","Crouch:air_squat","Hit:Hit_Reaction_to_Waist","Fall:falling_down","GetUp:Stand_Up1","Dance:Hip_Hop_Dance_1"};
   public static void Build() { MeshyWebReview.PrepareAndCapture();Promote(); }
   public static void Prepare() {
-   NativeMaterialImport.Create(Folder+"/Pbr","../art/source/original-island/web-albedo.png","../art/source/original-island/web-normal.png","../art/source/original-island/web-metallic-roughness.png");
+   NativeMaterialImport.Create(Folder+"/Pbr","../art/source/original-island/web-albedo.png","../art/source/original-island/web-normal.png","../art/source/original-island/web-metallic-roughness.png",true);
    var clips=Clips();var model=AssetDatabase.LoadAssetAtPath<GameObject>(Folder+"/web-motions.fbx");
    foreach(var clip in clips)NativeFighterImport.ValidateClip(model,clip);
    Debug.Log("Verified native source clips: "+clips.Length);
