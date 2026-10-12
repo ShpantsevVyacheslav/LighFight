@@ -20,3 +20,7 @@ composition/image reference tool, not a verified playable arena export.
 
 Local iOS framework build succeeded with current production assets; no claim of
 new arena or full high-source character promotion.
+
+## Web control
+
+Verified original yard thumbnail before submission (saved screenshot). Web geometry task `01a12d9f-cc95-7410-b7f7-656ed0d032a8`, texture task `01a12da1-0a84-76b5-b8a1-2c5d2bc8e9b4`. Balance3754→3719 (35). Result is a fantasy fighter, confirmed both in Meshy viewer and downloaded GLB/Blender. Rejected. This disproves a connector-only explanation; actual provider cause remains unknown. Do not submit another whole-yard image generation. Build arena from independent scene components and reference layout.
