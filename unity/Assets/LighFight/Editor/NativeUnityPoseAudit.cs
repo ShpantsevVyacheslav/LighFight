@@ -10,10 +10,10 @@ namespace LighFight.Editor {
   [Serializable] public class Result {public bool resampled;public int samples,bones,verticesPerSample,importedVertices,triangles;public float restError,durationError,maxPoseError,maxVertexError;public string coordinateMap;public bool passed;}
   public static void Run() {
    QualitySettings.skinWeights=SkinWeights.Unlimited;
-   const string path="Assets/LighFight/Art/Drafts/IslandWebVisible/direct-jab.fbx";
+   string path=Environment.GetEnvironmentVariable("LIGHFIGHT_NATIVE_AUDIT_MODEL")??"Assets/LighFight/Art/Drafts/IslandWebVisible/direct-jab.fbx";
    var reference=JsonUtility.FromJson<Reference>(File.ReadAllText(Path.ChangeExtension(path,"reference.json")));
    var importer=(ModelImporter)AssetImporter.GetAtPath(path);
-   importer.animationType=ModelImporterAnimationType.Generic;importer.avatarSetup=ModelImporterAvatarSetup.CreateFromThisModel;importer.animationCompression=ModelImporterAnimationCompression.Off;importer.weldVertices=false;
+   NativeFighterImport.PrepareImporter(importer);
    var results=new System.Collections.Generic.List<Result>();
    try {
     foreach(bool resample in new[]{true,false}) {
@@ -58,7 +58,7 @@ namespace LighFight.Editor {
      } finally {UnityEngine.Object.DestroyImmediate(actor);}
     }
    } finally {importer.resampleCurves=false;importer.SaveAndReimport();}
-   Directory.CreateDirectory("../art/previews/source-quality");File.WriteAllText("../art/previews/source-quality/native-unity-pose-parity.json","["+string.Join(",",results.Select(JsonUtility.ToJson))+"]");
+   Directory.CreateDirectory("../art/previews/source-quality");File.WriteAllText(Environment.GetEnvironmentVariable("LIGHFIGHT_NATIVE_AUDIT_REPORT")??"../art/previews/source-quality/native-unity-pose-parity.json","["+string.Join(",",results.Select(JsonUtility.ToJson))+"]");
    if(!results.Single(r=>!r.resampled).passed)throw new Exception("Native Unity pose parity failed; candidate must remain unpromoted");
   }
   static Vector3 Map(Vector3 source,int[] axes,int signs)=>new Vector3(source[axes[0]]*((signs&1)==0?1:-1),source[axes[1]]*((signs&2)==0?1:-1),source[axes[2]]*((signs&4)==0?1:-1));

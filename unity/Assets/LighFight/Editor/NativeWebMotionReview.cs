@@ -11,7 +11,7 @@ namespace LighFight.Editor {
    const string folder="Assets/LighFight/Art/Drafts/IslandWebVisible/";
    var original=AssetDatabase.LoadAssetAtPath<Material>(folder+"Pbr/native.mat");
    var unlit=new Material(Shader.Find("LighFight/Native Unlit")){mainTexture=original.mainTexture};
-   foreach(var item in new[]{new[]{"source-wave.fbx","","wave"},new[]{"direct-jab.fbx","","jab"}}){
+   foreach(var item in new[]{new[]{"source-wave.fbx","","wave"},new[]{"direct-jab.fbx","","jab"},new[]{"direct-cross.fbx","","cross"}}){
     var path=folder+item[0];var importer=(ModelImporter)AssetImporter.GetAtPath(path);
     NativeFighterImport.PrepareImporter(importer);
     var actor=Object.Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>(path));
