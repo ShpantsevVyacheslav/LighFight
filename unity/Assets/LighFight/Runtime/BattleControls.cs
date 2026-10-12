@@ -13,7 +13,7 @@ namespace LighFight.Runtime
   }
   private void DrawMainAttackControls() {
    for(int i=0;i<4;i++) {
-    var area=MainAttackArea(i);int move=MainMove(i)+attackModifier;var tint=i<2?selectionAccent:new Color(1,.65f,.25f);
+    var area=MainAttackArea(i);int move=MainAttackIndex(i);var tint=i<2?selectionAccent:new Color(1,.65f,.25f);
     bool active=match.A.Attack.HasValue&&match.A.Attack.Value.Id==Moves.All[move].Id;
     Disc(area,new Color(tint.r,tint.g,tint.b,controlsOpacity*(active?1:.65f)));
     var inner=area;inner.xMin+=2;inner.yMin+=2;inner.xMax-=2;inner.yMax-=2;Disc(inner,new Color(.03f,.08f,.14f,controlsOpacity));
@@ -57,6 +57,7 @@ namespace LighFight.Runtime
   }
   private void SubmitGesture(int move){if(selecting){previewMove=move;previewFrame=0;previewFighter.Attack=null;}else pendingAttack=move;}
   private void Disc(Rect rect,Color color){if(circle==null){circle=new Texture2D(64,64,TextureFormat.RGBA32,false);circle.hideFlags=HideFlags.HideAndDontSave;for(int y=0;y<64;y++)for(int x=0;x<64;x++)circle.SetPixel(x,y,new Color(1,1,1,Mathf.Clamp01(31.5f-new Vector2(x-31.5f,y-31.5f).magnitude)));circle.Apply();}var old=GUI.color;GUI.color=color;GUI.DrawTexture(rect,circle);GUI.color=old;}
+  private int MainAttackIndex(int button)=>attackBindings.Resolve(button,MainMove(button),attackModifier);
   private int MainMove(int button)
   {
    if(match.A.Attack.HasValue){string id=match.A.Attack.Value.Id;if(id=="cross" && button<2)return button==0?2:3;if(id=="body")return button==2?8:button==1?7:button==0?3:5;if(id=="hook" && button==3)return 5;if(id=="knee" && button==0)return 9;if(id=="lowKick" && button==1)return 3;}

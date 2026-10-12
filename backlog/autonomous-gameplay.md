@@ -5,11 +5,11 @@ Budget: 1200 Meshy credits total, 468 spent, 732 available. No push without fres
 | Task | Implementation | Device |
 |---|---|---|
 | Exclusive rules/arena sheets and modal input | Verified EditMode transition regression; modal background disabled | Pending |
-| Audit each original source + native web weights; rendering comparison | Pending | Pending |
+| Audit each original source + native web weights; rendering comparison | Island source versions identified; native jab/cross parity measured; remaining rig/cloth quality pending | Pending |
 | Greeting, face portraits, dance icon, swipe preview, opponent selection | Dance icon, swipe preview, opponent sheet implemented; greeting and portraits under quality audit | Pending |
 | Persisted graphics/audio/input/layout/pause settings | Implemented; 119 EditMode tests pass; device pending | Pending |
-| Two-thumb controllers, crouch, no block button, minimal HUD | Pending | Pending |
-| Contact, combos, sidestep, prevent body crossings | Pending | Pending |
+| Two-thumb controllers, crouch, no block button, minimal HUD | Round controllers and capture geometry verified; custom25-move bindings persisted and verified128Unitytests, mutation2/3red; screenshot checked | Pending |
+| Contact, combos, sidestep, prevent body crossings | Implemented; 86 standalone core tests pass; visual integration still under audit | Pending |
 | Paired throws, range, interruption, fall/get-up | Pending | Pending |
 | Facial expressions and winner camera/animation | Pending | Pending |
 | Courtyard composition from references | Pending | Pending |
@@ -37,3 +37,5 @@ Exact visible web source acquired: task 01a12cb8-8e0d-75b1-973b-6f75e4c7cbcf, 10
 Web reference control: photo05 uploaded, visible thumbnail verified as yard; web generation35credits confirmed by3754→3719balance. Output fantasy fighter; rejected after web and local review. Whole-yard generation stopped, independent components next. Budget468/1200,732left.
 
 2026-10-12 native Right Jab continuation: delayed GLB file acquired; denseFBX roundtrip37poses green, no weights/UV change,103074tris. ReusableUnityaudit acceptsmodel/reportpaths and invokesstrictproductionimporter (default4influence initialcandidate caught at1.936mm; corrected8/noresampling0.493mm). Native Victory webexport GLB/FBX produced no file after attempts; unchanged budget732. Full Unity nographics124/125 failedGPUbackface check; rerun withgraphics125/125green; Pythonroundtrip3/3green.
+
+2026-10-12 configurable button strikes: four persisted assignments,25movepicker,reset,default contextualcombo behavior retained; custom assignments ignore unrelated modifier/context.128/128Unity restored aftermutation(two fail),86/86core, Unitylandscape settings screenshots visually checked. Devicepending; no push/credits.

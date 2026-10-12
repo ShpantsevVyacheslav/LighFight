@@ -149,7 +149,7 @@ namespace LighFight.Runtime
             attackModifier=Input.GetKey(KeyCode.DownArrow)?4:upper?8:backVariant?12:0;
             if(Pressed(MoveMenuArea))advancedMoves=!advancedMoves;
             for (int i = 0; i < AttackKeys.Length; i++)
-                if (Input.GetKeyDown(AttackKeys[i]) || (!gesturesEnabled && !advancedMoves && Pressed(MainAttackArea(i),true))) pendingAttack=MainMove(i)+attackModifier;
+                if (Input.GetKeyDown(AttackKeys[i]) || (!gesturesEnabled && !advancedMoves && Pressed(MainAttackArea(i),true))) pendingAttack=MainAttackIndex(i);
             if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) if (Pressed(AttackArea(i))) pendingAttack = i;
             var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V, KeyCode.B, KeyCode.N, KeyCode.M, KeyCode.Comma, KeyCode.Period };
             for (int i = 0; i < extras.Length; i++) if (Input.GetKeyDown(extras[i])) pendingAttack = 16+i;
