@@ -31,12 +31,12 @@ namespace LighFight.Runtime
   }
   private readonly StrikeGesture strikeGesture=new StrikeGesture();
   private bool gesturesEnabled=true;
-  private Rect GestureArea=>selecting?new Rect(300,442,265,36):leftHanded?new Rect(25,175,340,340):new Rect(595,175,340,340);
+  private Rect GestureArea=>selecting?PreviewArea:leftHanded?new Rect(25,175,340,340):new Rect(595,175,340,340);
   private static Rect GestureToggle=>new Rect(490,80,190,40);
   private void UpdateStrikeGestures()
   {
 
-   if(!gesturesEnabled || advancedMoves || (!selecting && session.Phase!=FightPhase.Fighting)){strikeGesture.Cancel();return;}
+   if((!gesturesEnabled && !selecting) || advancedMoves || (!selecting && session.Phase!=FightPhase.Fighting)){strikeGesture.Cancel();return;}
    if(Input.touchCount==0)
    {
     if(Input.GetMouseButtonDown(0) && GestureArea.Contains(Position(Input.mousePosition))){var p=Position(Input.mousePosition);strikeGesture.Begin(0,p.x,-p.y,Time.unscaledTime);}

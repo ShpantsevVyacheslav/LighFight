@@ -26,5 +26,20 @@ namespace LighFight.Tests {
    Assert.AreEqual(1,view.NativeStrikeSide("jab"),"Left_Jab_from_Guard must sample the left hand");
    Assert.AreEqual(2,view.NativeStrikeSide("cross"),"Right_Jab_from_Guard must sample the right hand, not the stationary guard hand");
   }
+  [TestCase(0)][TestCase(3)][TestCase(4)][TestCase(5)]
+  public void CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(int index){
+   var content=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
+   var actor=Object.Instantiate(content.fighters[index]);
+   try{
+    var view=actor.GetComponent<FighterView>();view.FullPreviewMotion=true;
+    var fighter=new LighFight.Core.Fighter();fighter.Start(0);
+    fighter.Frame=Mathf.RoundToInt(fighter.Attack.Value.Duration*.9f);
+    view.Pose(fighter,1,0);
+    var state=actor.GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0);
+    Assert.True(state.IsName("jab"));
+    Assert.That(state.normalizedTime,Is.EqualTo((float)fighter.Frame/fighter.Attack.Value.Duration).Within(.001f),"Preview must sample the original clip recovery rather than the compressed combat contact window");
+    Assert.That(view.PreviewDuration("jab"),Is.GreaterThan(0));
+   }finally{Object.DestroyImmediate(actor);}
+  }
  }
 }

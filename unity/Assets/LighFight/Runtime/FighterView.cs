@@ -21,6 +21,8 @@ namespace LighFight.Runtime
         public bool PreviewNativeMotion(string state,float seconds){if(!HasNativeMotion(state)||!animator)return false;animator.Play("Base Layer."+state,0,NativeLoopPhase(seconds,NativeDuration(state)));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
         public void UseNativeMotion(NativeClip[] clips = null) { nativeMotion=true; if(clips!=null)nativeClips=clips; }
         public static float NativeLoopPhase(float seconds,float duration) => Mathf.Repeat(seconds/Mathf.Max(.001f,duration),1);
+        public float PreviewDuration(string motion) => HasNativeMotion(motion)?NativeDuration(motion):0;
+        public bool FullPreviewMotion {get;set;}
         private float NativeDuration(string motion) { var entry=System.Array.Find(nativeClips,c=>c.state==motion);return entry.clip?entry.clip.length:1; }
         private float nativeTime;
         private Transform nativeRoot;
@@ -123,7 +125,7 @@ namespace LighFight.Runtime
                 {
                     if(blendBones==null){blendBones=animator.GetComponentsInChildren<Transform>();blendRotations=new Quaternion[blendBones.Length];blendPositions=new Vector3[blendBones.Length];}
                     for(int i=0;i<blendBones.Length;i++){blendRotations[i]=blendBones[i].localRotation;blendPositions[i]=blendBones[i].localPosition;}
-                    blendElapsed=0;blendDuration=previousMotion==null?0:motion=="Hit"||motion=="Fall"?.04f:fighter.Attack.HasValue?.06f:.10f;previousMotion=motion;
+                    blendElapsed=0;blendDuration=previousMotion==null?0:motion=="Hit"||motion=="Fall"?.04f:fighter.Attack.HasValue?.06f:FullPreviewMotion?.28f:.10f;previousMotion=motion;
                 }
                 blendElapsed+=delta;
                 int state=Animator.StringToHash("Base Layer."+motion);
@@ -138,7 +140,7 @@ namespace LighFight.Runtime
                     if(fighter.Attack.HasValue)
                     {
                         var contact=System.Array.Find(contactPoses,p=>p.moveId==motion);
-                        if(contact.phase>0)
+                        if(contact.phase>0 && !FullPreviewMotion)
                         {
                             float end=contact.end>contact.start?contact.end:1;
                             float normalized=((nativeMotion?contact.phase:MotionTiming.ContactPhase(motion,contact.phase))-contact.start)/(end-contact.start);
