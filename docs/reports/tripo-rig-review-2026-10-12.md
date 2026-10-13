@@ -59,3 +59,7 @@ Independent Blender reference for untouched native Unity FBX box_01: 37 samples,
 The apparently sliced native hand in our diagnostic close-up was camera clipping, not evidence of collapsed topology: the camera was approximately 34 cm from the wrist with Unity default near plane 30 cm. Setting near plane to 1 cm restored the full fingers visually. Review helpers additionally initialize/disable Animator, use Unlimited skin weights, and compensate BakeMesh local scale. These changes are review infrastructure, not a claim that production or device quality is finished. Native-open image now displays intact fingers.
 
 Current isolated runtime suite: 113/143 pass, 30 fail. Failures reference missing source models, shaders, scenes, or editor importer classes in the reduced QA fixture. All 8 NativeRigBones tests pass, with old-implementation mutation previously rejecting 6/8. The full application suite is not reported green.
+
+Full main-project EditMode verification after fixture recovery: 143/143 pass. The lone first-run failure selected the first Camera, which can be the cullingMask=0 backdrop camera. The test now selects the Prototype-owned fighter-rendering camera and retains assertions for target texture, transparent background, and battle viewport restoration. No production condition was relaxed. Result: `.tools/main-runtime-suite.xml`.
+
+Untouched source close-ups rendered for Ranger (1,986,463 triangles), Bone (1,888,146), and Master (1,992,276), each with original 4096 texture maps. They are reference evidence, not proof of runtime integration.
