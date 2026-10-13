@@ -30,3 +30,5 @@ Bone cross semantic audit identified a stationary LEFT guard hand selected for s
 Final post-Bone-correction GPU suite162/162 passed (`.tools/tripo-semantic-gpu-suite-final.xml`). Two intermediate launch attempts failed before tests because UPM IPC did not start; they produced no test result and are not counted as verification.
 
 Semantic hand regression mutation: setting Bone cross to left in the serialized prefab gives1/4 failed exactly on Bone; exact bytes restored,4/4 green. Source bones, textures and weights unchanged.
+
+Updated full Web build succeeds after Bone correction. Actual main Bone Mac player166samples/6images: jab0damage near.65,cross10damage (was0 before source-hand correction),frontKick14at1.1; HDR ARGBHalf/Linear/support true. This verifies semantic correction but does not accept remaining near forearm intersections.
