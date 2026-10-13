@@ -16,7 +16,8 @@ namespace LighFight.Runtime {
    var args=Environment.GetCommandLineArgs();int outputIndex=Array.IndexOf(args,"-qaSmokeOutput");if(outputIndex<0)yield break;
    string output=args[outputIndex+1];Directory.CreateDirectory(output);
    for(int i=0;i<5;i++)yield return null;
-   var prototype=GetComponent<Prototype>();Set(prototype,"selectedFighter",4);Set(prototype,"selectedOpponent",4);
+   int fighterIndex=4;int fighterArg=Array.IndexOf(args,"-qaSmokeFighter");if(fighterArg>=0)fighterIndex=int.Parse(args[fighterArg+1]);
+   var prototype=GetComponent<Prototype>();Set(prototype,"selectedFighter",fighterIndex);Set(prototype,"selectedOpponent",fighterIndex);
    typeof(Prototype).GetMethod("RebuildViews",Private).Invoke(prototype,null);prototype.BeginFight();Set(prototype,"paused",true);
    var player=Get<FighterView>(prototype,"player");var opponent=Get<FighterView>(prototype,"opponent");
    var late=typeof(FighterView).GetMethod("LateUpdate",Private);int samples=0;
