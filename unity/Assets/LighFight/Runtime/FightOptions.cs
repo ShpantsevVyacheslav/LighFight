@@ -25,7 +25,7 @@ namespace LighFight.Runtime {
    Text(new Rect(220,317,160,26),T("Размер кнопок","Control size"));controlsScale=GUI.HorizontalSlider(new Rect(420,327,300,18),controlsScale,.8f,1.25f);
    Text(new Rect(220,352,160,26),T("Прозрачность","Opacity"));controlsOpacity=GUI.HorizontalSlider(new Rect(420,362,300,18),controlsOpacity,.3f,1);
    for(int i=0;i<4;i++)if(Pill(new Rect(220+i*130,391,122,34),(i+1)+" · "+T(MoveNames[attackBindings[i]],LighFight.Core.Moves.All[attackBindings[i]].Id))){bindingSlot=i;strikeGesture.Cancel();}
-   if(!selecting){if(Pill(new Rect(220,445,150,42),T("Повторить бой","Rematch"))){optionsOpen=false;Reset();}if(Pill(new Rect(380,445,160,42),T("Выбор бойца","Fighter selection"))){optionsOpen=false;paused=false;selecting=true;rosterOpen=true;}}
+   if(!selecting){if(Pill(new Rect(220,445,150,42),T("Повторить бой","Rematch"))){optionsOpen=false;Reset();}if(Pill(new Rect(380,445,160,42),T("Выбор бойца","Fighter selection"))){optionsOpen=false;paused=false;selecting=true;rosterOpen=true;advancedMoves=false;}}
    if(Pill(new Rect(550,445,178,42),T("В Game Hub","Game Hub")))bridge?.Exit("");
   }
   private void BindingOptionsGUI(){

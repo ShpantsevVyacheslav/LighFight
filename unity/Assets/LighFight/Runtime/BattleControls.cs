@@ -36,7 +36,7 @@ namespace LighFight.Runtime
   private void UpdateStrikeGestures()
   {
 
-   if((!gesturesEnabled && !selecting) || advancedMoves || (!selecting && session.Phase!=FightPhase.Fighting)){strikeGesture.Cancel();return;}
+   if(!selecting && (!gesturesEnabled || advancedMoves || session.Phase!=FightPhase.Fighting)){strikeGesture.Cancel();return;}
    if(Input.touchCount==0)
    {
     if(Input.GetMouseButtonDown(0) && GestureArea.Contains(Position(Input.mousePosition))){var p=Position(Input.mousePosition);strikeGesture.Begin(0,p.x,-p.y,Time.unscaledTime);}

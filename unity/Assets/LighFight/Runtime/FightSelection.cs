@@ -9,7 +9,7 @@ namespace LighFight.Runtime
   private bool opponentOpen;
   private bool rosterOpen=true;
   private Camera selectionDisplayCamera;
-  public void SelectRosterFighter(int index){selectedFighter=(index+FighterNames.Length)%FighterNames.Length;rosterOpen=false;previewFighter=new Fighter{Guard=false};previewMove=-1;previewFrame=0;previewClock=0;previewYaw=15;RebuildViews();}
+  public void SelectRosterFighter(int index){selectedFighter=(index+FighterNames.Length)%FighterNames.Length;rosterOpen=false;advancedMoves=false;previewFighter=new Fighter{Guard=false};previewMove=-1;previewFrame=0;previewClock=0;previewYaw=15;RebuildViews();}
   private bool rulesOpen,arenaOpen;
   public void OpenRules(){arenaOpen=false;rulesOpen=true;dragging=false;}
   public void OpenArenas(){rulesOpen=false;arenaOpen=true;dragging=false;}
@@ -21,6 +21,7 @@ namespace LighFight.Runtime
   private readonly Color selectionAccent=new Color(.68f,.70f,1),selectionPanel=new Color(.09f,.10f,.15f,.96f);
   private Rect PreviewArea=>new Rect(245,54,430,378);
   private RenderTexture selectionRender;
+  private bool selectionRenderFallback;
   public static Vector2Int SelectionPreviewSize(Vector2 safePixels,int quality)
   {
    float scale=quality==0?.65f:quality==1?.85f:1f;
@@ -36,11 +37,20 @@ namespace LighFight.Runtime
   {
    opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
    if(selectionDisplayCamera==null){selectionDisplayCamera=new GameObject("Selection display").AddComponent<Camera>();selectionDisplayCamera.transform.SetParent(transform,false);selectionDisplayCamera.cullingMask=0;selectionDisplayCamera.clearFlags=CameraClearFlags.SolidColor;selectionDisplayCamera.backgroundColor=new Color(.03f,.035f,.055f);selectionDisplayCamera.depth=-10;}
-   selectionDisplayCamera.enabled=selecting;
    var previewSize=SelectionPreviewSize(UiArea.size,graphicsQuality);
-   var renderFormat=QualitySettings.activeColorSpace==ColorSpace.Linear&&SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBHalf)?RenderTextureFormat.ARGBHalf:RenderTextureFormat.ARGB32;
-   if(selectionRender!=null && (selectionRender.width!=previewSize.x || selectionRender.height!=previewSize.y || selectionRender.format!=renderFormat || selectionRender.antiAliasing!=(graphicsQuality==2?4:2)))ReleaseSelectionRender();
-   if(selectionRender==null && SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null){selectionRender=new RenderTexture(previewSize.x,previewSize.y,24,renderFormat){antiAliasing=graphicsQuality==2?4:2};selectionRender.Create();}
+   var renderFormat=!selectionRenderFallback&&QualitySettings.activeColorSpace==ColorSpace.Linear&&SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBHalf)?RenderTextureFormat.ARGBHalf:RenderTextureFormat.ARGB32;
+   var descriptor=new RenderTextureDescriptor(previewSize.x,previewSize.y,renderFormat,24){msaaSamples=graphicsQuality==2?4:2};
+   int renderMsaa=selectionRenderFallback?1:Mathf.Max(1,SystemInfo.GetRenderTextureSupportedMSAASampleCount(descriptor));
+   if(selectionRender!=null && (selectionRender.width!=previewSize.x || selectionRender.height!=previewSize.y || selectionRender.format!=renderFormat || selectionRender.antiAliasing!=renderMsaa))ReleaseSelectionRender();
+   if(selectionRender==null && SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null){
+    selectionRender=new RenderTexture(previewSize.x,previewSize.y,24,renderFormat){antiAliasing=renderMsaa};
+    if(!selectionRender.Create()){
+     Destroy(selectionRender);selectionRenderFallback=true;
+     selectionRender=new RenderTexture(previewSize.x,previewSize.y,24,RenderTextureFormat.ARGB32){antiAliasing=1};
+     if(!selectionRender.Create()){Destroy(selectionRender);selectionRender=null;}
+    }
+   }
+   selectionDisplayCamera.enabled=selecting;
    fightCamera.targetTexture=selectionRender;fightCamera.rect=new Rect(0,0,1,1);
    fightCamera.clearFlags=CameraClearFlags.SolidColor;fightCamera.backgroundColor=Color.clear;
    var center=new Vector3(match.A.X,1,0);
