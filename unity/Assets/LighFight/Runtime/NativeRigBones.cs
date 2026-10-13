@@ -4,7 +4,7 @@ namespace LighFight.Runtime {
   public static string CanonicalName(string name){
    string key=name.Substring(name.LastIndexOf(':')+1).Replace("_","").Replace(" ","");
    string side=key.StartsWith("Left",StringComparison.Ordinal)?"Left":key.StartsWith("Right",StringComparison.Ordinal)?"Right":null;
-   if(side==null)return key;
+   if(side==null)return key=="Chest"?"Spine1":key=="UpperChest"?"Spine2":key;
    string part=key.Substring(side.Length);
    switch(part){
     case "UpperArm":return side+"Arm";

@@ -7,6 +7,8 @@ namespace LighFight.Tests {
   [TearDown] public void Clean(){if(root)Object.DestroyImmediate(root);}
   FighterView Rig(){root=new GameObject("Native contact rig");var view=root.AddComponent<FighterView>();view.ConfigureAnimation(root.AddComponent<Animator>(),new FighterView.ContactPose[0]);view.UseNativeMotion();return view;}
   void Bone(string name,Vector3 position){var bone=new GameObject(name).transform;bone.SetParent(root.transform,false);bone.position=position;}
+  [TestCase("Chest","Spine1")]
+  [TestCase("UpperChest","Spine2")]
   [TestCase("Left_Hand","LeftHand")]
   [TestCase("Right_LowerArm","RightForeArm")]
   [TestCase("Left_LowerLeg","LeftLeg")]
