@@ -51,3 +51,11 @@
 - Розовая пантера H3.1 создана приватно за 55; исходный GLB 1865580 треугольников сохранён отдельно. Рабочая сетка 100000 за 5, Unity-риг за 20.
 - Для новых генераций Pro доступно 4K; 8K открывает Max upgrade. Дополнительная подписка не покупалась. 8K Островного сохранились от пробной генерации.
 - Рейнджер, Костяная леди, Ночная ведьма и Мастер стихий запущены по отдельным подготовленным референсам, каждый H3.1 maximum/private/4K за 55.
+
+## 13 October: controlled Unity parity and close-up camera correction
+
+Independent Blender reference for untouched native Unity FBX box_01: 37 samples, 67 bones, 1,613 surface vertices per frame, 100,000 triangles. Unity without resampling: max bone position deviation 0.9305 mm and max surface deviation 0.9416 mm; pass below 1 mm. Resampling increases surface deviation to 4.2109 mm; keep resampling disabled. Report: `art/previews/island-tripo-v1/tripo-unity-pose-parity.json`.
+
+The apparently sliced native hand in our diagnostic close-up was camera clipping, not evidence of collapsed topology: the camera was approximately 34 cm from the wrist with Unity default near plane 30 cm. Setting near plane to 1 cm restored the full fingers visually. Review helpers additionally initialize/disable Animator, use Unlimited skin weights, and compensate BakeMesh local scale. These changes are review infrastructure, not a claim that production or device quality is finished. Native-open image now displays intact fingers.
+
+Current isolated runtime suite: 113/143 pass, 30 fail. Failures reference missing source models, shaders, scenes, or editor importer classes in the reduced QA fixture. All 8 NativeRigBones tests pass, with old-implementation mutation previously rejecting 6/8. The full application suite is not reported green.

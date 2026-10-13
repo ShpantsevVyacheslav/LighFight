@@ -22,33 +22,38 @@ namespace LighFight.Editor {
    try{Run();File.Move(running,running+".done");}
    catch(Exception e){File.WriteAllText(Request+".failed",e.ToString());Debug.LogException(e);}
   }
+  static string Argument(string[] args,string flag,string fallback){int i=Array.IndexOf(args,flag);if(i<0)return fallback;if(i+1>=args.Length)throw new ArgumentException("Missing value for "+flag);return args[i+1];}
   [MenuItem("LighFight/Review Tripo Native Pack")]
-  public static void Run(){
+  public static void Run(){QualitySettings.skinWeights=SkinWeights.Unlimited;
    var args=Environment.GetCommandLineArgs();int outputIndex=Array.IndexOf(args,"-tripoOutput");
    string output=outputIndex>=0?Path.GetFullPath(args[outputIndex+1]):Path.GetFullPath("../art/previews/island-tripo-v1/unity-native");Directory.CreateDirectory(output);
-   string path=Folder+"/native-pack.fbx";
+   string folder=Argument(args,"-tripoFolder",Folder);
+   int expectedTriangles=int.Parse(Argument(args,"-tripoTriangles","100000"));
+   int expectedClips=int.Parse(Argument(args,"-tripoClips","7"));
+   int expectedTexture=int.Parse(Argument(args,"-tripoTextureSize","8192"));
+   string path=folder+"/native-pack.fbx";
    AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
    var importer=(ModelImporter)AssetImporter.GetAtPath(path);
    NativeFighterImport.PrepareImporter(importer);
-   string texturePath=Folder+"/island-h31-unity-native-pack_basecolor.JPEG";
+   string texturePath=Argument(args,"-tripoTexture",folder+"/island-h31-unity-native-pack_basecolor.JPEG");
    var ti=(TextureImporter)AssetImporter.GetAtPath(texturePath);
-   ti.maxTextureSize=8192;ti.textureCompression=TextureImporterCompression.Uncompressed;ti.mipmapEnabled=true;ti.SaveAndReimport();
+   ti.maxTextureSize=expectedTexture;ti.textureCompression=TextureImporterCompression.Uncompressed;ti.mipmapEnabled=true;ti.SaveAndReimport();
    var texture=AssetDatabase.LoadAssetAtPath<Texture2D>(texturePath);
-   if(texture==null||texture.width!=8192)throw new InvalidOperationException("Original 8K texture was not retained");
+   if(texture==null||texture.width!=expectedTexture)throw new InvalidOperationException("Original texture resolution was not retained");
    var model=AssetDatabase.LoadAssetAtPath<GameObject>(path);
    var clips=AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>().Where(c=>!c.name.StartsWith("__preview")).ToArray();
-   if(clips.Length!=7)throw new InvalidOperationException("Expected seven native clips, got "+clips.Length);
+   if(clips.Length!=expectedClips)throw new InvalidOperationException("Expected "+expectedClips+" native clips, got "+clips.Length);
    var scene=EditorSceneManager.NewPreviewScene();
    var owned=new List<UnityEngine.Object>();
    try{
-    var obj=UnityEngine.Object.Instantiate(model);EditorSceneManager.MoveGameObjectToScene(obj,scene);owned.Add(obj);
+    var obj=UnityEngine.Object.Instantiate(model);EditorSceneManager.MoveGameObjectToScene(obj,scene);foreach(var a in obj.GetComponentsInChildren<Animator>()){a.Rebind();a.Update(0);a.enabled=false;}owned.Add(obj);
     var material=new Material(Shader.Find("Unlit/Texture")){mainTexture=texture};owned.Add(material);
     var cameraObj=new GameObject("Tripo review camera");EditorSceneManager.MoveGameObjectToScene(cameraObj,scene);owned.Add(cameraObj);
-    var camera=cameraObj.AddComponent<Camera>();camera.scene=scene;camera.enabled=false;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.18f,.19f,.22f);camera.orthographic=true;
+    var camera=cameraObj.AddComponent<Camera>();camera.scene=scene;camera.enabled=false;camera.nearClipPlane=.01f;camera.farClipPlane=100f;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.18f,.19f,.22f);camera.orthographic=true;
     var target=new RenderTexture(1000,1200,24);target.Create();owned.Add(target);camera.targetTexture=target;
     var skins=obj.GetComponentsInChildren<SkinnedMeshRenderer>();
     int triangles=skins.Sum(s=>s.sharedMesh.triangles.Length/3);
-    if(triangles!=100000)throw new InvalidOperationException("Native topology changed: "+triangles);
+    if(triangles!=expectedTriangles)throw new InvalidOperationException("Native topology changed: "+triangles);
     foreach(var clip in clips){
      NativeFighterImport.ValidateClip(model,clip);
      foreach(float phase in new[]{0f,.35f,.7f,1f}){
@@ -56,9 +61,9 @@ namespace LighFight.Editor {
       var bakedObjects=new List<GameObject>();var bakedMeshes=new List<Mesh>();Bounds bounds=default;bool first=true;
       try{
        foreach(var skin in skins){
-        var mesh=new Mesh();skin.BakeMesh(mesh);bakedMeshes.Add(mesh);
+        var mesh=new Mesh();skin.BakeMesh(mesh,false);bakedMeshes.Add(mesh);
         var copy=new GameObject("CPU native surface");EditorSceneManager.MoveGameObjectToScene(copy,scene);bakedObjects.Add(copy);
-        copy.transform.SetPositionAndRotation(skin.transform.position,skin.transform.rotation);copy.transform.localScale=skin.transform.lossyScale;
+        copy.transform.SetPositionAndRotation(skin.transform.position,skin.transform.rotation);copy.transform.localScale=Vector3.Scale(skin.transform.lossyScale,new Vector3(1/skin.transform.localScale.x,1/skin.transform.localScale.y,1/skin.transform.localScale.z));
         copy.AddComponent<MeshFilter>().sharedMesh=mesh;var renderer=copy.AddComponent<MeshRenderer>();renderer.sharedMaterial=material;
         skin.enabled=false;
         if(first){bounds=renderer.bounds;first=false;}else bounds.Encapsulate(renderer.bounds);
@@ -73,8 +78,8 @@ namespace LighFight.Editor {
       }finally{foreach(var item in bakedObjects)UnityEngine.Object.DestroyImmediate(item);foreach(var mesh in bakedMeshes)UnityEngine.Object.DestroyImmediate(mesh);}
      }
     }
-    File.WriteAllText(Path.Combine(output,"audit.json"),"{\"triangles\":"+triangles+",\"textureWidth\":"+texture.width+",\"clips\":7,\"captures\":28,\"resampleCurves\":false,\"meshCompression\":\"Off\"}");
-    Debug.Log("TRIPO_REVIEW_RESULT 100000 triangles, 8192 texture, 7 clips, 28 captures");
+    File.WriteAllText(Path.Combine(output,"audit.json"),"{\"triangles\":"+triangles+",\"textureWidth\":"+texture.width+",\"clips\":"+clips.Length+",\"captures\":"+(clips.Length*4)+",\"resampleCurves\":false,\"meshCompression\":\"Off\"}");
+    Debug.Log("TRIPO_REVIEW_RESULT "+triangles+" triangles, "+texture.width+" texture, "+clips.Length+" clips, "+(clips.Length*4)+" captures");
    }finally{foreach(var item in owned.AsEnumerable().Reverse())if(item!=null)UnityEngine.Object.DestroyImmediate(item);EditorSceneManager.ClosePreviewScene(scene);}
   }
  }
