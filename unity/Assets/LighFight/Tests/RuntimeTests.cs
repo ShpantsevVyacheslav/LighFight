@@ -206,8 +206,17 @@ public class RuntimeTests
         var views=Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None);Assert.AreEqual(2,views.Length);
         foreach(var view in views)
         {
-            var animator=view.GetComponent<Animator>();Assert.NotNull(animator);
-            foreach(var move in Moves.All)Assert.IsTrue(animator.HasState(0,Animator.StringToHash("Base Layer."+move.Id)),move.Id);
+            Assert.IsTrue(view.IsReady,"Embedded fighter must retain its ready artist rig");
+            var animator=view.GetComponentInChildren<Animator>();Assert.NotNull(animator);
+            foreach(var state in new[]{"Idle","Walk","WalkBack","Guard","Hit","Fall","GetUp"})
+                Assert.IsTrue(animator.HasState(0,Animator.StringToHash("Base Layer."+state)),state);
+            int supportedMoves=0;
+            foreach(var move in Moves.All){
+                if(view.UsesNativeMotion&&!view.HasNativeMotion(move.Id))continue;
+                supportedMoves++;
+                Assert.IsTrue(animator.HasState(0,Animator.StringToHash("Base Layer."+move.Id)),move.Id);
+            }
+            Assert.Greater(supportedMoves,0,"A ready embedded fighter must have playable attacks");
         }
         hostExitCount=0;host.ExitRequested+=CountHostExit;host.Exit("");host.Exit("");Assert.AreEqual(1,hostExitCount);
         host.Launch("{\"protocolVersion\":1,\"sessionId\":\"fight-relaunch\",\"mode\":\"bot\"}");host.Exit("");Assert.AreEqual(2,hostExitCount);

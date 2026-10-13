@@ -81,8 +81,8 @@ namespace LighFight.Runtime
             }
             else
             {
-                player = FighterView.Create(FighterNames[selectedFighter], OutfitColors[selectedFighter], selectedFighter == 0 || selectedFighter == 1 || selectedFighter == 4);
-                opponent = FighterView.Create(FighterNames[cpu], OutfitColors[cpu], cpu == 0 || cpu == 1 || cpu == 4);
+                player = FighterView.Create(FighterLabel(selectedFighter), OutfitColors[selectedFighter], selectedFighter == 0 || selectedFighter == 1 || selectedFighter == 4);
+                opponent = FighterView.Create(FighterLabel(cpu), OutfitColors[cpu], cpu == 0 || cpu == 1 || cpu == 4);
                 arena = OfficeArena.Create((OfficeLocation)selectedArena);
             }
             player.transform.SetParent(transform,true);opponent.transform.SetParent(transform,true);arena.transform.SetParent(transform,true);
@@ -185,7 +185,7 @@ namespace LighFight.Runtime
             opponent.PoseTowards(match.B,match.A,contactFreeze>0?0:Time.deltaTime);
         }
 
-        private int OpponentIndex => selectedOpponent>=0?selectedOpponent:selectedFighter==4?3:selectedFighter==3?4:(selectedFighter+3)%FighterNames.Length;
+        private int OpponentIndex => selectedOpponent>=0?WrapRosterIndex(selectedOpponent,RosterCount):RosterCount>4&&selectedFighter==4?3:RosterCount>4&&selectedFighter==3?4:WrapRosterIndex(selectedFighter+(RosterCount==3?1:3),RosterCount);
         private void OnGUI()
         {
             if (session == null) return;
@@ -198,8 +198,8 @@ namespace LighFight.Runtime
             }
             bool wasEnabled=GUI.enabled; GUI.enabled=wasEnabled&&!optionsOpen;
             SelectionResources();
-            Text(new Rect(24,12,350,28),T(FighterNames[selectedFighter],FighterEnglish[selectedFighter]),14);
-            Text(new Rect(600,12,280,28),T(FighterNames[OpponentIndex],FighterEnglish[OpponentIndex]),14,null,TextAnchor.MiddleRight);
+            Text(new Rect(24,12,350,28),FighterLabel(selectedFighter),14);
+            Text(new Rect(600,12,280,28),FighterLabel(OpponentIndex),14,null,TextAnchor.MiddleRight);
             Text(new Rect(420,10,120,30),training?"∞":$"{(session.RemainingTicks+59)/60}",22,null,TextAnchor.MiddleCenter);
             if(Pill(new Rect(888,12,52,40),"☰"))OpenOptions();
             Card(new Rect(24,48,350,7),new Color(.15f,.2f,.28f));Card(new Rect(24,48,350*match.A.Health/150f,7),selectionAccent);

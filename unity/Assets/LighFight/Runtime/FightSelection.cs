@@ -8,8 +8,28 @@ namespace LighFight.Runtime
   private int selectedOpponent=-1;
   private bool opponentOpen;
   private bool rosterOpen=true;
+  private int rosterPage,opponentPage;
+  public int RosterCount=>content!=null&&content.fighters!=null&&content.fighters.Length>0?content.fighters.Length:FighterNames.Length;
+  public int RosterPageCount=>(RosterCount+7)/8;
+  public int RosterPageStart(int page)=>WrapRosterIndex(page,RosterPageCount)*8;
+  public int RosterPageEnd(int page)=>Mathf.Min(RosterCount,RosterPageStart(page)+8);
+  private static int WrapRosterIndex(int index,int count)=>((index%count)+count)%count;
+  private GameContent.FighterMetadata Metadata(int index)=>content!=null&&content.fighterMetadata!=null&&index>=0&&index<content.fighterMetadata.Length?content.fighterMetadata[index]:default;
+  public string FighterId(int index){var id=Metadata(index).id;return string.IsNullOrEmpty(id)?"fighter-"+index:id;}
+  public string FighterLabel(int index){
+   var data=Metadata(index);string name=russian?data.nameRu:data.nameEn;
+   if(string.IsNullOrEmpty(name))name=russian?data.nameEn:data.nameRu;
+   if(!string.IsNullOrEmpty(name))return name;
+   return index>=0&&index<FighterNames.Length?T(FighterNames[index],FighterEnglish[index]):T("Боец ","Fighter ")+(index+1);
+  }
+  public Texture2D FighterPortrait(int index){
+   var image=Metadata(index).portrait;if(image)return image;
+   if(index<0||index>=RosterCount)return null;
+   if(portraits==null||portraits.Length!=RosterCount){portraits=new Texture2D[RosterCount];for(int i=0;i<portraits.Length;i++)portraits[i]=Resources.Load<Texture2D>("Selection/fighter-"+i);}
+   return portraits[index];
+  }
   private Camera selectionDisplayCamera;
-  public void SelectRosterFighter(int index){selectedFighter=(index+FighterNames.Length)%FighterNames.Length;rosterOpen=false;advancedMoves=false;previewFighter=new Fighter{Guard=false};previewMove=-1;previewFrame=0;previewClock=0;previewYaw=15;RebuildViews();}
+  public void SelectRosterFighter(int index){selectedFighter=WrapRosterIndex(index,RosterCount);rosterPage=selectedFighter/8;rosterOpen=false;advancedMoves=false;previewFighter=new Fighter{Guard=false};previewMove=-1;previewFrame=0;previewClock=0;previewYaw=15;RebuildViews();}
   private bool rulesOpen,arenaOpen;
   public void OpenRules(){arenaOpen=false;rulesOpen=true;dragging=false;}
   public void OpenArenas(){rulesOpen=false;arenaOpen=true;dragging=false;}
@@ -95,9 +115,8 @@ namespace LighFight.Runtime
   {
    if(selectionText==null)selectionText=new GUIStyle(GUI.skin.label){font=Resources.Load<Font>("Fonts/NotoSans-Regular"),fontSize=16,alignment=TextAnchor.MiddleLeft,wordWrap=true};
    if(selectionBackdrop!=null)return;
-   arenaImages=new Texture2D[5];portraits=new Texture2D[8];
+   arenaImages=new Texture2D[5];
    for(int i=0;i<5;i++)arenaImages[i]=Resources.Load<Texture2D>("Selection/arena-"+i);
-   for(int i=0;i<8;i++)portraits[i]=Resources.Load<Texture2D>("Selection/fighter-"+i);
    selectionBackdrop=new Texture2D(256,144,TextureFormat.RGBA32,false);
    for(int y=0;y<144;y++)for(int x=0;x<256;x++){float d=Vector2.Distance(new Vector2(x/256f,y/144f),new Vector2(.48f,.45f));selectionBackdrop.SetPixel(x,y,Color.Lerp(new Color(.17f,.16f,.22f),new Color(.025f,.028f,.045f),Mathf.Clamp01(d*2)));}selectionBackdrop.Apply();
    selectionHalo=new Texture2D(512,512,TextureFormat.RGBA32,false);
@@ -145,7 +164,7 @@ namespace LighFight.Runtime
    Text(new Rect(642,4,220,38),T("ПОДГОТОВКА БОЯ","FIGHT SETUP"),11,new Color(.60f,.70f,.82f),TextAnchor.MiddleRight);
    if(Pill(new Rect(880,7,62,34),"⚙"))OpenOptions();
    Text(new Rect(30,65,212,24),T("ВЫБЕРИ БОЙЦА","CHOOSE FIGHTER"),11,selectionAccent);
-   Text(new Rect(30,96,212,92),T(FighterNames[selectedFighter],FighterEnglish[selectedFighter]).ToUpperInvariant(),30);
+   Text(new Rect(30,96,212,92),FighterLabel(selectedFighter).ToUpperInvariant(),30);
    int available=0;foreach(var move in Moves.All)if(!player.UsesNativeMotion||player.HasNativeMotion(move.Id))available++;
    Text(new Rect(30,190,210,32),available+T(" приёмов · серии до 4 ударов"," moves · up to 4-hit chains"),11,new Color(.60f,.70f,.82f));
    Text(new Rect(30,233,210,22),T("ЗДОРОВЬЕ","HEALTH"),11,new Color(.60f,.70f,.82f));
@@ -168,7 +187,7 @@ namespace LighFight.Runtime
    string level=difficulty==0?T("Легко","Easy"):difficulty==2?T("Сложно","Hard"):T("Обычно","Normal");
    Text(new Rect(713,318,220,28),level+$" · {targetWins} "+T("победы","wins")+$" · {roundSeconds} "+T("сек.","sec"),11);
    if(Pill(new Rect(710,350,220,32),T("Изменить правила  ›","Change rules  ›")))OpenRules();
-   if(Pill(new Rect(710,416,220,58),T("В БОЙ  →","FIGHT  →"),false,true)){opponentOpen=true;arenaOpen=rulesOpen=false;}
+   if(Pill(new Rect(710,416,220,58),T("В БОЙ  →","FIGHT  →"),false,true)){opponentOpen=true;opponentPage=OpponentIndex/8;arenaOpen=rulesOpen=false;}
    GUI.enabled=previousEnabled;
    if(arenaOpen||rulesOpen)RulesSheet();
    if(opponentOpen)OpponentSheet();
@@ -189,17 +208,27 @@ namespace LighFight.Runtime
    if(Pill(new Rect(16,7,73,34),T("‹ Назад","‹ Back")))bridge?.Exit("");
    Text(new Rect(380,4,220,38),T("БОЙЦЫ","FIGHTERS"),14,selectionAccent,TextAnchor.MiddleCenter);
    if(Pill(new Rect(880,7,62,34),"⚙"))OpenOptions();
-   for(int i=0;i<FighterNames.Length;i++){
-    Rect r=new Rect(76+i%4*208,77+i/4*219,184,201);
+   rosterPage=WrapRosterIndex(rosterPage,RosterPageCount);
+   for(int i=RosterPageStart(rosterPage);i<RosterPageEnd(rosterPage);i++){
+    int cell=i%8;Rect r=new Rect(76+cell%4*208,77+cell/4*219,184,201);
     Card(r,new Color(.11f,.115f,.16f));
-    if(portraits[i])GUI.DrawTexture(new Rect(r.x+12,r.y+10,160,143),portraits[i],ScaleMode.ScaleAndCrop,true,0,Color.white,0,12);
-    Text(new Rect(r.x+12,r.y+151,160,37),T(FighterNames[i],FighterEnglish[i]),14,null,TextAnchor.MiddleCenter);
+    var portrait=FighterPortrait(i);if(portrait)GUI.DrawTexture(new Rect(r.x+12,r.y+10,160,143),portrait,ScaleMode.ScaleAndCrop,true,0,Color.white,0,12);
+    Text(new Rect(r.x+12,r.y+151,160,37),FighterLabel(i),14,null,TextAnchor.MiddleCenter);
     if(GUI.Button(r,GUIContent.none,GUIStyle.none))SelectRosterFighter(i);
    }
+   RosterPager(ref rosterPage,513);
+  }
+  private void RosterPager(ref int page,float y){
+   if(RosterPageCount<=1)return;
+   if(Pill(new Rect(375,y,45,25),"‹"))page=WrapRosterIndex(page-1,RosterPageCount);
+   Text(new Rect(425,y,110,25),(page+1)+" / "+RosterPageCount,12,selectionAccent,TextAnchor.MiddleCenter);
+   if(Pill(new Rect(540,y,45,25),"›"))page=WrapRosterIndex(page+1,RosterPageCount);
   }
   private void OpponentSheet(){Card(new Rect(0,48,960,492),new Color(0,0,0,.85f));Text(new Rect(90,75,650,45),T("Выбери соперника","Choose opponent"),28);
    if(Pill(new Rect(790,75,80,34),T("Назад","Back")))opponentOpen=false;
-   for(int i=0;i<FighterNames.Length;i++){var rect=new Rect(90+i%4*198,140+i/4*158,180,145);Card(rect,selectionPanel);if(portraits[i])GUI.DrawTexture(new Rect(rect.x+42,rect.y+5,96,96),portraits[i],ScaleMode.ScaleAndCrop);Text(new Rect(rect.x+8,rect.y+105,164,34),T(FighterNames[i],FighterEnglish[i]),12,null,TextAnchor.MiddleCenter);if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedOpponent=i;opponentOpen=false;RebuildViews();BeginFight();}}
+   opponentPage=WrapRosterIndex(opponentPage,RosterPageCount);
+   for(int i=RosterPageStart(opponentPage);i<RosterPageEnd(opponentPage);i++){int cell=i%8;var rect=new Rect(90+cell%4*198,140+cell/4*158,180,145);Card(rect,selectionPanel);var portrait=FighterPortrait(i);if(portrait)GUI.DrawTexture(new Rect(rect.x+42,rect.y+5,96,96),portrait,ScaleMode.ScaleAndCrop);Text(new Rect(rect.x+8,rect.y+105,164,34),FighterLabel(i),12,null,TextAnchor.MiddleCenter);if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedOpponent=i;opponentOpen=false;RebuildViews();BeginFight();}}
+   RosterPager(ref opponentPage,480);
   }
   private float previewMessageTime;
   private void RulesSheet()
