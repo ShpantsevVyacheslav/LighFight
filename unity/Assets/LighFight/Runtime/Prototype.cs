@@ -165,6 +165,7 @@ namespace LighFight.Runtime
             {
                 accumulator -= 1f / Match.TickRate;
                 if(contactFreeze>0){contactFreeze--;continue;}
+                if(session.AttackAvailable==null)session.AttackAvailable=(first,index)=>{var view=first?player:opponent;return !view.UsesNativeMotion||view.HasNativeMotion(Moves.All[index].Id);};
                 match.A.Guard = guard; match.A.Crouch = crouch;
                 if (pendingAttack >= 0) { session.QueueAttack(true, pendingAttack); pendingAttack = -1; }
                 match.Walk(match.A, direction,side);

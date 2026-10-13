@@ -222,7 +222,9 @@ namespace LighFight.Runtime
         private System.Collections.Generic.Dictionary<string,Transform> contactBones;
         public void SampleContactPose(Fighter fighter,Fighter other)
         {
+            var grounding=GetComponent<CandidateFootGrounding>();if(grounding)grounding.ResetForSample();
             PoseTowards(fighter,other,0);if(animator!=null){if(fighter.Attack.HasValue && fighter.Frame>=fighter.Attack.Value.Startup && fighter.Frame<fighter.Attack.Value.Startup+fighter.Attack.Value.Active)blendElapsed=blendDuration;}
+            if(grounding)grounding.ApplyForReview();
         }
         private void OnDestroy(){if(ownsMaterials){Destroy(skin);Destroy(cloth);Destroy(dark);}}
     }

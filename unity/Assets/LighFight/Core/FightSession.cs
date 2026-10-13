@@ -25,6 +25,7 @@ namespace LighFight.Core
             Defence=(DummyDefence)value;return true;
         }
         public int TargetWins { get; }
+        public System.Func<bool,int,bool> AttackAvailable {get;set;}
         private readonly int configuredRoundTicks;
         public FightSession(bool training = false, int targetWins = 2, int roundSeconds = 60) { Training = training; TargetWins = System.Math.Max(1,System.Math.Min(3,targetWins)); configuredRoundTicks = System.Math.Max(30,System.Math.Min(120,roundSeconds))*Match.TickRate; RemainingTicks=configuredRoundTicks; }
         private int breakRemaining;
@@ -34,6 +35,7 @@ namespace LighFight.Core
         {
             if (Training && !playerA)return false;
             if (Phase != FightPhase.Fighting || index < 0 || index >= Moves.All.Length) return false;
+            if(AttackAvailable!=null && !AttackAvailable(playerA,index))return false;
             if (playerA) { attackA = index; lifeA = BufferTicks; }
             else { attackB = index; lifeB = BufferTicks; }
             return true;

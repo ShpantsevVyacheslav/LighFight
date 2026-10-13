@@ -103,7 +103,8 @@ namespace LighFight.Runtime
    if(Pill(new Rect(880,7,62,34),"⚙"))OpenOptions();
    Text(new Rect(30,65,212,24),T("ВЫБЕРИ БОЙЦА","CHOOSE FIGHTER"),11,selectionAccent);
    Text(new Rect(30,96,212,92),T(FighterNames[selectedFighter],FighterEnglish[selectedFighter]).ToUpperInvariant(),30);
-   Text(new Rect(30,190,210,32),T("25 приёмов · серии до 4 ударов","25 moves · up to 4-hit chains"),11,new Color(.60f,.70f,.82f));
+   int available=0;foreach(var move in Moves.All)if(!player.UsesNativeMotion||player.HasNativeMotion(move.Id))available++;
+   Text(new Rect(30,190,210,32),available+T(" приёмов · серии до 4 ударов"," moves · up to 4-hit chains"),11,new Color(.60f,.70f,.82f));
    Text(new Rect(30,233,210,22),T("ЗДОРОВЬЕ","HEALTH"),11,new Color(.60f,.70f,.82f));
    Text(new Rect(30,255,210,49),"150",38,new Color(1,.89f,.54f));
    string[] labels={T("Урон ударов","Damage"),T("Дальность","Reach"),T("Серия","Chain")};string[] values={"6–25","0.6–1.2 м","4"};float[] fills={.76f,.65f,1};
