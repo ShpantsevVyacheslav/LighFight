@@ -63,3 +63,5 @@ Current isolated runtime suite: 113/143 pass, 30 fail. Failures reference missin
 Full main-project EditMode verification after fixture recovery: 143/143 pass. The lone first-run failure selected the first Camera, which can be the cullingMask=0 backdrop camera. The test now selects the Prototype-owned fighter-rendering camera and retains assertions for target texture, transparent background, and battle viewport restoration. No production condition was relaxed. Result: `.tools/main-runtime-suite.xml`.
 
 Untouched source close-ups rendered for Ranger (1,986,463 triangles), Bone (1,888,146), and Master (1,992,276), each with original 4096 texture maps. They are reference evidence, not proof of runtime integration.
+
+Arena promoted to main GameContent arena index 4 after source-preserving FBX import and 1,922,912-triangle clearance audit. Before/after catalog diff changes only the courtyard reference; other asset references unchanged. Main prefab GUID 50ab0d0e3fb0147758bf28947c9fb420. Imported 4096 albedo; no shadows. Combat fixture rendered at production minimum camera distance 3.6 m / FOV 42. Background visual polish and device performance remain pending.
