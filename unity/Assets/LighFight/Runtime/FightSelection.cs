@@ -45,6 +45,14 @@ namespace LighFight.Runtime
    else {previewFighter.Attack=null;previewFrame=0;}
    player.Pose(previewFighter,1,Time.deltaTime);if(previewMove==-2)player.PreviewNativeMotion("Dance",previewClock);else if(previewMove==-1&&player.HasNativeMotion("Greeting"))player.PreviewNativeMotion("Greeting",previewClock);player.transform.rotation=Quaternion.Euler(0,(player.UsesNativeMotion?180:90)+previewYaw,0);
    if(previewMove==-1)player.transform.position+=Vector3.up*Mathf.Sin(previewClock*2)*.004f;
+   var renderers=player.GetComponentsInChildren<Renderer>();
+   if(renderers.Length>0){var bounds=renderers[0].bounds;foreach(var renderer in renderers)bounds.Encapsulate(renderer.bounds);
+    float vertical=Mathf.Tan(fightCamera.fieldOfView*Mathf.Deg2Rad*.5f);
+    float fit=Mathf.Max(bounds.extents.y/vertical,bounds.extents.x/(vertical*previewSize.x/previewSize.y))+bounds.extents.z;
+    float distance=Mathf.Max(.3f,fit*1.15f*(previewDistance/2.65f));
+    fightCamera.transform.position=bounds.center+Vector3.back*distance;fightCamera.transform.LookAt(bounds.center);
+   }
+
    if(rulesOpen||arenaOpen||opponentOpen||optionsOpen){dragging=false;return;}
    UpdateStrikeGestures();
    if(Input.touchCount>=2)
