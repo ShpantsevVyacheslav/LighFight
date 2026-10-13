@@ -24,6 +24,7 @@ namespace LighFight.Editor {
    var content=AssetDatabase.LoadAssetAtPath<GameContent>(contentPath);
    if(!content){content=ScriptableObject.CreateInstance<GameContent>();AssetDatabase.CreateAsset(content,contentPath);}
    content.fighters=(GameObject[])source.fighters.Clone();content.arenas=(GameObject[])source.arenas.Clone();content.fighters[4]=candidate;
+   foreach(var entry in new[]{(index:0,name:"Bone"),(index:3,name:"Island"),(index:5,name:"Ranger")}){var replacement=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/Tripo"+entry.name+"Playable/"+entry.name+"HumanoidCandidate.prefab");if(!replacement||!replacement.GetComponent<FighterView>().IsReady)throw new InvalidOperationException("Invalid roster replacement: "+entry.name);content.fighters[entry.index]=replacement;}
    EditorUtility.SetDirty(content);
    var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
    new GameObject("LighFight Host Bridge").AddComponent<HostBridge>();
@@ -33,10 +34,29 @@ namespace LighFight.Editor {
    EditorSceneManager.SaveScene(scene,ScenePath);AssetDatabase.SaveAssets();
    Debug.Log("AGENT_RESULT Tripo test scene prepared; shipping roster unchanged");
   }
+  static void PreserveIslandSourceResolution() {
+   string path="Assets/LighFight/Art/Drafts/TripoIslandPlayable/Source/Island/island-h31-unity-native-pack_basecolor.JPEG";
+   var importer=(TextureImporter)AssetImporter.GetAtPath(path);importer.GetSourceTextureWidthAndHeight(out int width,out int height);
+   if(width!=8192||height!=8192)throw new InvalidOperationException("Unexpected Island source texture version");
+   importer.maxTextureSize=8192;
+   foreach(string platform in new[]{"DefaultTexturePlatform","Standalone","WebGL","iPhone","Android"}){var settings=importer.GetPlatformTextureSettings(platform);settings.maxTextureSize=8192;importer.SetPlatformTextureSettings(settings);}
+   importer.SaveAndReimport();var texture=AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+   if(texture.width!=8192||texture.height!=8192)throw new InvalidOperationException("Island texture was reduced during import");
+   Debug.Log("AGENT_RESULT Island original albedo preserved at "+texture.width+"x"+texture.height);
+  }
+  public static void PromoteReviewedRoster() {
+   PreserveIslandSourceResolution();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();Prepare();
+   var review=AssetDatabase.LoadAssetAtPath<GameContent>(Folder+"/ReviewContent.asset");
+   var shipping=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
+   foreach(int index in new[]{0,3,4,5}){var candidate=review.fighters[index];var animator=candidate.GetComponentInChildren<Animator>();var skin=candidate.GetComponentInChildren<SkinnedMeshRenderer>();if(!candidate.GetComponent<FighterView>().IsReady||!animator.avatar.isHuman||skin.sharedMesh.triangles.Length/3!=100000)throw new InvalidOperationException("Roster promotion gate failed at "+index);shipping.fighters[index]=candidate;}
+   EditorUtility.SetDirty(shipping);AssetDatabase.SaveAssets();Debug.Log("AGENT_RESULT main roster now uses calibrated Tripo fighters at0,3,4,5; device delivery pending");
+  }
   public static void Build()=>BuildTargetReview(BuildTarget.WebGL,"../.tools/web-tripo-review");
   public static void BuildMac()=>BuildTargetReview(BuildTarget.StandaloneOSX,"../.tools/mac-tripo-review/LighFight.app");
   static void BuildTargetReview(BuildTarget target,string destination) {
    if(!BuildPipeline.IsBuildTargetSupported(BuildPipeline.GetBuildTargetGroup(target),target))throw new InvalidOperationException("Build module unavailable: "+target);
+   PreserveIslandSourceResolution();
+   TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();
    Prepare();
    string output=Path.GetFullPath(destination);Directory.CreateDirectory(Path.GetDirectoryName(output));
    // Uncompressed local output works with a normal HTTP server, without custom CDN headers.

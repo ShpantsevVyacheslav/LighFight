@@ -1,0 +1,2157 @@
+{
+    "modelPath": "Assets/Bone/model.fbx",
+    "modelGuid": "1c54c4c312bd843149aff1e6df277101",
+    "avatarGuid": "1c54c4c312bd843149aff1e6df277101",
+    "avatarLocalId": 9000000,
+    "nativeBones": [
+        {
+            "name": "Hips",
+            "path": "Armature/Hips",
+            "parentPath": "Armature",
+            "localPosition": {
+                "x": -0.0019153387984260917,
+                "y": -0.0019152081804350019,
+                "z": 0.5398501753807068
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 0.48293185234069826,
+                "y": 0.5474235415458679,
+                "z": 0.5013021230697632,
+                "w": 0.46454331278800967
+            }
+        },
+        {
+            "name": "Spine",
+            "path": "Armature/Hips/Spine",
+            "parentPath": "Armature/Hips",
+            "localPosition": {
+                "x": -1.964508555829525e-9,
+                "y": 0.03447383642196655,
+                "z": 1.5279510989785195e-9
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 1.0,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": 0.010834842920303345,
+                "y": -0.0031620915979146959,
+                "z": 0.0368402861058712,
+                "w": 0.9992574453353882
+            }
+        },
+        {
+            "name": "Chest",
+            "path": "Armature/Hips/Spine/Chest",
+            "parentPath": "Armature/Hips/Spine",
+            "localPosition": {
+                "x": -2.3283064365386964e-9,
+                "y": 0.06128690764307976,
+                "z": 6.810296326875687e-9
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 1.000000238418579,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.025920987129211427,
+                "y": -0.07699298113584519,
+                "z": -0.025684066116809846,
+                "w": 0.996363639831543
+            }
+        },
+        {
+            "name": "UpperChest",
+            "path": "Armature/Hips/Spine/Chest/UpperChest",
+            "parentPath": "Armature/Hips/Spine/Chest",
+            "localPosition": {
+                "x": -8.149072527885437e-10,
+                "y": 0.06556671857833862,
+                "z": -2.9976945370435716e-9
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.019321449100971223,
+                "y": -0.012196708470582962,
+                "z": 0.04117216542363167,
+                "w": 0.99889075756073
+            }
+        },
+        {
+            "name": "Neck",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest",
+            "localPosition": {
+                "x": 0.003470356808975339,
+                "y": 0.11587721109390259,
+                "z": -0.000356804026523605
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 1.0,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": -0.0686277523636818,
+                "y": 0.23332861065864564,
+                "z": 0.23395486176013947,
+                "w": 0.9413357973098755
+            }
+        },
+        {
+            "name": "Neck_Twist_A",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck/Neck_Twist_A",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Neck",
+            "localPosition": {
+                "x": -1.7695128917694093e-8,
+                "y": 0.030941428616642953,
+                "z": 1.1175870895385743e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -2.2817403078079224e-7,
+                "y": 9.499490261077881e-8,
+                "z": 5.867332220077515e-7,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Head",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Neck",
+            "localPosition": {
+                "x": -1.1955853551626206e-7,
+                "y": 0.06188260018825531,
+                "z": 7.008202373981476e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.16408896446228028,
+                "y": 0.282636821269989,
+                "z": 0.09166741371154785,
+                "w": 0.9406318664550781
+            }
+        },
+        {
+            "name": "Left_Eye",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head/Left_Eye",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head",
+            "localPosition": {
+                "x": 0.009058760479092598,
+                "y": 0.05436628311872482,
+                "z": -0.006587977521121502
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999998807907105,
+                "z": 0.9999998807907105
+            },
+            "localRotation": {
+                "x": -0.05965115875005722,
+                "y": -1.075634443736817e-7,
+                "z": -0.08202088624238968,
+                "w": 0.9948439002037048
+            }
+        },
+        {
+            "name": "Right_Eye",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head/Right_Eye",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head",
+            "localPosition": {
+                "x": -0.024639135226607324,
+                "y": 0.04810773581266403,
+                "z": 0.017919421195983888
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 0.9999998807907105
+            },
+            "localRotation": {
+                "x": 0.1638273000717163,
+                "y": -1.4277664206474584e-7,
+                "z": 0.22526219487190247,
+                "w": 0.9604257345199585
+            }
+        },
+        {
+            "name": "Left_Shoulder",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest",
+            "localPosition": {
+                "x": -0.010926052927970887,
+                "y": 0.08001705259084702,
+                "z": -0.025831012055277826
+            },
+            "localScale": {
+                "x": 0.9999998211860657,
+                "y": 0.9999998211860657,
+                "z": 0.9999998807907105
+            },
+            "localRotation": {
+                "x": -0.7978476285934448,
+                "y": -0.07657547295093537,
+                "z": 0.06769540905952454,
+                "w": 0.5941318869590759
+            }
+        },
+        {
+            "name": "Left_UpperArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder",
+            "localPosition": {
+                "x": 8.847564458847046e-9,
+                "y": 0.06466517597436905,
+                "z": 6.7870132625103e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999998211860657,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": -0.4471178948879242,
+                "y": -0.16373354196548463,
+                "z": 0.16169562935829163,
+                "w": 0.864367663860321
+            }
+        },
+        {
+            "name": "Left_LowerArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm",
+            "localPosition": {
+                "x": 8.381903171539307e-9,
+                "y": 0.15615762770175935,
+                "z": -4.0046870708465579e-8
+            },
+            "localScale": {
+                "x": 1.000000238418579,
+                "y": 0.9999998807907105,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.0029910681769251825,
+                "y": -0.04117733985185623,
+                "z": 0.0721377357840538,
+                "w": 0.996539831161499
+            }
+        },
+        {
+            "name": "Left_Hand",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm",
+            "localPosition": {
+                "x": -1.0244548320770264e-8,
+                "y": 0.14031165838241578,
+                "z": 1.7229467630386353e-7
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.03811674192547798,
+                "y": 0.02427547238767147,
+                "z": 0.06908687949180603,
+                "w": 0.9965866208076477
+            }
+        },
+        {
+            "name": "Left_ThumbProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand",
+            "localPosition": {
+                "x": -0.012180550023913384,
+                "y": 0.020001918077468873,
+                "z": -0.005558038130402565
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 0.9999998807907105,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": -0.15646471083164216,
+                "y": 0.03632489591836929,
+                "z": 0.24458210170269013,
+                "w": 0.9562315940856934
+            }
+        },
+        {
+            "name": "Left_ThumbIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal",
+            "localPosition": {
+                "x": -1.6094418242573739e-8,
+                "y": 0.018640955910086633,
+                "z": -4.669709596782923e-8
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 0.9999998807907105,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.03166759014129639,
+                "y": 0.044091012328863147,
+                "z": -0.24718475341796876,
+                "w": 0.9674465656280518
+            }
+        },
+        {
+            "name": "Left_ThumbDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate/Left_ThumbDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate",
+            "localPosition": {
+                "x": 7.8580342233181e-10,
+                "y": 0.01987580955028534,
+                "z": -6.28642737865448e-8
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 1.0000001192092896,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.014332843013107777,
+                "y": -0.004445349797606468,
+                "z": -0.051541563123464587,
+                "w": 0.9985581040382385
+            }
+        },
+        {
+            "name": "Left_ThumbDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate/Left_ThumbDistal/Left_ThumbDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate/Left_ThumbDistal",
+            "localPosition": {
+                "x": -4.0745362639427187e-10,
+                "y": 0.0114026740193367,
+                "z": 3.2800016924738887e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 3.585591912269592e-8,
+                "y": 2.6775524020195009e-9,
+                "z": 1.227017492055893e-7,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Left_IndexProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand",
+            "localPosition": {
+                "x": -0.010273666121065617,
+                "y": 0.05855097621679306,
+                "z": 0.0022950095590204
+            },
+            "localScale": {
+                "x": 1.000000238418579,
+                "y": 1.0,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": -0.1838434636592865,
+                "y": 0.059065744280815127,
+                "z": -0.07997296750545502,
+                "w": 0.9779146909713745
+            }
+        },
+        {
+            "name": "Left_IndexIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal",
+            "localPosition": {
+                "x": 6.28642737865448e-9,
+                "y": 0.017834054306149484,
+                "z": 9.42964106798172e-9
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.2126520425081253,
+                "y": 0.0007703455630689859,
+                "z": 0.015430659987032414,
+                "w": 0.9770058393478394
+            }
+        },
+        {
+            "name": "Left_IndexDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate/Left_IndexDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate",
+            "localPosition": {
+                "x": 1.3969838619232178e-9,
+                "y": 0.01590467058122158,
+                "z": -4.784669727087021e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.009607924148440361,
+                "y": 0.0004667036118917167,
+                "z": 0.0018688522977754474,
+                "w": 0.9999520182609558
+            }
+        },
+        {
+            "name": "Left_IndexDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate/Left_IndexDistal/Left_IndexDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate/Left_IndexDistal",
+            "localPosition": {
+                "x": -1.3969838619232178e-8,
+                "y": 0.015354059636592865,
+                "z": 4.423782229423523e-9
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 9.55536961555481e-7,
+                "y": -8.475035429000855e-8,
+                "z": -1.0617077350616455e-7,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Left_MiddleProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand",
+            "localPosition": {
+                "x": 0.002403734251856804,
+                "y": 0.06061446666717529,
+                "z": 0.0013515418395400048
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999998807907105,
+                "z": 0.9999998807907105
+            },
+            "localRotation": {
+                "x": -0.23425255715847016,
+                "y": 0.07040853053331375,
+                "z": -0.06600134819746018,
+                "w": 0.9673739075660706
+            }
+        },
+        {
+            "name": "Left_MiddleIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal",
+            "localPosition": {
+                "x": 9.313225746154786e-10,
+                "y": 0.01740395836532116,
+                "z": -9.266659617424011e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.2617376446723938,
+                "y": 0.014121176674962044,
+                "z": 0.0050650704652071,
+                "w": 0.9650225043296814
+            }
+        },
+        {
+            "name": "Left_MiddleDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate/Left_MiddleDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate",
+            "localPosition": {
+                "x": -5.587935447692871e-9,
+                "y": 0.016428684815764428,
+                "z": -4.330649971961975e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": -0.07316417992115021,
+                "y": 0.0029029513243585827,
+                "z": 0.008499630726873875,
+                "w": 0.9972794651985169
+            }
+        },
+        {
+            "name": "Left_MiddleDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate/Left_MiddleDistal/Left_MiddleDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate/Left_MiddleDistal",
+            "localPosition": {
+                "x": 3.725290298461914e-9,
+                "y": 0.013529904186725617,
+                "z": 4.1211023926734927e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.0000011222437024116517,
+                "y": -2.421438694000244e-8,
+                "z": -4.6566128730773929e-8,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Left_RingProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand",
+            "localPosition": {
+                "x": 0.012096879072487355,
+                "y": 0.058671414852142337,
+                "z": -0.003084748052060604
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.22604453563690186,
+                "y": 0.0806039497256279,
+                "z": -0.08020243048667908,
+                "w": 0.9674577713012695
+            }
+        },
+        {
+            "name": "Left_RingIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal",
+            "localPosition": {
+                "x": 5.587935447692871e-9,
+                "y": 0.015353156253695488,
+                "z": 2.468004822731018e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 0.9999998807907105
+            },
+            "localRotation": {
+                "x": -0.26829683780670168,
+                "y": -0.00012947546201758087,
+                "z": -0.00598430261015892,
+                "w": 0.9633176922798157
+            }
+        },
+        {
+            "name": "Left_RingDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate/Left_RingDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate",
+            "localPosition": {
+                "x": 9.313225746154785e-9,
+                "y": 0.014730624854564667,
+                "z": 1.3969838619232178e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999998807907105,
+                "z": 0.9999998211860657
+            },
+            "localRotation": {
+                "x": -0.07177961617708206,
+                "y": -0.00033022768911905587,
+                "z": 0.005936856847256422,
+                "w": 0.9974028468132019
+            }
+        },
+        {
+            "name": "Left_RingDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate/Left_RingDistal/Left_RingDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate/Left_RingDistal",
+            "localPosition": {
+                "x": -1.862645149230957e-9,
+                "y": 0.01119894441217184,
+                "z": 2.1420419216156007e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -3.725290298461914e-9,
+                "y": -1.862645149230957e-9,
+                "z": 7.450580596923828e-9,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Left_PinkyProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand",
+            "localPosition": {
+                "x": 0.01924499124288559,
+                "y": 0.049797672778367999,
+                "z": -0.007098178379237652
+            },
+            "localScale": {
+                "x": 1.000000238418579,
+                "y": 1.0000001192092896,
+                "z": 0.9999997019767761
+            },
+            "localRotation": {
+                "x": -0.21517449617385865,
+                "y": 0.09708349406719208,
+                "z": -0.07746139913797379,
+                "w": 0.9686456918716431
+            }
+        },
+        {
+            "name": "Left_PinkyIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal",
+            "localPosition": {
+                "x": 3.725290298461914e-9,
+                "y": 0.014352422207593918,
+                "z": 0.0
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 0.9999998211860657,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.2501102387905121,
+                "y": 0.010663000866770745,
+                "z": -0.0076788682490587238,
+                "w": 0.9681282043457031
+            }
+        },
+        {
+            "name": "Left_PinkyDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate/Left_PinkyDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate",
+            "localPosition": {
+                "x": -7.450580596923828e-9,
+                "y": 0.012006862089037896,
+                "z": 1.862645149230957e-9
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.06639696657657623,
+                "y": -0.00008492066990584135,
+                "z": 0.01590847223997116,
+                "w": 0.9976664781570435
+            }
+        },
+        {
+            "name": "Left_PinkyDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate/Left_PinkyDistal/Left_PinkyDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate/Left_PinkyDistal",
+            "localPosition": {
+                "x": 7.450580596923828e-9,
+                "y": 0.010548572055995465,
+                "z": 1.0244548320770264e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -2.3283064365386964e-9,
+                "y": -5.587935447692871e-9,
+                "z": -4.0978193283081057e-8,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Right_Shoulder",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest",
+            "localPosition": {
+                "x": -0.005441451445221901,
+                "y": 0.08001714944839478,
+                "z": 0.02751382254064083
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 1.0000005960464478,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": 0.30880844593048098,
+                "y": 0.5924060940742493,
+                "z": 0.7392464876174927,
+                "w": 0.08489420264959336
+            }
+        },
+        {
+            "name": "Right_UpperArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder",
+            "localPosition": {
+                "x": -1.1082738637924194e-7,
+                "y": 0.06466510146856308,
+                "z": 4.330649971961975e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 1.0000001192092896,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.07704921066761017,
+                "y": -0.6892229318618774,
+                "z": 0.5071309804916382,
+                "w": 0.5117160677909851
+            }
+        },
+        {
+            "name": "Right_LowerArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm",
+            "localPosition": {
+                "x": -2.421438694000244e-8,
+                "y": 0.1561577320098877,
+                "z": -8.12578946352005e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999998211860657,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 0.041311368346214297,
+                "y": -0.2412438690662384,
+                "z": 0.11399749666452408,
+                "w": 0.9628599882125855
+            }
+        },
+        {
+            "name": "Right_Hand",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm",
+            "localPosition": {
+                "x": 2.2351741790771486e-8,
+                "y": 0.14083805680274964,
+                "z": 3.1781382858753207e-8
+            },
+            "localScale": {
+                "x": 0.9999998211860657,
+                "y": 0.9999999403953552,
+                "z": 0.9999998807907105
+            },
+            "localRotation": {
+                "x": -0.09797357767820358,
+                "y": 0.05459665507078171,
+                "z": 0.09653184562921524,
+                "w": 0.9889903664588928
+            }
+        },
+        {
+            "name": "Right_ThumbProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand",
+            "localPosition": {
+                "x": -0.00952250137925148,
+                "y": 0.019065342843532563,
+                "z": 0.01058041863143444
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 1.0000001192092896,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.29316166043281557,
+                "y": -0.4109044671058655,
+                "z": 0.021629314869642259,
+                "w": 0.8629866242408752
+            }
+        },
+        {
+            "name": "Right_ThumbIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal",
+            "localPosition": {
+                "x": 5.774199962615967e-8,
+                "y": 0.019661767408251764,
+                "z": -3.166496753692627e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": -0.21765851974487306,
+                "y": 0.35389089584350588,
+                "z": -0.12130309641361237,
+                "w": 0.9014829993247986
+            }
+        },
+        {
+            "name": "Right_ThumbDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate/Right_ThumbDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate",
+            "localPosition": {
+                "x": 7.450580596923828e-9,
+                "y": 0.019914263859391214,
+                "z": 5.122274160385132e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.01289704255759716,
+                "y": 0.004343312233686447,
+                "z": -0.05195879191160202,
+                "w": 0.9985564947128296
+            }
+        },
+        {
+            "name": "Right_ThumbDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate/Right_ThumbDistal/Right_ThumbDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate/Right_ThumbDistal",
+            "localPosition": {
+                "x": -2.0489096641540528e-8,
+                "y": 0.011424819938838482,
+                "z": 4.6566128730773929e-9
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 7.550698342129181e-7,
+                "y": -1.0430813546236095e-7,
+                "z": 2.756714536644722e-7,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Right_IndexProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand",
+            "localPosition": {
+                "x": -0.01111912727355957,
+                "y": 0.056578803807497028,
+                "z": 0.003406364470720291
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 1.0000001192092896,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": 0.1427903175354004,
+                "y": 0.11072476953268051,
+                "z": -0.13378296792507173,
+                "w": 0.9743988513946533
+            }
+        },
+        {
+            "name": "Right_IndexIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal",
+            "localPosition": {
+                "x": -4.0046870708465579e-8,
+                "y": 0.01817363314330578,
+                "z": 1.1175870895385743e-8
+            },
+            "localScale": {
+                "x": 0.9999997615814209,
+                "y": 0.9999999403953552,
+                "z": 0.9999998211860657
+            },
+            "localRotation": {
+                "x": 0.21166962385177613,
+                "y": 0.00008186369814211503,
+                "z": -0.025597933679819108,
+                "w": 0.9770060181617737
+            }
+        },
+        {
+            "name": "Right_IndexDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate/Right_IndexDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate",
+            "localPosition": {
+                "x": 3.725290298461914e-9,
+                "y": 0.01771819032728672,
+                "z": 6.984919309616089e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999999403953552,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 0.009789538569748402,
+                "y": -0.0004661903949454427,
+                "z": 0.00000222503831537324,
+                "w": 0.9999520182609558
+            }
+        },
+        {
+            "name": "Right_IndexDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate/Right_IndexDistal/Right_IndexDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate/Right_IndexDistal",
+            "localPosition": {
+                "x": 1.6763806343078614e-8,
+                "y": 0.017104879021644594,
+                "z": -2.60770320892334e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999998807907105,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": -8.307397365570068e-7,
+                "y": -3.9581212973871519e-8,
+                "z": 1.8998983364326706e-7,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Right_MiddleProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand",
+            "localPosition": {
+                "x": 0.0003992747515439987,
+                "y": 0.057317908853292468,
+                "z": -0.0016644964925944806
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.19873754680156709,
+                "y": 0.12507861852645875,
+                "z": -0.13339699804782868,
+                "w": 0.9628416299819946
+            }
+        },
+        {
+            "name": "Right_MiddleIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal",
+            "localPosition": {
+                "x": 8.847564458847046e-9,
+                "y": 0.01847919449210167,
+                "z": -1.1175870895385743e-8
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 0.9999999403953552,
+                "z": 0.9999997019767761
+            },
+            "localRotation": {
+                "x": 0.26076728105545046,
+                "y": 0.015123960562050343,
+                "z": -0.02300327457487583,
+                "w": 0.9650090932846069
+            }
+        },
+        {
+            "name": "Right_MiddleDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate/Right_MiddleDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate",
+            "localPosition": {
+                "x": -7.450580596923828e-9,
+                "y": 0.01816534623503685,
+                "z": 2.7939677238464357e-9
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 0.9999998807907105,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 0.07360205054283142,
+                "y": -0.0029109215829521419,
+                "z": 0.002843503374606371,
+                "w": 0.9972794055938721
+            }
+        },
+        {
+            "name": "Right_MiddleDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate/Right_MiddleDistal/Right_MiddleDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate/Right_MiddleDistal",
+            "localPosition": {
+                "x": -3.725290298461914e-9,
+                "y": 0.014960085973143578,
+                "z": -2.0023435354232789e-8
+            },
+            "localScale": {
+                "x": 0.9999998807907105,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 1.1175870895385743e-8,
+                "y": 1.4295801520347596e-7,
+                "z": -1.1781231279428539e-7,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Right_RingProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand",
+            "localPosition": {
+                "x": 0.010539056733250618,
+                "y": 0.053783271461725238,
+                "z": -0.0029078898951411249
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.19585876166820527,
+                "y": 0.18142910301685334,
+                "z": -0.13084760308265687,
+                "w": 0.9547784328460693
+            }
+        },
+        {
+            "name": "Right_RingIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal",
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.017268206924200059,
+                "z": -2.7939677238464357e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 0.26830482482910159,
+                "y": -0.00018040351278614253,
+                "z": -0.005890848580747843,
+                "w": 0.9633160829544067
+            }
+        },
+        {
+            "name": "Right_RingDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate/Right_RingDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate",
+            "localPosition": {
+                "x": -4.6566128730773929e-9,
+                "y": 0.016515422612428666,
+                "z": -5.587935447692871e-9
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 0.9999998807907105,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.07178208231925965,
+                "y": 0.0003305061545688659,
+                "z": 0.005939106456935406,
+                "w": 0.9974026083946228
+            }
+        },
+        {
+            "name": "Right_RingDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate/Right_RingDistal/Right_RingDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate/Right_RingDistal",
+            "localPosition": {
+                "x": 4.6566128730773929e-9,
+                "y": 0.012555856257677079,
+                "z": -2.8405338525772096e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 3.725291186640334e-9,
+                "y": -2.7939677238464357e-9,
+                "z": 4.190951585769653e-9,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Right_PinkyProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand",
+            "localPosition": {
+                "x": 0.019394541159272195,
+                "y": 0.04676758497953415,
+                "z": -0.003755170153453946
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.1916862428188324,
+                "y": 0.20889194309711457,
+                "z": -0.11668314784765244,
+                "w": 0.95184326171875
+            }
+        },
+        {
+            "name": "Right_PinkyIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal",
+            "localPosition": {
+                "x": 7.450580596923828e-9,
+                "y": 0.015148242935538292,
+                "z": 1.257285475730896e-8
+            },
+            "localScale": {
+                "x": 0.9999998211860657,
+                "y": 0.9999998211860657,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.24981914460659028,
+                "y": -0.01361734326928854,
+                "z": 0.014313414692878724,
+                "w": 0.9680910110473633
+            }
+        },
+        {
+            "name": "Right_PinkyDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate/Right_PinkyDistal",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate",
+            "localPosition": {
+                "x": -2.7939677238464357e-9,
+                "y": 0.01321638934314251,
+                "z": 2.6775524020195008e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": 0.06480906158685684,
+                "y": 0.00008434391202172264,
+                "z": 0.02147945761680603,
+                "w": 0.9976665377616882
+            }
+        },
+        {
+            "name": "Right_PinkyDistalEnd",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate/Right_PinkyDistal/Right_PinkyDistalEnd",
+            "parentPath": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate/Right_PinkyDistal",
+            "localPosition": {
+                "x": -9.313225746154785e-9,
+                "y": 0.011611422523856163,
+                "z": 1.30385160446167e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -1.1175870895385743e-8,
+                "y": -4.656612873077393e-10,
+                "z": -9.033828973770142e-8,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Left_UpperLeg",
+            "path": "Armature/Hips/Left_UpperLeg",
+            "parentPath": "Armature/Hips",
+            "localPosition": {
+                "x": 0.0038304287008941175,
+                "y": -0.022982697933912278,
+                "z": -0.04979563504457474
+            },
+            "localScale": {
+                "x": 1.000001311302185,
+                "y": 1.000000238418579,
+                "z": 1.0000237226486207
+            },
+            "localRotation": {
+                "x": 0.9828948378562927,
+                "y": -0.06661105901002884,
+                "z": 0.16181543469429017,
+                "w": 0.05741458013653755
+            }
+        },
+        {
+            "name": "Left_LowerLeg",
+            "path": "Armature/Hips/Left_UpperLeg/Left_LowerLeg",
+            "parentPath": "Armature/Hips/Left_UpperLeg",
+            "localPosition": {
+                "x": 6.51925802230835e-9,
+                "y": 0.22680550813674928,
+                "z": -1.5832483768463136e-8
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -0.0028555686585605146,
+                "y": 0.052118003368377689,
+                "z": -0.12464038282632828,
+                "w": 0.9908281564712524
+            }
+        },
+        {
+            "name": "Left_Foot",
+            "path": "Armature/Hips/Left_UpperLeg/Left_LowerLeg/Left_Foot",
+            "parentPath": "Armature/Hips/Left_UpperLeg/Left_LowerLeg",
+            "localPosition": {
+                "x": 2.7939677238464357e-9,
+                "y": 0.23568832874298097,
+                "z": -3.725290298461914e-9
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 1.0000001192092896,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": 0.24098040163516999,
+                "y": -0.3841884732246399,
+                "z": 0.44539105892181399,
+                "w": 0.771980881690979
+            }
+        },
+        {
+            "name": "Left_Toes",
+            "path": "Armature/Hips/Left_UpperLeg/Left_LowerLeg/Left_Foot/Left_Toes",
+            "parentPath": "Armature/Hips/Left_UpperLeg/Left_LowerLeg/Left_Foot",
+            "localPosition": {
+                "x": 8.381903171539307e-9,
+                "y": 0.07699073106050492,
+                "z": -1.955777406692505e-8
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 0.9999998807907105,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 0.3392440974712372,
+                "y": -0.30582714080810549,
+                "z": 0.11396237462759018,
+                "w": 0.8822674751281738
+            }
+        },
+        {
+            "name": "Left_ToesEnd",
+            "path": "Armature/Hips/Left_UpperLeg/Left_LowerLeg/Left_Foot/Left_Toes/Left_ToesEnd",
+            "parentPath": "Armature/Hips/Left_UpperLeg/Left_LowerLeg/Left_Foot/Left_Toes",
+            "localPosition": {
+                "x": -1.123407855629921e-8,
+                "y": 0.03360137343406677,
+                "z": -2.1827872842550279e-10
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -5.602486918832028e-9,
+                "y": 0.000005616719136014581,
+                "z": 9.161887248865242e-8,
+                "w": 1.0
+            }
+        },
+        {
+            "name": "Right_UpperLeg",
+            "path": "Armature/Hips/Right_UpperLeg",
+            "parentPath": "Armature/Hips",
+            "localPosition": {
+                "x": 0.0038304333575069906,
+                "y": -0.022982675582170488,
+                "z": 0.049795616418123248
+            },
+            "localScale": {
+                "x": 1.0000001192092896,
+                "y": 1.0000001192092896,
+                "z": 1.0000251531600953
+            },
+            "localRotation": {
+                "x": 0.9890298843383789,
+                "y": -0.12505090236663819,
+                "z": -0.03886766731739044,
+                "w": 0.06834857910871506
+            }
+        },
+        {
+            "name": "Right_LowerLeg",
+            "path": "Armature/Hips/Right_UpperLeg/Right_LowerLeg",
+            "parentPath": "Armature/Hips/Right_UpperLeg",
+            "localPosition": {
+                "x": -9.313225746154785e-9,
+                "y": 0.22680538892745973,
+                "z": 0.0
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0000001192092896,
+                "z": 0.9999999403953552
+            },
+            "localRotation": {
+                "x": 0.01589127816259861,
+                "y": 0.0494130477309227,
+                "z": -0.5971163511276245,
+                "w": 0.8004735708236694
+            }
+        },
+        {
+            "name": "Right_Foot",
+            "path": "Armature/Hips/Right_UpperLeg/Right_LowerLeg/Right_Foot",
+            "parentPath": "Armature/Hips/Right_UpperLeg/Right_LowerLeg",
+            "localPosition": {
+                "x": -1.0244548320770264e-8,
+                "y": 0.23568835854530335,
+                "z": 1.3969838619232178e-9
+            },
+            "localScale": {
+                "x": 0.9999999403953552,
+                "y": 0.9999999403953552,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": 0.16593249142169953,
+                "y": -0.5531677603721619,
+                "z": 0.3826606869697571,
+                "w": 0.7211398482322693
+            }
+        },
+        {
+            "name": "Right_Toes",
+            "path": "Armature/Hips/Right_UpperLeg/Right_LowerLeg/Right_Foot/Right_Toes",
+            "parentPath": "Armature/Hips/Right_UpperLeg/Right_LowerLeg/Right_Foot",
+            "localPosition": {
+                "x": 6.51925802230835e-9,
+                "y": 0.07699073851108551,
+                "z": -1.30385160446167e-8
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0000001192092896,
+                "z": 1.0000001192092896
+            },
+            "localRotation": {
+                "x": 0.3774205446243286,
+                "y": -0.28445953130722048,
+                "z": 0.12262896448373795,
+                "w": 0.8726962208747864
+            }
+        },
+        {
+            "name": "Right_ToesEnd",
+            "path": "Armature/Hips/Right_UpperLeg/Right_LowerLeg/Right_Foot/Right_Toes/Right_ToesEnd",
+            "parentPath": "Armature/Hips/Right_UpperLeg/Right_LowerLeg/Right_Foot/Right_Toes",
+            "localPosition": {
+                "x": -1.862645149230957e-9,
+                "y": 0.033601365983486179,
+                "z": -1.862645149230957e-9
+            },
+            "localScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "localRotation": {
+                "x": -9.313225746154786e-10,
+                "y": 0.00001702830195426941,
+                "z": 7.450581307466564e-8,
+                "w": 1.0
+            }
+        }
+    ],
+    "humanMapping": [
+        {
+            "humanName": "Hips",
+            "boneName": "Hips",
+            "path": "Armature/Hips"
+        },
+        {
+            "humanName": "LeftUpperLeg",
+            "boneName": "Left_UpperLeg",
+            "path": "Armature/Hips/Left_UpperLeg"
+        },
+        {
+            "humanName": "RightUpperLeg",
+            "boneName": "Right_UpperLeg",
+            "path": "Armature/Hips/Right_UpperLeg"
+        },
+        {
+            "humanName": "LeftLowerLeg",
+            "boneName": "Left_LowerLeg",
+            "path": "Armature/Hips/Left_UpperLeg/Left_LowerLeg"
+        },
+        {
+            "humanName": "RightLowerLeg",
+            "boneName": "Right_LowerLeg",
+            "path": "Armature/Hips/Right_UpperLeg/Right_LowerLeg"
+        },
+        {
+            "humanName": "LeftFoot",
+            "boneName": "Left_Foot",
+            "path": "Armature/Hips/Left_UpperLeg/Left_LowerLeg/Left_Foot"
+        },
+        {
+            "humanName": "RightFoot",
+            "boneName": "Right_Foot",
+            "path": "Armature/Hips/Right_UpperLeg/Right_LowerLeg/Right_Foot"
+        },
+        {
+            "humanName": "Spine",
+            "boneName": "Spine",
+            "path": "Armature/Hips/Spine"
+        },
+        {
+            "humanName": "Chest",
+            "boneName": "Chest",
+            "path": "Armature/Hips/Spine/Chest"
+        },
+        {
+            "humanName": "Neck",
+            "boneName": "Neck",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck"
+        },
+        {
+            "humanName": "Head",
+            "boneName": "Head",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head"
+        },
+        {
+            "humanName": "LeftShoulder",
+            "boneName": "Left_Shoulder",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder"
+        },
+        {
+            "humanName": "RightShoulder",
+            "boneName": "Right_Shoulder",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder"
+        },
+        {
+            "humanName": "LeftUpperArm",
+            "boneName": "Left_UpperArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm"
+        },
+        {
+            "humanName": "RightUpperArm",
+            "boneName": "Right_UpperArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm"
+        },
+        {
+            "humanName": "LeftLowerArm",
+            "boneName": "Left_LowerArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm"
+        },
+        {
+            "humanName": "RightLowerArm",
+            "boneName": "Right_LowerArm",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm"
+        },
+        {
+            "humanName": "LeftHand",
+            "boneName": "Left_Hand",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand"
+        },
+        {
+            "humanName": "RightHand",
+            "boneName": "Right_Hand",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand"
+        },
+        {
+            "humanName": "LeftToes",
+            "boneName": "Left_Toes",
+            "path": "Armature/Hips/Left_UpperLeg/Left_LowerLeg/Left_Foot/Left_Toes"
+        },
+        {
+            "humanName": "RightToes",
+            "boneName": "Right_Toes",
+            "path": "Armature/Hips/Right_UpperLeg/Right_LowerLeg/Right_Foot/Right_Toes"
+        },
+        {
+            "humanName": "LeftEye",
+            "boneName": "Left_Eye",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head/Left_Eye"
+        },
+        {
+            "humanName": "RightEye",
+            "boneName": "Right_Eye",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Neck/Head/Right_Eye"
+        },
+        {
+            "humanName": "Left Thumb Proximal",
+            "boneName": "Left_ThumbProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal"
+        },
+        {
+            "humanName": "Left Thumb Intermediate",
+            "boneName": "Left_ThumbIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate"
+        },
+        {
+            "humanName": "Left Thumb Distal",
+            "boneName": "Left_ThumbDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate/Left_ThumbDistal"
+        },
+        {
+            "humanName": "Left Index Proximal",
+            "boneName": "Left_IndexProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal"
+        },
+        {
+            "humanName": "Left Index Intermediate",
+            "boneName": "Left_IndexIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate"
+        },
+        {
+            "humanName": "Left Index Distal",
+            "boneName": "Left_IndexDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate/Left_IndexDistal"
+        },
+        {
+            "humanName": "Left Middle Proximal",
+            "boneName": "Left_MiddleProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal"
+        },
+        {
+            "humanName": "Left Middle Intermediate",
+            "boneName": "Left_MiddleIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate"
+        },
+        {
+            "humanName": "Left Middle Distal",
+            "boneName": "Left_MiddleDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate/Left_MiddleDistal"
+        },
+        {
+            "humanName": "Left Ring Proximal",
+            "boneName": "Left_RingProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal"
+        },
+        {
+            "humanName": "Left Ring Intermediate",
+            "boneName": "Left_RingIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate"
+        },
+        {
+            "humanName": "Left Ring Distal",
+            "boneName": "Left_RingDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate/Left_RingDistal"
+        },
+        {
+            "humanName": "Left Little Proximal",
+            "boneName": "Left_PinkyProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal"
+        },
+        {
+            "humanName": "Left Little Intermediate",
+            "boneName": "Left_PinkyIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate"
+        },
+        {
+            "humanName": "Left Little Distal",
+            "boneName": "Left_PinkyDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate/Left_PinkyDistal"
+        },
+        {
+            "humanName": "Right Thumb Proximal",
+            "boneName": "Right_ThumbProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal"
+        },
+        {
+            "humanName": "Right Thumb Intermediate",
+            "boneName": "Right_ThumbIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate"
+        },
+        {
+            "humanName": "Right Thumb Distal",
+            "boneName": "Right_ThumbDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate/Right_ThumbDistal"
+        },
+        {
+            "humanName": "Right Index Proximal",
+            "boneName": "Right_IndexProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal"
+        },
+        {
+            "humanName": "Right Index Intermediate",
+            "boneName": "Right_IndexIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate"
+        },
+        {
+            "humanName": "Right Index Distal",
+            "boneName": "Right_IndexDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate/Right_IndexDistal"
+        },
+        {
+            "humanName": "Right Middle Proximal",
+            "boneName": "Right_MiddleProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal"
+        },
+        {
+            "humanName": "Right Middle Intermediate",
+            "boneName": "Right_MiddleIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate"
+        },
+        {
+            "humanName": "Right Middle Distal",
+            "boneName": "Right_MiddleDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate/Right_MiddleDistal"
+        },
+        {
+            "humanName": "Right Ring Proximal",
+            "boneName": "Right_RingProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal"
+        },
+        {
+            "humanName": "Right Ring Intermediate",
+            "boneName": "Right_RingIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate"
+        },
+        {
+            "humanName": "Right Ring Distal",
+            "boneName": "Right_RingDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate/Right_RingDistal"
+        },
+        {
+            "humanName": "Right Little Proximal",
+            "boneName": "Right_PinkyProximal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal"
+        },
+        {
+            "humanName": "Right Little Intermediate",
+            "boneName": "Right_PinkyIntermediate",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate"
+        },
+        {
+            "humanName": "Right Little Distal",
+            "boneName": "Right_PinkyDistal",
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate/Right_PinkyDistal"
+        },
+        {
+            "humanName": "UpperChest",
+            "boneName": "UpperChest",
+            "path": "Armature/Hips/Spine/Chest/UpperChest"
+        }
+    ],
+    "fistJoints": [
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal",
+            "rotation": {
+                "x": -0.08187282830476761,
+                "y": -0.11140794306993485,
+                "z": 0.3900969326496124,
+                "w": 0.9103348851203919
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate",
+            "rotation": {
+                "x": -0.069024458527565,
+                "y": 0.20440101623535157,
+                "z": -0.3672533929347992,
+                "w": 0.9047545790672302
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate/Left_ThumbDistal",
+            "rotation": {
+                "x": 0.014358286745846272,
+                "y": 0.028261208906769754,
+                "z": -0.3447553813457489,
+                "w": 0.9381572008132935
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal",
+            "rotation": {
+                "x": -0.6603615283966065,
+                "y": -0.004451930522918701,
+                "z": 0.053342580795288089,
+                "w": 0.7490376830101013
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate",
+            "rotation": {
+                "x": -0.6339542269706726,
+                "y": -0.03636271134018898,
+                "z": -0.006113887764513493,
+                "w": 0.7724910974502564
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate/Left_IndexDistal",
+            "rotation": {
+                "x": -0.6055920720100403,
+                "y": -0.031146034598350526,
+                "z": -0.009189486503601075,
+                "w": 0.7951123714447022
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal",
+            "rotation": {
+                "x": -0.6635624766349793,
+                "y": 0.012742744758725167,
+                "z": 0.02914542332291603,
+                "w": 0.7474443316459656
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate",
+            "rotation": {
+                "x": -0.6341811418533325,
+                "y": -0.01706904172897339,
+                "z": -0.019904136657714845,
+                "w": 0.7727397680282593
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate/Left_MiddleDistal",
+            "rotation": {
+                "x": -0.6053272485733032,
+                "y": -0.027489781379699708,
+                "z": -0.028622567653656007,
+                "w": 0.7949868440628052
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal",
+            "rotation": {
+                "x": 0.6542428731918335,
+                "y": -0.06919120252132416,
+                "z": 0.08913999795913696,
+                "w": -0.7478188276290894
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate",
+            "rotation": {
+                "x": -0.6294673085212708,
+                "y": -0.04557150602340698,
+                "z": -0.0534195601940155,
+                "w": 0.7738478183746338
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate/Left_RingDistal",
+            "rotation": {
+                "x": -0.6016541123390198,
+                "y": -0.043650273233652118,
+                "z": -0.05500064045190811,
+                "w": 0.7956644892692566
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal",
+            "rotation": {
+                "x": 0.6385066509246826,
+                "y": -0.10303042829036713,
+                "z": 0.15135492384433747,
+                "w": -0.7475196719169617
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate",
+            "rotation": {
+                "x": -0.6264182925224304,
+                "y": -0.06466544419527054,
+                "z": -0.0730142667889595,
+                "w": 0.7733612060546875
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate/Left_PinkyDistal",
+            "rotation": {
+                "x": -0.5994629263877869,
+                "y": -0.049715250730514529,
+                "z": -0.06749358773231507,
+                "w": 0.7960007786750794
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal",
+            "rotation": {
+                "x": -0.36180201172828677,
+                "y": 0.2929646968841553,
+                "z": -0.1742652803659439,
+                "w": -0.8676996231079102
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate",
+            "rotation": {
+                "x": 0.2609131336212158,
+                "y": -0.18208108842372895,
+                "z": 0.26803818345069888,
+                "w": -0.9093549251556397
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate/Right_ThumbDistal",
+            "rotation": {
+                "x": 0.18957407772541047,
+                "y": 0.027000073343515397,
+                "z": 0.2885268032550812,
+                "w": -0.9381284713745117
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal",
+            "rotation": {
+                "x": -0.6359824538230896,
+                "y": -0.10979253053665161,
+                "z": 0.17040841281414033,
+                "w": -0.7446025609970093
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate",
+            "rotation": {
+                "x": -0.6214682459831238,
+                "y": -0.03308647871017456,
+                "z": 0.12696829438209535,
+                "w": -0.7723740339279175
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate/Right_IndexDistal",
+            "rotation": {
+                "x": -0.5930018424987793,
+                "y": -0.029447391629219056,
+                "z": 0.12398754805326462,
+                "w": -0.7950526475906372
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal",
+            "rotation": {
+                "x": -0.6300328969955444,
+                "y": -0.11022645235061646,
+                "z": 0.1895785629749298,
+                "w": -0.7449621558189392
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate",
+            "rotation": {
+                "x": -0.6270371079444885,
+                "y": -0.0463302880525589,
+                "z": 0.09217431396245957,
+                "w": -0.772128164768219
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate/Right_MiddleDistal",
+            "rotation": {
+                "x": -0.6005222797393799,
+                "y": -0.0321357399225235,
+                "z": 0.07795775681734085,
+                "w": -0.7951496243476868
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal",
+            "rotation": {
+                "x": 0.5971120595932007,
+                "y": 0.11387275904417038,
+                "z": -0.24659684300422669,
+                "w": 0.7547716498374939
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate",
+            "rotation": {
+                "x": -0.6277837753295898,
+                "y": -0.047233909368515018,
+                "z": 0.04625760018825531,
+                "w": -0.7755750417709351
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate/Right_RingDistal",
+            "rotation": {
+                "x": -0.6019753217697144,
+                "y": -0.04568895697593689,
+                "z": 0.04778401553630829,
+                "w": -0.7957732677459717
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal",
+            "rotation": {
+                "x": 0.6005345582962036,
+                "y": 0.11537036299705506,
+                "z": -0.2602253556251526,
+                "w": 0.7472153306007385
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate",
+            "rotation": {
+                "x": -0.6317260265350342,
+                "y": -0.044838935136795047,
+                "z": 0.014251954853534699,
+                "w": -0.773762583732605
+            }
+        },
+        {
+            "path": "Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate/Right_PinkyDistal",
+            "rotation": {
+                "x": -0.6041661500930786,
+                "y": -0.04218503460288048,
+                "z": 0.015473177656531334,
+                "w": -0.7955905199050903
+            }
+        }
+    ],
+    "contacts": [
+        {
+            "moveId": "jab",
+            "phase": 0.30000001192092898,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": -3.863271951675415
+        },
+        {
+            "moveId": "cross",
+            "phase": 0.21666666865348817,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": 10.381098747253418
+        },
+        {
+            "moveId": "hook",
+            "phase": 0.3166666626930237,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": -33.20330047607422
+        },
+        {
+            "moveId": "body",
+            "phase": 0.4333333373069763,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 16.87892723083496
+        },
+        {
+            "moveId": "frontKick",
+            "phase": 0.5166666507720947,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": -10.06777286529541
+        },
+        {
+            "moveId": "lowKick",
+            "phase": 0.21666666865348817,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 47.8247184753418
+        },
+        {
+            "moveId": "uppercut",
+            "phase": 0.6499999761581421,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": -32.30602264404297
+        },
+        {
+            "moveId": "knee",
+            "phase": 0.38333332538604739,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": -10.340276718139649
+        },
+        {
+            "moveId": "elbow",
+            "phase": 0.2666666805744171,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": -6.5879106521606449
+        },
+        {
+            "moveId": "spinKick",
+            "phase": 0.30000001192092898,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": 46.97115707397461
+        },
+        {
+            "moveId": "jumpKick",
+            "phase": 0.3499999940395355,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": -1.138672113418579
+        },
+        {
+            "moveId": "backfist",
+            "phase": 0.4166666567325592,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 55.04322052001953
+        },
+        {
+            "moveId": "axeKick",
+            "phase": 0.3166666626930237,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 33.749351501464847
+        },
+        {
+            "moveId": "sideKick",
+            "phase": 0.2666666805744171,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": -7.339845180511475
+        },
+        {
+            "moveId": "roundhouseKick",
+            "phase": 0.5166666507720947,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 9.733197212219239
+        },
+        {
+            "moveId": "hammer",
+            "phase": 0.3166666626930237,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 27.779306411743165
+        },
+        {
+            "moveId": "palm",
+            "phase": 0.36666667461395266,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": -40.1993408203125
+        },
+        {
+            "moveId": "heelKick",
+            "phase": 0.30000001192092898,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 24.199230194091798
+        },
+        {
+            "moveId": "switchKick",
+            "phase": 0.30000001192092898,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": -23.11123275756836
+        },
+        {
+            "moveId": "highKick",
+            "phase": 0.5,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": 6.80135440826416
+        },
+        {
+            "moveId": "shortHook",
+            "phase": 0.3166666626930237,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": 5.564026832580566
+        },
+        {
+            "moveId": "doublePunch",
+            "phase": 0.23333333432674409,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 2,
+            "headingOffset": -118.63169860839844
+        },
+        {
+            "moveId": "stepKick",
+            "phase": 0.3499999940395355,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": 1.702096939086914
+        },
+        {
+            "moveId": "counterstrike",
+            "phase": 0.4000000059604645,
+            "start": 0.0,
+            "end": 1.0,
+            "strikeSide": 1,
+            "headingOffset": 63.445404052734378
+        }
+    ],
+    "targetFistAvatarMatches": true,
+    "triangles": 100000,
+    "vertices": 59791,
+    "supportVertices": 96
+}

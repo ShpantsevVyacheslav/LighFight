@@ -1,0 +1,15 @@
+# Tripo roster integration
+
+Three new native Tripo models are bound to the review catalog: Bone index0, Island index3, Ranger index5. Rose index4 remains the earlier calibrated review candidate. Model meshes retain100000 triangles; each has67native bones/54Humanoid aliases. Avatar calibration preserves all original rest transforms and imported mesh/UV/bind/weight hashes. Target-specific30joint fists avoid copying another avatar's hand rotations. Rendered and inspected Island at844×390 in actual WebGL battle against Ranger; browser proof is in art/previews/tripo-playable/web-island-vs-ranger.png.
+
+Shared combat clips are post-Humanoid Meshy exports, retargeted onto each native Tripo avatar. They are NOT claimed as Tripo-native strikes. Target contact gates disable sweep for all three; Island/Ranger additionally disable spinKick/roundhouseKick, Bone roundhouseKick. Native clips exist separately but their whole transition acceptance remains open.
+
+Island original native-pack albedo is8192×8192. QA's earlier4096 import cap was reproduced in main, then fixed through TextureImporter default/platform settings and validated using loadedTexture dimensions. Ranger/Bone albedo is4096, their normals1024 and packed metal/smooth2048. Island normal2048 and packed map4096. Exact raw maps copied; only metal/smooth channel packing is derived. No new provider credits spent.
+
+Corrected phase shoe gates: Island113support points,maxerror.494mm; Ranger134,.384mm; Bone96,.456mm. Earlier half-frame claims using Animator.Update withspeed0 were invalid and withdrawn; refreshed audits assert actual source normalized-time advancement. Large old-proxy minimum gaps can be airborne and are not equivalent to floor penetration.
+
+Verification: full Unity156/156 passed before the intentional8K reduction mutation. Final restored run and catalog promotion evidence will be recorded below. Phone/per-character performance, final lighting/art, full eight-character roster and native-support transitions remain unfinished.
+
+Main GameContent now binds indices0/3/4/5 to these calibrated Tripo prefabs; the remaining four slots are unchanged. Full restored Unity run156/156 passes, including review/shipping catalog identity and8K loaded-texture guard. Intentional importer max4096 mutation fails1/1 as expected, then exact original meta restored. The first restored attempt produced no XML because the Unity Package Manager IPC server failed to start; retry completed normally. Standalone JavaScript combat21/21 passes. Browser WebGL build succeeded at8K before this catalog promotion (its review catalog already contains the same models). iOS artifact/device delivery not yet done.
+
+Self-review: removed shared clip duplication from the three copied packets; all builders reference the same post-Humanoid clips. Caught QA's4K import cap despite unchanged8K source bytes, fixed effective TextureImporter settings and added mutation-tested guard. Did not claim large airborne shoe minima were floor penetration. Native support/complete roster/performance gates stay open.
