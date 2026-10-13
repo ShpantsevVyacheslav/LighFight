@@ -1,0 +1,574 @@
+{
+  "schema": "rose-spatial-reconstruction/v1",
+  "blender_version": "4.2.22 LTS",
+  "inputs": {
+    "source": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/rose-tripo-v1/original.glb",
+    "donor": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/rose-tripo-v1/unity-pack/tripo_convert_fbd6ea7e-51f1-4d2b-862f-11e9d15b1b6e.fbx",
+    "sha256": {
+      "source": "3b1fc867cc390417f27dea6a5cfadb761a4f199f8c05924e62315fe8291d70d8",
+      "donor": "7f3035f381bf0896cdad64c38c8237ec3dc7253b49f852a602771ce83b2e04c4"
+    }
+  },
+  "parameters": {
+    "source": "art/source/rose-tripo-v1/original.glb",
+    "donor": "art/source/rose-tripo-v1/unity-pack/tripo_convert_fbd6ea7e-51f1-4d2b-862f-11e9d15b1b6e.fbx",
+    "out": ".tools/tripo-dense-review/reproducible-run",
+    "overwrite": false,
+    "sigma_height": 0.007,
+    "neighbors": 48,
+    "min_weight": 1e-06,
+    "stable_low": 0.75,
+    "stable_high": 0.95,
+    "batch_size": 5000,
+    "max_align_p99_height": 0.001,
+    "max_align_max_height": 0.002,
+    "metrics_samples": 50000,
+    "pose": null,
+    "export_fbx": true
+  },
+  "height": 0.979339599609375,
+  "source_preservation": {
+    "vertices": 952961,
+    "polygons": 1865580,
+    "triangles": 1865580,
+    "corners": 5596740,
+    "positions_sha256": "a1340d1c34f55b683beb0888702b898ed56653bf4061335dfc76a5df34004873",
+    "triangle_corner_indices_sha256": "7c5fd8bbbf9aec7fd50011e036287f1db261dae6e3a7cffd13239b17b8823e24",
+    "polygon_sizes_sha256": "deaeedd6e545d23b3acb0550d8a384ff8dba52baad63790eb8aab94c8c5fd937",
+    "material_indices_sha256": "579ce025beada3437a6bd8c4fbb2202240895fccd6fd8bffe43c820747d66d46",
+    "uv_sha256": {
+      "UVMap": "4c30d47509914d1e98d87c33c72dfc4bc3edebf4924de5958bb073a71ab59e63"
+    },
+    "object_world_matrix_sha256": "ccc7977ae7987f37c2235e57c320a5142d6b58413825b6457a4a1c9fe469ac1c"
+  },
+  "source_material_sha256": "5e2903aff478c299b15ab166fde1a25821e8c41745fdcb01bf183d8145697894",
+  "native_bind_preservation": {
+    "bone_count": 67,
+    "local_rest_matrices_sha256": "ae344c8d1d6dcbffd7a58c1b1e20720aa559f5b4898aa9ea7f38ef138f495de5",
+    "parent_names": {
+      "Hips": null,
+      "Spine": "Hips",
+      "Chest": "Spine",
+      "UpperChest": "Chest",
+      "Neck": "UpperChest",
+      "Neck_Twist_A": "Neck",
+      "Head": "Neck",
+      "Left_Eye": "Head",
+      "Right_Eye": "Head",
+      "Left_Shoulder": "UpperChest",
+      "Left_UpperArm": "Left_Shoulder",
+      "Left_LowerArm": "Left_UpperArm",
+      "Left_Hand": "Left_LowerArm",
+      "Left_ThumbProximal": "Left_Hand",
+      "Left_ThumbIntermediate": "Left_ThumbProximal",
+      "Left_ThumbDistal": "Left_ThumbIntermediate",
+      "Left_ThumbDistalEnd": "Left_ThumbDistal",
+      "Left_IndexProximal": "Left_Hand",
+      "Left_IndexIntermediate": "Left_IndexProximal",
+      "Left_IndexDistal": "Left_IndexIntermediate",
+      "Left_IndexDistalEnd": "Left_IndexDistal",
+      "Left_MiddleProximal": "Left_Hand",
+      "Left_MiddleIntermediate": "Left_MiddleProximal",
+      "Left_MiddleDistal": "Left_MiddleIntermediate",
+      "Left_MiddleDistalEnd": "Left_MiddleDistal",
+      "Left_RingProximal": "Left_Hand",
+      "Left_RingIntermediate": "Left_RingProximal",
+      "Left_RingDistal": "Left_RingIntermediate",
+      "Left_RingDistalEnd": "Left_RingDistal",
+      "Left_PinkyProximal": "Left_Hand",
+      "Left_PinkyIntermediate": "Left_PinkyProximal",
+      "Left_PinkyDistal": "Left_PinkyIntermediate",
+      "Left_PinkyDistalEnd": "Left_PinkyDistal",
+      "Right_Shoulder": "UpperChest",
+      "Right_UpperArm": "Right_Shoulder",
+      "Right_LowerArm": "Right_UpperArm",
+      "Right_Hand": "Right_LowerArm",
+      "Right_ThumbProximal": "Right_Hand",
+      "Right_ThumbIntermediate": "Right_ThumbProximal",
+      "Right_ThumbDistal": "Right_ThumbIntermediate",
+      "Right_ThumbDistalEnd": "Right_ThumbDistal",
+      "Right_IndexProximal": "Right_Hand",
+      "Right_IndexIntermediate": "Right_IndexProximal",
+      "Right_IndexDistal": "Right_IndexIntermediate",
+      "Right_IndexDistalEnd": "Right_IndexDistal",
+      "Right_MiddleProximal": "Right_Hand",
+      "Right_MiddleIntermediate": "Right_MiddleProximal",
+      "Right_MiddleDistal": "Right_MiddleIntermediate",
+      "Right_MiddleDistalEnd": "Right_MiddleDistal",
+      "Right_RingProximal": "Right_Hand",
+      "Right_RingIntermediate": "Right_RingProximal",
+      "Right_RingDistal": "Right_RingIntermediate",
+      "Right_RingDistalEnd": "Right_RingDistal",
+      "Right_PinkyProximal": "Right_Hand",
+      "Right_PinkyIntermediate": "Right_PinkyProximal",
+      "Right_PinkyDistal": "Right_PinkyIntermediate",
+      "Right_PinkyDistalEnd": "Right_PinkyDistal",
+      "Left_UpperLeg": "Hips",
+      "Left_LowerLeg": "Left_UpperLeg",
+      "Left_Foot": "Left_LowerLeg",
+      "Left_Toes": "Left_Foot",
+      "Left_ToesEnd": "Left_Toes",
+      "Right_UpperLeg": "Hips",
+      "Right_LowerLeg": "Right_UpperLeg",
+      "Right_Foot": "Right_LowerLeg",
+      "Right_Toes": "Right_Foot",
+      "Right_ToesEnd": "Right_Toes"
+    },
+    "armature_world_matrix_sha256": "ada6a147b7eb5afd405f829c4cbe91737b2058e9da7587da0195332ad7ade501"
+  },
+  "rest_alignment": {
+    "distance": {
+      "p50": 3.444726826273836e-05,
+      "p95": 0.00010763340105768293,
+      "p99": 0.00014986319001764064,
+      "max": 0.0004152206238359213
+    },
+    "normalized_height": {
+      "p50": 3.517397670478984e-05,
+      "p95": 0.00010990406300389999,
+      "p99": 0.0001530247424666744,
+      "max": 0.00042398022504301733
+    }
+  },
+  "stable_groups": [
+    "Neck",
+    "Neck_Twist_A",
+    "Head",
+    "Left_Hand",
+    "Left_ThumbProximal",
+    "Left_ThumbIntermediate",
+    "Left_ThumbDistal",
+    "Left_ThumbDistalEnd",
+    "Left_IndexProximal",
+    "Left_IndexIntermediate",
+    "Left_IndexDistal",
+    "Left_MiddleProximal",
+    "Left_MiddleIntermediate",
+    "Left_MiddleDistal",
+    "Left_RingProximal",
+    "Left_RingIntermediate",
+    "Left_RingDistal",
+    "Left_RingDistalEnd",
+    "Left_PinkyProximal",
+    "Left_PinkyIntermediate",
+    "Left_PinkyDistal",
+    "Right_Hand",
+    "Right_ThumbProximal",
+    "Right_ThumbIntermediate",
+    "Right_ThumbDistal",
+    "Right_ThumbDistalEnd",
+    "Right_IndexProximal",
+    "Right_IndexIntermediate",
+    "Right_IndexDistal",
+    "Right_MiddleProximal",
+    "Right_MiddleIntermediate",
+    "Right_MiddleDistal",
+    "Right_MiddleDistalEnd",
+    "Right_RingProximal",
+    "Right_RingIntermediate",
+    "Right_RingDistal",
+    "Right_PinkyProximal",
+    "Right_PinkyIntermediate",
+    "Right_PinkyDistal",
+    "Left_Foot",
+    "Left_Toes",
+    "Left_ToesEnd",
+    "Right_Foot",
+    "Right_Toes",
+    "Right_ToesEnd"
+  ],
+  "weights": {
+    "unweighted": 0,
+    "max_influences": 8,
+    "weight_sum_max_error": 1.5870728020672686e-07
+  },
+  "original_maps": {
+    "images": [
+      {
+        "index": 0,
+        "original_name": "rose-h31-original_basecolor.jpg",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/original-image-0.jpg",
+        "bytes": 2737694,
+        "mime": "image/jpeg",
+        "sha256": "1adcea3596e4c52d9af684362dc1067ce45d98a6bd0ee44920523a7e3cce7688"
+      },
+      {
+        "index": 1,
+        "original_name": "rose-h31-original_rm.jpg",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/original-image-1.jpg",
+        "bytes": 1285618,
+        "mime": "image/jpeg",
+        "sha256": "ae534c3577b889cbcae1205c238bafcf5b6ba01b28d3c16da3fa08b590aa61b8"
+      },
+      {
+        "index": 2,
+        "original_name": "rose-h31-original_normal.png",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/original-image-2.png",
+        "bytes": 3431760,
+        "mime": "image/png",
+        "sha256": "de5ac48156e8c1c4c1c8a6b347818d8b2cf3bb77f2c31a7c6e834699a3f24da3"
+      }
+    ],
+    "source_material_metadata": [
+      {
+        "name": "tripo_material_d3b00fa4-8459-4e44-afdf-b930c8cd2482",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicRoughnessTexture": {
+            "index": 1
+          }
+        },
+        "normalTexture": {
+          "index": 2
+        }
+      }
+    ],
+    "source_texture_metadata": [
+      {
+        "source": 0,
+        "sampler": 0
+      },
+      {
+        "source": 1,
+        "sampler": 1
+      },
+      {
+        "source": 2,
+        "sampler": 2
+      }
+    ]
+  },
+  "poses": {
+    "box_02:24": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.999995948553796,
+            1.2747564150338417,
+            1.604857374015519,
+            4.278335615407756
+          ],
+          "edges_over_5": 0,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 6.192115688463673e-05,
+            "p95": 0.0005029847961850464,
+            "p99": 0.0012001986731775102,
+            "max": 0.008346451446413994
+          },
+          "normalized_height": {
+            "p50": 6.322746155606794e-05,
+            "p95": 0.000513595892972846,
+            "p99": 0.0012255183734592458,
+            "max": 0.00852253033548639
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999994692761793,
+            1.2832303938936842,
+            1.6233454467102548,
+            17.59507343575539
+          ],
+          "edges_over_5": 1090,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 3.8342599509633146e-05,
+            "p95": 0.0001468077207391616,
+            "p99": 0.0003187326801707951,
+            "max": 0.002694473136216402
+          },
+          "normalized_height": {
+            "p50": 3.91514848627858e-05,
+            "p95": 0.0001499048142214592,
+            "p99": 0.0003254567468709798,
+            "max": 0.002751316435372505
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.999994812420745,
+            1.2409668908954787,
+            1.5076151801439748,
+            17.46612799464259
+          ],
+          "edges_over_5": 57,
+          "edge_count": 150000
+        }
+      }
+    },
+    "box_02:44": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999989696573949,
+            1.2241335819723895,
+            1.4926452077500327,
+            3.314141663815787
+          ],
+          "edges_over_5": 0,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 5.7479537645122036e-05,
+            "p95": 0.00041758061706786975,
+            "p99": 0.0010251711762975888,
+            "max": 0.006680714897811413
+          },
+          "normalized_height": {
+            "p50": 5.8692140773280944e-05,
+            "p95": 0.00042639000529992696,
+            "p99": 0.0010467984514324698,
+            "max": 0.006821652979697871
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            1.0000013086896764,
+            1.232457172187556,
+            1.508672180210566,
+            12.771425606787478
+          ],
+          "edges_over_5": 386,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 3.777574784180615e-05,
+            "p95": 0.00013450107508106157,
+            "p99": 0.00027185689541511137,
+            "max": 0.003048710757866502
+          },
+          "normalized_height": {
+            "p50": 3.857267474619999e-05,
+            "p95": 0.000137338544397377,
+            "p99": 0.0002775920584887467,
+            "max": 0.0031130271451113873
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999964630259773,
+            1.1958861055721632,
+            1.4375125996416511,
+            12.594786089006627
+          ],
+          "edges_over_5": 28,
+          "edge_count": 150000
+        }
+      }
+    },
+    "front_kick_01:24": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999939688081664,
+            1.25632890891628,
+            1.603088112108261,
+            5.124275642200459
+          ],
+          "edges_over_5": 5,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 5.521028288058005e-05,
+            "p95": 0.00047271314542740583,
+            "p99": 0.0011167209071572836,
+            "max": 0.011445954442024231
+          },
+          "normalized_height": {
+            "p50": 5.637501322585296e-05,
+            "p95": 0.00048268562367533686,
+            "p99": 0.0011402795389900554,
+            "max": 0.011687421244468855
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999996243377647,
+            1.2692964243063294,
+            1.6357581216618071,
+            20.442680688536715
+          ],
+          "edges_over_5": 774,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 3.665302392619196e-05,
+            "p95": 0.0001286948572669644,
+            "p99": 0.00025536674220347753,
+            "max": 0.0017563370056450367
+          },
+          "normalized_height": {
+            "p50": 3.7426265557740745e-05,
+            "p95": 0.00013140983711706986,
+            "p99": 0.00026075402475845416,
+            "max": 0.0017933891434039626
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            1.000000230736593,
+            1.2401794226426857,
+            1.5303543315860746,
+            14.1300990275282
+          ],
+          "edges_over_5": 40,
+          "edge_count": 150000
+        }
+      }
+    },
+    "front_kick_01:34": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999891548860281,
+            1.257841673340395,
+            1.5878282798463688,
+            4.538712099857424
+          ],
+          "edges_over_5": 0,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 5.588401290879119e-05,
+            "p95": 0.0004919285420328379,
+            "p99": 0.0011355537921190256,
+            "max": 0.011963398195803165
+          },
+          "normalized_height": {
+            "p50": 5.706295643623663e-05,
+            "p95": 0.0005023063932358615,
+            "p99": 0.0011595097273427513,
+            "max": 0.012215781124928425
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999965864498972,
+            1.2687865209781162,
+            1.6079814852335217,
+            21.562196182188387
+          ],
+          "edges_over_5": 828,
+          "edge_count": 2818409
+        },
+        "donor_surface_distance": {
+          "samples": 50156,
+          "distance": {
+            "p50": 3.6871091651846655e-05,
+            "p95": 0.00013151447637937963,
+            "p99": 0.00026612102374201597,
+            "max": 0.001756348181515932
+          },
+          "normalized_height": {
+            "p50": 3.764893369629215e-05,
+            "p95": 0.00013428893964038242,
+            "p99": 0.00027173518138974724,
+            "max": 0.0017934005550439083
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999996680970824,
+            1.2376419855336072,
+            1.5232872677866522,
+            14.511600927583215
+          ],
+          "edges_over_5": 43,
+          "edge_count": 150000
+        }
+      }
+    }
+  },
+  "blend": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial.blend",
+  "visual_status": "Parameter reproduction only; consult reviewed SPATIAL_REPORT.md. No automatic visual acceptance.",
+  "elapsed_seconds": 367.6799659729004,
+  "fbx": {
+    "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbx",
+    "bytes": 110217516,
+    "sha256": "0a54b55cfd70cb208c16cfafe5760845100c7410e06afc0ed5663631db408917",
+    "animation": "rig-only; actions remain in blend/provider FBX",
+    "material_limit": "Original packed RM map must be assigned explicitly; G=roughness, B=metallic"
+  },
+  "packaged_script_sha256": "932f7af5ad1bfb71e51e8dc831f14e6e8af38ee61cf27ee71a305e831a871814",
+  "package_validation": {
+    "reference_weight_sha256": "2e5b72a1fc1ee9a4becef800e91abaa0361a8e07decbf246c01294bad9ba6aaa",
+    "reproduced_weight_sha256": "2e5b72a1fc1ee9a4becef800e91abaa0361a8e07decbf246c01294bad9ba6aaa",
+    "max_weight_difference": 0.0,
+    "entries_differing_over_1e_7": 0,
+    "final_exporter": {
+      "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbx",
+      "bytes": 110217516,
+      "sha256": "0a54b55cfd70cb208c16cfafe5760845100c7410e06afc0ed5663631db408917",
+      "animation": "rig-only; actions remain in blend/provider FBX",
+      "material_limit": "Original packed RM map must be assigned explicitly; G=roughness, B=metallic"
+    },
+    "external_export_images": [
+      {
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/rose-h31-original_basecolor.jpg",
+        "sha256": "1adcea3596e4c52d9af684362dc1067ce45d98a6bd0ee44920523a7e3cce7688"
+      },
+      {
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/rose-h31-original_normal.png",
+        "sha256": "de5ac48156e8c1c4c1c8a6b347818d8b2cf3bb77f2c31a7c6e834699a3f24da3"
+      },
+      {
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/original-image-0.jpg",
+        "sha256": "1adcea3596e4c52d9af684362dc1067ce45d98a6bd0ee44920523a7e3cce7688"
+      },
+      {
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/original-image-2.png",
+        "sha256": "de5ac48156e8c1c4c1c8a6b347818d8b2cf3bb77f2c31a7c6e834699a3f24da3"
+      }
+    ],
+    "safety": {
+      "reject_input_containing_output": {
+        "passed": true,
+        "reason": "Output must not contain input files"
+      },
+      "reject_unowned_nonempty_output": {
+        "passed": true,
+        "reason": "Nonempty output requires --overwrite and a manifest owned by this script"
+      },
+      "reject_linked_owned_output": {
+        "passed": true,
+        "reason": "Output contains linked files; refuse potential writes outside owned output"
+      },
+      "sentinel_unchanged": true
+    }
+  }
+}

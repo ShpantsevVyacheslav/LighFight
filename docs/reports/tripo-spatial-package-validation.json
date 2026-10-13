@@ -1,0 +1,46 @@
+{
+  "reference_weight_sha256": "2e5b72a1fc1ee9a4becef800e91abaa0361a8e07decbf246c01294bad9ba6aaa",
+  "reproduced_weight_sha256": "2e5b72a1fc1ee9a4becef800e91abaa0361a8e07decbf246c01294bad9ba6aaa",
+  "max_weight_difference": 0.0,
+  "entries_differing_over_1e_7": 0,
+  "final_exporter": {
+    "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbx",
+    "bytes": 110217516,
+    "sha256": "0a54b55cfd70cb208c16cfafe5760845100c7410e06afc0ed5663631db408917",
+    "animation": "rig-only; actions remain in blend/provider FBX",
+    "material_limit": "Original packed RM map must be assigned explicitly; G=roughness, B=metallic"
+  },
+  "external_export_images": [
+    {
+      "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/rose-h31-original_basecolor.jpg",
+      "sha256": "1adcea3596e4c52d9af684362dc1067ce45d98a6bd0ee44920523a7e3cce7688"
+    },
+    {
+      "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/rose-h31-original_normal.png",
+      "sha256": "de5ac48156e8c1c4c1c8a6b347818d8b2cf3bb77f2c31a7c6e834699a3f24da3"
+    },
+    {
+      "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/original-image-0.jpg",
+      "sha256": "1adcea3596e4c52d9af684362dc1067ce45d98a6bd0ee44920523a7e3cce7688"
+    },
+    {
+      "path": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/reproducible-run/rose-original-dense-native-spatial-rig.fbm/original-image-2.png",
+      "sha256": "de5ac48156e8c1c4c1c8a6b347818d8b2cf3bb77f2c31a7c6e834699a3f24da3"
+    }
+  ],
+  "safety": {
+    "reject_input_containing_output": {
+      "passed": true,
+      "reason": "Output must not contain input files"
+    },
+    "reject_unowned_nonempty_output": {
+      "passed": true,
+      "reason": "Nonempty output requires --overwrite and a manifest owned by this script"
+    },
+    "reject_linked_owned_output": {
+      "passed": true,
+      "reason": "Output contains linked files; refuse potential writes outside owned output"
+    },
+    "sentinel_unchanged": true
+  }
+}
