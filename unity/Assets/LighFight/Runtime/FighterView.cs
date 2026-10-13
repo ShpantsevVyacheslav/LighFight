@@ -207,7 +207,7 @@ namespace LighFight.Runtime
         }
         public Vector3 BonePoint(string name,Vector3 fallback)
         {
-            if(contactBones==null){contactBones=new System.Collections.Generic.Dictionary<string,Transform>();foreach(var t in GetComponentsInChildren<Transform>()){if(!contactBones.ContainsKey(t.name))contactBones.Add(t.name,t);string canonical=t.name.Substring(t.name.LastIndexOf(':')+1);if(!contactBones.ContainsKey(canonical))contactBones.Add(canonical,t);}}
+            if(contactBones==null){contactBones=new System.Collections.Generic.Dictionary<string,Transform>();foreach(var t in GetComponentsInChildren<Transform>()){if(!contactBones.ContainsKey(t.name))contactBones.Add(t.name,t);string canonical=NativeRigBones.CanonicalName(t.name);if(!contactBones.ContainsKey(canonical))contactBones.Add(canonical,t);}}
             if(contactBones.TryGetValue(name,out var bone))return bone.position;
             if(animator!=null)return new Vector3(float.NaN,float.NaN,float.NaN);
             switch(name){case "LeftHand":return foreL.TransformPoint(0,-.30f,0);case "RightHand":return foreR.TransformPoint(0,-.30f,0);case "LeftForeArm":return foreL.position;case "RightForeArm":return foreR.position;case "LeftToeBase":case "LeftFoot":return shinL.TransformPoint(0,-.36f,.065f);case "RightToeBase":case "RightFoot":return shinR.TransformPoint(0,-.36f,.065f);case "LeftLeg":return shinL.position;case "RightLeg":return shinR.position;case "Head":return head.position;case "Spine":return chest.TransformPoint(0,.16f,0);case "Hips":return hips.position;}
