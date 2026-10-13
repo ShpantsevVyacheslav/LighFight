@@ -49,6 +49,7 @@ namespace LighFight.Runtime
             camera.transform.position = new Vector3(0, 1.6f, -FitCameraDistance(match.A.X,match.B.X,camera.aspect));
             camera.fieldOfView = 42;
             camera.gameObject.AddComponent<AudioListener>();fightCamera=camera;
+            camera.gameObject.AddComponent<FittedFilmicCamera>().filmicShader=Resources.Load<Shader>("Shaders/FittedFilmic");
             feedback=gameObject.AddComponent<HitFeedback>();
             camera.backgroundColor = new Color(.08f,.09f,.12f);
             camera.transform.LookAt(new Vector3(0, 1, 0));

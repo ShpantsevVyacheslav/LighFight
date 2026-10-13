@@ -56,7 +56,7 @@ namespace LighFight.Runtime
    if(!tracked)strikeGesture.Cancel();
   }
   private void SubmitGesture(int move){if(move<0||move>=Moves.All.Length||(player.UsesNativeMotion&&!player.HasNativeMotion(Moves.All[move].Id)))return;if(selecting){if(previewMove>=0)return;previewMove=move;previewFrame=0;previewFighter.Attack=null;}else pendingAttack=move;}
-  private void Disc(Rect rect,Color color){if(circle==null){circle=new Texture2D(64,64,TextureFormat.RGBA32,false);circle.hideFlags=HideFlags.HideAndDontSave;for(int y=0;y<64;y++)for(int x=0;x<64;x++)circle.SetPixel(x,y,new Color(1,1,1,Mathf.Clamp01(31.5f-new Vector2(x-31.5f,y-31.5f).magnitude)));circle.Apply();}var old=GUI.color;GUI.color=color;GUI.DrawTexture(rect,circle);GUI.color=old;}
+  private void Disc(Rect rect,Color color){if(circle==null){circle=new Texture2D(64,64,TextureFormat.RGBA32,false);circle.hideFlags=HideFlags.HideAndDontSave;for(int y=0;y<64;y++)for(int x=0;x<64;x++)circle.SetPixel(x,y,new Color(1,1,1,Mathf.Clamp01(31.5f-new Vector2(x-31.5f,y-31.5f).magnitude)));circle.Apply();}var old=GUI.color;GUI.color=InterfaceColor(color);GUI.DrawTexture(rect,circle);GUI.color=old;}
   private int MainAttackIndex(int button)=>attackBindings.Resolve(button,MainMove(button),attackModifier);
   private int MainMove(int button)
   {

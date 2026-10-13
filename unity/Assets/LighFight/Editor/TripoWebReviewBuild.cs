@@ -44,6 +44,7 @@ namespace LighFight.Editor {
    if(texture.width!=8192||texture.height!=8192)throw new InvalidOperationException("Island texture was reduced during import");
    Debug.Log("AGENT_RESULT Island original albedo preserved at "+texture.width+"x"+texture.height);
   }
+  public static void EnableFilmicReview(){PlayerSettings.colorSpace=ColorSpace.Linear;AssetDatabase.SaveAssets();Debug.Log("AGENT_RESULT Linear presentation enabled for full-scene review");}
   public static void VerifyCandidateBuildRepeatability() {
    PromoteReviewedRoster();var paths=new[]{Folder,"Assets/LighFight/Art/Drafts/TripoIslandPlayable","Assets/LighFight/Art/Drafts/TripoRangerPlayable","Assets/LighFight/Art/Drafts/TripoBonePlayable"}.SelectMany(folder=>Directory.GetFiles(folder,"*.controller")).ToArray();
    var before=paths.Select(File.ReadAllBytes).ToArray();PromoteReviewedRoster();
