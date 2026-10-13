@@ -20,3 +20,11 @@ Manual native UI validation was interrupted by computer-control state changes; d
 ## Self-check
 
 No paid credits spent, no Git push, no iPhone verification. Original sources retained. Rejected candidates are not promoted. Geometry preservation, visual deformation, material correctness and frame budget are independent gates.
+
+## Responsive Web player verification
+
+The WebGL module is installed and the local review build succeeds. The custom LighFightReview template fills the available canvas without the vendor desktop footer/fixed dimensions; the review build restores the previous template and compression settings. Bundled Noto Sans supplies Russian labels. Four portraits (Bone, Master, Rose, Ranger) were rendered from original Tripo sources; other roster replacements remain pending.
+
+At an explicit 844×390 browser viewport, verified roster → Rose preview → opponent chooser → actual courtyard battle. Shadows are visible. Saved `art/previews/tripo-playable/web-landscape-battle.png`. This is browser evidence on the Mac, not an iPhone performance test. The battle screenshot contains round end after the bot attacked; it does not prove the manual swipe's damage. The previously recorded actual-player physical-contact smoke remains the damage evidence.
+
+The 1,865,580-triangle dense candidate remains a separate quality experiment. Four-influence truncation is rejected: source geometry stayed exact but severe clothing ridges appeared. A 395-vertex sole-support proxy verified against 129,137 original shoe vertices across 2,694 animation samples reduces grounding cost about 26× (max sampled sole error 0.107mm). Actual dense player median 31.3ms / p95 41.4ms still fails reliable 30/60fps acceptance. Do not automatically promote or simplify this candidate. Full production roster, native motion provenance, material presentation and phone delivery remain unfinished.

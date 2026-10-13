@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>LighFight</title><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080d18}#game{display:block;width:100%;height:100%;touch-action:none}#loading{position:absolute;inset:0;display:grid;place-content:center;color:#f3f6ff;font:16px system-ui;text-align:center}progress{width:220px;margin-top:14px;accent-color:#ffaa29}#error{position:absolute;top:12px;left:12px;right:12px;color:white;background:#742733;padding:14px;display:none;font:14px system-ui}
+</style></head><body><canvas id="game" tabindex="-1"></canvas><div id="loading">LighFight<progress max="1" value="0"></progress></div><div id="error"></div><script>
+const base="Build/", config={arguments:[],dataUrl:base+"{{{ DATA_FILENAME }}}",frameworkUrl:base+"{{{ FRAMEWORK_FILENAME }}}",
+#if USE_THREADS
+workerUrl:base+"{{{ WORKER_FILENAME }}}",
+#endif
+#if USE_WASM
+codeUrl:base+"{{{ CODE_FILENAME }}}",
+#endif
+streamingAssetsUrl:"StreamingAssets",companyName:{{{ JSON.stringify(COMPANY_NAME) }}},productName:{{{ JSON.stringify(PRODUCT_NAME) }}},productVersion:{{{ JSON.stringify(PRODUCT_VERSION) }}},autoSyncPersistentDataPath:true,showBanner:(message,type)=>{if(type==='error'){const box=document.querySelector('#error');box.textContent=message;box.style.display='block';}}};
+const script=document.createElement('script');script.src=base+"{{{ LOADER_FILENAME }}}";script.onload=()=>createUnityInstance(document.querySelector('#game'),config,p=>document.querySelector('progress').value=p).then(instance=>{window.lighFight=instance;document.querySelector('#loading').remove();}).catch(error=>{document.querySelector('#error').textContent=String(error);document.querySelector('#error').style.display='block';});document.body.appendChild(script);
+</script></body></html>

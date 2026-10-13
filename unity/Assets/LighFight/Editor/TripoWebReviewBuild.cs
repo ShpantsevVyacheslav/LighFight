@@ -40,14 +40,15 @@ namespace LighFight.Editor {
    Prepare();
    string output=Path.GetFullPath(destination);Directory.CreateDirectory(Path.GetDirectoryName(output));
    // Uncompressed local output works with a normal HTTP server, without custom CDN headers.
-   var compression=PlayerSettings.WebGL.compressionFormat;bool fallback=PlayerSettings.WebGL.decompressionFallback;
+   var compression=PlayerSettings.WebGL.compressionFormat;bool fallback=PlayerSettings.WebGL.decompressionFallback;string template=PlayerSettings.WebGL.template;
    try {
     PlayerSettings.WebGL.compressionFormat=WebGLCompressionFormat.Disabled;
     PlayerSettings.WebGL.decompressionFallback=false;
+    if(target==BuildTarget.WebGL)PlayerSettings.WebGL.template="PROJECT:LighFightReview";
     var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{ScenePath},target=target,locationPathName=output,options=BuildOptions.Development});
     if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)throw new InvalidOperationException("Web review build failed: "+report.summary.result);
     Debug.Log("AGENT_RESULT "+target+" review build succeeded: "+output);
-   }finally{PlayerSettings.WebGL.compressionFormat=compression;PlayerSettings.WebGL.decompressionFallback=fallback;AssetDatabase.SaveAssets();}
+   }finally{PlayerSettings.WebGL.compressionFormat=compression;PlayerSettings.WebGL.decompressionFallback=fallback;PlayerSettings.WebGL.template=template;AssetDatabase.SaveAssets();}
   }
  }
 }

@@ -69,7 +69,7 @@ namespace LighFight.Runtime
   }
   private void SelectionResources()
   {
-   if(selectionText==null)selectionText=new GUIStyle(GUI.skin.label){fontSize=16,alignment=TextAnchor.MiddleLeft,wordWrap=true};
+   if(selectionText==null)selectionText=new GUIStyle(GUI.skin.label){font=Resources.Load<Font>("Fonts/NotoSans-Regular"),fontSize=16,alignment=TextAnchor.MiddleLeft,wordWrap=true};
    if(selectionBackdrop!=null)return;
    arenaImages=new Texture2D[5];portraits=new Texture2D[8];
    for(int i=0;i<5;i++)arenaImages[i]=Resources.Load<Texture2D>("Selection/arena-"+i);
@@ -85,8 +85,25 @@ namespace LighFight.Runtime
   private bool Pill(Rect rect,string label,bool active=false,bool primary=false)
   {
    Card(rect,primary?new Color(1,.62f,.16f):active?new Color(.07f,.26f,.36f):selectionPanel);
-   Text(rect,label,15,primary?new Color(.10f,.06f,.02f):active?selectionAccent:Color.white,TextAnchor.MiddleCenter);
+   if(label=="⚙"||label=="♫"||label=="☰") DrawControlIcon(rect,label);
+   else Text(rect,label,15,primary?new Color(.10f,.06f,.02f):active?selectionAccent:Color.white,TextAnchor.MiddleCenter);
    return GUI.Button(rect,GUIContent.none,GUIStyle.none);
+  }
+  private static readonly System.Collections.Generic.Dictionary<string,Texture2D> controlIcons=new System.Collections.Generic.Dictionary<string,Texture2D>();
+  private void DrawControlIcon(Rect rect,string name)
+  {
+   if(!controlIcons.TryGetValue(name,out var icon)){
+    icon=new Texture2D(64,64,TextureFormat.RGBA32,false);icon.hideFlags=HideFlags.HideAndDontSave;
+    for(int y=0;y<64;y++)for(int x=0;x<64;x++){
+     float dx=x-31.5f,dy=y-31.5f,r=Mathf.Sqrt(dx*dx+dy*dy),angle=Mathf.Atan2(dy,dx);
+     bool ink=name=="⚙" ? (r>12&&r<20)||(r>=20&&r<25&&Mathf.Cos(angle*8)>.4f) :
+      name=="☰" ? x>=13&&x<=50&&(Mathf.Abs(y-18)<2||Mathf.Abs(y-32)<2||Mathf.Abs(y-46)<2) :
+      ((x-22)*(x-22)/64f+(y-18)*(y-18)/25f<1)||((x-44)*(x-44)/64f+(y-23)*(y-23)/25f<1)||
+      (x>=26&&x<=29&&y>=18&&y<=48)||(x>=48&&x<=51&&y>=23&&y<=53)||(x>=26&&x<=51&&Mathf.Abs(y-(48+(x-26)*.2f))<2);
+     icon.SetPixel(x,y,ink?Color.white:Color.clear);
+    }icon.Apply();controlIcons.Add(name,icon);
+   }
+   var tint=GUI.color;GUI.color=Color.white;GUI.DrawTexture(new Rect(rect.center.x-10,rect.center.y-10,20,20),icon);GUI.color=tint;
   }
   private void SelectionGUI()
   {
