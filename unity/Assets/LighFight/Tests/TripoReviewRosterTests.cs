@@ -19,5 +19,12 @@ namespace LighFight.Tests {
    var texture=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/LighFight/Art/Drafts/TripoIslandPlayable/Source/Island/island-h31-unity-native-pack_basecolor.JPEG");
    Assert.NotNull(texture);Assert.AreEqual(8192,texture.width);Assert.AreEqual(8192,texture.height);
   }
+  [TestCase(0)][TestCase(3)][TestCase(4)][TestCase(5)]
+  public void DirectPunchUsesTheSourceClipsStrikingHand(int index){
+   var content=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
+   var view=content.fighters[index].GetComponent<FighterView>();
+   Assert.AreEqual(1,view.NativeStrikeSide("jab"),"Left_Jab_from_Guard must sample the left hand");
+   Assert.AreEqual(2,view.NativeStrikeSide("cross"),"Right_Jab_from_Guard must sample the right hand, not the stationary guard hand");
+  }
  }
 }

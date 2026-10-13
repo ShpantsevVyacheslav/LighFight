@@ -11,6 +11,6 @@
 | Gala Fighter | Previous model | Previous model | Pending replacement |
 | Cobalt Champion | Previous model | Previous model | Pending replacement |
 
-Current blocker before device artifact delivery: actual native/Humanoid torso exclusion at near0.65m while attacks lean. Do not inflate contact radii or restore damage to noncontacts. FullUnity156/156 passes;8K importmutation failed as expected/restored. Player smoke three fighters reveals jab/cross miss at0.65 and frontKick damage14at1.1, with visible torso overlap. Source/native support transitions, facial animation and final lighting remain open.
+Current blocker before device artifact delivery: near-distance forearm/foot exclusion and punch timing. The automatic Humanoid root displacement is fixed and tested; actual main Mac still shows arm overlap/missed punches at0.65m. Do not inflate hit radii or apply damage to misses. Linear HDR presentation is integrated and full GPU Unity158/158 passed; phone performance remains unverified. Source/native support transitions, facial animation and final art remain open.
 
 No provider credits spent during this integration. Local commits only, no push.
