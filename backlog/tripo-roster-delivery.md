@@ -24,5 +24,7 @@ Planned roster is now11. These labels are working outfit descriptions, not asser
 - [ ] Striped sailor: blue/white long-sleeve striped shirt, dark trousers/glasses, black trainers. Reference `striped-sailor.jpg`.
 - [ ] Summer beard: cap/glasses/beard, white T-shirt, blue plaid longshorts, white socks/dark sandals. Reference `summer-beard.jpg`.
 - [ ] Generate originals, native rigs/motions, source portraits, exact-source comparison, full-animation deformation/contact gates for all3.
-- [ ] Replace fixed8-character names/indexing/layout with catalog metadata and paged/scrollable roster/opponent selection; preserve existing8 IDs. Host catalog/export must also handle11.
+- [x] Replace fixed8-character names/indexing/layout with catalog metadata and paged/scrollable roster/opponent selection; preserve existing8 IDs. Host catalog/export must also handle11.
 - [ ] Include all11 reviewed characters in final phone build. No generation/download/skeleton or device success is claimed yet for these3.
+
+All three neutral full-body references are prepared with built-in imagegen, preserving original photos. These are generation inputs, not generated 3D fighters. Expanded catalog code passed the full GPU Unity suite: 173/173.
