@@ -44,8 +44,14 @@ namespace LighFight.Editor {
    if(texture.width!=8192||texture.height!=8192)throw new InvalidOperationException("Island texture was reduced during import");
    Debug.Log("AGENT_RESULT Island original albedo preserved at "+texture.width+"x"+texture.height);
   }
+  public static void VerifyCandidateBuildRepeatability() {
+   PromoteReviewedRoster();var paths=new[]{Folder,"Assets/LighFight/Art/Drafts/TripoIslandPlayable","Assets/LighFight/Art/Drafts/TripoRangerPlayable","Assets/LighFight/Art/Drafts/TripoBonePlayable"}.SelectMany(folder=>Directory.GetFiles(folder,"*.controller")).ToArray();
+   var before=paths.Select(File.ReadAllBytes).ToArray();PromoteReviewedRoster();
+   for(int i=0;i<paths.Length;i++)if(!before[i].SequenceEqual(File.ReadAllBytes(paths[i])))throw new InvalidOperationException("Controller changed on repeated build: "+paths[i]);
+   Debug.Log("AGENT_RESULT repeated builds preserve all "+paths.Length+" controller assets byte-for-byte");
+  }
   public static void PromoteReviewedRoster() {
-   PreserveIslandSourceResolution();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();Prepare();
+   PreserveIslandSourceResolution();TripoPlayableCandidateBuilder.Build();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();Prepare();
    var review=AssetDatabase.LoadAssetAtPath<GameContent>(Folder+"/ReviewContent.asset");
    var shipping=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
    foreach(int index in new[]{0,3,4,5}){var candidate=review.fighters[index];var animator=candidate.GetComponentInChildren<Animator>();var skin=candidate.GetComponentInChildren<SkinnedMeshRenderer>();if(!candidate.GetComponent<FighterView>().IsReady||!animator.avatar.isHuman||skin.sharedMesh.triangles.Length/3!=100000)throw new InvalidOperationException("Roster promotion gate failed at "+index);shipping.fighters[index]=candidate;}
@@ -56,7 +62,7 @@ namespace LighFight.Editor {
   static void BuildTargetReview(BuildTarget target,string destination) {
    if(!BuildPipeline.IsBuildTargetSupported(BuildPipeline.GetBuildTargetGroup(target),target))throw new InvalidOperationException("Build module unavailable: "+target);
    PreserveIslandSourceResolution();
-   TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();
+   TripoPlayableCandidateBuilder.Build();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();
    Prepare();
    string output=Path.GetFullPath(destination);Directory.CreateDirectory(Path.GetDirectoryName(output));
    // Uncompressed local output works with a normal HTTP server, without custom CDN headers.

@@ -39,9 +39,10 @@ namespace LighFight.Runtime
         private float blendElapsed, blendDuration;
         private void LateUpdate()
         {
-            if(blendBones==null || blendElapsed>=blendDuration || blendDuration<=0)return;
+            if(blendBones==null || blendElapsed>=blendDuration || blendDuration<=0){if(nativeMotion)AnchorNativeRoot();return;}
             float weight=Mathf.SmoothStep(0,1,blendElapsed/blendDuration);
             for(int i=0;i<blendBones.Length;i++){if(blendBones[i]==animator.transform)continue;blendBones[i].localRotation=Quaternion.Slerp(blendRotations[i],blendBones[i].localRotation,weight);blendBones[i].localPosition=Vector3.Lerp(blendPositions[i],blendBones[i].localPosition,weight);}
+            if(nativeMotion)AnchorNativeRoot();
         }
         [SerializeField] private bool ownsMaterials = true;
         public void UseSharedMaterials() => ownsMaterials = false;
