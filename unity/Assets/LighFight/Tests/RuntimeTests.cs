@@ -16,24 +16,25 @@ public class RuntimeTests
             }
         }finally{Object.DestroyImmediate(actor);}
     }
-    [TestCase(0)][TestCase(1)][TestCase(2)]
-    public void GraphicsOptionsNeverEnableGameplayShadows(int quality)
+    [TestCase(0,false)][TestCase(1,false)][TestCase(2,false)][TestCase(0,true)][TestCase(1,true)][TestCase(2,true)]
+    public void GraphicsOptionsRespectChosenShadows(int quality,bool enabled)
     {
-        var ints=new[]{"lf.swipes","lf.graphics","lf.fps","lf.sound","lf.shake","lf.left","lf.attackButton.0","lf.attackButton.1","lf.attackButton.2","lf.attackButton.3"};
+        var ints=new[]{"lf.shadows","lf.swipes","lf.graphics","lf.fps","lf.sound","lf.shake","lf.left","lf.attackButton.0","lf.attackButton.1","lf.attackButton.2","lf.attackButton.3"};
         var floats=new[]{"lf.controlScale","lf.controlOpacity"};
         var present=new System.Collections.Generic.HashSet<string>();var values=new System.Collections.Generic.Dictionary<string,float>();
         foreach(var key in ints){if(PlayerPrefs.HasKey(key))present.Add(key);values[key]=PlayerPrefs.GetInt(key);}
         foreach(var key in floats){if(PlayerPrefs.HasKey(key))present.Add(key);values[key]=PlayerPrefs.GetFloat(key);}
-        var shadows=QualitySettings.shadows;var aa=QualitySettings.antiAliasing;var weights=QualitySettings.skinWeights;var lod=QualitySettings.lodBias;var mip=QualitySettings.globalTextureMipmapLimit;var fps=Application.targetFrameRate;var root=new GameObject("Shadow options regression");
+        var distance=QualitySettings.shadowDistance;var resolution=QualitySettings.shadowResolution;var shadows=QualitySettings.shadows;var aa=QualitySettings.antiAliasing;var weights=QualitySettings.skinWeights;var lod=QualitySettings.lodBias;var mip=QualitySettings.globalTextureMipmapLimit;var fps=Application.targetFrameRate;var root=new GameObject("Shadow options regression");
         try{
             var host=root.AddComponent<Prototype>();var light=new GameObject("Authored shadow light").AddComponent<Light>();light.transform.SetParent(root.transform);light.shadows=LightShadows.Soft;
             var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
-            typeof(Prototype).GetField("graphicsQuality",flags).SetValue(host,quality);QualitySettings.shadows=ShadowQuality.All;
+            typeof(Prototype).GetField("graphicsQuality",flags).SetValue(host,quality);typeof(Prototype).GetField("shadowsEnabled",flags).SetValue(host,enabled);QualitySettings.shadows=ShadowQuality.All;
             typeof(Prototype).GetMethod("ApplyOptions",flags).Invoke(host,null);
-            Assert.AreEqual(ShadowQuality.Disable,QualitySettings.shadows,"Quality tier restored shadows");
-            Assert.AreEqual(LightShadows.None,light.shadows,"Scene light still emits shadows");
+            Assert.AreEqual(enabled?ShadowQuality.All:ShadowQuality.Disable,QualitySettings.shadows,"Quality tier must respect shadow choice");
+            Assert.AreEqual(enabled?1:0,PlayerPrefs.GetInt("lf.shadows"),"Shadow choice must persist");
+            Assert.AreEqual(enabled?LightShadows.Soft:LightShadows.None,light.shadows,"Light must follow shadow choice");
         }finally{
-            Object.DestroyImmediate(root);QualitySettings.shadows=shadows;QualitySettings.antiAliasing=aa;QualitySettings.skinWeights=weights;QualitySettings.lodBias=lod;QualitySettings.globalTextureMipmapLimit=mip;Application.targetFrameRate=fps;
+            Object.DestroyImmediate(root);QualitySettings.shadowDistance=distance;QualitySettings.shadowResolution=resolution;QualitySettings.shadows=shadows;QualitySettings.antiAliasing=aa;QualitySettings.skinWeights=weights;QualitySettings.lodBias=lod;QualitySettings.globalTextureMipmapLimit=mip;Application.targetFrameRate=fps;
             foreach(var key in ints)if(present.Contains(key))PlayerPrefs.SetInt(key,(int)values[key]);else PlayerPrefs.DeleteKey(key);
             foreach(var key in floats)if(present.Contains(key))PlayerPrefs.SetFloat(key,values[key]);else PlayerPrefs.DeleteKey(key);PlayerPrefs.Save();
         }

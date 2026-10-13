@@ -87,8 +87,9 @@ namespace LighFight.Runtime
             player.transform.SetParent(transform,true);opponent.transform.SetParent(transform,true);arena.transform.SetParent(transform,true);
             player.Pose(match.A,1,0); opponent.Pose(match.B,-1,0);
             foreach(var fighter in new[]{player,opponent}){
-                var materials=fighter.GetComponent<ShadowlessFighterMaterials>();if(!materials)materials=fighter.gameObject.AddComponent<ShadowlessFighterMaterials>();materials.Apply();
+                var materials=fighter.GetComponent<ShadowlessFighterMaterials>();if(!materials)materials=fighter.gameObject.AddComponent<ShadowlessFighterMaterials>();materials.SetShadows(shadowsEnabled);
             }
+            if(arena)foreach(var renderer in arena.GetComponentsInChildren<Renderer>(true)){renderer.receiveShadows=shadowsEnabled;renderer.shadowCastingMode=shadowsEnabled?UnityEngine.Rendering.ShadowCastingMode.On:UnityEngine.Rendering.ShadowCastingMode.Off;}
         }
         private void OnDestroy()
         {
