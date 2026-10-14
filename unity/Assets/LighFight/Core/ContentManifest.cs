@@ -5,13 +5,14 @@ namespace LighFight.Core
     [Serializable]
     public sealed class ContentManifest
     {
+        public const int CurrentPlayerVersion=2;
         public int schemaVersion = 1, minimumPlayerVersion = 1;
         public string contentVersion, unityVersion, platform, catalogUrl;
         public string starterLabel = "lighfight-starter", assetAddress = "lighfight-content";
         public long downloadBytes;
         public string Validate(string currentPlatform, string currentUnity, bool development = false)
         {
-            if(schemaVersion != 1 || minimumPlayerVersion > 1 || minimumPlayerVersion < 1) return "incompatible_player";
+            if(schemaVersion != 1 || minimumPlayerVersion > CurrentPlayerVersion || minimumPlayerVersion < 1) return "incompatible_player";
             if(platform != currentPlatform || unityVersion != currentUnity) return "incompatible_platform";
             if(string.IsNullOrEmpty(contentVersion) || !Regex.IsMatch(contentVersion,@"\A[a-zA-Z0-9._-]{1,64}\z")) return "invalid_version";
             if(starterLabel != "lighfight-starter" || assetAddress != "lighfight-content") return "invalid_content";

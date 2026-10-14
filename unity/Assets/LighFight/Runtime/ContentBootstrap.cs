@@ -14,6 +14,9 @@ namespace LighFight.Runtime
         private ContentManifest manifest;
         private ContentDownloader downloader;
         private AsyncOperationHandle<GameContent> loadedContent;
+        private AsyncOperationHandle pendingCatalog;
+        private Prototype loadedGame;
+        sealed class CatalogRelease:IDisposable{AsyncOperationHandle<GameContent> handle;public CatalogRelease(AsyncOperationHandle<GameContent> value){handle=value;}public void Dispose(){if(handle.IsValid())Addressables.Release(handle);handle=default;}}
         private string status = "Проверка ресурсов…";
         private bool busy, canDownload, playing;
         private long downloadBytes;
@@ -54,10 +57,10 @@ namespace LighFight.Runtime
             }
             string error=manifest==null?"invalid_manifest":manifest.Validate(PlatformName,Application.unityVersion,Debug.isDebugBuild);
             if(error!=null){Fail(error);yield break;}
-            var catalog=Addressables.LoadContentCatalogAsync(manifest.catalogUrl,false);
+            var catalog=Addressables.LoadContentCatalogAsync(manifest.catalogUrl,false);pendingCatalog=catalog;
             yield return catalog;bool ok=catalog.Status==AsyncOperationStatus.Succeeded;
             if(ok)ContentCatalogSelection.Activate(catalog.Result);
-            Addressables.Release(catalog);
+            Addressables.Release(catalog);pendingCatalog=default;
             if(!ok){Fail("catalog_failed");yield break;}
             downloader.Estimate(manifest.starterLabel);
         }
@@ -75,11 +78,10 @@ namespace LighFight.Runtime
         private IEnumerator Open()
         {
             loadedContent=Addressables.LoadAssetAsync<GameContent>(manifest.assetAddress);yield return loadedContent;
-            if(loadedContent.Status!=AsyncOperationStatus.Succeeded || loadedContent.Result==null || loadedContent.Result.fighters==null || loadedContent.Result.fighters.Length!=8 || loadedContent.Result.arenas==null || loadedContent.Result.arenas.Length!=5)
+            if(loadedContent.Status!=AsyncOperationStatus.Succeeded || loadedContent.Result==null)
             {if(loadedContent.IsValid())Addressables.Release(loadedContent);Fail("invalid_content");yield break;}
-            foreach(var fighter in loadedContent.Result.fighters)if(fighter==null||fighter.GetComponent<FighterView>()==null||!fighter.GetComponent<FighterView>().IsReady){Addressables.Release(loadedContent);Fail("invalid_fighter");yield break;}
-            foreach(var arena in loadedContent.Result.arenas)if(arena==null||arena.GetComponent<OfficeArena>()==null){Addressables.Release(loadedContent);Fail("invalid_arena");yield break;}
-            var game=new GameObject("LighFight").AddComponent<Prototype>();game.content=loadedContent.Result;
+            if(!loadedContent.Result.ValidateCatalog(out var validationError)){Addressables.Release(loadedContent);Fail(validationError);yield break;}
+            var game=new GameObject("LighFight").AddComponent<Prototype>();loadedGame=game;game.content=loadedContent.Result;
             playing=true;busy=false;
             try
             {
@@ -102,6 +104,6 @@ namespace LighFight.Runtime
             if(GUI.Button(new Rect(485,290,220,60),T("ВЕРНУТЬСЯ","BACK")))FindFirstObjectByType<HostBridge>()?.Exit("");
             GUI.matrix=old;
         }
-        private void OnDestroy(){if(loadedContent.IsValid())Addressables.Release(loadedContent);}
+        private void OnDestroy(){if(loadedGame)Destroy(loadedGame.gameObject);if(pendingCatalog.IsValid())Addressables.Release(pendingCatalog);pendingCatalog=default;if(loadedContent.IsValid())SelectedContentReleaseQueue.Defer(new CatalogRelease(loadedContent));loadedContent=default;}
     }
 }

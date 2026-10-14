@@ -69,11 +69,13 @@ namespace LighFight.Runtime
         private void OnLaunch(LaunchRequest request) { russian=string.IsNullOrEmpty(request.locale)||request.locale.StartsWith("ru"); Reset(); selecting = true; }
         private void RebuildViews()
         {
-            ReleaseActorWarmup();beginFightAfterWarmup=false;
+            ReleaseActorWarmup();CancelSelectedContent();beginFightAfterWarmup=false;
             if(player)player.gameObject.SetActive(false);if(opponent)opponent.gameObject.SetActive(false);
             if (player != null) Destroy(player.gameObject);
             if (opponent != null) Destroy(opponent.gameObject);
             if (arena != null) Destroy(arena.gameObject);
+            player=null;opponent=null;arena=null;
+            if(content!=null&&content.streamed){RebuildStreamedViews();return;}
             int cpu = OpponentIndex;
             if (content != null)
             {
@@ -87,6 +89,10 @@ namespace LighFight.Runtime
                 opponent = FighterView.Create(FighterLabel(cpu), OutfitColors[cpu], cpu == 0 || cpu == 1 || cpu == 4);
                 arena = OfficeArena.Create((OfficeLocation)selectedArena);
             }
+            ConfigureActorViews();
+        }
+        private void ConfigureActorViews()
+        {
             player.transform.SetParent(transform,true);opponent.transform.SetParent(transform,true);arena.transform.SetParent(transform,true);
             player.gameObject.SetActive(false);opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
             foreach(var fighter in new[]{player,opponent}){
@@ -97,7 +103,7 @@ namespace LighFight.Runtime
         }
         private void OnDestroy()
         {
-            ReleaseActorWarmup();
+            ReleaseActorWarmup();CancelSelectedContent();
             if (bridge != null) bridge.LaunchRequested -= OnLaunch;
             ReleaseSelectionRender();if(selectionBackdrop!=null)Destroy(selectionBackdrop);if(selectionHalo!=null)Destroy(selectionHalo);if(circle!=null)Destroy(circle);if(brandMark!=null)Destroy(brandMark);
         }

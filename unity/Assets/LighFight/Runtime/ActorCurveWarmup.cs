@@ -16,7 +16,7 @@ namespace LighFight.Runtime {
   Coroutine actorWarmupRoutine;
   IEnumerator actorWarmupStep;
   IActorCurveWarmup[] actorWarmups=new IActorCurveWarmup[0];
-  public bool ActorsLoading=>actorsLoading;
+  public bool ActorsLoading=>actorsLoading||streamSelectionLoading;
   void CancelActorWarmup(){
    actorWarmupGeneration++;
    if(actorWarmupRoutine!=null){StopCoroutine(actorWarmupRoutine);actorWarmupRoutine=null;}
@@ -52,7 +52,7 @@ namespace LighFight.Runtime {
      if(generation!=actorWarmupGeneration)yield break;
     }
     (routine as IDisposable)?.Dispose();if(ReferenceEquals(actorWarmupStep,routine))actorWarmupStep=null;
-    if(failed){foreach(var warmup in sources)warmup.CancelWarmup();actorWarmupRoutine=null;yield break;}
+    if(failed){foreach(var warmup in sources)warmup.CancelWarmup();actorWarmupRoutine=null;ReleaseFailedSelectedWarmup();yield break;}
    }
    if(generation!=actorWarmupGeneration||!first||!second)yield break;
    actorWarmupRoutine=null;actorsLoading=false;FinishActorWarmup();
@@ -65,8 +65,8 @@ namespace LighFight.Runtime {
    opponent.Pose(match.B,-1,0);opponent.gameObject.SetActive(!selecting);arena.gameObject.SetActive(!selecting);
    accumulator=0;pendingAttack=-1;stickInput=Vector2.zero;stickFinger=-1;strikeGesture.Cancel();
   }
-  void OnDisable(){if(actorsLoading)CancelActorWarmup();}
-  void OnEnable(){if(actorsLoading&&player&&opponent)StartActorWarmup();}
+  void OnDisable(){PauseSelectedContent();if(actorsLoading)CancelActorWarmup();}
+  void OnEnable(){ResumeSelectedContent();if(actorsLoading&&player&&opponent)StartActorWarmup();}
   void ActorLoadingGUI(){
    SelectionResources();Card(new Rect(0,0,960,540),new Color(.025f,.028f,.045f));
    Text(new Rect(180,215,600,45),actorsLoadingError??T("Загрузка бойцов…","Loading fighters…"),23,selectionAccent,TextAnchor.MiddleCenter);

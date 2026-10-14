@@ -98,7 +98,7 @@ public class ContentManifestTests
  private ContentManifest Valid() => new ContentManifest { contentVersion="starter-1", unityVersion="6000.3.26f1", platform="iOS", catalogUrl="https://cdn.example.org/ios/catalog.json", downloadBytes=1024 };
  [Test] public void AcceptsCompatibleHttpsManifest(){Assert.IsNull(Valid().Validate("iOS","6000.3.26f1"));}
  [Test] public void RejectsWrongPlatformAndEngine(){Assert.AreEqual("incompatible_platform",Valid().Validate("Android","6000.3.26f1"));Assert.AreEqual("incompatible_platform",Valid().Validate("iOS","6000.3.27f1"));}
- [Test] public void RejectsFuturePlayer(){var m=Valid();m.minimumPlayerVersion=2;Assert.AreEqual("incompatible_player",m.Validate("iOS","6000.3.26f1"));}
+ [Test] public void RejectsFuturePlayer(){var m=Valid();m.minimumPlayerVersion=ContentManifest.CurrentPlayerVersion+1;Assert.AreEqual("incompatible_player",m.Validate("iOS","6000.3.26f1"));}
  [Test] public void RejectsUnsafeCatalog(){foreach(var url in new[]{"file:///tmp/catalog.json","http://cdn.example.org/x","https://user:pass@cdn.example.org/x"}){var m=Valid();m.catalogUrl=url;Assert.AreEqual("invalid_catalog",m.Validate("iOS","6000.3.26f1"));}}
  [Test] public void LocalHttpRequiresDevelopment(){var m=Valid();m.catalogUrl="http://127.0.0.1:8765/catalog.json";Assert.IsNotNull(m.Validate("iOS","6000.3.26f1"));Assert.IsNull(m.Validate("iOS","6000.3.26f1",true));}
  [Test] public void RejectsInvalidVersionAndExcessiveSize(){var m=Valid();m.contentVersion="../x";Assert.AreEqual("invalid_version",m.Validate("iOS","6000.3.26f1"));m=Valid();m.downloadBytes=long.MaxValue;Assert.AreEqual("invalid_size",m.Validate("iOS","6000.3.26f1"));}

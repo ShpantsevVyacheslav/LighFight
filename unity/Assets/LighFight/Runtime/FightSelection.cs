@@ -9,7 +9,7 @@ namespace LighFight.Runtime
   private bool opponentOpen;
   private bool rosterOpen=true;
   private int rosterPage,opponentPage;
-  public int RosterCount=>content!=null&&content.fighters!=null&&content.fighters.Length>0?content.fighters.Length:FighterNames.Length;
+  public int RosterCount=>content!=null&&content.FighterCount>0?content.FighterCount:FighterNames.Length;
   public int RosterPageCount=>(RosterCount+7)/8;
   public int RosterPageStart(int page)=>WrapRosterIndex(page,RosterPageCount)*8;
   public int RosterPageEnd(int page)=>Mathf.Min(RosterCount,RosterPageStart(page)+8);
@@ -55,6 +55,7 @@ namespace LighFight.Runtime
 
   private void UpdateSelection()
   {
+   if(ActorsLoading)return;
    opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
    if(selectionDisplayCamera==null){selectionDisplayCamera=new GameObject("Selection display").AddComponent<Camera>();selectionDisplayCamera.transform.SetParent(transform,false);selectionDisplayCamera.cullingMask=0;selectionDisplayCamera.clearFlags=CameraClearFlags.SolidColor;selectionDisplayCamera.backgroundColor=new Color(.03f,.035f,.055f);selectionDisplayCamera.depth=-10;}
    var previewSize=SelectionPreviewSize(UiArea.size,graphicsQuality);
