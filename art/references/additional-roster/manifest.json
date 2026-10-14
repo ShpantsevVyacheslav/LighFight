@@ -6,7 +6,7 @@
       "id": "retro-denim",
       "reference": "art/references/additional-roster/retro-denim.jpg",
       "sha256": "07754d32ec358f22de5cd9f690cdadaf066d0cf1b54171adeafcaf02f276a849",
-      "status": "neutral-reference-prepared",
+      "status": "generated-apose-awaiting-source-and-rig-review",
       "provider": "Tripo Studio",
       "tasks": [
         "generate maximum-detail character",
@@ -19,13 +19,27 @@
       ],
       "preparedReference": "art/references/additional-roster/retro-denim-a-pose.png",
       "preparedReferenceSha256": "a1b7314fd98192df96c6a6ad042bbe5fd55ea84d4ae71fa4c4c5a04f676ab04e",
-      "preparation": "AI pose/background preparation for generation; original photo retained; not a 3D quality proof"
+      "preparation": "AI pose/background preparation for generation; original photo retained; not a 3D quality proof",
+      "providerTaskId": "76e55a86-7183-4c34-9100-20a218ca34df",
+      "generatedFrom": "art/references/additional-roster/retro-denim-a-pose.png",
+      "generationCredits": 110,
+      "sourceTriangles": 1921472,
+      "sourceVertices": 989102,
+      "textureSetting": "4K; 8K requires unapproved Max upgrade",
+      "workingCopy": {
+        "triangles": 150000,
+        "vertices": 83478,
+        "credits": 5,
+        "rigAccepted": false,
+        "sourceTaskId": "b334cd9e-1c2e-41cb-bf46-3027ffa72253"
+      },
+      "originalPhotoTaskId": "b334cd9e-1c2e-41cb-bf46-3027ffa72253"
     },
     {
       "id": "striped-sailor",
       "reference": "art/references/additional-roster/striped-sailor.jpg",
       "sha256": "21c4f7f833b33c92df61a76b930ff03f2ad5abc8475619b5c1cbcda4e3ebef9e",
-      "status": "neutral-reference-prepared",
+      "status": "generated-apose-awaiting-source-and-rig-review",
       "provider": "Tripo Studio",
       "tasks": [
         "generate maximum-detail character",
@@ -38,13 +52,18 @@
       ],
       "preparedReference": "art/references/additional-roster/striped-sailor-a-pose.png",
       "preparedReferenceSha256": "7d9d68aa66d719104edd0930cbd56b87cb86eda44ece65eec8c4bfb89a282648",
-      "preparation": "AI pose/background preparation for generation; original photo retained; not a 3D quality proof"
+      "preparation": "AI pose/background preparation for generation; original photo retained; not a 3D quality proof",
+      "providerTaskId": "44623258-1c14-4afb-b55f-bb15ec154b50",
+      "generatedFrom": "art/references/additional-roster/striped-sailor-a-pose.png",
+      "generationCredits": 55,
+      "sourceTriangles": 1988914,
+      "sourceVertices": 1018642
     },
     {
       "id": "summer-beard",
       "reference": "art/references/additional-roster/summer-beard.jpg",
       "sha256": "28059cb7ee7dd88f58cff09d7708429d7c42fde3fc1e28f2b073c491e9182b5b",
-      "status": "neutral-reference-prepared",
+      "status": "generated-apose-awaiting-source-and-rig-review",
       "provider": "Tripo Studio",
       "tasks": [
         "generate maximum-detail character",
@@ -57,7 +76,24 @@
       ],
       "preparedReference": "art/references/additional-roster/summer-beard-a-pose.png",
       "preparedReferenceSha256": "9ddfc33c4ca485997592450b98776dea78d760ef390139ff60479faed2642e0b",
-      "preparation": "AI pose/background preparation for generation; original photo retained; not a 3D quality proof"
+      "preparation": "AI pose/background preparation for generation; original photo retained; not a 3D quality proof",
+      "providerTaskId": "25455b76-7690-492a-bf39-42bfc50cda0a",
+      "generatedFrom": "art/references/additional-roster/summer-beard-a-pose.png",
+      "generationCredits": 55,
+      "sourceTriangles": 1873022,
+      "sourceVertices": 957040,
+      "workingCopy": {
+        "triangles": 100000,
+        "vertices": 55738,
+        "credits": 10,
+        "rigAccepted": true,
+        "sourceTaskId": "25455b76-7690-492a-bf39-42bfc50cda0a",
+        "rejectedRigCounts": [
+          1873022,
+          150000
+        ],
+        "rigPreset": "Unity Humanoid Compatible"
+      }
     }
   ]
 }
