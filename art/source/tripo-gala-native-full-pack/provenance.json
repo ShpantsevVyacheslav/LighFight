@@ -1,0 +1,127 @@
+{
+  "provider": "Tripo",
+  "task_id": "9c2e21da-6695-4d02-8b99-d48b049f0ac3",
+  "export_name": "gala-h31-unity-native-full-pack",
+  "export_settings": {
+    "format": "FBX",
+    "target": "Blender",
+    "textures": "4K current",
+    "skeleton": true,
+    "selected_animations": 8,
+    "in_place": false
+  },
+  "files": [
+    {
+      "path": "gala-h31-unity-native-full-pack.zip",
+      "bytes": 10847364,
+      "sha256": "cf0287c860881411ac8b56c4920391c91f4d83436d0503b75c0832171b93d050"
+    },
+    {
+      "path": "unpacked/tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbm/gala-h31-unity-native-full-pack_basecolor.JPEG",
+      "bytes": 1183167,
+      "sha256": "82ce3aa0f027fcf676aaf750205998e745750b3305d65fe0b1c3873232658348"
+    },
+    {
+      "path": "unpacked/tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbm/gala-h31-unity-native-full-pack_metallic.JPEG",
+      "bytes": 575035,
+      "sha256": "3e071edb3a9edf8a95593f859dfee600cfd57d2029c833807153d0d1966148ed"
+    },
+    {
+      "path": "unpacked/tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbm/gala-h31-unity-native-full-pack_normal.JPEG",
+      "bytes": 227515,
+      "sha256": "f5fc34470602a39299ff9dc0189d496de13ccb60f4f0900a509bc035aa107bdc"
+    },
+    {
+      "path": "unpacked/tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbm/gala-h31-unity-native-full-pack_rm.PNG",
+      "bytes": 3657537,
+      "sha256": "5fe19b352fe0387feffac97a460bf929ccb2c0dd1bf0d7aa65bc6bef67dee564"
+    },
+    {
+      "path": "unpacked/tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbm/gala-h31-unity-native-full-pack_roughness.JPEG",
+      "bytes": 462713,
+      "sha256": "afc392d41a3a83ef533a57c36dee2a644189adb6b94901ea1d5f48da4fecb24b"
+    },
+    {
+      "path": "unpacked/tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbx",
+      "bytes": 7601996,
+      "sha256": "7931891d9b48bf5e7797e92ac91836d80fb85eb7eb390ea740739171195224bf"
+    }
+  ],
+  "source_inventory": {
+    "source_sha256": "7931891d9b48bf5e7797e92ac91836d80fb85eb7eb390ea740739171195224bf",
+    "meshes": [
+      {
+        "name": "tripo_node_b1834bb3",
+        "vertices": 49998,
+        "triangles": 100000,
+        "unweighted": 0,
+        "max_influences": 4
+      }
+    ],
+    "armatures": [
+      {
+        "name": "Armature",
+        "bones": 67
+      }
+    ],
+    "actions": [
+      {
+        "name": "Armature|box_02",
+        "frames": [
+          1.0,
+          68.0
+        ]
+      },
+      {
+        "name": "Armature|cheer",
+        "frames": [
+          1.0,
+          291.0
+        ]
+      },
+      {
+        "name": "Armature|dance_01",
+        "frames": [
+          1.0,
+          557.0
+        ]
+      },
+      {
+        "name": "Armature|defeat_02",
+        "frames": [
+          1.0,
+          204.0
+        ]
+      },
+      {
+        "name": "Armature|front_kick_01",
+        "frames": [
+          1.0,
+          61.0
+        ]
+      },
+      {
+        "name": "Armature|greet_01",
+        "frames": [
+          1.0,
+          85.0
+        ]
+      },
+      {
+        "name": "Armature|hit_to_head",
+        "frames": [
+          1.0,
+          45.0
+        ]
+      },
+      {
+        "name": "Armature|walk",
+        "frames": [
+          1.0,
+          57.0
+        ]
+      }
+    ]
+  },
+  "status": "Inbound retained; Blender source inventory passed; Unity deformation and source-parity validation pending"
+}

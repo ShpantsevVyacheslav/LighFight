@@ -1,0 +1,3 @@
+Night Witch main integration
+
+Main named full-source/native pipeline passed source mesh/rest/weights/map gates and produced eight native support clips plus22 calibrated shared Human attacks. Main catalog slot1 now references WitchHumanoidCandidate; its existing roster index/ID remains intact. Source-rendered1024RGBA portrait bytes copied unchanged. Actual main standalone support entry/held/return probe245samples completed without failure; maxnativepose-data/reference discrepancy0.001219mm and minimumfloor-0.000183mm. Independent Generic/full-surface/realUpdate contact proofs are in WitchPlayableIntegrationPacket; the main probe is not a separate Generic reference. No phonecapacity or fullnativecombat claim.
