@@ -7,6 +7,8 @@ namespace LighFight.Runtime {
   [SerializeField] private Animator animator;
   [SerializeField] private NativeFingerPose pose;
   [SerializeField] private string[] closedStates=new string[0];
+  private int contactFrame=-1;
+  public void ApplyContactPose(){if(!enabled||!animator||!pose)return;if(joints==null)Initialize();bool closed=Array.IndexOf(states,animator.GetCurrentAnimatorStateInfo(0).shortNameHash)>=0;ApplyForReview(closed,Application.isPlaying&&contactFrame!=Time.frameCount?Time.deltaTime:0);contactFrame=Time.frameCount;}
   private Transform[] joints;private int[] states;private float weight;
   public void Configure(Animator value,NativeFingerPose source,string[] motions){animator=value;pose=source;closedStates=motions;Initialize();}
   private void Initialize(){
@@ -18,7 +20,7 @@ namespace LighFight.Runtime {
   private void LateUpdate(){
    if(!Application.isPlaying||!animator||!pose)return;
    if(joints==null)Initialize();
-   ApplyForReview(Array.IndexOf(states,animator.GetCurrentAnimatorStateInfo(0).shortNameHash)>=0,Time.deltaTime);
+   ApplyForReview(Array.IndexOf(states,animator.GetCurrentAnimatorStateInfo(0).shortNameHash)>=0,contactFrame==Time.frameCount?0:Time.deltaTime);
   }
   public void ApplyForReview(bool closed,float seconds){
    if(joints==null)Initialize();weight=Mathf.MoveTowards(weight,closed?1:0,Mathf.Max(0,seconds)/.12f);

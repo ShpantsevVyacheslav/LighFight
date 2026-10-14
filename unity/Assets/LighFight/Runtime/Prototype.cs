@@ -64,11 +64,13 @@ namespace LighFight.Runtime
             if (bridge != null) { bridge.LaunchRequested += OnLaunch; if(bridge.CurrentLaunch!=null)OnLaunch(bridge.CurrentLaunch); }
         }
 
-        public void BeginFight() { player.FullPreviewMotion=false; ReleaseSelectionRender(); Reset(); selecting=false; advancedMoves=false; rulesOpen=false; arenaOpen=false; opponent.gameObject.SetActive(true);arena.gameObject.SetActive(true);fightCamera.rect=new Rect(0,0,1,1); }
+        public void BeginFight() { if(ActorsLoading){beginFightAfterWarmup=true;return;} player.FullPreviewMotion=false; ReleaseSelectionRender(); Reset(); selecting=false; advancedMoves=false; rulesOpen=false; arenaOpen=false; opponent.gameObject.SetActive(true);arena.gameObject.SetActive(true);fightCamera.rect=new Rect(0,0,1,1); }
         public static float FitCameraDistance(float a,float b,float aspect) => Mathf.Max(3.6f,(Mathf.Abs(a-b)+2.2f)/(2*Mathf.Tan(21*Mathf.Deg2Rad)*Mathf.Max(.3f,aspect)));
         private void OnLaunch(LaunchRequest request) { russian=string.IsNullOrEmpty(request.locale)||request.locale.StartsWith("ru"); Reset(); selecting = true; }
         private void RebuildViews()
         {
+            ReleaseActorWarmup();beginFightAfterWarmup=false;
+            if(player)player.gameObject.SetActive(false);if(opponent)opponent.gameObject.SetActive(false);
             if (player != null) Destroy(player.gameObject);
             if (opponent != null) Destroy(opponent.gameObject);
             if (arena != null) Destroy(arena.gameObject);
@@ -86,14 +88,16 @@ namespace LighFight.Runtime
                 arena = OfficeArena.Create((OfficeLocation)selectedArena);
             }
             player.transform.SetParent(transform,true);opponent.transform.SetParent(transform,true);arena.transform.SetParent(transform,true);
-            player.Pose(match.A,1,0); opponent.Pose(match.B,-1,0);
+            player.gameObject.SetActive(false);opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
             foreach(var fighter in new[]{player,opponent}){
                 var materials=fighter.GetComponent<ShadowlessFighterMaterials>();if(!materials)materials=fighter.gameObject.AddComponent<ShadowlessFighterMaterials>();materials.SetShadows(shadowsEnabled);
             }
             if(arena)foreach(var renderer in arena.GetComponentsInChildren<Renderer>(true)){renderer.receiveShadows=shadowsEnabled;renderer.shadowCastingMode=shadowsEnabled?UnityEngine.Rendering.ShadowCastingMode.On:UnityEngine.Rendering.ShadowCastingMode.Off;}
+            StartActorWarmup();
         }
         private void OnDestroy()
         {
+            ReleaseActorWarmup();
             if (bridge != null) bridge.LaunchRequested -= OnLaunch;
             ReleaseSelectionRender();if(selectionBackdrop!=null)Destroy(selectionBackdrop);if(selectionHalo!=null)Destroy(selectionHalo);if(circle!=null)Destroy(circle);if(brandMark!=null)Destroy(brandMark);
         }
@@ -107,7 +111,7 @@ namespace LighFight.Runtime
         {
             var defence=session!=null?(int)session.Defence:0;
             session = new FightSession(training,targetWins,roundSeconds);session.SetDummyDefence(defence); accumulator = 0; bot = new BotController(42,difficulty);
-            pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();
+            pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();victoryElapsed=0;presentedWinner=-1;
         }
 
         // All touch positions converted into the same logical coordinates as GUI.
@@ -138,6 +142,7 @@ namespace LighFight.Runtime
 
         private void Update()
         {
+            if(ActorsLoading)return;
             if((!selecting && Pressed(new Rect(888,12,52,40))) || Input.GetKeyDown(KeyCode.Escape)){if(optionsOpen){optionsOpen=false;paused=false;}else OpenOptions();}
             if(optionsOpen)return;
             if (selecting)
@@ -146,6 +151,7 @@ namespace LighFight.Runtime
                 return;
             }
             if (paused || backgrounded || Time.timeScale == 0) return;
+            if(session.Phase==FightPhase.Complete){UpdateVictoryPresentation(Time.deltaTime);return;}
             UpdateJoystick();
             UpdateStrikeGestures();
             bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(CrouchArea,true);
@@ -176,6 +182,7 @@ namespace LighFight.Runtime
                 session.Step();feedback.Observe(match,physicalContacts.ImpactA,physicalContacts.ImpactB);
                 if(match.A.HitSerial!=contactA || match.B.HitSerial!=contactB)contactFreeze=(match.A.HitSerial!=contactA && match.A.LastCounter)||(match.B.HitSerial!=contactB && match.B.LastCounter)?5:3;
             }
+            if(session.Phase==FightPhase.Complete){UpdateVictoryPresentation(Time.deltaTime);return;}
             float center=(match.A.X+match.B.X)*.5f;
             float distance=FitCameraDistance(match.A.X,match.B.X,fightCamera.aspect);
             fightCamera.transform.position=Vector3.Lerp(fightCamera.transform.position,new Vector3(center,1.6f,(match.A.Z+match.B.Z)*.5f-distance),Time.deltaTime*4);
@@ -191,6 +198,7 @@ namespace LighFight.Runtime
             if (session == null) return;
             var saved = GUI.matrix;
             var area=UiArea;GUI.matrix = Matrix4x4.TRS(new Vector3(area.x,Screen.height-area.yMax,0), Quaternion.identity, new Vector3(area.width / 960f, area.height / 540f, 1));
+            if(ActorsLoading){ActorLoadingGUI();GUI.matrix=saved;return;}
             if (selecting)
             {
                 SelectionGUI(); if(optionsOpen)OptionsGUI(); GUI.matrix=saved; return;
@@ -198,6 +206,7 @@ namespace LighFight.Runtime
             }
             bool wasEnabled=GUI.enabled; GUI.enabled=wasEnabled&&!optionsOpen;
             SelectionResources();
+            if(session.Phase==FightPhase.Complete){VictoryGUI();GUI.enabled=wasEnabled;if(optionsOpen)OptionsGUI();GUI.matrix=saved;return;}
             Text(new Rect(24,12,350,28),FighterLabel(selectedFighter),14);
             Text(new Rect(600,12,280,28),FighterLabel(OpponentIndex),14,null,TextAnchor.MiddleRight);
             Text(new Rect(420,10,120,30),training?"∞":$"{(session.RemainingTicks+59)/60}",22,null,TextAnchor.MiddleCenter);

@@ -8,6 +8,16 @@ namespace LighFight.Runtime
     {
         [SerializeField] private Transform hips, chest, head, armL, armR, foreL, foreR, legL, legR, shinL, shinR;
         private Material skin, cloth, dark;
+        private IContactPoseHook contactPoseHook;private NativeFingerPoseDriver contactFingerPose;
+        private bool contactPoseHooksChecked,samplingContactPose;
+        private Quaternion contactPoseHeading;
+        private void ApplySampledContactHeading(Fighter fighter){if(samplingContactPose||contactPoseFighter!=fighter||contactPoseHook==null||animator==null)return;if(contactPoseHook.TryGetContactPhase(animator.GetCurrentAnimatorStateInfo(0).shortNameHash,out _))transform.rotation=contactPoseHeading;}
+        private Fighter contactPoseFighter;private int contactPoseHitSerial,contactPoseComboCount,contactPoseAttackFrame;private Level contactPoseHitLevel;private bool contactPoseBlocked;private string contactPoseAttackId;
+        private void RecordContactPoseContext(Fighter fighter){contactPoseHeading=transform.rotation;contactPoseFighter=fighter;contactPoseHitSerial=fighter.HitSerial;contactPoseHitLevel=fighter.LastHitLevel;contactPoseBlocked=fighter.LastBlocked;contactPoseAttackId=fighter.Attack.HasValue?fighter.Attack.Value.Id:null;contactPoseComboCount=fighter.ComboCount;contactPoseAttackFrame=fighter.Frame;}
+        private void ValidateContactPoseContext(Fighter fighter){if(samplingContactPose||contactPoseHook==null||contactPoseFighter==null)return;string attack=fighter.Attack.HasValue?fighter.Attack.Value.Id:null;if(contactPoseFighter!=fighter||contactPoseHitSerial!=fighter.HitSerial||contactPoseHitLevel!=fighter.LastHitLevel||contactPoseBlocked!=fighter.LastBlocked||contactPoseAttackId!=attack||contactPoseComboCount!=fighter.ComboCount||attack!=null&&fighter.Frame<contactPoseAttackFrame){contactPoseHook.InvalidateContactPose();contactPoseFighter=null;}}
+
+        private void CacheContactPoseHooks(){if(contactPoseHooksChecked)return;contactPoseHooksChecked=true;contactFingerPose=GetComponent<NativeFingerPoseDriver>();foreach(var component in GetComponents<MonoBehaviour>())if(component is IContactPoseHook hook){contactPoseHook=hook;break;}}
+
         [SerializeField] private Animator animator;
         [System.Serializable] public struct ContactPose { public string moveId; public float phase,start,end; public int strikeSide;public float headingOffset; }
         [SerializeField] private ContactPose[] contactPoses = new ContactPose[0];
@@ -18,7 +28,8 @@ namespace LighFight.Runtime
         [SerializeField] private NativeClip[] nativeClips = new NativeClip[0];
         public bool UsesNativeMotion => nativeMotion;
         public bool HasNativeMotion(string state)=>nativeMotion&&System.Array.Exists(nativeClips,c=>c.state==state&&c.clip);
-        public bool PreviewNativeMotion(string state,float seconds){if(!HasNativeMotion(state)||!animator)return false;animator.Play("Base Layer."+state,0,NativeLoopPhase(seconds,NativeDuration(state)));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        public bool PreviewNativeMotion(string state,float seconds){if(!HasNativeMotion(state)||!animator)return false;var clip=System.Array.Find(nativeClips,c=>c.state==state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        public static float NativePreviewPhase(float seconds,float duration,bool loop)=>loop?NativeLoopPhase(seconds,duration):Mathf.Clamp(seconds/Mathf.Max(.001f,duration),0,.999999f);
         public void UseNativeMotion(NativeClip[] clips = null) { nativeMotion=true; if(clips!=null)nativeClips=clips; }
         public static float NativeLoopPhase(float seconds,float duration) => Mathf.Repeat(seconds/Mathf.Max(.001f,duration),1);
         public float PreviewDuration(string motion) => HasNativeMotion(motion)?NativeDuration(motion):0;
@@ -110,6 +121,7 @@ namespace LighFight.Runtime
             => joint.localRotation = Quaternion.Euler(x,y,z);
         public void Pose(Fighter fighter, float facing, float delta)
         {
+            ValidateContactPoseContext(fighter);
             if(!hasPosition){previousX=fighter.X;previousZ=fighter.Z;hasPosition=true;if(animator!=null){if(nativeMotion)QualitySettings.skinWeights=SkinWeights.Unlimited;animator.applyRootMotion=false;animator.speed=0;animator.Rebind();if(nativeMotion){nativeRoot=System.Array.Find(animator.GetComponentsInChildren<Transform>(),t=>t.name.Substring(t.name.LastIndexOf(':')+1)=="Hips");if(nativeRoot)nativeRootRest=animator.transform.InverseTransformPoint(nativeRoot.position);}animator.Update(0);}}
             if(Mathf.Abs(previousX-fighter.X)+Mathf.Abs(previousZ-fighter.Z)>.0001f){motionHold=.06f;backing=(fighter.X-previousX)*facing+(fighter.Z-previousZ)*fighter.FacingZ<0;}else motionHold=Mathf.Max(0,motionHold-delta);
             bool moving = motionHold>0;
@@ -150,10 +162,11 @@ namespace LighFight.Runtime
                             phase=Mathf.Lerp(contact.start,end,MotionTiming.Phase(fighter.Attack.Value,fighter.Frame,normalized));
                         }
                     }
+                    if(!samplingContactPose && contactPoseHook!=null && contactPoseHook.TryGetContactPhase(Animator.StringToHash(motion),out var contactPhase))phase=contactPhase;
                     animator.Play(state,0,phase);
                 }
                 animator.Update(0);if(nativeMotion){AnchorNativeRoot();transform.rotation*=NativeHeading(fighter);}else ApplyArtistReaction(fighter);
-                return;
+                ApplySampledContactHeading(fighter);return;
             }
             hips.localPosition = new Vector3(0,fighter.Crouch?.70f:.92f,0);
             Rotate(hips,0);Rotate(chest,-5);Rotate(head,5);
@@ -210,6 +223,7 @@ namespace LighFight.Runtime
             if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
             Pose(fighter,fighter.FacingX,delta);
             if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f){transform.rotation=Quaternion.LookRotation(direction)*NativeHeading(fighter);if(animator!=null && fighter.Attack.HasValue && !nativeMotion && fighter.Attack.Value.Id=="uppercut"){var move=fighter.Attack.Value;float torque=fighter.Frame<move.Startup?Mathf.Clamp01((float)fighter.Frame/move.Startup):1-Mathf.Clamp01((float)(fighter.Frame-move.Startup-move.Active)/move.Recovery);transform.rotation*=Quaternion.Euler(0,-30*torque,0);}}}
+            ApplySampledContactHeading(fighter);
         }
         public Vector3 BonePoint(string name,Vector3 fallback)
         {
@@ -229,7 +243,8 @@ namespace LighFight.Runtime
         public void SampleContactPose(Fighter fighter,Fighter other)
         {
             var grounding=GetComponent<CandidateFootGrounding>();if(grounding)grounding.ResetForSample();
-            PoseTowards(fighter,other,0);if(animator!=null){if(fighter.Attack.HasValue && fighter.Frame>=fighter.Attack.Value.Startup && fighter.Frame<fighter.Attack.Value.Startup+fighter.Attack.Value.Active)blendElapsed=blendDuration;}
+            CacheContactPoseHooks();samplingContactPose=true;try{PoseTowards(fighter,other,0);}finally{samplingContactPose=false;}if(animator!=null){if(fighter.Attack.HasValue && fighter.Frame>=fighter.Attack.Value.Startup && fighter.Frame<fighter.Attack.Value.Startup+fighter.Attack.Value.Active)blendElapsed=blendDuration;}
+            if(contactPoseHook!=null){LateUpdate();if(contactFingerPose)contactFingerPose.ApplyContactPose();contactPoseHook.ApplyContactPose();RecordContactPoseContext(fighter);}
             if(grounding)grounding.ApplyForReview();
         }
         private void OnDestroy(){if(ownsMaterials){Destroy(skin);Destroy(cloth);Destroy(dark);}}
