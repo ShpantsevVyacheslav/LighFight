@@ -1,0 +1,21 @@
+# Actual production selected-content player proof
+
+PASS: 20 settled selections in a Development StandaloneOSX player on Apple M1/Metal, loading the actual `selected-quality-20261014-2` production catalog and remote bundles at `http://127.0.0.1:8977/StandaloneOSX/selected-quality-20261014-2/`. This is not the earlier small fixture.
+
+- Metadata resolves through `UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider`; downloaded catalog has 8 fighter addresses/5 arena addresses and no inline prefab arrays. Metadata checkpoint has zero native pose assets.
+- Sequence alternates Master+Rose, Rose+Ranger, Bone+Master; arena alternates Courtyard/office. Each selection requests exactly three unique selected keys via the unmodified production AddressableSelectedAssetProvider. No provider requests load Island or procedural roster fighters. This checks selected loading, not the entire roster's visual quality.
+- 60 real load handles, 57 previous handles released by final settled pair, all60 released on game destruction. Every settled selection has3live handles and completed typed IActorCurveWarmup. Native pose users/decoded data are0 after destruction; after UnloadUnusedAssets the native pose asset count is0. This proves tracked handle/curve ownership, not zero engine allocator retention.
+- `memory.csv` / `summary.json`: settled Unity allocated123.07–223.26MiB; reserved270.59–393.17MiB; Mono7.16–14.39MiB; Process.WorkingSet64 peak715.33MiB. After unused-asset unload: Unity allocated93.20MiB, reserved301.59MiB, process209.23MiB. Mac process working-set readings fluctuate and differ from shell RSS. These are Development-player snapshots during concurrent desktop workflow, not exact GPU residency, a controlled performance benchmark, iOS measurements, or phone-memory approval.
+- `FullPairInspection` is a supplementary3-selection run, also successful, with full-body paused guard previews. Actor inspection verifies actual Master/Rose/Ranger/Bone: Human avatars,100000 triangles,67bones,58,949/56,145/57,257/59,791 vertices respectively. Native entries and source curve hashes are saved. Master native support has4 warm packed poses; Rose5; Ranger6 unique poses (Stand/Idle share); Bone5.
+- Loaded sampled maps:4096² RGB24 basecolor,1024² RGBA32 normal,2048² RGBA32 metal/smoothness. Master source files have the same dimensions. No maps/geometry were reimported or replaced in this proof; all come from the production bundles. These Standalone formats are not iPhone ASTC format proof.
+- `current-source-parity.json`:47 copied current main script files byte-identical, preserving Runtime/Core assembly names and NativeSupport default-assembly script GUIDs. Probe adds only its own partial diagnostic access, counting wrapper and scene. No production script/settings/asset edits, no main Unity launch.
+
+## Reproduce
+
+Own project: `../ProductionStreamPlayerUnity`. Builder: `Assets/Editor/ProductionProbeBuild.cs`. Player: `../ProductionStreamPlayer/LighFightProductionProbe.app`.
+
+Launch Unity6000.3.26f1 with `-batchmode -nographics -buildTarget StandaloneOSX -projectPath <absolute own project> -executeMethod ProductionProbeBuild.Build -quit -logFile <log>`.
+
+Serve repository `.tools/content` on localhost8977. Run the app's `Contents/MacOS/LighFight` executable with `LF_PRODUCTION_PROBE_OUTPUT=<new output folder>`, `-screen-fullscreen 0 -screen-width 1280 -screen-height 720 -logFile <log>`. For supplementary3-selection inspection add `LF_PROBE_CAPTURE_ONLY=1`; otherwise20 selections run. Background execution is enabled only for this probe build. Local production built-in MonoScripts/UnityBuiltinAssets bundles must accompany copied settings/catalog under StreamingAssets/aa/StandaloneOSX (81KiB total); all fighters/arenas remain remote.
+
+First attempts caught omitted screen-capture module and local built-ins; those packaging omissions were repaired in the isolated shell. Historical failure text is explicitly named `packaging-first-attempt-failure.txt`; successful result.json/CSV/logs are final evidence. Initial top-level screenshots inherit selection framing and crop the opponent; use FullPairInspection screenshots for full-body presentation. Captures are static instantiated/warmed previews, not combat contact/facing tests.
