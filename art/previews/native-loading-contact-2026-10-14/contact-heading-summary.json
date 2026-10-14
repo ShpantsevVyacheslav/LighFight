@@ -1,0 +1,340 @@
+{
+  "False": {
+    "samples": 1166,
+    "max": {
+      "maxBoneErrorMeters": 9.693775e-07,
+      "worldErrorMeters": 9.721224e-07,
+      "headingErrorDegrees": 0.0,
+      "strikingHandErrorMeters": 8.554597e-07,
+      "rootTravelMeters": 0.0002250001
+    },
+    "movingRootSamples": 395,
+    "byRole": {
+      "Island": {
+        "worldErrorMeters": 8.850838e-07,
+        "headingErrorDegrees": 0.0,
+        "strikingHandErrorMeters": 6.728585e-07
+      },
+      "Ranger": {
+        "worldErrorMeters": 9.009967e-07,
+        "headingErrorDegrees": 0.0,
+        "strikingHandErrorMeters": 7.348554e-07
+      },
+      "Bone": {
+        "worldErrorMeters": 9.721224e-07,
+        "headingErrorDegrees": 0.0,
+        "strikingHandErrorMeters": 8.554597e-07
+      },
+      "Rose": {
+        "worldErrorMeters": 8.699012e-07,
+        "headingErrorDegrees": 0.0,
+        "strikingHandErrorMeters": 6.44206e-07
+      }
+    },
+    "segments": {
+      "startup": {
+        "samples": 124,
+        "maxWorldErrorMeters": 8.199702e-07
+      },
+      "active": {
+        "samples": 32,
+        "maxWorldErrorMeters": 8.085167e-07
+      },
+      "recovery": {
+        "samples": 180,
+        "maxWorldErrorMeters": 9.721224e-07
+      }
+    }
+  },
+  "damageCases": [
+    {
+      "role": "Rose",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Rose",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Rose",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Rose",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Rose",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Rose",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 10
+    },
+    {
+      "role": "Rose",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Rose",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 10
+    },
+    {
+      "role": "Island",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Island",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Island",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Island",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Island",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Island",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 10
+    },
+    {
+      "role": "Island",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Island",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 10
+    },
+    {
+      "role": "Ranger",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Ranger",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Ranger",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Ranger",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Ranger",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Ranger",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 10
+    },
+    {
+      "role": "Ranger",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Ranger",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 10
+    },
+    {
+      "role": "Bone",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Bone",
+      "move": "jab",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Bone",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 6
+    },
+    {
+      "role": "Bone",
+      "move": "jab",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 6
+    },
+    {
+      "role": "Bone",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Bone",
+      "move": "cross",
+      "mutation": "False",
+      "steps": "3",
+      "damage": 10
+    },
+    {
+      "role": "Bone",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "1",
+      "damage": 10
+    },
+    {
+      "role": "Bone",
+      "move": "cross",
+      "mutation": "True",
+      "steps": "3",
+      "damage": 10
+    }
+  ],
+  "rootRange": {
+    "preRootX": [
+      -0.8975264,
+      0.617988
+    ],
+    "preRootZ": [
+      -0.02083089,
+      0.1783892
+    ],
+    "eofRootX": [
+      -0.8975264,
+      0.617988
+    ],
+    "eofRootZ": [
+      -0.02083089,
+      0.1783892
+    ]
+  },
+  "True": {
+    "samples": 1164,
+    "max": {
+      "maxBoneErrorMeters": 9.96597e-07,
+      "worldErrorMeters": 0.01612085,
+      "headingErrorDegrees": 1.339376,
+      "strikingHandErrorMeters": 0.01279006,
+      "rootTravelMeters": 0.0002250001
+    },
+    "movingRootSamples": 393,
+    "byRole": {
+      "Island": {
+        "worldErrorMeters": 0.01009415,
+        "headingErrorDegrees": 0.835557,
+        "strikingHandErrorMeters": 0.0086562
+      },
+      "Ranger": {
+        "worldErrorMeters": 0.008823257,
+        "headingErrorDegrees": 0.7066489,
+        "strikingHandErrorMeters": 0.00661951
+      },
+      "Bone": {
+        "worldErrorMeters": 0.01612085,
+        "headingErrorDegrees": 1.339376,
+        "strikingHandErrorMeters": 0.01279006
+      },
+      "Rose": {
+        "worldErrorMeters": 0.005643641,
+        "headingErrorDegrees": 0.6280707,
+        "strikingHandErrorMeters": 0.005557279
+      }
+    },
+    "segments": {
+      "startup": {
+        "samples": 124,
+        "maxWorldErrorMeters": 0.01612085
+      },
+      "active": {
+        "samples": 32,
+        "maxWorldErrorMeters": 8.085167e-07
+      },
+      "recovery": {
+        "samples": 180,
+        "maxWorldErrorMeters": 0.008385182
+      }
+    }
+  }
+}

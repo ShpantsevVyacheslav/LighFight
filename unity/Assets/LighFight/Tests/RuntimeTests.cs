@@ -192,6 +192,7 @@ public class RuntimeTests
         EditorSceneManager.OpenScene("Assets/LighFight/Scenes/HostFightReview.unity");
         yield return new EnterPlayMode();yield return null;yield return null;
         var game=Object.FindFirstObjectByType<Prototype>();var host=Object.FindFirstObjectByType<HostBridge>();
+        yield return LighFight.Tests.ActorCurveWarmupTests.WaitReady(game);
         host.Launch("{\"protocolVersion\":1,\"sessionId\":\"fight-review\",\"mode\":\"bot\",\"locale\":\"ru\"}");
         yield return null;
         Assert.AreEqual(1,Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None).Length,"Selection must hide the opponent");
@@ -200,7 +201,7 @@ public class RuntimeTests
         if(SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null)Assert.NotNull(previewCamera.targetTexture,"Selection composites the character over the designed backdrop");
         Assert.AreEqual(CameraClearFlags.SolidColor,previewCamera.clearFlags);
         Assert.AreEqual(0,previewCamera.backgroundColor.a);
-        game.BeginFight();yield return null;yield return null;
+        game.BeginFight();yield return LighFight.Tests.ActorCurveWarmupTests.WaitReady(game);
         Assert.IsNull(previewCamera.targetTexture,"Battle must render directly to the screen");
         Assert.AreEqual(new Rect(0,0,1,1),previewCamera.rect,"Battle must restore full viewport");
         var views=Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None);Assert.AreEqual(2,views.Length);

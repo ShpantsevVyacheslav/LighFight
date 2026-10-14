@@ -23,8 +23,8 @@ namespace LighFight.Editor {
    string contentPath=Folder+"/ReviewContent.asset";
    var content=AssetDatabase.LoadAssetAtPath<GameContent>(contentPath);
    if(!content){content=ScriptableObject.CreateInstance<GameContent>();AssetDatabase.CreateAsset(content,contentPath);}
-   content.fighters=(GameObject[])source.fighters.Clone();content.arenas=(GameObject[])source.arenas.Clone();content.fighters[4]=candidate;
-   foreach(var entry in new[]{(index:0,name:"Bone"),(index:3,name:"Island"),(index:5,name:"Ranger")}){var replacement=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/Tripo"+entry.name+"Playable/"+entry.name+"HumanoidCandidate.prefab");if(!replacement||!replacement.GetComponent<FighterView>().IsReady)throw new InvalidOperationException("Invalid roster replacement: "+entry.name);content.fighters[entry.index]=replacement;}
+   content.fighterMetadata=source.fighterMetadata==null?null:(GameContent.FighterMetadata[])source.fighterMetadata.Clone();content.fighters=(GameObject[])source.fighters.Clone();content.arenas=(GameObject[])source.arenas.Clone();content.fighters[4]=candidate;
+   foreach(var entry in new[]{(index:0,name:"Bone"),(index:2,name:"Master"),(index:3,name:"Island"),(index:5,name:"Ranger")}){var replacement=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/Tripo"+entry.name+"Playable/"+entry.name+"HumanoidCandidate.prefab");if(!replacement||!replacement.GetComponent<FighterView>().IsReady)throw new InvalidOperationException("Invalid roster replacement: "+entry.name);content.fighters[entry.index]=replacement;}
    EditorUtility.SetDirty(content);
    var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
    new GameObject("LighFight Host Bridge").AddComponent<HostBridge>();
@@ -52,18 +52,18 @@ namespace LighFight.Editor {
    Debug.Log("AGENT_RESULT repeated builds preserve all "+paths.Length+" controller assets byte-for-byte");
   }
   public static void PromoteReviewedRoster() {
-   PreserveIslandSourceResolution();TripoPlayableCandidateBuilder.Build();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();Prepare();
+   PreserveIslandSourceResolution();TripoPlayableCandidateBuilder.Build();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();TripoMasterCandidateBuilder.Build();Prepare();
    var review=AssetDatabase.LoadAssetAtPath<GameContent>(Folder+"/ReviewContent.asset");
    var shipping=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
-   foreach(int index in new[]{0,3,4,5}){var candidate=review.fighters[index];var animator=candidate.GetComponentInChildren<Animator>();var skin=candidate.GetComponentInChildren<SkinnedMeshRenderer>();if(!candidate.GetComponent<FighterView>().IsReady||!animator.avatar.isHuman||skin.sharedMesh.triangles.Length/3!=100000)throw new InvalidOperationException("Roster promotion gate failed at "+index);shipping.fighters[index]=candidate;}
-   EditorUtility.SetDirty(shipping);AssetDatabase.SaveAssets();Debug.Log("AGENT_RESULT main roster now uses calibrated Tripo fighters at0,3,4,5; device delivery pending");
+   foreach(int index in new[]{0,2,3,4,5}){var candidate=review.fighters[index];var animator=candidate.GetComponentInChildren<Animator>();var skin=candidate.GetComponentInChildren<SkinnedMeshRenderer>();if(!candidate.GetComponent<FighterView>().IsReady||!animator.avatar.isHuman||skin.sharedMesh.triangles.Length/3!=100000)throw new InvalidOperationException("Roster promotion gate failed at "+index);shipping.fighters[index]=candidate;}
+   EditorUtility.SetDirty(shipping);AssetDatabase.SaveAssets();Debug.Log("AGENT_RESULT main roster now uses calibrated Tripo fighters at0,2,3,4,5; device delivery pending");
   }
   public static void Build()=>BuildTargetReview(BuildTarget.WebGL,"../.tools/web-tripo-review");
   public static void BuildMac()=>BuildTargetReview(BuildTarget.StandaloneOSX,"../.tools/mac-tripo-review/LighFight.app");
   static void BuildTargetReview(BuildTarget target,string destination) {
    if(!BuildPipeline.IsBuildTargetSupported(BuildPipeline.GetBuildTargetGroup(target),target))throw new InvalidOperationException("Build module unavailable: "+target);
    PreserveIslandSourceResolution();
-   TripoPlayableCandidateBuilder.Build();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();
+   TripoPlayableCandidateBuilder.Build();TripoIslandCandidateBuilder.Build();TripoRangerCandidateBuilder.Build();TripoBoneCandidateBuilder.Build();TripoMasterCandidateBuilder.Build();
    Prepare();
    string output=Path.GetFullPath(destination);Directory.CreateDirectory(Path.GetDirectoryName(output));
    // Uncompressed local output works with a normal HTTP server, without custom CDN headers.
