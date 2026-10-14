@@ -40,3 +40,11 @@ Independent code review found menu-state leakage blocking preview gestures after
 ## Expanded roster catalog
 
 Catalog metadata, paged fighter/opponent selection and embedded host snapshot now support 11 entries while preserving the existing eight IDs. Host export copies the current approved prefab references without substituting old Island/Rose models and preserves the existing asset GUID. Full GPU Unity suite: 173/173 passed (`.tools/tripo-eleven-roster-final.xml`). The three new models are backlog entries; this does not claim their generation or phone delivery.
+
+## Native support integrated 2026-10-14
+
+Four existing Tripo builders now attach original Generic curve overlays for native support motions (21 controller states; active Human Guard retained). Main Metal runtime proof completed 931 diagnostic EOF frames /1,092,209 original vertex comparisons; max settled world error0.001220mm, max XZ anchor error0.0000304mm, worst floor penetration0.17736mm. Evidence: `art/previews/native-support-main-2026-10-14/`. Independent provider Generic parity remains a separate packet proof; main reference is the imported original curve data.
+
+Native high head-hit Human reaction replaces the waist reaction only for unblocked High stun, with per-actor override and unchanged timing/physics. Four additional tests bring full GPU Unity suite to177/177. Main Bone combat smoke166samples/6images: .65m jab miss0, cross10,1.1m frontkick14. Close-startup shoe/forearm intersections remain open; no larger hit radii, IK or lunge promoted.
+
+Controlled single-actor native benchmark2,280frames: MainThread median2.389ms,p958.567ms; RenderThread unavailable. This is not final gameplay/iPhone performance. Master candidate imported separately, catalog not yet changed pending main validation.

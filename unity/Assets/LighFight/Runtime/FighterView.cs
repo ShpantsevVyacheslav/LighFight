@@ -25,6 +25,8 @@ namespace LighFight.Runtime
         public bool FullPreviewMotion {get;set;}
         private float NativeDuration(string motion) { var entry=System.Array.Find(nativeClips,c=>c.state==motion);return entry.clip?entry.clip.length:1; }
         private float nativeTime;
+        private NativeHighReaction highReaction;
+        private bool highReactionCached;
         private Transform nativeRoot;
         private Vector3 nativeRootRest;
         private void AnchorNativeRoot() { if(!nativeRoot)return;var p=animator.transform.InverseTransformPoint(nativeRoot.position);p.x=nativeRootRest.x;p.z=nativeRootRest.z;nativeRoot.position=animator.transform.TransformPoint(p); }
@@ -117,6 +119,7 @@ namespace LighFight.Runtime
             transform.rotation = Quaternion.Euler(0,facing>0?90:-90,0);
             if(animator!=null)
             {
+                if(nativeMotion){if(!highReactionCached){highReaction=GetComponent<NativeHighReaction>();highReactionCached=true;}if(highReaction)highReaction.SelectFor(fighter);}
                 deathTime=fighter.Health<=0?deathTime+delta:0;
                 if(previousHitSerial!=fighter.HitSerial){previousHitSerial=fighter.HitSerial;reactionTime=0;}else reactionTime+=delta;
                 animator.applyRootMotion=false;animator.speed=0;
@@ -133,7 +136,7 @@ namespace LighFight.Runtime
                 {
                     float phase=fighter.Attack.HasValue?(float)fighter.Frame/fighter.Attack.Value.Duration:fighter.DownTicks>Match.GetUpTicks?1-(fighter.DownTicks-Match.GetUpTicks)/(float)(Match.KnockdownTicks-Match.GetUpTicks):fighter.DownTicks>0?1-fighter.DownTicks/(float)Match.GetUpTicks:Mathf.Repeat(stride*.1f,1);
                     if(fighter.Health<=0)phase=Mathf.Clamp01(deathTime/(nativeMotion?NativeDuration("Fall"):1));
-                    if(motion=="Hit")phase=Mathf.Clamp01((float)fighter.ReactionTicks/Mathf.Max(1,fighter.ReactionDuration));
+                    if(motion=="Hit"){phase=Mathf.Clamp01((float)fighter.ReactionTicks/Mathf.Max(1,fighter.ReactionDuration));if(nativeMotion&&highReaction)phase=highReaction.SourcePhase(phase);}
                     if(motion=="Idle" || motion=="Guard")phase=nativeMotion?NativeLoopPhase(nativeTime,NativeDuration(motion)):0;
                     if(nativeMotion && (motion=="Walk" || motion=="WalkBack")){phase=NativeLoopPhase(nativeTime,NativeDuration(motion));}
                     if(motion=="Crouch" && !moving)phase=.3f;
