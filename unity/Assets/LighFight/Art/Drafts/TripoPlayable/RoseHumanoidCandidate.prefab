@@ -83,6 +83,9 @@ MonoBehaviour:
   - Fall
   - GetUp
   - CrouchUppercut
+  - CrouchJab
+  - CrouchCross
+  - CrouchBody
 --- !u!114 &4808992970657424143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,6 +1318,14 @@ MonoBehaviour:
       weight: 0.02745098
   nativeRest: {x: 0, y: -0.0050010807, z: 0}
   maxCorrection: 0.18
+  signedFloorAnimator: {fileID: 4068673535507976775}
+  signedFloorStates:
+  - Crouch
+  - CrouchJab
+  - CrouchCross
+  - CrouchBody
+  - CrouchUppercut
+  maxDownCorrection: 0.2
 --- !u!114 &1878777895352340876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,7 +1548,7 @@ MonoBehaviour:
   - state: Idle
     clip: {fileID: 7400000, guid: 3c161cf2b13b146c7a3e90e17ad08d14, type: 2}
   - state: Guard
-    clip: {fileID: 7400000, guid: 3c161cf2b13b146c7a3e90e17ad08d14, type: 2}
+    clip: {fileID: 7400000, guid: c2476c5482d8044938715ba7b77215f2, type: 2}
   - state: WalkBack
     clip: {fileID: 7400000, guid: 68e914e81e9694b3a9ccc2f83afdfa20, type: 2}
   - state: Crouch
@@ -1559,7 +1570,13 @@ MonoBehaviour:
   - state: Victory
     clip: {fileID: 7400000, guid: 35f0772927034449ab27d1dbcea4ec60, type: 2}
   - state: CrouchUppercut
-    clip: {fileID: 7400000, guid: 840f4859e624947929c9eebad22cd56d, type: 2}
+    clip: {fileID: 7400000, guid: 8655da0121ee64c11bdb54615ba4e13f, type: 2}
+  - state: CrouchJab
+    clip: {fileID: 7400000, guid: b6f94e477ff8c4706add2427d94131d5, type: 2}
+  - state: CrouchCross
+    clip: {fileID: 7400000, guid: 082e73914f80b45c9b46c9c85d4034b4, type: 2}
+  - state: CrouchBody
+    clip: {fileID: 7400000, guid: 5b59598c515b446198f3cf002abc9d74, type: 2}
   ownsMaterials: 0
 --- !u!114 &804799991844942860
 MonoBehaviour:
@@ -10073,7 +10090,7 @@ Animator:
   m_GameObject: {fileID: 973213886935428347}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 279d050248e0d4a078ff5b937845b15e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 724fad453b63a4031b1918cc50350a18, type: 2}
+  m_Controller: {fileID: 9100000, guid: 84836d1fe6cc04eefb4462d9d386e457, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10458,7 +10475,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3086501862182655443}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2564649, y: -0.62221295, z: -0.0531454, w: 0.7377346}
+  m_LocalRotation: {x: 0.25646493, y: -0.622213, z: -0.053145405, w: 0.7377347}
   m_LocalPosition: {x: -0.010745648, y: 0.02056186, z: 0.008819368}
   m_LocalScale: {x: 0.9999999, y: 0.99999976, z: 0.99999976}
   m_ConstrainProportionsScale: 0

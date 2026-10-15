@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 23:27:55Z" end-time="2026-10-15 23:27:55Z" duration="0.1322121">
+  <test-suite type="TestSuite" id="1005" name="PauseLifecycleReview20261016" fullname="PauseLifecycleReview20261016" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-15 23:27:55Z" end-time="2026-10-15 23:27:55Z" duration="0.132212" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1003" name="PauseLifecycle.PlayMode.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseLifecycleQA/Project/Library/ScriptAssemblies/PauseLifecycle.PlayMode.dll" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-15 23:27:55Z" end-time="2026-10-15 23:27:55Z" duration="0.123018" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="85357" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1001" name="PauseProductionLifecyclePlayModeTests" fullname="PauseProductionLifecyclePlayModeTests" classname="PauseProductionLifecyclePlayModeTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-15 23:27:55Z" end-time="2026-10-15 23:27:55Z" duration="0.121741" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1002" name="OptionsStopsSceneAndRestoresExactSelectionOwnership" fullname="PauseProductionLifecyclePlayModeTests.OptionsStopsSceneAndRestoresExactSelectionOwnership" methodname="OptionsStopsSceneAndRestoresExactSelectionOwnership" classname="PauseProductionLifecyclePlayModeTests" runstate="Runnable" seed="688752343" result="Failed" start-time="2026-10-15 23:27:55Z" end-time="2026-10-15 23:27:55Z" duration="0.111070" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[Unhandled log message: '[Exception] Exception: UnityTest yielded WaitForEndOfFrame, which is not evoked in batchmode.'. Use UnityEngine.TestTools.LogAssert.Expect]]></message>
+            <stack-trace><![CDATA[UnityEngine.TestTools.Utils.CoroutineRunner+<WrapEnumeratorForChecks>d__8.MoveNext () (at /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.test-framework@bd7f943e9647/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:68)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Exception: UnityTest yielded WaitForEndOfFrame, which is not evoked in batchmode.
+UnityEngine.TestTools.Utils.CoroutineRunner+<WrapEnumeratorForChecks>d__8.MoveNext () (at /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.test-framework@bd7f943e9647/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:68)
+UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseLifecycleQA/Evidence/baseline.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

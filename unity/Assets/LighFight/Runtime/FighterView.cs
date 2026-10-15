@@ -147,7 +147,9 @@ namespace LighFight.Runtime
                 bool composedPosture=HasCombatPosture;
                 int armsLayer=postureLayer;
                 int postureRequestedArmsState=0;float postureRequestedArmsPhase=0;
-                string attackMotion=composedPosture&&fighter.Crouch&&attackId=="uppercut"?"CrouchUppercut":attackId;
+                int reviewDuckLayer=animator.GetLayerIndex("Review source shallow duck");
+                bool reviewLowAttack=reviewDuckLayer>=0&&fighter.Crouch&&(attackId=="jab"||attackId=="cross"||attackId=="body"||attackId=="uppercut");
+                string attackMotion=reviewLowAttack?(attackId=="jab"?"CrouchJab":attackId=="cross"?"CrouchCross":attackId=="body"?"CrouchBody":"CrouchUppercut"):composedPosture&&fighter.Crouch&&attackId=="uppercut"?"CrouchUppercut":attackId;
                 string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?(fighter.LastBlocked?(composedPosture&&fighter.Crouch?"Crouch":"Guard"):"Hit"):fighter.Attack.HasValue?attackMotion:fighter.Guard&&!composedPosture?"Guard":fighter.Crouch?"Crouch":moving&&backing&&composedPosture?"WalkBack":fighter.Guard?"Guard":moving?(backing?"WalkBack":"Walk"):"Idle";
                 if(motion!=previousMotion)
                 {
@@ -177,11 +179,16 @@ namespace LighFight.Runtime
                         }
                     }
                     if(!samplingContactPose && contactPoseHook!=null && contactPoseHook.TryGetContactPhase(Animator.StringToHash(motion),out var contactPhase))phase=contactPhase;
-                    bool crouchedStrike=composedPosture&&motion=="CrouchUppercut";
+                    if(motion=="Guard"&&animator.GetLayerIndex("Review dedicated Block1")>=0)phase=.30f; // QA: sampled source cover, do not loop full block blindly.
+                    bool crouchedStrike=composedPosture&&(motion=="CrouchUppercut"||reviewLowAttack&&motion==attackMotion);
                     bool protectedArms=composedPosture&&(motion=="Crouch"||motion=="WalkBack");
-                    if(composedPosture){animator.SetLayerWeight(armsLayer,crouchedStrike||protectedArms?1:0);if(crouchedStrike||protectedArms){postureRequestedArmsState=(crouchedStrike?PostureUppercutState:PostureGuardState);postureRequestedArmsPhase=crouchedStrike?phase:.2f;animator.Play(postureRequestedArmsState,armsLayer,postureRequestedArmsPhase);}}
+                    if(composedPosture){bool fullSourceStrike=reviewDuckLayer>=0&&crouchedStrike;animator.SetLayerWeight(armsLayer,!fullSourceStrike&&(crouchedStrike||protectedArms)?1:0);if(!fullSourceStrike&&(crouchedStrike||protectedArms)){postureRequestedArmsState=(crouchedStrike?(reviewLowAttack&&attackId!="uppercut"?Animator.StringToHash(CombatPostureLayerName+".Source_"+attackId):PostureUppercutState):PostureGuardState);postureRequestedArmsPhase=crouchedStrike?phase:.2f;animator.Play(postureRequestedArmsState,armsLayer,postureRequestedArmsPhase);}}
                     // Original Human Crouch authority; no regenerated held-body clip.
-                    animator.Play(state,0,crouchedStrike?.3f:phase);
+                    bool reviewDuck=reviewDuckLayer>=0&&(motion=="Crouch"||crouchedStrike);
+                    int idleDuckLayer=animator.GetLayerIndex("Review source idle duck");bool idleDuck=idleDuckLayer>=0&&motion=="Crouch"&&!fighter.Attack.HasValue;
+                    if(idleDuckLayer>=0){animator.SetLayerWeight(idleDuckLayer,idleDuck?.55f:0);if(idleDuck){int idleSource=Animator.StringToHash("Review source idle duck.Source");if(!animator.HasState(idleDuckLayer,idleSource))throw new System.InvalidOperationException("Idle duck source missing");animator.Play(idleSource,idleDuckLayer,.30f);}}
+                    if(reviewDuckLayer>=0){animator.SetLayerWeight(reviewDuckLayer,reviewDuck&&!idleDuck?.55f:0);if(reviewDuck&&!idleDuck){int source=Animator.StringToHash("Review source shallow duck.Source");if(!animator.HasState(reviewDuckLayer,source))throw new System.InvalidOperationException("Missing shallow duck source state");animator.Play(source,reviewDuckLayer,.30f);}}
+                    animator.Play(state,0,reviewDuck?(crouchedStrike?phase:.2f):crouchedStrike?.3f:phase);
                 }
                 animator.Update(0);if(postureRequestedArmsState!=0){var armsActual=animator.GetCurrentAnimatorStateInfo(armsLayer);if(armsActual.fullPathHash!=postureRequestedArmsState||Mathf.Abs(armsActual.normalizedTime-postureRequestedArmsPhase)>.00001f)throw new System.InvalidOperationException("Combat arms state/phase authority failed");}if(nativeMotion){AnchorNativeRoot();transform.rotation*=NativeHeading(fighter);}else ApplyArtistReaction(fighter);
                 ApplySampledContactHeading(fighter);return;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 23:28:21Z" end-time="2026-10-15 23:28:24Z" duration="3.1240311">
+  <test-suite type="TestSuite" id="1005" name="PauseLifecycleReview20261016" fullname="PauseLifecycleReview20261016" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-15 23:28:21Z" end-time="2026-10-15 23:28:24Z" duration="3.124031" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1003" name="PauseLifecycle.PlayMode.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseLifecycleQA/Project/Library/ScriptAssemblies/PauseLifecycle.PlayMode.dll" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-15 23:28:21Z" end-time="2026-10-15 23:28:24Z" duration="3.115655" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="85706" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1001" name="PauseProductionLifecyclePlayModeTests" fullname="PauseProductionLifecyclePlayModeTests" classname="PauseProductionLifecyclePlayModeTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-15 23:28:21Z" end-time="2026-10-15 23:28:24Z" duration="3.114235" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1002" name="OptionsStopsSceneAndRestoresExactSelectionOwnership" fullname="PauseProductionLifecyclePlayModeTests.OptionsStopsSceneAndRestoresExactSelectionOwnership" methodname="OptionsStopsSceneAndRestoresExactSelectionOwnership" classname="PauseProductionLifecyclePlayModeTests" runstate="Runnable" seed="1470126662" result="Failed" start-time="2026-10-15 23:28:21Z" end-time="2026-10-15 23:28:24Z" duration="3.101206" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Baseline RED: modal leaves real 3D camera enabled
+  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at PauseProductionLifecyclePlayModeTests+<OptionsStopsSceneAndRestoresExactSelectionOwnership>d__3.MoveNext () [0x0020b] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseLifecycleQA/Project/Assets/Tests/PauseProductionLifecyclePlayModeTests.cs:26
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.test-framework@bd7f943e9647/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseLifecycleQA/Evidence/baseline.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

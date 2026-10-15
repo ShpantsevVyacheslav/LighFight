@@ -1038,6 +1038,9 @@ MonoBehaviour:
   - Fall
   - GetUp
   - CrouchUppercut
+  - CrouchJab
+  - CrouchCross
+  - CrouchBody
 --- !u!114 &4705881918997424645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65490,6 +65493,14 @@ MonoBehaviour:
       weight: 0.011764706
   nativeRest: {x: 0, y: 0.013754122, z: 0}
   maxCorrection: 0.22
+  signedFloorAnimator: {fileID: 6722221125647820141}
+  signedFloorStates:
+  - Crouch
+  - CrouchJab
+  - CrouchCross
+  - CrouchBody
+  - CrouchUppercut
+  maxDownCorrection: 0.2
 --- !u!114 &2839149838991709923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65696,7 +65707,7 @@ MonoBehaviour:
   - state: Idle
     clip: {fileID: 7400000, guid: 3c161cf2b13b146c7a3e90e17ad08d14, type: 2}
   - state: Guard
-    clip: {fileID: 7400000, guid: 3c161cf2b13b146c7a3e90e17ad08d14, type: 2}
+    clip: {fileID: 7400000, guid: c2476c5482d8044938715ba7b77215f2, type: 2}
   - state: WalkBack
     clip: {fileID: 7400000, guid: 68e914e81e9694b3a9ccc2f83afdfa20, type: 2}
   - state: Crouch
@@ -65724,7 +65735,13 @@ MonoBehaviour:
   - state: NativeHeadFull
     clip: {fileID: 7400000, guid: c1e39b2f3bcc447e6a2da0847d016b35, type: 2}
   - state: CrouchUppercut
-    clip: {fileID: 7400000, guid: 840f4859e624947929c9eebad22cd56d, type: 2}
+    clip: {fileID: 7400000, guid: 8655da0121ee64c11bdb54615ba4e13f, type: 2}
+  - state: CrouchJab
+    clip: {fileID: 7400000, guid: b6f94e477ff8c4706add2427d94131d5, type: 2}
+  - state: CrouchCross
+    clip: {fileID: 7400000, guid: 082e73914f80b45c9b46c9c85d4034b4, type: 2}
+  - state: CrouchBody
+    clip: {fileID: 7400000, guid: 5b59598c515b446198f3cf002abc9d74, type: 2}
   ownsMaterials: 0
 --- !u!114 &5006566477151025479
 MonoBehaviour:
@@ -604929,7 +604946,7 @@ Animator:
   m_GameObject: {fileID: 5511955599789110088}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9fd430c132a45ecb8924d19a27d7428c, type: 3}
-  m_Controller: {fileID: 9100000, guid: b569c4ecc98064c009df60c66abc63c3, type: 2}
+  m_Controller: {fileID: 9100000, guid: f53c1f72a4b49498987e03bd912cb7af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

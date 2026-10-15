@@ -1,0 +1,21 @@
+{
+  "candidateUnaligned": 15,
+  "actors": {
+    "Bone": {
+      "failed": 3,
+      "worstFloat": 0.0080082593485713,
+      "proxyError": 2.7939677238464355e-09
+    },
+    "Witch": {
+      "failed": 9,
+      "worstFloat": 0.01823252998292446,
+      "proxyError": 1.7695128917694092e-08
+    },
+    "Ranger": {
+      "failed": 3,
+      "worstFloat": 0,
+      "proxyError": 0.001158080413006246
+    }
+  },
+  "meaning": "Bone/Witch positivefloat caused by cap saturation. Ranger3frames penetrate up to1.158mm because sparse original support misses an extremum; separate support correction required. This is RED, not accepted."
+}

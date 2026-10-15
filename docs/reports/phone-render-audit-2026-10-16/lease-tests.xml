@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="6" result="Passed" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.0748955">
+  <test-suite type="TestSuite" id="1000" name="LeaseUnitUnity" fullname="LeaseUnitUnity" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.074896" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1008" name="PauseLease.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseSuspensionPacket/LeaseUnitUnity/Library/ScriptAssemblies/PauseLease.Tests.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.059711" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="84348" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="PauseActivationLeaseTests" fullname="PauseActivationLeaseTests" classname="PauseActivationLeaseTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.057231" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1007" name="DestroyedActorDoesNotPreventOtherRestoration" fullname="PauseActivationLeaseTests.DestroyedActorDoesNotPreventOtherRestoration" methodname="DestroyedActorDoesNotPreventOtherRestoration" classname="PauseActivationLeaseTests" runstate="Runnable" seed="1891648125" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.028568" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1004" name="DisabledCameraRemainsDisabled" fullname="PauseActivationLeaseTests.DisabledCameraRemainsDisabled" methodname="DisabledCameraRemainsDisabled" classname="PauseActivationLeaseTests" runstate="Runnable" seed="797465548" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.001166" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1006" name="DisposalIsIdempotentAndDoesNotOverwriteLaterOwner" fullname="PauseActivationLeaseTests.DisposalIsIdempotentAndDoesNotOverwriteLaterOwner" methodname="DisposalIsIdempotentAndDoesNotOverwriteLaterOwner" classname="PauseActivationLeaseTests" runstate="Runnable" seed="739527387" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.000915" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1005" name="FailedScopeStillRestores" fullname="PauseActivationLeaseTests.FailedScopeStillRestores" methodname="FailedScopeStillRestores" classname="PauseActivationLeaseTests" runstate="Runnable" seed="513689012" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.000841" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1003" name="ResumeRestoresOnlyPreviouslyActiveObjects" fullname="PauseActivationLeaseTests.ResumeRestoresOnlyPreviouslyActiveObjects" methodname="ResumeRestoresOnlyPreviouslyActiveObjects" classname="PauseActivationLeaseTests" runstate="Runnable" seed="99011787" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.000772" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1002" name="StopsActorsAndSceneCamera" fullname="PauseActivationLeaseTests.StopsActorsAndSceneCamera" methodname="StopsActorsAndSceneCamera" classname="PauseActivationLeaseTests" runstate="Runnable" seed="1505874418" result="Passed" start-time="2026-10-15 23:17:59Z" end-time="2026-10-15 23:17:59Z" duration="0.000439" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseSuspensionPacket/lease-tests.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

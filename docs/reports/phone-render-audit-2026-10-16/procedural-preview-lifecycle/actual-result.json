@@ -1,0 +1,46 @@
+{
+  "unity": "6000.3.26f1",
+  "project": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/PauseLifecycleQA/Project",
+  "companyName": "LighFightOfflineQA",
+  "productName": "PauseLifecycleReview20261016",
+  "graphics": "Metal automatic camera preview in batch PlayMode",
+  "baselineExitCode": 2,
+  "candidateExitCode": 0,
+  "results": {
+    "baseline.setup-failure": {
+      "result": "Failed(Child)",
+      "total": "1",
+      "passed": "0",
+      "failed": "1",
+      "durationSeconds": 0.1322121,
+      "messages": [
+        "One or more child tests had errors",
+        "Unhandled log message: '[Exception] Exception: UnityTest yielded WaitForEndOfFrame, which is not evoked in batchmode.'. Use UnityEngine.TestTools.LogAssert.Expect"
+      ]
+    },
+    "baseline": {
+      "result": "Failed(Child)",
+      "total": "1",
+      "passed": "0",
+      "failed": "1",
+      "durationSeconds": 3.1240311,
+      "messages": [
+        "One or more child tests had errors",
+        "  Baseline RED: modal leaves real 3D camera enabled\n  Expected: False\n  But was:  True\n"
+      ]
+    },
+    "candidate": {
+      "result": "Passed",
+      "total": "1",
+      "passed": "1",
+      "failed": "0",
+      "durationSeconds": 0.1417197,
+      "messages": []
+    }
+  },
+  "mainSourceChanges": [],
+  "projectBytes": 25106008,
+  "fixtureSha256": "ded868b2a01264f3423ac368668c8e5ceb9a0bf671d225428dac5601fb99a195",
+  "runtimeCandidateDeltaFromFrozenPacket": "none; owned fixture wait changed EOF->yieldnull due explicit test runner batch prohibition",
+  "acceptance": "procedural preview lifecycle only; no pixel, artist, battle backdrop, contact or phone thermal acceptance"
+}

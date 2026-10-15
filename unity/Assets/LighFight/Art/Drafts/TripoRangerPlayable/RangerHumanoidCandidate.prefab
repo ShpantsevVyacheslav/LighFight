@@ -1102,6 +1102,9 @@ MonoBehaviour:
   - Fall
   - GetUp
   - CrouchUppercut
+  - CrouchJab
+  - CrouchCross
+  - CrouchBody
 --- !u!114 &4406630309757880033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2278,8 +2281,26 @@ MonoBehaviour:
     - bone: 63
       bindPoint: {x: -0.06536585, y: 0.24591298, z: -0.0028813116}
       weight: 0.003921569
+  - influences:
+    - bone: 64
+      bindPoint: {x: 0.050290726, y: -0.0029329248, z: -0.05466587}
+      weight: 0.6627451
+    - bone: 63
+      bindPoint: {x: 0.022467617, y: 0.26261568, z: 0.024329768}
+      weight: 0.30980393
+    - bone: 65
+      bindPoint: {x: 0.0011537493, y: -0.10947301, z: -0.019460449}
+      weight: 0.02745098
   nativeRest: {x: 0, y: 0.013379466, z: 0}
   maxCorrection: 0.18
+  signedFloorAnimator: {fileID: 856586531256502828}
+  signedFloorStates:
+  - Crouch
+  - CrouchJab
+  - CrouchCross
+  - CrouchBody
+  - CrouchUppercut
+  maxDownCorrection: 0.2
 --- !u!114 &1864725424361587089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2484,7 +2505,7 @@ MonoBehaviour:
   - state: counterstrike
     clip: {fileID: 7400000, guid: da9be69f328424591856314e0f44ddf6, type: 2}
   - state: Guard
-    clip: {fileID: 7400000, guid: 3c161cf2b13b146c7a3e90e17ad08d14, type: 2}
+    clip: {fileID: 7400000, guid: c2476c5482d8044938715ba7b77215f2, type: 2}
   - state: WalkBack
     clip: {fileID: 7400000, guid: 68e914e81e9694b3a9ccc2f83afdfa20, type: 2}
   - state: Crouch
@@ -2510,7 +2531,13 @@ MonoBehaviour:
   - state: Idle
     clip: {fileID: 7400000, guid: a507ab1b2e3b9479e996330794929e46, type: 2}
   - state: CrouchUppercut
-    clip: {fileID: 7400000, guid: 840f4859e624947929c9eebad22cd56d, type: 2}
+    clip: {fileID: 7400000, guid: 8655da0121ee64c11bdb54615ba4e13f, type: 2}
+  - state: CrouchJab
+    clip: {fileID: 7400000, guid: b6f94e477ff8c4706add2427d94131d5, type: 2}
+  - state: CrouchCross
+    clip: {fileID: 7400000, guid: 082e73914f80b45c9b46c9c85d4034b4, type: 2}
+  - state: CrouchBody
+    clip: {fileID: 7400000, guid: 5b59598c515b446198f3cf002abc9d74, type: 2}
   ownsMaterials: 0
 --- !u!114 &7372882913016325030
 MonoBehaviour:
@@ -4001,6 +4028,16 @@ MonoBehaviour:
     - bone: 58
       bindPoint: {x: -0.08663358, y: 0.24213305, z: -0.018012553}
       weight: 0.011764706
+  - influences:
+    - bone: 64
+      bindPoint: {x: 0.050290726, y: -0.0029329248, z: -0.05466587}
+      weight: 0.6627451
+    - bone: 63
+      bindPoint: {x: 0.022467617, y: 0.26261568, z: 0.024329768}
+      weight: 0.30980393
+    - bone: 65
+      bindPoint: {x: 0.0011537493, y: -0.10947301, z: -0.019460449}
+      weight: 0.02745098
   defeatBodyPoints:
   - influences:
     - bone: 65
@@ -13380,7 +13417,7 @@ Animator:
   m_GameObject: {fileID: 5539618902417901817}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 571dbdd50359a421b9479a23bf834582, type: 3}
-  m_Controller: {fileID: 9100000, guid: b6f5dac97697d45a5b51543cdd560808, type: 2}
+  m_Controller: {fileID: 9100000, guid: 90d5fe989ee864b48ac1e83b3683d9f7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
