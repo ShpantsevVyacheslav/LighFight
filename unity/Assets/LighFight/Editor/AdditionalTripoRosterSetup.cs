@@ -6,6 +6,44 @@ using LighFight.Runtime;
 
 public static class AdditionalTripoRosterSetup
 {
+    public static void BuildGalaReview()
+    {
+        LighFight.Editor.MobileSourceTextureSetup.Configure();
+        NativeSupportMainProbeBuilder.Build();
+    }
+
+    public static void ReplaceGala()
+    {
+        TripoGalaPlayablePipeline.Build();
+        const string path = "Assets/LighFight/Art/Drafts/TripoGalaPlayable/GalaHumanoidCandidate.prefab";
+        var content = AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
+        var material = AssetDatabase.LoadAssetAtPath<Material>("Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFull/source-calibrated-native-pbr-review.mat");
+        var portrait = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/LighFight/Resources/Selection/fighter-6.png");
+        var candidate = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+        var overlay = candidate ? candidate.GetComponent<NativeSupportOverlay>() : null;
+        var animator = candidate ? candidate.GetComponentInChildren<Animator>() : null;
+        if (!content || content.streamed || content.FighterCount != 11 || !material || !portrait || portrait.width != 1024 || !overlay || overlay.entries.Length != 8 || !animator || !animator.avatar || !animator.avatar.isValid || !animator.avatar.isHuman)
+            throw new InvalidOperationException("Reviewed Gala source, native rig/eight takes, calibrated material and source portrait required");
+        var root = PrefabUtility.LoadPrefabContents(path);
+        try
+        {
+            foreach (var skin in root.GetComponentsInChildren<SkinnedMeshRenderer>())
+                skin.sharedMaterials = skin.sharedMaterials.Select(_ => material).ToArray();
+            PrefabUtility.SaveAsPrefabAsset(root, path);
+        }
+        finally { PrefabUtility.UnloadPrefabContents(root); }
+        var previous = content.fighters[6];
+        content.fighters[6] = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+        if (!content.ValidateCatalog(out var error))
+        {
+            content.fighters[6] = previous;
+            throw new InvalidOperationException(error);
+        }
+        EditorUtility.SetDirty(content);
+        AssetDatabase.SaveAssets();
+        Debug.Log("AGENT_RESULT Gala slot6 uses preserved100k native rig/eight support takes and source-calibrated scalar material; roster IDs preserved; device validation pending");
+    }
+
     public static void ReplaceWitch()
     {
         var content = AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");

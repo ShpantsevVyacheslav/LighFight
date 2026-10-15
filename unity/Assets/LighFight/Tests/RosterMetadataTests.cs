@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
 using UnityEditor;
@@ -7,6 +8,19 @@ using UnityEngine.TestTools;
 using LighFight.Runtime;
 namespace LighFight.Tests {
  public sealed class RosterMetadataTests {
+  [Test] public void GalaSlotUsesPreservedNativeRigAndSourcePortrait(){
+   var catalog=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
+   var expected=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/TripoGalaPlayable/GalaHumanoidCandidate.prefab");
+   Assert.NotNull(expected);Assert.AreSame(expected,catalog.fighters[6],"Gala slot must replace legacy body without changing roster order");
+   var skin=expected.GetComponentInChildren<SkinnedMeshRenderer>();
+   Assert.AreEqual(100000,skin.sharedMesh.triangles.Length/3);Assert.AreEqual(67,skin.bones.Length);
+   var overlay=expected.GetComponents<MonoBehaviour>().Single(c=>c.GetType().Name=="NativeSupportOverlay");
+   Assert.AreEqual(8,new SerializedObject(overlay).FindProperty("entries").arraySize);
+   Assert.IsTrue(expected.GetComponentInChildren<Animator>().avatar.isHuman);
+   Assert.AreSame(AssetDatabase.LoadAssetAtPath<Material>("Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFull/source-calibrated-native-pbr-review.mat"),skin.sharedMaterial);
+   Assert.AreEqual(1024,Resources.Load<Texture2D>("Selection/fighter-6").width);
+  }
+
   [Test] public void ElevenFightersUseMetadataAndKeepLegacyPortraitFallback(){
    var root=new GameObject("Roster metadata");var catalog=ScriptableObject.CreateInstance<GameContent>();var portrait=new Texture2D(1,1);
    try{
@@ -26,11 +40,12 @@ namespace LighFight.Tests {
    yield return new EnterPlayMode();
    var source=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");var catalog=Object.Instantiate(source);
    catalog.fighters=new GameObject[11];for(int i=0;i<11;i++)catalog.fighters[i]=source.fighters[i%source.fighters.Length];
-   var root=new GameObject("Expanded roster navigation");var game=root.AddComponent<Prototype>();game.content=catalog;yield return null;yield return null;
+   var root=new GameObject("Expanded roster navigation");var game=root.AddComponent<Prototype>();game.content=catalog;yield return ActorCurveWarmupTests.WaitReady(game);
    var field=typeof(Prototype).GetField("selectedFighter",BindingFlags.Instance|BindingFlags.NonPublic);
    game.SelectRosterFighter(-1);int last=(int)field.GetValue(game);
    game.SelectRosterFighter(11);int first=(int)field.GetValue(game);
    game.SelectRosterFighter(-23);int repeated=(int)field.GetValue(game);
+   yield return ActorCurveWarmupTests.WaitReady(game);
    Object.Destroy(root);Object.Destroy(catalog);yield return null;yield return new ExitPlayMode();
    Assert.AreEqual(10,last);Assert.AreEqual(0,first);Assert.AreEqual(10,repeated);
   }
