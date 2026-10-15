@@ -124,7 +124,7 @@ namespace LighFight.Runtime
    for(int y=0;y<512;y++)for(int x=0;x<512;x++){float r=Vector2.Distance(new Vector2(x,y),new Vector2(256,256));float ring=Mathf.Clamp01(1-Mathf.Abs(r-232)/2);float inner=Mathf.Clamp01(1-Mathf.Abs(r-217)/1.2f)*.3f;float glow=Mathf.Exp(-Mathf.Abs(r-232)/14)*.14f;selectionHalo.SetPixel(x,y,new Color(1,.48f,.16f,Mathf.Max(ring*.45f,inner)+glow));}selectionHalo.Apply();
   }
   private static Color InterfaceColor(Color authored)=>QualitySettings.activeColorSpace==ColorSpace.Linear?authored.linear:authored;
-  private void Card(Rect rect,Color color){GUI.DrawTexture(rect,Texture2D.whiteTexture,ScaleMode.StretchToFill,true,0,InterfaceColor(color),0,Mathf.Min(14,rect.height*.5f));}
+  private void Card(Rect rect,Color color){DrawTexture(rect,Texture2D.whiteTexture,ScaleMode.StretchToFill,true,0,InterfaceColor(color),0,Mathf.Min(14,rect.height*.5f));}
   private void Text(Rect rect,string text,int size=16,Color? color=null,TextAnchor align=TextAnchor.MiddleLeft)
   {selectionText.fontStyle=size>=25?FontStyle.BoldAndItalic:FontStyle.Normal;selectionText.fontSize=size;selectionText.alignment=align;selectionText.normal.textColor=InterfaceColor(color??Color.white);GUI.Label(rect,text,selectionText);}
   private static int FitSelectionTitleFontSize(GUIStyle style,string text,Rect bounds,int maximumSize)
@@ -167,17 +167,17 @@ namespace LighFight.Runtime
      icon.SetPixel(x,y,ink?Color.white:Color.clear);
     }icon.Apply();controlIcons.Add(name,icon);
    }
-   var tint=GUI.color;GUI.color=Color.white;GUI.DrawTexture(new Rect(rect.center.x-10,rect.center.y-10,20,20),icon);GUI.color=tint;
+   var tint=GUI.color;GUI.color=Color.white;DrawTexture(new Rect(rect.center.x-10,rect.center.y-10,20,20),icon);GUI.color=tint;
   }
   private void SelectionGUI()
   {
    SelectionResources();
    bool previousEnabled=GUI.enabled;GUI.enabled=previousEnabled && !rulesOpen && !arenaOpen && !opponentOpen && !optionsOpen;
-   GUI.DrawTexture(new Rect(0,0,960,540),selectionBackdrop);
+   DrawTexture(new Rect(0,0,960,540),selectionBackdrop);
    if(rosterOpen){RosterGUI();GUI.enabled=previousEnabled;return;}
-   GUI.DrawTexture(new Rect(267,69,365,365),selectionHalo);
-   var platformColor=GUI.color;GUI.color=InterfaceColor(new Color(.28f,.78f,1,.65f));GUI.DrawTexture(new Rect(275,388,350,30),selectionHalo);GUI.color=platformColor;
-   if(selectionRender!=null)GUI.DrawTexture(PreviewArea,selectionRender,ScaleMode.StretchToFill,true);
+   DrawTexture(new Rect(267,69,365,365),selectionHalo);
+   var platformColor=GUI.color;GUI.color=InterfaceColor(new Color(.28f,.78f,1,.65f));DrawTexture(new Rect(275,388,350,30),selectionHalo);GUI.color=platformColor;
+   if(selectionRender!=null)DrawTexture(PreviewArea,selectionRender,ScaleMode.StretchToFill,true);
    Card(new Rect(0,0,960,48),new Color(.01f,.025f,.05f,.95f));
    if(Pill(new Rect(16,7,73,34),T("‹ Назад","‹ Back")))rosterOpen=true;
    SelectionBrand();
@@ -198,7 +198,7 @@ namespace LighFight.Runtime
    if(previewMessageTime>0)Text(new Rect(265,382,400,30),T("Танец пока не добавлен","Dance not available yet"),12,selectionAccent,TextAnchor.MiddleCenter);
    Text(new Rect(713,100,214,24),T("АРЕНА","ARENA"),11,new Color(.60f,.70f,.82f));
    Rect arenaCard=new Rect(710,133,220,126);Card(arenaCard,selectionPanel);
-   if(arenaImages[selectedArena]!=null){var old=GUI.color;GUI.color=InterfaceColor(new Color(.62f,.68f,.76f));GUI.DrawTexture(arenaCard,arenaImages[selectedArena],ScaleMode.ScaleAndCrop,true,0,Color.white,0,14);GUI.color=old;}
+   if(arenaImages[selectedArena]!=null){var old=GUI.color;GUI.color=InterfaceColor(new Color(.62f,.68f,.76f));DrawTexture(arenaCard,arenaImages[selectedArena],ScaleMode.ScaleAndCrop,true,0,Color.white,0,14);GUI.color=old;}
    Card(new Rect(710,203,220,56),new Color(.02f,.04f,.07f,.84f));
    Text(new Rect(723,204,195,28),T(ArenaNames[selectedArena],ArenaEnglish[selectedArena]).ToUpperInvariant(),15);
    Text(new Rect(723,232,195,20),T("Изменить арену  ›","Change arena  ›"),10,selectionAccent);
@@ -220,7 +220,7 @@ namespace LighFight.Runtime
      bool stem=u>48&&u<61&&y>8&&y<55;bool top=u>=61&&u<84&&y>43&&y<55;bool mid=u>=61&&u<77&&y>28&&y<39;
      brandMark.SetPixel(x,y,left||foot?Color.white:stem||top||mid?new Color(1,.61f,.22f):Color.clear);
     }brandMark.Apply();}
-   GUI.DrawTexture(new Rect(104,5,53,37),brandMark);
+   DrawTexture(new Rect(104,5,53,37),brandMark);
    Text(new Rect(169,3,230,40),"LIGHFIGHT",23,Color.white);
   }
   private void RosterGUI(){
@@ -232,7 +232,7 @@ namespace LighFight.Runtime
    for(int i=RosterPageStart(rosterPage);i<RosterPageEnd(rosterPage);i++){
     int cell=i%8;Rect r=new Rect(76+cell%4*208,77+cell/4*219,184,201);
     Card(r,new Color(.11f,.115f,.16f));
-    var portrait=FighterPortrait(i);if(portrait)GUI.DrawTexture(new Rect(r.x+12,r.y+10,160,143),portrait,ScaleMode.ScaleAndCrop,true,0,Color.white,0,12);
+    var portrait=FighterPortrait(i);if(portrait)DrawTexture(new Rect(r.x+12,r.y+10,160,143),portrait,ScaleMode.ScaleAndCrop,true,0,Color.white,0,12);
     Text(new Rect(r.x+12,r.y+151,160,37),FighterLabel(i),14,null,TextAnchor.MiddleCenter);
     if(GUI.Button(r,GUIContent.none,GUIStyle.none))SelectRosterFighter(i);
    }
@@ -247,7 +247,7 @@ namespace LighFight.Runtime
   private void OpponentSheet(){Card(new Rect(0,48,960,492),new Color(0,0,0,.85f));Text(new Rect(90,75,650,45),T("Выбери соперника","Choose opponent"),28);
    if(Pill(new Rect(790,75,80,34),T("Назад","Back")))opponentOpen=false;
    opponentPage=WrapRosterIndex(opponentPage,RosterPageCount);
-   for(int i=RosterPageStart(opponentPage);i<RosterPageEnd(opponentPage);i++){int cell=i%8;var rect=new Rect(90+cell%4*198,140+cell/4*158,180,145);Card(rect,selectionPanel);var portrait=FighterPortrait(i);if(portrait)GUI.DrawTexture(new Rect(rect.x+42,rect.y+5,96,96),portrait,ScaleMode.ScaleAndCrop);Text(new Rect(rect.x+8,rect.y+105,164,34),FighterLabel(i),12,null,TextAnchor.MiddleCenter);if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedOpponent=i;opponentOpen=false;RebuildViews();BeginFight();}}
+   for(int i=RosterPageStart(opponentPage);i<RosterPageEnd(opponentPage);i++){int cell=i%8;var rect=new Rect(90+cell%4*198,140+cell/4*158,180,145);Card(rect,selectionPanel);var portrait=FighterPortrait(i);if(portrait)DrawTexture(new Rect(rect.x+42,rect.y+5,96,96),portrait,ScaleMode.ScaleAndCrop);Text(new Rect(rect.x+8,rect.y+105,164,34),FighterLabel(i),12,null,TextAnchor.MiddleCenter);if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedOpponent=i;opponentOpen=false;RebuildViews();BeginFight();}}
    RosterPager(ref opponentPage,480);
   }
   private float previewMessageTime;
@@ -258,7 +258,7 @@ namespace LighFight.Runtime
    Text(new Rect(578,73,300,45),arenaOpen?T("Место встречи","Choose arena"):T("Твои правила","Your rules"),27);
    if(arenaOpen){for(int i=0;i<ArenaNames.Length;i++){
     var rect=new Rect(578,135+i*73,350,62);Card(rect,i==selectedArena?new Color(.08f,.27f,.36f):new Color(.04f,.09f,.16f));
-    if(arenaImages[i]!=null)GUI.DrawTexture(new Rect(rect.x+5,rect.y+5,100,52),arenaImages[i],ScaleMode.ScaleAndCrop);
+    if(arenaImages[i]!=null)DrawTexture(new Rect(rect.x+5,rect.y+5,100,52),arenaImages[i],ScaleMode.ScaleAndCrop);
     Text(new Rect(rect.x+119,rect.y,220,62),T(ArenaNames[i],ArenaEnglish[i]),15);
     if(GUI.Button(rect,GUIContent.none,GUIStyle.none)){selectedArena=i;RebuildViews();arenaOpen=false;}
    }return;}

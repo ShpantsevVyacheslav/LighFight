@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="229" result="Passed" total="229" passed="229" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 08:56:54Z" end-time="2026-10-15 08:57:21Z" duration="27.2390995">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="229" result="Passed" start-time="2026-10-15 08:56:54Z" end-time="2026-10-15 08:57:21Z" duration="27.239100" total="229" passed="229" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1271" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="215" result="Passed" start-time="2026-10-15 08:56:54Z" end-time="2026-10-15 08:57:21Z" duration="27.000232" total="215" passed="215" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="58316" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="AttackButtonBindingsTests" fullname="AttackButtonBindingsTests" classname="AttackButtonBindingsTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.091550" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1004" name="AssignmentsPersistAndInvalidStoredMovesRecover" fullname="AttackButtonBindingsTests.AssignmentsPersistAndInvalidStoredMovesRecover" methodname="AssignmentsPersistAndInvalidStoredMovesRecover" classname="AttackButtonBindingsTests" runstate="Runnable" seed="1867917428" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.063117" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1002" name="CustomHighestMoveSurvivesComboContextAndModifier" fullname="AttackButtonBindingsTests.CustomHighestMoveSurvivesComboContextAndModifier" methodname="CustomHighestMoveSurvivesComboContextAndModifier" classname="AttackButtonBindingsTests" runstate="Runnable" seed="397533940" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.001791" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1003" name="DefaultButtonsKeepContextualChains" fullname="AttackButtonBindingsTests.DefaultButtonsKeepContextualChains" methodname="DefaultButtonsKeepContextualChains" classname="AttackButtonBindingsTests" runstate="Runnable" seed="7580114" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000566" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1047" name="BotTests" fullname="BotTests" classname="BotTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.016810" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1048" name="BotApproachesBeforeAttacking" fullname="BotTests.BotApproachesBeforeAttacking" methodname="BotApproachesBeforeAttacking" classname="BotTests" runstate="Runnable" seed="2002415697" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.009908" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1049" name="BotHasReactionDelay" fullname="BotTests.BotHasReactionDelay" methodname="BotHasReactionDelay" classname="BotTests" runstate="Runnable" seed="1734518153" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.003784" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1050" name="TrainingDummyDoesNotAttackOrMove" fullname="BotTests.TrainingDummyDoesNotAttackOrMove" methodname="TrainingDummyDoesNotAttackOrMove" classname="BotTests" runstate="Runnable" seed="1747932258" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.001235" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1005" name="CatalogTests" fullname="CatalogTests" classname="CatalogTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.008591" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1006" name="NewCatalogReplacesOnlyPreviousFightCatalog" fullname="CatalogTests.NewCatalogReplacesOnlyPreviousFightCatalog" methodname="NewCatalogReplacesOnlyPreviousFightCatalog" classname="CatalogTests" runstate="Runnable" seed="508583469" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.007243" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1056" name="ChainTests" fullname="ChainTests" classname="ChainTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.014218" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1058" name="ChainCannotCancelStartupOrUseUnlistedMove" fullname="ChainTests.ChainCannotCancelStartupOrUseUnlistedMove" methodname="ChainCannotCancelStartupOrUseUnlistedMove" classname="ChainTests" runstate="Runnable" seed="1296088047" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.001651" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1059" name="ChainWindowExpires" fullname="ChainTests.ChainWindowExpires" methodname="ChainWindowExpires" classname="ChainTests" runstate="Runnable" seed="1068131637" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000377" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1057" name="CleanJabCanChainCrossButWhiffAndBlockCannot" fullname="ChainTests.CleanJabCanChainCrossButWhiffAndBlockCannot" methodname="CleanJabCanChainCrossButWhiffAndBlockCannot" classname="ChainTests" runstate="Runnable" seed="2081213868" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.003642" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1032" name="CombatReactionTests" fullname="CombatReactionTests" classname="CombatReactionTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.007325" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1035" name="BlockedSweepDoesNotKnockDown" fullname="CombatReactionTests.BlockedSweepDoesNotKnockDown" methodname="BlockedSweepDoesNotKnockDown" classname="CombatReactionTests" runstate="Runnable" seed="158089113" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000694" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1033" name="CounterHitDealsExtraDamageAndLongerStun" fullname="CombatReactionTests.CounterHitDealsExtraDamageAndLongerStun" methodname="CounterHitDealsExtraDamageAndLongerStun" classname="CombatReactionTests" runstate="Runnable" seed="1351590994" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000398" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1037" name="EveryMoveHasReachableDamageWindow" fullname="CombatReactionTests.EveryMoveHasReachableDamageWindow" methodname="EveryMoveHasReachableDamageWindow" classname="CombatReactionTests" runstate="Runnable" seed="1660549896" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.002552" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1036" name="GroundedFighterCannotBeHitRepeatedly" fullname="CombatReactionTests.GroundedFighterCannotBeHitRepeatedly" methodname="GroundedFighterCannotBeHitRepeatedly" classname="CombatReactionTests" runstate="Runnable" seed="1077365997" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000241" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1034" name="SweepKnocksDownAndRecoveryRestoresControl" fullname="CombatReactionTests.SweepKnocksDownAndRecoveryRestoresControl" methodname="SweepKnocksDownAndRecoveryRestoresControl" classname="CombatReactionTests" runstate="Runnable" seed="2010105570" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000416" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1007" name="CombatTests" fullname="CombatTests" classname="CombatTests" runstate="Runnable" testcasecount="16" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.015411" total="16" passed="16" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1019" name="CrouchEvadesHigh" fullname="CombatTests.CrouchEvadesHigh" methodname="CrouchEvadesHigh" classname="CombatTests" runstate="Runnable" seed="1203298295" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000410" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1012" name="CrouchingGuardBlocksLow" fullname="CombatTests.CrouchingGuardBlocksLow" methodname="CrouchingGuardBlocksLow" classname="CombatTests" runstate="Runnable" seed="1874134226" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000311" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1018" name="CrouchingGuardDoesNotBlockMid" fullname="CombatTests.CrouchingGuardDoesNotBlockMid" methodname="CrouchingGuardDoesNotBlockMid" classname="CombatTests" runstate="Runnable" seed="1798790638" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000451" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1015" name="FightersCannotWalkThroughEachOther" fullname="CombatTests.FightersCannotWalkThroughEachOther" methodname="FightersCannotWalkThroughEachOther" classname="CombatTests" runstate="Runnable" seed="1536485296" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000551" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1020" name="FinishedMatchRejectsInputs" fullname="CombatTests.FinishedMatchRejectsInputs" methodname="FinishedMatchRejectsInputs" classname="CombatTests" runstate="Runnable" seed="1465522443" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000457" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1016" name="HitInterruptsSlowerAttack" fullname="CombatTests.HitInterruptsSlowerAttack" methodname="HitInterruptsSlowerAttack" classname="CombatTests" runstate="Runnable" seed="2020276315" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000552" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1022" name="InvalidInputDoesNotCorruptPosition" fullname="CombatTests.InvalidInputDoesNotCorruptPosition" methodname="InvalidInputDoesNotCorruptPosition" classname="CombatTests" runstate="Runnable" seed="250433838" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000332" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1014" name="RecoveryPreventsAttackSpam" fullname="CombatTests.RecoveryPreventsAttackSpam" methodname="RecoveryPreventsAttackSpam" classname="CombatTests" runstate="Runnable" seed="1849328444" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000247" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1013" name="SimultaneousJabsTrade" fullname="CombatTests.SimultaneousJabsTrade" methodname="SimultaneousJabsTrade" classname="CombatTests" runstate="Runnable" seed="18992534" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000318" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1010" name="SingleAttackHitsOnce" fullname="CombatTests.SingleAttackHitsOnce" methodname="SingleAttackHitsOnce" classname="CombatTests" runstate="Runnable" seed="100274889" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000314" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1017" name="StandingGuardBlocksMid" fullname="CombatTests.StandingGuardBlocksMid" methodname="StandingGuardBlocksMid" classname="CombatTests" runstate="Runnable" seed="918070033" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000322" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1011" name="StandingGuardDoesNotBlockLow" fullname="CombatTests.StandingGuardDoesNotBlockLow" methodname="StandingGuardDoesNotBlockLow" classname="CombatTests" runstate="Runnable" seed="428522309" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000645" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1009" name="StartupPreventsEarlyDamage" fullname="CombatTests.StartupPreventsEarlyDamage" methodname="StartupPreventsEarlyDamage" classname="CombatTests" runstate="Runnable" seed="1603033906" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000772" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1021" name="StunPreventsCounterAttack" fullname="CombatTests.StunPreventsCounterAttack" methodname="StunPreventsCounterAttack" classname="CombatTests" runstate="Runnable" seed="1139418132" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000595" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1023" name="WallStopsWalk" fullname="CombatTests.WallStopsWalk" methodname="WallStopsWalk" classname="CombatTests" runstate="Runnable" seed="684012042" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000487" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1008" name="WhiffDoesNotDamage" fullname="CombatTests.WhiffDoesNotDamage" methodname="WhiffDoesNotDamage" classname="CombatTests" runstate="Runnable" seed="578002765" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000530" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1051" name="ContentBudgetTests" fullname="ContentBudgetTests" classname="ContentBudgetTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.002102" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1053" name="RejectsUnboundedSizeEvenWhenFreeSpaceUnknown" fullname="ContentBudgetTests.RejectsUnboundedSizeEvenWhenFreeSpaceUnknown" methodname="RejectsUnboundedSizeEvenWhenFreeSpaceUnknown" classname="ContentBudgetTests" runstate="Runnable" seed="1559216062" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000391" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1052" name="RequiresTemporarySpaceButAllowsCachedContent" fullname="ContentBudgetTests.RequiresTemporarySpaceButAllowsCachedContent" methodname="RequiresTemporarySpaceButAllowsCachedContent" classname="ContentBudgetTests" runstate="Runnable" seed="588132242" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000248" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1038" name="ContentManifestTests" fullname="ContentManifestTests" classname="ContentManifestTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.025969" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1039" name="AcceptsCompatibleHttpsManifest" fullname="ContentManifestTests.AcceptsCompatibleHttpsManifest" methodname="AcceptsCompatibleHttpsManifest" classname="ContentManifestTests" runstate="Runnable" seed="421613807" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.017330" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1043" name="LocalHttpRequiresDevelopment" fullname="ContentManifestTests.LocalHttpRequiresDevelopment" methodname="LocalHttpRequiresDevelopment" classname="ContentManifestTests" runstate="Runnable" seed="1468522586" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.004580" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1041" name="RejectsFuturePlayer" fullname="ContentManifestTests.RejectsFuturePlayer" methodname="RejectsFuturePlayer" classname="ContentManifestTests" runstate="Runnable" seed="217924819" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000279" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1044" name="RejectsInvalidVersionAndExcessiveSize" fullname="ContentManifestTests.RejectsInvalidVersionAndExcessiveSize" methodname="RejectsInvalidVersionAndExcessiveSize" classname="ContentManifestTests" runstate="Runnable" seed="427889431" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000370" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1042" name="RejectsUnsafeCatalog" fullname="ContentManifestTests.RejectsUnsafeCatalog" methodname="RejectsUnsafeCatalog" classname="ContentManifestTests" runstate="Runnable" seed="1260501808" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000703" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1040" name="RejectsWrongPlatformAndEngine" fullname="ContentManifestTests.RejectsWrongPlatformAndEngine" methodname="RejectsWrongPlatformAndEngine" classname="ContentManifestTests" runstate="Runnable" seed="366412703" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000207" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1024" name="FightSessionTests" fullname="FightSessionTests" classname="FightSessionTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.007902" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1025" name="BufferedAttackStartsAfterRecovery" fullname="FightSessionTests.BufferedAttackStartsAfterRecovery" methodname="BufferedAttackStartsAfterRecovery" classname="FightSessionTests" runstate="Runnable" seed="1420880277" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000655" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1030" name="DrawAwardsNeitherFighter" fullname="FightSessionTests.DrawAwardsNeitherFighter" methodname="DrawAwardsNeitherFighter" classname="FightSessionTests" runstate="Runnable" seed="1635320614" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000355" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1026" name="ExpiredBufferDoesNotFireLater" fullname="FightSessionTests.ExpiredBufferDoesNotFireLater" methodname="ExpiredBufferDoesNotFireLater" classname="FightSessionTests" runstate="Runnable" seed="79619244" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000269" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1031" name="InvalidQueueDoesNotReplaceValidInput" fullname="FightSessionTests.InvalidQueueDoesNotReplaceValidInput" methodname="InvalidQueueDoesNotReplaceValidInput" classname="FightSessionTests" runstate="Runnable" seed="1560011781" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000239" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1028" name="NextRoundResetsHealthAndPendingAttack" fullname="FightSessionTests.NextRoundResetsHealthAndPendingAttack" methodname="NextRoundResetsHealthAndPendingAttack" classname="FightSessionTests" runstate="Runnable" seed="1692861909" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000401" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1027" name="TimeoutAwardsHealthLeaderAtExactTick" fullname="FightSessionTests.TimeoutAwardsHealthLeaderAtExactTick" methodname="TimeoutAwardsHealthLeaderAtExactTick" classname="FightSessionTests" runstate="Runnable" seed="2006220527" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000579" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1029" name="TwoWinsCompleteAndFreezeSession" fullname="FightSessionTests.TwoWinsCompleteAndFreezeSession" methodname="TwoWinsCompleteAndFreezeSession" classname="FightSessionTests" runstate="Runnable" seed="434417251" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000389" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1072" name="GestureAndComboTests" fullname="GestureAndComboTests" classname="GestureAndComboTests" runstate="Runnable" testcasecount="18" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.020055" total="18" passed="18" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1085" name="BodyChainBranchesIntoKneeAndElbow" fullname="GestureAndComboTests.BodyChainBranchesIntoKneeAndElbow" methodname="BodyChainBranchesIntoKneeAndElbow" classname="GestureAndComboTests" runstate="Runnable" seed="1401509069" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000484" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1088" name="BotSidestepsAgainstCommittedAttack" fullname="GestureAndComboTests.BotSidestepsAgainstCommittedAttack" methodname="BotSidestepsAgainstCommittedAttack" classname="GestureAndComboTests" runstate="Runnable" seed="176790312" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.001051" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1090" name="ChainStepCannotCrossDefender" fullname="GestureAndComboTests.ChainStepCannotCrossDefender" methodname="ChainStepCannotCrossDefender" classname="GestureAndComboTests" runstate="Runnable" seed="610422723" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000345" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1089" name="ChainStepIsGradualBoundedAndDoesNotHome" fullname="GestureAndComboTests.ChainStepIsGradualBoundedAndDoesNotHome" methodname="ChainStepIsGradualBoundedAndDoesNotHome" classname="GestureAndComboTests" runstate="Runnable" seed="701585208" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000823" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1086" name="EarlyBufferedCrossWaitsForConfirmedRecovery" fullname="GestureAndComboTests.EarlyBufferedCrossWaitsForConfirmedRecovery" methodname="EarlyBufferedCrossWaitsForConfirmedRecovery" classname="GestureAndComboTests" runstate="Runnable" seed="528310331" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000447" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1084" name="FourStrikeChainUsesConfirmedHitsAndScaledDamage" fullname="GestureAndComboTests.FourStrikeChainUsesConfirmedHitsAndScaledDamage" methodname="FourStrikeChainUsesConfirmedHitsAndScaledDamage" classname="GestureAndComboTests" runstate="Runnable" seed="881800717" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000542" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1083" name="GestureOwnsOneFingerAndFiresOnce" fullname="GestureAndComboTests.GestureOwnsOneFingerAndFiresOnce" methodname="GestureOwnsOneFingerAndFiresOnce" classname="GestureAndComboTests" runstate="Runnable" seed="161922726" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.001019" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1091" name="HitReactionTracksLevelAndSimulationTicks" fullname="GestureAndComboTests.HitReactionTracksLevelAndSimulationTicks" methodname="HitReactionTracksLevelAndSimulationTicks" classname="GestureAndComboTests" runstate="Runnable" seed="1699526252" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.002417" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1087" name="LateralImpactPushesAwayInDepth" fullname="GestureAndComboTests.LateralImpactPushesAwayInDepth" methodname="LateralImpactPushesAwayInDepth" classname="GestureAndComboTests" runstate="Runnable" seed="486990830" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000306" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1081" name="SwipeDirectionChoosesStrike" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.008236" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1073" name="SwipeDirectionChoosesStrike(80,0,1)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(80,0,1)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="223935264" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.001097" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1074" name="SwipeDirectionChoosesStrike(-80,0,2)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(-80,0,2)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="662255391" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000226" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1075" name="SwipeDirectionChoosesStrike(0,80,7)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(0,80,7)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="1491060670" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000089" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1076" name="SwipeDirectionChoosesStrike(0,-80,3)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(0,-80,3)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="1844552435" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000081" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1077" name="SwipeDirectionChoosesStrike(60,60,15)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(60,60,15)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="173769284" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000081" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1078" name="SwipeDirectionChoosesStrike(-60,60,14)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(-60,60,14)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="416601158" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000095" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1079" name="SwipeDirectionChoosesStrike(60,-60,5)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(60,-60,5)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="901905797" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000086" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1080" name="SwipeDirectionChoosesStrike(-60,-60,6)" fullname="GestureAndComboTests.SwipeDirectionChoosesStrike(-60,-60,6)" methodname="SwipeDirectionChoosesStrike" classname="GestureAndComboTests" runstate="Runnable" seed="1714383567" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000081" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1082" name="TapJitterHoldAndCancelDoNotBecomeSwipes" fullname="GestureAndComboTests.TapJitterHoldAndCancelDoNotBecomeSwipes" methodname="TapJitterHoldAndCancelDoNotBecomeSwipes" classname="GestureAndComboTests" runstate="Runnable" seed="1373599546" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:53:58Z" duration="0.000523" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestSuite" id="1272" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="77" result="Passed" start-time="2026-10-15 08:55:45Z" end-time="2026-10-15 08:56:04Z" duration="19.041705" total="77" passed="77" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1273" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="77" result="Passed" start-time="2026-10-15 08:55:45Z" end-time="2026-10-15 08:56:04Z" duration="19.034547" total="77" passed="77" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1168" name="ActorCurveWarmupTests" fullname="LighFight.Tests.ActorCurveWarmupTests" classname="LighFight.Tests.ActorCurveWarmupTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.487812" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1169" name="LoadingBlocksPreviewAndQueuesCombatAfterRapidSelection" fullname="LighFight.Tests.ActorCurveWarmupTests.LoadingBlocksPreviewAndQueuesCombatAfterRapidSelection" methodname="LoadingBlocksPreviewAndQueuesCombatAfterRapidSelection" classname="LighFight.Tests.ActorCurveWarmupTests" runstate="Runnable" seed="1017918223" result="Passed" start-time="2026-10-15 08:53:58Z" end-time="2026-10-15 08:54:22Z" duration="23.926152" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+              <output><![CDATA[There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+]]></output>
+            </test-case>
+            <test-case id="1172" name="PartialWarmupCancellationCannotReleaseTheNextWarmupLeases" fullname="LighFight.Tests.ActorCurveWarmupTests.PartialWarmupCancellationCannotReleaseTheNextWarmupLeases" methodname="PartialWarmupCancellationCannotReleaseTheNextWarmupLeases" classname="LighFight.Tests.ActorCurveWarmupTests" runstate="Runnable" seed="1841579651" result="Passed" start-time="2026-10-15 08:54:22Z" end-time="2026-10-15 08:54:22Z" duration="0.227420" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1171" name="ResidentCurveLeasesSurviveDisableAndReleaseAtActorDestruction" fullname="LighFight.Tests.ActorCurveWarmupTests.ResidentCurveLeasesSurviveDisableAndReleaseAtActorDestruction" methodname="ResidentCurveLeasesSurviveDisableAndReleaseAtActorDestruction" classname="LighFight.Tests.ActorCurveWarmupTests" runstate="Runnable" seed="1305106049" result="Passed" start-time="2026-10-15 08:54:22Z" end-time="2026-10-15 08:54:22Z" duration="0.204778" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1170" name="RuntimeDestructionReleasesLeasesWithoutExplicitOwnerDispose" fullname="LighFight.Tests.ActorCurveWarmupTests.RuntimeDestructionReleasesLeasesWithoutExplicitOwnerDispose" methodname="RuntimeDestructionReleasesLeasesWithoutExplicitOwnerDispose" classname="LighFight.Tests.ActorCurveWarmupTests" runstate="Runnable" seed="2114477831" result="Passed" start-time="2026-10-15 08:54:22Z" end-time="2026-10-15 08:54:29Z" duration="6.940714" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1173" name="AvailableAttackTests" fullname="LighFight.Tests.AvailableAttackTests" classname="LighFight.Tests.AvailableAttackTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.012573" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1175" name="AvailabilityCanDifferBetweenFighters" fullname="LighFight.Tests.AvailableAttackTests.AvailabilityCanDifferBetweenFighters" methodname="AvailabilityCanDifferBetweenFighters" classname="LighFight.Tests.AvailableAttackTests" runstate="Runnable" seed="1719870873" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.010145" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1174" name="UnavailableCandidateMoveCannotEnterEitherInputBuffer" fullname="LighFight.Tests.AvailableAttackTests.UnavailableCandidateMoveCannotEnterEitherInputBuffer" methodname="UnavailableCandidateMoveCannotEnterEitherInputBuffer" classname="LighFight.Tests.AvailableAttackTests" runstate="Runnable" seed="1936613005" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000633" asserts="0">
+              <properties />
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1176" name="EmbeddedContentTests" fullname="LighFight.Tests.EmbeddedContentTests" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="22" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:32Z" duration="2.803109" total="22" passed="22" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1177" name="CurrentPackagedDescriptorIsAccepted" fullname="LighFight.Tests.EmbeddedContentTests.CurrentPackagedDescriptorIsAccepted" methodname="CurrentPackagedDescriptorIsAccepted" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1219984366" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.012864" asserts="0">
+              <properties />
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1191" name="EmbeddedDescriptorCannotRequestDownload" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.002400" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1189" name="EmbeddedDescriptorCannotRequestDownload(-1L)" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload(-1L)" methodname="EmbeddedDescriptorCannotRequestDownload" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1934746326" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000938" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1190" name="EmbeddedDescriptorCannotRequestDownload(1L)" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload(1L)" methodname="EmbeddedDescriptorCannotRequestDownload" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="2448008" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000182" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-case id="1192" name="EmbeddedDescriptorHasNoBodyReferences" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorHasNoBodyReferences" methodname="EmbeddedDescriptorHasNoBodyReferences" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="543877948" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000487" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1194" name="EmbeddedIosExportRejectsDesktopBeforeWritingBuild" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedIosExportRejectsDesktopBeforeWritingBuild" methodname="EmbeddedIosExportRejectsDesktopBeforeWritingBuild" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="290175609" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.011289" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1195" name="EmbeddedPackagingEntryPointExists" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedPackagingEntryPointExists" methodname="EmbeddedPackagingEntryPointExists" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="2030225977" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000519" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1200" name="EmbeddedPlatformIsExplicitAndLegacyRemotePlatformRemainsUnchanged" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedPlatformIsExplicitAndLegacyRemotePlatformRemainsUnchanged" methodname="EmbeddedPlatformIsExplicitAndLegacyRemotePlatformRemainsUnchanged" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1577279071" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000348" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1201" name="EmbeddedRejectsInlineCatalogWhileRemoteAcceptsIt" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedRejectsInlineCatalogWhileRemoteAcceptsIt" methodname="EmbeddedRejectsInlineCatalogWhileRemoteAcceptsIt" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="107713998" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.024554" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1193" name="ExplicitEmbeddedBootstrapDoesNotRequireManifestUrl" fullname="LighFight.Tests.EmbeddedContentTests.ExplicitEmbeddedBootstrapDoesNotRequireManifestUrl" methodname="ExplicitEmbeddedBootstrapDoesNotRequireManifestUrl" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="29389582" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000372" asserts="0">
+              <properties />
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1188" name="IncompatibleOrInvalidMetadataFails" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.009570" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1182" name="IncompatibleOrInvalidMetadataFails(&quot;platform&quot;,&quot;iOS&quot;,&quot;incompatible_platform&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;platform&quot;,&quot;iOS&quot;,&quot;incompatible_platform&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="48178040" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.001476" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1183" name="IncompatibleOrInvalidMetadataFails(&quot;unityVersion&quot;,&quot;6000.3.25f1&quot;,&quot;incompatible_platform&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;unityVersion&quot;,&quot;6000.3.25f1&quot;,&quot;incompatible_platform&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1351522233" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000572" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1184" name="IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;../escape&quot;,&quot;invalid_version&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;../escape&quot;,&quot;invalid_version&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1611605866" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000565" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1185" name="IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;&quot;,&quot;invalid_version&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;&quot;,&quot;invalid_version&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1811281210" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000322" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1186" name="IncompatibleOrInvalidMetadataFails(&quot;starterLabel&quot;,&quot;all-fighters&quot;,&quot;invalid_content&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;starterLabel&quot;,&quot;all-fighters&quot;,&quot;invalid_content&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1071837436" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000225" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1187" name="IncompatibleOrInvalidMetadataFails(&quot;assetAddress&quot;,&quot;other&quot;,&quot;invalid_content&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;assetAddress&quot;,&quot;other&quot;,&quot;invalid_content&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1292909693" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.000329" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1199" name="InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache" fullname="LighFight.Tests.EmbeddedContentTests.InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.024761" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1197" name="InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache(True,&quot;embedded_not_configured&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache(True,&quot;embedded_not_configured&quot;)" methodname="InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1520856726" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.019950" asserts="0">
+                <properties />
+                <output><![CDATA[LighFight content: embedded_not_configured
+]]></output>
+              </test-case>
+              <test-case id="1198" name="InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache(False,&quot;delivery_not_configured&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache(False,&quot;delivery_not_configured&quot;)" methodname="InvalidStartupFailsBeforeResourceIoAndPreservesRemoteCache" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="2007388944" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:29Z" duration="0.003210" asserts="0">
+                <properties />
+                <output><![CDATA[LighFight content: delivery_not_configured
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-case id="1202" name="OwnedGroupsAreLocalUnrelatedEntriesSurviveAndMetadataHasNoBodies" fullname="LighFight.Tests.EmbeddedContentTests.OwnedGroupsAreLocalUnrelatedEntriesSurviveAndMetadataHasNoBodies" methodname="OwnedGroupsAreLocalUnrelatedEntriesSurviveAndMetadataHasNoBodies" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1242149813" result="Passed" start-time="2026-10-15 08:54:29Z" end-time="2026-10-15 08:54:32Z" duration="2.691363" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1196" name="RemoteTransportAndVersionRemainCompatible" fullname="LighFight.Tests.EmbeddedContentTests.RemoteTransportAndVersionRemainCompatible" methodname="RemoteTransportAndVersionRemainCompatible" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1189588799" result="Passed" start-time="2026-10-15 08:54:32Z" end-time="2026-10-15 08:54:32Z" duration="0.010855" asserts="0">
+              <properties />
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1181" name="UnsupportedPlayerOrSchemaFails" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:54:32Z" end-time="2026-10-15 08:54:32Z" duration="0.005999" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1178" name="UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,3,&quot;incompatible_player&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,3,&quot;incompatible_player&quot;)" methodname="UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1085322613" result="Passed" start-time="2026-10-15 08:54:32Z" end-time="2026-10-15 08:54:32Z" duration="0.000671" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1179" name="UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,0,&quot;incompatible_player&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,0,&quot;incompatible_player&quot;)" methodname="UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="857312651" result="Passed" start-time="2026-10-15 08:54:32Z" end-time="2026-10-15 08:54:32Z" duration="0.000224" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1180" name="UnsupportedPlayerOrSchemaFails(&quot;schemaVersion&quot;,2,&quot;incompatible_player&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails(&quot;schemaVersion&quot;,2,&quot;incompatible_player&quot;)" methodname="UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1830115914" result="Passed" start-time="2026-10-15 08:54:32Z" end-time="2026-10-15 08:54:32Z" duration="0.000138" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1203" name="HostFightCatalogTests" fullname="LighFight.Tests.HostFightCatalogTests" classname="LighFight.Tests.HostFightCatalogTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:54:32Z" end-time="2026-10-15 08:55:05Z" duration="33.122967" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1208" name="RepeatedSnapshotUpdatesChangedCatalogWithoutReplacingAssetGuid" fullname="LighFight.Tests.HostFightCatalogTests.RepeatedSnapshotUpdatesChangedCatalogWithoutReplacingAssetGuid" methodname="RepeatedSnapshotUpdatesChangedCatalogWithoutReplacingAssetGuid" classname="LighFight.Tests.HostFightCatalogTests" runstate="Runnable" seed="598754188" result="Passed" start-time="2026-10-15 08:54:32Z" end-time="2026-10-15 08:54:49Z" duration="16.868172" asserts="0">
+              <properties />
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1207" name="ReviewSnapshotKeepsEveryApprovedFighterAndArena" fullname="LighFight.Tests.HostFightCatalogTests.ReviewSnapshotKeepsEveryApprovedFighterAndArena" classname="LighFight.Tests.HostFightCatalogTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:54:49Z" end-time="2026-10-15 08:55:05Z" duration="16.251190" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1204" name="ReviewSnapshotKeepsEveryApprovedFighterAndArena(2)" fullname="LighFight.Tests.HostFightCatalogTests.ReviewSnapshotKeepsEveryApprovedFighterAndArena(2)" methodname="ReviewSnapshotKeepsEveryApprovedFighterAndArena" classname="LighFight.Tests.HostFightCatalogTests" runstate="Runnable" seed="672539969" result="Passed" start-time="2026-10-15 08:54:49Z" end-time="2026-10-15 08:55:05Z" duration="16.078946" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1205" name="ReviewSnapshotKeepsEveryApprovedFighterAndArena(8)" fullname="LighFight.Tests.HostFightCatalogTests.ReviewSnapshotKeepsEveryApprovedFighterAndArena(8)" methodname="ReviewSnapshotKeepsEveryApprovedFighterAndArena" classname="LighFight.Tests.HostFightCatalogTests" runstate="Runnable" seed="937545093" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.053234" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1206" name="ReviewSnapshotKeepsEveryApprovedFighterAndArena(11)" fullname="LighFight.Tests.HostFightCatalogTests.ReviewSnapshotKeepsEveryApprovedFighterAndArena(11)" methodname="ReviewSnapshotKeepsEveryApprovedFighterAndArena" classname="LighFight.Tests.HostFightCatalogTests" runstate="Runnable" seed="1671157036" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.054329" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1209" name="NativeHighReactionTests" fullname="LighFight.Tests.NativeHighReactionTests" classname="LighFight.Tests.NativeHighReactionTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.140783" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1214" name="HeadReactionIsPerActorAndRestoresBodyReaction" fullname="LighFight.Tests.NativeHighReactionTests.HeadReactionIsPerActorAndRestoresBodyReaction" classname="LighFight.Tests.NativeHighReactionTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.130739" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1210" name="HeadReactionIsPerActorAndRestoresBodyReaction(0)" fullname="LighFight.Tests.NativeHighReactionTests.HeadReactionIsPerActorAndRestoresBodyReaction(0)" methodname="HeadReactionIsPerActorAndRestoresBodyReaction" classname="LighFight.Tests.NativeHighReactionTests" runstate="Runnable" seed="97530322" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.068326" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1211" name="HeadReactionIsPerActorAndRestoresBodyReaction(3)" fullname="LighFight.Tests.NativeHighReactionTests.HeadReactionIsPerActorAndRestoresBodyReaction(3)" methodname="HeadReactionIsPerActorAndRestoresBodyReaction" classname="LighFight.Tests.NativeHighReactionTests" runstate="Runnable" seed="1868590661" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.014298" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1212" name="HeadReactionIsPerActorAndRestoresBodyReaction(4)" fullname="LighFight.Tests.NativeHighReactionTests.HeadReactionIsPerActorAndRestoresBodyReaction(4)" methodname="HeadReactionIsPerActorAndRestoresBodyReaction" classname="LighFight.Tests.NativeHighReactionTests" runstate="Runnable" seed="2119523796" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.031505" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1213" name="HeadReactionIsPerActorAndRestoresBodyReaction(5)" fullname="LighFight.Tests.NativeHighReactionTests.HeadReactionIsPerActorAndRestoresBodyReaction(5)" methodname="HeadReactionIsPerActorAndRestoresBodyReaction" classname="LighFight.Tests.NativeHighReactionTests" runstate="Runnable" seed="880891802" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.012811" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1215" name="NativeRigBonesTests" fullname="LighFight.Tests.NativeRigBonesTests" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.041982" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1224" name="ClosedFistContactUsesThreeNativeKnuckles" fullname="LighFight.Tests.NativeRigBonesTests.ClosedFistContactUsesThreeNativeKnuckles" methodname="ClosedFistContactUsesThreeNativeKnuckles" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1901282611" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.025565" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1225" name="LegacyMixamoJointStillResolves" fullname="LighFight.Tests.NativeRigBonesTests.LegacyMixamoJointStillResolves" methodname="LegacyMixamoJointStillResolves" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="576279374" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.001815" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1226" name="MissingAnimatedJointCannotBecomeSyntheticContact" fullname="LighFight.Tests.NativeRigBonesTests.MissingAnimatedJointCannotBecomeSyntheticContact" methodname="MissingAnimatedJointCannotBecomeSyntheticContact" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="471193053" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.001018" asserts="0">
+              <properties />
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1223" name="TripoContactUsesActualJoint" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.008534" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1216" name="TripoContactUsesActualJoint(&quot;Chest&quot;,&quot;Spine1&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Chest&quot;,&quot;Spine1&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="920631575" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.001391" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1217" name="TripoContactUsesActualJoint(&quot;UpperChest&quot;,&quot;Spine2&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;UpperChest&quot;,&quot;Spine2&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="883009668" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.000490" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1218" name="TripoContactUsesActualJoint(&quot;Left_Hand&quot;,&quot;LeftHand&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Left_Hand&quot;,&quot;LeftHand&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1662916440" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.000420" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1219" name="TripoContactUsesActualJoint(&quot;Right_LowerArm&quot;,&quot;RightForeArm&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Right_LowerArm&quot;,&quot;RightForeArm&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="354331174" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.000417" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1220" name="TripoContactUsesActualJoint(&quot;Left_LowerLeg&quot;,&quot;LeftLeg&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Left_LowerLeg&quot;,&quot;LeftLeg&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1920509139" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.000411" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1221" name="TripoContactUsesActualJoint(&quot;Right_Toes&quot;,&quot;RightToeBase&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Right_Toes&quot;,&quot;RightToeBase&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="439778991" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.000371" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1222" name="TripoContactUsesActualJoint(&quot;Left_MiddleProximal&quot;,&quot;LeftHandMiddle1&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Left_MiddleProximal&quot;,&quot;LeftHandMiddle1&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="814409107" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.000820" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1227" name="PresentationFontTests" fullname="LighFight.Tests.PresentationFontTests" classname="LighFight.Tests.PresentationFontTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.028259" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1228" name="BundledFontContainsRussianFightLabels" fullname="LighFight.Tests.PresentationFontTests.BundledFontContainsRussianFightLabels" methodname="BundledFontContainsRussianFightLabels" classname="LighFight.Tests.PresentationFontTests" runstate="Runnable" seed="1096018249" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.024095" asserts="0">
+              <properties />
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1229" name="RosterMetadataTests" fullname="LighFight.Tests.RosterMetadataTests" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:55:13Z" end-time="2026-10-15 08:55:15Z" duration="2.230702" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1233" name="ElevenFightersUseMetadataAndKeepLegacyPortraitFallback" fullname="LighFight.Tests.RosterMetadataTests.ElevenFightersUseMetadataAndKeepLegacyPortraitFallback" methodname="ElevenFightersUseMetadataAndKeepLegacyPortraitFallback" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" seed="1183510786" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:05Z" duration="0.056259" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1234" name="ExpandedRosterArrowsWrapTheActualCatalog" fullname="LighFight.Tests.RosterMetadataTests.ExpandedRosterArrowsWrapTheActualCatalog" methodname="ExpandedRosterArrowsWrapTheActualCatalog" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" seed="580873061" result="Passed" start-time="2026-10-15 08:55:05Z" end-time="2026-10-15 08:55:15Z" duration="9.628351" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+              <output><![CDATA[There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+]]></output>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1232" name="NewNativeRosterSlotsKeepRigAndSourcePortrait" fullname="LighFight.Tests.RosterMetadataTests.NewNativeRosterSlotsKeepRigAndSourcePortrait" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:55:15Z" end-time="2026-10-15 08:55:15Z" duration="0.090689" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1230" name="NewNativeRosterSlotsKeepRigAndSourcePortrait(6,&quot;Gala&quot;,100000)" fullname="LighFight.Tests.RosterMetadataTests.NewNativeRosterSlotsKeepRigAndSourcePortrait(6,&quot;Gala&quot;,100000)" methodname="NewNativeRosterSlotsKeepRigAndSourcePortrait" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" seed="1494623965" result="Passed" start-time="2026-10-15 08:55:15Z" end-time="2026-10-15 08:55:15Z" duration="0.049430" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1231" name="NewNativeRosterSlotsKeepRigAndSourcePortrait(7,&quot;Cobalt&quot;,99999)" fullname="LighFight.Tests.RosterMetadataTests.NewNativeRosterSlotsKeepRigAndSourcePortrait(7,&quot;Cobalt&quot;,99999)" methodname="NewNativeRosterSlotsKeepRigAndSourcePortrait" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" seed="387190444" result="Passed" start-time="2026-10-15 08:55:15Z" end-time="2026-10-15 08:55:15Z" duration="0.037023" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1235" name="SelectionZoomTests" fullname="LighFight.Tests.SelectionZoomTests" classname="LighFight.Tests.SelectionZoomTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:55:32Z" end-time="2026-10-15 08:55:33Z" duration="1.381803" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1236" name="EveryLocalizedRosterTitleFitsWithoutSplittingOrClipping" fullname="LighFight.Tests.SelectionZoomTests.EveryLocalizedRosterTitleFitsWithoutSplittingOrClipping" methodname="EveryLocalizedRosterTitleFitsWithoutSplittingOrClipping" classname="LighFight.Tests.SelectionZoomTests" runstate="Runnable" seed="720884138" result="Passed" start-time="2026-10-15 08:55:15Z" end-time="2026-10-15 08:55:17Z" duration="2.242921" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1237" name="RosterSelectionResetsCombatMenuAndResizeKeepsDisplayCamera" fullname="LighFight.Tests.SelectionZoomTests.RosterSelectionResetsCombatMenuAndResizeKeepsDisplayCamera" methodname="RosterSelectionResetsCombatMenuAndResizeKeepsDisplayCamera" classname="LighFight.Tests.SelectionZoomTests" runstate="Runnable" seed="68672822" result="Passed" start-time="2026-10-15 08:55:17Z" end-time="2026-10-15 08:55:25Z" duration="8.138102" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+              <output><![CDATA[There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+]]></output>
+            </test-case>
+            <test-case id="1238" name="UserZoomMovesSelectionCameraCloser" fullname="LighFight.Tests.SelectionZoomTests.UserZoomMovesSelectionCameraCloser" methodname="UserZoomMovesSelectionCameraCloser" classname="LighFight.Tests.SelectionZoomTests" runstate="Runnable" seed="84857942" result="Passed" start-time="2026-10-15 08:55:26Z" end-time="2026-10-15 08:55:33Z" duration="7.628796" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+              <output><![CDATA[There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+]]></output>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1239" name="SharedCachedHipPoseTests" fullname="LighFight.Tests.SharedCachedHipPoseTests" classname="LighFight.Tests.SharedCachedHipPoseTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:55:39Z" end-time="2026-10-15 08:55:40Z" duration="0.919579" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1240" name="SharedCachedPoseKeepsCapturedHipXZAfterCurveWarmup" fullname="LighFight.Tests.SharedCachedHipPoseTests.SharedCachedPoseKeepsCapturedHipXZAfterCurveWarmup" methodname="SharedCachedPoseKeepsCapturedHipXZAfterCurveWarmup" classname="LighFight.Tests.SharedCachedHipPoseTests" runstate="Runnable" seed="677982541" result="Passed" start-time="2026-10-15 08:55:33Z" end-time="2026-10-15 08:55:40Z" duration="6.316176" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1241" name="TripoRenderParityTests" fullname="LighFight.Tests.TripoRenderParityTests" classname="LighFight.Tests.TripoRenderParityTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:55:45Z" end-time="2026-10-15 08:56:02Z" duration="17.456923" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1242" name="AutomaticAnimationPassKeepsPhysicalTorsoPose" fullname="LighFight.Tests.TripoRenderParityTests.AutomaticAnimationPassKeepsPhysicalTorsoPose" methodname="AutomaticAnimationPassKeepsPhysicalTorsoPose" classname="LighFight.Tests.TripoRenderParityTests" runstate="Runnable" seed="187945938" result="Passed" start-time="2026-10-15 08:55:40Z" end-time="2026-10-15 08:56:02Z" duration="22.559703" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1243" name="TripoReviewRosterTests" fullname="LighFight.Tests.TripoReviewRosterTests" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:04Z" duration="1.334138" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1258" name="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery" fullname="LighFight.Tests.TripoReviewRosterTests.CharacterPreviewPlaysTheWholeStrikeIncludingRecovery" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.048696" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1254" name="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(0)" fullname="LighFight.Tests.TripoReviewRosterTests.CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(0)" methodname="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="175112743" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.026237" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1255" name="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(3)" fullname="LighFight.Tests.TripoReviewRosterTests.CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(3)" methodname="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="1015863505" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.003886" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1256" name="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(4)" fullname="LighFight.Tests.TripoReviewRosterTests.CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(4)" methodname="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="1522243086" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.006716" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1257" name="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(5)" fullname="LighFight.Tests.TripoReviewRosterTests.CharacterPreviewPlaysTheWholeStrikeIncludingRecovery(5)" methodname="CharacterPreviewPlaysTheWholeStrikeIncludingRecovery" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="1515088833" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.005523" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1253" name="DirectPunchUsesTheSourceClipsStrikingHand" fullname="LighFight.Tests.TripoReviewRosterTests.DirectPunchUsesTheSourceClipsStrikingHand" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.007597" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1249" name="DirectPunchUsesTheSourceClipsStrikingHand(0)" fullname="LighFight.Tests.TripoReviewRosterTests.DirectPunchUsesTheSourceClipsStrikingHand(0)" methodname="DirectPunchUsesTheSourceClipsStrikingHand" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="1107475258" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.002208" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1250" name="DirectPunchUsesTheSourceClipsStrikingHand(3)" fullname="LighFight.Tests.TripoReviewRosterTests.DirectPunchUsesTheSourceClipsStrikingHand(3)" methodname="DirectPunchUsesTheSourceClipsStrikingHand" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="1457441016" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.000455" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1251" name="DirectPunchUsesTheSourceClipsStrikingHand(4)" fullname="LighFight.Tests.TripoReviewRosterTests.DirectPunchUsesTheSourceClipsStrikingHand(4)" methodname="DirectPunchUsesTheSourceClipsStrikingHand" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="2113103246" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.000246" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1252" name="DirectPunchUsesTheSourceClipsStrikingHand(5)" fullname="LighFight.Tests.TripoReviewRosterTests.DirectPunchUsesTheSourceClipsStrikingHand(5)" methodname="DirectPunchUsesTheSourceClipsStrikingHand" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="420748016" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:02Z" duration="0.000249" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-case id="1248" name="IslandReviewKeepsOriginalEightKAlbedo" fullname="LighFight.Tests.TripoReviewRosterTests.IslandReviewKeepsOriginalEightKAlbedo" methodname="IslandReviewKeepsOriginalEightKAlbedo" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="1865591560" result="Passed" start-time="2026-10-15 08:56:02Z" end-time="2026-10-15 08:56:04Z" duration="1.238457" asserts="0">
+              <properties />
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1247" name="ReviewUsesCalibratedTripoCharacter" fullname="LighFight.Tests.TripoReviewRosterTests.ReviewUsesCalibratedTripoCharacter" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.035780" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1244" name="ReviewUsesCalibratedTripoCharacter(0,&quot;Bone&quot;)" fullname="LighFight.Tests.TripoReviewRosterTests.ReviewUsesCalibratedTripoCharacter(0,&quot;Bone&quot;)" methodname="ReviewUsesCalibratedTripoCharacter" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="2124473507" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.021276" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1245" name="ReviewUsesCalibratedTripoCharacter(3,&quot;Island&quot;)" fullname="LighFight.Tests.TripoReviewRosterTests.ReviewUsesCalibratedTripoCharacter(3,&quot;Island&quot;)" methodname="ReviewUsesCalibratedTripoCharacter" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="271076106" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.002208" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1246" name="ReviewUsesCalibratedTripoCharacter(5,&quot;Ranger&quot;)" fullname="LighFight.Tests.TripoReviewRosterTests.ReviewUsesCalibratedTripoCharacter(5,&quot;Ranger&quot;)" methodname="ReviewUsesCalibratedTripoCharacter" classname="LighFight.Tests.TripoReviewRosterTests" runstate="Runnable" seed="609394739" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.001789" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1259" name="VictoryPresentationTests" fullname="LighFight.Tests.VictoryPresentationTests" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.196623" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1265" name="CompletedPreviewHoldsItsLastFrameWhileDanceLoops" fullname="LighFight.Tests.VictoryPresentationTests.CompletedPreviewHoldsItsLastFrameWhileDanceLoops" methodname="CompletedPreviewHoldsItsLastFrameWhileDanceLoops" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1117525171" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.002095" asserts="0">
+              <properties />
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1264" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.067697" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1260" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,0,&quot;Fall&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,0,&quot;Fall&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1495401172" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.035468" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1261" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,0,&quot;Fall&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,0,&quot;Fall&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1602497143" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.004276" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1262" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,20,&quot;Defeat&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,20,&quot;Defeat&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1470600603" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.007195" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1263" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,20,&quot;Defeat&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,20,&quot;Defeat&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1875307640" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.007864" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1270" name="WinnerUsesAnAvailableAuthoredAnimation" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.049541" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1266" name="WinnerUsesAnAvailableAuthoredAnimation(0,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(0,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="621717612" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.000796" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1267" name="WinnerUsesAnAvailableAuthoredAnimation(3,&quot;Greeting&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(3,&quot;Greeting&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1887525093" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.000332" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1268" name="WinnerUsesAnAvailableAuthoredAnimation(4,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(4,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="50910563" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.000237" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1269" name="WinnerUsesAnAvailableAuthoredAnimation(5,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(5,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="2005620471" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.000200" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1060" name="MatchConfigurationTests" fullname="MatchConfigurationTests" classname="MatchConfigurationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.011211" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1061" name="ChosenTimerAndWinsAreAppliedAcrossRounds" fullname="MatchConfigurationTests.ChosenTimerAndWinsAreAppliedAcrossRounds" methodname="ChosenTimerAndWinsAreAppliedAcrossRounds" classname="MatchConfigurationTests" runstate="Runnable" seed="257255919" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.006304" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1063" name="InvalidConfigurationIsBounded" fullname="MatchConfigurationTests.InvalidConfigurationIsBounded" methodname="InvalidConfigurationIsBounded" classname="MatchConfigurationTests" runstate="Runnable" seed="2076639966" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.000548" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1062" name="TimerResetsToChosenLength" fullname="MatchConfigurationTests.TimerResetsToChosenLength" methodname="TimerResetsToChosenLength" classname="MatchConfigurationTests" runstate="Runnable" seed="889233391" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.000537" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1109" name="MeshyWebTests" fullname="MeshyWebTests" classname="MeshyWebTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:24Z" duration="20.528333" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1119" name="ComposedArenaImporterPreservesPlacementAndRemovesDecorativePhysics" fullname="MeshyWebTests.ComposedArenaImporterPreservesPlacementAndRemovesDecorativePhysics" methodname="ComposedArenaImporterPreservesPlacementAndRemovesDecorativePhysics" classname="MeshyWebTests" runstate="Runnable" seed="978219506" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.440135" asserts="0">
+          <properties />
+          <output><![CDATA[Imported Meshy arena with unchanged scene placement: Assets/NativeArenaTestFixture/arena.prefab
+]]></output>
+        </test-case>
+        <test-case id="1118" name="ComposedSceneRejectsObstaclesAndUndersizedFloors" fullname="MeshyWebTests.ComposedSceneRejectsObstaclesAndUndersizedFloors" methodname="ComposedSceneRejectsObstaclesAndUndersizedFloors" classname="MeshyWebTests" runstate="Runnable" seed="1282876710" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:04Z" duration="0.003824" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1112" name="EveryNativeMotionContainsChangingRotations" fullname="MeshyWebTests.EveryNativeMotionContainsChangingRotations" methodname="EveryNativeMotionContainsChangingRotations" classname="MeshyWebTests" runstate="Runnable" seed="1498276081" result="Passed" start-time="2026-10-15 08:56:04Z" end-time="2026-10-15 08:56:05Z" duration="1.224279" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1120" name="InspectorSurfaceAndSkeletonStayAtSameWorldScale" fullname="MeshyWebTests.InspectorSurfaceAndSkeletonStayAtSameWorldScale" methodname="InspectorSurfaceAndSkeletonStayAtSameWorldScale" classname="MeshyWebTests" runstate="Runnable" seed="1721506576" result="Passed" start-time="2026-10-15 08:56:05Z" end-time="2026-10-15 08:56:05Z" duration="0.039470" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1116" name="NativeImporterAcceptsUnresampledEulerMotionAndRejectsFrozenEuler" fullname="MeshyWebTests.NativeImporterAcceptsUnresampledEulerMotionAndRejectsFrozenEuler" methodname="NativeImporterAcceptsUnresampledEulerMotionAndRejectsFrozenEuler" classname="MeshyWebTests" runstate="Runnable" seed="437302794" result="Passed" start-time="2026-10-15 08:56:05Z" end-time="2026-10-15 08:56:05Z" duration="0.007127" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1115" name="NativeImporterPreservesDirectSourceCurves" fullname="MeshyWebTests.NativeImporterPreservesDirectSourceCurves" methodname="NativeImporterPreservesDirectSourceCurves" classname="MeshyWebTests" runstate="Runnable" seed="139493258" result="Passed" start-time="2026-10-15 08:56:05Z" end-time="2026-10-15 08:56:24Z" duration="18.523416" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1117" name="NativeImporterRejectsFrozenOrForeignRigClips" fullname="MeshyWebTests.NativeImporterRejectsFrozenOrForeignRigClips" methodname="NativeImporterRejectsFrozenOrForeignRigClips" classname="MeshyWebTests" runstate="Runnable" seed="1113597343" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.010606" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1113" name="NativePlaybackUsesProviderDurationAndCanonicalContactBones" fullname="MeshyWebTests.NativePlaybackUsesProviderDurationAndCanonicalContactBones" methodname="NativePlaybackUsesProviderDurationAndCanonicalContactBones" classname="MeshyWebTests" runstate="Runnable" seed="1610003170" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.004242" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1121" name="NativeRosterUsesDistinctBackwardMotionAndDancePreview" fullname="MeshyWebTests.NativeRosterUsesDistinctBackwardMotionAndDancePreview" methodname="NativeRosterUsesDistinctBackwardMotionAndDancePreview" classname="MeshyWebTests" runstate="Runnable" seed="1035937660" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.112317" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1110" name="RulesAndArenaSheetsAreMutuallyExclusive" fullname="MeshyWebTests.RulesAndArenaSheetsAreMutuallyExclusive" methodname="RulesAndArenaSheetsAreMutuallyExclusive" classname="MeshyWebTests" runstate="Runnable" seed="1154038857" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.001788" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1114" name="SourceRoughnessAndMetallicChannelsArePreserved" fullname="MeshyWebTests.SourceRoughnessAndMetallicChannelsArePreserved" methodname="SourceRoughnessAndMetallicChannelsArePreserved" classname="MeshyWebTests" runstate="Runnable" seed="828738717" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.002413" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1111" name="WebExportRetainsActualSourceAndFingerAnimation" fullname="MeshyWebTests.WebExportRetainsActualSourceAndFingerAnimation" methodname="WebExportRetainsActualSourceAndFingerAnimation" classname="MeshyWebTests" runstate="Runnable" seed="868254236" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.146905" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1054" name="MotionTimingTests" fullname="MotionTimingTests" classname="MotionTimingTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.032554" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1055" name="AnimatedContactAlignsWithTheFirstDamagingTick" fullname="MotionTimingTests.AnimatedContactAlignsWithTheFirstDamagingTick" methodname="AnimatedContactAlignsWithTheFirstDamagingTick" classname="MotionTimingTests" runstate="Runnable" seed="1682575198" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:24Z" duration="0.015995" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1122" name="NativeSurfaceTests" fullname="NativeSurfaceTests" classname="NativeSurfaceTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:25Z" duration="0.209700" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1123" name="DoubleSidedSourceMaterialRendersTheInsideOfClothing" fullname="NativeSurfaceTests.DoubleSidedSourceMaterialRendersTheInsideOfClothing" methodname="DoubleSidedSourceMaterialRendersTheInsideOfClothing" classname="NativeSurfaceTests" runstate="Runnable" seed="899250496" result="Passed" start-time="2026-10-15 08:56:24Z" end-time="2026-10-15 08:56:25Z" duration="0.204691" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1156" name="ReactionPoseTests" fullname="ReactionPoseTests" classname="ReactionPoseTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.004378" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1157" name="HeadBodyLegAndBlockHaveDistinctResponsesAndSettle" fullname="ReactionPoseTests.HeadBodyLegAndBlockHaveDistinctResponsesAndSettle" methodname="HeadBodyLegAndBlockHaveDistinctResponsesAndSettle" classname="ReactionPoseTests" runstate="Runnable" seed="1498704600" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.001440" asserts="0">
+          <properties />
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1124" name="RuntimeTests" fullname="RuntimeTests" classname="RuntimeTests" runstate="Runnable" testcasecount="28" result="Passed" start-time="2026-10-15 08:56:54Z" end-time="2026-10-15 08:56:55Z" duration="0.369931" total="28" passed="28" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1154" name="ActiveFrontKickPointsTowardOpponent" fullname="RuntimeTests.ActiveFrontKickPointsTowardOpponent" methodname="ActiveFrontKickPointsTowardOpponent" classname="RuntimeTests" runstate="Runnable" seed="960309225" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.010161" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1142" name="ArtistConfirmedChainUsesActualContacts" fullname="RuntimeTests.ArtistConfirmedChainUsesActualContacts" classname="RuntimeTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.201471" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1140" name="ArtistConfirmedChainUsesActualContacts(0,1)" fullname="RuntimeTests.ArtistConfirmedChainUsesActualContacts(0,1)" methodname="ArtistConfirmedChainUsesActualContacts" classname="RuntimeTests" runstate="Runnable" seed="1080383684" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.180105" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1141" name="ArtistConfirmedChainUsesActualContacts(0,1,2,5)" fullname="RuntimeTests.ArtistConfirmedChainUsesActualContacts(0,1,2,5)" methodname="ArtistConfirmedChainUsesActualContacts" classname="RuntimeTests" runstate="Runnable" seed="104773575" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.018592" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-suite type="ParameterizedMethod" id="1148" name="ArtistDummyDefenceUsesPhysicalContact" fullname="RuntimeTests.ArtistDummyDefenceUsesPhysicalContact" classname="RuntimeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.034431" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1145" name="ArtistDummyDefenceUsesPhysicalContact(0,0,Hit)" fullname="RuntimeTests.ArtistDummyDefenceUsesPhysicalContact(0,0,Hit)" methodname="ArtistDummyDefenceUsesPhysicalContact" classname="RuntimeTests" runstate="Runnable" seed="1647793550" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.011567" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1146" name="ArtistDummyDefenceUsesPhysicalContact(1,0,Blocked)" fullname="RuntimeTests.ArtistDummyDefenceUsesPhysicalContact(1,0,Blocked)" methodname="ArtistDummyDefenceUsesPhysicalContact" classname="RuntimeTests" runstate="Runnable" seed="1003241808" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.007684" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1147" name="ArtistDummyDefenceUsesPhysicalContact(2,5,Blocked)" fullname="RuntimeTests.ArtistDummyDefenceUsesPhysicalContact(2,5,Blocked)" methodname="ArtistDummyDefenceUsesPhysicalContact" classname="RuntimeTests" runstate="Runnable" seed="1476672064" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.011324" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1138" name="ArtistGuardProtectsChestAndJabExtendsTowardOpponent" fullname="RuntimeTests.ArtistGuardProtectsChestAndJabExtendsTowardOpponent" methodname="ArtistGuardProtectsChestAndJabExtendsTowardOpponent" classname="RuntimeTests" runstate="Runnable" seed="34004967" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.010117" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1139" name="ArtistJabUsesActualContactAndMissesOutsideItsTrajectory" fullname="RuntimeTests.ArtistJabUsesActualContactAndMissesOutsideItsTrajectory" methodname="ArtistJabUsesActualContactAndMissesOutsideItsTrajectory" classname="RuntimeTests" runstate="Runnable" seed="1360980219" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.032745" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1143" name="ArtistReactionDoesNotAccumulateWhenPoseIsSampledAgain" fullname="RuntimeTests.ArtistReactionDoesNotAccumulateWhenPoseIsSampledAgain" methodname="ArtistReactionDoesNotAccumulateWhenPoseIsSampledAgain" classname="RuntimeTests" runstate="Runnable" seed="1517270314" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.005044" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1137" name="ArtistSpawnIsIdleAndRetreatUsesBackstep" fullname="RuntimeTests.ArtistSpawnIsIdleAndRetreatUsesBackstep" methodname="ArtistSpawnIsIdleAndRetreatUsesBackstep" classname="RuntimeTests" runstate="Runnable" seed="919013798" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.003487" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1133" name="AttackControlsKeepTheirGapsAtEverySupportedSizeAndHandedness" fullname="RuntimeTests.AttackControlsKeepTheirGapsAtEverySupportedSizeAndHandedness" methodname="AttackControlsKeepTheirGapsAtEverySupportedSizeAndHandedness" classname="RuntimeTests" runstate="Runnable" seed="1371767914" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:25Z" duration="0.005196" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1149" name="AuditEveryArtistStrikeAtPlayableDistances" fullname="RuntimeTests.AuditEveryArtistStrikeAtPlayableDistances" methodname="AuditEveryArtistStrikeAtPlayableDistances" classname="RuntimeTests" runstate="Runnable" seed="1469204540" result="Passed" start-time="2026-10-15 08:56:25Z" end-time="2026-10-15 08:56:33Z" duration="8.489178" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1151" name="EmbeddedArtReviewWaitsForHostAndReturnsThroughBridge" fullname="RuntimeTests.EmbeddedArtReviewWaitsForHostAndReturnsThroughBridge" methodname="EmbeddedArtReviewWaitsForHostAndReturnsThroughBridge" classname="RuntimeTests" runstate="Runnable" seed="624290288" result="Passed" start-time="2026-10-15 08:56:33Z" end-time="2026-10-15 08:56:39Z" duration="5.253078" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1150" name="EmbeddedBattleUsesArtistRigsAndReturnsOnce" fullname="RuntimeTests.EmbeddedBattleUsesArtistRigsAndReturnsOnce" methodname="EmbeddedBattleUsesArtistRigsAndReturnsOnce" classname="RuntimeTests" runstate="Runnable" seed="2111765750" result="Passed" start-time="2026-10-15 08:56:39Z" end-time="2026-10-15 08:56:45Z" duration="6.249770" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+        </test-case>
+        <test-case id="1136" name="FightCameraKeepsBothBodiesInsideHorizontalView" fullname="RuntimeTests.FightCameraKeepsBothBodiesInsideHorizontalView" methodname="FightCameraKeepsBothBodiesInsideHorizontalView" classname="RuntimeTests" runstate="Runnable" seed="1479102314" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.004695" asserts="0">
+          <properties />
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1132" name="GraphicsOptionsRespectChosenShadows" fullname="RuntimeTests.GraphicsOptionsRespectChosenShadows" classname="RuntimeTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.059291" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1126" name="GraphicsOptionsRespectChosenShadows(0,False)" fullname="RuntimeTests.GraphicsOptionsRespectChosenShadows(0,False)" methodname="GraphicsOptionsRespectChosenShadows" classname="RuntimeTests" runstate="Runnable" seed="1033948247" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.010790" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1127" name="GraphicsOptionsRespectChosenShadows(1,False)" fullname="RuntimeTests.GraphicsOptionsRespectChosenShadows(1,False)" methodname="GraphicsOptionsRespectChosenShadows" classname="RuntimeTests" runstate="Runnable" seed="1457431368" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.007107" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1128" name="GraphicsOptionsRespectChosenShadows(2,False)" fullname="RuntimeTests.GraphicsOptionsRespectChosenShadows(2,False)" methodname="GraphicsOptionsRespectChosenShadows" classname="RuntimeTests" runstate="Runnable" seed="2094599127" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.016521" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1129" name="GraphicsOptionsRespectChosenShadows(0,True)" fullname="RuntimeTests.GraphicsOptionsRespectChosenShadows(0,True)" methodname="GraphicsOptionsRespectChosenShadows" classname="RuntimeTests" runstate="Runnable" seed="1346618475" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.004043" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1130" name="GraphicsOptionsRespectChosenShadows(1,True)" fullname="RuntimeTests.GraphicsOptionsRespectChosenShadows(1,True)" methodname="GraphicsOptionsRespectChosenShadows" classname="RuntimeTests" runstate="Runnable" seed="407913601" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.010082" asserts="0">
+            <properties />
+          </test-case>
+          <test-case id="1131" name="GraphicsOptionsRespectChosenShadows(2,True)" fullname="RuntimeTests.GraphicsOptionsRespectChosenShadows(2,True)" methodname="GraphicsOptionsRespectChosenShadows" classname="RuntimeTests" runstate="Runnable" seed="1429772206" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.005075" asserts="0">
+            <properties />
+          </test-case>
+        </test-suite>
+        <test-case id="1125" name="IslandIdleDoesNotShrugUpperArmsAboveItsNeck" fullname="RuntimeTests.IslandIdleDoesNotShrugUpperArmsAboveItsNeck" methodname="IslandIdleDoesNotShrugUpperArmsAboveItsNeck" classname="RuntimeTests" runstate="Runnable" seed="1433585351" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.009750" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1135" name="JoystickMatchesItsCircleAndKeepsSensitivityWhenResized" fullname="RuntimeTests.JoystickMatchesItsCircleAndKeepsSensitivityWhenResized" methodname="JoystickMatchesItsCircleAndKeepsSensitivityWhenResized" classname="RuntimeTests" runstate="Runnable" seed="1748557107" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:45Z" duration="0.002822" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1153" name="LaunchBeforeContentLoadKeepsLanguage" fullname="RuntimeTests.LaunchBeforeContentLoadKeepsLanguage" methodname="LaunchBeforeContentLoadKeepsLanguage" classname="RuntimeTests" runstate="Runnable" seed="1054860544" result="Passed" start-time="2026-10-15 08:56:45Z" end-time="2026-10-15 08:56:50Z" duration="4.796466" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+          </properties>
+          <output><![CDATA[FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1134" name="MaximumPreviewUsesActualPhonePixelsAndAspect" fullname="RuntimeTests.MaximumPreviewUsesActualPhonePixelsAndAspect" methodname="MaximumPreviewUsesActualPhonePixelsAndAspect" classname="RuntimeTests" runstate="Runnable" seed="2055799957" result="Passed" start-time="2026-10-15 08:56:50Z" end-time="2026-10-15 08:56:50Z" duration="0.013091" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1144" name="PracticeSpacingResetPreservesDefenceAndClearsAttack" fullname="RuntimeTests.PracticeSpacingResetPreservesDefenceAndClearsAttack" methodname="PracticeSpacingResetPreservesDefenceAndClearsAttack" classname="RuntimeTests" runstate="Runnable" seed="542004093" result="Passed" start-time="2026-10-15 08:56:50Z" end-time="2026-10-15 08:56:50Z" duration="0.008354" asserts="0">
+          <properties />
+        </test-case>
+        <test-case id="1152" name="PrototypeOwnsAndDestroysItsWorld" fullname="RuntimeTests.PrototypeOwnsAndDestroysItsWorld" methodname="PrototypeOwnsAndDestroysItsWorld" classname="RuntimeTests" runstate="Runnable" seed="662636591" result="Passed" start-time="2026-10-15 08:56:50Z" end-time="2026-10-15 08:56:54Z" duration="4.690788" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1155" name="WalkDoesNotFlickerBetweenSimulationTicks" fullname="RuntimeTests.WalkDoesNotFlickerBetweenSimulationTicks" methodname="WalkDoesNotFlickerBetweenSimulationTicks" classname="RuntimeTests" runstate="Runnable" seed="422933861" result="Passed" start-time="2026-10-15 08:56:54Z" end-time="2026-10-15 08:56:55Z" duration="0.015581" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1160" name="ShadowlessMaterialsTests" fullname="ShadowlessMaterialsTests" classname="ShadowlessMaterialsTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:56:55Z" duration="0.101803" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1163" name="NativePresentationRetainsDoubleSidedSurface" fullname="ShadowlessMaterialsTests.NativePresentationRetainsDoubleSidedSurface" methodname="NativePresentationRetainsDoubleSidedSurface" classname="ShadowlessMaterialsTests" runstate="Runnable" seed="24508153" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:56:55Z" duration="0.040518" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1161" name="RenderKeepsAuthoredHandMaskAndIgnoresDirectionalLight" fullname="ShadowlessMaterialsTests.RenderKeepsAuthoredHandMaskAndIgnoresDirectionalLight" methodname="RenderKeepsAuthoredHandMaskAndIgnoresDirectionalLight" classname="ShadowlessMaterialsTests" runstate="Runnable" seed="903607724" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:56:55Z" duration="0.049287" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1162" name="ShadowlessPresentationPreservesBodyAndReplacementHandTextures" fullname="ShadowlessMaterialsTests.ShadowlessPresentationPreservesBodyAndReplacementHandTextures" methodname="ShadowlessPresentationPreservesBodyAndReplacementHandTextures" classname="ShadowlessMaterialsTests" runstate="Runnable" seed="420652442" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:56:55Z" duration="0.008526" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1158" name="ShadowRestoreTests" fullname="ShadowRestoreTests" classname="ShadowRestoreTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:56:55Z" duration="0.012882" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1159" name="ShadowSwitchRestoresAuthoredPbrWithoutLosingTextures" fullname="ShadowRestoreTests.ShadowSwitchRestoresAuthoredPbrWithoutLosingTextures" methodname="ShadowSwitchRestoresAuthoredPbrWithoutLosingTextures" classname="ShadowRestoreTests" runstate="Runnable" seed="1879510487" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:56:55Z" duration="0.010226" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1164" name="SourceDetailTests" fullname="SourceDetailTests" classname="SourceDetailTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:57:21Z" duration="26.090131" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="ParameterizedMethod" id="1167" name="ArtistSourceDetailAndPbrSurviveAllAttackPoses" fullname="SourceDetailTests.ArtistSourceDetailAndPbrSurviveAllAttackPoses" classname="SourceDetailTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:57:21Z" duration="26.087883" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1165" name="ArtistSourceDetailAndPbrSurviveAllAttackPoses(3,66364)" fullname="SourceDetailTests.ArtistSourceDetailAndPbrSurviveAllAttackPoses(3,66364)" methodname="ArtistSourceDetailAndPbrSurviveAllAttackPoses" classname="SourceDetailTests" runstate="Runnable" seed="357196902" result="Passed" start-time="2026-10-15 08:56:55Z" end-time="2026-10-15 08:56:58Z" duration="3.448123" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1166" name="ArtistSourceDetailAndPbrSurviveAllAttackPoses(4,350000)" fullname="SourceDetailTests.ArtistSourceDetailAndPbrSurviveAllAttackPoses(4,350000)" methodname="ArtistSourceDetailAndPbrSurviveAllAttackPoses" classname="SourceDetailTests" runstate="Runnable" seed="1838315780" result="Passed" start-time="2026-10-15 08:56:58Z" end-time="2026-10-15 08:57:21Z" duration="22.632750" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1064" name="SpatialCombatTests" fullname="SpatialCombatTests" classname="SpatialCombatTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.218171" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1066" name="DepthSeparationPreventsDistanceHit" fullname="SpatialCombatTests.DepthSeparationPreventsDistanceHit" methodname="DepthSeparationPreventsDistanceHit" classname="SpatialCombatTests" runstate="Runnable" seed="1879698349" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.042892" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1071" name="FacingLocksDuringAttack" fullname="SpatialCombatTests.FacingLocksDuringAttack" methodname="FacingLocksDuringAttack" classname="SpatialCombatTests" runstate="Runnable" seed="1561950546" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001247" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1069" name="GeometricContactOnlyDamagesOnce" fullname="SpatialCombatTests.GeometricContactOnlyDamagesOnce" methodname="GeometricContactOnlyDamagesOnce" classname="SpatialCombatTests" runstate="Runnable" seed="1114565968" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.030833" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1068" name="GeometricMissCannotDealDamage" fullname="SpatialCombatTests.GeometricMissCannotDealDamage" methodname="GeometricMissCannotDealDamage" classname="SpatialCombatTests" runstate="Runnable" seed="802548643" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001458" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1067" name="RequiredPhysicalContactFailsClosed" fullname="SpatialCombatTests.RequiredPhysicalContactFailsClosed" methodname="RequiredPhysicalContactFailsClosed" classname="SpatialCombatTests" runstate="Runnable" seed="463513741" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.003455" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1065" name="SidestepHasBoundedNormalizedSpeed" fullname="SpatialCombatTests.SidestepHasBoundedNormalizedSpeed" methodname="SidestepHasBoundedNormalizedSpeed" classname="SpatialCombatTests" runstate="Runnable" seed="430913058" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.015669" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1070" name="SweptLimbCrossesBodyEvenWhenEndpointsMiss" fullname="SpatialCombatTests.SweptLimbCrossesBodyEvenWhenEndpointsMiss" methodname="SweptLimbCrossesBodyEvenWhenEndpointsMiss" classname="SpatialCombatTests" runstate="Runnable" seed="1001456511" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.004756" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1092" name="StrikeOutcomeTests" fullname="StrikeOutcomeTests" classname="StrikeOutcomeTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.029423" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1096" name="BotRespectsCalibratedReach" fullname="StrikeOutcomeTests.BotRespectsCalibratedReach" methodname="BotRespectsCalibratedReach" classname="StrikeOutcomeTests" runstate="Runnable" seed="626845890" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.011702" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1093" name="ContactBlockAndMissProduceDifferentTrainingResults" fullname="StrikeOutcomeTests.ContactBlockAndMissProduceDifferentTrainingResults" methodname="ContactBlockAndMissProduceDifferentTrainingResults" classname="StrikeOutcomeTests" runstate="Runnable" seed="1469114803" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.005166" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1094" name="InterruptedStartupDoesNotBecomeAMiss" fullname="StrikeOutcomeTests.InterruptedStartupDoesNotBecomeAMiss" methodname="InterruptedStartupDoesNotBecomeAMiss" classname="StrikeOutcomeTests" runstate="Runnable" seed="579857405" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000675" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1095" name="NewAttackClearsOldTrainingResult" fullname="StrikeOutcomeTests.NewAttackClearsOldTrainingResult" methodname="NewAttackClearsOldTrainingResult" classname="StrikeOutcomeTests" runstate="Runnable" seed="136052475" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000499" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1097" name="TrainingDummyDefenceTests" fullname="TrainingDummyDefenceTests" classname="TrainingDummyDefenceTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.074121" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1108" name="BlockedDummyContactCannotContinueChain" fullname="TrainingDummyDefenceTests.BlockedDummyContactCannotContinueChain" methodname="BlockedDummyContactCannotContinueChain" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="981777398" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001082" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1104" name="ChosenDefenceChangesActualStrikeResult" fullname="TrainingDummyDefenceTests.ChosenDefenceChangesActualStrikeResult" classname="TrainingDummyDefenceTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.060885" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1098" name="ChosenDefenceChangesActualStrikeResult(0,0,Hit)" fullname="TrainingDummyDefenceTests.ChosenDefenceChangesActualStrikeResult(0,0,Hit)" methodname="ChosenDefenceChangesActualStrikeResult" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="887909728" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001056" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1099" name="ChosenDefenceChangesActualStrikeResult(1,0,Blocked)" fullname="TrainingDummyDefenceTests.ChosenDefenceChangesActualStrikeResult(1,0,Blocked)" methodname="ChosenDefenceChangesActualStrikeResult" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="1649118628" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000490" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1100" name="ChosenDefenceChangesActualStrikeResult(1,5,Hit)" fullname="TrainingDummyDefenceTests.ChosenDefenceChangesActualStrikeResult(1,5,Hit)" methodname="ChosenDefenceChangesActualStrikeResult" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="1634143707" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000268" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1101" name="ChosenDefenceChangesActualStrikeResult(2,5,Blocked)" fullname="TrainingDummyDefenceTests.ChosenDefenceChangesActualStrikeResult(2,5,Blocked)" methodname="ChosenDefenceChangesActualStrikeResult" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="1084909691" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000462" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1102" name="ChosenDefenceChangesActualStrikeResult(2,3,Hit)" fullname="TrainingDummyDefenceTests.ChosenDefenceChangesActualStrikeResult(2,3,Hit)" methodname="ChosenDefenceChangesActualStrikeResult" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="1740267088" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000199" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1103" name="ChosenDefenceChangesActualStrikeResult(2,0,Miss)" fullname="TrainingDummyDefenceTests.ChosenDefenceChangesActualStrikeResult(2,0,Miss)" methodname="ChosenDefenceChangesActualStrikeResult" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="52487985" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000343" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1107" name="InvalidDefenceCannotOverwriteChosenMode" fullname="TrainingDummyDefenceTests.InvalidDefenceCannotOverwriteChosenMode" methodname="InvalidDefenceCannotOverwriteChosenMode" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="691737680" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.005171" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1106" name="NormalFightRejectsDummySettingsAndKeepsDefence" fullname="TrainingDummyDefenceTests.NormalFightRejectsDummySettingsAndKeepsDefence" methodname="NormalFightRejectsDummySettingsAndKeepsDefence" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="1749271249" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000401" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1105" name="SwitchingBackToOpenClearsBothGuardAndCrouch" fullname="TrainingDummyDefenceTests.SwitchingBackToOpenClearsBothGuardAndCrouch" methodname="SwitchingBackToOpenClearsBothGuardAndCrouch" classname="TrainingDummyDefenceTests" runstate="Runnable" seed="1874706890" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.003472" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1045" name="TrainingTests" fullname="TrainingTests" classname="TrainingTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.003535" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1046" name="TrainingDoesNotTimeoutOrLoseHealth" fullname="TrainingTests.TrainingDoesNotTimeoutOrLoseHealth" methodname="TrainingDoesNotTimeoutOrLoseHealth" classname="TrainingTests" runstate="Runnable" seed="1574440048" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000892" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1289" name="SelectedContent.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/SelectedContent.Tests.dll" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.079143" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="58316" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestFixture" id="1274" name="SelectedContentTests" fullname="SelectedContentTests" classname="SelectedContentTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.046642" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1275" name="ElevenAddressRosterHasNoDirectAssets" fullname="SelectedContentTests.ElevenAddressRosterHasNoDirectAssets" methodname="ElevenAddressRosterHasNoDirectAssets" classname="SelectedContentTests" runstate="Runnable" seed="1506447974" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.009024" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1280" name="FailureIsVisibleAndAllHandlesReleased" fullname="SelectedContentTests.FailureIsVisibleAndAllHandlesReleased" methodname="FailureIsVisibleAndAllHandlesReleased" classname="SelectedContentTests" runstate="Runnable" seed="1308480004" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.004873" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1281" name="InvalidSelectionLoadsNothing" fullname="SelectedContentTests.InvalidSelectionLoadsNothing" methodname="InvalidSelectionLoadsNothing" classname="SelectedContentTests" runstate="Runnable" seed="169839427" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.003122" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1277" name="LoadsOnlySelectedThreeAddresses" fullname="SelectedContentTests.LoadsOnlySelectedThreeAddresses" methodname="LoadsOnlySelectedThreeAddresses" classname="SelectedContentTests" runstate="Runnable" seed="754142196" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.003148" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1282" name="MetadataRosterAndLegacyRosterBothRetained" fullname="SelectedContentTests.MetadataRosterAndLegacyRosterBothRetained" methodname="MetadataRosterAndLegacyRosterBothRetained" classname="SelectedContentTests" runstate="Runnable" seed="1567243573" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001245" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1279" name="PendingCancelReleasesEveryHandleExactlyOnce" fullname="SelectedContentTests.PendingCancelReleasesEveryHandleExactlyOnce" methodname="PendingCancelReleasesEveryHandleExactlyOnce" classname="SelectedContentTests" runstate="Runnable" seed="731677979" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001417" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1283" name="RejectsEmptyOrBlankAddress" fullname="SelectedContentTests.RejectsEmptyOrBlankAddress" methodname="RejectsEmptyOrBlankAddress" classname="SelectedContentTests" runstate="Runnable" seed="1011416091" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000728" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1276" name="RejectsInlineRefsInStreamCatalog" fullname="SelectedContentTests.RejectsInlineRefsInStreamCatalog" methodname="RejectsInlineRefsInStreamCatalog" classname="SelectedContentTests" runstate="Runnable" seed="1022332254" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000996" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1284" name="RetryCreatesFreshRequestAfterFailure" fullname="SelectedContentTests.RetryCreatesFreshRequestAfterFailure" methodname="RetryCreatesFreshRequestAfterFailure" classname="SelectedContentTests" runstate="Runnable" seed="1563826830" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.002371" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1278" name="SameFighterUsesOneAssetLoad" fullname="SelectedContentTests.SameFighterUsesOneAssetLoad" methodname="SameFighterUsesOneAssetLoad" classname="SelectedContentTests" runstate="Runnable" seed="1061753602" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001049" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1285" name="StreamingManifestTests" fullname="StreamingManifestTests" classname="StreamingManifestTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.031193" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1288" name="FuturePlayerRejected" fullname="StreamingManifestTests.FuturePlayerRejected" methodname="FuturePlayerRejected" classname="StreamingManifestTests" runstate="Runnable" seed="350637202" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.001344" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1287" name="LegacyPlayerOneStillAccepted" fullname="StreamingManifestTests.LegacyPlayerOneStillAccepted" methodname="LegacyPlayerOneStillAccepted" classname="StreamingManifestTests" runstate="Runnable" seed="619871057" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.008951" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1286" name="StreamingPlayerTwoAccepted" fullname="StreamingManifestTests.StreamingPlayerTwoAccepted" methodname="StreamingPlayerTwoAccepted" classname="StreamingManifestTests" runstate="Runnable" seed="1729978658" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000347" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1292" name="Unity.Addressables.DocExampleCode.Editor.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/Unity.Addressables.DocExampleCode.Editor.Tests.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.004250" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="58316" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1293" name="AddressableAssets" fullname="AddressableAssets" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.003564" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1294" name="DocExampleCode" fullname="AddressableAssets.DocExampleCode" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.002791" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1290" name="TestStub" fullname="AddressableAssets.DocExampleCode.TestStub" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.002144" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1291" name="RequiredTest" fullname="AddressableAssets.DocExampleCode.TestStub.RequiredTest" methodname="RequiredTest" classname="AddressableAssets.DocExampleCode.TestStub" runstate="Runnable" seed="312425870" result="Passed" start-time="2026-10-15 08:57:21Z" end-time="2026-10-15 08:57:21Z" duration="0.000327" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /tmp/lighfight-gui-source-quality-tests.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

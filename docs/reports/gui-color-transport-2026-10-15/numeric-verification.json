@@ -1,0 +1,902 @@
+{
+  "method": "Independent arithmetic checks on actual final windowed Metal CSV. Encoded source bytes are decoded to physical linear, multiplied by authored InterfaceColor linear tint, source-over composed over measured direct-camera background, then display encoded. No source pixels changed.",
+  "checks": [
+    {
+      "check": "LDR-noPost flatTintAlpha physical RGB blend",
+      "actual": [
+        82,
+        86,
+        95
+      ],
+      "expected": [
+        82,
+        86,
+        95
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost flatTintAlpha source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost haloTintAlpha physical RGB blend",
+      "actual": [
+        76,
+        126,
+        193
+      ],
+      "expected": [
+        76,
+        126,
+        193
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost haloTintAlpha source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost whiteCardTint physical RGB blend",
+      "actual": [
+        40,
+        41,
+        49
+      ],
+      "expected": [
+        40,
+        41,
+        49
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost whiteCardTint source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost dynamicWhiteDisc physical RGB blend",
+      "actual": [
+        94,
+        177,
+        221
+      ],
+      "expected": [
+        94,
+        177,
+        221
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost dynamicWhiteDisc source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitCrop 12x12 single excess encoding removed",
+      "actual": [
+        57,
+        60,
+        66
+      ],
+      "expected": [
+        57,
+        60,
+        66
+      ],
+      "maxDifference": 0,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitCrop 67x60 single excess encoding removed",
+      "actual": [
+        191,
+        150,
+        128
+      ],
+      "expected": [
+        190,
+        149,
+        128
+      ],
+      "maxDifference": 1,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitCrop 125x110 single excess encoding removed",
+      "actual": [
+        37,
+        35,
+        37
+      ],
+      "expected": [
+        37,
+        35,
+        37
+      ],
+      "maxDifference": 0,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitStretch 12x12 single excess encoding removed",
+      "actual": [
+        57,
+        60,
+        66
+      ],
+      "expected": [
+        57,
+        60,
+        66
+      ],
+      "maxDifference": 0,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitStretch 67x60 single excess encoding removed",
+      "actual": [
+        191,
+        150,
+        128
+      ],
+      "expected": [
+        190,
+        151,
+        128
+      ],
+      "maxDifference": 1,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitStretch 125x110 single excess encoding removed",
+      "actual": [
+        86,
+        85,
+        88
+      ],
+      "expected": [
+        86,
+        86,
+        88
+      ],
+      "maxDifference": 1,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraHalf 67x60 direct camera reference",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraHalf 12x12 direct camera reference",
+      "actual": [
+        231,
+        63,
+        63
+      ],
+      "expected": [
+        231,
+        63,
+        63
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraHalf 125x110 direct camera reference",
+      "actual": [
+        63,
+        89,
+        231
+      ],
+      "expected": [
+        63,
+        89,
+        231
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraLinear32 67x60 direct camera reference",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraLinear32 12x12 direct camera reference",
+      "actual": [
+        231,
+        64,
+        64
+      ],
+      "expected": [
+        231,
+        63,
+        63
+      ],
+      "maxDifference": 1,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraLinear32 125x110 direct camera reference",
+      "actual": [
+        64,
+        90,
+        231
+      ],
+      "expected": [
+        63,
+        89,
+        231
+      ],
+      "maxDifference": 1,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraSRGB32 67x60 direct camera reference",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraSRGB32 12x12 direct camera reference",
+      "actual": [
+        231,
+        63,
+        63
+      ],
+      "expected": [
+        231,
+        63,
+        63
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraSRGB32 125x110 direct camera reference",
+      "actual": [
+        63,
+        89,
+        231
+      ],
+      "expected": [
+        63,
+        89,
+        231
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitCrop rounded transparent corner",
+      "actual": [
+        231,
+        63,
+        63
+      ],
+      "expected": [
+        231,
+        63,
+        63
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost portraitStretch rounded transparent corner",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraHalf rounded transparent corner",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraLinear32 rounded transparent corner",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost cameraSRGB32 rounded transparent corner",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "LDR-noPost whiteCardTint rounded transparent corner",
+      "actual": [
+        124,
+        124,
+        124
+      ],
+      "expected": [
+        124,
+        124,
+        124
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic flatTintAlpha physical RGB blend",
+      "actual": [
+        98,
+        102,
+        109
+      ],
+      "expected": [
+        98,
+        102,
+        109
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic flatTintAlpha source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic haloTintAlpha physical RGB blend",
+      "actual": [
+        92,
+        135,
+        199
+      ],
+      "expected": [
+        92,
+        135,
+        199
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic haloTintAlpha source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic whiteCardTint physical RGB blend",
+      "actual": [
+        45,
+        46,
+        53
+      ],
+      "expected": [
+        45,
+        46,
+        53
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic whiteCardTint source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic dynamicWhiteDisc physical RGB blend",
+      "actual": [
+        107,
+        183,
+        225
+      ],
+      "expected": [
+        107,
+        183,
+        225
+      ],
+      "maxDifference": 0,
+      "tolerance": 2,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic dynamicWhiteDisc source-over alpha",
+      "actual": [
+        255
+      ],
+      "expected": [
+        255
+      ],
+      "maxDifference": 0,
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitCrop 12x12 single excess encoding removed",
+      "actual": [
+        57,
+        60,
+        66
+      ],
+      "expected": [
+        57,
+        60,
+        66
+      ],
+      "maxDifference": 0,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitCrop 67x60 single excess encoding removed",
+      "actual": [
+        191,
+        150,
+        128
+      ],
+      "expected": [
+        190,
+        149,
+        128
+      ],
+      "maxDifference": 1,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitCrop 125x110 single excess encoding removed",
+      "actual": [
+        37,
+        35,
+        37
+      ],
+      "expected": [
+        37,
+        35,
+        37
+      ],
+      "maxDifference": 0,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitStretch 12x12 single excess encoding removed",
+      "actual": [
+        57,
+        60,
+        66
+      ],
+      "expected": [
+        57,
+        60,
+        66
+      ],
+      "maxDifference": 0,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitStretch 67x60 single excess encoding removed",
+      "actual": [
+        191,
+        150,
+        128
+      ],
+      "expected": [
+        190,
+        151,
+        128
+      ],
+      "maxDifference": 1,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitStretch 125x110 single excess encoding removed",
+      "actual": [
+        86,
+        85,
+        88
+      ],
+      "expected": [
+        86,
+        86,
+        88
+      ],
+      "maxDifference": 1,
+      "tolerance": 3,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraHalf 67x60 direct camera reference",
+      "actual": [
+        149,
+        149,
+        149
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraHalf 12x12 direct camera reference",
+      "actual": [
+        225,
+        59,
+        59
+      ],
+      "expected": [
+        225,
+        59,
+        59
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraHalf 125x110 direct camera reference",
+      "actual": [
+        59,
+        99,
+        225
+      ],
+      "expected": [
+        59,
+        99,
+        225
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraLinear32 67x60 direct camera reference",
+      "actual": [
+        148,
+        148,
+        148
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 1,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraLinear32 12x12 direct camera reference",
+      "actual": [
+        225,
+        59,
+        59
+      ],
+      "expected": [
+        225,
+        59,
+        59
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraLinear32 125x110 direct camera reference",
+      "actual": [
+        59,
+        99,
+        225
+      ],
+      "expected": [
+        59,
+        99,
+        225
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraSRGB32 67x60 direct camera reference",
+      "actual": [
+        149,
+        149,
+        149
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraSRGB32 12x12 direct camera reference",
+      "actual": [
+        225,
+        59,
+        59
+      ],
+      "expected": [
+        225,
+        59,
+        59
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraSRGB32 125x110 direct camera reference",
+      "actual": [
+        59,
+        99,
+        225
+      ],
+      "expected": [
+        59,
+        99,
+        225
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitCrop rounded transparent corner",
+      "actual": [
+        225,
+        59,
+        59
+      ],
+      "expected": [
+        225,
+        59,
+        59
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic portraitStretch rounded transparent corner",
+      "actual": [
+        149,
+        149,
+        149
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraHalf rounded transparent corner",
+      "actual": [
+        149,
+        149,
+        149
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraLinear32 rounded transparent corner",
+      "actual": [
+        149,
+        149,
+        149
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic cameraSRGB32 rounded transparent corner",
+      "actual": [
+        149,
+        149,
+        149
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    },
+    {
+      "check": "HDR-filmic whiteCardTint rounded transparent corner",
+      "actual": [
+        149,
+        149,
+        149
+      ],
+      "expected": [
+        149,
+        149,
+        149
+      ],
+      "maxDifference": 0,
+      "tolerance": 1,
+      "passed": true
+    }
+  ],
+  "failed": 0
+}

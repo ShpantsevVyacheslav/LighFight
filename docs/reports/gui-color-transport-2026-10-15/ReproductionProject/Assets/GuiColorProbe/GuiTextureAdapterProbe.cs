@@ -1,0 +1,21 @@
+using System;using System.IO;using System.Collections;using System.Collections.Generic;using UnityEngine;
+public sealed class GuiTextureAdapterProbe:MonoBehaviour {
+ public Texture2D portrait,flat;public Camera viewCamera;public Shader extraDecode,linearDraw;Material drawMaterial;
+ LinearGuiTextureCache normal32,normalHalf,extra32;Texture2D halo;Texture[,] images;RenderTexture preview;List<string> rows=new List<string>();
+ readonly string[] sources={"portrait0","flat56-60-66","alpha-halo"};readonly string[] columns={"direct","linearRT32","linearRTHalf","extraDecodeRT32","customLinearMaterial","previewPassthrough"};
+ Rect Cell(int row,int col)=>new Rect(20+col*195,70+row*205,160,143);
+ IEnumerator Start(){Directory.CreateDirectory("GuiTextureAdapterEvidence");Application.runInBackground=true;Screen.SetResolution(1200,850,false);drawMaterial=new Material(linearDraw);normal32=new LinearGuiTextureCache(RenderTextureFormat.ARGB32);normalHalf=new LinearGuiTextureCache(RenderTextureFormat.ARGBHalf);extra32=new LinearGuiTextureCache(RenderTextureFormat.ARGB32,extraDecode);
+  halo=new Texture2D(64,64,TextureFormat.RGBA32,false,false);var pixels=new Color32[4096];for(int y=0;y<64;y++)for(int x=0;x<64;x++){float a=Mathf.Clamp01((31.5f-new Vector2(x-31.5f,y-31.5f).magnitude)/12);pixels[y*64+x]=new Color32(56,160,220,(byte)Mathf.RoundToInt(a*255));}halo.SetPixels32(pixels);halo.Apply();
+  preview=new RenderTexture(16,16,0,RenderTextureFormat.ARGBHalf,RenderTextureReadWrite.Linear);preview.Create();var oldTarget=RenderTexture.active;Graphics.Blit(flat,preview);RenderTexture.active=oldTarget;if(normal32.Resolve(preview)!=preview)throw new Exception("RenderTexture preview must be passed through unchanged");
+  var inputs=new Texture2D[]{portrait,flat,halo};images=new Texture[3,6];for(int r=0;r<3;r++){images[r,0]=inputs[r];images[r,1]=normal32.Resolve(inputs[r]);images[r,2]=normalHalf.Resolve(inputs[r]);images[r,3]=extra32.Resolve(inputs[r]);images[r,4]=inputs[r];images[r,5]=preview;}
+  rows.Add("mode,source,path,point,r,g,b,a");
+  foreach(bool hdr in new[]{false,true}){viewCamera.allowHDR=hdr;viewCamera.GetComponent<LighFight.Runtime.FittedFilmicCamera>().enabled=hdr;for(int f=0;f<6;f++)yield return null;yield return new WaitForEndOfFrame();
+   var shot=ScreenCapture.CaptureScreenshotAsTexture();string mode=hdr?"HDR-filmic":"LDR-noPost";File.WriteAllBytes("GuiTextureAdapterEvidence/"+mode+".png",shot.EncodeToPNG());
+   for(int r=0;r<3;r++)for(int c=0;c<6;c++)foreach(var p in new[]{new Vector2Int(12,12),new Vector2Int(80,71),new Vector2Int(1,1),new Vector2Int(45,71)}){var rect=Cell(r,c);var color=(Color32)shot.GetPixel((int)rect.x+p.x,shot.height-1-((int)rect.y+p.y));rows.Add(string.Join(",",mode,sources[r],columns[c],p.x+"x"+p.y,color.r,color.g,color.b,color.a));}Destroy(shot);
+  }
+  File.WriteAllLines("GuiTextureAdapterEvidence/samples.csv",rows);File.WriteAllText("GuiTextureAdapterEvidence/done.txt","Actual windowed Metal matrix complete; preview RT passthrough asserted; originals untouched.\n");Application.Quit(0);
+ }
+ void OnGUI(){if(images==null)return;GUI.color=Color.white;for(int r=0;r<3;r++)for(int c=0;c<6;c++){var rect=Cell(r,c);GUI.Label(new Rect(rect.x,rect.y-35,220,35),sources[r]+" "+columns[c]);if(c==4){if(Event.current.type==EventType.Repaint)DrawLinear(rect,images[r,c]);}else GUI.DrawTexture(rect,images[r,c],ScaleMode.ScaleAndCrop,true,0,Color.white,0,12);}GUI.Label(new Rect(20,720,1100,60),"Rightmost: same already-linear ARGBHalf preview RT passed through unchanged. Camera background black; alpha/round corners stay source-derived.");}
+ void DrawLinear(Rect rect,Texture tex){float scale=Mathf.Max(rect.width/tex.width,rect.height/tex.height);var uv=new Rect((1-rect.width/(scale*tex.width))*.5f,(1-rect.height/(scale*tex.height))*.5f,rect.width/(scale*tex.width),rect.height/(scale*tex.height));drawMaterial.SetVector("_SourceUV",new Vector4(uv.x,uv.y,uv.width,uv.height));drawMaterial.SetVector("_RectSize",new Vector4(rect.width,rect.height,0,0));drawMaterial.SetFloat("_Radius",12);Graphics.DrawTexture(rect,tex,uv,0,0,0,0,Color.white,drawMaterial);}
+ void OnDestroy(){if(drawMaterial)Destroy(drawMaterial);normal32?.Dispose();normalHalf?.Dispose();extra32?.Dispose();if(halo)Destroy(halo);if(preview){preview.Release();Destroy(preview);}}
+}

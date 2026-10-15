@@ -105,7 +105,7 @@ namespace LighFight.Runtime
         {
             ReleaseActorWarmup();CancelSelectedContent();
             if (bridge != null) bridge.LaunchRequested -= OnLaunch;
-            ReleaseSelectionRender();if(selectionBackdrop!=null)Destroy(selectionBackdrop);if(selectionHalo!=null)Destroy(selectionHalo);if(circle!=null)Destroy(circle);if(brandMark!=null)Destroy(brandMark);
+            ReleaseGuiTextureDraw();ReleaseSelectionRender();if(selectionBackdrop!=null)Destroy(selectionBackdrop);if(selectionHalo!=null)Destroy(selectionHalo);if(circle!=null)Destroy(circle);if(brandMark!=null)Destroy(brandMark);
         }
         private void OnApplicationPause(bool value)
         {
