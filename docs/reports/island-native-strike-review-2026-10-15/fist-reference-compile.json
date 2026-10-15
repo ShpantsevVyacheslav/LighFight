@@ -1,0 +1,52 @@
+{
+  "status": "REFERENCE_COMPILE_ONLY_UNITY_IMPORT_AND_GPU_PENDING",
+  "compiler": "Unity6000.3.26f1 bundled Mono/Roslyn, installed UnityEditor/Engine reference assemblies",
+  "exit": 0,
+  "errors": 0,
+  "warnings": 0,
+  "sourceFiles": {
+    ".tools/tripo-humanoid-review-unity/IslandNativeStrikeReviewPacket/Editor/IslandNativeFistCompareJob.cs": "fa4502fbd787383454e723c0778dc590bf978e8ac8f7a4f6dd684c52ab022d79",
+    ".tools/tripo-humanoid-review-unity/IslandNativeStrikeReviewPacket/Editor/IslandNativeStrikeReviewJob.cs": "03080083902625e3046e6bc442ca4f2ea7a2060544b6498fdae72dd5d82ae42d",
+    ".tools/tripo-humanoid-review-unity/IslandNativeStrikeReviewPacket/Editor/IslandRenderAttributeIdentity.cs": "105a8ccb11b30d083e34fbe86802e315c76d9fa911c9252d0296b8e675f7fc50",
+    ".tools/tripo-humanoid-review-unity/IslandNativeStrikeReviewPacket/Editor/IslandStrikeLosslessPack.cs": "7897ff0c5d1cf65bf9704d09458c0371b0e385f7b2416204d7c417b082fba765",
+    ".tools/tripo-humanoid-review-unity/IslandNativeStrikeReviewPacket/Runtime/IslandFistEOFProbe.cs": "6f78ebf12ad9eef2eb09cfa75db57f5992e4025f56f59786e05426ae04e98481",
+    ".tools/tripo-humanoid-review-unity/IslandNativeStrikeReviewPacket/Runtime/IslandStrikeCodecEOFProbe.cs": "bb89689c623f53f6cc3d36ac34d42b18b2da9f23ad380bb59a05e533ddc0de5e",
+    "unity/Assets/NativeSupport/NativeSupportPoseData.cs": "d8bf54c0f37a166deb5e6dd36e5b0496d9406eadc5a46517dc5c4fd74ce40559",
+    "unity/Assets/LighFight/Runtime/NativeFingerPose.cs": "7828182ebb10242781a7ff914b34696a7e10f1d1b77ed03e360038e9185da865"
+  },
+  "candidate": {
+    "take": "box_02",
+    "sourceSeconds": 1.6,
+    "minNonThumbBendDegrees": 90.56597893573412,
+    "meanNonThumbBendDegrees": 93.53891697132761,
+    "allEightBends": [
+      97.0098570815041,
+      90.56597893573412,
+      91.38510580700462,
+      94.2407581776486,
+      98.57318063149036,
+      90.56856439430308,
+      91.52077307027018,
+      94.44711767266578
+    ],
+    "accepted": false,
+    "selectionCriterion": "Maximize minimum geometric bend of eight nonthumb fingers across671 box_02 samples. Not thumb or skinned fist contact acceptance.",
+    "sourceSHA256": "5cc8b7208f3267cb1e20909bcff4eb04a9b9bf58ce7f28ebb77bbdb516c41a24"
+  },
+  "mainWrites": false,
+  "editorLaunched": false,
+  "playerLaunched": false,
+  "blenderLaunched": false,
+  "localFrameCompatibilityMeasured": false,
+  "fistAccepted": false,
+  "fullRenderAttributeGate": "IMPLEMENTED_REFERENCE_COMPILED_NOT_UNITY_EXECUTED",
+  "scopedDependencyByteGate": "IMPLEMENTED_REFERENCE_COMPILED_NOT_UNITY_EXECUTED",
+  "sourceImportPolicy": "EXPLICIT_RESAMPLE_FALSE_AND_READONLY_OWNED_TEMPLATE_RENDER_POLICY_REFERENCE_COMPILED_ONLY",
+  "independentTrajectoryGate": "PREPARED_5_SYNTHETIC_TESTS_PASSED_ACTUAL_UNITY_COMPARISON_PENDING",
+  "stages": [
+    "MeasureOriginal: raw inventory and67bone/fullsurface finite measurements without codec",
+    "Independent Python Blender trajectory authority gate",
+    "ExportCodec: requires authority fingerprints; unsupported format blocks onlycodec",
+    "Fist/EOF/visual/contact gates remain pending"
+  ]
+}

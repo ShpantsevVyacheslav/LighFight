@@ -1,0 +1,1122 @@
+{
+  "status": "BLOCKED_INDEPENDENT_SOURCE_TRAJECTORY_MISMATCH",
+  "passed": false,
+  "phase0TrainingPoses": 3,
+  "phase0TrainingJoints": 201,
+  "holdoutPhases": 1800,
+  "holdoutJointSamples": 120600,
+  "fitCount": 1,
+  "fitSpace": "ONE uniform similarity/reflection trained ONLY on phase0 of all3takes; Blender armature-local to Unity model-local",
+  "scale": 0.9999997217915919,
+  "orthogonalRowMatrix": [
+    [
+      -0.9999999999996656,
+      8.010487345346142e-07,
+      1.625354855340554e-07
+    ],
+    [
+      -1.6253550657922445e-07,
+      -2.6366322200893897e-08,
+      -0.9999999999999865
+    ],
+    [
+      8.010487302951422e-07,
+      0.9999999999996785,
+      -2.6366452527129062e-08
+    ]
+  ],
+  "determinant": -0.9999999999999993,
+  "translation": [
+    -5.287753761622216e-07,
+    2.1350271844911006e-07,
+    -7.906576162536316e-08
+  ],
+  "maximumTimeMismatchSeconds": 1.099999997755674e-07,
+  "thresholdUnityUnits": 0.0001,
+  "trainingMaximumUnityUnits": 4.048416632934305e-06,
+  "holdoutRMSUnityUnits": 0.000405559164200788,
+  "holdoutMaximumUnityUnits": 0.005012206586633674,
+  "worst": {
+    "take": "box_02",
+    "sourceSeconds": 2.14583333,
+    "unitySeconds": 2.14583325,
+    "joint": "rightmiddleintermediate",
+    "errorUnityUnits": 0.005012206586633674
+  },
+  "takes": [
+    {
+      "take": "box_01",
+      "holdoutPhases": 530,
+      "rmsUnityUnits": 0.00012763982881558724,
+      "maximumUnityUnits": 0.0013475050543945814,
+      "worst": {
+        "take": "box_01",
+        "sourceSeconds": 0.354166667,
+        "unitySeconds": 0.354166657,
+        "joint": "leftmiddledistalend",
+        "errorUnityUnits": 0.0013475050543945814
+      }
+    },
+    {
+      "take": "box_02",
+      "holdoutPhases": 670,
+      "rmsUnityUnits": 0.0005917919235111193,
+      "maximumUnityUnits": 0.005012206586633674,
+      "worst": {
+        "take": "box_02",
+        "sourceSeconds": 2.14583333,
+        "unitySeconds": 2.14583325,
+        "joint": "rightmiddleintermediate",
+        "errorUnityUnits": 0.005012206586633674
+      }
+    },
+    {
+      "take": "front_kick_01",
+      "holdoutPhases": 600,
+      "rmsUnityUnits": 0.00029659247400794773,
+      "maximumUnityUnits": 0.003913983327609291,
+      "worst": {
+        "take": "front_kick_01",
+        "sourceSeconds": 0.479166667,
+        "unitySeconds": 0.479166657,
+        "joint": "righttoesend",
+        "errorUnityUnits": 0.003913983327609291
+      }
+    }
+  ],
+  "jointMap": {
+    "box_01": [
+      {
+        "canonical": "chest",
+        "blender": "Chest",
+        "unity": "Chest"
+      },
+      {
+        "canonical": "head",
+        "blender": "Head",
+        "unity": "Head"
+      },
+      {
+        "canonical": "hips",
+        "blender": "Hips",
+        "unity": "Hips"
+      },
+      {
+        "canonical": "lefteye",
+        "blender": "Left_Eye",
+        "unity": "Left_Eye"
+      },
+      {
+        "canonical": "leftfoot",
+        "blender": "Left_Foot",
+        "unity": "Left_Foot"
+      },
+      {
+        "canonical": "lefthand",
+        "blender": "Left_Hand",
+        "unity": "Left_Hand"
+      },
+      {
+        "canonical": "leftindexdistal",
+        "blender": "Left_IndexDistal",
+        "unity": "Left_IndexDistal"
+      },
+      {
+        "canonical": "leftindexdistalend",
+        "blender": "Left_IndexDistalEnd",
+        "unity": "Left_IndexDistalEnd"
+      },
+      {
+        "canonical": "leftindexintermediate",
+        "blender": "Left_IndexIntermediate",
+        "unity": "Left_IndexIntermediate"
+      },
+      {
+        "canonical": "leftindexproximal",
+        "blender": "Left_IndexProximal",
+        "unity": "Left_IndexProximal"
+      },
+      {
+        "canonical": "leftlowerarm",
+        "blender": "Left_LowerArm",
+        "unity": "Left_LowerArm"
+      },
+      {
+        "canonical": "leftlowerleg",
+        "blender": "Left_LowerLeg",
+        "unity": "Left_LowerLeg"
+      },
+      {
+        "canonical": "leftmiddledistal",
+        "blender": "Left_MiddleDistal",
+        "unity": "Left_MiddleDistal"
+      },
+      {
+        "canonical": "leftmiddledistalend",
+        "blender": "Left_MiddleDistalEnd",
+        "unity": "Left_MiddleDistalEnd"
+      },
+      {
+        "canonical": "leftmiddleintermediate",
+        "blender": "Left_MiddleIntermediate",
+        "unity": "Left_MiddleIntermediate"
+      },
+      {
+        "canonical": "leftmiddleproximal",
+        "blender": "Left_MiddleProximal",
+        "unity": "Left_MiddleProximal"
+      },
+      {
+        "canonical": "leftpinkydistal",
+        "blender": "Left_PinkyDistal",
+        "unity": "Left_PinkyDistal"
+      },
+      {
+        "canonical": "leftpinkydistalend",
+        "blender": "Left_PinkyDistalEnd",
+        "unity": "Left_PinkyDistalEnd"
+      },
+      {
+        "canonical": "leftpinkyintermediate",
+        "blender": "Left_PinkyIntermediate",
+        "unity": "Left_PinkyIntermediate"
+      },
+      {
+        "canonical": "leftpinkyproximal",
+        "blender": "Left_PinkyProximal",
+        "unity": "Left_PinkyProximal"
+      },
+      {
+        "canonical": "leftringdistal",
+        "blender": "Left_RingDistal",
+        "unity": "Left_RingDistal"
+      },
+      {
+        "canonical": "leftringdistalend",
+        "blender": "Left_RingDistalEnd",
+        "unity": "Left_RingDistalEnd"
+      },
+      {
+        "canonical": "leftringintermediate",
+        "blender": "Left_RingIntermediate",
+        "unity": "Left_RingIntermediate"
+      },
+      {
+        "canonical": "leftringproximal",
+        "blender": "Left_RingProximal",
+        "unity": "Left_RingProximal"
+      },
+      {
+        "canonical": "leftshoulder",
+        "blender": "Left_Shoulder",
+        "unity": "Left_Shoulder"
+      },
+      {
+        "canonical": "leftthumbdistal",
+        "blender": "Left_ThumbDistal",
+        "unity": "Left_ThumbDistal"
+      },
+      {
+        "canonical": "leftthumbdistalend",
+        "blender": "Left_ThumbDistalEnd",
+        "unity": "Left_ThumbDistalEnd"
+      },
+      {
+        "canonical": "leftthumbintermediate",
+        "blender": "Left_ThumbIntermediate",
+        "unity": "Left_ThumbIntermediate"
+      },
+      {
+        "canonical": "leftthumbproximal",
+        "blender": "Left_ThumbProximal",
+        "unity": "Left_ThumbProximal"
+      },
+      {
+        "canonical": "lefttoes",
+        "blender": "Left_Toes",
+        "unity": "Left_Toes"
+      },
+      {
+        "canonical": "lefttoesend",
+        "blender": "Left_ToesEnd",
+        "unity": "Left_ToesEnd"
+      },
+      {
+        "canonical": "leftupperarm",
+        "blender": "Left_UpperArm",
+        "unity": "Left_UpperArm"
+      },
+      {
+        "canonical": "leftupperleg",
+        "blender": "Left_UpperLeg",
+        "unity": "Left_UpperLeg"
+      },
+      {
+        "canonical": "neck",
+        "blender": "Neck",
+        "unity": "Neck"
+      },
+      {
+        "canonical": "necktwista",
+        "blender": "Neck_Twist_A",
+        "unity": "Neck_Twist_A"
+      },
+      {
+        "canonical": "righteye",
+        "blender": "Right_Eye",
+        "unity": "Right_Eye"
+      },
+      {
+        "canonical": "rightfoot",
+        "blender": "Right_Foot",
+        "unity": "Right_Foot"
+      },
+      {
+        "canonical": "righthand",
+        "blender": "Right_Hand",
+        "unity": "Right_Hand"
+      },
+      {
+        "canonical": "rightindexdistal",
+        "blender": "Right_IndexDistal",
+        "unity": "Right_IndexDistal"
+      },
+      {
+        "canonical": "rightindexdistalend",
+        "blender": "Right_IndexDistalEnd",
+        "unity": "Right_IndexDistalEnd"
+      },
+      {
+        "canonical": "rightindexintermediate",
+        "blender": "Right_IndexIntermediate",
+        "unity": "Right_IndexIntermediate"
+      },
+      {
+        "canonical": "rightindexproximal",
+        "blender": "Right_IndexProximal",
+        "unity": "Right_IndexProximal"
+      },
+      {
+        "canonical": "rightlowerarm",
+        "blender": "Right_LowerArm",
+        "unity": "Right_LowerArm"
+      },
+      {
+        "canonical": "rightlowerleg",
+        "blender": "Right_LowerLeg",
+        "unity": "Right_LowerLeg"
+      },
+      {
+        "canonical": "rightmiddledistal",
+        "blender": "Right_MiddleDistal",
+        "unity": "Right_MiddleDistal"
+      },
+      {
+        "canonical": "rightmiddledistalend",
+        "blender": "Right_MiddleDistalEnd",
+        "unity": "Right_MiddleDistalEnd"
+      },
+      {
+        "canonical": "rightmiddleintermediate",
+        "blender": "Right_MiddleIntermediate",
+        "unity": "Right_MiddleIntermediate"
+      },
+      {
+        "canonical": "rightmiddleproximal",
+        "blender": "Right_MiddleProximal",
+        "unity": "Right_MiddleProximal"
+      },
+      {
+        "canonical": "rightpinkydistal",
+        "blender": "Right_PinkyDistal",
+        "unity": "Right_PinkyDistal"
+      },
+      {
+        "canonical": "rightpinkydistalend",
+        "blender": "Right_PinkyDistalEnd",
+        "unity": "Right_PinkyDistalEnd"
+      },
+      {
+        "canonical": "rightpinkyintermediate",
+        "blender": "Right_PinkyIntermediate",
+        "unity": "Right_PinkyIntermediate"
+      },
+      {
+        "canonical": "rightpinkyproximal",
+        "blender": "Right_PinkyProximal",
+        "unity": "Right_PinkyProximal"
+      },
+      {
+        "canonical": "rightringdistal",
+        "blender": "Right_RingDistal",
+        "unity": "Right_RingDistal"
+      },
+      {
+        "canonical": "rightringdistalend",
+        "blender": "Right_RingDistalEnd",
+        "unity": "Right_RingDistalEnd"
+      },
+      {
+        "canonical": "rightringintermediate",
+        "blender": "Right_RingIntermediate",
+        "unity": "Right_RingIntermediate"
+      },
+      {
+        "canonical": "rightringproximal",
+        "blender": "Right_RingProximal",
+        "unity": "Right_RingProximal"
+      },
+      {
+        "canonical": "rightshoulder",
+        "blender": "Right_Shoulder",
+        "unity": "Right_Shoulder"
+      },
+      {
+        "canonical": "rightthumbdistal",
+        "blender": "Right_ThumbDistal",
+        "unity": "Right_ThumbDistal"
+      },
+      {
+        "canonical": "rightthumbdistalend",
+        "blender": "Right_ThumbDistalEnd",
+        "unity": "Right_ThumbDistalEnd"
+      },
+      {
+        "canonical": "rightthumbintermediate",
+        "blender": "Right_ThumbIntermediate",
+        "unity": "Right_ThumbIntermediate"
+      },
+      {
+        "canonical": "rightthumbproximal",
+        "blender": "Right_ThumbProximal",
+        "unity": "Right_ThumbProximal"
+      },
+      {
+        "canonical": "righttoes",
+        "blender": "Right_Toes",
+        "unity": "Right_Toes"
+      },
+      {
+        "canonical": "righttoesend",
+        "blender": "Right_ToesEnd",
+        "unity": "Right_ToesEnd"
+      },
+      {
+        "canonical": "rightupperarm",
+        "blender": "Right_UpperArm",
+        "unity": "Right_UpperArm"
+      },
+      {
+        "canonical": "rightupperleg",
+        "blender": "Right_UpperLeg",
+        "unity": "Right_UpperLeg"
+      },
+      {
+        "canonical": "spine",
+        "blender": "Spine",
+        "unity": "Spine"
+      },
+      {
+        "canonical": "upperchest",
+        "blender": "UpperChest",
+        "unity": "UpperChest"
+      }
+    ],
+    "box_02": [
+      {
+        "canonical": "chest",
+        "blender": "Chest",
+        "unity": "Chest"
+      },
+      {
+        "canonical": "head",
+        "blender": "Head",
+        "unity": "Head"
+      },
+      {
+        "canonical": "hips",
+        "blender": "Hips",
+        "unity": "Hips"
+      },
+      {
+        "canonical": "lefteye",
+        "blender": "Left_Eye",
+        "unity": "Left_Eye"
+      },
+      {
+        "canonical": "leftfoot",
+        "blender": "Left_Foot",
+        "unity": "Left_Foot"
+      },
+      {
+        "canonical": "lefthand",
+        "blender": "Left_Hand",
+        "unity": "Left_Hand"
+      },
+      {
+        "canonical": "leftindexdistal",
+        "blender": "Left_IndexDistal",
+        "unity": "Left_IndexDistal"
+      },
+      {
+        "canonical": "leftindexdistalend",
+        "blender": "Left_IndexDistalEnd",
+        "unity": "Left_IndexDistalEnd"
+      },
+      {
+        "canonical": "leftindexintermediate",
+        "blender": "Left_IndexIntermediate",
+        "unity": "Left_IndexIntermediate"
+      },
+      {
+        "canonical": "leftindexproximal",
+        "blender": "Left_IndexProximal",
+        "unity": "Left_IndexProximal"
+      },
+      {
+        "canonical": "leftlowerarm",
+        "blender": "Left_LowerArm",
+        "unity": "Left_LowerArm"
+      },
+      {
+        "canonical": "leftlowerleg",
+        "blender": "Left_LowerLeg",
+        "unity": "Left_LowerLeg"
+      },
+      {
+        "canonical": "leftmiddledistal",
+        "blender": "Left_MiddleDistal",
+        "unity": "Left_MiddleDistal"
+      },
+      {
+        "canonical": "leftmiddledistalend",
+        "blender": "Left_MiddleDistalEnd",
+        "unity": "Left_MiddleDistalEnd"
+      },
+      {
+        "canonical": "leftmiddleintermediate",
+        "blender": "Left_MiddleIntermediate",
+        "unity": "Left_MiddleIntermediate"
+      },
+      {
+        "canonical": "leftmiddleproximal",
+        "blender": "Left_MiddleProximal",
+        "unity": "Left_MiddleProximal"
+      },
+      {
+        "canonical": "leftpinkydistal",
+        "blender": "Left_PinkyDistal",
+        "unity": "Left_PinkyDistal"
+      },
+      {
+        "canonical": "leftpinkydistalend",
+        "blender": "Left_PinkyDistalEnd",
+        "unity": "Left_PinkyDistalEnd"
+      },
+      {
+        "canonical": "leftpinkyintermediate",
+        "blender": "Left_PinkyIntermediate",
+        "unity": "Left_PinkyIntermediate"
+      },
+      {
+        "canonical": "leftpinkyproximal",
+        "blender": "Left_PinkyProximal",
+        "unity": "Left_PinkyProximal"
+      },
+      {
+        "canonical": "leftringdistal",
+        "blender": "Left_RingDistal",
+        "unity": "Left_RingDistal"
+      },
+      {
+        "canonical": "leftringdistalend",
+        "blender": "Left_RingDistalEnd",
+        "unity": "Left_RingDistalEnd"
+      },
+      {
+        "canonical": "leftringintermediate",
+        "blender": "Left_RingIntermediate",
+        "unity": "Left_RingIntermediate"
+      },
+      {
+        "canonical": "leftringproximal",
+        "blender": "Left_RingProximal",
+        "unity": "Left_RingProximal"
+      },
+      {
+        "canonical": "leftshoulder",
+        "blender": "Left_Shoulder",
+        "unity": "Left_Shoulder"
+      },
+      {
+        "canonical": "leftthumbdistal",
+        "blender": "Left_ThumbDistal",
+        "unity": "Left_ThumbDistal"
+      },
+      {
+        "canonical": "leftthumbdistalend",
+        "blender": "Left_ThumbDistalEnd",
+        "unity": "Left_ThumbDistalEnd"
+      },
+      {
+        "canonical": "leftthumbintermediate",
+        "blender": "Left_ThumbIntermediate",
+        "unity": "Left_ThumbIntermediate"
+      },
+      {
+        "canonical": "leftthumbproximal",
+        "blender": "Left_ThumbProximal",
+        "unity": "Left_ThumbProximal"
+      },
+      {
+        "canonical": "lefttoes",
+        "blender": "Left_Toes",
+        "unity": "Left_Toes"
+      },
+      {
+        "canonical": "lefttoesend",
+        "blender": "Left_ToesEnd",
+        "unity": "Left_ToesEnd"
+      },
+      {
+        "canonical": "leftupperarm",
+        "blender": "Left_UpperArm",
+        "unity": "Left_UpperArm"
+      },
+      {
+        "canonical": "leftupperleg",
+        "blender": "Left_UpperLeg",
+        "unity": "Left_UpperLeg"
+      },
+      {
+        "canonical": "neck",
+        "blender": "Neck",
+        "unity": "Neck"
+      },
+      {
+        "canonical": "necktwista",
+        "blender": "Neck_Twist_A",
+        "unity": "Neck_Twist_A"
+      },
+      {
+        "canonical": "righteye",
+        "blender": "Right_Eye",
+        "unity": "Right_Eye"
+      },
+      {
+        "canonical": "rightfoot",
+        "blender": "Right_Foot",
+        "unity": "Right_Foot"
+      },
+      {
+        "canonical": "righthand",
+        "blender": "Right_Hand",
+        "unity": "Right_Hand"
+      },
+      {
+        "canonical": "rightindexdistal",
+        "blender": "Right_IndexDistal",
+        "unity": "Right_IndexDistal"
+      },
+      {
+        "canonical": "rightindexdistalend",
+        "blender": "Right_IndexDistalEnd",
+        "unity": "Right_IndexDistalEnd"
+      },
+      {
+        "canonical": "rightindexintermediate",
+        "blender": "Right_IndexIntermediate",
+        "unity": "Right_IndexIntermediate"
+      },
+      {
+        "canonical": "rightindexproximal",
+        "blender": "Right_IndexProximal",
+        "unity": "Right_IndexProximal"
+      },
+      {
+        "canonical": "rightlowerarm",
+        "blender": "Right_LowerArm",
+        "unity": "Right_LowerArm"
+      },
+      {
+        "canonical": "rightlowerleg",
+        "blender": "Right_LowerLeg",
+        "unity": "Right_LowerLeg"
+      },
+      {
+        "canonical": "rightmiddledistal",
+        "blender": "Right_MiddleDistal",
+        "unity": "Right_MiddleDistal"
+      },
+      {
+        "canonical": "rightmiddledistalend",
+        "blender": "Right_MiddleDistalEnd",
+        "unity": "Right_MiddleDistalEnd"
+      },
+      {
+        "canonical": "rightmiddleintermediate",
+        "blender": "Right_MiddleIntermediate",
+        "unity": "Right_MiddleIntermediate"
+      },
+      {
+        "canonical": "rightmiddleproximal",
+        "blender": "Right_MiddleProximal",
+        "unity": "Right_MiddleProximal"
+      },
+      {
+        "canonical": "rightpinkydistal",
+        "blender": "Right_PinkyDistal",
+        "unity": "Right_PinkyDistal"
+      },
+      {
+        "canonical": "rightpinkydistalend",
+        "blender": "Right_PinkyDistalEnd",
+        "unity": "Right_PinkyDistalEnd"
+      },
+      {
+        "canonical": "rightpinkyintermediate",
+        "blender": "Right_PinkyIntermediate",
+        "unity": "Right_PinkyIntermediate"
+      },
+      {
+        "canonical": "rightpinkyproximal",
+        "blender": "Right_PinkyProximal",
+        "unity": "Right_PinkyProximal"
+      },
+      {
+        "canonical": "rightringdistal",
+        "blender": "Right_RingDistal",
+        "unity": "Right_RingDistal"
+      },
+      {
+        "canonical": "rightringdistalend",
+        "blender": "Right_RingDistalEnd",
+        "unity": "Right_RingDistalEnd"
+      },
+      {
+        "canonical": "rightringintermediate",
+        "blender": "Right_RingIntermediate",
+        "unity": "Right_RingIntermediate"
+      },
+      {
+        "canonical": "rightringproximal",
+        "blender": "Right_RingProximal",
+        "unity": "Right_RingProximal"
+      },
+      {
+        "canonical": "rightshoulder",
+        "blender": "Right_Shoulder",
+        "unity": "Right_Shoulder"
+      },
+      {
+        "canonical": "rightthumbdistal",
+        "blender": "Right_ThumbDistal",
+        "unity": "Right_ThumbDistal"
+      },
+      {
+        "canonical": "rightthumbdistalend",
+        "blender": "Right_ThumbDistalEnd",
+        "unity": "Right_ThumbDistalEnd"
+      },
+      {
+        "canonical": "rightthumbintermediate",
+        "blender": "Right_ThumbIntermediate",
+        "unity": "Right_ThumbIntermediate"
+      },
+      {
+        "canonical": "rightthumbproximal",
+        "blender": "Right_ThumbProximal",
+        "unity": "Right_ThumbProximal"
+      },
+      {
+        "canonical": "righttoes",
+        "blender": "Right_Toes",
+        "unity": "Right_Toes"
+      },
+      {
+        "canonical": "righttoesend",
+        "blender": "Right_ToesEnd",
+        "unity": "Right_ToesEnd"
+      },
+      {
+        "canonical": "rightupperarm",
+        "blender": "Right_UpperArm",
+        "unity": "Right_UpperArm"
+      },
+      {
+        "canonical": "rightupperleg",
+        "blender": "Right_UpperLeg",
+        "unity": "Right_UpperLeg"
+      },
+      {
+        "canonical": "spine",
+        "blender": "Spine",
+        "unity": "Spine"
+      },
+      {
+        "canonical": "upperchest",
+        "blender": "UpperChest",
+        "unity": "UpperChest"
+      }
+    ],
+    "front_kick_01": [
+      {
+        "canonical": "chest",
+        "blender": "Chest",
+        "unity": "Chest"
+      },
+      {
+        "canonical": "head",
+        "blender": "Head",
+        "unity": "Head"
+      },
+      {
+        "canonical": "hips",
+        "blender": "Hips",
+        "unity": "Hips"
+      },
+      {
+        "canonical": "lefteye",
+        "blender": "Left_Eye",
+        "unity": "Left_Eye"
+      },
+      {
+        "canonical": "leftfoot",
+        "blender": "Left_Foot",
+        "unity": "Left_Foot"
+      },
+      {
+        "canonical": "lefthand",
+        "blender": "Left_Hand",
+        "unity": "Left_Hand"
+      },
+      {
+        "canonical": "leftindexdistal",
+        "blender": "Left_IndexDistal",
+        "unity": "Left_IndexDistal"
+      },
+      {
+        "canonical": "leftindexdistalend",
+        "blender": "Left_IndexDistalEnd",
+        "unity": "Left_IndexDistalEnd"
+      },
+      {
+        "canonical": "leftindexintermediate",
+        "blender": "Left_IndexIntermediate",
+        "unity": "Left_IndexIntermediate"
+      },
+      {
+        "canonical": "leftindexproximal",
+        "blender": "Left_IndexProximal",
+        "unity": "Left_IndexProximal"
+      },
+      {
+        "canonical": "leftlowerarm",
+        "blender": "Left_LowerArm",
+        "unity": "Left_LowerArm"
+      },
+      {
+        "canonical": "leftlowerleg",
+        "blender": "Left_LowerLeg",
+        "unity": "Left_LowerLeg"
+      },
+      {
+        "canonical": "leftmiddledistal",
+        "blender": "Left_MiddleDistal",
+        "unity": "Left_MiddleDistal"
+      },
+      {
+        "canonical": "leftmiddledistalend",
+        "blender": "Left_MiddleDistalEnd",
+        "unity": "Left_MiddleDistalEnd"
+      },
+      {
+        "canonical": "leftmiddleintermediate",
+        "blender": "Left_MiddleIntermediate",
+        "unity": "Left_MiddleIntermediate"
+      },
+      {
+        "canonical": "leftmiddleproximal",
+        "blender": "Left_MiddleProximal",
+        "unity": "Left_MiddleProximal"
+      },
+      {
+        "canonical": "leftpinkydistal",
+        "blender": "Left_PinkyDistal",
+        "unity": "Left_PinkyDistal"
+      },
+      {
+        "canonical": "leftpinkydistalend",
+        "blender": "Left_PinkyDistalEnd",
+        "unity": "Left_PinkyDistalEnd"
+      },
+      {
+        "canonical": "leftpinkyintermediate",
+        "blender": "Left_PinkyIntermediate",
+        "unity": "Left_PinkyIntermediate"
+      },
+      {
+        "canonical": "leftpinkyproximal",
+        "blender": "Left_PinkyProximal",
+        "unity": "Left_PinkyProximal"
+      },
+      {
+        "canonical": "leftringdistal",
+        "blender": "Left_RingDistal",
+        "unity": "Left_RingDistal"
+      },
+      {
+        "canonical": "leftringdistalend",
+        "blender": "Left_RingDistalEnd",
+        "unity": "Left_RingDistalEnd"
+      },
+      {
+        "canonical": "leftringintermediate",
+        "blender": "Left_RingIntermediate",
+        "unity": "Left_RingIntermediate"
+      },
+      {
+        "canonical": "leftringproximal",
+        "blender": "Left_RingProximal",
+        "unity": "Left_RingProximal"
+      },
+      {
+        "canonical": "leftshoulder",
+        "blender": "Left_Shoulder",
+        "unity": "Left_Shoulder"
+      },
+      {
+        "canonical": "leftthumbdistal",
+        "blender": "Left_ThumbDistal",
+        "unity": "Left_ThumbDistal"
+      },
+      {
+        "canonical": "leftthumbdistalend",
+        "blender": "Left_ThumbDistalEnd",
+        "unity": "Left_ThumbDistalEnd"
+      },
+      {
+        "canonical": "leftthumbintermediate",
+        "blender": "Left_ThumbIntermediate",
+        "unity": "Left_ThumbIntermediate"
+      },
+      {
+        "canonical": "leftthumbproximal",
+        "blender": "Left_ThumbProximal",
+        "unity": "Left_ThumbProximal"
+      },
+      {
+        "canonical": "lefttoes",
+        "blender": "Left_Toes",
+        "unity": "Left_Toes"
+      },
+      {
+        "canonical": "lefttoesend",
+        "blender": "Left_ToesEnd",
+        "unity": "Left_ToesEnd"
+      },
+      {
+        "canonical": "leftupperarm",
+        "blender": "Left_UpperArm",
+        "unity": "Left_UpperArm"
+      },
+      {
+        "canonical": "leftupperleg",
+        "blender": "Left_UpperLeg",
+        "unity": "Left_UpperLeg"
+      },
+      {
+        "canonical": "neck",
+        "blender": "Neck",
+        "unity": "Neck"
+      },
+      {
+        "canonical": "necktwista",
+        "blender": "Neck_Twist_A",
+        "unity": "Neck_Twist_A"
+      },
+      {
+        "canonical": "righteye",
+        "blender": "Right_Eye",
+        "unity": "Right_Eye"
+      },
+      {
+        "canonical": "rightfoot",
+        "blender": "Right_Foot",
+        "unity": "Right_Foot"
+      },
+      {
+        "canonical": "righthand",
+        "blender": "Right_Hand",
+        "unity": "Right_Hand"
+      },
+      {
+        "canonical": "rightindexdistal",
+        "blender": "Right_IndexDistal",
+        "unity": "Right_IndexDistal"
+      },
+      {
+        "canonical": "rightindexdistalend",
+        "blender": "Right_IndexDistalEnd",
+        "unity": "Right_IndexDistalEnd"
+      },
+      {
+        "canonical": "rightindexintermediate",
+        "blender": "Right_IndexIntermediate",
+        "unity": "Right_IndexIntermediate"
+      },
+      {
+        "canonical": "rightindexproximal",
+        "blender": "Right_IndexProximal",
+        "unity": "Right_IndexProximal"
+      },
+      {
+        "canonical": "rightlowerarm",
+        "blender": "Right_LowerArm",
+        "unity": "Right_LowerArm"
+      },
+      {
+        "canonical": "rightlowerleg",
+        "blender": "Right_LowerLeg",
+        "unity": "Right_LowerLeg"
+      },
+      {
+        "canonical": "rightmiddledistal",
+        "blender": "Right_MiddleDistal",
+        "unity": "Right_MiddleDistal"
+      },
+      {
+        "canonical": "rightmiddledistalend",
+        "blender": "Right_MiddleDistalEnd",
+        "unity": "Right_MiddleDistalEnd"
+      },
+      {
+        "canonical": "rightmiddleintermediate",
+        "blender": "Right_MiddleIntermediate",
+        "unity": "Right_MiddleIntermediate"
+      },
+      {
+        "canonical": "rightmiddleproximal",
+        "blender": "Right_MiddleProximal",
+        "unity": "Right_MiddleProximal"
+      },
+      {
+        "canonical": "rightpinkydistal",
+        "blender": "Right_PinkyDistal",
+        "unity": "Right_PinkyDistal"
+      },
+      {
+        "canonical": "rightpinkydistalend",
+        "blender": "Right_PinkyDistalEnd",
+        "unity": "Right_PinkyDistalEnd"
+      },
+      {
+        "canonical": "rightpinkyintermediate",
+        "blender": "Right_PinkyIntermediate",
+        "unity": "Right_PinkyIntermediate"
+      },
+      {
+        "canonical": "rightpinkyproximal",
+        "blender": "Right_PinkyProximal",
+        "unity": "Right_PinkyProximal"
+      },
+      {
+        "canonical": "rightringdistal",
+        "blender": "Right_RingDistal",
+        "unity": "Right_RingDistal"
+      },
+      {
+        "canonical": "rightringdistalend",
+        "blender": "Right_RingDistalEnd",
+        "unity": "Right_RingDistalEnd"
+      },
+      {
+        "canonical": "rightringintermediate",
+        "blender": "Right_RingIntermediate",
+        "unity": "Right_RingIntermediate"
+      },
+      {
+        "canonical": "rightringproximal",
+        "blender": "Right_RingProximal",
+        "unity": "Right_RingProximal"
+      },
+      {
+        "canonical": "rightshoulder",
+        "blender": "Right_Shoulder",
+        "unity": "Right_Shoulder"
+      },
+      {
+        "canonical": "rightthumbdistal",
+        "blender": "Right_ThumbDistal",
+        "unity": "Right_ThumbDistal"
+      },
+      {
+        "canonical": "rightthumbdistalend",
+        "blender": "Right_ThumbDistalEnd",
+        "unity": "Right_ThumbDistalEnd"
+      },
+      {
+        "canonical": "rightthumbintermediate",
+        "blender": "Right_ThumbIntermediate",
+        "unity": "Right_ThumbIntermediate"
+      },
+      {
+        "canonical": "rightthumbproximal",
+        "blender": "Right_ThumbProximal",
+        "unity": "Right_ThumbProximal"
+      },
+      {
+        "canonical": "righttoes",
+        "blender": "Right_Toes",
+        "unity": "Right_Toes"
+      },
+      {
+        "canonical": "righttoesend",
+        "blender": "Right_ToesEnd",
+        "unity": "Right_ToesEnd"
+      },
+      {
+        "canonical": "rightupperarm",
+        "blender": "Right_UpperArm",
+        "unity": "Right_UpperArm"
+      },
+      {
+        "canonical": "rightupperleg",
+        "blender": "Right_UpperLeg",
+        "unity": "Right_UpperLeg"
+      },
+      {
+        "canonical": "spine",
+        "blender": "Spine",
+        "unity": "Spine"
+      },
+      {
+        "canonical": "upperchest",
+        "blender": "UpperChest",
+        "unity": "UpperChest"
+      }
+    ]
+  },
+  "sourceAuthorityLimit": "Independent Blender-imported original FBX bone centers only. Does NOT establish original skin, local rotations/normal frames, object world-root trajectory or render/physics parity. ImportedGeneric\u2194LNC1 is a separate self-consistency gate.",
+  "sourceSHA256": "5cc8b7208f3267cb1e20909bcff4eb04a9b9bf58ce7f28ebb77bbdb516c41a24",
+  "inputManifestSHA": "f8365f2033e01d725c4430e8c6a6f281a957f3654b7eb4bebeba9b7360cf7f95",
+  "unityCSVsha256": {
+    "box_01": "d8dcaaf37f429e5b4a088ee68cb64b064080a408de927308a485da2c2c381764",
+    "box_02": "666b4e3de6efd568f25e660cbbe99680786a6ca813b90a07dcce5a6a8d676df7",
+    "front_kick_01": "b6aa9215676ac8997455e4ae0f5d1bc75a74b66f550eee743482baf2e3b22d29"
+  },
+  "unityCSVFiles": [
+    {
+      "take": "box_01",
+      "sha256": "d8dcaaf37f429e5b4a088ee68cb64b064080a408de927308a485da2c2c381764"
+    },
+    {
+      "take": "box_02",
+      "sha256": "666b4e3de6efd568f25e660cbbe99680786a6ca813b90a07dcce5a6a8d676df7"
+    },
+    {
+      "take": "front_kick_01",
+      "sha256": "b6aa9215676ac8997455e4ae0f5d1bc75a74b66f550eee743482baf2e3b22d29"
+    }
+  ]
+}
