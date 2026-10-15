@@ -4,6 +4,15 @@ namespace LighFight.Runtime
 {
  public sealed partial class Prototype
  {
+  private bool playerGuard;
+  private Rect GuardArea=>ControlRect(new Rect(74,246,72,72));
+  private void ClearPlayerGuard(){playerGuard=false;if(session!=null)match.A.Guard=false;}
+  private void TogglePlayerGuard(){
+   if(selecting||paused||backgrounded||ActorsLoading||session==null||session.Phase!=FightPhase.Fighting)return;
+   if(playerGuard){ClearPlayerGuard();return;}
+   if(match.A.Attack.HasValue||match.A.Stun>0||match.A.DownTicks>0||match.A.Health<=0)return;
+   playerGuard=true;match.A.Guard=true;
+  }
   public static bool ControlContains(Rect area,Vector2 position,bool circular)=>circular?StickContains(area,position):area.Contains(position);
   public static Rect MainAttackRect(int index,float scale,bool mirrored) {
    if(index<0||index>=4)throw new System.ArgumentOutOfRangeException(nameof(index));
@@ -107,6 +116,8 @@ namespace LighFight.Runtime
   private void DrawBattleControls()
   {
    SelectionResources();DrawTrainingAdvice();Disc(StickArea,new Color(.03f,.08f,.14f,controlsOpacity));
+   Disc(GuardArea,match.A.Guard?selectionAccent:new Color(.08f,.2f,.29f,controlsOpacity));
+   Text(GuardArea,T("БЛОК","BLOCK"),Mathf.RoundToInt(12*controlsScale),match.A.Guard?Color.white:selectionAccent,TextAnchor.MiddleCenter);
    Vector2 knob=StickArea.center+new Vector2(stickInput.x,-stickInput.y)*(Mathf.Min(StickArea.width,StickArea.height)*.3125f);
    Disc(new Rect(knob.x-24*controlsScale,knob.y-24*controlsScale,48*controlsScale,48*controlsScale),selectionAccent);
 

@@ -1,0 +1,36 @@
+NUnitLite 3.14.0 (.NET Standard 2.0)
+Copyright (c) 2023 Charlie Poole, Rob Prouse
+
+Runtime Environment
+   OS Version: Darwin 25.4.0 Darwin Kernel Version 25.4.0: Thu Mar 19 19:32:36 PDT 2026; root:xnu-12377.101.15~1/RELEASE_ARM64_T8103
+  CLR Version: 8.0.31
+
+Test Files
+    /Users/macbook1/Documents/ChatGPT/LighFight/verification/Combat/bin/Debug/net8.0/Combat.dll
+
+Test Discovery
+  Start time: 2026-10-15 13:36:18Z
+    End time: 2026-10-15 13:36:18Z
+    Duration: 0.074 seconds
+
+Errors, Failures and Warnings
+
+1) Failed : CombatTests.StartingAnAttackDropsGuardButRejectedInputKeepsIt
+  Attack input must leave defence instead of blocking during the strike
+  Expected: False
+  But was:  True
+   at CombatTests.StartingAnAttackDropsGuardButRejectedInputKeepsIt() in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/CombatTests.cs:line 6
+
+Run Settings
+    Number of Test Workers: 8
+    Work Directory: /Users/macbook1/Documents/ChatGPT/LighFight
+    Internal Trace: Off
+
+Test Run Summary
+  Overall result: Failed
+  Test Count: 91, Passed: 90, Failed: 1, Warnings: 0, Inconclusive: 0, Skipped: 0
+    Failed Tests - Failures: 1, Errors: 0, Invalid: 0
+  Start time: 2026-10-15 13:36:18Z
+    End time: 2026-10-15 13:36:18Z
+    Duration: 0.158 seconds
+

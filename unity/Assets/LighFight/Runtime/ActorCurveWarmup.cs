@@ -65,7 +65,7 @@ namespace LighFight.Runtime {
    opponent.Pose(match.B,-1,0);opponent.gameObject.SetActive(!selecting);arena.gameObject.SetActive(!selecting);
    accumulator=0;pendingAttack=-1;stickInput=Vector2.zero;stickFinger=-1;strikeGesture.Cancel();
   }
-  void OnDisable(){PauseSelectedContent();if(actorsLoading)CancelActorWarmup();}
+  void OnDisable(){ClearPlayerGuard();PauseSelectedContent();if(actorsLoading)CancelActorWarmup();}
   void OnEnable(){ResumeSelectedContent();if(actorsLoading&&player&&opponent)StartActorWarmup();}
   void ActorLoadingGUI(){
    SelectionResources();Card(new Rect(0,0,960,540),new Color(.025f,.028f,.045f));

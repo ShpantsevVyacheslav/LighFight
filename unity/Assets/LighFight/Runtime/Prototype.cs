@@ -109,6 +109,7 @@ namespace LighFight.Runtime
         }
         private void OnApplicationPause(bool value)
         {
+            ClearPlayerGuard();
             backgrounded = value;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();
             accumulator = 0;
             pendingAttack = -1;
@@ -117,6 +118,7 @@ namespace LighFight.Runtime
         {
             var defence=session!=null?(int)session.Defence:0;
             session = new FightSession(training,targetWins,roundSeconds);session.SetDummyDefence(defence); accumulator = 0; bot = new BotController(42,difficulty);
+            ClearPlayerGuard();
             pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();victoryElapsed=0;presentedWinner=-1;
         }
 
@@ -158,6 +160,7 @@ namespace LighFight.Runtime
             }
             if (paused || backgrounded || Time.timeScale == 0) return;
             if(session.Phase==FightPhase.Complete){UpdateVictoryPresentation(Time.deltaTime);return;}
+            if(Pressed(GuardArea,true))TogglePlayerGuard();
             UpdateJoystick();
             UpdateStrikeGestures();
             bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(CrouchArea,true);
@@ -171,7 +174,7 @@ namespace LighFight.Runtime
             var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V, KeyCode.B, KeyCode.N, KeyCode.M, KeyCode.Comma, KeyCode.Period };
             for (int i = 0; i < extras.Length; i++) if (Input.GetKeyDown(extras[i])) pendingAttack = 16+i;
             float direction = Input.GetKey(KeyCode.RightArrow)?1:Input.GetKey(KeyCode.LeftArrow)?-1:stickInput.x;
-            bool guard = false;
+            bool guard = (playerGuard||Input.GetKey(KeyCode.Space))&&!match.A.Attack.HasValue&&match.A.DownTicks==0&&(match.A.Stun==0||match.A.LastBlocked);
             accumulator += Mathf.Min(Time.deltaTime, .1f);
             while (accumulator >= 1f / Match.TickRate)
             {
@@ -179,7 +182,7 @@ namespace LighFight.Runtime
                 if(contactFreeze>0){contactFreeze--;continue;}
                 if(session.AttackAvailable==null)session.AttackAvailable=(first,index)=>{var view=first?player:opponent;return !view.UsesNativeMotion||view.HasNativeMotion(Moves.All[index].Id);};
                 match.A.Guard = guard; match.A.Crouch = crouch;
-                if (pendingAttack >= 0) { session.QueueAttack(true, pendingAttack); pendingAttack = -1; }
+                if (pendingAttack >= 0) { if(session.QueueAttack(true,pendingAttack)){ClearPlayerGuard();guard=false;} pendingAttack = -1; }
                 match.Walk(match.A, direction);
                 bot.Step(session);
                 if(contactMatch!=match){strikeGesture.Cancel();contactMatch=match;physicalContacts=new PhysicalContacts(match,player,opponent);}

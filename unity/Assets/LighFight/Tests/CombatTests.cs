@@ -1,6 +1,10 @@
 using NUnit.Framework;
 using LighFight.Core;
 public class CombatTests {
+ [Test]public void StartingAnAttackDropsGuardButRejectedInputKeepsIt(){
+  var fighter=new Fighter{Guard=true};Assert.False(fighter.Start(-1));Assert.True(fighter.Guard);
+  Assert.True(fighter.Start(0));Assert.False(fighter.Guard,"Attack input must leave defence instead of blocking during the strike");
+ }
  [Test]public void WhiffDoesNotDamage(){var m=new Match();m.A.Start(0);for(int i=0;i<40;i++)m.Step();Assert.AreEqual(150,m.B.Health);}
  [Test]public void StartupPreventsEarlyDamage(){var m=new Match();m.B.X=0;m.A.Start(0);for(int i=0;i<10;i++)m.Step();Assert.AreEqual(150,m.B.Health);m.Step();Assert.AreEqual(144,m.B.Health);}
  [Test]public void SingleAttackHitsOnce(){var m=new Match();m.B.X=0;m.A.Start(0);for(int i=0;i<40;i++)m.Step();Assert.AreEqual(144,m.B.Health);}

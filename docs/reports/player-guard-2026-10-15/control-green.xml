@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Passed" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 13:39:11Z" end-time="2026-10-15 13:39:11Z" duration="0.4105527">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="237" result="Passed" start-time="2026-10-15 13:39:11Z" end-time="2026-10-15 13:39:11Z" duration="0.410553" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1282" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="223" result="Passed" start-time="2026-10-15 13:39:11Z" end-time="2026-10-15 13:39:11Z" duration="0.285181" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="98482" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1283" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="80" result="Passed" start-time="2026-10-15 13:39:11Z" end-time="2026-10-15 13:39:11Z" duration="0.262776" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1284" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="80" result="Passed" start-time="2026-10-15 13:39:11Z" end-time="2026-10-15 13:39:11Z" duration="0.258746" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1235" name="PlayerGuardControlTests" fullname="LighFight.Tests.PlayerGuardControlTests" classname="LighFight.Tests.PlayerGuardControlTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 13:39:11Z" end-time="2026-10-15 13:39:11Z" duration="0.250084" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1236" name="GuardButtonDoesNotOverlapJoystickOrCrouchAtAnySupportedScale" fullname="LighFight.Tests.PlayerGuardControlTests.GuardButtonDoesNotOverlapJoystickOrCrouchAtAnySupportedScale" methodname="GuardButtonDoesNotOverlapJoystickOrCrouchAtAnySupportedScale" classname="LighFight.Tests.PlayerGuardControlTests" runstate="Runnable" seed="1361692171" result="Passed" start-time="2026-10-15 13:39:10Z" end-time="2026-10-15 13:39:10Z" duration="0.015195" asserts="0">
+              <properties />
+            </test-case>
+            <test-case id="1237" name="GuardTogglesClearsForAttackAndResetsOnPause" fullname="LighFight.Tests.PlayerGuardControlTests.GuardTogglesClearsForAttackAndResetsOnPause" methodname="GuardTogglesClearsForAttackAndResetsOnPause" classname="LighFight.Tests.PlayerGuardControlTests" runstate="Runnable" seed="669757025" result="Passed" start-time="2026-10-15 13:39:10Z" end-time="2026-10-15 13:39:11Z" duration="1.754510" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+Saving results to: /tmp/lighfight-guard-control-green.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

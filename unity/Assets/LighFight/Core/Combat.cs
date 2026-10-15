@@ -71,6 +71,7 @@ namespace LighFight.Core
         {
             if (Health <= 0 || index < 0 || index >= Moves.All.Length || Stun > 0 || DownTicks > 0 || Attack.HasValue)
                 return false;
+            Guard=false;
             LastStrikeIndex=index;Outcome=StrikeOutcome.None;Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1; ChainStepTicks=0;
             return true;
         }
