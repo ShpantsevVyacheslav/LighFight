@@ -37,6 +37,7 @@ namespace LighFight.Editor
 
         public static void ExportEmbeddedIos()
         {
+            bool development = PhoneBuildPolicy.FromEnvironment();
             if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.iOS)
                 throw new System.InvalidOperationException("Launch Unity with -buildTarget iOS for embedded export");
             string output = System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBEDDED_IOS_EXPORT");
@@ -53,12 +54,16 @@ namespace LighFight.Editor
             ContentBuild.BuildEmbedded();
             // BuildEmbedded creates a clean scene without the standalone QA probe.
             const string scenePath = "Assets/LighFight/Scenes/EmbeddedBootstrap.unity";
+            using (var policy = new PhoneBuildPolicy(BuildTarget.iOS, development))
+            {
+            Debug.Log("LIGHTFIGHT_PHONE_BUILD configuration=" + (development ? "Development" : "Release") + " target=iOS options=" + policy.Options + " nativeCompilerConfiguration=Xcode");
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
                 scenes = new[] { scenePath }, locationPathName = output,
-                target = BuildTarget.iOS, options = BuildOptions.Development
+                target = BuildTarget.iOS, options = policy.Options
             });
             if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
                 throw new System.InvalidOperationException("Embedded iOS export failed: " + report.summary.result);
+            }
             Debug.Log("AGENT_RESULT embedded iOS project exported with local selected content; framework/host/device checks remain");
         }
 
@@ -79,6 +84,7 @@ namespace LighFight.Editor
 
         private static void Export(BuildTarget target, string output)
         {
+            bool development = PhoneBuildPolicy.FromEnvironment();
             if (!BuildPipeline.IsBuildTargetSupported(BuildPipeline.GetBuildTargetGroup(target), target))
                 throw new System.InvalidOperationException("Required Unity platform module is not installed: " + target);
             bool preview = System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBED_PROTOTYPE") == "1";
@@ -103,12 +109,16 @@ namespace LighFight.Editor
             IncludeRuntimeShaders();
             Directory.CreateDirectory(output);
             if (target == BuildTarget.Android) EditorUserBuildSettings.exportAsGoogleAndroidProject = true;
+            using (var policy = new PhoneBuildPolicy(target, development))
+            {
+            Debug.Log("LIGHTFIGHT_PHONE_BUILD configuration=" + (development ? "Development" : "Release") + " target=" + target + " options=" + policy.Options);
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
                 scenes = new[] { scenePath }, locationPathName = output,
-                target = target, options = BuildOptions.Development
+                target = target, options = policy.Options
             });
             if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
                 throw new System.InvalidOperationException("LighFight export failed: " + report.summary.result);
+            }
         }
     }
 }
