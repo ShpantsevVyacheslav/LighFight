@@ -1,0 +1,680 @@
+[
+  {
+    "take": "box_01",
+    "sampleCount": 531,
+    "jointNames": [
+      "chest",
+      "head",
+      "hips",
+      "lefteye",
+      "leftfoot",
+      "lefthand",
+      "leftindexdistal",
+      "leftindexdistalend",
+      "leftindexintermediate",
+      "leftindexproximal",
+      "leftlowerarm",
+      "leftlowerleg",
+      "leftmiddledistal",
+      "leftmiddledistalend",
+      "leftmiddleintermediate",
+      "leftmiddleproximal",
+      "leftpinkydistal",
+      "leftpinkydistalend",
+      "leftpinkyintermediate",
+      "leftpinkyproximal",
+      "leftringdistal",
+      "leftringdistalend",
+      "leftringintermediate",
+      "leftringproximal",
+      "leftshoulder",
+      "leftthumbdistal",
+      "leftthumbdistalend",
+      "leftthumbintermediate",
+      "leftthumbproximal",
+      "lefttoes",
+      "lefttoesend",
+      "leftupperarm",
+      "leftupperleg",
+      "neck",
+      "necktwista",
+      "righteye",
+      "rightfoot",
+      "righthand",
+      "rightindexdistal",
+      "rightindexdistalend",
+      "rightindexintermediate",
+      "rightindexproximal",
+      "rightlowerarm",
+      "rightlowerleg",
+      "rightmiddledistal",
+      "rightmiddledistalend",
+      "rightmiddleintermediate",
+      "rightmiddleproximal",
+      "rightpinkydistal",
+      "rightpinkydistalend",
+      "rightpinkyintermediate",
+      "rightpinkyproximal",
+      "rightringdistal",
+      "rightringdistalend",
+      "rightringintermediate",
+      "rightringproximal",
+      "rightshoulder",
+      "rightthumbdistal",
+      "rightthumbdistalend",
+      "rightthumbintermediate",
+      "rightthumbproximal",
+      "righttoes",
+      "righttoesend",
+      "rightupperarm",
+      "rightupperleg",
+      "spine",
+      "upperchest"
+    ],
+    "center": "chest",
+    "events": [
+      {
+        "effector": "lefthand",
+        "startSeconds": 0.25,
+        "extensionPeakSeconds": 0.583333333,
+        "recoverySeconds": 1.33333333,
+        "extensionAmplitude": 0.22994000677316956,
+        "effectorReturnError": 0.1104840298648959,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "lefthand",
+        "startSeconds": 1.33333333,
+        "extensionPeakSeconds": 1.54166667,
+        "recoverySeconds": 1.83333333,
+        "extensionAmplitude": 0.025167829174576134,
+        "effectorReturnError": 0.1683880902060571,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      }
+    ],
+    "accepted": false,
+    "fingerClosureDistances": {
+      "left": {
+        "leftindexdistal": {
+          "min": 0.09833025848870947,
+          "max": 0.09833042847394123
+        },
+        "leftindexdistalend": {
+          "min": 0.11374273440637934,
+          "max": 0.11374294791285143
+        },
+        "leftmiddledistal": {
+          "min": 0.10229078274268823,
+          "max": 0.10229094002424738
+        },
+        "leftmiddledistalend": {
+          "min": 0.11725921177451797,
+          "max": 0.11725939908577879
+        },
+        "leftpinkydistal": {
+          "min": 0.08612047389113474,
+          "max": 0.08612062868512457
+        },
+        "leftpinkydistalend": {
+          "min": 0.09772093264529005,
+          "max": 0.09772112531325443
+        },
+        "leftringdistal": {
+          "min": 0.09573712907899824,
+          "max": 0.09573728226433155
+        },
+        "leftringdistalend": {
+          "min": 0.10875797663907776,
+          "max": 0.10875817763545528
+        },
+        "leftthumbdistal": {
+          "min": 0.06959929981663791,
+          "max": 0.06959946737590654
+        },
+        "leftthumbdistalend": {
+          "min": 0.0812956553946171,
+          "max": 0.08129584114019749
+        }
+      },
+      "right": {
+        "rightindexdistal": {
+          "min": 0.10194178893955878,
+          "max": 0.10194200179035433
+        },
+        "rightindexdistalend": {
+          "min": 0.11700987973259798,
+          "max": 0.11701010252157759
+        },
+        "rightmiddledistal": {
+          "min": 0.10414850663719123,
+          "max": 0.10414871336426913
+        },
+        "rightmiddledistalend": {
+          "min": 0.11752299559534098,
+          "max": 0.1175232365098547
+        },
+        "rightpinkydistal": {
+          "min": 0.08903944725468098,
+          "max": 0.08903960200466972
+        },
+        "rightpinkydistalend": {
+          "min": 0.09988774715289717,
+          "max": 0.09988792600736017
+        },
+        "rightringdistal": {
+          "min": 0.09943638362647599,
+          "max": 0.09943656823395047
+        },
+        "rightringdistalend": {
+          "min": 0.11169931301423662,
+          "max": 0.1116995035638774
+        },
+        "rightthumbdistal": {
+          "min": 0.0727743525107122,
+          "max": 0.07277454967498453
+        },
+        "rightthumbdistalend": {
+          "min": 0.08531847535307395,
+          "max": 0.08531870986136822
+        }
+      }
+    }
+  },
+  {
+    "take": "box_02",
+    "sampleCount": 671,
+    "jointNames": [
+      "chest",
+      "head",
+      "hips",
+      "lefteye",
+      "leftfoot",
+      "lefthand",
+      "leftindexdistal",
+      "leftindexdistalend",
+      "leftindexintermediate",
+      "leftindexproximal",
+      "leftlowerarm",
+      "leftlowerleg",
+      "leftmiddledistal",
+      "leftmiddledistalend",
+      "leftmiddleintermediate",
+      "leftmiddleproximal",
+      "leftpinkydistal",
+      "leftpinkydistalend",
+      "leftpinkyintermediate",
+      "leftpinkyproximal",
+      "leftringdistal",
+      "leftringdistalend",
+      "leftringintermediate",
+      "leftringproximal",
+      "leftshoulder",
+      "leftthumbdistal",
+      "leftthumbdistalend",
+      "leftthumbintermediate",
+      "leftthumbproximal",
+      "lefttoes",
+      "lefttoesend",
+      "leftupperarm",
+      "leftupperleg",
+      "neck",
+      "necktwista",
+      "righteye",
+      "rightfoot",
+      "righthand",
+      "rightindexdistal",
+      "rightindexdistalend",
+      "rightindexintermediate",
+      "rightindexproximal",
+      "rightlowerarm",
+      "rightlowerleg",
+      "rightmiddledistal",
+      "rightmiddledistalend",
+      "rightmiddleintermediate",
+      "rightmiddleproximal",
+      "rightpinkydistal",
+      "rightpinkydistalend",
+      "rightpinkyintermediate",
+      "rightpinkyproximal",
+      "rightringdistal",
+      "rightringdistalend",
+      "rightringintermediate",
+      "rightringproximal",
+      "rightshoulder",
+      "rightthumbdistal",
+      "rightthumbdistalend",
+      "rightthumbintermediate",
+      "rightthumbproximal",
+      "righttoes",
+      "righttoesend",
+      "rightupperarm",
+      "rightupperleg",
+      "spine",
+      "upperchest"
+    ],
+    "center": "chest",
+    "events": [
+      {
+        "effector": "lefthand",
+        "startSeconds": 0.0,
+        "extensionPeakSeconds": 0.2375,
+        "recoverySeconds": 0.5,
+        "extensionAmplitude": 0.002486139338747112,
+        "effectorReturnError": 0.15396833891135686,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "lefthand",
+        "startSeconds": 0.5,
+        "extensionPeakSeconds": 0.708333333,
+        "recoverySeconds": 0.916666667,
+        "extensionAmplitude": 0.027207801080872118,
+        "effectorReturnError": 0.37478400476780765,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "lefthand",
+        "startSeconds": 0.916666667,
+        "extensionPeakSeconds": 0.983333333,
+        "recoverySeconds": 1.20833333,
+        "extensionAmplitude": 0.0019834633007581592,
+        "effectorReturnError": 0.1889593231441756,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "lefthand",
+        "startSeconds": 1.20833333,
+        "extensionPeakSeconds": 1.5,
+        "recoverySeconds": 1.725,
+        "extensionAmplitude": 0.07269693813967743,
+        "effectorReturnError": 0.14419655454471003,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "lefthand",
+        "startSeconds": 1.725,
+        "extensionPeakSeconds": 1.91666667,
+        "recoverySeconds": 2.125,
+        "extensionAmplitude": 0.11538321232219059,
+        "effectorReturnError": 0.07849181955184532,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "righthand",
+        "startSeconds": 0.416666667,
+        "extensionPeakSeconds": 0.470833333,
+        "recoverySeconds": 0.875,
+        "extensionAmplitude": 2.456738153094884e-05,
+        "effectorReturnError": 0.27321930548510254,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "righthand",
+        "startSeconds": 0.875,
+        "extensionPeakSeconds": 1.20833333,
+        "recoverySeconds": 1.52916667,
+        "extensionAmplitude": 0.061878331989411284,
+        "effectorReturnError": 0.2807366224452433,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "righthand",
+        "startSeconds": 1.52916667,
+        "extensionPeakSeconds": 1.79166667,
+        "recoverySeconds": 1.91666667,
+        "extensionAmplitude": 0.19212645427476904,
+        "effectorReturnError": 0.09704274150077632,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "righthand",
+        "startSeconds": 1.95833333,
+        "extensionPeakSeconds": 2.20833333,
+        "recoverySeconds": 2.625,
+        "extensionAmplitude": 0.012133713993654038,
+        "effectorReturnError": 0.45166964476846166,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "righthand",
+        "startSeconds": 2.625,
+        "extensionPeakSeconds": 2.66666667,
+        "recoverySeconds": 2.79166667,
+        "extensionAmplitude": 2.961690402031314e-05,
+        "effectorReturnError": 0.0036497063570466084,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      }
+    ],
+    "accepted": false,
+    "fingerClosureDistances": {
+      "left": {
+        "leftindexdistal": {
+          "min": 0.051517325026819986,
+          "max": 0.09738941239549438
+        },
+        "leftindexdistalend": {
+          "min": 0.04273350655962476,
+          "max": 0.11072963608521137
+        },
+        "leftmiddledistal": {
+          "min": 0.049227059361041534,
+          "max": 0.09529566491496001
+        },
+        "leftmiddledistalend": {
+          "min": 0.03835514191129357,
+          "max": 0.10301033138180206
+        },
+        "leftpinkydistal": {
+          "min": 0.0496011419399284,
+          "max": 0.08271868311727214
+        },
+        "leftpinkydistalend": {
+          "min": 0.04497851574889534,
+          "max": 0.08902327585285236
+        },
+        "leftringdistal": {
+          "min": 0.04555681583426011,
+          "max": 0.08962048784140723
+        },
+        "leftringdistalend": {
+          "min": 0.036238798024843935,
+          "max": 0.09622346825628449
+        },
+        "leftthumbdistal": {
+          "min": 0.06617601248563985,
+          "max": 0.06946303850967583
+        },
+        "leftthumbdistalend": {
+          "min": 0.06480048494624978,
+          "max": 0.07815294046752227
+        }
+      },
+      "right": {
+        "rightindexdistal": {
+          "min": 0.05629116027069726,
+          "max": 0.10136077316159378
+        },
+        "rightindexdistalend": {
+          "min": 0.04805227934729295,
+          "max": 0.11471856934531297
+        },
+        "rightmiddledistal": {
+          "min": 0.05377889780259011,
+          "max": 0.10232330840789103
+        },
+        "rightmiddledistalend": {
+          "min": 0.04377826627066862,
+          "max": 0.1139572875202852
+        },
+        "rightpinkydistal": {
+          "min": 0.05305227627720361,
+          "max": 0.08960799783260416
+        },
+        "rightpinkydistalend": {
+          "min": 0.04774334145164017,
+          "max": 0.09969546354430128
+        },
+        "rightringdistal": {
+          "min": 0.049896049235022825,
+          "max": 0.09815318527536873
+        },
+        "rightringdistalend": {
+          "min": 0.04051593345551628,
+          "max": 0.10882303983556782
+        },
+        "rightthumbdistal": {
+          "min": 0.06920029146451517,
+          "max": 0.07266859842794765
+        },
+        "rightthumbdistalend": {
+          "min": 0.06860883065691874,
+          "max": 0.08469988869730997
+        }
+      }
+    }
+  },
+  {
+    "take": "front_kick_01",
+    "sampleCount": 601,
+    "jointNames": [
+      "chest",
+      "head",
+      "hips",
+      "lefteye",
+      "leftfoot",
+      "lefthand",
+      "leftindexdistal",
+      "leftindexdistalend",
+      "leftindexintermediate",
+      "leftindexproximal",
+      "leftlowerarm",
+      "leftlowerleg",
+      "leftmiddledistal",
+      "leftmiddledistalend",
+      "leftmiddleintermediate",
+      "leftmiddleproximal",
+      "leftpinkydistal",
+      "leftpinkydistalend",
+      "leftpinkyintermediate",
+      "leftpinkyproximal",
+      "leftringdistal",
+      "leftringdistalend",
+      "leftringintermediate",
+      "leftringproximal",
+      "leftshoulder",
+      "leftthumbdistal",
+      "leftthumbdistalend",
+      "leftthumbintermediate",
+      "leftthumbproximal",
+      "lefttoes",
+      "lefttoesend",
+      "leftupperarm",
+      "leftupperleg",
+      "neck",
+      "necktwista",
+      "righteye",
+      "rightfoot",
+      "righthand",
+      "rightindexdistal",
+      "rightindexdistalend",
+      "rightindexintermediate",
+      "rightindexproximal",
+      "rightlowerarm",
+      "rightlowerleg",
+      "rightmiddledistal",
+      "rightmiddledistalend",
+      "rightmiddleintermediate",
+      "rightmiddleproximal",
+      "rightpinkydistal",
+      "rightpinkydistalend",
+      "rightpinkyintermediate",
+      "rightpinkyproximal",
+      "rightringdistal",
+      "rightringdistalend",
+      "rightringintermediate",
+      "rightringproximal",
+      "rightshoulder",
+      "rightthumbdistal",
+      "rightthumbdistalend",
+      "rightthumbintermediate",
+      "rightthumbproximal",
+      "righttoes",
+      "righttoesend",
+      "rightupperarm",
+      "rightupperleg",
+      "spine",
+      "upperchest"
+    ],
+    "center": "chest",
+    "events": [
+      {
+        "effector": "leftfoot",
+        "startSeconds": 0.0,
+        "extensionPeakSeconds": 0.291666667,
+        "recoverySeconds": 0.5,
+        "extensionAmplitude": 0.017408364386069186,
+        "effectorReturnError": 0.23168273698705533,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "leftfoot",
+        "startSeconds": 0.5,
+        "extensionPeakSeconds": 0.708333333,
+        "recoverySeconds": 1.20833333,
+        "extensionAmplitude": 0.014533791525026873,
+        "effectorReturnError": 0.12959852588442994,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "leftfoot",
+        "startSeconds": 1.20833333,
+        "extensionPeakSeconds": 1.68333333,
+        "recoverySeconds": 1.91666667,
+        "extensionAmplitude": 0.014748230078766467,
+        "effectorReturnError": 0.04969568673311244,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "leftfoot",
+        "startSeconds": 1.91666667,
+        "extensionPeakSeconds": 2.20833333,
+        "recoverySeconds": 2.5,
+        "extensionAmplitude": 0.012276587932779082,
+        "effectorReturnError": 0.1712649348237194,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "rightfoot",
+        "startSeconds": 0.0,
+        "extensionPeakSeconds": 0.208333333,
+        "recoverySeconds": 0.541666667,
+        "extensionAmplitude": 0.014999177869213676,
+        "effectorReturnError": 0.3565441000518927,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "rightfoot",
+        "startSeconds": 0.583333333,
+        "extensionPeakSeconds": 0.75,
+        "recoverySeconds": 0.875,
+        "extensionAmplitude": 0.03329063852733427,
+        "effectorReturnError": 0.5896931935293286,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "rightfoot",
+        "startSeconds": 0.875,
+        "extensionPeakSeconds": 0.9875,
+        "recoverySeconds": 1.08333333,
+        "extensionAmplitude": 0.0035554891279975243,
+        "effectorReturnError": 0.3524491073625238,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "rightfoot",
+        "startSeconds": 1.08333333,
+        "extensionPeakSeconds": 1.27083333,
+        "recoverySeconds": 1.70833333,
+        "extensionAmplitude": 0.008165256209778926,
+        "effectorReturnError": 0.7621524107446936,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      },
+      {
+        "effector": "rightfoot",
+        "startSeconds": 1.70833333,
+        "extensionPeakSeconds": 2.29166667,
+        "recoverySeconds": 2.5,
+        "extensionAmplitude": 0.014687670078923687,
+        "effectorReturnError": 0.44462228337686494,
+        "warning": "Geometric extension candidate, NOT proven surface contact or single directed strike. Boundary extrema may truncate adjacent strikes. Requires full-vector, clothing, feet, source hand closure and actual target entry/return review."
+      }
+    ],
+    "accepted": false,
+    "fingerClosureDistances": {
+      "left": {
+        "leftindexdistal": {
+          "min": 0.055967985651099735,
+          "max": 0.09705039894710807
+        },
+        "leftindexdistalend": {
+          "min": 0.04547107856828432,
+          "max": 0.11164603696418016
+        },
+        "leftmiddledistal": {
+          "min": 0.0465735540910983,
+          "max": 0.09739149373613881
+        },
+        "leftmiddledistalend": {
+          "min": 0.03814475380199387,
+          "max": 0.10995287354339395
+        },
+        "leftpinkydistal": {
+          "min": 0.04869105905284207,
+          "max": 0.08144876582125002
+        },
+        "leftpinkydistalend": {
+          "min": 0.04139737990528742,
+          "max": 0.09011059116290591
+        },
+        "leftringdistal": {
+          "min": 0.041008481626833536,
+          "max": 0.0896672131454238
+        },
+        "leftringdistalend": {
+          "min": 0.03700587615572591,
+          "max": 0.09857244413739874
+        },
+        "leftthumbdistal": {
+          "min": 0.06692155799775207,
+          "max": 0.0694376596883388
+        },
+        "leftthumbdistalend": {
+          "min": 0.07327665877237255,
+          "max": 0.08074085310894717
+        }
+      },
+      "right": {
+        "rightindexdistal": {
+          "min": 0.09384450783260752,
+          "max": 0.09384469596685556
+        },
+        "rightindexdistalend": {
+          "min": 0.10113469637112502,
+          "max": 0.10113491506017959
+        },
+        "rightmiddledistal": {
+          "min": 0.08973457729974202,
+          "max": 0.0897347608895323
+        },
+        "rightmiddledistalend": {
+          "min": 0.09026352964179354,
+          "max": 0.09026371272312042
+        },
+        "rightpinkydistal": {
+          "min": 0.07889188608723743,
+          "max": 0.07889211352020618
+        },
+        "rightpinkydistalend": {
+          "min": 0.07622480911137888,
+          "max": 0.07622507463187664
+        },
+        "rightringdistal": {
+          "min": 0.084160280259898,
+          "max": 0.08416048286319133
+        },
+        "rightringdistalend": {
+          "min": 0.08054175549495197,
+          "max": 0.08054195258065829
+        },
+        "rightthumbdistal": {
+          "min": 0.07114932961054293,
+          "max": 0.07114954076026761
+        },
+        "rightthumbdistalend": {
+          "min": 0.0824558874847919,
+          "max": 0.08245607612369711
+        }
+      }
+    }
+  }
+]

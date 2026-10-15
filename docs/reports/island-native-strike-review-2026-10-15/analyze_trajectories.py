@@ -8,6 +8,8 @@ for name in ['box_01','box_02','front_kick_01']:
   for r in csv.DictReader(f):frames.setdefault(float(r['seconds']),{})[canonical(r['joint'])]=tuple(float(r[k]) for k in ['x','y','z'])
  times=sorted(frames);joints=sorted(frames[times[0]])
  def find(suffix):
+  exact=[n for n in joints if n==suffix]
+  if len(exact)==1:return exact[0]
   x=[n for n in joints if n.endswith(suffix)]
   return x[0] if len(x)==1 else None
  center=next((find(n) for n in ['spine2','chest','spine1','hips'] if find(n)),None)
