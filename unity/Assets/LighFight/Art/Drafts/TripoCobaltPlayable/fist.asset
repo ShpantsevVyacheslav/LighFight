@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc09a7c3f14d48efb5040ade10db508, type: 3}
+  m_Name: fist
+  m_EditorClassIdentifier: Assembly-CSharp::LighFight.Runtime.NativeFingerPose
+  sourceAvatar: {fileID: 9000000, guid: 9fd430c132a45ecb8924d19a27d7428c, type: 3}
+  joints:
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal
+    rotation: {x: -0.023030352, y: -0.116953745, z: 0.449739, w: 0.88517016}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate
+    rotation: {x: -0.043788947, y: 0.16392854, z: -0.37041703, w: 0.9132366}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_ThumbProximal/Left_ThumbIntermediate/Left_ThumbDistal
+    rotation: {x: -0.009459538, y: 0.038627226, z: -0.34313166, w: 0.93844503}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal
+    rotation: {x: -0.6340153, y: 0.0017187747, z: 0.15739682, w: 0.7571313}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate
+    rotation: {x: 0.62513465, y: -0.16760619, z: 0.07179254, w: -0.7589208}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_IndexProximal/Left_IndexIntermediate/Left_IndexDistal
+    rotation: {x: -0.5828759, y: 0.018528596, z: -0.16820863, w: 0.79474413}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal
+    rotation: {x: -0.63988376, y: 0.057638854, z: 0.093544036, w: 0.7605761}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate
+    rotation: {x: -0.63118535, y: 0.08520472, z: -0.05692342, w: 0.76883346}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_MiddleProximal/Left_MiddleIntermediate/Left_MiddleDistal
+    rotation: {x: -0.5987755, y: 0.019109473, z: -0.097280085, w: 0.79475737}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal
+    rotation: {x: -0.6347961, y: 0.11667521, z: 0.00033375624, w: 0.76381993}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate
+    rotation: {x: -0.62959325, y: 0.048824314, z: -0.05753649, w: 0.7732516}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_RingProximal/Left_RingIntermediate/Left_RingDistal
+    rotation: {x: -0.60120136, y: 0.011970328, z: -0.08355559, w: 0.7946271}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal
+    rotation: {x: -0.6207386, y: 0.16113123, z: -0.062015332, w: 0.76477087}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate
+    rotation: {x: 0.62580746, y: -0.04211256, z: 0.10059726, w: -0.7723159}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Left_Shoulder/Left_UpperArm/Left_LowerArm/Left_Hand/Left_PinkyProximal/Left_PinkyIntermediate/Left_PinkyDistal
+    rotation: {x: -0.59464586, y: 0.0039741993, z: -0.12275514, w: 0.79455125}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal
+    rotation: {x: -0.40421593, y: 0.24459198, z: -0.19939567, w: -0.85850203}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate
+    rotation: {x: 0.3369284, y: -0.03643158, z: 0.16167194, w: -0.9268302}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_ThumbProximal/Right_ThumbIntermediate/Right_ThumbDistal
+    rotation: {x: 0.28909165, y: 0.03904778, z: 0.18492253, w: -0.9384589}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal
+    rotation: {x: -0.6196135, y: -0.06173706, z: 0.20796719, w: -0.7543323}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate
+    rotation: {x: 0.59901667, y: 0.051498756, z: -0.19237249, w: 0.77557707}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_IndexProximal/Right_IndexIntermediate/Right_IndexDistal
+    rotation: {x: -0.5950985, y: 0.018343164, z: 0.11793683, w: -0.7947404}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal
+    rotation: {x: -0.6102151, y: -0.076087475, z: 0.21127234, w: -0.7597448}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate
+    rotation: {x: -0.61122113, y: -0.0065617273, z: 0.16785786, w: -0.7734271}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_MiddleProximal/Right_MiddleIntermediate/Right_MiddleDistal
+    rotation: {x: -0.59128666, y: 0.018845513, z: 0.13562782, w: -0.7947515}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal
+    rotation: {x: -0.5757456, y: -0.051689424, z: 0.266817, w: -0.77113813}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate
+    rotation: {x: -0.6152774, y: -0.009702057, z: 0.14359453, w: -0.7750615}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_RingProximal/Right_RingIntermediate/Right_RingDistal
+    rotation: {x: -0.5946394, y: 0.011321619, z: 0.121892184, w: -0.7946181}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal
+    rotation: {x: -0.5555711, y: -0.05556614, z: 0.28484276, w: -0.77917767}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate
+    rotation: {x: 0.62254775, y: 0.014734939, z: -0.11000748, w: 0.77467126}
+  - path: Armature/Hips/Spine/Chest/UpperChest/Right_Shoulder/Right_UpperArm/Right_LowerArm/Right_Hand/Right_PinkyProximal/Right_PinkyIntermediate/Right_PinkyDistal
+    rotation: {x: -0.60033405, y: 0.004945919, z: 0.09085184, w: -0.7945568}
+  sourceClip: 'SDK human finger muscles: index/middle/ring/little stretch=-.85; thumb=-.45;spread=0'
+  sourceSeconds: 0

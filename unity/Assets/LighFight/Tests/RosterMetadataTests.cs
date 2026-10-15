@@ -8,17 +8,17 @@ using UnityEngine.TestTools;
 using LighFight.Runtime;
 namespace LighFight.Tests {
  public sealed class RosterMetadataTests {
-  [Test] public void GalaSlotUsesPreservedNativeRigAndSourcePortrait(){
+  [TestCase(6,"Gala",100000)][TestCase(7,"Cobalt",99999)] public void NewNativeRosterSlotsKeepRigAndSourcePortrait(int slot,string role,int triangles){
    var catalog=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset");
-   var expected=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/TripoGalaPlayable/GalaHumanoidCandidate.prefab");
-   Assert.NotNull(expected);Assert.AreSame(expected,catalog.fighters[6],"Gala slot must replace legacy body without changing roster order");
+   var expected=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LighFight/Art/Drafts/Tripo"+role+"Playable/"+role+"HumanoidCandidate.prefab");
+   Assert.NotNull(expected);Assert.AreSame(expected,catalog.fighters[slot],"Native slot must replace legacy body without changing roster order");
    var skin=expected.GetComponentInChildren<SkinnedMeshRenderer>();
-   Assert.AreEqual(100000,skin.sharedMesh.triangles.Length/3);Assert.AreEqual(67,skin.bones.Length);
+   Assert.AreEqual(triangles,skin.sharedMesh.triangles.Length/3);Assert.AreEqual(67,skin.bones.Length);
    var overlay=expected.GetComponents<MonoBehaviour>().Single(c=>c.GetType().Name=="NativeSupportOverlay");
    Assert.AreEqual(8,new SerializedObject(overlay).FindProperty("entries").arraySize);
    Assert.IsTrue(expected.GetComponentInChildren<Animator>().avatar.isHuman);
-   Assert.AreSame(AssetDatabase.LoadAssetAtPath<Material>("Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFull/source-calibrated-native-pbr-review.mat"),skin.sharedMaterial);
-   Assert.AreEqual(1024,Resources.Load<Texture2D>("Selection/fighter-6").width);
+   Assert.AreSame(AssetDatabase.LoadAssetAtPath<Material>("Assets/LighFight/Art/Drafts/Tripo"+role+"Playable/Source/"+role+"Full/source-calibrated-native-pbr-review.mat"),skin.sharedMaterial);
+   Assert.AreEqual(1024,Resources.Load<Texture2D>("Selection/fighter-"+slot).width);
   }
 
   [Test] public void ElevenFightersUseMetadataAndKeepLegacyPortraitFallback(){

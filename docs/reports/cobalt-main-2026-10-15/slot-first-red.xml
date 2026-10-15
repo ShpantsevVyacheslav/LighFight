@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Failed(Child)" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:47Z" duration="18.7920076">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="227" result="Failed" site="Child" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:47Z" duration="18.792008" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1269" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="213" result="Failed" site="Child" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:47Z" duration="18.765473" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40739" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1270" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="75" result="Failed" site="Child" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:47Z" duration="18.757404" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1271" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="75" result="Failed" site="Child" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:47Z" duration="18.744392" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1228" name="RosterMetadataTests" fullname="LighFight.Tests.RosterMetadataTests" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:47Z" duration="18.738648" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="ParameterizedMethod" id="1231" name="NewNativeRosterSlotsKeepRigAndSourcePortrait" fullname="LighFight.Tests.RosterMetadataTests.NewNativeRosterSlotsKeepRigAndSourcePortrait" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:47Z" duration="18.724827" total="2" passed="1" failed="1" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1229" name="NewNativeRosterSlotsKeepRigAndSourcePortrait(6,&quot;Gala&quot;,100000)" fullname="LighFight.Tests.RosterMetadataTests.NewNativeRosterSlotsKeepRigAndSourcePortrait(6,&quot;Gala&quot;,100000)" methodname="NewNativeRosterSlotsKeepRigAndSourcePortrait" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" seed="6071881" result="Passed" start-time="2026-10-15 06:37:28Z" end-time="2026-10-15 06:37:45Z" duration="17.058362" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1230" name="NewNativeRosterSlotsKeepRigAndSourcePortrait(7,&quot;Cobalt&quot;,99999)" fullname="LighFight.Tests.RosterMetadataTests.NewNativeRosterSlotsKeepRigAndSourcePortrait(7,&quot;Cobalt&quot;,99999)" methodname="NewNativeRosterSlotsKeepRigAndSourcePortrait" classname="LighFight.Tests.RosterMetadataTests" runstate="Runnable" seed="1746994210" result="Failed" start-time="2026-10-15 06:37:45Z" end-time="2026-10-15 06:37:47Z" duration="1.643184" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Native slot must replace legacy body without changing roster order
+  Expected: same as <CobaltHumanoidCandidate (UnityEngine.GameObject)>
+  But was:  <fighter-7 (UnityEngine.GameObject)>
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.RosterMetadataTests.NewNativeRosterSlotsKeepRigAndSourcePortrait (System.Int32 slot, System.String role, System.Int32 triangles) [0x00041] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/RosterMetadataTests.cs:14
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: /tmp/lighfight-cobalt-slot-red.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
