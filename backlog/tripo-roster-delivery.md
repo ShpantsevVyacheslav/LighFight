@@ -1,20 +1,20 @@
 # Tripo roster delivery
 
-| Fighter | Main catalog | Browser | iPhone |
+| Fighter | Main catalog | Desktop evidence | iPhone |
 |---|---|---|---|
-| Bone Lady | New calibrated Tripo,23 accepted combat roles | Preview checked | Pending |
-| Night Witch | New calibrated Tripo,22 shared combat roles and8 own native support motions | Main native player245frames passed | Pending device proof |
-| Element Master | New calibrated Tripo,22 accepted combat roles and native support motions | Desktop source/motion and victory checked | Pending |
-| Island Fighter | New calibrated Tripo,22roles,8K albedo | Preview and battle vs Ranger checked | Pending |
-| Pink Panther | Calibrated Tripo,24roles | Preview and battle checked | Pending |
-| Ranger | New calibrated Tripo,22roles | Battle checked | Pending |
-| Gala Fighter | Previous model | Previous model | Pending replacement |
-| Cobalt Champion | Previous model | Previous model | Pending replacement |
+| Bone Lady | Preserved Tripo rig; 22 shared combat roles | Preview checked | Pending |
+| Night Witch | Preserved Tripo rig; 22 shared combat roles and 8 native support motions | Main native player245frames passed | Pending device proof |
+| Element Master | Preserved Tripo rig; 22 shared combat roles and native support motions | Desktop source/motion and victory checked | Pending |
+| Island Fighter | Preserved Tripo rig; 22 shared combat roles | Preview and battle vs Ranger checked | Pending |
+| Pink Panther | Preserved Tripo rig; 22 shared combat roles | Preview and battle checked | Pending |
+| Ranger | Preserved Tripo rig; 22 shared combat roles | Battle checked | Pending |
+| Gala Fighter | Tripo native 100,000 triangles, 8 support motions at slot 6 | Independent source proof + main paired 490 samples passed | Pending device proof |
+| Cobalt Champion | Tripo native 99,999 triangles, 8 support motions at slot 7 | Independent source/contact proof + main paired 490 samples passed | Pending device proof |
 | Retro Denim | Reviewed Tripo appended at8,22 shared roles/eight own native support motions | Main native transitions checked | Pending device proof |
 | Striped Sailor | Reviewed Tripo appended at9,22 shared roles/eight own native support motions | Main native transitions checked | Pending device proof |
 | Summer Fighter | Reviewed Tripo appended at10,22 shared roles/eight own native support motions | Main native transitions checked | Pending device proof |
 
-Current blocker before device artifact delivery: near-distance forearm/foot exclusion and punch timing. The automatic Humanoid root displacement is fixed and tested; actual main Mac still shows arm overlap/missed punches at0.65m. Do not inflate hit radii or apply damage to misses. Linear HDR presentation is integrated and full GPU Unity158/158 passed; phone performance remains unverified. Source/native support transitions, facial animation and final art remain open.
+Current blocker before device artifact delivery: near-distance forearm/foot exclusion and punch timing. The automatic Humanoid root displacement is fixed and tested; actual main Mac still shows arm overlap/missed punches at0.65m. Do not inflate hit radii or apply damage to misses. Main aggregate229/229 Metal passed after recovery, title fit and color adapter; all 11/all 5 embedded local-content player passed with zero HTTP/errors and all resources released. Confirmed extra menu display encoding is removed at all12texture draw sites; actual Metal adapter58/58checks and mutation failures are retained. Main all11/all5 updated player gate is running. Phone performance remains unverified. Source/native support transitions, facial animation and final art remain open.
 
 No provider credits spent during this integration. Local commits only, no push.
 
@@ -28,7 +28,7 @@ Planned roster is now11. These labels are working outfit descriptions, not asser
 - [x] Summer beard: cap/glasses/beard, white T-shirt, blue plaid longshorts, white socks/dark sandals. Reference `summer-beard.jpg`.
 - [x] Generate originals, native rigs/motions, source portraits, exact-source comparison, full-animation deformation/contact gates for all3.
 - [x] Replace fixed8-character names/indexing/layout with catalog metadata and paged/scrollable roster/opponent selection; preserve existing8 IDs. Host catalog/export must also handle11.
-- [ ] Include all11 reviewed characters in final phone build. No generation/download/skeleton or device success is claimed yet for these3.
+- [ ] Include all11 reviewed characters in final phone build. Their generation/download/rig and desktop transitions are verified; phone acceptance is pending.
 
 All three neutral full-body references are prepared with built-in imagegen, preserving original photos. These are generation inputs, not generated 3D fighters. Expanded catalog code passed the full GPU Unity suite: 173/173.
 
@@ -55,3 +55,7 @@ Selected-only production content loading is implemented and tested:199EditMode t
 Recovery fix integrated in main (not yet committed): exacttwoCS verified bySHA, original-codeRED64/200→blend-awareactualplayerGREEN760/0; wholefloor−0.000238mm,752same-statecontact samples≤1.371µm,40freshGreeting+76settled samples clear recovery support. Main aggregate228tests in progress; offline packaged main and phone still pending. Evidence docs/reports/recovery-floor-2026-10-15.
 
 Main aggregate after recovery passed228/228 withMetal (exit0). All11/all5 embedded Addressables player build started; no runtime/phone acceptance claimed yet.
+
+2026-10-15 menu color transport: exact twelve texture draw sites now use a normal linear shader; source meshes/images unchanged. Actual isolated Metal pixel proof58/58 plus bypass/disposal mutations RED; main aggregate229/229GREEN. New main all11/all5 offline player and iOS export next; no device acceptance claim.
+
+2026-10-15 verified color delivery checkpoint09a6082/52a6684: actual main r2all11/all5 completed,33load=33release,0HTTP/0runtimeerrors,0remainingbundles. Root viewed roster/Cobalt; sourcebackground57/60/66exact. Source-specific3scalarvariants installed with unchangedbody geometry. iOS export in progress; no installed phone verdict. Continuous source-body response candidate remains isolated:310portable assertions and translation-crossing mutation; actual nonlinear animation/near-hit acceptance unresolved.

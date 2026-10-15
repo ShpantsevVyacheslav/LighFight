@@ -1,0 +1,69 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_ATLAS_OR_RENDER_ACCEPTANCE",
+  "samples": 11057,
+  "validSamples": 10878,
+  "fallbackSamples": 179,
+  "projectionRejected": 156,
+  "frameOrHemisphereRejected": 27,
+  "sourceHashesUnchanged": {
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-cobalt-original/unpacked/tripo_convert_8482a746-84bc-4581-a059-cf711a743fac.fbm/cobalt-h31-original_normal.PNG": "8a38371b2a8bc7e1d9dce06eab48288bd4287562472bf516da7ffa0e44efa7d1",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-cobalt-native-full-pack/unpacked/tripo_convert_da47aeea-c0f9-420a-867c-3f3edd976556.fbm/cobalt-h31-unity-native-full-pack_normal.JPEG": "bd3e15c2f18ca720bf56fe36e3bdfbf6cfee72b89b76edc8dddfe279a17197c4"
+  },
+  "reference": "Old finite UV-derivative frames and raw RGB source vectors; not authoritative Unity interpolated Mikk or actual packed-normal shader reference. No texture generated.",
+  "rows": [
+    {
+      "case": "native1K",
+      "subset": "allIncludingFallback",
+      "samples": 11057,
+      "medianDeg": 4.894764852714231,
+      "p95Deg": 34.10426486033769,
+      "p99Deg": 55.090670517349956,
+      "over10degFraction": 0.3171746404992313
+    },
+    {
+      "case": "native1K",
+      "subset": "projectionAndHemisphereValid",
+      "samples": 10878,
+      "medianDeg": 4.853047931855368,
+      "p95Deg": 32.981972614509225,
+      "p99Deg": 49.397670929264095,
+      "over10degFraction": 0.31301709873138445
+    },
+    {
+      "case": "rejected_direct_original4K_at_nativeUV",
+      "subset": "allIncludingFallback",
+      "samples": 11057,
+      "medianDeg": 6.458478730393075,
+      "p95Deg": 39.40785972399977,
+      "p99Deg": 53.1337003737816,
+      "over10degFraction": 0.39332549516143617
+    },
+    {
+      "case": "rejected_direct_original4K_at_nativeUV",
+      "subset": "projectionAndHemisphereValid",
+      "samples": 10878,
+      "medianDeg": 6.371882005673635,
+      "p95Deg": 38.4264851412528,
+      "p99Deg": 50.010027879769055,
+      "over10degFraction": 0.3895017466446038
+    },
+    {
+      "case": "sample_transformed_RG8_with_baseline_fallback",
+      "subset": "allIncludingFallback",
+      "samples": 11057,
+      "medianDeg": 0.18664763261544473,
+      "p95Deg": 0.29922260424136216,
+      "p99Deg": 7.428545680662995,
+      "over10degFraction": 0.009224925386632903
+    },
+    {
+      "case": "sample_transformed_RG8_with_baseline_fallback",
+      "subset": "projectionAndHemisphereValid",
+      "samples": 10878,
+      "medianDeg": 0.18528766770071048,
+      "p95Deg": 0.2877131202115269,
+      "p99Deg": 0.37736711532977213,
+      "over10degFraction": 0.0
+    }
+  ]
+}

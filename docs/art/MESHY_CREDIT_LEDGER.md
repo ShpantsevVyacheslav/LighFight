@@ -42,3 +42,15 @@ Sedan environment prop preview:01a12e86-7d63-748d-95a8-f3232045d924, text-to-3D7
 Sedan refine01a12ee6-b81b-7467-a029-33e62342d657 consumed10; balance3684.4Kbase/PBRmaps downloaded,720238triangles preserved. Actualtotal503spent/697remaining.
 
 Victory native web URL conversion01a12f2a-2ed1-7371-a5d4-a553656a5596: FAILED invalid_input / No valid objects found; consumed_credits=0, no output adopted. Total503/1200 remains. Initial malformed URL rejected before task creation; corrected URL accepted as a task then failed provider validation.
+
+Island fresh Ultra4K/8K generation 01a1301d-22bb-7634-b898-d609e525d70a: PENDING, 40 reserved within existing1200 limit; no remesh; actual spent remains503 until provider result. Available after reservation657.
+
+Island fresh Ultra4K/8K task01a1301d-22bb-7634-b898-d609e525d70a SUCCEEDED consumed40; actualtotal543/1200, remaining657. Original download in progress, no rig/remesh yet.
+
+FreshIsland rig01a13032-2b1a-77f7-b0a3-37ca2296ae5f SUCCEEDED consumed5; actualtotal548/1200 remaining652.
+
+FreshIsland actions210/191/192 SUCCEEDED3each; tasks in island-ultra-v2/motion-tasks.json. Total557/1200 remaining643. Action210 is Boxing_Guard_Prep_Straight_Punch, a prep/strike clip rather than confirmed idle; do not label final stance until inspected.
+
+FreshIsland Combat_Stance89 task01a1304e-bbbe-7315-abea-09c752a53a8d consumed3; total560/1200 remaining640.
+
+2026-10-15 read-only Scene inspection: workspace displayed3677credits afterautomatic daily-check-in popup reporting+50alreadyreceived (expiry9Nov2026). No Generate action and no new credit spending. Existing LighFight—Courtyard composition inspected; available output is image composition1344×768, no Unitysceneexport observed. Approvedspendtotal remains560/1200 (640remaining); accountrewardbalance is separate.
