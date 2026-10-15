@@ -127,6 +127,25 @@ namespace LighFight.Runtime
   private void Card(Rect rect,Color color){GUI.DrawTexture(rect,Texture2D.whiteTexture,ScaleMode.StretchToFill,true,0,InterfaceColor(color),0,Mathf.Min(14,rect.height*.5f));}
   private void Text(Rect rect,string text,int size=16,Color? color=null,TextAnchor align=TextAnchor.MiddleLeft)
   {selectionText.fontStyle=size>=25?FontStyle.BoldAndItalic:FontStyle.Normal;selectionText.fontSize=size;selectionText.alignment=align;selectionText.normal.textColor=InterfaceColor(color??Color.white);GUI.Label(rect,text,selectionText);}
+  private static int FitSelectionTitleFontSize(GUIStyle style,string text,Rect bounds,int maximumSize)
+  {
+   int previous=style.fontSize;var content=new GUIContent(text);var words=text.Split(' ');
+   try{
+    for(int size=maximumSize;size>1;size--){
+     style.fontSize=size;if(style.CalcHeight(content,bounds.width)>bounds.height)continue;
+     bool fits=true;foreach(string word in words)if(style.CalcSize(new GUIContent(word)).x>bounds.width){fits=false;break;}
+     if(fits)return size;
+    }
+    return 1;
+   }finally{style.fontSize=previous;}
+  }
+  private void FighterTitle(Rect rect,string text)
+  {
+   selectionText.fontStyle=FontStyle.BoldAndItalic;
+   selectionText.fontSize=FitSelectionTitleFontSize(selectionText,text,rect,30);
+   selectionText.alignment=TextAnchor.MiddleLeft;selectionText.normal.textColor=InterfaceColor(Color.white);
+   GUI.Label(rect,text,selectionText);
+  }
   private bool Pill(Rect rect,string label,bool active=false,bool primary=false)
   {
    Card(rect,primary?new Color(1,.62f,.16f):active?new Color(.25f,.25f,.42f):selectionPanel);
@@ -165,7 +184,7 @@ namespace LighFight.Runtime
    Text(new Rect(642,4,220,38),T("ПОДГОТОВКА БОЯ","FIGHT SETUP"),11,new Color(.60f,.70f,.82f),TextAnchor.MiddleRight);
    if(Pill(new Rect(880,7,62,34),"⚙"))OpenOptions();
    Text(new Rect(30,65,212,24),T("ВЫБЕРИ БОЙЦА","CHOOSE FIGHTER"),11,selectionAccent);
-   Text(new Rect(30,96,212,92),FighterLabel(selectedFighter).ToUpperInvariant(),30);
+   FighterTitle(new Rect(30,96,212,92),FighterLabel(selectedFighter).ToUpperInvariant());
    int available=0;foreach(var move in Moves.All)if(!player.UsesNativeMotion||player.HasNativeMotion(move.Id))available++;
    Text(new Rect(30,190,210,32),available+T(" приёмов · серии до 4 ударов"," moves · up to 4-hit chains"),11,new Color(.60f,.70f,.82f));
    Text(new Rect(30,233,210,22),T("ЗДОРОВЬЕ","HEALTH"),11,new Color(.60f,.70f,.82f));
