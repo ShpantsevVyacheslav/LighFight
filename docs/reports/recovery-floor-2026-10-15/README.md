@@ -1,0 +1,27 @@
+# Shared recovery body-floor correction
+
+Shipping changes are only `Assets/LighFight/Runtime/FighterView.cs` and `Assets/NativeSupport/NativeSupportOverlay.cs`, with existing main metas. Main was not edited or launched. `source-manifest.json` records exact original and final SHA values; `*.final.patch` are the narrow diffs. Earlier `proposed`/`blend-proposed` files and patches are historical diagnostics, not the delivery files.
+
+The original floor policy selects shoes for shared Human Fall/GetUp because they have no native catalog entry. Real recovery can place torso/head/hands below shoes. The fix selects the existing full original-vertex body support set and existing measured required-Y correction policy. It does not change meshes, weights, clips, bone poses, hip XZ, collision radii or a fixed cap. Feet may correctly lie above the floor while another body part supports a fallen pose.
+
+`FighterView.RecoveryBodySupportRequired` tracks whether the actual current pose or captured blend snapshot contains recovery. It uses the existing blend elapsed/duration, including interrupted blends. Overlay snapshots carry that provenance through their existing entry/return blends and same-frame contact cache. There is no extra grace period. Origin flags can remain stored after completion, like the existing defeat-origin flag; only their actual blend contribution activates support. Effective provenance and selected support must clear, and a later fresh Greeting must start with shoes.
+
+Actual original-code RED: 200 EOF samples, 64 body-floor failures, minimum -183.999 mm. State-only fix RED: 600 samples, seven floor failures during interrupted recovery returns, minimum -78.362 mm; shoe minimum -69.843 mm. Blend-aware GREEN: 600 samples, zero failures, whole-body minimum -0.000238 mm and source-shape delta at most 0.267 micrometres. Final clearance actual player PASS: 760 samples, zero failures; 752 same-state cached poses max 1.371 micrometres, eight legitimate post-core state changes separately marked. 76 settled-clearance and 40 fresh-Greeting samples all use normal shoe support with effective recovery provenance false. Whole-body floor minimum -0.000238 mm; full-shoe -0.000209 mm; source-shape delta <=0.267 micrometres; hip XZ/local bone-position delta zero. Player exited0, no runtime errors/exceptions. EvidenceClearance and runtime-clearance-summary.json are durable.
+
+The diagnostic runs real `Match.Step`/`PhysicalContacts` in Update at one/three ticks per frame and compares automatic Animator/LateUpdate at EOF. Native Greeting uses the existing preview/overlay API. Scenarios cover full Fall→GetUp→Guard, early GetUp→Guard, and early GetUp→Greeting→Guard, then long idle→fresh Greeting→Guard. Whole mesh contains 57,224 original imported vertices; independent full-shoe indices are retained. No support samples are selected from this test: the existing complete original body set is evaluated.
+
+A post-core DownTicks change legitimately changes state after the last contact sample on Fall→GetUp/GetUp→Guard; those rows retain their measured difference and `sameContactState=False`. They are not claimed as cached same-pose parity. Every EOF still gates full-body/shoe floor and geometry after removing its declared whole-rig Y lift. Same-state rows gate cached contact→EOF surface parity. The floor-only source-shape comparison is unlifted current posed geometry, not a new independent Generic proof for shared Human GetUp (no provider-native GetUp exists). Independent original Generic eight-take proof remains in CobaltPlayableIntegrationPacket. Local bone-position and hip-XZ deltas are separately recorded.
+
+To reproduce in an owned existing project: import the established Cobalt packet/dependencies, place diagnostic `CobaltRecoveryFloorProof.cs` outside Editor and its build hook under Editor, copy only the two final production files to their existing source locations, then run:
+
+```sh
+/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/MacOS/Unity -batchmode -projectPath "$OWNED_PROJECT" -executeMethod CobaltRecoveryFloorProofBuild.Run -quit -logFile "$ABSOLUTE_BUILD_LOG"
+"$OWNED_PROJECT/CobaltFullProofBuild/CobaltFullProof.app/Contents/MacOS/tripo-review-unity" -screen-fullscreen 0 -screen-width 960 -screen-height 960 -logFile "$ABSOLUTE_PLAYER_LOG"
+python3 verify_complete_recovery.py "$OWNED_PROJECT/CobaltFullProofBuild/CobaltRecoveryEvidence/recovery-contact-eof.csv"
+```
+
+Outputs are relative to the app parent on macOS. Preserve CSV/JSON/screenshots and require player exit0 plus no runtime exceptions/errors; a log-only PASS is insufficient. The final probe logs exceptions durably and exits3. Build path is deliberately reused. Diagnostic timings include BakeMesh/CPU scans/screenshots and are not a production performance benchmark. Root must integrate and run main aggregate/embedded/phone gates; none are claimed here.
+
+Root visually inspected0-1-93.png and copied three actual frames. First aggregate run225/228 used-nographics: two pixel tests and one display-camera test failed; this launch is not a valid rendering regression result. Main full Metal rerun is underway, no tests waived.
+
+Main aggregate Metal rerun passed228/228, process exit0; main-228-metal-green.xml retained. No test thresholds or cases waived. Root is building the all11/all5 real local Addressables player next; phone/device acceptance remains pending.

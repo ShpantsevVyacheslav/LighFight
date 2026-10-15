@@ -52,6 +52,8 @@ namespace LighFight.Runtime
         private Vector3[] blendPositions;
         private string previousMotion;
         private float blendElapsed, blendDuration;
+        private bool blendFromRecovery;
+        public bool RecoveryBodySupportRequired => previousMotion=="Fall" || previousMotion=="GetUp" || (blendFromRecovery && blendElapsed<blendDuration);
         private void LateUpdate()
         {
             if(blendBones==null || blendElapsed>=blendDuration || blendDuration<=0){if(nativeMotion)AnchorNativeRoot();return;}
@@ -138,6 +140,7 @@ namespace LighFight.Runtime
                 string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?(fighter.LastBlocked?"Guard":"Hit"):fighter.Attack.HasValue?fighter.Attack.Value.Id:fighter.Guard?"Guard":fighter.Crouch?"Crouch":moving?(backing?"WalkBack":"Walk"):"Idle";
                 if(motion!=previousMotion)
                 {
+                    blendFromRecovery=RecoveryBodySupportRequired;
                     if(blendBones==null){blendBones=animator.GetComponentsInChildren<Transform>();blendRotations=new Quaternion[blendBones.Length];blendPositions=new Vector3[blendBones.Length];}
                     for(int i=0;i<blendBones.Length;i++){blendRotations[i]=blendBones[i].localRotation;blendPositions[i]=blendBones[i].localPosition;}
                     blendElapsed=0;blendDuration=previousMotion==null?0:motion=="Hit"||motion=="Fall"?.04f:fighter.Attack.HasValue?.06f:FullPreviewMotion?.28f:.10f;previousMotion=motion;
