@@ -4,7 +4,8 @@ namespace LighFight.Runtime
 {
  public sealed partial class Prototype
  {
-  private bool playerGuard;
+  private bool playerGuard,stickCrouch;
+  public static bool StickCrouchIntent(float vertical,bool held)=>vertical<(held?-.30f:-.55f);
   private readonly JoystickGuard joystickGuard=new JoystickGuard();
   private Rect GuardArea=>ControlRect(new Rect(74,246,72,72));
   private void ClearPlayerGuard(){joystickGuard.Cancel();playerGuard=false;if(session!=null)match.A.Guard=false;}
@@ -75,7 +76,7 @@ namespace LighFight.Runtime
   }
   private Vector2 StickVector(Vector2 position)
   {
-   return NormalizeStick(StickArea,new Vector2(position.x,StickArea.center.y));
+   return NormalizeStick(StickArea,position);
   }
   private Vector2 GuardStickPoint(Vector2 position)=> (position-StickArea.center)/(StickArea.width*.5f);
   private void BeginJoystickGuard(int id,Vector2 position){var p=GuardStickPoint(position);joystickGuard.Begin(id,p.x,p.y,Time.unscaledTime,playerGuard);}
@@ -131,7 +132,6 @@ namespace LighFight.Runtime
    Vector2 knob=StickArea.center+new Vector2(stickInput.x,-stickInput.y)*(Mathf.Min(StickArea.width,StickArea.height)*.3125f);
    Disc(new Rect(knob.x-24*controlsScale,knob.y-24*controlsScale,48*controlsScale,48*controlsScale),match.A.Guard?Color.white:selectionAccent);
 
-   Disc(CrouchArea,new Color(.08f,.2f,.29f,controlsOpacity));Text(CrouchArea,"↓",28,selectionAccent,TextAnchor.MiddleCenter);
    if(gesturesEnabled){Disc(ControlRect(new Rect(660,335,220,170)),new Color(.04f,.12f,.19f,controlsOpacity*.45f));Text(ControlRect(new Rect(720,383,110,60)),"↑  →\n←  ↓",22,selectionAccent,TextAnchor.MiddleCenter);}
    if(match.A.ComboCount>1 && match.A.Attack.HasValue)Text(new Rect(430,440,100,40),"×"+match.A.ComboCount,26,selectionAccent,TextAnchor.MiddleCenter);
   }

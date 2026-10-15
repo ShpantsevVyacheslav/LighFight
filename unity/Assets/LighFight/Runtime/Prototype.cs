@@ -110,7 +110,7 @@ namespace LighFight.Runtime
         private void OnApplicationPause(bool value)
         {
             ClearPlayerGuard();
-            backgrounded = value;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();
+            backgrounded = value;stickFinger=-1;stickInput=Vector2.zero;stickCrouch=false;strikeGesture.Cancel();
             accumulator = 0;
             pendingAttack = -1;
         }
@@ -119,7 +119,7 @@ namespace LighFight.Runtime
             var defence=session!=null?(int)session.Defence:0;
             session = new FightSession(training,targetWins,roundSeconds);session.SetDummyDefence(defence); accumulator = 0; bot = new BotController(42,difficulty);
             ClearPlayerGuard();
-            pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;strikeGesture.Cancel();victoryElapsed=0;presentedWinner=-1;
+            pendingAttack = -1; paused = false; contactFreeze=0;contactMatch=null;stickFinger=-1;stickInput=Vector2.zero;stickCrouch=false;strikeGesture.Cancel();victoryElapsed=0;presentedWinner=-1;
         }
 
         // All touch positions converted into the same logical coordinates as GUI.
@@ -163,7 +163,8 @@ namespace LighFight.Runtime
             if(Pressed(GuardArea,true)){joystickGuard.Cancel();TogglePlayerGuard();}
             UpdateJoystick();
             UpdateStrikeGestures();
-            bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(CrouchArea,true);
+            stickCrouch=StickCrouchIntent(stickInput.y,stickCrouch);
+            bool crouch = Input.GetKey(KeyCode.DownArrow) || stickCrouch;
             bool upper = Input.GetKey(KeyCode.UpArrow);
             bool backVariant=Input.GetKey(KeyCode.LeftArrow);
             attackModifier=Input.GetKey(KeyCode.DownArrow)?4:upper?8:backVariant?12:0;
