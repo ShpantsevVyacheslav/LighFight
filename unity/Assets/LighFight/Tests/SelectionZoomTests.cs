@@ -57,6 +57,7 @@ namespace LighFight.Tests {
    for(int i=0;i<100&&cameraField.GetValue(game)==null;i++)yield return null;
    yield return ActorCurveWarmupTests.WaitReady(game);
    Assert.NotNull(cameraField.GetValue(game));var camera=(Camera)cameraField.GetValue(game);
+   game.SelectRosterFighter(3);yield return ActorCurveWarmupTests.WaitReady(game);
    var distance=typeof(Prototype).GetField("previewDistance",flags);var update=typeof(Prototype).GetMethod("UpdateSelection",flags);
    distance.SetValue(game,2.65f);update.Invoke(game,null);float normal=-camera.transform.position.z;
    distance.SetValue(game,1.7f);update.Invoke(game,null);float close=-camera.transform.position.z;

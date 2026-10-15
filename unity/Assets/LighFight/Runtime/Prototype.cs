@@ -64,7 +64,7 @@ namespace LighFight.Runtime
             if (bridge != null) { bridge.LaunchRequested += OnLaunch; if(bridge.CurrentLaunch!=null)OnLaunch(bridge.CurrentLaunch); }
         }
 
-        public void BeginFight() { if(ActorsLoading){beginFightAfterWarmup=true;return;} player.FullPreviewMotion=false; ReleaseSelectionRender(); Reset(); selecting=false; advancedMoves=false; rulesOpen=false; arenaOpen=false; opponent.gameObject.SetActive(true);arena.gameObject.SetActive(true);fightCamera.rect=new Rect(0,0,1,1); }
+        public void BeginFight() { if(ActorsLoading){beginFightAfterWarmup=true;return;} player.FullPreviewMotion=false; ReleaseSelectionRender(); Reset(); selecting=false; advancedMoves=false; rulesOpen=false; arenaOpen=false; player.gameObject.SetActive(true);opponent.gameObject.SetActive(true);arena.gameObject.SetActive(true);fightCamera.enabled=true;fightCamera.rect=new Rect(0,0,1,1); }
         public static float FitCameraDistance(float a,float b,float aspect) => Mathf.Max(3.6f,(Mathf.Abs(a-b)+2.2f)/(2*Mathf.Tan(21*Mathf.Deg2Rad)*Mathf.Max(.3f,aspect)));
         private void OnLaunch(LaunchRequest request) { russian=string.IsNullOrEmpty(request.locale)||request.locale.StartsWith("ru"); Reset(); selecting = true; }
         private void RebuildViews()
@@ -171,7 +171,6 @@ namespace LighFight.Runtime
             var extras = new[] { KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V, KeyCode.B, KeyCode.N, KeyCode.M, KeyCode.Comma, KeyCode.Period };
             for (int i = 0; i < extras.Length; i++) if (Input.GetKeyDown(extras[i])) pendingAttack = 16+i;
             float direction = Input.GetKey(KeyCode.RightArrow)?1:Input.GetKey(KeyCode.LeftArrow)?-1:stickInput.x;
-            float side = Input.GetKey(KeyCode.W)?1:Input.GetKey(KeyCode.S)?-1:-stickInput.y;
             bool guard = false;
             accumulator += Mathf.Min(Time.deltaTime, .1f);
             while (accumulator >= 1f / Match.TickRate)
@@ -181,7 +180,7 @@ namespace LighFight.Runtime
                 if(session.AttackAvailable==null)session.AttackAvailable=(first,index)=>{var view=first?player:opponent;return !view.UsesNativeMotion||view.HasNativeMotion(Moves.All[index].Id);};
                 match.A.Guard = guard; match.A.Crouch = crouch;
                 if (pendingAttack >= 0) { session.QueueAttack(true, pendingAttack); pendingAttack = -1; }
-                match.Walk(match.A, direction,side);
+                match.Walk(match.A, direction);
                 bot.Step(session);
                 if(contactMatch!=match){strikeGesture.Cancel();contactMatch=match;physicalContacts=new PhysicalContacts(match,player,opponent);}
                 int contactA=match.A.HitSerial, contactB=match.B.HitSerial;

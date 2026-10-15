@@ -45,7 +45,7 @@ namespace LighFight.Core
                 }
             }
             bot.Guard=guard;bot.Crouch=crouch;
-            if(sideTicks>0){sideTicks--;if(distance>.001f)match.Walk(bot,-(target.Z-bot.Z)/distance*sideDirection,(target.X-bot.X)/distance*sideDirection);}
+            if(sideTicks>0){sideTicks--;if(distance>.001f){if(match.Planar)match.Walk(bot,Math.Sign(bot.X-target.X));else match.Walk(bot,-(target.Z-bot.Z)/distance*sideDirection,(target.X-bot.X)/distance*sideDirection);}}
             else if(!guard && distance>.8f)match.Walk(bot,(target.X-bot.X)/distance,(target.Z-bot.Z)/distance);
             else if(!guard && distance<.65f && distance>.001f && attackCooldown>0)match.Walk(bot,(bot.X-target.X)/distance,(bot.Z-target.Z)/distance);
         }

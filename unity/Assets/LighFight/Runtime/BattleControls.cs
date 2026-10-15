@@ -65,7 +65,7 @@ namespace LighFight.Runtime
   }
   private Vector2 StickVector(Vector2 position)
   {
-   return NormalizeStick(StickArea,position);
+   return NormalizeStick(StickArea,new Vector2(position.x,StickArea.center.y));
   }
   private void UpdateJoystick()
   {

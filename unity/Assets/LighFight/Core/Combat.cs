@@ -82,6 +82,13 @@ namespace LighFight.Core
         public const float MinimumSeparation=.60f;
         public const int KnockdownTicks = 90, GetUpTicks = 30;
         public readonly Fighter A = new Fighter { X = -1.4f }, B = new Fighter { X = 1.4f, FacingX=-1 };
+        public bool Planar { get; }
+        public Match(bool planar=false){Planar=planar;}
+        private void ConstrainPlane(){
+            if(!Planar)return;
+            A.Z=B.Z=0;A.FacingZ=B.FacingZ=0;
+            A.FacingX=A.FacingX<0?-1:1;B.FacingX=B.FacingX<0?-1:1;
+        }
         public int Tick { get; private set; }
         public Action<Match> BeforeContact;
         public Func<Fighter,Fighter,bool> ContactValidator;
@@ -102,6 +109,7 @@ namespace LighFight.Core
 
         public void Step()
         {
+            ConstrainPlane();
             if (Finished) return;
             Tick++;
             BeforeContact?.Invoke(this);
@@ -168,6 +176,7 @@ namespace LighFight.Core
         public bool Attack(Fighter fighter, int index)
         {
             if(Finished || (fighter!=A && fighter!=B) || index<0 || index>=Moves.All.Length)return false;
+            ConstrainPlane();
             if(!fighter.Attack.HasValue){var other=fighter==A?B:A;float distance=Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
             return fighter.Chain(index) || fighter.Start(index);
         }
@@ -176,8 +185,10 @@ namespace LighFight.Core
         public void Walk(Fighter fighter,float direction) => Walk(fighter,direction,0);
         public void Walk(Fighter fighter,float xDirection,float zDirection)
         {
+            ConstrainPlane();
             if(Finished || (fighter!=A && fighter!=B) || fighter.Stun>0 || fighter.DownTicks>0 || fighter.Attack.HasValue ||
                float.IsNaN(xDirection)||float.IsInfinity(xDirection)||float.IsNaN(zDirection)||float.IsInfinity(zDirection))return;
+            if(Planar)zDirection=0;
             float magnitude=(float)Math.Sqrt(xDirection*xDirection+zDirection*zDirection);if(magnitude>1){xDirection/=magnitude;zDirection/=magnitude;}
             float speed=fighter.Guard||fighter.Crouch?.025f:.045f;
             float x=Math.Max(-5,Math.Min(5,fighter.X+xDirection*speed)),z=Math.Max(-1.5f,Math.Min(1.5f,fighter.Z+zDirection*speed));

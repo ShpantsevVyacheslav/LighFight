@@ -58,6 +58,14 @@ namespace LighFight.Runtime
    if(ActorsLoading)return;
    opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
    if(selectionDisplayCamera==null){selectionDisplayCamera=new GameObject("Selection display").AddComponent<Camera>();selectionDisplayCamera.transform.SetParent(transform,false);selectionDisplayCamera.cullingMask=0;selectionDisplayCamera.clearFlags=CameraClearFlags.SolidColor;selectionDisplayCamera.backgroundColor=new Color(.03f,.035f,.055f);selectionDisplayCamera.depth=-10;}
+   // The opaque portrait grid does not display the 3D preview. Stop its entire
+   // animation/late-update hierarchy and release its HDR/MSAA target until shown.
+   if(rosterOpen){
+    if(selectionRender!=null)ReleaseSelectionRender();
+    selectionDisplayCamera.enabled=true;fightCamera.enabled=false;
+    player.gameObject.SetActive(false);dragging=false;return;
+   }
+   player.gameObject.SetActive(true);fightCamera.enabled=true;
    var previewSize=SelectionPreviewSize(UiArea.size,graphicsQuality);
    var renderFormat=!selectionRenderFallback&&QualitySettings.activeColorSpace==ColorSpace.Linear&&SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBHalf)?RenderTextureFormat.ARGBHalf:RenderTextureFormat.ARGB32;
    var descriptor=new RenderTextureDescriptor(previewSize.x,previewSize.y,renderFormat,24){msaaSamples=graphicsQuality==2?4:2};

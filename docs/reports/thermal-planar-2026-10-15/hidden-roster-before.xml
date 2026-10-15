@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 13:16:47Z" end-time="2026-10-15 13:16:47Z" duration="0.2111216">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="230" result="Failed" site="Child" start-time="2026-10-15 13:16:47Z" end-time="2026-10-15 13:16:47Z" duration="0.211122" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1273" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="216" result="Failed" site="Child" start-time="2026-10-15 13:16:47Z" end-time="2026-10-15 13:16:47Z" duration="0.154015" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="93537" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1274" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="78" result="Failed" site="Child" start-time="2026-10-15 13:16:47Z" end-time="2026-10-15 13:16:47Z" duration="0.150778" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1275" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="78" result="Failed" site="Child" start-time="2026-10-15 13:16:47Z" end-time="2026-10-15 13:16:47Z" duration="0.149982" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1203" name="HiddenRosterRenderingTests" fullname="LighFight.Tests.HiddenRosterRenderingTests" classname="LighFight.Tests.HiddenRosterRenderingTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-15 13:16:47Z" end-time="2026-10-15 13:16:47Z" duration="0.139940" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1204" name="RosterSkipsHiddenActorRenderAndResumesPreviewAndFight" fullname="LighFight.Tests.HiddenRosterRenderingTests.RosterSkipsHiddenActorRenderAndResumesPreviewAndFight" methodname="RosterSkipsHiddenActorRenderAndResumesPreviewAndFight" classname="LighFight.Tests.HiddenRosterRenderingTests" runstate="Runnable" seed="1217376684" result="Failed" start-time="2026-10-15 13:16:46Z" end-time="2026-10-15 13:16:47Z" duration="1.407888" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Hidden actor animation/late hooks must also stop
+  Expected: False
+  But was:  True
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.HiddenRosterRenderingTests+<RosterSkipsHiddenActorRenderAndResumesPreviewAndFight>d__3.MoveNext () [0x001eb] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/HiddenRosterRenderingTests.cs:23
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in ./Library/PackageCache/com.unity.test-framework@bd7f943e9647/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+              </failure>
+              <output><![CDATA[There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+There are 2 audio listeners in the scene. Please ensure there is always exactly one audio listener in the scene.
+Saving results to: /tmp/lighfight-hidden-roster-red.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

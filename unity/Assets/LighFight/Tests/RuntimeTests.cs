@@ -195,6 +195,9 @@ public class RuntimeTests
         yield return LighFight.Tests.ActorCurveWarmupTests.WaitReady(game);
         host.Launch("{\"protocolVersion\":1,\"sessionId\":\"fight-review\",\"mode\":\"bot\",\"locale\":\"ru\"}");
         yield return null;
+        Assert.AreEqual(0,Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None).Length,"Opaque roster must not animate invisible fighters");
+        game.SelectRosterFighter(3);yield return LighFight.Tests.ActorCurveWarmupTests.WaitReady(game);
+        var previewUpdate=typeof(Prototype).GetMethod("UpdateSelection",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic);previewUpdate.Invoke(game,null);
         Assert.AreEqual(1,Object.FindObjectsByType<FighterView>(FindObjectsSortMode.None).Length,"Selection must hide the opponent");
         var previewCamera=System.Array.Find(game.GetComponentsInChildren<Camera>(),c=>c.cullingMask!=0);
         Assert.NotNull(previewCamera,"Selection must own a camera that renders the fighter");

@@ -9,7 +9,7 @@ namespace LighFight.Core
         public const int RoundTicks = 60 * Match.TickRate;
         public const int BreakTicks = 90;
         public const int BufferTicks = 8;
-        public Match Match { get; private set; } = new Match();
+        public Match Match { get; private set; } = new Match(planar:true);
         public FightPhase Phase { get; private set; }
         public int RemainingTicks { get; private set; } = RoundTicks;
         public int WinsA { get; private set; }
@@ -54,7 +54,7 @@ namespace LighFight.Core
             {
                 if (--breakRemaining <= 0)
                 {
-                    Match = new Match(); RemainingTicks = configuredRoundTicks;
+                    Match = new Match(planar:true); RemainingTicks = configuredRoundTicks;
                     Phase = FightPhase.Fighting; Round++; RoundWinner = -1;
                 }
                 return;
