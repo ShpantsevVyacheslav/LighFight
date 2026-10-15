@@ -1,0 +1,140 @@
+{
+  "status": "Recipe only; no new pose asset exported or accepted in offline window",
+  "requests": [
+    {
+      "character": "Bone",
+      "sourceArchiveFBX": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbx",
+      "requiredSHA256": "3415e4a213e6a266986e09935ab092ef992e66bdd56728927ff73cd45d46fad3",
+      "existingMainHumanFBX": "unity/Assets/LighFight/Art/Drafts/TripoBonePlayable/Source/Bone/model.fbx",
+      "reviewOnlyDestination": "Assets/NativeSupportCoverageReview/Bone",
+      "takes": [
+        {
+          "source": "box_02",
+          "reviewState": "NativeBox02",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "hit_to_head",
+          "reviewState": "NativeHeadFull",
+          "alreadyUsedAsSDKHeadReaction": true
+        },
+        {
+          "source": "front_kick_01",
+          "reviewState": "NativeFrontKick",
+          "alreadyUsedAsSDKHeadReaction": false
+        }
+      ],
+      "shippingChangesAllowed": false,
+      "gate": "Separate isolated Generic byte-copy exporter+lossless codec, exact mesh/bind/weight and original source FK parity, full-original-shoe/body floor training+holdout, same-frame contact/EOF/returns, target fingers; no shipping catalog/prefab/controller/Guard/Fall/GetUp edits"
+    },
+    {
+      "character": "Master",
+      "sourceArchiveFBX": "art/source/tripo-master-native-pack/unpacked/tripo_convert_24406674-838c-4bb3-8c8b-9102c9451b04.fbx",
+      "requiredSHA256": "4e1f58d4611a0e72546f39bd576980eac6120e67bb7cc5624052ca5ce138fd38",
+      "existingMainHumanFBX": "unity/Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/model.fbx",
+      "reviewOnlyDestination": "Assets/NativeSupportCoverageReview/Master",
+      "takes": [
+        {
+          "source": "box_02",
+          "reviewState": "NativeBox02",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "dance_05",
+          "reviewState": "NativeDance05",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "hit_to_head",
+          "reviewState": "NativeHeadFull",
+          "alreadyUsedAsSDKHeadReaction": true
+        },
+        {
+          "source": "dance_02",
+          "reviewState": "NativeDance02",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "front_kick_01",
+          "reviewState": "NativeFrontKick",
+          "alreadyUsedAsSDKHeadReaction": false
+        }
+      ],
+      "shippingChangesAllowed": false,
+      "gate": "Separate isolated Generic byte-copy exporter+lossless codec, exact mesh/bind/weight and original source FK parity, full-original-shoe/body floor training+holdout, same-frame contact/EOF/returns, target fingers; no shipping catalog/prefab/controller/Guard/Fall/GetUp edits"
+    },
+    {
+      "character": "Island",
+      "sourceArchiveFBX": "art/source/island-tripo-v1/unity-pack/tripo_convert_d0bdd788-3a48-49bb-b11c-48b67ea2b186.fbx",
+      "requiredSHA256": "5cc8b7208f3267cb1e20909bcff4eb04a9b9bf58ce7f28ebb77bbdb516c41a24",
+      "existingMainHumanFBX": "unity/Assets/LighFight/Art/Drafts/TripoIslandPlayable/Source/Island/model.fbx",
+      "reviewOnlyDestination": "Assets/NativeSupportCoverageReview/Island",
+      "takes": [
+        {
+          "source": "box_01",
+          "reviewState": "NativeBox01",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "box_02",
+          "reviewState": "NativeBox02",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "front_kick_01",
+          "reviewState": "NativeFrontKick",
+          "alreadyUsedAsSDKHeadReaction": false
+        }
+      ],
+      "shippingChangesAllowed": false,
+      "gate": "Separate isolated Generic byte-copy exporter+lossless codec, exact mesh/bind/weight and original source FK parity, full-original-shoe/body floor training+holdout, same-frame contact/EOF/returns, target fingers; no shipping catalog/prefab/controller/Guard/Fall/GetUp edits"
+    },
+    {
+      "character": "Rose",
+      "sourceArchiveFBX": "art/source/rose-tripo-v1/unity-pack/tripo_convert_fbd6ea7e-51f1-4d2b-862f-11e9d15b1b6e.fbx",
+      "requiredSHA256": "7f3035f381bf0896cdad64c38c8237ec3dc7253b49f852a602771ce83b2e04c4",
+      "existingMainHumanFBX": "unity/Assets/LighFight/Art/Drafts/TripoPlayable/Source/Rose/model.fbx",
+      "reviewOnlyDestination": "Assets/NativeSupportCoverageReview/Rose",
+      "takes": [
+        {
+          "source": "front_kick_01",
+          "reviewState": "NativeFrontKick",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "box_02",
+          "reviewState": "NativeBox02",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "hit_to_head",
+          "reviewState": "NativeHeadFull",
+          "alreadyUsedAsSDKHeadReaction": true
+        }
+      ],
+      "shippingChangesAllowed": false,
+      "gate": "Separate isolated Generic byte-copy exporter+lossless codec, exact mesh/bind/weight and original source FK parity, full-original-shoe/body floor training+holdout, same-frame contact/EOF/returns, target fingers; no shipping catalog/prefab/controller/Guard/Fall/GetUp edits"
+    },
+    {
+      "character": "Ranger",
+      "sourceArchiveFBX": "art/source/ranger-tripo-v1/unity-pack/tripo_convert_2ffb9d33-6de4-4535-a60c-7eee8e972039.fbx",
+      "requiredSHA256": "e41b690767619e35787625c54233db8369abe72ae2dda72d322005228d61dc7d",
+      "existingMainHumanFBX": "unity/Assets/LighFight/Art/Drafts/TripoRangerPlayable/Source/Ranger/model.fbx",
+      "reviewOnlyDestination": "Assets/NativeSupportCoverageReview/Ranger",
+      "takes": [
+        {
+          "source": "box_02",
+          "reviewState": "NativeBox02",
+          "alreadyUsedAsSDKHeadReaction": false
+        },
+        {
+          "source": "hit_to_head",
+          "reviewState": "NativeHeadFull",
+          "alreadyUsedAsSDKHeadReaction": true
+        }
+      ],
+      "shippingChangesAllowed": false,
+      "gate": "Separate isolated Generic byte-copy exporter+lossless codec, exact mesh/bind/weight and original source FK parity, full-original-shoe/body floor training+holdout, same-frame contact/EOF/returns, target fingers; no shipping catalog/prefab/controller/Guard/Fall/GetUp edits"
+    }
+  ]
+}

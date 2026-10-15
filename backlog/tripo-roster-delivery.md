@@ -3,16 +3,16 @@
 | Fighter | Main catalog | Desktop evidence | iPhone |
 |---|---|---|---|
 | Bone Lady | Preserved Tripo rig; 22 shared combat roles | Preview checked | Pending |
-| Night Witch | Preserved Tripo rig; 22 shared combat roles and 8 native support motions | Main native player245frames passed | Pending device proof |
+| Night Witch | Preserved Tripo rig; 22 shared combat roles and 5 ordinary native roles +3 diagnostics | Main native player245frames passed | Pending device proof |
 | Element Master | Preserved Tripo rig; 22 shared combat roles and native support motions | Desktop source/motion and victory checked | Pending |
 | Island Fighter | Preserved Tripo rig; 22 shared combat roles | Preview and battle vs Ranger checked | Pending |
 | Pink Panther | Preserved Tripo rig; 22 shared combat roles | Preview and battle checked | Pending |
 | Ranger | Preserved Tripo rig; 22 shared combat roles | Battle checked | Pending |
-| Gala Fighter | Tripo native 100,000 triangles, 8 support motions at slot 6 | Independent source proof + main paired 490 samples passed | Pending device proof |
-| Cobalt Champion | Tripo native 99,999 triangles, 8 support motions at slot 7 | Independent source/contact proof + main paired 490 samples passed | Pending device proof |
-| Retro Denim | Reviewed Tripo appended at8,22 shared roles/eight own native support motions | Main native transitions checked | Pending device proof |
-| Striped Sailor | Reviewed Tripo appended at9,22 shared roles/eight own native support motions | Main native transitions checked | Pending device proof |
-| Summer Fighter | Reviewed Tripo appended at10,22 shared roles/eight own native support motions | Main native transitions checked | Pending device proof |
+| Gala Fighter | Tripo native 100,000 triangles, 5 ordinary native roles +3 diagnostics at slot6 | Independent source proof + main paired 490 samples passed | Pending device proof |
+| Cobalt Champion | Tripo native 99,999 triangles, 5 ordinary native roles +3 diagnostics at slot7 | Independent source/contact proof + main paired 490 samples passed | Pending device proof |
+| Retro Denim | Reviewed Tripo appended at8,22 shared roles/five own native roles +3 diagnostics | Main native transitions checked | Pending device proof |
+| Striped Sailor | Reviewed Tripo appended at9,22 shared roles/five own native roles +3 diagnostics | Main native transitions checked | Pending device proof |
+| Summer Fighter | Reviewed Tripo appended at10,22 shared roles/five own native roles +3 diagnostics | Main native transitions checked | Pending device proof |
 
 Current blocker before device artifact delivery: near-distance forearm/foot exclusion and punch timing. The automatic Humanoid root displacement is fixed and tested; actual main Mac still shows arm overlap/missed punches at0.65m. Do not inflate hit radii or apply damage to misses. Main aggregate229/229 Metal passed after recovery, title fit and color adapter; all 11/all 5 embedded local-content player passed with zero HTTP/errors and all resources released. Confirmed extra menu display encoding is removed at all12texture draw sites; actual Metal adapter58/58checks and mutation failures are retained. Main all11/all5 updated player gate is running. Phone performance remains unverified. Source/native support transitions, facial animation and final art remain open.
 
@@ -59,3 +59,5 @@ Main aggregate after recovery passed228/228 withMetal (exit0). All11/all5 embedd
 2026-10-15 menu color transport: exact twelve texture draw sites now use a normal linear shader; source meshes/images unchanged. Actual isolated Metal pixel proof58/58 plus bypass/disposal mutations RED; main aggregate229/229GREEN. New main all11/all5 offline player and iOS export next; no device acceptance claim.
 
 2026-10-15 verified color delivery checkpoint09a6082/52a6684: actual main r2all11/all5 completed,33load=33release,0HTTP/0runtimeerrors,0remainingbundles. Root viewed roster/Cobalt; sourcebackground57/60/66exact. Source-specific3scalarvariants installed with unchangedbody geometry. iOS export in progress; no installed phone verdict. Continuous source-body response candidate remains isolated:310portable assertions and translation-crossing mutation; actual nonlinear animation/near-hit acceptance unresolved.
+
+2026-10-15 exact native coverage audit:88 archived takes;73bound states/72distinct takes. All11 archive/import FBXSHA and catalog/prefab/pose triples agree. Six full8 sets are5ordinary support roles+3diagnostics, not8gameplay support roles. Island lackscheer/headhit (Victory→Greeting, headreaction→Ranger SDK); Master lacksWalk(sharedfallback).16omittedGeneric takes available for review, not accepted gameplay. Guard/Fall/GetUp/WalkBack remain shared across11. Details docs/reports/native-motion-coverage-2026-10-15.

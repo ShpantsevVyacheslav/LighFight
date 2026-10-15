@@ -1,0 +1,3110 @@
+[
+  {
+    "index": 0,
+    "name": "Bone",
+    "catalog": "unity/Assets/NativeSupport/Bone/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "5b047c627ec444fa58be900b645c76ac"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "7aa104a5878314271a606db2835df6dc"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "0e45ea768ff644a018bf1c9bb977d312"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "6ce43802d6db04093aa1704b1b6e164f"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "d794e63a0c46141dd8a83a9ced52d7d2"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Bone/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Bone/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Bone/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Bone/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Bone/Clips/Victory.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoBonePlayable/Source/Bone/model.fbx",
+        "takes": [
+          "greet_01",
+          "box_02",
+          "walk",
+          "fall",
+          "cheer",
+          "dance_01",
+          "hit_to_head",
+          "front_kick_01"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoHeadReaction/Clips/Bone-hit_to_head.anim"
+    ],
+    "catalogEntryCount": 5,
+    "boundNativeFKEntryCount": 5,
+    "boundNativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "5b047c627ec444fa58be900b645c76ac"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "7aa104a5878314271a606db2835df6dc"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "0e45ea768ff644a018bf1c9bb977d312"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "6ce43802d6db04093aa1704b1b6e164f"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "d794e63a0c46141dd8a83a9ced52d7d2"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 5,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoBonePlayable/BoneHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Bone/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "94d13c3e7c936a7ae48c196ecd4f598167a0d54b1c11e553260621426968ac56",
+        "packedPayload": "unity/Assets/NativeSupport/Bone/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Bone/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "50030298c673b01fc84a2653a7b13477e3f7dd9a8e09a647d44dc328472b8a72",
+        "packedPayload": "unity/Assets/NativeSupport/Bone/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Bone/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "2612819d4d68ac2575732841212310b4d468bde5ac5215756b97249fac84ff15",
+        "packedPayload": "unity/Assets/NativeSupport/Bone/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Bone/Clips/Defeat.pose.asset",
+        "duration": 3.0,
+        "curveHash": "53927f089e6de0887ab530871ee1a43ef8dde098f706eb8a44b3dee54443ac3a",
+        "packedPayload": "unity/Assets/NativeSupport/Bone/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Bone/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "5590fc3250654981590500af8a52527cdb268d8e258db2a6c75130839cefa582",
+        "packedPayload": "unity/Assets/NativeSupport/Bone/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbx",
+      "sha256": "3415e4a213e6a266986e09935ab092ef992e66bdd56728927ff73cd45d46fad3",
+      "mainModelSHA256": "3415e4a213e6a266986e09935ab092ef992e66bdd56728927ff73cd45d46fad3",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "greet_01",
+        "box_02",
+        "walk",
+        "fall",
+        "cheer",
+        "dance_01",
+        "hit_to_head",
+        "front_kick_01"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/bone-tripo-v1/unity-pack/original-export.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbx",
+            "bytes": 7667772,
+            "crc32": "33277544"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [
+      "box_02",
+      "hit_to_head",
+      "front_kick_01"
+    ],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "5b047c627ec444fa58be900b645c76ac"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "7aa104a5878314271a606db2835df6dc"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "0e45ea768ff644a018bf1c9bb977d312"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "6ce43802d6db04093aa1704b1b6e164f"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "d794e63a0c46141dd8a83a9ced52d7d2"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 1,
+    "name": "Witch",
+    "catalog": "unity/Assets/NativeSupport/Witch/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "36c0d4b464b5c4c869300b74c451d8ac"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "35888a2211e3143759fdad31299e8b01"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3697d59b0d7c34f6b8256cc790228330"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "62a4fd857028348c58b428dc72e09d6b"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "84f9b9e14697f489092e553be0d19775"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "0440d4438c7284dd49dea2244a52f378"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "b69d04169e3fc49a5afd183855a8c62f"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "b2162ffbb96a24847b9ca6ea1a7f9fcb"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Witch/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Witch/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Witch/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Witch/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Witch/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "NativeBox02",
+        "path": "Assets/NativeSupport/Witch/Clips/NativeBox02.carrier.anim"
+      },
+      {
+        "state": "NativeFrontKick",
+        "path": "Assets/NativeSupport/Witch/Clips/NativeFrontKick.carrier.anim"
+      },
+      {
+        "state": "NativeHeadFull",
+        "path": "Assets/NativeSupport/Witch/Clips/NativeHeadFull.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoWitchPlayable/Source/WitchFull/model.fbx",
+        "takes": [
+          "cheer",
+          "front_kick_01",
+          "box_02",
+          "dance_01",
+          "walk",
+          "defeat_02",
+          "hit_to_head",
+          "greet_01"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoWitchPlayable/Source/WitchFullOriginal/model.fbx",
+        "takes": [
+          "cheer",
+          "front_kick_01",
+          "box_02",
+          "dance_01",
+          "walk",
+          "defeat_02",
+          "hit_to_head",
+          "greet_01"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoWitchPlayable/Source/WitchFull/NativeClips/hit_to_head.anim"
+    ],
+    "catalogEntryCount": 8,
+    "boundNativeFKEntryCount": 8,
+    "boundNativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "36c0d4b464b5c4c869300b74c451d8ac"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "35888a2211e3143759fdad31299e8b01"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3697d59b0d7c34f6b8256cc790228330"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "62a4fd857028348c58b428dc72e09d6b"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "84f9b9e14697f489092e553be0d19775"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "0440d4438c7284dd49dea2244a52f378"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "b69d04169e3fc49a5afd183855a8c62f"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "b2162ffbb96a24847b9ca6ea1a7f9fcb"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 8,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoWitchPlayable/WitchHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "478ea7f90beda7f1aa2b3c2bcc53447f237d504f3ad18418545081dd3268de41",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "00ec400e55db97b26bfe8828337fcc170456893e959d4d2a702ad55a0472da95",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "8894ba120de7afd2f345bf10297aa0c8bf8b037fd00edffd47026b20284a25f5",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/Defeat.pose.asset",
+        "duration": 8.458334,
+        "curveHash": "609f2089135a9457ba15b9e5516664e99743946917806cc646c9c30add96fd94",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "e4ef7ec04e0220b3b78e4808c71d2348df271554f16722f8feeca8e098cbe4ae",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeBox02",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/NativeBox02.pose.asset",
+        "duration": 2.7916667,
+        "curveHash": "c78e4b33c026169750081fbc0f990e87d5f028dda0ea05a1235d43362e5e2435",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/NativeBox02.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeFrontKick",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/NativeFrontKick.pose.asset",
+        "duration": 2.5,
+        "curveHash": "93a97961f30ec4205066226c2f6daee0c28b18d8f482b0cf6330f0730a80382a",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/NativeFrontKick.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeHeadFull",
+        "pose": "unity/Assets/NativeSupport/Witch/Clips/NativeHeadFull.pose.asset",
+        "duration": 1.8333334,
+        "curveHash": "2161852ecf4884d181402ca39a378f159789a65e1c4bd8fa47ecd71cb0a50dbc",
+        "packedPayload": "unity/Assets/NativeSupport/Witch/Clips/NativeHeadFull.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbx",
+      "sha256": "80741798a295acac477fd37c4eb0df49e0628ffe2c05d3d34453481fc61a7c4d",
+      "mainModelSHA256": "80741798a295acac477fd37c4eb0df49e0628ffe2c05d3d34453481fc61a7c4d",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "cheer",
+        "front_kick_01",
+        "box_02",
+        "dance_01",
+        "walk",
+        "defeat_02",
+        "hit_to_head",
+        "greet_01"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/tripo-witch-native-full-pack/witch-h31-unity-native-full-pack.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbx",
+            "bytes": 7639260,
+            "crc32": "9d4b783d"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "36c0d4b464b5c4c869300b74c451d8ac"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "35888a2211e3143759fdad31299e8b01"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3697d59b0d7c34f6b8256cc790228330"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "62a4fd857028348c58b428dc72e09d6b"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "84f9b9e14697f489092e553be0d19775"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "0440d4438c7284dd49dea2244a52f378"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "b69d04169e3fc49a5afd183855a8c62f"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "b2162ffbb96a24847b9ca6ea1a7f9fcb"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 2,
+    "name": "Master",
+    "catalog": "unity/Assets/NativeSupport/Master/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "c9056e7c9391d481487a9aa0e6ed7155"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "54f1f33cc34304f818c2ee9ae72f662c"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "77435e5082fed4749b9f1f5354202f5d"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "6830f840288674972b975ed806e67061"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Forward_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Master/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Master/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Master/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Master/Clips/Defeat.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/model.fbx",
+        "takes": [
+          "cheer",
+          "box_02",
+          "dance_05",
+          "dance_01",
+          "fall",
+          "hit_to_head",
+          "dance_02",
+          "greet_01",
+          "front_kick_01"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/NativeClips/hit_to_head.anim"
+    ],
+    "catalogEntryCount": 4,
+    "boundNativeFKEntryCount": 4,
+    "boundNativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "c9056e7c9391d481487a9aa0e6ed7155"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "54f1f33cc34304f818c2ee9ae72f662c"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "77435e5082fed4749b9f1f5354202f5d"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "6830f840288674972b975ed806e67061"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 4,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoMasterPlayable/MasterHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Master/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "953f1db4ae5ea07297fb6e29fba1c5b9382f5ebde3e8c5493718b7ac60af2f3f",
+        "packedPayload": "unity/Assets/NativeSupport/Master/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Master/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "b2f23d7171ecd22610db2e85a55e84e8cd81c8338fc05810ff5cfe2c7e473ea6",
+        "packedPayload": "unity/Assets/NativeSupport/Master/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Master/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "5073e506ce19b2784005b87d1e07bbfa871676d79b36199a7bc8259e2aa5d7ff",
+        "packedPayload": "unity/Assets/NativeSupport/Master/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Master/Clips/Defeat.pose.asset",
+        "duration": 3.0,
+        "curveHash": "1dd67c783bc6e3eb64c2ef48ba8ce8af1771e9392a0560702ff07f40e8886672",
+        "packedPayload": "unity/Assets/NativeSupport/Master/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/tripo-master-native-pack/unpacked/tripo_convert_24406674-838c-4bb3-8c8b-9102c9451b04.fbx",
+      "sha256": "4e1f58d4611a0e72546f39bd576980eac6120e67bb7cc5624052ca5ce138fd38",
+      "mainModelSHA256": "4e1f58d4611a0e72546f39bd576980eac6120e67bb7cc5624052ca5ce138fd38",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "cheer",
+        "box_02",
+        "dance_05",
+        "dance_01",
+        "fall",
+        "hit_to_head",
+        "dance_02",
+        "greet_01",
+        "front_kick_01"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/tripo-master-native-pack/master-h31-unity-native-pack.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_24406674-838c-4bb3-8c8b-9102c9451b04.fbx",
+            "bytes": 8259260,
+            "crc32": "dd971295"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [
+      "box_02",
+      "dance_05",
+      "hit_to_head",
+      "dance_02",
+      "front_kick_01"
+    ],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "c9056e7c9391d481487a9aa0e6ed7155"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "54f1f33cc34304f818c2ee9ae72f662c"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "77435e5082fed4749b9f1f5354202f5d"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "6830f840288674972b975ed806e67061"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 3,
+    "name": "Island",
+    "catalog": "unity/Assets/NativeSupport/Island/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "0345e374a128d45edb31d5da208cac3a"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "8b0449c43ef2046e4a21b21001bac544"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "c4b62f48eef61414ab81aee0c504b63b"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "ac91e3f54cb2b45c6bde4a12cfcdeca0"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Island/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Island/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Island/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Island/Clips/Defeat.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoIslandPlayable/Source/Island/model.fbx",
+        "takes": [
+          "walk",
+          "box_01",
+          "greet_01",
+          "box_02",
+          "dance_01",
+          "front_kick_01",
+          "defeat_02"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoHeadReaction/Clips/Ranger-hit_to_head.anim"
+    ],
+    "catalogEntryCount": 4,
+    "boundNativeFKEntryCount": 4,
+    "boundNativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "0345e374a128d45edb31d5da208cac3a"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "8b0449c43ef2046e4a21b21001bac544"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "c4b62f48eef61414ab81aee0c504b63b"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "ac91e3f54cb2b45c6bde4a12cfcdeca0"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 4,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoIslandPlayable/IslandHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Island/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "0a916f16b6f844be6edfc12b71d74c99e46a1cf175d61b217ae79d9a286caebd",
+        "packedPayload": "unity/Assets/NativeSupport/Island/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Island/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "2dc56630fb1367b9ccc7774806a04c90f1b826f38ed324f4069147c14f7292cd",
+        "packedPayload": "unity/Assets/NativeSupport/Island/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Island/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "bacb557a9e3dea75e7351f8e45afae0f7ca53c6191411008ce2ce17f0e455482",
+        "packedPayload": "unity/Assets/NativeSupport/Island/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Island/Clips/Defeat.pose.asset",
+        "duration": 8.458334,
+        "curveHash": "a5035cabbce28ed2400cb1acee7529f8cbb5963fa7bce96321cdccf16d5c9955",
+        "packedPayload": "unity/Assets/NativeSupport/Island/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/island-tripo-v1/unity-pack/tripo_convert_d0bdd788-3a48-49bb-b11c-48b67ea2b186.fbx",
+      "sha256": "5cc8b7208f3267cb1e20909bcff4eb04a9b9bf58ce7f28ebb77bbdb516c41a24",
+      "mainModelSHA256": "5cc8b7208f3267cb1e20909bcff4eb04a9b9bf58ce7f28ebb77bbdb516c41a24",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "walk",
+        "box_01",
+        "greet_01",
+        "box_02",
+        "dance_01",
+        "front_kick_01",
+        "defeat_02"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/island-tripo-v1/unity-pack/original-export.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_d0bdd788-3a48-49bb-b11c-48b67ea2b186.fbx",
+            "bytes": 6901692,
+            "crc32": "6c90a157"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [
+      "box_01",
+      "box_02",
+      "front_kick_01"
+    ],
+    "highReactionOwnSource": false,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "0345e374a128d45edb31d5da208cac3a"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "8b0449c43ef2046e4a21b21001bac544"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "c4b62f48eef61414ab81aee0c504b63b"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "ac91e3f54cb2b45c6bde4a12cfcdeca0"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 4,
+    "name": "Rose",
+    "catalog": "unity/Assets/NativeSupport/Rose/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "bdd2359f23fe746289803840db05a5cd"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3c37463fe9901496a8252eca0c0609fa"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "e9b57d4a4d1534cf5883c9d3c1dbb8bb"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "a83a8a11cc33143f985039ff13c6236a"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "eb0de5e93f4ce49fc9c0298e93bdb267"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Rose/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Rose/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Rose/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Rose/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Rose/Clips/Victory.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoPlayable/Source/Rose/model.fbx",
+        "takes": [
+          "front_kick_01",
+          "greet_01",
+          "cheer",
+          "fall",
+          "walk",
+          "box_02",
+          "hit_to_head",
+          "dance_01"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoHeadReaction/Clips/Rose-hit_to_head.anim"
+    ],
+    "catalogEntryCount": 5,
+    "boundNativeFKEntryCount": 5,
+    "boundNativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "bdd2359f23fe746289803840db05a5cd"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3c37463fe9901496a8252eca0c0609fa"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "e9b57d4a4d1534cf5883c9d3c1dbb8bb"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "a83a8a11cc33143f985039ff13c6236a"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "eb0de5e93f4ce49fc9c0298e93bdb267"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 5,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoPlayable/RoseHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Rose/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "9a45191c2532b04dd1ad3182b1404e9f96dedbe433e3171a55bacee571087e11",
+        "packedPayload": "unity/Assets/NativeSupport/Rose/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Rose/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "c84cec78e4f5207f25928622c20553a57c846fb6e4acdba614cc3618cc63b42e",
+        "packedPayload": "unity/Assets/NativeSupport/Rose/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Rose/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "494d52d8c5d1be30331a829fd57d870727b86c3b93a047f07a8c4362de0a723f",
+        "packedPayload": "unity/Assets/NativeSupport/Rose/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Rose/Clips/Defeat.pose.asset",
+        "duration": 3.0,
+        "curveHash": "c90116d69db1f55ba184dba21f50fb8734df533b4857998925bdf95725ca8841",
+        "packedPayload": "unity/Assets/NativeSupport/Rose/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Rose/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "38c9ed4ca655daaadfde868dd6f3950c1e71ab480e33839afe10e8708efb5caf",
+        "packedPayload": "unity/Assets/NativeSupport/Rose/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/rose-tripo-v1/unity-pack/tripo_convert_fbd6ea7e-51f1-4d2b-862f-11e9d15b1b6e.fbx",
+      "sha256": "7f3035f381bf0896cdad64c38c8237ec3dc7253b49f852a602771ce83b2e04c4",
+      "mainModelSHA256": "7f3035f381bf0896cdad64c38c8237ec3dc7253b49f852a602771ce83b2e04c4",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "front_kick_01",
+        "greet_01",
+        "cheer",
+        "fall",
+        "walk",
+        "box_02",
+        "hit_to_head",
+        "dance_01"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/rose-tripo-v1/unity-pack/original-export.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_fbd6ea7e-51f1-4d2b-862f-11e9d15b1b6e.fbx",
+            "bytes": 7598988,
+            "crc32": "9824b8d2"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [
+      "front_kick_01",
+      "box_02",
+      "hit_to_head"
+    ],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "bdd2359f23fe746289803840db05a5cd"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3c37463fe9901496a8252eca0c0609fa"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "e9b57d4a4d1534cf5883c9d3c1dbb8bb"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "a83a8a11cc33143f985039ff13c6236a"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "eb0de5e93f4ce49fc9c0298e93bdb267"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 5,
+    "name": "Ranger",
+    "catalog": "unity/Assets/NativeSupport/Ranger/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "569103bb3c8454cac8fd167b636673d2"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "eac3a736cf9bc49d0909d0f62152a7ac"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "eeb0a482c38fc43488fdc9e002710d0a"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "07c3a0417965a43b39c3f90ab4d9e88c"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "64a4b94653c774684919e3a050ac7374"
+      },
+      {
+        "state": "Stand",
+        "source": "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "poseGUID": "cfc3c870962ed4f74b47aa6dcb789f6c"
+      },
+      {
+        "state": "Guard",
+        "source": "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "poseGUID": "cfc3c870962ed4f74b47aa6dcb789f6c"
+      },
+      {
+        "state": "Idle",
+        "source": "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "poseGUID": "cfc3c870962ed4f74b47aa6dcb789f6c"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Ranger/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Ranger/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Ranger/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Ranger/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Ranger/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Idle",
+        "path": "Assets/NativeSupport/Ranger/Clips/Idle.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoRangerPlayable/Source/Ranger/model.fbx",
+        "takes": [
+          "fall",
+          "greet_01",
+          "walk",
+          "box_02",
+          "dance_01",
+          "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+          "hit_to_head",
+          "cheer"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoHeadReaction/Clips/Ranger-hit_to_head.anim"
+    ],
+    "catalogEntryCount": 8,
+    "boundNativeFKEntryCount": 7,
+    "boundNativeFKEntries": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "569103bb3c8454cac8fd167b636673d2"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "eac3a736cf9bc49d0909d0f62152a7ac"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "eeb0a482c38fc43488fdc9e002710d0a"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "07c3a0417965a43b39c3f90ab4d9e88c"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "64a4b94653c774684919e3a050ac7374"
+      },
+      {
+        "state": "Stand",
+        "source": "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "poseGUID": "cfc3c870962ed4f74b47aa6dcb789f6c"
+      },
+      {
+        "state": "Idle",
+        "source": "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "poseGUID": "cfc3c870962ed4f74b47aa6dcb789f6c"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [
+      "Guard"
+    ],
+    "uniqueBoundSourceTakeCount": 6,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoRangerPlayable/RangerHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Ranger/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "98d3c040d06ebc365ee1ddcd45807020ac9d1266035ff0cfcc8872310e91318b",
+        "packedPayload": "unity/Assets/NativeSupport/Ranger/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Ranger/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "488ff17f098a3e6e37806e0bc40237e6f032b11bc6b14dbd4600f6e2afe67f5b",
+        "packedPayload": "unity/Assets/NativeSupport/Ranger/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Ranger/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "ccc5b3b41e835f49a42f7d3ec957deb8843b2d670b2713b9efd55d44cd715de0",
+        "packedPayload": "unity/Assets/NativeSupport/Ranger/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Ranger/Clips/Defeat.pose.asset",
+        "duration": 3.0,
+        "curveHash": "ee4875dc850e594e50f8dffab45ab33dfc12af7803e80db413ee2fe081c7d5cf",
+        "packedPayload": "unity/Assets/NativeSupport/Ranger/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Ranger/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "ca98f5f749308df29083112f9b32867c0b3cdf2f1b856226f2a418671dbdf159",
+        "packedPayload": "unity/Assets/NativeSupport/Ranger/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Stand",
+        "pose": "unity/Assets/NativeSupport/Ranger/Clips/Stand.pose.asset",
+        "duration": 4.9583335,
+        "curveHash": "80f7e44a6d6df91e91dcf78a06b3736601fff0cb8781dc60bd2305b30fc2fabc",
+        "packedPayload": "unity/Assets/NativeSupport/Ranger/Clips/Stand.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Idle",
+        "pose": "unity/Assets/NativeSupport/Ranger/Clips/Stand.pose.asset",
+        "duration": 4.9583335,
+        "curveHash": "80f7e44a6d6df91e91dcf78a06b3736601fff0cb8781dc60bd2305b30fc2fabc",
+        "packedPayload": "unity/Assets/NativeSupport/Ranger/Clips/Stand.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/ranger-tripo-v1/unity-pack/tripo_convert_2ffb9d33-6de4-4535-a60c-7eee8e972039.fbx",
+      "sha256": "e41b690767619e35787625c54233db8369abe72ae2dda72d322005228d61dc7d",
+      "mainModelSHA256": "e41b690767619e35787625c54233db8369abe72ae2dda72d322005228d61dc7d",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "fall",
+        "greet_01",
+        "walk",
+        "box_02",
+        "dance_01",
+        "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "hit_to_head",
+        "cheer"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/ranger-tripo-v1/unity-pack/original-export.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_2ffb9d33-6de4-4535-a60c-7eee8e972039.fbx",
+            "bytes": 7653644,
+            "crc32": "c1132358"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [
+      "box_02",
+      "hit_to_head"
+    ],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "569103bb3c8454cac8fd167b636673d2"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "eac3a736cf9bc49d0909d0f62152a7ac"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "eeb0a482c38fc43488fdc9e002710d0a"
+      },
+      {
+        "state": "Defeat",
+        "source": "fall",
+        "poseGUID": "07c3a0417965a43b39c3f90ab4d9e88c"
+      },
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "64a4b94653c774684919e3a050ac7374"
+      },
+      {
+        "state": "Stand",
+        "source": "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "poseGUID": "cfc3c870962ed4f74b47aa6dcb789f6c"
+      },
+      {
+        "state": "Idle",
+        "source": "A seamless 5 second boxing idle loop. Stand in a relaxed orthod",
+        "poseGUID": "cfc3c870962ed4f74b47aa6dcb789f6c"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 6,
+    "name": "Gala",
+    "catalog": "unity/Assets/NativeSupport/Gala/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "d2a44709a6df54925bb1e006cd387c69"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "f5c1f2b7c07254b3e90cc707d84fed8e"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "beb5a300968e742bda8eec94ce781f70"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "cf2d34f775b67478c92783ded8a9d739"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "fdc9c80c937e34fde98031bbc4a449ba"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "c92e47fb7d0ab4c44b24e114f63b64b6"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "f3d135c4ca69d420fb6f8bc3db42f81b"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "0a688e627e6b5446e8e527dd936189da"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Gala/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Gala/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Gala/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Gala/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Gala/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "NativeBox02",
+        "path": "Assets/NativeSupport/Gala/Clips/NativeBox02.carrier.anim"
+      },
+      {
+        "state": "NativeFrontKick",
+        "path": "Assets/NativeSupport/Gala/Clips/NativeFrontKick.carrier.anim"
+      },
+      {
+        "state": "NativeHeadFull",
+        "path": "Assets/NativeSupport/Gala/Clips/NativeHeadFull.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFull/model.fbx",
+        "takes": [
+          "defeat_02",
+          "front_kick_01",
+          "walk",
+          "hit_to_head",
+          "greet_01",
+          "box_02",
+          "cheer",
+          "dance_01"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFullOriginal/model.fbx",
+        "takes": [
+          "defeat_02",
+          "front_kick_01",
+          "walk",
+          "hit_to_head",
+          "greet_01",
+          "box_02",
+          "cheer",
+          "dance_01"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFull/NativeClips/hit_to_head.anim"
+    ],
+    "catalogEntryCount": 8,
+    "boundNativeFKEntryCount": 8,
+    "boundNativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "d2a44709a6df54925bb1e006cd387c69"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "f5c1f2b7c07254b3e90cc707d84fed8e"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "beb5a300968e742bda8eec94ce781f70"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "cf2d34f775b67478c92783ded8a9d739"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "fdc9c80c937e34fde98031bbc4a449ba"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "c92e47fb7d0ab4c44b24e114f63b64b6"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "f3d135c4ca69d420fb6f8bc3db42f81b"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "0a688e627e6b5446e8e527dd936189da"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 8,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoGalaPlayable/GalaHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "abb6e0fe8cd09c664777a61556694bb8bd230c69ba01042e77752416466e1357",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "0055b18a1028dc93c0b0fad644772f2795e26f317e443a0d52ca6dcf0540188c",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "788b6368a0b8db8caf8b3d11c2cddf8151666802417058f078f9a85fca20cbc0",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/Defeat.pose.asset",
+        "duration": 8.458334,
+        "curveHash": "7ad4bf95eabbde43e3679cc3db888dca876ca15ed595b3e414876ca01b160fb3",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "806a4255cab1ea48671d6131226f45ee324e7799310eb13f1bde1077e792ac20",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeBox02",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/NativeBox02.pose.asset",
+        "duration": 2.7916667,
+        "curveHash": "61ba37b9eff2510ee5b1fcb097fbf28897fc3efcd8e6e5bcce4907c2694373b6",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/NativeBox02.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeFrontKick",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/NativeFrontKick.pose.asset",
+        "duration": 2.5,
+        "curveHash": "ead7ca0373ceb235c903f6f8bc94a5f42bc0b844926167afece3634f65f66150",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/NativeFrontKick.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeHeadFull",
+        "pose": "unity/Assets/NativeSupport/Gala/Clips/NativeHeadFull.pose.asset",
+        "duration": 1.8333334,
+        "curveHash": "1a3f101ab9514200ab0f1b2b558af294872b78e959e0ef868b950a19db3fff74",
+        "packedPayload": "unity/Assets/NativeSupport/Gala/Clips/NativeHeadFull.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/tripo-gala-native-full-pack/unpacked/tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbx",
+      "sha256": "7931891d9b48bf5e7797e92ac91836d80fb85eb7eb390ea740739171195224bf",
+      "mainModelSHA256": "7931891d9b48bf5e7797e92ac91836d80fb85eb7eb390ea740739171195224bf",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "defeat_02",
+        "front_kick_01",
+        "walk",
+        "hit_to_head",
+        "greet_01",
+        "box_02",
+        "cheer",
+        "dance_01"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/tripo-gala-native-full-pack/gala-h31-unity-native-full-pack.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_b1834bb3-15ed-410e-9656-7be544d001d4.fbx",
+            "bytes": 7601996,
+            "crc32": "5ff71655"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "d2a44709a6df54925bb1e006cd387c69"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "f5c1f2b7c07254b3e90cc707d84fed8e"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "beb5a300968e742bda8eec94ce781f70"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "cf2d34f775b67478c92783ded8a9d739"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "fdc9c80c937e34fde98031bbc4a449ba"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "c92e47fb7d0ab4c44b24e114f63b64b6"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "f3d135c4ca69d420fb6f8bc3db42f81b"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "0a688e627e6b5446e8e527dd936189da"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 7,
+    "name": "Cobalt",
+    "catalog": "unity/Assets/NativeSupport/Cobalt/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "1ad11e7e08770499b9a8830a9401027f"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "d3da0fb4407cb4bb4944c641e0165749"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3ef97f67bfc5c4b9db83bc4430d40aeb"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "acdb3c3702dd240a7936a9b08ba114a4"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "101d3327171d2480c8048e9c30e4bb9a"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "3c0c8d3285c5e49dbabcd4e61be8e63a"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "7ff423de108504e39b8d7d34347989d5"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "b427634fa17134b83be2d5c6ca4b55e0"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Cobalt/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Cobalt/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Cobalt/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Cobalt/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Cobalt/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "NativeBox02",
+        "path": "Assets/NativeSupport/Cobalt/Clips/NativeBox02.carrier.anim"
+      },
+      {
+        "state": "NativeFrontKick",
+        "path": "Assets/NativeSupport/Cobalt/Clips/NativeFrontKick.carrier.anim"
+      },
+      {
+        "state": "NativeHeadFull",
+        "path": "Assets/NativeSupport/Cobalt/Clips/NativeHeadFull.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoCobaltPlayable/Source/CobaltFull/model.fbx",
+        "takes": [
+          "walk",
+          "dance_01",
+          "hit_to_head",
+          "front_kick_01",
+          "greet_01",
+          "box_02",
+          "cheer",
+          "defeat_02"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoCobaltPlayable/Source/CobaltFullOriginal/model.fbx",
+        "takes": [
+          "walk",
+          "dance_01",
+          "hit_to_head",
+          "front_kick_01",
+          "greet_01",
+          "box_02",
+          "cheer",
+          "defeat_02"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoCobaltPlayable/Source/CobaltFull/NativeClips/hit_to_head.anim"
+    ],
+    "catalogEntryCount": 8,
+    "boundNativeFKEntryCount": 8,
+    "boundNativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "1ad11e7e08770499b9a8830a9401027f"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "d3da0fb4407cb4bb4944c641e0165749"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3ef97f67bfc5c4b9db83bc4430d40aeb"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "acdb3c3702dd240a7936a9b08ba114a4"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "101d3327171d2480c8048e9c30e4bb9a"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "3c0c8d3285c5e49dbabcd4e61be8e63a"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "7ff423de108504e39b8d7d34347989d5"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "b427634fa17134b83be2d5c6ca4b55e0"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 8,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoCobaltPlayable/CobaltHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "29fdda4af1b96e66bbdf41a60eb4c2186b38c0aed4afeddcb43dfac8cde241b0",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "b19084cff4cd41fbf01dfb1ab4a154f98bf053c6cd0900e2bae631fcd09631a0",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "d4067ace7f8f686739ea486db1646038ef5ee7b654599fbe0b4acb77b1e606d4",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/Defeat.pose.asset",
+        "duration": 8.458334,
+        "curveHash": "d42051e8532c4f12a24e3182412bca756d048d3d20b60350c406e463dbfcf4e2",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "9c1028ce239212b53516411f73ca4af81452435a8026f209d096bd0d2afa5a79",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeBox02",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/NativeBox02.pose.asset",
+        "duration": 2.7916667,
+        "curveHash": "d7f0e1ff5f5109407057316ce22c98b3501225377e81abb8f25a1f1dd051e573",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/NativeBox02.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeFrontKick",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/NativeFrontKick.pose.asset",
+        "duration": 2.5,
+        "curveHash": "1e0be244378204ecf4a4ec411159402333181ff49d92f5c04434e9c902b02f5a",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/NativeFrontKick.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeHeadFull",
+        "pose": "unity/Assets/NativeSupport/Cobalt/Clips/NativeHeadFull.pose.asset",
+        "duration": 1.8333334,
+        "curveHash": "7645b70a4c92c1730fc4866492b721bc2f8fd63daa3a7e5da304db8492040cdd",
+        "packedPayload": "unity/Assets/NativeSupport/Cobalt/Clips/NativeHeadFull.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/tripo-cobalt-native-full-pack/unpacked/tripo_convert_da47aeea-c0f9-420a-867c-3f3edd976556.fbx",
+      "sha256": "a1d3ea883c3c3546af56638c5f00119a6911e779ab2f0de41ae1dbc9468adb12",
+      "mainModelSHA256": "a1d3ea883c3c3546af56638c5f00119a6911e779ab2f0de41ae1dbc9468adb12",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "walk",
+        "dance_01",
+        "hit_to_head",
+        "front_kick_01",
+        "greet_01",
+        "box_02",
+        "cheer",
+        "defeat_02"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/tripo-cobalt-native-full-pack/cobalt-h31-unity-native-full-pack.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_da47aeea-c0f9-420a-867c-3f3edd976556.fbx",
+            "bytes": 7600348,
+            "crc32": "4344c3e8"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "1ad11e7e08770499b9a8830a9401027f"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "d3da0fb4407cb4bb4944c641e0165749"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "3ef97f67bfc5c4b9db83bc4430d40aeb"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "acdb3c3702dd240a7936a9b08ba114a4"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "101d3327171d2480c8048e9c30e4bb9a"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "3c0c8d3285c5e49dbabcd4e61be8e63a"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "7ff423de108504e39b8d7d34347989d5"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "b427634fa17134b83be2d5c6ca4b55e0"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 8,
+    "name": "Retro",
+    "catalog": "unity/Assets/NativeSupport/Retro/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "0d5c1c86d5c954169b050f6ff46d4efb"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "b5da273ae0f8b43e5854a53a9aabcdb2"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "c0a4e189bff5f43739464421fc97ffd3"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "2277eeef3f082495bba00955d60109a3"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "ec2d109d874074abeb778f7ee80d80f4"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "9dddb9825114a43ac8612161267f3e8d"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "d776a1b893ed84c83a87ddde471a6d40"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "df46426410fb44a74be1e34fa583e41b"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Retro/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Retro/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Retro/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Retro/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Retro/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "NativeBox02",
+        "path": "Assets/NativeSupport/Retro/Clips/NativeBox02.carrier.anim"
+      },
+      {
+        "state": "NativeFrontKick",
+        "path": "Assets/NativeSupport/Retro/Clips/NativeFrontKick.carrier.anim"
+      },
+      {
+        "state": "NativeHeadFull",
+        "path": "Assets/NativeSupport/Retro/Clips/NativeHeadFull.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoRetroPlayable/Source/RetroFull/model.fbx",
+        "takes": [
+          "greet_01",
+          "hit_to_head",
+          "walk",
+          "box_02",
+          "front_kick_01",
+          "dance_01",
+          "cheer",
+          "defeat_02"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoRetroPlayable/Source/RetroFullOriginal/model.fbx",
+        "takes": [
+          "greet_01",
+          "hit_to_head",
+          "walk",
+          "box_02",
+          "front_kick_01",
+          "dance_01",
+          "cheer",
+          "defeat_02"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoRetroPlayable/Source/RetroFull/NativeClips/hit_to_head.anim"
+    ],
+    "catalogEntryCount": 8,
+    "boundNativeFKEntryCount": 8,
+    "boundNativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "0d5c1c86d5c954169b050f6ff46d4efb"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "b5da273ae0f8b43e5854a53a9aabcdb2"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "c0a4e189bff5f43739464421fc97ffd3"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "2277eeef3f082495bba00955d60109a3"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "ec2d109d874074abeb778f7ee80d80f4"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "9dddb9825114a43ac8612161267f3e8d"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "d776a1b893ed84c83a87ddde471a6d40"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "df46426410fb44a74be1e34fa583e41b"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 8,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoRetroPlayable/RetroHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "d80c626f25428c8bf77f2b786b9fd908bd9b9e066630ac19ef5fc08cd6b1ad36",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "174ea2011f291e3bbcdb36ea077721a139bb967ffe21f6f8d54f20b2ebffe7f3",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "debd7532a199e04040abd17dee01c12645bb2b2bcbc55e8b3ed7fddebf4d5430",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/Defeat.pose.asset",
+        "duration": 8.458334,
+        "curveHash": "e20702d1a898ba10de61223cd418966ccddb3bdb424dcb5328cadd090579eaca",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "535ed59359c3b730ea23b7303f32e5778fee2635df93b79cea29a5ff8fd4bcc0",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeBox02",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/NativeBox02.pose.asset",
+        "duration": 2.7916667,
+        "curveHash": "9f129c8808b951542b276babdebf7e81648ead4c56f33161dc6af0cf79679a03",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/NativeBox02.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeFrontKick",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/NativeFrontKick.pose.asset",
+        "duration": 2.5,
+        "curveHash": "a8a8936a795d05ca71538fd25aa8247ac9e1fdceb38af8808084ae4674018ce5",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/NativeFrontKick.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeHeadFull",
+        "pose": "unity/Assets/NativeSupport/Retro/Clips/NativeHeadFull.pose.asset",
+        "duration": 1.8333334,
+        "curveHash": "b518d9b659356df429af45ca56d0b548b8407281c5b234a38ddb975bd50a29e1",
+        "packedPayload": "unity/Assets/NativeSupport/Retro/Clips/NativeHeadFull.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbx",
+      "sha256": "215a1f367cb3ce5db53fddab1a4f0dea6b3e8165a5fcabf944a470cb1079eec8",
+      "mainModelSHA256": "215a1f367cb3ce5db53fddab1a4f0dea6b3e8165a5fcabf944a470cb1079eec8",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "greet_01",
+        "hit_to_head",
+        "walk",
+        "box_02",
+        "front_kick_01",
+        "dance_01",
+        "cheer",
+        "defeat_02"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/tripo-retro-denim-native-full-pack/retro-apose-h31-unity-native-full-pack.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbx",
+            "bytes": 7664444,
+            "crc32": "66bf54a1"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "0d5c1c86d5c954169b050f6ff46d4efb"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "b5da273ae0f8b43e5854a53a9aabcdb2"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "c0a4e189bff5f43739464421fc97ffd3"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "2277eeef3f082495bba00955d60109a3"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "ec2d109d874074abeb778f7ee80d80f4"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "9dddb9825114a43ac8612161267f3e8d"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "d776a1b893ed84c83a87ddde471a6d40"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "df46426410fb44a74be1e34fa583e41b"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 9,
+    "name": "Sailor",
+    "catalog": "unity/Assets/NativeSupport/Sailor/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "027bb204f60704dc5aeae137f0a99181"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "dbdc0309d603c4cf1a2840a8cc27849b"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "d309e6c7024024b21802a43d578b5acf"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "6e10ab72b27db4a43a408eb42400e94c"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "a331545191de349fbbb0a935ae5b2ec3"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "92f0b71ca287c4e56b853d1f5c93c337"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "79fe07ae8ab5949a3b8ed8e0e45d4d34"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "eae8acbda74b0438a8a860779ffe581d"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Sailor/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Sailor/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Sailor/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Sailor/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Sailor/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "NativeBox02",
+        "path": "Assets/NativeSupport/Sailor/Clips/NativeBox02.carrier.anim"
+      },
+      {
+        "state": "NativeFrontKick",
+        "path": "Assets/NativeSupport/Sailor/Clips/NativeFrontKick.carrier.anim"
+      },
+      {
+        "state": "NativeHeadFull",
+        "path": "Assets/NativeSupport/Sailor/Clips/NativeHeadFull.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoSailorPlayable/Source/SailorFull/model.fbx",
+        "takes": [
+          "hit_to_head",
+          "cheer",
+          "front_kick_01",
+          "defeat_02",
+          "greet_01",
+          "walk",
+          "dance_01",
+          "box_02"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoSailorPlayable/Source/SailorFullOriginal/model.fbx",
+        "takes": [
+          "hit_to_head",
+          "cheer",
+          "front_kick_01",
+          "defeat_02",
+          "greet_01",
+          "walk",
+          "dance_01",
+          "box_02"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoSailorPlayable/Source/SailorFull/NativeClips/hit_to_head.anim"
+    ],
+    "catalogEntryCount": 8,
+    "boundNativeFKEntryCount": 8,
+    "boundNativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "027bb204f60704dc5aeae137f0a99181"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "dbdc0309d603c4cf1a2840a8cc27849b"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "d309e6c7024024b21802a43d578b5acf"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "6e10ab72b27db4a43a408eb42400e94c"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "a331545191de349fbbb0a935ae5b2ec3"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "92f0b71ca287c4e56b853d1f5c93c337"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "79fe07ae8ab5949a3b8ed8e0e45d4d34"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "eae8acbda74b0438a8a860779ffe581d"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 8,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoSailorPlayable/SailorHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "27cd4987afa44f121948cc083d9900fec50351eae5ed40fb1a13817c25f10e58",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "a55538020db1ef221fe0265f8cd3d0758c1636cc8094c491823839719659766d",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "05af28cc2dad40ca9fd730bab7e4559cf3b5cd2e8750fa7baa8229c6d55ab6f7",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/Defeat.pose.asset",
+        "duration": 8.458334,
+        "curveHash": "22d5a49b3791c4bd43d6d55925b4c94a8af90bf240ffc1b0c66194be27cb216a",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "e78701d91836662489f5d9273bb8c2cbf1c0605cddadc7798a6b377041bcb1d5",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeBox02",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/NativeBox02.pose.asset",
+        "duration": 2.7916667,
+        "curveHash": "aaf70b4cb55922aa75f11b76e4a69da91e046356594c221a0b230fa4d2cd7e1f",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/NativeBox02.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeFrontKick",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/NativeFrontKick.pose.asset",
+        "duration": 2.5,
+        "curveHash": "b8d6150821c547da79e4e8beae493f024feded2bc6b3e1b26fd5a9cb04eb819c",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/NativeFrontKick.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeHeadFull",
+        "pose": "unity/Assets/NativeSupport/Sailor/Clips/NativeHeadFull.pose.asset",
+        "duration": 1.8333334,
+        "curveHash": "e5e030c259a855cd157038eef5c01cdc08313d0b9f7508bb54f314ebf395ecd0",
+        "packedPayload": "unity/Assets/NativeSupport/Sailor/Clips/NativeHeadFull.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx",
+      "sha256": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+      "mainModelSHA256": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "hit_to_head",
+        "cheer",
+        "front_kick_01",
+        "defeat_02",
+        "greet_01",
+        "walk",
+        "dance_01",
+        "box_02"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/tripo-striped-sailor-native-full-pack/sailor-h31-unity-native-full-pack.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx",
+            "bytes": 7599596,
+            "crc32": "31e95615"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "027bb204f60704dc5aeae137f0a99181"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "dbdc0309d603c4cf1a2840a8cc27849b"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "d309e6c7024024b21802a43d578b5acf"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "6e10ab72b27db4a43a408eb42400e94c"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "a331545191de349fbbb0a935ae5b2ec3"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "92f0b71ca287c4e56b853d1f5c93c337"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "79fe07ae8ab5949a3b8ed8e0e45d4d34"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "eae8acbda74b0438a8a860779ffe581d"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  },
+  {
+    "index": 10,
+    "name": "Summer",
+    "catalog": "unity/Assets/NativeSupport/Summer/integration.asset",
+    "nativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "92d4793bf32b740dc8a99ca2f3d5d2df"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "8a4d6028f3fd34b39b389412736b117c"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "91df4731ffe1745e5ac5888b6ca89eec"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "9fdd41ef4679a49a39977fdfca1568da"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "56cb14f1c28824f57ac101f42b4c944c"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "67d843ce87edb4f44b3c9de5fb4ff07f"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "3d8e1f8d49fac4766826116da43fbc2c"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "5426659a2f799445892a93564307b5bf"
+      }
+    ],
+    "runtimeClips": [
+      {
+        "state": "Idle",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "Guard",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim"
+      },
+      {
+        "state": "WalkBack",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim"
+      },
+      {
+        "state": "Hit",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim"
+      },
+      {
+        "state": "Fall",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim"
+      },
+      {
+        "state": "GetUp",
+        "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim"
+      },
+      {
+        "state": "Victory",
+        "path": "Assets/NativeSupport/Summer/Clips/Victory.carrier.anim"
+      },
+      {
+        "state": "Greeting",
+        "path": "Assets/NativeSupport/Summer/Clips/Greeting.carrier.anim"
+      },
+      {
+        "state": "Dance",
+        "path": "Assets/NativeSupport/Summer/Clips/Dance.carrier.anim"
+      },
+      {
+        "state": "Defeat",
+        "path": "Assets/NativeSupport/Summer/Clips/Defeat.carrier.anim"
+      },
+      {
+        "state": "Walk",
+        "path": "Assets/NativeSupport/Summer/Clips/Walk.carrier.anim"
+      },
+      {
+        "state": "NativeBox02",
+        "path": "Assets/NativeSupport/Summer/Clips/NativeBox02.carrier.anim"
+      },
+      {
+        "state": "NativeFrontKick",
+        "path": "Assets/NativeSupport/Summer/Clips/NativeFrontKick.carrier.anim"
+      },
+      {
+        "state": "NativeHeadFull",
+        "path": "Assets/NativeSupport/Summer/Clips/NativeHeadFull.carrier.anim"
+      }
+    ],
+    "sourceModels": [
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/SummerFull/model.fbx",
+        "takes": [
+          "cheer",
+          "greet_01",
+          "dance_01",
+          "box_02",
+          "front_kick_01",
+          "hit_to_head",
+          "walk",
+          "defeat_02"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/SummerOriginal/model.fbx",
+        "takes": [
+          "box_02"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/SummerFullOriginal/model.fbx",
+        "takes": [
+          "cheer",
+          "greet_01",
+          "dance_01",
+          "box_02",
+          "front_kick_01",
+          "hit_to_head",
+          "walk",
+          "defeat_02"
+        ]
+      },
+      {
+        "path": "unity/Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/Summer/model.fbx",
+        "takes": [
+          "box_02"
+        ]
+      }
+    ],
+    "highReaction": [
+      "Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/SummerFull/NativeClips/hit_to_head.anim"
+    ],
+    "catalogEntryCount": 8,
+    "boundNativeFKEntryCount": 8,
+    "boundNativeFKEntries": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "92d4793bf32b740dc8a99ca2f3d5d2df"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "8a4d6028f3fd34b39b389412736b117c"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "91df4731ffe1745e5ac5888b6ca89eec"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "9fdd41ef4679a49a39977fdfca1568da"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "56cb14f1c28824f57ac101f42b4c944c"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "67d843ce87edb4f44b3c9de5fb4ff07f"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "3d8e1f8d49fac4766826116da43fbc2c"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "5426659a2f799445892a93564307b5bf"
+      }
+    ],
+    "deliberatelyFilteredCatalogStates": [],
+    "uniqueBoundSourceTakeCount": 8,
+    "prefab": "unity/Assets/LighFight/Art/Drafts/TripoSummerPlayable/SummerHumanoidCandidate.prefab",
+    "boundPosePayloads": [
+      {
+        "state": "Victory",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/Victory.pose.asset",
+        "duration": 12.083334,
+        "curveHash": "dfafe4f424f10945f94540cb7a7a4cebb3f271dc6de4612a93dc5d87ea64753c",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/Victory.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Greeting",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/Greeting.pose.asset",
+        "duration": 3.5,
+        "curveHash": "474ced0044520064b61e78c7aae70cfb968534e7a3a8df23f028e87323740adb",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/Greeting.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Dance",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/Dance.pose.asset",
+        "duration": 23.166668,
+        "curveHash": "2b3cb43d519a492100995559463ce6bd69bee321c58997a25c915ee8a827245d",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/Dance.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Defeat",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/Defeat.pose.asset",
+        "duration": 8.458334,
+        "curveHash": "e749b5bc4e8d30de7c286e7a5c6b35d8f1fb8e628518d86f0c51ab0d57b7662b",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/Defeat.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "Walk",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/Walk.pose.asset",
+        "duration": 2.3333335,
+        "curveHash": "08c922ddd922454ba9fcac4e8d2d4ad5583f3f35a6e6818001acba61ffc518e3",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/Walk.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeBox02",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/NativeBox02.pose.asset",
+        "duration": 2.7916667,
+        "curveHash": "a72ccb38fe16cc6a24483821d00c45632e6ec2da87627514cdaea5010406f09d",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/NativeBox02.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeFrontKick",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/NativeFrontKick.pose.asset",
+        "duration": 2.5,
+        "curveHash": "8fc6ec5ee611cc9787c749a0d2a7e149d15f5c72b90cfa99c9bcfdc28ead780e",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/NativeFrontKick.pose.asset.curves.bytes",
+        "payloadExists": true
+      },
+      {
+        "state": "NativeHeadFull",
+        "pose": "unity/Assets/NativeSupport/Summer/Clips/NativeHeadFull.pose.asset",
+        "duration": 1.8333334,
+        "curveHash": "f4052743b16a10367e02c36d002b16f345c16cf7cc121a46157289a237e100ad",
+        "packedPayload": "unity/Assets/NativeSupport/Summer/Clips/NativeHeadFull.pose.asset.curves.bytes",
+        "payloadExists": true
+      }
+    ],
+    "nativeArchiveFBX": {
+      "path": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbx",
+      "sha256": "5b94ab2e5547fe9463de4663694f55f2854e18d4c7b7ef9e499bb54dacbbad67",
+      "mainModelSHA256": "5b94ab2e5547fe9463de4663694f55f2854e18d4c7b7ef9e499bb54dacbbad67",
+      "byteIdentityWithMain": true,
+      "actualTakes": [
+        "cheer",
+        "greet_01",
+        "dance_01",
+        "box_02",
+        "front_kick_01",
+        "hit_to_head",
+        "walk",
+        "defeat_02"
+      ]
+    },
+    "archives": [
+      {
+        "path": "art/source/tripo-summer-native-full-pack/summer-h31-unity-native-full-pack.zip",
+        "fbxMembers": [
+          {
+            "name": "tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbx",
+            "bytes": 7618956,
+            "crc32": "6fe07f56"
+          }
+        ]
+      }
+    ],
+    "omittedGenericSourceTakes": [],
+    "highReactionOwnSource": true,
+    "actualPrefabBindingMetadata": [
+      {
+        "state": "Victory",
+        "source": "cheer",
+        "poseGUID": "92d4793bf32b740dc8a99ca2f3d5d2df"
+      },
+      {
+        "state": "Greeting",
+        "source": "greet_01",
+        "poseGUID": "8a4d6028f3fd34b39b389412736b117c"
+      },
+      {
+        "state": "Dance",
+        "source": "dance_01",
+        "poseGUID": "91df4731ffe1745e5ac5888b6ca89eec"
+      },
+      {
+        "state": "Defeat",
+        "source": "defeat_02",
+        "poseGUID": "9fdd41ef4679a49a39977fdfca1568da"
+      },
+      {
+        "state": "Walk",
+        "source": "walk",
+        "poseGUID": "56cb14f1c28824f57ac101f42b4c944c"
+      },
+      {
+        "state": "NativeBox02",
+        "source": "box_02",
+        "poseGUID": "67d843ce87edb4f44b3c9de5fb4ff07f"
+      },
+      {
+        "state": "NativeFrontKick",
+        "source": "front_kick_01",
+        "poseGUID": "3d8e1f8d49fac4766826116da43fbc2c"
+      },
+      {
+        "state": "NativeHeadFull",
+        "source": "hit_to_head",
+        "poseGUID": "5426659a2f799445892a93564307b5bf"
+      }
+    ],
+    "catalogAndPrefabBindingsAgree": true
+  }
+]

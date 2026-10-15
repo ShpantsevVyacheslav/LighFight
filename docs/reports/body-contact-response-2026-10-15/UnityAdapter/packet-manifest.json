@@ -1,0 +1,665 @@
+{
+  "reviewOnly": true,
+  "mainMutated": false,
+  "unityPlayerExecuted": false,
+  "regularityCertified": false,
+  "files": [
+    {
+      "path": "UnityAdapter/AcceptancePlan.md",
+      "bytes": 4421,
+      "sha256": "31739af2e87e4dd2ad29ed5f14ebb0a048327f2ba27b3bf607d6e32ad9844dc3"
+    },
+    {
+      "path": "UnityAdapter/AnimatorPhaseCollisionBridge.cs",
+      "bytes": 5785,
+      "sha256": "c55bbe14f14bb01a9ad339322a05bf840ad599ae9624fd178b0d04b151afb866"
+    },
+    {
+      "path": "UnityAdapter/Fixtures/AllInfluences.bytes",
+      "bytes": 2912140,
+      "sha256": "22aad0de0730a458614bbab30441d75d95264823c795db1e5c8ca43cec934791"
+    },
+    {
+      "path": "UnityAdapter/Fixtures/Compact16.bytes",
+      "bytes": 1348828,
+      "sha256": "06da517163fb538265d3dd3a7179e4dd373763f5b4e376a41b9bb7d99278f7cd"
+    },
+    {
+      "path": "UnityAdapter/Fixtures/OriginalBoneNames.txt",
+      "bytes": 918,
+      "sha256": "562ec46a02d14ae651db7d535f7a5fa8e3b7186de071f64e9d74349af48b47e8"
+    },
+    {
+      "path": "UnityAdapter/Fixtures/SourceOriginalMesh.bytes",
+      "bytes": 3713388,
+      "sha256": "bfeae8add38cd7defe59da62136010acfeb9769e5cca581cb3b112f908791ede"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/bone-names.txt",
+      "bytes": 918,
+      "sha256": "562ec46a02d14ae651db7d535f7a5fa8e3b7186de071f64e9d74349af48b47e8"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/boundary-analysis.json",
+      "bytes": 37086,
+      "sha256": "6dda37c40cf0bff5e3843956e456e43c704092057ab77959486bfd9c0d9374bb"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/boundary-analysis.log",
+      "bytes": 4798,
+      "sha256": "6e2365902d710808bf1000504cf467c41aa4f7917b9a1bc2bea98ec1ef224b5b"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/containment-cases.bin",
+      "bytes": 2190,
+      "sha256": "ff85cc397471e395172a9456571da9f975d18f30587e9a131770316b22577596"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/containment-freeze.log",
+      "bytes": 1916,
+      "sha256": "825b36248148740ac03572128435256778b349cef648ce0e7c30a1e60f754e70"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/containment-independent.json",
+      "bytes": 9324,
+      "sha256": "b315cd9afb7b3f4a727e6a4a221ce8ca334ee7ab17ef37f676b9c917ea90f8a8"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/freeze.log",
+      "bytes": 502,
+      "sha256": "58b8fc4ab168073bbdd1cd6513f3a68de2928edb9fc45a7ddf16c93c512a8201"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/independent-csharp-parity.json",
+      "bytes": 460,
+      "sha256": "b7f5edb4a2c033b84fcf1a072c6204cbc47793787df723874cd1e48dcc0e99f8"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/independent-manifest.json",
+      "bytes": 570,
+      "sha256": "c0864e5c04b188c9e6db529b2a90845bed9b37bbe8c50d7f77b2a623c44a5693"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/main-shell-proposal.json",
+      "bytes": 3044,
+      "sha256": "8ddcbfebb9560a27bcb1acde5b283b0e4de71b1ba3de94b4b1f9f640ef1bf959"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/main-shell-proposal.log",
+      "bytes": 3045,
+      "sha256": "f87c5474a05295b0345ab8042f3b1db6da3491619b373f6bccaa892ec612fd16"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/original-mesh.bin",
+      "bytes": 3713388,
+      "sha256": "bfeae8add38cd7defe59da62136010acfeb9769e5cca581cb3b112f908791ede"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/production-cross-0.9-14.pose.bin",
+      "bytes": 8576,
+      "sha256": "09d3975e9175eeece15817e29efeb6ec08e8cf690d6499966cbfa7df3c07ee4f"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/production-cross-0.9-14.pose.independent.json",
+      "bytes": 72692,
+      "sha256": "4b5256311897bd11565cf2e3b905c3335d757017cfcb79aec5e90c8a00762aa6"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/production-jab-0.65-0.pose.bin",
+      "bytes": 8576,
+      "sha256": "67ea2d56f632055f111341a125ca3ad1e93250e19fa0ba8b99a424b4bb157b99"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/production-jab-0.65-0.pose.independent.json",
+      "bytes": 67650,
+      "sha256": "08ece90671fe8f87e0eb6609d55a69f43a9bbce2d0334e3d8081ec9207f5a7a7"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/production-jab-0.65-7.pose.bin",
+      "bytes": 8576,
+      "sha256": "2775be11f1fcfca4a6c2483b61c6c49624bd17a24bb1bd482bdb72676acf7879"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/production-jab-0.65-7.pose.independent.json",
+      "bytes": 111541,
+      "sha256": "a2d6cfa70cb837c2ee238896707a6ee3d1b415f9daffabf37c8230ce5219c4b1"
+    },
+    {
+      "path": "UnityAdapter/FrozenOracle/source-topology.json",
+      "bytes": 530,
+      "sha256": "fea9fe5dade7fc779297859ea71df2cad814d4a58e67a2b766e1830aa431345d"
+    },
+    {
+      "path": "UnityAdapter/README.md",
+      "bytes": 7653,
+      "sha256": "5ececa885164160d9b9d72e22ae25b83581588829efc8e7705da32e57188491f"
+    },
+    {
+      "path": "UnityAdapter/SourceNearRangeAudit.cs",
+      "bytes": 6810,
+      "sha256": "38491dc13547f8bb56ca4b9a4b7988c49a2f40e6e16976f48750fe0be8b19a31"
+    },
+    {
+      "path": "UnityAdapter/SourceSurfaceReviewAdapter.cs",
+      "bytes": 9645,
+      "sha256": "2648fdffedba90c4e364adfb41cfa624ce77ea87da7d702c7063af56c491e068"
+    },
+    {
+      "path": "UnityAdapter/SourceSurfaceReviewTap.cs",
+      "bytes": 2605,
+      "sha256": "ec11146f022d873785b226d9cd597c36e8b3cde72b03a9b243999e67efe6f0dc"
+    },
+    {
+      "path": "UnityAdapter/compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "UnityAdapter/compile.rsp",
+      "bytes": 44508,
+      "sha256": "1642ba06ef9bb5e177711872726be69cd0df5b125d7e89fafde45fe7e01a8d8c"
+    },
+    {
+      "path": "LazyExact/CandidateContainment.cs",
+      "bytes": 6040,
+      "sha256": "b4a770240fe6a70910a71d4dbc80bd8c44ab05a78bb75a50ab55bd591c086668"
+    },
+    {
+      "path": "LazyExact/CandidatePairInspection.cs",
+      "bytes": 2327,
+      "sha256": "86229f2f5cb1d0b09009f0eafc2e8c8ebb69003c2a3eac3da6671f2cd81fa3bc"
+    },
+    {
+      "path": "LazyExact/ContainmentProfile.cs",
+      "bytes": 5716,
+      "sha256": "d53d4bc10dd18120a662f0657daec79891e772dfb7eab03b1b098cc3400f62d7"
+    },
+    {
+      "path": "LazyExact/ContainmentTests.cs",
+      "bytes": 4468,
+      "sha256": "20d388c4cf36a75bc5b42bae97764d765d8c4d54aede639f7158c56435f3f7a3"
+    },
+    {
+      "path": "LazyExact/LazyProfile.cs",
+      "bytes": 9813,
+      "sha256": "6186c95db7e8c846c7fee33a9c698f0b875473d68d1e62f50d2525362fd332e9"
+    },
+    {
+      "path": "LazyExact/LazySurface.before-bound-optimization.cs.txt",
+      "bytes": 8573,
+      "sha256": "aaa896c537d04ccdf57aaf1100d83db0329139179b660e18a4d5afb8741de8de"
+    },
+    {
+      "path": "LazyExact/LazySurface.cs",
+      "bytes": 9899,
+      "sha256": "e995e747d1a6136d546dae1d8d30fb0096ce8723ed803b9c2c33ab5dfb867e09"
+    },
+    {
+      "path": "LazyExact/LazyTests.cs",
+      "bytes": 4365,
+      "sha256": "9c5149d26e8c67dfb2cbf85d8e11716d4d0e7ea2ae8402e6b3691f2caecba6be"
+    },
+    {
+      "path": "LazyExact/README.md",
+      "bytes": 5057,
+      "sha256": "fc5909a89f8ec79d291a374a6045715fc678166e2b60942357eea016d04d54f6"
+    },
+    {
+      "path": "LazyExact/containment-profile-mono.log",
+      "bytes": 2817,
+      "sha256": "f0301b2716a3218feff23322f79cd698768953e211d8059238f0fab08dfc5612"
+    },
+    {
+      "path": "LazyExact/containment-profile.log",
+      "bytes": 2817,
+      "sha256": "15da47a13babb04aaf36c898f0b9ee7c487c045ce232a39f4edf91b9a63b4bdb"
+    },
+    {
+      "path": "LazyExact/containment-profile.rsp",
+      "bytes": 27901,
+      "sha256": "e7bf5242198d934b74438df64dda8835e7ea58d9b33e38277f6c2af68d6a1298"
+    },
+    {
+      "path": "LazyExact/containment-profile.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "LazyExact/containment-tests-mono.log",
+      "bytes": 82,
+      "sha256": "a3c618243c32b172257dc4f2f7ceaf8b31f9b7956529957c162bb760ef0e3c5d"
+    },
+    {
+      "path": "LazyExact/containment-tests.log",
+      "bytes": 82,
+      "sha256": "a3c618243c32b172257dc4f2f7ceaf8b31f9b7956529957c162bb760ef0e3c5d"
+    },
+    {
+      "path": "LazyExact/containment-tests.rsp",
+      "bytes": 27897,
+      "sha256": "1382180799c154966626cfaebc400f83502fe37fef80bbda0e0820bbf8e42c6e"
+    },
+    {
+      "path": "LazyExact/containment-tests.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "LazyExact/lazy-authoritative-os.log",
+      "bytes": 753,
+      "sha256": "781eba5138c9604c1babeeac6b3affd67584d9781e3527fbaa748e1a77a29e03"
+    },
+    {
+      "path": "LazyExact/lazy-authoritative-stages.log",
+      "bytes": 1162,
+      "sha256": "b6186bb957764b131a742b1880e6cf31256fd6143fcbbaf4a321d2b52af80433"
+    },
+    {
+      "path": "LazyExact/lazy-final-os.log",
+      "bytes": 753,
+      "sha256": "8d26e6bcfb47746ee116c1d69499ee90f6d6706bba2d78a8a0493f6c1d7446f3"
+    },
+    {
+      "path": "LazyExact/lazy-final-stages.log",
+      "bytes": 1164,
+      "sha256": "5bc8e1bab7c65cbc02e8cb43d2c0a8be558d7a42799e907dfeacdd18df27331f"
+    },
+    {
+      "path": "LazyExact/lazy-frozen-os.log",
+      "bytes": 753,
+      "sha256": "90f6e86d55edf9659c5307f2403cc8a1d1f53e3d0ac823c8012fe31084662721"
+    },
+    {
+      "path": "LazyExact/lazy-frozen-stages.log",
+      "bytes": 1354,
+      "sha256": "4d62534fe04a8148d4329ad3ad398d1de8d2cc20432908e4195224c506194b7c"
+    },
+    {
+      "path": "LazyExact/lazy-mono-os.log",
+      "bytes": 753,
+      "sha256": "65bf40ab6d882bd3440d876321f2285d239d9838ff03d035c67f944a58253330"
+    },
+    {
+      "path": "LazyExact/lazy-mono-stages.log",
+      "bytes": 1266,
+      "sha256": "ce3f2da230193d3e4dc152db8ef6759b042bd003308aadc3cf1837ea2b8c69d6"
+    },
+    {
+      "path": "LazyExact/lazy-net6.rsp",
+      "bytes": 27727,
+      "sha256": "09fc63c419ffd7b9d12b1eb947a3e388f6e5fc05a66a93d56b2d7890944d344c"
+    },
+    {
+      "path": "LazyExact/lazy-net6.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "LazyExact/lazy-optimized-os.log",
+      "bytes": 753,
+      "sha256": "2d8ed1f0c91dd7c271602853d8bd9a76d1fe2465cb6314eda918d9782c0f98e1"
+    },
+    {
+      "path": "LazyExact/lazy-optimized-stages.log",
+      "bytes": 1162,
+      "sha256": "42bcbbd7dc5cfba0e1a4b1f8271b683ed99812b08688c2264f425164a8b110cf"
+    },
+    {
+      "path": "LazyExact/lazy-os.log",
+      "bytes": 753,
+      "sha256": "466ac443e7d9849d4350d2914aca41998fdbf9a2630990353ca20f2d7c46bd0d"
+    },
+    {
+      "path": "LazyExact/lazy-stages.log",
+      "bytes": 1166,
+      "sha256": "47707d23219ac6d39020849a5b4e12f296abdfa11f3180ac0130c45979ca82b4"
+    },
+    {
+      "path": "LazyExact/lazy-tests-mono.log",
+      "bytes": 70,
+      "sha256": "cfdb39301d1d322626765e31292eb655de972620635e93470203ab61985f19cf"
+    },
+    {
+      "path": "LazyExact/lazy-tests.log",
+      "bytes": 70,
+      "sha256": "cfdb39301d1d322626765e31292eb655de972620635e93470203ab61985f19cf"
+    },
+    {
+      "path": "LazyExact/lazy-tests.rsp",
+      "bytes": 27726,
+      "sha256": "00eee875efb0ce3a67e9a0b11ebc15df19b66857d1bc510250aa870f68e15b6c"
+    },
+    {
+      "path": "LazyExact/lazy-tests.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "LazyExact/sailor-lazy-all-influences.bin",
+      "bytes": 2912140,
+      "sha256": "22aad0de0730a458614bbab30441d75d95264823c795db1e5c8ca43cec934791"
+    },
+    {
+      "path": "ExactRefit/CompactGate.md",
+      "bytes": 2809,
+      "sha256": "ef203e7cb2fa72f3df52f77c8035a423b8ebb95d1ca46cc279437ac6e3a75cd0"
+    },
+    {
+      "path": "ExactRefit/CompactProfile.cs",
+      "bytes": 7257,
+      "sha256": "5e93f16e080ca29f7ed8d73aeff1667de4a825176d79fc8ac8a68ba49c1b7521"
+    },
+    {
+      "path": "ExactRefit/CompactSurface.cs",
+      "bytes": 7017,
+      "sha256": "830f6d125726a1f8903940b75d306f91771876b565f5676a4999e87e6ff12e59"
+    },
+    {
+      "path": "ExactRefit/CompactTests.cs",
+      "bytes": 2557,
+      "sha256": "3ace1d780adc5e367f457fc57c903b6c8d5b53eb82c3b9ada34e0bece3dcb6cf"
+    },
+    {
+      "path": "ExactRefit/ExactSurface.before-performance.cs.txt",
+      "bytes": 8404,
+      "sha256": "36b0a42ab121a72b91c506f0f861d90f3c1e74f42ea3d1b6a6f8a5a09875a7cb"
+    },
+    {
+      "path": "ExactRefit/ExactSurface.cs",
+      "bytes": 12555,
+      "sha256": "09bf908738b14734ff1d7c1787560fdb197c568bfffa72ca8309ffe256de49a1"
+    },
+    {
+      "path": "ExactRefit/ExactSurfaceTests.cs",
+      "bytes": 5279,
+      "sha256": "e8c3305218214f6d673cd14fb28bdf52291ed6dd1e7117e36c83bf8dd8027444"
+    },
+    {
+      "path": "ExactRefit/PerformanceDiagnosis.md",
+      "bytes": 4545,
+      "sha256": "cd80aade3675d24ed26aa21eeaaf4b4afe59d0a3b9f6c8c670bf2d47b9e8dcaa"
+    },
+    {
+      "path": "ExactRefit/ProductionAdapter.md",
+      "bytes": 3220,
+      "sha256": "61093c171908da105b071cfb2f48790fb78ea638552a2df5eb14f7a24688d2ec"
+    },
+    {
+      "path": "ExactRefit/Profile.cs",
+      "bytes": 4941,
+      "sha256": "cd5a8ca9d9633aae225d71e84f146a9a672986bf29b31d0eadacab5e80ab4303"
+    },
+    {
+      "path": "ExactRefit/README.md",
+      "bytes": 5892,
+      "sha256": "7dafbfac1755f2332a4b470ab84c4e1bbb669a7a626411d6cd04029f97d08136"
+    },
+    {
+      "path": "ExactRefit/compact-16.bin",
+      "bytes": 1348828,
+      "sha256": "06da517163fb538265d3dd3a7179e4dd373763f5b4e376a41b9bb7d99278f7cd"
+    },
+    {
+      "path": "ExactRefit/compact-4.bin",
+      "bytes": 3007316,
+      "sha256": "40b74f539e06530c27c246b00e4e732531c43e9ba6b0b84fc932f06b11dac68d"
+    },
+    {
+      "path": "ExactRefit/compact-8.bin",
+      "bytes": 1922936,
+      "sha256": "420518898100221082548ca61c4f815e057a51165edb0bb0ffe5677f633314de"
+    },
+    {
+      "path": "ExactRefit/compact-first-os.log",
+      "bytes": 753,
+      "sha256": "4923362197295e8b288172ed7210f5aac6a41b91e5b9f8173f2038bc9edb453b"
+    },
+    {
+      "path": "ExactRefit/compact-first-stages.log",
+      "bytes": 3199,
+      "sha256": "626da947e9731797349482f40cce9b84ff8abef88134c98941c4ef67566d5c0b"
+    },
+    {
+      "path": "ExactRefit/compact-net6.rsp",
+      "bytes": 27667,
+      "sha256": "5c562db7b9367a346b1e572f865466e86a55e07e5ed131b36e906ab4895ed023"
+    },
+    {
+      "path": "ExactRefit/compact-net6.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "ExactRefit/compact-os.log",
+      "bytes": 754,
+      "sha256": "f3ddb590bd206148d9282707080e48f5b19043636112dad675a3025624ee235a"
+    },
+    {
+      "path": "ExactRefit/compact-stages.log",
+      "bytes": 2648,
+      "sha256": "7eec76ee5b3594d5358bccfb05685395e5830b47c459644f2768fb1ca2a61a14"
+    },
+    {
+      "path": "ExactRefit/compact-tests.log",
+      "bytes": 27,
+      "sha256": "2b184f1a7deae232ee8c1793152244a0953fe76a861cde8fca49931eb5b4c828"
+    },
+    {
+      "path": "ExactRefit/compact-tests.rsp",
+      "bytes": 27666,
+      "sha256": "dc8c95f100560d9ce3d0ec15fd3c62c61f79be6bbdc97d90688e19af4eb394de"
+    },
+    {
+      "path": "ExactRefit/compact-tests.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "ExactRefit/csharp-tests.log",
+      "bytes": 170,
+      "sha256": "e0c47d5b2795d2208b32a782b6aa4504f1311a1681a5a1ff6f5380bedb56248f"
+    },
+    {
+      "path": "ExactRefit/mono-profile.log",
+      "bytes": 567,
+      "sha256": "51fe0f50344d67841e323d2c0231ce92d9802863f6de66c418c6b19074115062"
+    },
+    {
+      "path": "ExactRefit/net6-final-os.log",
+      "bytes": 754,
+      "sha256": "2faa147ececc5b2ecfbc8c0594de5b1a00af222a56b2649c4cabb9544b440022"
+    },
+    {
+      "path": "ExactRefit/net6-final-stages.log",
+      "bytes": 2874,
+      "sha256": "e08aefb6751997f478123bd3cd2e7ac4fde447dcef8d88f0a70c9fec9810775f"
+    },
+    {
+      "path": "ExactRefit/net6-fulljit-os.log",
+      "bytes": 753,
+      "sha256": "a87696ee39ba5090af87299a030e5e436c48d9ca478e2580162bf9ea79a9f67d"
+    },
+    {
+      "path": "ExactRefit/net6-fulljit-stages.log",
+      "bytes": 1715,
+      "sha256": "684cb8cbdcaaa8a95d4b818d61adca800fe9d96320e0d9b9da5f8ecbac12a0a7"
+    },
+    {
+      "path": "ExactRefit/net6-nativecpu-os.log",
+      "bytes": 754,
+      "sha256": "fc58262d0701c8b3a4cf39a7b491e0106e88f86cbf31c1bf34b183d09483eff3"
+    },
+    {
+      "path": "ExactRefit/net6-nativecpu.log",
+      "bytes": 1464,
+      "sha256": "a06fddf9e07fff3b66069d3cd1f337b895bfdd037fe28eb3b491ea54a7ea4e0e"
+    },
+    {
+      "path": "ExactRefit/net6-optimized-os.log",
+      "bytes": 753,
+      "sha256": "bf1d4d3bbcfd2ad795225daee88e216004fffcdd4dd43ea9575ddbc8a7537383"
+    },
+    {
+      "path": "ExactRefit/net6-optimized-stages.log",
+      "bytes": 1715,
+      "sha256": "1c5a8b4c62fb67a92183aa9a4ec955827533cd56475bc79b099cb94b2343e9f3"
+    },
+    {
+      "path": "ExactRefit/net6-os-time.log",
+      "bytes": 753,
+      "sha256": "52d008bdb305cbe0d6baccfc0b620e437540d928a2cbb0ed47430a51f57b15f1"
+    },
+    {
+      "path": "ExactRefit/net6-profile.log",
+      "bytes": 482,
+      "sha256": "d9b6b87d806bb80aafa8227595bdaa757d5767c69ab7672811c1aaf05e482e7a"
+    },
+    {
+      "path": "ExactRefit/net6-simd-os.log",
+      "bytes": 754,
+      "sha256": "1ab2529bb3811bb387183943a2ee45a3b238eeec30b5ec080d1963553b2cff3c"
+    },
+    {
+      "path": "ExactRefit/net6-simd-stages.log",
+      "bytes": 2528,
+      "sha256": "2e31b117f2b9bb491263654399df0ceaeb692d16ed3b7e9218befae8b8145728"
+    },
+    {
+      "path": "ExactRefit/net6-stages-time.log",
+      "bytes": 1452,
+      "sha256": "0e702bb1ff35177e809b746a1ac56b2ca08229859d5134cd4d26049d4c66a579"
+    },
+    {
+      "path": "ExactRefit/net6-stages.log",
+      "bytes": 1449,
+      "sha256": "7705df20b6d565fc7a0cab78f091188ac3bfcc36d2cd2f044a85a86544a6bbd6"
+    },
+    {
+      "path": "ExactRefit/net6-ternary-os.log",
+      "bytes": 753,
+      "sha256": "9cdf0ad888ce2bd8c080d8acc700f4b294923c205aaaed870df6c132c5f8dd7e"
+    },
+    {
+      "path": "ExactRefit/net6-ternary-stages.log",
+      "bytes": 1718,
+      "sha256": "f4a75133f9306c13fb693b66d3d88d404b76462145b03b433a24db1575627823"
+    },
+    {
+      "path": "ExactRefit/net6-tests.log",
+      "bytes": 256,
+      "sha256": "7389123378f2759a0692bae50e6ee18b9c92361997b6faec93e3ac1a57c2b8a0"
+    },
+    {
+      "path": "ExactRefit/net6.rsp",
+      "bytes": 27588,
+      "sha256": "33f16eebac47401fd192820c6928afed0038f7aea6dcf498e958cd6ad308dacc"
+    },
+    {
+      "path": "ExactRefit/profile-net6.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "ExactRefit/profile.json",
+      "bytes": 2631,
+      "sha256": "d006b3988143ee55392e829ba62f529edee7739d3518bae7ae52b3bdf40866a0"
+    },
+    {
+      "path": "ExactRefit/sailor-topology.bin",
+      "bytes": 2399968,
+      "sha256": "c58b19002a8b7d9786f8d7268badbe5b2d139925c44884ee179b078ed7cf536f"
+    },
+    {
+      "path": "ExactRefit/simd-capabilities.log",
+      "bytes": 68,
+      "sha256": "3dbfedb282394592a06dc1d1a8ba71439385eccf4ae934f1fe5d942e5cefc297"
+    },
+    {
+      "path": "ExactRefit/tests-net6.rsp",
+      "bytes": 27596,
+      "sha256": "38e3f7b8b12261ae77392dd41fc982a7defd9a56e715227d005e1d56835b6062"
+    },
+    {
+      "path": "ExactRefit/tests-net6.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    },
+    {
+      "path": "ExactRefit/trajectory-alias.bin",
+      "bytes": 228100,
+      "sha256": "66a1a213c2ce6c4508e981b62f5f4984e095cc428bc30a12bb40c9be3483c5fa"
+    },
+    {
+      "path": "ExactRefit/trajectory-alias.txt",
+      "bytes": 125,
+      "sha256": "62070eb01db0291b7296bc7226c3341191a9e799bd6fe863c67886e1dc41277c"
+    },
+    {
+      "path": "Response/MotionResponse.cs",
+      "bytes": 5141,
+      "sha256": "f066b15ee74e521dca93b8212c5a652b025beae185bf773963827d030cf37d3e"
+    },
+    {
+      "path": "Response/README.md",
+      "bytes": 3025,
+      "sha256": "f79dce01ab034bf4329e246bf25593ecc7b5569b9c0bc59ed7bb60b2145606c2"
+    },
+    {
+      "path": "Response/ResponseTests.cs",
+      "bytes": 4600,
+      "sha256": "f0ce7516804461ea9918b9cd0ec6d505c82e0afe81b1e21b38fe177a66553d00"
+    },
+    {
+      "path": "Response/SourceRootProfile.cs",
+      "bytes": 5614,
+      "sha256": "98617dcbca5090c9f3c7f1101e719b3a5427569cebb17669e65bc9e461ad40eb"
+    },
+    {
+      "path": "Response/TranslationSweep.cs",
+      "bytes": 5245,
+      "sha256": "58553bd633e1719b14151ece67be48719c968aef1ddf613463094ced6e35285d"
+    },
+    {
+      "path": "Response/TranslationSweep.endpoint-mutation.cs.txt",
+      "bytes": 5289,
+      "sha256": "34b900fd79b9f5fbe44a37dcab7335a4f62b4aaa4c4c36c39a2000094d051e88"
+    },
+    {
+      "path": "Response/compile.rsp",
+      "bytes": 663,
+      "sha256": "0badc76dc433dbcef56acc961f3c54e4a3426c79df416bcf8da62a98d3997782"
+    },
+    {
+      "path": "Response/mutation-red.log",
+      "bytes": 547,
+      "sha256": "195819be39c19615e05de970cc10d063f40ffa547aaf12e16f1555e8edf04c34"
+    },
+    {
+      "path": "Response/mutation.rsp",
+      "bytes": 688,
+      "sha256": "abcf94d66674d9cbcaeff236bfa035e3da2cc25094c35c2c04f5f50d19a87dd8"
+    },
+    {
+      "path": "Response/response-tests.log",
+      "bytes": 75,
+      "sha256": "444c6b4cb1b8087bcf991e0442add14b2ffa2b1aa8a9a9ab15ac0296059530fe"
+    },
+    {
+      "path": "Response/source-root-profile.log",
+      "bytes": 446,
+      "sha256": "81f9f2e537fdfd343af984142a41802f539b56f879b554d829aaab6bb5b266af"
+    },
+    {
+      "path": "Response/source-root-profile.rsp",
+      "bytes": 28039,
+      "sha256": "3f32033ac9781b9c1a9255f6544b6fd70b04868f93b6c00c5635faad237d953b"
+    },
+    {
+      "path": "Response/source-root-profile.runtimeconfig.json",
+      "bytes": 99,
+      "sha256": "891c2695027f977741d592826264458509b588cc9d97da6b4ed732f8b334f0b8"
+    }
+  ],
+  "temporalAnimatorCertificateImplemented": false,
+  "gameplayAccepted": false
+}
