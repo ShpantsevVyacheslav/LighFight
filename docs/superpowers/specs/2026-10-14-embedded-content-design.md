@@ -1,0 +1,13 @@
+# Embedded selected content for LighChat
+
+The authorized phone delivery must launch LighFight from LighChat Game Hub without requiring the Mac's localhost server. Bundle the content inside Unity's Data while retaining the current selected-only fighter/opponent/arena leases. The user requested autonomous implementation and no intermediate approval or test handoffs.
+
+Use Unity 6000.3.26f1 and existing Addressables. Build a local catalog using the standard local BuildPath/LoadPath, with remote-catalog building disabled. Package all catalog assets on disk; load only metadata initially and only selected bodies/arena on demand. Portraits for the roster may be available initially. Preserve exact source meshes/UV/maps/native curves; iPhone source-sized ASTC4x4 is already the texture policy.
+
+Add an explicit serialized embedded mode to ContentBootstrap. It reads a small generated descriptor, validates platform/Unity/content/player compatibility, initializes the packaged Addressables catalog, verifies the starter's download size is zero, and opens the roster automatically. A packaged-build configuration error must fail visibly; it must not fall back to localhost or a cached remote manifest. Keep the current remote-manifest mode and its HTTPS/development-localhost policy unchanged. Do not broaden ContentManifest transport validation to arbitrary file URLs. Embedded mode must not overwrite the remote manifest cache.
+
+The generated descriptor carries schemaVersion1, minimumPlayerVersion2, contentVersion, exact Unity version and platform, the existing lighfight-starter label and lighfight-content address. It contains no fighter, mesh, or material reference. The HostBridge launch protocol remains1, unchanged by content playerVersion2.
+
+The editor job may configure only LighFight-owned groups and output assets; preserve unrelated Addressables settings/entries. Rebuild content deterministically, include the local Addressables artifacts in the resulting player, and retain a build-layout/dependency proof. Device installation and performance acceptance remain later gates. No external publication, subscription, push, framework replacement, or host installation is part of this change.
+
+Validation must include test-first descriptor incompatibility cases; remote bootstrap regression; an actual standalone embedded player that launches with networking unavailable, selects and swaps bodies/arenas through real Addressables, and releases them; and an embedded-build graph showing no inline body references from startup metadata. A correct editor exit or synthetic fake-resource test alone cannot certify packaged delivery.

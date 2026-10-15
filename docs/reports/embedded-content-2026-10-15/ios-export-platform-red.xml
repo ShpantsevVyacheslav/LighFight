@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 06:47:02Z" end-time="2026-10-15 06:47:02Z" duration="0.1076547">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="228" result="Failed" site="Child" start-time="2026-10-15 06:47:02Z" end-time="2026-10-15 06:47:02Z" duration="0.107655" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1270" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="214" result="Failed" site="Child" start-time="2026-10-15 06:47:02Z" end-time="2026-10-15 06:47:02Z" duration="0.079102" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="42065" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1271" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="76" result="Failed" site="Child" start-time="2026-10-15 06:47:02Z" end-time="2026-10-15 06:47:02Z" duration="0.073587" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1272" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="76" result="Failed" site="Child" start-time="2026-10-15 06:47:02Z" end-time="2026-10-15 06:47:02Z" duration="0.072474" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1176" name="EmbeddedContentTests" fullname="LighFight.Tests.EmbeddedContentTests" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="22" result="Failed" site="Child" start-time="2026-10-15 06:47:02Z" end-time="2026-10-15 06:47:02Z" duration="0.056159" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1194" name="EmbeddedIosExportRejectsDesktopBeforeWritingBuild" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedIosExportRejectsDesktopBeforeWritingBuild" methodname="EmbeddedIosExportRejectsDesktopBeforeWritingBuild" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="165076272" result="Failed" start-time="2026-10-15 06:47:02Z" end-time="2026-10-15 06:47:02Z" duration="0.030357" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Embedded phone delivery needs an explicit local-catalog export path
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.EmbeddedIosExportRejectsDesktopBeforeWritingBuild () [0x00035] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:17
+]]></stack-trace>
+              </failure>
+              <output><![CDATA[Saving results to: /tmp/lighfight-embedded-ios-guard-red.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

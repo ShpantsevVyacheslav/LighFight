@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="16" result="Failed(Child)" total="16" passed="1" failed="15" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.3098174">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="17" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.309817" total="16" passed="1" failed="15" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1021" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="16" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.272765" total="16" passed="1" failed="15" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="95066" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1022" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="16" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.271045" total="16" passed="1" failed="15" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1023" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="16" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.270238" total="16" passed="1" failed="15" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1001" name="EmbeddedContentTests" fullname="LighFight.Tests.EmbeddedContentTests" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="16" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.256997" total="16" passed="1" failed="15" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1002" name="CurrentPackagedDescriptorIsAccepted" fullname="LighFight.Tests.EmbeddedContentTests.CurrentPackagedDescriptorIsAccepted" methodname="CurrentPackagedDescriptorIsAccepted" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="437923993" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.050086" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.CurrentPackagedDescriptorIsAccepted () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:7
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1016" name="EmbeddedDescriptorCannotRequestDownload" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.028156" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1014" name="EmbeddedDescriptorCannotRequestDownload(-1L)" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload(-1L)" methodname="EmbeddedDescriptorCannotRequestDownload" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="704908303" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.003815" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload (System.Int64 bytes) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:12
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1015" name="EmbeddedDescriptorCannotRequestDownload(1L)" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload(1L)" methodname="EmbeddedDescriptorCannotRequestDownload" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="767253811" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.008679" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorCannotRequestDownload (System.Int64 bytes) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:12
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </test-suite>
+            <test-case id="1017" name="EmbeddedDescriptorHasNoBodyReferences" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorHasNoBodyReferences" methodname="EmbeddedDescriptorHasNoBodyReferences" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="393918207" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000974" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.EmbeddedDescriptorHasNoBodyReferences () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:13
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1019" name="EmbeddedPackagingEntryPointExists" fullname="LighFight.Tests.EmbeddedContentTests.EmbeddedPackagingEntryPointExists" methodname="EmbeddedPackagingEntryPointExists" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="157182728" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000646" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.EmbeddedPackagingEntryPointExists () [0x00010] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:15
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1018" name="ExplicitEmbeddedBootstrapDoesNotRequireManifestUrl" fullname="LighFight.Tests.EmbeddedContentTests.ExplicitEmbeddedBootstrapDoesNotRequireManifestUrl" methodname="ExplicitEmbeddedBootstrapDoesNotRequireManifestUrl" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="84907116" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000431" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.ExplicitEmbeddedBootstrapDoesNotRequireManifestUrl () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:14
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1013" name="IncompatibleOrInvalidMetadataFails" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="6" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.010028" total="6" passed="0" failed="6" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1007" name="IncompatibleOrInvalidMetadataFails(&quot;platform&quot;,&quot;iOS&quot;,&quot;incompatible_platform&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;platform&quot;,&quot;iOS&quot;,&quot;incompatible_platform&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="829729993" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.001631" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails (System.String field, System.String value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:11
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1008" name="IncompatibleOrInvalidMetadataFails(&quot;unityVersion&quot;,&quot;6000.3.25f1&quot;,&quot;incompatible_platform&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;unityVersion&quot;,&quot;6000.3.25f1&quot;,&quot;incompatible_platform&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1803587809" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000422" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails (System.String field, System.String value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:11
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1009" name="IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;../escape&quot;,&quot;invalid_version&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;../escape&quot;,&quot;invalid_version&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1578526958" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000324" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails (System.String field, System.String value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:11
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1010" name="IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;&quot;,&quot;invalid_version&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;contentVersion&quot;,&quot;&quot;,&quot;invalid_version&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1013522913" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000376" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails (System.String field, System.String value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:11
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1011" name="IncompatibleOrInvalidMetadataFails(&quot;starterLabel&quot;,&quot;all-fighters&quot;,&quot;invalid_content&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;starterLabel&quot;,&quot;all-fighters&quot;,&quot;invalid_content&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="10837110" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000376" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails (System.String field, System.String value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:11
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1012" name="IncompatibleOrInvalidMetadataFails(&quot;assetAddress&quot;,&quot;other&quot;,&quot;invalid_content&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails(&quot;assetAddress&quot;,&quot;other&quot;,&quot;invalid_content&quot;)" methodname="IncompatibleOrInvalidMetadataFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1622099697" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000272" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.IncompatibleOrInvalidMetadataFails (System.String field, System.String value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:11
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </test-suite>
+            <test-case id="1020" name="RemoteTransportAndVersionRemainCompatible" fullname="LighFight.Tests.EmbeddedContentTests.RemoteTransportAndVersionRemainCompatible" methodname="RemoteTransportAndVersionRemainCompatible" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="509608757" result="Passed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.026700" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1006" name="UnsupportedPlayerOrSchemaFails" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.016534" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1003" name="UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,3,&quot;incompatible_player&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,3,&quot;incompatible_player&quot;)" methodname="UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="368874281" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.005496" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails (System.String field, System.Int32 value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:9
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1004" name="UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,0,&quot;incompatible_player&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails(&quot;minimumPlayerVersion&quot;,0,&quot;incompatible_player&quot;)" methodname="UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1422430623" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.002016" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails (System.String field, System.Int32 value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:9
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1005" name="UnsupportedPlayerOrSchemaFails(&quot;schemaVersion&quot;,2,&quot;incompatible_player&quot;)" fullname="LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails(&quot;schemaVersion&quot;,2,&quot;incompatible_player&quot;)" methodname="UnsupportedPlayerOrSchemaFails" classname="LighFight.Tests.EmbeddedContentTests" runstate="Runnable" seed="1496054566" result="Failed" start-time="2026-10-14 19:34:48Z" end-time="2026-10-14 19:34:48Z" duration="0.000472" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Embedded descriptor implementation required
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.EmbeddedContentTests.Descriptor () [0x00019] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:4
+at LighFight.Tests.EmbeddedContentTests.Valid () [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:5
+at LighFight.Tests.EmbeddedContentTests.UnsupportedPlayerOrSchemaFails (System.String field, System.Int32 value, System.String expected) [0x00000] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/embedded-unity/Assets/LighFight/Tests/EmbeddedContentTests.cs:9
+]]></stack-trace>
+                </failure>
+                <output><![CDATA[Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/tripo-dense-review/EmbeddedContentIntegrationPacket/red.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

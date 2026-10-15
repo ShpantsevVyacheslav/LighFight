@@ -35,6 +35,33 @@ namespace LighFight.Editor
         public static void ExportAndroid() => Export(BuildTarget.Android, "Builds/Android");
         public static void ExportIos() => Export(BuildTarget.iOS, "Builds/iOS");
 
+        public static void ExportEmbeddedIos()
+        {
+            if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.iOS)
+                throw new System.InvalidOperationException("Launch Unity with -buildTarget iOS for embedded export");
+            string output = System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBEDDED_IOS_EXPORT");
+            if (string.IsNullOrWhiteSpace(output) || Directory.Exists(output) || File.Exists(output))
+                throw new System.InvalidOperationException("Provide a new LIGHFIGHT_EMBEDDED_IOS_EXPORT directory");
+            if (string.IsNullOrWhiteSpace(System.Environment.GetEnvironmentVariable("LIGHFIGHT_EMBEDDED_VERSION")))
+                throw new System.InvalidOperationException("Set LIGHFIGHT_EMBEDDED_VERSION");
+            if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.iOS, BuildTarget.iOS))
+                throw new System.InvalidOperationException("Unity iOS module is required");
+            PlayerSettings.SetScriptingBackend(UnityEditor.Build.NamedBuildTarget.iOS, ScriptingImplementation.IL2CPP);
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
+            MobileSourceTextureSetup.Configure();
+            IncludeRuntimeShaders();
+            ContentBuild.BuildEmbedded();
+            // BuildEmbedded creates a clean scene without the standalone QA probe.
+            const string scenePath = "Assets/LighFight/Scenes/EmbeddedBootstrap.unity";
+            var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
+                scenes = new[] { scenePath }, locationPathName = output,
+                target = BuildTarget.iOS, options = BuildOptions.Development
+            });
+            if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
+                throw new System.InvalidOperationException("Embedded iOS export failed: " + report.summary.result);
+            Debug.Log("AGENT_RESULT embedded iOS project exported with local selected content; framework/host/device checks remain");
+        }
+
         private static void IncludeRuntimeShaders()
         {
             var settings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/GraphicsSettings.asset")[0]);
