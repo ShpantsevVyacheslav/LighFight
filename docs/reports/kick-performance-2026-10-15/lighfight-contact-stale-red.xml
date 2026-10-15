@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Failed(Child)" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.2114902">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="257" result="Failed" site="Child" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.211490" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1308" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="243" result="Failed" site="Child" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.198620" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="30052" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1309" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="90" result="Failed" site="Child" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.195509" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1310" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="90" result="Failed" site="Child" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.194615" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1256" name="PhysicalContactSamplingTests" fullname="LighFight.Tests.PhysicalContactSamplingTests" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.189424" total="4" passed="3" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1260" name="AllMoveOutcomesMatchAlwaysSampledReference" fullname="LighFight.Tests.PhysicalContactSamplingTests.AllMoveOutcomesMatchAlwaysSampledReference" methodname="AllMoveOutcomesMatchAlwaysSampledReference" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="301474660" result="Passed" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.166105" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1257" name="IdleAndRecoveryDoNotEvaluateContactPoses" fullname="LighFight.Tests.PhysicalContactSamplingTests.IdleAndRecoveryDoNotEvaluateContactPoses" methodname="IdleAndRecoveryDoNotEvaluateContactPoses" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="1985977671" result="Passed" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.003453" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1259" name="LeavingActiveWindowClearsSameFrameContactCache" fullname="LighFight.Tests.PhysicalContactSamplingTests.LeavingActiveWindowClearsSameFrameContactCache" methodname="LeavingActiveWindowClearsSameFrameContactCache" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="1177186243" result="Failed" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.006740" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  A skipped recovery tick must not replay an earlier active pose from this render frame
+  Expected: False
+  But was:  True
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.PhysicalContactSamplingTests.LeavingActiveWindowClearsSameFrameContactCache () [0x000e9] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/PhysicalContactSamplingTests.cs:15
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1258" name="SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" fullname="LighFight.Tests.PhysicalContactSamplingTests.SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" methodname="SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="1988866725" result="Passed" start-time="2026-10-15 16:28:16Z" end-time="2026-10-15 16:28:16Z" duration="0.001907" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /tmp/lighfight-contact-stale-red.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

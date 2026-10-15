@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Failed(Child)" total="3" passed="1" failed="2" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.4083058">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="256" result="Failed" site="Child" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.408306" total="3" passed="1" failed="2" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1307" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="242" result="Failed" site="Child" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.394429" total="3" passed="1" failed="2" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="28255" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1308" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="89" result="Failed" site="Child" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.386360" total="3" passed="1" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1309" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="89" result="Failed" site="Child" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.385134" total="3" passed="1" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1256" name="PhysicalContactSamplingTests" fullname="LighFight.Tests.PhysicalContactSamplingTests" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.381408" total="3" passed="1" failed="2" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1259" name="AllMoveOutcomesMatchAlwaysSampledReference" fullname="LighFight.Tests.PhysicalContactSamplingTests.AllMoveOutcomesMatchAlwaysSampledReference" methodname="AllMoveOutcomesMatchAlwaysSampledReference" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="1041753581" result="Passed" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.352643" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1257" name="IdleAndRecoveryDoNotEvaluateContactPoses" fullname="LighFight.Tests.PhysicalContactSamplingTests.IdleAndRecoveryDoNotEvaluateContactPoses" methodname="IdleAndRecoveryDoNotEvaluateContactPoses" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="625879335" result="Failed" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.010371" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Contact sampling must expose pair count to prove idle/recovery does not resample both skeletons
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.PhysicalContactSamplingTests.Count (LighFight.Runtime.PhysicalContacts value) [0x00014] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/PhysicalContactSamplingTests.cs:11
+at LighFight.Tests.PhysicalContactSamplingTests.IdleAndRecoveryDoNotEvaluateContactPoses () [0x00018] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/PhysicalContactSamplingTests.cs:12
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1258" name="SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" fullname="LighFight.Tests.PhysicalContactSamplingTests.SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" methodname="SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="942652867" result="Failed" start-time="2026-10-15 16:18:17Z" end-time="2026-10-15 16:18:17Z" duration="0.003198" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Contact sampling must expose pair count to prove idle/recovery does not resample both skeletons
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.PhysicalContactSamplingTests.Count (LighFight.Runtime.PhysicalContacts value) [0x00014] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/PhysicalContactSamplingTests.cs:11
+at LighFight.Tests.PhysicalContactSamplingTests.SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick () [0x00070] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/PhysicalContactSamplingTests.cs:13
+]]></stack-trace>
+              </failure>
+              <output><![CDATA[Saving results to: /tmp/lighfight-contact-sampling-red.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

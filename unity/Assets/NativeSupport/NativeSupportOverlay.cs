@@ -35,7 +35,7 @@ public sealed class NativeSupportOverlay:MonoBehaviour,LighFight.Runtime.IContac
  public void CancelWarmup(){curveWarmupGeneration++;if(pendingCurveLeases!=null){foreach(var lease in pendingCurveLeases)lease.Dispose();pendingCurveLeases.Clear();pendingCurveLeases=null;}}
  void OnDestroy(){Dispose();}
  public void Dispose(){CancelWarmup();if(activePose){activePose.Release();activePose=null;}foreach(var lease in residentCurveLeases)lease.Dispose();residentCurveLeases.Clear();IsWarm=false;}
- Matrix4x4[] groundMatrices;Transform[] bones;Vector3[] previousPositions,startPositions;Quaternion[] previousRotations,startRotations;Transform hip;Vector3 hipRest;string previousState;float previousPhase,blendElapsed;bool havePrevious,returning,returningFromDefeat,blendingFromDefeat,blendingFromRecovery,previousPoseContainsRecovery;LighFight.Runtime.FighterView fighterView;
+ Transform[] bones;Vector3[] previousPositions,startPositions;Quaternion[] previousRotations,startRotations;Transform hip;Vector3 hipRest;string previousState;float previousPhase,blendElapsed;bool havePrevious,returning,returningFromDefeat,blendingFromDefeat,blendingFromRecovery,previousPoseContainsRecovery;LighFight.Runtime.FighterView fighterView;
  public float LastSamplePhase{get;private set;}public float LastBlendWeight{get;private set;}public string ActiveState{get;private set;}
  public void Initialize(){fighterView=GetComponent<LighFight.Runtime.FighterView>();bones=animator.GetComponentsInChildren<Transform>();previousPositions=new Vector3[bones.Length];previousRotations=new Quaternion[bones.Length];startPositions=new Vector3[bones.Length];startRotations=new Quaternion[bones.Length];hip=Array.Find(bones,t=>t.name.Substring(t.name.LastIndexOf(':')+1)=="Hips");if(!hip)throw new InvalidOperationException("Native Hips missing");if(!hasHipBindAnchor){hipBindAnchor=animator.transform.InverseTransformPoint(hip.position);hasHipBindAnchor=true;}hipRest=hipBindAnchor;foreach(var e in entries)if(!e.pose)throw new InvalidOperationException("Original provider curve data required");SavePrevious();}
  void SavePrevious(){for(int i=0;i<bones.Length;i++){previousPositions[i]=bones[i].localPosition;previousRotations[i]=bones[i].localRotation;}havePrevious=true;}
@@ -63,7 +63,9 @@ public sealed class NativeSupportOverlay:MonoBehaviour,LighFight.Runtime.IContac
   previousState=state;previousPhase=samplePhase;SavePrevious();
   SelectGrounding(true,state=="Defeat"||blendingFromDefeat&&LastBlendWeight<1);
  }
- void SelectGrounding(bool native,bool body,bool cachedRecovery=false){
+ static readonly Unity.Profiling.ProfilerMarker CapMarker=new Unity.Profiling.ProfilerMarker("LighFight.Grounding.Cap");
+ void SelectGrounding(bool native,bool body,bool cachedRecovery=false){using(CapMarker.Auto())SelectGroundingImpl(native,body,cachedRecovery);}
+ void SelectGroundingImpl(bool native,bool body,bool cachedRecovery){
   int recoveryState=animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
   bool sharedRecovery=recoveryState==Animator.StringToHash("Fall")||recoveryState==Animator.StringToHash("GetUp");
   sharedRecovery|=fighterView&&fighterView.RecoveryBodySupportRequired;
@@ -72,6 +74,6 @@ public sealed class NativeSupportOverlay:MonoBehaviour,LighFight.Runtime.IContac
   if(body&&defeatBodyPoints!=null&&defeatBodyPoints.Length>0)grounding.shoePoints=defeatBodyPoints;else if(supportPoints!=null&&supportPoints.Length>0)grounding.shoePoints=supportPoints;grounding.maxCorrection=baseMaxCorrection;if(!native)return;
   // Native support poses and their blends use the actual original-vertex floor requirement.
   // A cap trained on one entry phase must not clip another entry's valid measured lift.
-  grounding.ResetForSample();if(groundMatrices==null||groundMatrices.Length!=grounding.bones.Length)groundMatrices=new Matrix4x4[grounding.bones.Length];for(int i=0;i<groundMatrices.Length;i++)groundMatrices[i]=grounding.bones[i].localToWorldMatrix;float min=float.PositiveInfinity;foreach(var point in grounding.shoePoints){var p=Vector3.zero;foreach(var influence in point.influences)p+=groundMatrices[influence.bone].MultiplyPoint3x4(influence.bindPoint)*influence.weight;min=Mathf.Min(min,p.y);}grounding.maxCorrection=nativeMaxCorrection;if(!float.IsNaN(min)&&!float.IsInfinity(min))grounding.maxCorrection=Mathf.Max(nativeMaxCorrection,Mathf.Max(0,-min)+.001f);
+  float min=grounding.MeasureMinimum();grounding.maxCorrection=nativeMaxCorrection;if(!float.IsNaN(min)&&!float.IsInfinity(min))grounding.maxCorrection=Mathf.Max(nativeMaxCorrection,Mathf.Max(0,-min)+.001f);
  }
 }

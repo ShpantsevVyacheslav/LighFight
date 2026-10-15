@@ -236,7 +236,9 @@ namespace LighFight.Runtime
             if(contactBones.TryGetValue(pivot,out var joint))joint.localRotation*=Quaternion.Euler(r);
             if(!fighter.LastBlocked && fighter.LastHitLevel==Level.High && contactBones.TryGetValue("Head",out var headBone))headBone.localRotation*=Quaternion.Euler(-12*r.magnitude/11f,0,0);
         }
-        public void PoseTowards(Fighter fighter,Fighter other,float delta)
+        private static readonly Unity.Profiling.ProfilerMarker PoseMarker=new Unity.Profiling.ProfilerMarker("LighFight.Actor.Pose");
+        public void PoseTowards(Fighter fighter,Fighter other,float delta){using(PoseMarker.Auto())PoseTowardsImpl(fighter,other,delta);}
+        private void PoseTowardsImpl(Fighter fighter,Fighter other,float delta)
         {
             if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
             Pose(fighter,fighter.FacingX,delta);
@@ -258,6 +260,7 @@ namespace LighFight.Runtime
             return wrist+(wrist-BonePoint(side+"ForeArm",Vector3.zero)).normalized*.05f;
         }
         private System.Collections.Generic.Dictionary<string,Transform> contactBones;
+        public void ClearContactPoseSample(){CacheContactPoseHooks();if(contactPoseHook!=null)contactPoseHook.InvalidateContactPose();contactPoseFighter=null;}
         public void SampleContactPose(Fighter fighter,Fighter other)
         {
             var grounding=GetComponent<CandidateFootGrounding>();if(grounding)grounding.ResetForSample();

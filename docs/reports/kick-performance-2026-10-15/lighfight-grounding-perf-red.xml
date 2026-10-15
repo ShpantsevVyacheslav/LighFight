@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Failed(Child)" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.0440902">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="252" result="Failed" site="Child" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.044090" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1302" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="238" result="Failed" site="Child" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.035385" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="23206" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1303" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="85" result="Failed" site="Child" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.032882" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1304" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="85" result="Failed" site="Child" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.029806" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1224" name="GroundingPerformanceTests" fullname="LighFight.Tests.GroundingPerformanceTests" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.027496" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1226" name="BoneAndSupportSetChangesInvalidateCachedMinimum" fullname="LighFight.Tests.GroundingPerformanceTests.BoneAndSupportSetChangesInvalidateCachedMinimum" methodname="BoneAndSupportSetChangesInvalidateCachedMinimum" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="1235993527" result="Failed" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.016213" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Ground support must expose diagnostic scan count to prove duplicate scans are eliminated
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.GroundingPerformanceTests.Evaluations (CandidateFootGrounding value) [0x00014] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:11
+at LighFight.Tests.GroundingPerformanceTests.BoneAndSupportSetChangesInvalidateCachedMinimum () [0x0000b] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:13
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1227" name="CorrectionLimitChangesUseSameRawFloorMeasurement" fullname="LighFight.Tests.GroundingPerformanceTests.CorrectionLimitChangesUseSameRawFloorMeasurement" methodname="CorrectionLimitChangesUseSameRawFloorMeasurement" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="614870906" result="Failed" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.000487" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Ground support must expose diagnostic scan count to prove duplicate scans are eliminated
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.GroundingPerformanceTests.Evaluations (CandidateFootGrounding value) [0x00014] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:11
+at LighFight.Tests.GroundingPerformanceTests.CorrectionLimitChangesUseSameRawFloorMeasurement () [0x0000b] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:14
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1225" name="RepeatedIdenticalPoseScansSupportOnce" fullname="LighFight.Tests.GroundingPerformanceTests.RepeatedIdenticalPoseScansSupportOnce" methodname="RepeatedIdenticalPoseScansSupportOnce" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="1502524921" result="Failed" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.000310" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Ground support must expose diagnostic scan count to prove duplicate scans are eliminated
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.GroundingPerformanceTests.Evaluations (CandidateFootGrounding value) [0x00014] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:11
+at LighFight.Tests.GroundingPerformanceTests.RepeatedIdenticalPoseScansSupportOnce () [0x0000b] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:12
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1228" name="WorldTransformChangesInvalidateCachedFloor" fullname="LighFight.Tests.GroundingPerformanceTests.WorldTransformChangesInvalidateCachedFloor" methodname="WorldTransformChangesInvalidateCachedFloor" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="1333363133" result="Failed" start-time="2026-10-15 15:56:33Z" end-time="2026-10-15 15:56:33Z" duration="0.000350" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Ground support must expose diagnostic scan count to prove duplicate scans are eliminated
+  Expected: not null
+  But was:  null
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.GroundingPerformanceTests.Evaluations (CandidateFootGrounding value) [0x00014] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:11
+at LighFight.Tests.GroundingPerformanceTests.WorldTransformChangesInvalidateCachedFloor () [0x0000b] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/GroundingPerformanceTests.cs:15
+]]></stack-trace>
+              </failure>
+              <output><![CDATA[Saving results to: /tmp/lighfight-grounding-perf-red.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

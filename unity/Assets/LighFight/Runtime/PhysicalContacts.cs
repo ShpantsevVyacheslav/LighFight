@@ -30,7 +30,11 @@ namespace LighFight.Runtime
   private readonly Match match;
   public Vector3 ImpactA {get;private set;} public Vector3 ImpactB {get;private set;}
   public PhysicalContacts(Match value,FighterView player,FighterView opponent){match=value;viewA=player;viewB=opponent;value.EffectiveReach=(fighter,index)=>CalibratedReach[index];value.RequirePhysicalContact=true;value.BeforeContact=Sample;value.ContactValidator=Touches;}
-  private void Sample(Match value){a.Sample(viewA,value.A,value.B);b.Sample(viewB,value.B,value.A);}
+  private static readonly Unity.Profiling.ProfilerMarker SampleMarker=new Unity.Profiling.ProfilerMarker("LighFight.Contact.Sample");
+  public int SampledPosePairs{get;private set;}
+  private static bool NeedsSweep(Fighter fighter){if(!fighter.Attack.HasValue)return false;var move=fighter.Attack.Value;return fighter.Frame>=move.Startup-1&&fighter.Frame<move.Startup+move.Active;}
+  private void Sample(Match value){if(!NeedsSweep(value.A)&&!NeedsSweep(value.B)){a.ready=b.ready=false;viewA.ClearContactPoseSample();viewB.ClearContactPoseSample();return;}SampleBoth(value);}
+  private void SampleBoth(Match value){using(SampleMarker.Auto()){SampledPosePairs++;a.Sample(viewA,value.A,value.B);b.Sample(viewB,value.B,value.A);}}
   private bool Touches(Fighter attacker,Fighter defender)
   {
    var strike=attacker==match.A?a:b;var body=attacker==match.A?b:a;var id=attacker.Attack.Value.Id;

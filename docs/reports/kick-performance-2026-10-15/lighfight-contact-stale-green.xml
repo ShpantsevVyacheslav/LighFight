@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.2039468">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="257" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.203947" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1308" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="243" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.194989" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="30471" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1309" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="90" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.189148" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1310" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="90" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.186706" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1256" name="PhysicalContactSamplingTests" fullname="LighFight.Tests.PhysicalContactSamplingTests" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.181842" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1260" name="AllMoveOutcomesMatchAlwaysSampledReference" fullname="LighFight.Tests.PhysicalContactSamplingTests.AllMoveOutcomesMatchAlwaysSampledReference" methodname="AllMoveOutcomesMatchAlwaysSampledReference" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="158687189" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.163869" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1257" name="IdleAndRecoveryDoNotEvaluateContactPoses" fullname="LighFight.Tests.PhysicalContactSamplingTests.IdleAndRecoveryDoNotEvaluateContactPoses" methodname="IdleAndRecoveryDoNotEvaluateContactPoses" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="1197872630" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.003479" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1259" name="LeavingActiveWindowClearsSameFrameContactCache" fullname="LighFight.Tests.PhysicalContactSamplingTests.LeavingActiveWindowClearsSameFrameContactCache" methodname="LeavingActiveWindowClearsSameFrameContactCache" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="1970987674" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.001973" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1258" name="SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" fullname="LighFight.Tests.PhysicalContactSamplingTests.SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" methodname="SamplingIncludesPreviousTickAndEveryUnconnectedActiveTick" classname="LighFight.Tests.PhysicalContactSamplingTests" runstate="Runnable" seed="722920566" result="Passed" start-time="2026-10-15 16:30:59Z" end-time="2026-10-15 16:30:59Z" duration="0.001485" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /tmp/lighfight-contact-stale-green.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
