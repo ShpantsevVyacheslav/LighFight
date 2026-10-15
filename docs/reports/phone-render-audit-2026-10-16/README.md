@@ -46,3 +46,7 @@ The packet lease component and six NUnit fixtures ran in Unity6000.3.26f1 with n
 ## Actual procedural Prototype preview lifecycle RED→GREEN
 
 Separate25MB graphics PlayMode QA: unchanged baseline fails the intended camera-enabled assertion (1/1RED,3.124s); candidate passes1/1 (0.142s), exit0. Fixture readiness/previewRT gates passed; same fixture both variants uses yieldnull because Editor batch UnityTests reject WaitForEndOfFrame. Initial setup failure is preserved separately and not counted as policy RED. Real Prototype automatic preview camera/RT ownership and no simulation catch-up are tested with procedural actors. Main SHA unchanged; distinctcompany/product avoids player-preference sharing. This still does not validate battle postfilmic snapshot pixels, native artist rigs/resume contacts or phone power. Packet remains unpromoted.
+
+## Actual procedural battle final-image gate
+
+The subsequent Development Metal player also passed: full1280×720 source/held backbuffers differ in0pixels (maxchannelerror0),200heldframes produce0scenePreCull/attachedactorUpdate/Late/FighterPose/Late callbacks and0coreticks; quiet resume restoresactors/camera without held-timecatchup. Source actualARGBHalf/Linear/FittedFilmic supported. Root opened the comparison sheet. This verifies the procedural rendering mechanism, not nativeartist rigs/contacts/leases, actualmodal input, resize/cancel/host lifecycle or phone thermals. Details and first confounded resumeRED are retained in `procedural-battle-freeze/`. No pause code has been promoted to the game.
