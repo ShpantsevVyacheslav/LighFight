@@ -1,0 +1,19 @@
+# Actual source Generic scalar A/B — accepted for source-scalar fidelity review
+
+Recommendation: accept Retro/Sailor one-decode and Summer two-decode as corrections toward their retained source scalar data, with baseline fallback retained. This is not dense geometry restoration, normal-map restoration, a universal improvement in appearance, or a blanket hotspot reduction. Root owns promotion and main/phone validation.
+
+Actual Mac player: exit0, six A/B pairs (face/body × three roles), no errors/exceptions; Metal Apple M1, Linear, fitted filmic supported with ARGBHalf HDR source. All 27 actual Standard shader properties and non-scalar render state match except the intended scalar texture reference; normal strength/gloss scale are both preserved at1. The genuine Editor selector successfully resolves both Baseline and SourceCalibrated and its JSON is restored byte-for-byte. All three Generic FBXs are byte-identical to downloaded provider files. These are native 100k meshes, not dense originals.
+
+Across each pair, every posed source vertex, every local bone position/quaternion component/scale and every alpha pixel has exactly zero difference. Mesh fingerprints include imported topology, all attributes/UVs, bind matrices and all variable skin weights. Own ordinary Generic Animator plays original greet_01 at phase .999999 on the unchanged hierarchy. Same source actor, physical key, explicit uniform SH, camera and Linear/HDR/filmic settings are used for both renders. See EvidenceGPU/result.json, editor-invariants.json, camera JSON, 12 unmodified PNGs and diagnostic source/build/player logs.
+
+| Role | Occupied metallic MAE raw→PNG | Occupied roughness MAE raw→PNG | Face-frame opaque all-white pixels baseline→variant | Face-frame display-luma p95 baseline→variant |
+|---|---:|---:|---:|---:|
+| Retro | .145822→.005166 | .165685→.008259 | .001946%→.012064% | .8580→.8722 |
+| Sailor | .128681→.001602 | .214195→.003619 | 0→0 | .9182→.9219 |
+| Summer | .436777→.002590 | .260626→.008544 | .000189%→0 | .8989→.9350 |
+
+Face-frame opaque mean HSV saturation changes Retro .3810→.3653, Sailor .3593→.3445, Summer .1147→.0957. These are whole foreground face-framing images, including hair/glasses/cloth, not a skin segmentation or physical radiance measurement. Shared fixed approximate central-face ROI `(360,180)-(664,580)` has all-white fractions Retro .002590%→0, Sailor0→0, Summer .000849%→0. Approximate cloth ROI is `(300,750)-(724,1000)`. Full per-ROI metrics are in image-metrics JSON/CSV; alpha masks are exactly unchanged. RGB differences arise from source scalar response; material colors/albedo bytes are untouched.
+
+Visual review of all twelve full PNGs: Retro keeps denim/bandana detail and has stronger neck/metal highlights; tiny all-white foreground highlights increase (absolute .0121%), while the central-face ROI has none. Sailor keeps blue/white stripes and has stronger cloth/trouser and neck gloss. Summer changes most: forehead/neck highlights and white-shirt brightness increase, with zero fully white opaque pixels in this camera. These are consistent with lower source-calibrated roughness. They should not be described as a matte-skin artistic treatment. Sunglasses' baked reflections, beard/neck seams and source geometry/atlas defects remain unchanged. No normal-vector conversion, resolution substitution, pixel recolor or pose edit was introduced.
+
+The six comparisons establish controlled desktop rendering and invariants; they do not prove the main arena's lighting outcome, all eleven fighters, phone texture formats, GPU memory or frame rate. The diagnostic app includes uncompressed source references/Generic animation dependencies and is not a shipping capacity benchmark. Completed app and owned PlayerDataCache were removed after retaining all evidence, reclaiming1,051,377,466 bytes; source inputs, assets, project and logs remain.

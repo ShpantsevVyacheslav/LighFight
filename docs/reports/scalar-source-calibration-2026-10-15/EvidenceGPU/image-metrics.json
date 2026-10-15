@@ -1,0 +1,512 @@
+[
+  {
+    "role": "Retro",
+    "framing": "face",
+    "alphaDifferentPixels": 0,
+    "foregroundPixels": 513907,
+    "boundsXYXY": [
+      4,
+      140,
+      999,
+      1023
+    ],
+    "ROIwarning": "Fixed same-image approximate face/cloth boxes, not a skin segmentation. Display-encoded RGB/luma, not physical radiance. No pixel changes.",
+    "metrics": {
+      "allOpaque": {
+        "baseline": {
+          "pixels": 513907,
+          "meanRGB": [
+            0.5691330357054949,
+            0.528562057291156,
+            0.6213233438855346
+          ],
+          "displayLumaP50": 0.5665466666666666,
+          "displayLumaP95": 0.858019764705882,
+          "displayLumaP99": 0.9336164705882353,
+          "HSV_S_mean": 0.381032775639747,
+          "HSV_S_p95": 0.7333333333333334,
+          "allChannels255Fraction": 1.945877366916582e-05,
+          "anyChannel255Fraction": 3.1134037870665314e-05,
+          "allChannelsAtLeast250Fraction": 0.0002296135292961567
+        },
+        "variant": {
+          "pixels": 513907,
+          "meanRGB": [
+            0.5865778568233896,
+            0.5448056616023681,
+            0.6327786552664297
+          ],
+          "displayLumaP50": 0.5836894117647059,
+          "displayLumaP95": 0.8722007843137255,
+          "displayLumaP99": 0.9285780392156863,
+          "HSV_S_mean": 0.36529820136508234,
+          "HSV_S_p95": 0.71875,
+          "allChannels255Fraction": 0.00012064439674882809,
+          "anyChannel255Fraction": 0.00017902071775632557,
+          "allChannelsAtLeast250Fraction": 0.00033469090710965216
+        },
+        "meanAbsRGBDifference255": 4.931789214780106
+      },
+      "approxCentralFace": {
+        "baseline": {
+          "pixels": 115842,
+          "meanRGB": [
+            0.6639359695811538,
+            0.4160737867772104,
+            0.5425019067553278
+          ],
+          "displayLumaP50": 0.4720133333333333,
+          "displayLumaP95": 0.8039882352941176,
+          "displayLumaP99": 0.8857756862745096,
+          "HSV_S_mean": 0.4211417669584105,
+          "HSV_S_p95": 0.8181818181818182,
+          "allChannels255Fraction": 2.5897342932615115e-05,
+          "anyChannel255Fraction": 5.179468586523023e-05,
+          "allChannelsAtLeast250Fraction": 0.0001122218193746655
+        },
+        "variant": {
+          "pixels": 115842,
+          "meanRGB": [
+            0.6775262858029278,
+            0.43225265244651684,
+            0.5550284346054752
+          ],
+          "displayLumaP50": 0.489313725490196,
+          "displayLumaP95": 0.8298312156862745,
+          "displayLumaP99": 0.8960235921568627,
+          "HSV_S_mean": 0.4102564120713043,
+          "HSV_S_p95": 0.8086404985527791,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 2.5897342932615115e-05
+        },
+        "meanAbsRGBDifference255": 4.726348532196152
+      },
+      "approxLowerCloth": {
+        "baseline": {
+          "pixels": 106000,
+          "meanRGB": [
+            0.5241872364039828,
+            0.6058374768775087,
+            0.7092802071771082
+          ],
+          "displayLumaP50": 0.6126682352941176,
+          "displayLumaP95": 0.9330658823529412,
+          "displayLumaP99": 0.9411764705882353,
+          "HSV_S_mean": 0.32947773826557114,
+          "HSV_S_p95": 0.7,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "variant": {
+          "pixels": 106000,
+          "meanRGB": [
+            0.5406641879392879,
+            0.619909322974326,
+            0.7189291897890404
+          ],
+          "displayLumaP50": 0.6331301960784314,
+          "displayLumaP95": 0.9260564705882354,
+          "displayLumaP99": 0.939509019607843,
+          "HSV_S_mean": 0.31155907988957965,
+          "HSV_S_p95": 0.6808510638297872,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.00042452830188679245
+        },
+        "meanAbsRGBDifference255": 4.438339622641509
+      }
+    }
+  },
+  {
+    "role": "Retro",
+    "framing": "body",
+    "alphaDifferentPixels": 0,
+    "foregroundPixels": 193795,
+    "boundsXYXY": [
+      338,
+      55,
+      685,
+      968
+    ],
+    "ROIwarning": "Fixed same-image approximate face/cloth boxes, not a skin segmentation. Display-encoded RGB/luma, not physical radiance. No pixel changes.",
+    "metrics": {
+      "allOpaque": {
+        "baseline": {
+          "pixels": 193795,
+          "meanRGB": [
+            0.5617134337931737,
+            0.5527679592696171,
+            0.6173091739854963
+          ],
+          "displayLumaP50": 0.5955976470588236,
+          "displayLumaP95": 0.8407222745098037,
+          "displayLumaP99": 0.9176470588235293,
+          "HSV_S_mean": 0.33208654849646435,
+          "HSV_S_p95": 0.6684872687965406,
+          "allChannels255Fraction": 1.0320183699269847e-05,
+          "anyChannel255Fraction": 1.548027554890477e-05,
+          "allChannelsAtLeast250Fraction": 5.676101034598416e-05
+        },
+        "variant": {
+          "pixels": 193795,
+          "meanRGB": [
+            0.5784294602796104,
+            0.5680224251520098,
+            0.6281540884367871
+          ],
+          "displayLumaP50": 0.6129043137254901,
+          "displayLumaP95": 0.8536842352941167,
+          "displayLumaP99": 0.919633725490196,
+          "HSV_S_mean": 0.31931441867640786,
+          "HSV_S_p95": 0.6568221371388786,
+          "allChannels255Fraction": 4.128073479707939e-05,
+          "anyChannel255Fraction": 5.676101034598416e-05,
+          "allChannelsAtLeast250Fraction": 0.00014448257178977786
+        },
+        "meanAbsRGBDifference255": 4.31298365110899
+      }
+    }
+  },
+  {
+    "role": "Sailor",
+    "framing": "face",
+    "alphaDifferentPixels": 0,
+    "foregroundPixels": 538904,
+    "boundsXYXY": [
+      0,
+      89,
+      992,
+      1023
+    ],
+    "ROIwarning": "Fixed same-image approximate face/cloth boxes, not a skin segmentation. Display-encoded RGB/luma, not physical radiance. No pixel changes.",
+    "metrics": {
+      "allOpaque": {
+        "baseline": {
+          "pixels": 538904,
+          "meanRGB": [
+            0.5131029048639351,
+            0.5149002929105159,
+            0.6582281889200228
+          ],
+          "displayLumaP50": 0.5167372549019608,
+          "displayLumaP95": 0.9182290196078431,
+          "displayLumaP99": 0.9269058823529412,
+          "HSV_S_mean": 0.35930900735105026,
+          "HSV_S_p95": 0.8930817610062893,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "variant": {
+          "pixels": 538904,
+          "meanRGB": [
+            0.5279621704231975,
+            0.5299576584336406,
+            0.6663112321221976
+          ],
+          "displayLumaP50": 0.5452729411764705,
+          "displayLumaP95": 0.9218674509803921,
+          "displayLumaP99": 0.9308274509803922,
+          "HSV_S_mean": 0.34453787233442595,
+          "HSV_S_p95": 0.9017341040462428,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 4.22743382865965
+      },
+      "approxCentralFace": {
+        "baseline": {
+          "pixels": 118224,
+          "meanRGB": [
+            0.5365187122351641,
+            0.415995657296665,
+            0.4206872497273692
+          ],
+          "displayLumaP50": 0.4654376470588235,
+          "displayLumaP95": 0.752443137254902,
+          "displayLumaP99": 0.8528070588235294,
+          "HSV_S_mean": 0.2684832238448249,
+          "HSV_S_p95": 0.4842105263157895,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "variant": {
+          "pixels": 118224,
+          "meanRGB": [
+            0.5477843986422964,
+            0.43052082586997764,
+            0.4335258226988546
+          ],
+          "displayLumaP50": 0.480912156862745,
+          "displayLumaP95": 0.7810517647058822,
+          "displayLumaP99": 0.8578501960784314,
+          "HSV_S_mean": 0.2636362763221178,
+          "HSV_S_p95": 0.49484536082474223,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 4.177882663418595
+      },
+      "approxLowerCloth": {
+        "baseline": {
+          "pixels": 106000,
+          "meanRGB": [
+            0.4939322604513633,
+            0.5405974842766329,
+            0.7616713281537325
+          ],
+          "displayLumaP50": 0.5315717647058823,
+          "displayLumaP95": 0.9218831372549019,
+          "displayLumaP99": 0.9260721568627451,
+          "HSV_S_mean": 0.41633761081199355,
+          "HSV_S_p95": 0.9069767441860466,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "variant": {
+          "pixels": 106000,
+          "meanRGB": [
+            0.5055874213835968,
+            0.5503419533850231,
+            0.7623352201255691
+          ],
+          "displayLumaP50": 0.5574423529411765,
+          "displayLumaP95": 0.9249552941176471,
+          "displayLumaP99": 0.9297105882352942,
+          "HSV_S_mean": 0.40192762920952085,
+          "HSV_S_p95": 0.9177215189873417,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 3.86812893081761
+      }
+    }
+  },
+  {
+    "role": "Sailor",
+    "framing": "body",
+    "alphaDifferentPixels": 0,
+    "foregroundPixels": 192758,
+    "boundsXYXY": [
+      341,
+      55,
+      682,
+      968
+    ],
+    "ROIwarning": "Fixed same-image approximate face/cloth boxes, not a skin segmentation. Display-encoded RGB/luma, not physical radiance. No pixel changes.",
+    "metrics": {
+      "allOpaque": {
+        "baseline": {
+          "pixels": 192758,
+          "meanRGB": [
+            0.3421756102186884,
+            0.3392117394381115,
+            0.413617135292499
+          ],
+          "displayLumaP50": 0.20611098039215686,
+          "displayLumaP95": 0.894149725490196,
+          "displayLumaP99": 0.9213168627450979,
+          "HSV_S_mean": 0.26452773313074085,
+          "HSV_S_p95": 0.8304093567251462,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "variant": {
+          "pixels": 192758,
+          "meanRGB": [
+            0.35975323320180397,
+            0.3583584333827094,
+            0.4305243860584237
+          ],
+          "displayLumaP50": 0.24629372549019607,
+          "displayLumaP95": 0.898636862745098,
+          "displayLumaP99": 0.9252384313725491,
+          "HSV_S_mean": 0.25892826384649936,
+          "HSV_S_p95": 0.8300970873786409,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 5.421765460663976
+      }
+    }
+  },
+  {
+    "role": "Summer",
+    "framing": "face",
+    "alphaDifferentPixels": 0,
+    "foregroundPixels": 530318,
+    "boundsXYXY": [
+      0,
+      122,
+      1007,
+      1023
+    ],
+    "ROIwarning": "Fixed same-image approximate face/cloth boxes, not a skin segmentation. Display-encoded RGB/luma, not physical radiance. No pixel changes.",
+    "metrics": {
+      "allOpaque": {
+        "baseline": {
+          "pixels": 530318,
+          "meanRGB": [
+            0.7306091077108342,
+            0.7043401484053965,
+            0.7245633751813055
+          ],
+          "displayLumaP50": 0.8302823529411765,
+          "displayLumaP95": 0.8989043137254902,
+          "displayLumaP99": 0.9036596078431373,
+          "HSV_S_mean": 0.11470678823949695,
+          "HSV_S_p95": 0.4201183431952662,
+          "allChannels255Fraction": 1.8856610561964708e-06,
+          "anyChannel255Fraction": 1.8856610561964708e-06,
+          "allChannelsAtLeast250Fraction": 7.542644224785883e-06
+        },
+        "variant": {
+          "pixels": 530318,
+          "meanRGB": [
+            0.7699020986960984,
+            0.7435261669481427,
+            0.7559769280879853
+          ],
+          "displayLumaP50": 0.8655607843137255,
+          "displayLumaP95": 0.9350164705882353,
+          "displayLumaP99": 0.9456643137254901,
+          "HSV_S_mean": 0.09571898184114667,
+          "HSV_S_p95": 0.4036144578313253,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 9.511251110968638
+      },
+      "approxCentralFace": {
+        "baseline": {
+          "pixels": 117811,
+          "meanRGB": [
+            0.464153601955686,
+            0.383182901293801,
+            0.38005539281021344
+          ],
+          "displayLumaP50": 0.3679066666666667,
+          "displayLumaP95": 0.7602533333333334,
+          "displayLumaP99": 0.8960996078431371,
+          "HSV_S_mean": 0.287462206878016,
+          "HSV_S_p95": 0.5257071107586572,
+          "allChannels255Fraction": 8.488171732690496e-06,
+          "anyChannel255Fraction": 8.488171732690496e-06,
+          "allChannelsAtLeast250Fraction": 3.3952686930761984e-05
+        },
+        "variant": {
+          "pixels": 117811,
+          "meanRGB": [
+            0.5084351955549555,
+            0.4319669540495775,
+            0.4272330174569236
+          ],
+          "displayLumaP50": 0.4377654901960784,
+          "displayLumaP95": 0.8146407843137253,
+          "displayLumaP99": 0.9187796078431372,
+          "HSV_S_mean": 0.2614542842411238,
+          "HSV_S_p95": 0.5303030303030303,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 12.560969122860627
+      },
+      "approxLowerCloth": {
+        "baseline": {
+          "pixels": 106000,
+          "meanRGB": [
+            0.8546805771358496,
+            0.8548901590818894,
+            0.8856177210503372
+          ],
+          "displayLumaP50": 0.8756580392156862,
+          "displayLumaP95": 0.8969333333333334,
+          "displayLumaP99": 0.8997380392156862,
+          "HSV_S_mean": 0.03657181531256995,
+          "HSV_S_p95": 0.05612244897959192,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "variant": {
+          "pixels": 106000,
+          "meanRGB": [
+            0.8914179430258399,
+            0.8897459489452503,
+            0.9105899741023158
+          ],
+          "displayLumaP50": 0.9042101960784312,
+          "displayLumaP95": 0.9428596078431372,
+          "displayLumaP99": 0.9467811764705882,
+          "HSV_S_mean": 0.023606074928941352,
+          "HSV_S_p95": 0.04147465437788017,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 8.214003144654088
+      }
+    }
+  },
+  {
+    "role": "Summer",
+    "framing": "body",
+    "alphaDifferentPixels": 0,
+    "foregroundPixels": 191377,
+    "boundsXYXY": [
+      337,
+      55,
+      686,
+      968
+    ],
+    "ROIwarning": "Fixed same-image approximate face/cloth boxes, not a skin segmentation. Display-encoded RGB/luma, not physical radiance. No pixel changes.",
+    "metrics": {
+      "allOpaque": {
+        "baseline": {
+          "pixels": 191377,
+          "meanRGB": [
+            0.45812834066264946,
+            0.461465558126874,
+            0.5487174837224258
+          ],
+          "displayLumaP50": 0.441596862745098,
+          "displayLumaP95": 0.8871396078431371,
+          "displayLumaP99": 0.8997380392156862,
+          "HSV_S_mean": 0.4192864898872087,
+          "HSV_S_p95": 0.8988764044943821,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "variant": {
+          "pixels": 191377,
+          "meanRGB": [
+            0.5035793942086246,
+            0.5128255316193171,
+            0.5974684400269827
+          ],
+          "displayLumaP50": 0.5120745098039216,
+          "displayLumaP95": 0.9187796078431372,
+          "displayLumaP99": 0.9381043137254902,
+          "HSV_S_mean": 0.38012267278992046,
+          "HSV_S_p95": 0.8285714285714286,
+          "allChannels255Fraction": 0.0,
+          "anyChannel255Fraction": 0.0,
+          "allChannelsAtLeast250Fraction": 0.0
+        },
+        "meanAbsRGBDifference255": 12.871682595087185
+      }
+    }
+  }
+]

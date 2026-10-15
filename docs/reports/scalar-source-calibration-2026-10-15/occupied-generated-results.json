@@ -1,0 +1,188 @@
+[
+  {
+    "role": "Retro",
+    "decodePasses": 1,
+    "sourceValues": "Raw original scalar JPEG channel R; nearest original surface UV from retained audit",
+    "derivedMethod": "Decode uint8 per pixel, quantize RGBA8 once, then bilinear sample linear PNG; roughness reconstructed as1-alpha",
+    "channels": [
+      {
+        "channel": "metallic",
+        "metrics": [
+          {
+            "subset": "nearSurface",
+            "samples": 10000,
+            "rawMAE": 0.14582238185478222,
+            "derivedPngMAE": 0.005165624137229097,
+            "derivedPngP95": 0.008129867852902869
+          },
+          {
+            "subset": "uvWithin1texel",
+            "samples": 7049,
+            "rawMAE": 0.1451318625667914,
+            "derivedPngMAE": 0.005129441545298158,
+            "derivedPngP95": 0.008004098020347888
+          },
+          {
+            "subset": "uvWithin4texels",
+            "samples": 9721,
+            "rawMAE": 0.14595111375584396,
+            "derivedPngMAE": 0.00508116703784498,
+            "derivedPngP95": 0.008006525974647672
+          }
+        ],
+        "priorDecodeAfterFilterMAE": 0.005202568454534446
+      },
+      {
+        "channel": "roughness",
+        "metrics": [
+          {
+            "subset": "nearSurface",
+            "samples": 10000,
+            "rawMAE": 0.16568479728790153,
+            "derivedPngMAE": 0.00825942690928429,
+            "derivedPngP95": 0.01749125800150282
+          },
+          {
+            "subset": "uvWithin1texel",
+            "samples": 7049,
+            "rawMAE": 0.16417285006334653,
+            "derivedPngMAE": 0.0080749557365092,
+            "derivedPngP95": 0.017079270961237895
+          },
+          {
+            "subset": "uvWithin4texels",
+            "samples": 9721,
+            "rawMAE": 0.16545445085835514,
+            "derivedPngMAE": 0.00817548227870742,
+            "derivedPngP95": 0.017325580353830472
+          }
+        ],
+        "priorDecodeAfterFilterMAE": 0.008204154517631861
+      }
+    ]
+  },
+  {
+    "role": "Sailor",
+    "decodePasses": 1,
+    "sourceValues": "Raw original scalar JPEG channel R; nearest original surface UV from retained audit",
+    "derivedMethod": "Decode uint8 per pixel, quantize RGBA8 once, then bilinear sample linear PNG; roughness reconstructed as1-alpha",
+    "channels": [
+      {
+        "channel": "metallic",
+        "metrics": [
+          {
+            "subset": "nearSurface",
+            "samples": 11111,
+            "rawMAE": 0.1286814206804307,
+            "derivedPngMAE": 0.0016023165132203498,
+            "derivedPngP95": 0.004793400649784827
+          },
+          {
+            "subset": "uvWithin1texel",
+            "samples": 8305,
+            "rawMAE": 0.1293906681775669,
+            "derivedPngMAE": 0.0015373808333239427,
+            "derivedPngP95": 0.004575003829656862
+          },
+          {
+            "subset": "uvWithin4texels",
+            "samples": 10834,
+            "rawMAE": 0.12880062767889924,
+            "derivedPngMAE": 0.001556782597032658,
+            "derivedPngP95": 0.004700970661406426
+          }
+        ],
+        "priorDecodeAfterFilterMAE": 0.0017175482472543994
+      },
+      {
+        "channel": "roughness",
+        "metrics": [
+          {
+            "subset": "nearSurface",
+            "samples": 11111,
+            "rawMAE": 0.21419515485795518,
+            "derivedPngMAE": 0.003618694821276774,
+            "derivedPngP95": 0.008507876711733198
+          },
+          {
+            "subset": "uvWithin1texel",
+            "samples": 8305,
+            "rawMAE": 0.21382139382391202,
+            "derivedPngMAE": 0.0036063508262588096,
+            "derivedPngP95": 0.008474837962318776
+          },
+          {
+            "subset": "uvWithin4texels",
+            "samples": 10834,
+            "rawMAE": 0.21414152170367742,
+            "derivedPngMAE": 0.0035841686378617135,
+            "derivedPngP95": 0.008450824513154898
+          }
+        ],
+        "priorDecodeAfterFilterMAE": 0.0035782526399854514
+      }
+    ]
+  },
+  {
+    "role": "Summer",
+    "decodePasses": 2,
+    "sourceValues": "Raw original scalar JPEG channel R; nearest original surface UV from retained audit",
+    "derivedMethod": "Decode uint8 per pixel, quantize RGBA8 once, then bilinear sample linear PNG; roughness reconstructed as1-alpha",
+    "channels": [
+      {
+        "channel": "metallic",
+        "metrics": [
+          {
+            "subset": "nearSurface",
+            "samples": 10000,
+            "rawMAE": 0.43677698609158244,
+            "derivedPngMAE": 0.002589664484629232,
+            "derivedPngP95": 0.0067884572756056645
+          },
+          {
+            "subset": "uvWithin1texel",
+            "samples": 7660,
+            "rawMAE": 0.43775824272022157,
+            "derivedPngMAE": 0.0026194485770142445,
+            "derivedPngP95": 0.006691568108165964
+          },
+          {
+            "subset": "uvWithin4texels",
+            "samples": 9772,
+            "rawMAE": 0.43684928277598584,
+            "derivedPngMAE": 0.0025727625716772855,
+            "derivedPngP95": 0.006669191849582325
+          }
+        ],
+        "priorDecodeAfterFilterMAE": 0.0026641937352254856
+      },
+      {
+        "channel": "roughness",
+        "metrics": [
+          {
+            "subset": "nearSurface",
+            "samples": 10000,
+            "rawMAE": 0.2606261132081095,
+            "derivedPngMAE": 0.008544208480184078,
+            "derivedPngP95": 0.019609051276655694
+          },
+          {
+            "subset": "uvWithin1texel",
+            "samples": 7660,
+            "rawMAE": 0.2585079360751111,
+            "derivedPngMAE": 0.008480089314632016,
+            "derivedPngP95": 0.01987006840752612
+          },
+          {
+            "subset": "uvWithin4texels",
+            "samples": 9772,
+            "rawMAE": 0.26054064923845355,
+            "derivedPngMAE": 0.0085191795980661,
+            "derivedPngP95": 0.019607843137254943
+          }
+        ],
+        "priorDecodeAfterFilterMAE": 0.00856665460621355
+      }
+    ]
+  }
+]
