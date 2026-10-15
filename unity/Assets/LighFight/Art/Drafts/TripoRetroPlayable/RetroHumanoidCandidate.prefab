@@ -139,7 +139,7 @@ Animator:
   m_GameObject: {fileID: 546620080746109903}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 70b429c21038045b09081d25a0a3d920, type: 3}
-  m_Controller: {fileID: 9100000, guid: c2ce8d59d617d4291aec06e0e2c5eec9, type: 2}
+  m_Controller: {fileID: 9100000, guid: f48bb7aa02c014d2d8233675a85947ba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1930,6 +1930,7 @@ MonoBehaviour:
   - Hit
   - Fall
   - GetUp
+  - CrouchUppercut
 --- !u!114 &1858250735105723655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98233,6 +98234,8 @@ MonoBehaviour:
     clip: {fileID: 7400000, guid: caf5e4eecb278444fb9817f408e6cf49, type: 2}
   - state: NativeHeadFull
     clip: {fileID: 7400000, guid: d53b860a4fc4240b8a41d509210c0c9c, type: 2}
+  - state: CrouchUppercut
+    clip: {fileID: 7400000, guid: 840f4859e624947929c9eebad22cd56d, type: 2}
   ownsMaterials: 0
 --- !u!114 &9215950232033928934
 MonoBehaviour:

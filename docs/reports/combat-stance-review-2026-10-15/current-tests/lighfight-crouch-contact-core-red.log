@@ -1,0 +1,41 @@
+NUnitLite 3.14.0 (.NET Standard 2.0)
+Copyright (c) 2023 Charlie Poole, Rob Prouse
+
+Runtime Environment
+   OS Version: Darwin 25.4.0 Darwin Kernel Version 25.4.0: Thu Mar 19 19:32:36 PDT 2026; root:xnu-12377.101.15~1/RELEASE_ARM64_T8103
+  CLR Version: 8.0.31
+
+Test Files
+    /Users/macbook1/Documents/ChatGPT/LighFight/verification/Combat/bin/Debug/net8.0/Combat.dll
+
+Test Discovery
+  Start time: 2026-10-15 14:53:07Z
+    End time: 2026-10-15 14:53:07Z
+    Duration: 0.034 seconds
+
+Errors, Failures and Warnings
+
+1) Failed : CrouchPhysicalContactTests.ActualContactDecidesDamageDuringCrouchTransitions(True,144)
+  A crouch input cannot replace the sampled body contact
+  Expected: 144
+  But was:  150
+   at CrouchPhysicalContactTests.ActualContactDecidesDamageDuringCrouchTransitions(Boolean touching, Int32 health) in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/CombatTests.cs:line 227
+
+2) Failed : CrouchPhysicalContactTests.HoldingCrouchDoesNotMakeStandingAttackInvulnerable
+  Expected: 143
+  But was:  150
+   at CrouchPhysicalContactTests.HoldingCrouchDoesNotMakeStandingAttackInvulnerable() in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/CombatTests.cs:line 231
+
+Run Settings
+    Number of Test Workers: 8
+    Work Directory: /Users/macbook1/Documents/ChatGPT/LighFight
+    Internal Trace: Off
+
+Test Run Summary
+  Overall result: Failed
+  Test Count: 94, Passed: 92, Failed: 2, Warnings: 0, Inconclusive: 0, Skipped: 0
+    Failed Tests - Failures: 2, Errors: 0, Invalid: 0
+  Start time: 2026-10-15 14:53:07Z
+    End time: 2026-10-15 14:53:07Z
+    Duration: 0.080 seconds
+

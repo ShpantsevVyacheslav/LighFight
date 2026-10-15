@@ -1,0 +1,45 @@
+NUnitLite 3.14.0 (.NET Standard 2.0)
+Copyright (c) 2023 Charlie Poole, Rob Prouse
+
+Runtime Environment
+   OS Version: Darwin 25.4.0 Darwin Kernel Version 25.4.0: Thu Mar 19 19:32:36 PDT 2026; root:xnu-12377.101.15~1/RELEASE_ARM64_T8103
+  CLR Version: 8.0.31
+
+Test Files
+    /Users/macbook1/Documents/ChatGPT/LighFight/verification/Combat/bin/Debug/net8.0/Combat.dll
+
+Test Discovery
+  Start time: 2026-10-15 15:18:53Z
+    End time: 2026-10-15 15:18:53Z
+    Duration: 0.034 seconds
+
+Errors, Failures and Warnings
+
+1) Failed : JoystickGuardTests.CentreHoldEnablesOnceAndReleaseKeepsBlock
+  Expected: True
+  But was:  False
+   at JoystickGuardTests.CentreHoldEnablesOnceAndReleaseKeepsBlock() in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/CombatTests.cs:line 236
+
+2) Failed : JoystickGuardTests.OtherTouchCannotTakeOverGuard
+  Expected: True
+  But was:  False
+   at JoystickGuardTests.OtherTouchCannotTakeOverGuard() in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/CombatTests.cs:line 239
+
+3) Failed : JoystickGuardTests.QuickCentreTapReleasesExistingGuard
+  Expected: True
+  But was:  False
+   at JoystickGuardTests.QuickCentreTapReleasesExistingGuard() in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/CombatTests.cs:line 240
+
+Run Settings
+    Number of Test Workers: 8
+    Work Directory: /Users/macbook1/Documents/ChatGPT/LighFight
+    Internal Trace: Off
+
+Test Run Summary
+  Overall result: Failed
+  Test Count: 101, Passed: 98, Failed: 3, Warnings: 0, Inconclusive: 0, Skipped: 0
+    Failed Tests - Failures: 3, Errors: 0, Invalid: 0
+  Start time: 2026-10-15 15:18:53Z
+    End time: 2026-10-15 15:18:53Z
+    Duration: 0.085 seconds
+

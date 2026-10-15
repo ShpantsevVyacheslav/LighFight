@@ -22,13 +22,19 @@ namespace LighFight.Runtime
         [System.Serializable] public struct ContactPose { public string moveId; public float phase,start,end; public int strikeSide;public float headingOffset; }
         [SerializeField] private ContactPose[] contactPoses = new ContactPose[0];
         public ContactPose[] CopyContactPoses() => (ContactPose[])contactPoses.Clone();
-        public void ConfigureAnimation(Animator value,ContactPose[] poses) { animator=value;contactPoses=poses;ownsMaterials=false; }
+        public void ConfigureAnimation(Animator value,ContactPose[] poses) { animator=value;postureLayer=-2;contactPoses=poses;ownsMaterials=false; }
         [SerializeField] private bool nativeMotion;
         [System.Serializable] public struct NativeClip { public string state; public AnimationClip clip; }
         [SerializeField] private NativeClip[] nativeClips = new NativeClip[0];
+        public const string CombatPostureLayerName="Review independent source arms";
+        private int postureLayer=-2;
+        private static readonly int PostureGuardState=Animator.StringToHash(CombatPostureLayerName+".SourceGuard"),PostureUppercutState=Animator.StringToHash(CombatPostureLayerName+".SourceUppercut");
+        private bool HasCombatPosture {
+            get { if(!animator)return false;if(postureLayer==-2){postureLayer=animator.GetLayerIndex(CombatPostureLayerName);if(postureLayer>=0&&(!animator.HasState(postureLayer,PostureGuardState)||!animator.HasState(postureLayer,PostureUppercutState)||!animator.HasState(0,Animator.StringToHash("Base Layer.CrouchUppercut"))))throw new System.InvalidOperationException("Incomplete combat posture controller");}return postureLayer>=0; }
+        }
         public bool UsesNativeMotion => nativeMotion;
         public bool HasNativeMotion(string state)=>nativeMotion&&System.Array.Exists(nativeClips,c=>c.state==state&&c.clip);
-        public bool PreviewNativeMotion(string state,float seconds){if(!HasNativeMotion(state)||!animator)return false;var clip=System.Array.Find(nativeClips,c=>c.state==state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        public bool PreviewNativeMotion(string state,float seconds){if(!HasNativeMotion(state)||!animator)return false;if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);var clip=System.Array.Find(nativeClips,c=>c.state==state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
         public static float NativePreviewPhase(float seconds,float duration,bool loop)=>loop?NativeLoopPhase(seconds,duration):Mathf.Clamp(seconds/Mathf.Max(.001f,duration),0,.999999f);
         public void UseNativeMotion(NativeClip[] clips = null) { nativeMotion=true; if(clips!=null)nativeClips=clips; }
         public static float NativeLoopPhase(float seconds,float duration) => Mathf.Repeat(seconds/Mathf.Max(.001f,duration),1);
@@ -137,7 +143,12 @@ namespace LighFight.Runtime
                 deathTime=fighter.Health<=0?deathTime+delta:0;
                 if(previousHitSerial!=fighter.HitSerial){previousHitSerial=fighter.HitSerial;reactionTime=0;}else reactionTime+=delta;
                 animator.applyRootMotion=false;animator.speed=0;
-                string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?(fighter.LastBlocked?"Guard":"Hit"):fighter.Attack.HasValue?fighter.Attack.Value.Id:fighter.Guard?"Guard":fighter.Crouch?"Crouch":moving?(backing?"WalkBack":"Walk"):"Idle";
+                string attackId=fighter.Attack.HasValue?fighter.Attack.Value.Id:null;
+                bool composedPosture=HasCombatPosture;
+                int armsLayer=postureLayer;
+                int postureRequestedArmsState=0;float postureRequestedArmsPhase=0;
+                string attackMotion=composedPosture&&fighter.Crouch&&attackId=="uppercut"?"CrouchUppercut":attackId;
+                string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?(fighter.LastBlocked?(composedPosture&&fighter.Crouch?"Crouch":"Guard"):"Hit"):fighter.Attack.HasValue?attackMotion:fighter.Guard&&!composedPosture?"Guard":fighter.Crouch?"Crouch":moving&&backing&&composedPosture?"WalkBack":fighter.Guard?"Guard":moving?(backing?"WalkBack":"Walk"):"Idle";
                 if(motion!=previousMotion)
                 {
                     blendFromRecovery=RecoveryBodySupportRequired;
@@ -154,10 +165,10 @@ namespace LighFight.Runtime
                     if(motion=="Hit"){phase=Mathf.Clamp01((float)fighter.ReactionTicks/Mathf.Max(1,fighter.ReactionDuration));if(nativeMotion&&highReaction)phase=highReaction.SourcePhase(phase);}
                     if(motion=="Idle" || motion=="Guard")phase=nativeMotion?NativeLoopPhase(nativeTime,NativeDuration(motion)):0;
                     if(nativeMotion && (motion=="Walk" || motion=="WalkBack")){phase=NativeLoopPhase(nativeTime,NativeDuration(motion));}
-                    if(motion=="Crouch" && !moving)phase=.3f;
+                    if(motion=="Crouch" && (!moving||fighter.Stun>0))phase=.3f;
                     if(fighter.Attack.HasValue)
                     {
-                        var contact=System.Array.Find(contactPoses,p=>p.moveId==motion);
+                        var contact=System.Array.Find(contactPoses,p=>p.moveId==fighter.Attack.Value.Id);
                         if(contact.phase>0 && !FullPreviewMotion)
                         {
                             float end=contact.end>contact.start?contact.end:1;
@@ -166,9 +177,13 @@ namespace LighFight.Runtime
                         }
                     }
                     if(!samplingContactPose && contactPoseHook!=null && contactPoseHook.TryGetContactPhase(Animator.StringToHash(motion),out var contactPhase))phase=contactPhase;
-                    animator.Play(state,0,phase);
+                    bool crouchedStrike=composedPosture&&motion=="CrouchUppercut";
+                    bool protectedArms=composedPosture&&(motion=="Crouch"||motion=="WalkBack");
+                    if(composedPosture){animator.SetLayerWeight(armsLayer,crouchedStrike||protectedArms?1:0);if(crouchedStrike||protectedArms){postureRequestedArmsState=(crouchedStrike?PostureUppercutState:PostureGuardState);postureRequestedArmsPhase=crouchedStrike?phase:.2f;animator.Play(postureRequestedArmsState,armsLayer,postureRequestedArmsPhase);}}
+                    // Original Human Crouch authority; no regenerated held-body clip.
+                    animator.Play(state,0,crouchedStrike?.3f:phase);
                 }
-                animator.Update(0);if(nativeMotion){AnchorNativeRoot();transform.rotation*=NativeHeading(fighter);}else ApplyArtistReaction(fighter);
+                animator.Update(0);if(postureRequestedArmsState!=0){var armsActual=animator.GetCurrentAnimatorStateInfo(armsLayer);if(armsActual.fullPathHash!=postureRequestedArmsState||Mathf.Abs(armsActual.normalizedTime-postureRequestedArmsPhase)>.00001f)throw new System.InvalidOperationException("Combat arms state/phase authority failed");}if(nativeMotion){AnchorNativeRoot();transform.rotation*=NativeHeading(fighter);}else ApplyArtistReaction(fighter);
                 ApplySampledContactHeading(fighter);return;
             }
             hips.localPosition = new Vector3(0,fighter.Crouch?.70f:.92f,0);

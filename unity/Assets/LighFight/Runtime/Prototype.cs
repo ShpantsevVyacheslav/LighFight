@@ -160,7 +160,7 @@ namespace LighFight.Runtime
             }
             if (paused || backgrounded || Time.timeScale == 0) return;
             if(session.Phase==FightPhase.Complete){UpdateVictoryPresentation(Time.deltaTime);return;}
-            if(Pressed(GuardArea,true))TogglePlayerGuard();
+            if(Pressed(GuardArea,true)){joystickGuard.Cancel();TogglePlayerGuard();}
             UpdateJoystick();
             UpdateStrikeGestures();
             bool crouch = Input.GetKey(KeyCode.DownArrow) || Held(CrouchArea,true);

@@ -82,6 +82,7 @@ MonoBehaviour:
   - Hit
   - Fall
   - GetUp
+  - CrouchUppercut
 --- !u!114 &4808992970657424143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,6 +1558,8 @@ MonoBehaviour:
     clip: {fileID: 7400000, guid: 5ef8f999429d64123a2810ac20990c0f, type: 2}
   - state: Victory
     clip: {fileID: 7400000, guid: 35f0772927034449ab27d1dbcea4ec60, type: 2}
+  - state: CrouchUppercut
+    clip: {fileID: 7400000, guid: 840f4859e624947929c9eebad22cd56d, type: 2}
   ownsMaterials: 0
 --- !u!114 &804799991844942860
 MonoBehaviour:
@@ -10070,7 +10073,7 @@ Animator:
   m_GameObject: {fileID: 973213886935428347}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 279d050248e0d4a078ff5b937845b15e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 248e585d196224a17a81d233d560d8cc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 724fad453b63a4031b1918cc50350a18, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -10455,7 +10458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3086501862182655443}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25646493, y: -0.622213, z: -0.05314541, w: 0.7377347}
+  m_LocalRotation: {x: 0.2564649, y: -0.62221295, z: -0.0531454, w: 0.7377346}
   m_LocalPosition: {x: -0.010745648, y: 0.02056186, z: 0.008819368}
   m_LocalScale: {x: 0.9999999, y: 0.99999976, z: 0.99999976}
   m_ConstrainProportionsScale: 0

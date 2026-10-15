@@ -219,3 +219,25 @@ public class TrainingDummyDefenceTests
  [Test] public void InvalidDefenceCannotOverwriteChosenMode(){var s=new FightSession(true);s.SetDummyDefence(1);Assert.IsFalse(s.SetDummyDefence(-1));Assert.IsFalse(s.SetDummyDefence(3));Assert.AreEqual(DummyDefence.StandingGuard,s.Defence);}
  [Test] public void BlockedDummyContactCannotContinueChain(){var s=new FightSession(true);s.Match.A.X=0;s.Match.B.X=.8f;s.SetDummyDefence(1);s.QueueAttack(true,0);for(int i=0;i<14;i++)s.Step();Assert.AreEqual(StrikeOutcome.Blocked,s.Match.A.Outcome);Assert.IsFalse(s.Match.Attack(s.Match.A,1));}
 }
+
+public class CrouchPhysicalContactTests {
+ [TestCase(true,144)] [TestCase(false,150)]
+ public void ActualContactDecidesDamageDuringCrouchTransitions(bool touching,int health){
+  var m=new Match{RequirePhysicalContact=true,ContactValidator=(a,b)=>touching};m.A.X=-.4f;m.B.X=.4f;m.B.Crouch=true;m.A.Start(0);
+  for(int tick=0;tick<14;tick++)m.Step();Assert.AreEqual(health,m.B.Health,"A crouch input cannot replace the sampled body contact");
+ }
+ [Test]public void HoldingCrouchDoesNotMakeStandingAttackInvulnerable(){
+  var m=new Match{RequirePhysicalContact=true,ContactValidator=(a,b)=>true};m.A.X=-.4f;m.B.X=.4f;m.B.Crouch=true;m.B.Start(4);m.A.Start(0);
+  for(int tick=0;tick<14;tick++)m.Step();Assert.AreEqual(143,m.B.Health);Assert.True(m.B.Crouch,"Keep held input for return to crouch after the attack");
+ }
+}
+
+public class JoystickGuardTests {
+ [Test]public void CentreHoldEnablesOnceAndReleaseKeepsBlock(){var g=new JoystickGuard();g.Begin(4,.1f,0,0,false);Assert.False(g.Advance(4,.1f,0,.249f));Assert.True(g.Advance(4,.1f,0,.25f));Assert.False(g.Advance(4,.1f,0,1));Assert.False(g.End(4,.1f,0,1.1f));}
+ [Test]public void MovingJoystickCancelsPendingGuard(){var g=new JoystickGuard();g.Begin(1,0,0,0,false);Assert.False(g.Advance(1,.5f,0,.1f));Assert.False(g.Advance(1,0,0,.5f));Assert.False(g.End(1,0,0,.6f));}
+ [Test]public void OffCentreHoldIsMovementOnly(){var g=new JoystickGuard();g.Begin(1,.8f,0,0,false);Assert.False(g.Advance(1,.8f,0,.5f));}
+ [Test]public void OtherTouchCannotTakeOverGuard(){var g=new JoystickGuard();g.Begin(3,0,0,0,false);Assert.False(g.Advance(8,0,0,.4f));Assert.False(g.End(8,0,0,.4f));Assert.True(g.Advance(3,0,0,.5f));}
+ [Test]public void QuickCentreTapReleasesExistingGuard(){var g=new JoystickGuard();g.Begin(1,0,0,0,true);Assert.True(g.End(1,0,0,.1f));g.Begin(1,0,0,1,false);Assert.False(g.End(1,0,0,1.1f));}
+ [Test]public void HoldingWhileAlreadyGuardingDoesNotToggleOff(){var g=new JoystickGuard();g.Begin(1,0,0,0,true);Assert.False(g.Advance(1,0,0,.4f));Assert.False(g.End(1,0,0,.5f));}
+ [Test]public void AttackOrPauseCancellationCannotReenableGuard(){var g=new JoystickGuard();g.Begin(1,0,0,0,false);g.Cancel();Assert.False(g.Advance(1,0,0,.5f));Assert.False(g.End(1,0,0,.6f));}
+}

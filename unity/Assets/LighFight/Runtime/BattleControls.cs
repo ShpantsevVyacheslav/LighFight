@@ -5,8 +5,9 @@ namespace LighFight.Runtime
  public sealed partial class Prototype
  {
   private bool playerGuard;
+  private readonly JoystickGuard joystickGuard=new JoystickGuard();
   private Rect GuardArea=>ControlRect(new Rect(74,246,72,72));
-  private void ClearPlayerGuard(){playerGuard=false;if(session!=null)match.A.Guard=false;}
+  private void ClearPlayerGuard(){joystickGuard.Cancel();playerGuard=false;if(session!=null)match.A.Guard=false;}
   private void TogglePlayerGuard(){
    if(selecting||paused||backgrounded||ActorsLoading||session==null||session.Phase!=FightPhase.Fighting)return;
    if(playerGuard){ClearPlayerGuard();return;}
@@ -76,21 +77,30 @@ namespace LighFight.Runtime
   {
    return NormalizeStick(StickArea,new Vector2(position.x,StickArea.center.y));
   }
+  private Vector2 GuardStickPoint(Vector2 position)=> (position-StickArea.center)/(StickArea.width*.5f);
+  private void BeginJoystickGuard(int id,Vector2 position){var p=GuardStickPoint(position);joystickGuard.Begin(id,p.x,p.y,Time.unscaledTime,playerGuard);}
+  private void AdvanceJoystickGuard(int id,Vector2 position){var p=GuardStickPoint(position);if(joystickGuard.Advance(id,p.x,p.y,Time.unscaledTime))TogglePlayerGuard();}
+  private void EndJoystickGuard(int id,Vector2 position){var p=GuardStickPoint(position);if(joystickGuard.End(id,p.x,p.y,Time.unscaledTime))TogglePlayerGuard();}
   private void UpdateJoystick()
   {
    if(Input.touchCount==0)
    {
-    stickFinger=-1;stickInput=Input.GetMouseButton(0)&&StickContains(StickArea,Position(Input.mousePosition))?StickVector(Position(Input.mousePosition)):Vector2.zero;return;
+    var position=Position(Input.mousePosition);
+    if(Input.GetMouseButtonDown(0)&&StickContains(StickArea,position))BeginJoystickGuard(0,position);
+    if(Input.GetMouseButton(0))AdvanceJoystickGuard(0,position);
+    if(Input.GetMouseButtonUp(0))EndJoystickGuard(0,position);
+    stickFinger=-1;stickInput=Input.GetMouseButton(0)&&StickContains(StickArea,position)?StickVector(position):Vector2.zero;return;
    }
    bool found=false;
    for(int i=0;i<Input.touchCount;i++)
    {
-    var t=Input.GetTouch(i);
-    if(stickFinger<0 && t.phase==TouchPhase.Began && StickContains(StickArea,Position(t.position)))stickFinger=t.fingerId;
+    var t=Input.GetTouch(i);var position=Position(t.position);
+    if(stickFinger<0 && t.phase==TouchPhase.Began && StickContains(StickArea,position)){stickFinger=t.fingerId;BeginJoystickGuard(t.fingerId,position);}
     if(t.fingerId!=stickFinger)continue;found=true;
-    if(t.phase==TouchPhase.Ended||t.phase==TouchPhase.Canceled){stickFinger=-1;stickInput=Vector2.zero;}else stickInput=StickVector(Position(t.position));
+    if(t.phase==TouchPhase.Ended||t.phase==TouchPhase.Canceled){if(t.phase==TouchPhase.Canceled)joystickGuard.Cancel();else EndJoystickGuard(t.fingerId,position);stickFinger=-1;stickInput=Vector2.zero;}
+    else{AdvanceJoystickGuard(t.fingerId,position);stickInput=StickVector(position);}
    }
-   if(!found){stickFinger=-1;stickInput=Vector2.zero;}
+   if(!found){stickFinger=-1;stickInput=Vector2.zero;joystickGuard.Cancel();}
   }
   private void DrawTrainingAdvice()
   {
@@ -119,7 +129,7 @@ namespace LighFight.Runtime
    Disc(GuardArea,match.A.Guard?selectionAccent:new Color(.08f,.2f,.29f,controlsOpacity));
    Text(GuardArea,T("БЛОК","BLOCK"),Mathf.RoundToInt(12*controlsScale),match.A.Guard?Color.white:selectionAccent,TextAnchor.MiddleCenter);
    Vector2 knob=StickArea.center+new Vector2(stickInput.x,-stickInput.y)*(Mathf.Min(StickArea.width,StickArea.height)*.3125f);
-   Disc(new Rect(knob.x-24*controlsScale,knob.y-24*controlsScale,48*controlsScale,48*controlsScale),selectionAccent);
+   Disc(new Rect(knob.x-24*controlsScale,knob.y-24*controlsScale,48*controlsScale,48*controlsScale),match.A.Guard?Color.white:selectionAccent);
 
    Disc(CrouchArea,new Color(.08f,.2f,.29f,controlsOpacity));Text(CrouchArea,"↓",28,selectionAccent,TextAnchor.MiddleCenter);
    if(gesturesEnabled){Disc(ControlRect(new Rect(660,335,220,170)),new Color(.04f,.12f,.19f,controlsOpacity*.45f));Text(ControlRect(new Rect(720,383,110,60)),"↑  →\n←  ↓",22,selectionAccent,TextAnchor.MiddleCenter);}

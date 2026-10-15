@@ -128,7 +128,7 @@ namespace LighFight.Core
             var move = attacker.Attack.Value;
             if (attacker.Frame < move.Startup || attacker.Frame >= move.Startup + move.Active ||
                 (!RequirePhysicalContact && Distance(attacker,defender) > move.Reach) ||
-                (defender.Crouch && move.Level == Level.High)) return default;
+                (!RequirePhysicalContact && defender.Crouch && move.Level == Level.High)) return default;
             if(RequirePhysicalContact && (ContactValidator==null || !ContactValidator(attacker,defender)))return default;
             bool blocked = defender.Guard && !defender.Attack.HasValue &&
                 (move.Level == Level.Low ? defender.Crouch : !defender.Crouch);
