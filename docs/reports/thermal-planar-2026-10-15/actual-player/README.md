@@ -1,0 +1,11 @@
+# Actual player roster sleep / restoration A/B
+
+Baseline runtime/core96f0222 vs currenta718b5e. Identical current Island/Ranger100k artist inputs, import metadata, materials, controller/clip assets, Metal1280x800 Development, graphics maximum/shadows on, target60/vsync0; exact asset SHA lists match. Isolated two-fighter catalog, first source arena. Missing arena-thumbnail fixture is shared by both; not a whole UI-content acceptance test.
+
+Both actual players completed four200frame windows without logged errors: initial roster, animated Dance preview, returned roster, real BeginFight. Current roster scene renders/actor LateUpdates/previewClock delta/selectionRT bytes all0; baseline both roster windows render/tick200 times and retain20,858,328 selectionRT bytes. Current preview and fight restore200 scene renders and actor ticks, and fight advances194 coreticks (baseline193). Current actual battle roots remain planar. Geometry and texture sources were not reduced.
+
+All four current EOF screenshots visually reviewed: grid visible at entry/return; animated actor restored in preview; two actors and new separate block button above joystick visible in battle. Battle frame still shows known close-body penetration, so CONTACT work is NOT accepted. Preview Dance phases naturally differ; not a held-pose pixel parity comparison. This isolated catalog intentionally has only two source fighters.
+
+At60fps wall medians remain~16.7ms. MainThread recorder includes asynchronous/wait scope and is not a direct power measure. The proof is elimination of hidden scene/actor work and selectionRT release, NOT demonstrated iPhone cooling, energy savings, thermal-throttling resolution, or sustained high-FPS capacity. Phone thermal acceptance remains open.
+
+Build1 stopped on an old owned review probe depending on QA-only Prototype APIs; that obsolete OWN probe was archived outside Assets, leaving production runtime exact. Build2 baseline/current both succeeded. Unity places runtime relative output beside app bundles; evidence copied verbatim from ThermalRosterBuilds/ThermalRosterEvidence to project evidence path for comparator. No main project assets/settings were changed by probe staging/builds.
