@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="9" result="Failed(Child)" total="9" passed="5" failed="4" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-16 14:45:48Z" end-time="2026-10-16 14:45:57Z" duration="8.037451">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="277" result="Failed" site="Child" start-time="2026-10-16 14:45:48Z" end-time="2026-10-16 14:45:57Z" duration="8.037451" total="9" passed="5" failed="4" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1336" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="252" result="Failed" site="Child" start-time="2026-10-16 14:45:48Z" end-time="2026-10-16 14:45:57Z" duration="8.025618" total="9" passed="5" failed="4" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="75750" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1337" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="95" result="Failed" site="Child" start-time="2026-10-16 14:45:48Z" end-time="2026-10-16 14:45:57Z" duration="8.022141" total="9" passed="5" failed="4" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1338" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="95" result="Failed" site="Child" start-time="2026-10-16 14:45:48Z" end-time="2026-10-16 14:45:57Z" duration="8.020790" total="9" passed="5" failed="4" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1324" name="VictoryPresentationTests" fullname="LighFight.Tests.VictoryPresentationTests" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="9" result="Failed" site="Child" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:57Z" duration="8.015828" total="9" passed="5" failed="4" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1330" name="CompletedPreviewHoldsItsLastFrameWhileDanceLoops" fullname="LighFight.Tests.VictoryPresentationTests.CompletedPreviewHoldsItsLastFrameWhileDanceLoops" methodname="CompletedPreviewHoldsItsLastFrameWhileDanceLoops" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="84584291" result="Passed" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:49Z" duration="0.012425" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1329" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:49Z" duration="0.034845" total="4" passed="0" failed="4" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-case id="1325" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,0,&quot;Fall&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,0,&quot;Fall&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1392620126" result="Failed" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:49Z" duration="0.028399" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Completed result motions must stop recurring pose work after the final late correction
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat (System.Int32 winningSide, System.Int32 loserHealth, System.String expectedState) [0x00371] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/VictoryPresentationTests.cs:31
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1326" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,0,&quot;Fall&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,0,&quot;Fall&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="333758474" result="Failed" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:49Z" duration="0.001768" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Completed result motions must stop recurring pose work after the final late correction
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat (System.Int32 winningSide, System.Int32 loserHealth, System.String expectedState) [0x00371] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/VictoryPresentationTests.cs:31
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1327" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,20,&quot;Defeat&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,20,&quot;Defeat&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="689181175" result="Failed" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:49Z" duration="0.001506" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Completed result motions must stop recurring pose work after the final late correction
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat (System.Int32 winningSide, System.Int32 loserHealth, System.String expectedState) [0x00371] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/VictoryPresentationTests.cs:31
+]]></stack-trace>
+                </failure>
+              </test-case>
+              <test-case id="1328" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,20,&quot;Defeat&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,20,&quot;Defeat&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="2052897871" result="Failed" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:49Z" duration="0.001453" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <failure>
+                  <message><![CDATA[  Completed result motions must stop recurring pose work after the final late correction
+  Expected: not null
+  But was:  null
+]]></message>
+                  <stack-trace><![CDATA[at LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat (System.Int32 winningSide, System.Int32 loserHealth, System.String expectedState) [0x00371] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/VictoryPresentationTests.cs:31
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1335" name="WinnerUsesAnAvailableAuthoredAnimation" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:57Z" duration="7.959927" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1331" name="WinnerUsesAnAvailableAuthoredAnimation(0,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(0,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="2008740520" result="Passed" start-time="2026-10-16 14:45:49Z" end-time="2026-10-16 14:45:57Z" duration="7.955288" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1332" name="WinnerUsesAnAvailableAuthoredAnimation(3,&quot;Greeting&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(3,&quot;Greeting&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="20557368" result="Passed" start-time="2026-10-16 14:45:57Z" end-time="2026-10-16 14:45:57Z" duration="0.000451" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1333" name="WinnerUsesAnAvailableAuthoredAnimation(4,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(4,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="956303409" result="Passed" start-time="2026-10-16 14:45:57Z" end-time="2026-10-16 14:45:57Z" duration="0.000108" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1334" name="WinnerUsesAnAvailableAuthoredAnimation(5,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(5,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="165305939" result="Passed" start-time="2026-10-16 14:45:57Z" end-time="2026-10-16 14:45:57Z" duration="0.000066" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/result-settling/red.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

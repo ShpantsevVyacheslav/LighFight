@@ -116,6 +116,7 @@ namespace LighFight.Runtime
         }
         private void Reset()
         {
+            if(player)player.ResumeResultPose();if(opponent)opponent.ResumeResultPose();
             var defence=session!=null?(int)session.Defence:0;
             session = new FightSession(training,targetWins,roundSeconds);session.SetDummyDefence(defence); accumulator = 0; bot = new BotController(42,difficulty);
             ClearPlayerGuard();

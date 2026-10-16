@@ -32,9 +32,21 @@ namespace LighFight.Runtime
         private bool HasCombatPosture {
             get { if(!animator)return false;if(postureLayer==-2){postureLayer=animator.GetLayerIndex(CombatPostureLayerName);if(postureLayer>=0&&(!animator.HasState(postureLayer,PostureGuardState)||!animator.HasState(postureLayer,PostureUppercutState)||!animator.HasState(0,Animator.StringToHash("Base Layer.CrouchUppercut"))))throw new System.InvalidOperationException("Incomplete combat posture controller");}return postureLayer>=0; }
         }
+        private SettledActorPose resultPose;
+        public bool ResultPoseHeld => resultPose && resultPose.IsHeld;
+        public void ResumeResultPose(){if(resultPose)resultPose.Resume();}
+        public void RequestResultPoseHold(string motion,float seconds){
+            if(!nativeMotion||!HasNativeMotion(motion))return;
+            var clip=System.Array.Find(nativeClips,c=>c.state==motion).clip;
+            float duration=clip.isLooping?float.PositiveInfinity:clip.length;
+            foreach(var component in GetComponents<MonoBehaviour>())if(component is IResultMotionSource source && component.enabled && source.TryGetResultDuration(motion,out var authoredDuration)){duration=authoredDuration;break;}
+            // Complete even the short carrier's source blend before holding the final pose.
+            if(seconds<Mathf.Max(.5f,duration)+.35f)return;
+            if(!resultPose)resultPose=gameObject.AddComponent<SettledActorPose>();resultPose.Request();
+        }
         public bool UsesNativeMotion => nativeMotion;
         public bool HasNativeMotion(string state)=>nativeMotion&&System.Array.Exists(nativeClips,c=>c.state==state&&c.clip);
-        public bool PreviewNativeMotion(string state,float seconds){if(!HasNativeMotion(state)||!animator)return false;if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);var clip=System.Array.Find(nativeClips,c=>c.state==state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        public bool PreviewNativeMotion(string state,float seconds){ResumeResultPose();if(!HasNativeMotion(state)||!animator)return false;if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);var clip=System.Array.Find(nativeClips,c=>c.state==state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
         public static float NativePreviewPhase(float seconds,float duration,bool loop)=>loop?NativeLoopPhase(seconds,duration):Mathf.Clamp(seconds/Mathf.Max(.001f,duration),0,.999999f);
         public void UseNativeMotion(NativeClip[] clips = null) { nativeMotion=true; if(clips!=null)nativeClips=clips; }
         public static float NativeLoopPhase(float seconds,float duration) => Mathf.Repeat(seconds/Mathf.Max(.001f,duration),1);
@@ -129,6 +141,7 @@ namespace LighFight.Runtime
             => joint.localRotation = Quaternion.Euler(x,y,z);
         public void Pose(Fighter fighter, float facing, float delta)
         {
+            ResumeResultPose();
             ValidateContactPoseContext(fighter);
             if(!hasPosition){previousX=fighter.X;previousZ=fighter.Z;hasPosition=true;if(animator!=null){if(nativeMotion)QualitySettings.skinWeights=SkinWeights.Unlimited;animator.applyRootMotion=false;animator.speed=0;animator.Rebind();if(nativeMotion){nativeRoot=System.Array.Find(animator.GetComponentsInChildren<Transform>(),t=>t.name.Substring(t.name.LastIndexOf(':')+1)=="Hips");if(nativeRoot)nativeRootRest=animator.transform.InverseTransformPoint(nativeRoot.position);}animator.Update(0);}}
             if(Mathf.Abs(previousX-fighter.X)+Mathf.Abs(previousZ-fighter.Z)>.0001f){motionHold=.06f;backing=(fighter.X-previousX)*facing+(fighter.Z-previousZ)*fighter.FacingZ<0;}else motionHold=Mathf.Max(0,motionHold-delta);
@@ -244,7 +257,7 @@ namespace LighFight.Runtime
             if(!fighter.LastBlocked && fighter.LastHitLevel==Level.High && contactBones.TryGetValue("Head",out var headBone))headBone.localRotation*=Quaternion.Euler(-12*r.magnitude/11f,0,0);
         }
         private static readonly Unity.Profiling.ProfilerMarker PoseMarker=new Unity.Profiling.ProfilerMarker("LighFight.Actor.Pose");
-        public void PoseTowards(Fighter fighter,Fighter other,float delta){using(PoseMarker.Auto())PoseTowardsImpl(fighter,other,delta);}
+        public void PoseTowards(Fighter fighter,Fighter other,float delta){ResumeResultPose();using(PoseMarker.Auto())PoseTowardsImpl(fighter,other,delta);}
         private void PoseTowardsImpl(Fighter fighter,Fighter other,float delta)
         {
             if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}

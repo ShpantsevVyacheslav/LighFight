@@ -10,10 +10,16 @@ namespace LighFight.Runtime {
    var winning=first?match.A:match.B;var losing=first?match.B:match.A;
    if(presentedWinner!=session.Winner){presentedWinner=session.Winner;victoryElapsed=0;victoryStartYaw=winner.transform.eulerAngles.y;pendingAttack=-1;stickInput=Vector2.zero;stickFinger=-1;strikeGesture.Cancel();}
    victoryElapsed+=Mathf.Max(0,delta);
-   winner.PoseTowards(winning,losing,delta);loser.PoseTowards(losing,winning,delta);
-   var motion=VictoryMotion(winner);if(motion!=null)winner.PreviewNativeMotion(motion,victoryElapsed);
-   if(losing.Health>0 && loser.HasNativeMotion("Defeat"))loser.PreviewNativeMotion("Defeat",victoryElapsed);
-   winner.transform.rotation=Quaternion.Euler(0,Mathf.LerpAngle(victoryStartYaw,180,Mathf.SmoothStep(0,1,Mathf.Clamp01(victoryElapsed/.7f))),0);
+   if(!winner.ResultPoseHeld){
+    winner.PoseTowards(winning,losing,delta);
+    var motion=VictoryMotion(winner);if(motion!=null){winner.PreviewNativeMotion(motion,victoryElapsed);winner.RequestResultPoseHold(motion,victoryElapsed);}
+   }
+   if(!loser.ResultPoseHeld){
+    loser.PoseTowards(losing,winning,delta);
+    if(losing.Health>0 && loser.HasNativeMotion("Defeat")){loser.PreviewNativeMotion("Defeat",victoryElapsed);loser.RequestResultPoseHold("Defeat",victoryElapsed);}
+    else if(losing.Health<=0)loser.RequestResultPoseHold("Fall",victoryElapsed);
+   }
+   if(!winner.ResultPoseHeld)winner.transform.rotation=Quaternion.Euler(0,Mathf.LerpAngle(victoryStartYaw,180,Mathf.SmoothStep(0,1,Mathf.Clamp01(victoryElapsed/.7f))),0);
    var focus=new Vector3(winning.X,1.25f,winning.Z);
    var position=focus+new Vector3(.7f,.4f,-4.2f);
    fightCamera.transform.position=Vector3.Lerp(fightCamera.transform.position,position,1-Mathf.Exp(-delta*3));

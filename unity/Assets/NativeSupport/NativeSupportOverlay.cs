@@ -1,7 +1,7 @@
 using System;using System.Collections;using System.Collections.Generic;using UnityEngine;
 // Original Generic provider curves, scoped to support states. Runs after fingers, before shoe grounding.
 [DefaultExecutionOrder(250)]
-public sealed class NativeSupportOverlay:MonoBehaviour,LighFight.Runtime.IContactPoseHook,LighFight.Runtime.IActorCurveWarmup {
+public sealed class NativeSupportOverlay:MonoBehaviour,LighFight.Runtime.IResultMotionSource,LighFight.Runtime.IContactPoseHook,LighFight.Runtime.IActorCurveWarmup {
  [Serializable]public sealed class Entry {public string state,sourceName;public AnimationClip original;public NativeSupportPoseData pose;[NonSerialized]public Transform[] targets;public bool loop,held;public float heldPhase=.99f;}
  public Animator animator;public CandidateFootGrounding grounding;public Entry[] entries=new Entry[0];
  public Vector3 hipBindAnchor;public bool hasHipBindAnchor;
@@ -39,6 +39,7 @@ public sealed class NativeSupportOverlay:MonoBehaviour,LighFight.Runtime.IContac
  public float LastSamplePhase{get;private set;}public float LastBlendWeight{get;private set;}public string ActiveState{get;private set;}
  public void Initialize(){fighterView=GetComponent<LighFight.Runtime.FighterView>();bones=animator.GetComponentsInChildren<Transform>();previousPositions=new Vector3[bones.Length];previousRotations=new Quaternion[bones.Length];startPositions=new Vector3[bones.Length];startRotations=new Quaternion[bones.Length];hip=Array.Find(bones,t=>t.name.Substring(t.name.LastIndexOf(':')+1)=="Hips");if(!hip)throw new InvalidOperationException("Native Hips missing");if(!hasHipBindAnchor){hipBindAnchor=animator.transform.InverseTransformPoint(hip.position);hasHipBindAnchor=true;}hipRest=hipBindAnchor;foreach(var e in entries)if(!e.pose)throw new InvalidOperationException("Original provider curve data required");SavePrevious();}
  void SavePrevious(){for(int i=0;i<bones.Length;i++){previousPositions[i]=bones[i].localPosition;previousRotations[i]=bones[i].localRotation;}havePrevious=true;}
+ public bool TryGetResultDuration(string state,out float duration){var entry=Array.Find(entries,e=>e.state==state);duration=0;if(entry==null)return false;duration=entry.held?0:entry.loop?float.PositiveInfinity:entry.pose?entry.pose.duration:entry.original.length;return true;}
  public float Phase(Entry entry,float seconds){if(entry.held)return entry.heldPhase;float n=seconds/Mathf.Max(.001f,entry.pose?entry.pose.duration:entry.original.length);return entry.loop?Mathf.Repeat(n,1):Mathf.Clamp(n,0,.999999f);}
  public bool Preview(string state,float seconds){var e=Array.Find(entries,x=>x.state==state);if(e==null)return false;animator.Play("Base Layer."+state,0,Phase(e,seconds));animator.Update(0);return true;}
  int contactFrame=-1,advancedFrame=-1,contactStateHash;float contactCarrierPhase,contactSourcePhase,contactBlendWeight;string contactState;bool contactRecoveryInPose;Vector3[] contactPositions,contactScales;Quaternion[] contactRotations;

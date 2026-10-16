@@ -12,7 +12,7 @@ namespace LighFight.Runtime {
   }
   private string FightDiagnosticContext(){
    string stage=backgrounded?"background":optionsOpen?"options":selecting?"selection":paused||Time.timeScale==0?"paused":session!=null&&session.Phase==LighFight.Core.FightPhase.Complete?"victory":"fight";
-   return "stage="+stage+"; fighter="+selectedFighter+"; opponent="+OpponentIndex+"; arena="+selectedArena+"; tier="+graphicsQuality+"; target="+frameRate+"; AA="+QualitySettings.antiAliasing+"; shadows="+QualitySettings.shadows+"; screen="+Screen.width+"x"+Screen.height+"; power="+SystemInfo.batteryStatus+"; content="+(diagnosticBootstrap?diagnosticBootstrap.ContentVersion??"unavailable":"inline")+"; unity="+Application.unityVersion+"; development="+Debug.isDebugBuild;
+   return "stage="+stage+"; fighter="+selectedFighter+"; opponent="+OpponentIndex+"; arena="+selectedArena+"; tier="+graphicsQuality+"; target="+frameRate+"; AA="+QualitySettings.antiAliasing+"; shadows="+QualitySettings.shadows+"; screen="+Screen.width+"x"+Screen.height+"; power="+SystemInfo.batteryStatus+"; content="+(diagnosticBootstrap?diagnosticBootstrap.ContentVersion??"unavailable":"inline")+"; unity="+Application.unityVersion+"; development="+Debug.isDebugBuild+"; resultHeld="+(player&&player.ResultPoseHeld?"1":"0")+(opponent&&opponent.ResultPoseHeld?"1":"0");
   }
   private void DrawFightDiagnostics(){
    if(!FightDiagnosticsEnabled)return;

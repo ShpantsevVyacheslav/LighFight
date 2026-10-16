@@ -25,9 +25,28 @@ namespace LighFight.Tests {
     var camera=new GameObject("Result camera");camera.transform.SetParent(root.transform);typeof(Prototype).GetField("fightCamera",flags).SetValue(game,camera.AddComponent<Camera>());
     var update=typeof(Prototype).GetMethod("UpdateVictoryPresentation",flags);
     foreach(float delta in new[]{.05f,2f}){update.Invoke(game,new object[]{delta});Assert.True(views[1-winningSide].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Base Layer."+expectedState),"Winner presentation must preserve the actual loss animation semantics");}
+    update.Invoke(game,new object[]{10f});
+    foreach(var view in views){
+     var hold=view.GetComponent("SettledActorPose");
+     Assert.IsNotNull(hold,"Completed result motions must stop recurring pose work after the final late correction");
+     hold.GetType().GetMethod("LateUpdate",flags).Invoke(hold,null);
+     Assert.IsFalse(view.GetComponent<Animator>().enabled,"Settled result must stop animator evaluation");
+    }
+    typeof(Prototype).GetMethod("Reset",flags).Invoke(game,null);
+    foreach(var view in views)Assert.IsTrue(view.GetComponent<Animator>().enabled,"Rematch must restore animation");
    }finally{Object.DestroyImmediate(root);Object.DestroyImmediate(controller);Object.DestroyImmediate(clip);}
   }
 
+  [Test] public void LoopingResultAndEarlyOneShotNeverSuspendAnimator() {
+   var actor=new GameObject("result duration policy");var clip=new AnimationClip();
+   clip.SetCurve("",typeof(Transform),"localPosition.y",AnimationCurve.Linear(0,0,2,0));
+   try{
+    var animator=actor.AddComponent<Animator>();var view=actor.AddComponent<FighterView>();view.ConfigureAnimation(animator,new FighterView.ContactPose[0]);view.UseNativeMotion(new[]{new FighterView.NativeClip{state="Victory",clip=clip}});
+    view.RequestResultPoseHold("Victory",1);Assert.IsNull(actor.GetComponent<SettledActorPose>(),"Early one-shot must continue");
+    var settings=AnimationUtility.GetAnimationClipSettings(clip);settings.loopTime=true;AnimationUtility.SetAnimationClipSettings(clip,settings);
+    view.RequestResultPoseHold("Victory",100);Assert.IsNull(actor.GetComponent<SettledActorPose>(),"Authored loop must continue");Assert.IsTrue(animator.enabled);
+   }finally{Object.DestroyImmediate(actor);Object.DestroyImmediate(clip);}
+  }
   [Test] public void CompletedPreviewHoldsItsLastFrameWhileDanceLoops() {
    Assert.That(FighterView.NativePreviewPhase(10,2,false),Is.InRange(.999f,1f));
    Assert.That(FighterView.NativePreviewPhase(10.5f,2,true),Is.EqualTo(.25f).Within(.00001f));
