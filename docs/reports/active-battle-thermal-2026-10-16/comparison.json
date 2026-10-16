@@ -1,0 +1,865 @@
+{
+  "scope": "Matched120s Mac Development selected-inline; not phone/power, not deterministic gameplay parity",
+  "runs": {
+    "baseline": {
+      "result": "reason=completed120seconds\nframes=7112\nerrors=0\nelapsed=120.01331545900001\n",
+      "coverage": "id,index,scheduled,observedStarts,startupFrames,activeFrames,recoveryFrames\njab,0,36,36,315,171,465\nfrontKick,4,35,35,572,200,812\njumpKick,11,36,36,742,207,598\nsideKick,14,36,36,703,155,777\n",
+      "coverageResult": "passed=True\nhitsObserved=100\ndownFramesA=273\ndownFramesB=461\n",
+      "frames": 7112,
+      "metrics": {
+        "wallMs": {
+          "count": 7112,
+          "minimum": 5.585040999989133,
+          "mean": 16.87476314102925,
+          "p95": 18.158208999992098,
+          "worst": 188.1502089999998
+        },
+        "mainMs": {
+          "count": 7112,
+          "minimum": 9.397125,
+          "mean": 16.8709260378234,
+          "p95": 17.384417,
+          "worst": 188.144417
+        },
+        "gpuRawMs": {
+          "count": 7112,
+          "minimum": 2.691166679142043,
+          "mean": 3.606969892425041,
+          "p95": 3.929500002413988,
+          "worst": 8.382208354305476
+        },
+        "groundMs": {
+          "count": 7112,
+          "minimum": 0.041625,
+          "mean": 1.212613524887514,
+          "p95": 2.398251,
+          "worst": 14.076667
+        },
+        "capMs": {
+          "count": 7112,
+          "minimum": 0.000625,
+          "mean": 0.30697542210348705,
+          "p95": 4.763375,
+          "worst": 14.439292
+        },
+        "poseMs": {
+          "count": 7112,
+          "minimum": 0.150709,
+          "mean": 0.3534788897637795,
+          "p95": 0.587833,
+          "worst": 3.263917
+        },
+        "contactMs": {
+          "count": 7112,
+          "minimum": 0.0,
+          "mean": 0.18017576912260966,
+          "p95": 1.648917,
+          "worst": 10.352791
+        }
+      },
+      "actors": {
+        "A": {
+          "minimumEvaluations": 7353,
+          "evaluationsPerFrame": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 1.03388638920135,
+            "p95": 2.0,
+            "worst": 3.0
+          },
+          "supportKinds": {
+            "0": 0,
+            "1": 6709,
+            "2": 403
+          },
+          "bodyMode": {
+            "1": {
+              "frames": 6709,
+              "points": [
+                10731
+              ],
+              "evaluationsPerFrame": {
+                "count": 6709,
+                "minimum": 0.0,
+                "mean": 1.0359218959606498,
+                "p95": 2.0,
+                "worst": 3.0
+              },
+              "capMs": {
+                "count": 6709,
+                "minimum": 0.000625,
+                "mean": 0.02480078789685497,
+                "p95": 0.065,
+                "worst": 4.870625
+              }
+            },
+            "2": {
+              "frames": 403,
+              "points": [
+                58198
+              ],
+              "evaluationsPerFrame": {
+                "count": 403,
+                "minimum": 0.0,
+                "mean": 1.0,
+                "p95": 1.0,
+                "worst": 3.0
+              },
+              "capMs": {
+                "count": 403,
+                "minimum": 0.001957,
+                "mean": 5.004517905707196,
+                "p95": 8.851459,
+                "worst": 14.439292
+              }
+            }
+          },
+          "supportFloorAfterCorrectionM": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.06640172837140071,
+            "p95": 0.4813650846481323,
+            "worst": 1.046128511428833
+          },
+          "correctionM": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.00827078436630716,
+            "p95": 0.05104570835828781,
+            "worst": 0.21119242906570435
+          }
+        },
+        "B": {
+          "minimumEvaluations": 6882,
+          "evaluationsPerFrame": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.9676602924634421,
+            "p95": 2.0,
+            "worst": 3.0
+          },
+          "supportKinds": {
+            "0": 0,
+            "1": 6599,
+            "2": 513
+          },
+          "bodyMode": {
+            "1": {
+              "frames": 6599,
+              "points": [
+                142
+              ],
+              "evaluationsPerFrame": {
+                "count": 6599,
+                "minimum": 0.0,
+                "mean": 0.9625700863767237,
+                "p95": 2.0,
+                "worst": 3.0
+              },
+              "capMs": {
+                "count": 6599,
+                "minimum": 0.000625,
+                "mean": 0.32357864297620853,
+                "p95": 4.768709,
+                "worst": 14.439292
+              }
+            },
+            "2": {
+              "frames": 513,
+              "points": [
+                260
+              ],
+              "evaluationsPerFrame": {
+                "count": 513,
+                "minimum": 0.0,
+                "mean": 1.0331384015594542,
+                "p95": 2.0,
+                "worst": 3.0
+              },
+              "capMs": {
+                "count": 513,
+                "minimum": 0.001583,
+                "mean": 0.09339909746588694,
+                "p95": 0.108167,
+                "worst": 3.326125
+              }
+            }
+          },
+          "supportFloorAfterCorrectionM": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.013810634871611235,
+            "p95": 0.03126676380634308,
+            "worst": 1.0369418859481812
+          },
+          "correctionM": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.021624845694795704,
+            "p95": 0.06589581817388535,
+            "worst": 0.18927456438541412
+          }
+        }
+      },
+      "markers": {
+        "main": {
+          "observedBlockFrames": 7112,
+          "blocks": {
+            "count": 7112,
+            "minimum": 1.0,
+            "mean": 1.0,
+            "p95": 1.0,
+            "worst": 1.0
+          },
+          "elapsedMs": {
+            "count": 7112,
+            "minimum": 9.397125,
+            "mean": 16.8709260378234,
+            "p95": 17.384417,
+            "worst": 188.144417
+          }
+        },
+        "render": {
+          "observedBlockFrames": 0,
+          "blocks": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.0,
+            "p95": 0.0,
+            "worst": 0.0
+          },
+          "elapsedMs": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.0,
+            "p95": 0.0,
+            "worst": 0.0
+          }
+        },
+        "wait": {
+          "observedBlockFrames": 7112,
+          "blocks": {
+            "count": 7112,
+            "minimum": 1.0,
+            "mean": 1.0,
+            "p95": 1.0,
+            "worst": 1.0
+          },
+          "elapsedMs": {
+            "count": 7112,
+            "minimum": 4.1e-05,
+            "mean": 0.001002636811023622,
+            "p95": 0.000541,
+            "worst": 5.13
+          }
+        },
+        "ground": {
+          "observedBlockFrames": 7112,
+          "blocks": {
+            "count": 7112,
+            "minimum": 2.0,
+            "mean": 2.2086614173228347,
+            "p95": 4.0,
+            "worst": 6.0
+          },
+          "elapsedMs": {
+            "count": 7112,
+            "minimum": 0.041625,
+            "mean": 1.212613524887514,
+            "p95": 2.398251,
+            "worst": 14.076667
+          }
+        },
+        "cap": {
+          "observedBlockFrames": 7112,
+          "blocks": {
+            "count": 7112,
+            "minimum": 2.0,
+            "mean": 2.2086614173228347,
+            "p95": 4.0,
+            "worst": 6.0
+          },
+          "elapsedMs": {
+            "count": 7112,
+            "minimum": 0.000625,
+            "mean": 0.30697542210348705,
+            "p95": 4.763375,
+            "worst": 14.439292
+          }
+        },
+        "pose": {
+          "observedBlockFrames": 7112,
+          "blocks": {
+            "count": 7112,
+            "minimum": 2.0,
+            "mean": 2.2086614173228347,
+            "p95": 4.0,
+            "worst": 6.0
+          },
+          "elapsedMs": {
+            "count": 7112,
+            "minimum": 0.150709,
+            "mean": 0.3534788897637795,
+            "p95": 0.587833,
+            "worst": 3.263917
+          }
+        },
+        "contact": {
+          "observedBlockFrames": 734,
+          "blocks": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.10433070866141732,
+            "p95": 1.0,
+            "worst": 2.0
+          },
+          "elapsedMs": {
+            "count": 7112,
+            "minimum": 0.0,
+            "mean": 0.18017576912260966,
+            "p95": 1.648917,
+            "worst": 10.352791
+          }
+        }
+      },
+      "retroBody": {
+        "frames": 403,
+        "metrics": {
+          "wallMs": {
+            "count": 403,
+            "minimum": 5.585040999989133,
+            "mean": 17.252060275434236,
+            "p95": 22.851709000008213,
+            "worst": 33.22795799999767
+          },
+          "groundMs": {
+            "count": 403,
+            "minimum": 0.041917,
+            "mean": 0.08447874441687345,
+            "p95": 0.112208,
+            "worst": 2.072583
+          },
+          "capMs": {
+            "count": 403,
+            "minimum": 0.001957,
+            "mean": 5.004517905707196,
+            "p95": 8.851459,
+            "worst": 14.439292
+          },
+          "poseMs": {
+            "count": 403,
+            "minimum": 0.150709,
+            "mean": 0.2517278908188586,
+            "p95": 0.410208,
+            "worst": 0.717458
+          },
+          "contactMs": {
+            "count": 403,
+            "minimum": 0.0,
+            "mean": 0.2325251265508685,
+            "p95": 1.0705,
+            "worst": 10.352791
+          }
+        },
+        "scansA": {
+          "count": 403,
+          "minimum": 0.0,
+          "mean": 1.0,
+          "p95": 1.0,
+          "worst": 3.0
+        },
+        "scansB": {
+          "count": 403,
+          "minimum": 0.0,
+          "mean": 0.5707196029776674,
+          "p95": 1.0,
+          "worst": 3.0
+        }
+      },
+      "bothNativeSupport": {
+        "frames": 6196,
+        "metrics": {
+          "wallMs": {
+            "count": 6196,
+            "minimum": 8.401125000006004,
+            "mean": 16.851365928502265,
+            "p95": 18.074749999996698,
+            "worst": 188.1502089999998
+          },
+          "groundMs": {
+            "count": 6196,
+            "minimum": 0.041625,
+            "mean": 1.2916788206907683,
+            "p95": 2.429292,
+            "worst": 14.076667
+          },
+          "capMs": {
+            "count": 6196,
+            "minimum": 0.000625,
+            "mean": 0.019121166720464815,
+            "p95": 0.060584,
+            "worst": 4.870625
+          },
+          "poseMs": {
+            "count": 6196,
+            "minimum": 0.154666,
+            "mean": 0.3574431870561653,
+            "p95": 0.595083,
+            "worst": 3.263917
+          },
+          "contactMs": {
+            "count": 6196,
+            "minimum": 0.0,
+            "mean": 0.17989996691413815,
+            "p95": 1.6655,
+            "worst": 6.083459
+          }
+        },
+        "scansA": {
+          "count": 6196,
+          "minimum": 0.0,
+          "mean": 1.050839251129761,
+          "p95": 2.0,
+          "worst": 3.0
+        },
+        "scansB": {
+          "count": 6196,
+          "minimum": 0.0,
+          "mean": 0.988056810845707,
+          "p95": 2.0,
+          "worst": 3.0
+        }
+      }
+    },
+    "candidate": {
+      "result": "reason=completed120seconds\nframes=6984\nerrors=0\nelapsed=120.00596654100002\n",
+      "coverage": "id,index,scheduled,observedStarts,startupFrames,activeFrames,recoveryFrames\njab,0,35,35,299,172,466\nfrontKick,4,35,36,571,303,750\njumpKick,11,35,34,782,127,661\nsideKick,14,35,34,690,149,788\n",
+      "coverageResult": "passed=True\nhitsObserved=94\ndownFramesA=375\ndownFramesB=372\n",
+      "frames": 6984,
+      "metrics": {
+        "wallMs": {
+          "count": 6984,
+          "minimum": 7.4002919999998085,
+          "mean": 17.182984899914093,
+          "p95": 18.416707999989512,
+          "worst": 388.194833
+        },
+        "mainMs": {
+          "count": 6984,
+          "minimum": 10.653791,
+          "mean": 17.18045564318442,
+          "p95": 17.574417,
+          "worst": 375.114958
+        },
+        "gpuRawMs": {
+          "count": 6984,
+          "minimum": 2.8570416616275907,
+          "mean": 3.734291970853444,
+          "p95": 4.0184166573453695,
+          "worst": 61.66341665084474
+        },
+        "groundMs": {
+          "count": 6984,
+          "minimum": 0.021,
+          "mean": 0.7832916248568156,
+          "p95": 1.493709,
+          "worst": 24.302875
+        },
+        "capMs": {
+          "count": 6984,
+          "minimum": 0.000709,
+          "mean": 0.19902840435280642,
+          "p95": 2.443417,
+          "worst": 8.426001
+        },
+        "poseMs": {
+          "count": 6984,
+          "minimum": 0.153876,
+          "mean": 0.44646285294959903,
+          "p95": 0.752583,
+          "worst": 31.366875
+        },
+        "contactMs": {
+          "count": 6984,
+          "minimum": 0.0,
+          "mean": 0.15596849942726232,
+          "p95": 1.386958,
+          "worst": 34.727083
+        }
+      },
+      "actors": {
+        "A": {
+          "minimumEvaluations": 7185,
+          "evaluationsPerFrame": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 1.0287800687285222,
+            "p95": 2.0,
+            "worst": 4.0
+          },
+          "supportKinds": {
+            "0": 0,
+            "1": 6577,
+            "2": 407
+          },
+          "bodyMode": {
+            "1": {
+              "frames": 6577,
+              "points": [
+                10731
+              ],
+              "evaluationsPerFrame": {
+                "count": 6577,
+                "minimum": 0.0,
+                "mean": 1.030409001064315,
+                "p95": 2.0,
+                "worst": 4.0
+              },
+              "capMs": {
+                "count": 6577,
+                "minimum": 0.000709,
+                "mean": 0.01895898464345446,
+                "p95": 0.049624,
+                "worst": 6.970375
+              }
+            },
+            "2": {
+              "frames": 407,
+              "points": [
+                58198
+              ],
+              "evaluationsPerFrame": {
+                "count": 407,
+                "minimum": 0.0,
+                "mean": 1.0024570024570025,
+                "p95": 2.0,
+                "worst": 2.0
+              },
+              "capMs": {
+                "count": 407,
+                "minimum": 0.002042,
+                "mean": 3.1088971351351353,
+                "p95": 5.653834,
+                "worst": 8.426001
+              }
+            }
+          },
+          "supportFloorAfterCorrectionM": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.07078800797457035,
+            "p95": 0.606671154499054,
+            "worst": 1.0461288690567017
+          },
+          "correctionM": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.010040655345406027,
+            "p95": 0.06570594012737274,
+            "worst": 0.21119248867034912
+          }
+        },
+        "B": {
+          "minimumEvaluations": 6805,
+          "evaluationsPerFrame": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.9743699885452463,
+            "p95": 2.0,
+            "worst": 4.0
+          },
+          "supportKinds": {
+            "0": 0,
+            "1": 6454,
+            "2": 530
+          },
+          "bodyMode": {
+            "1": {
+              "frames": 6454,
+              "points": [
+                142
+              ],
+              "evaluationsPerFrame": {
+                "count": 6454,
+                "minimum": 0.0,
+                "mean": 0.9705608924697862,
+                "p95": 2.0,
+                "worst": 4.0
+              },
+              "capMs": {
+                "count": 6454,
+                "minimum": 0.000709,
+                "mean": 0.21093480415246357,
+                "p95": 2.469459,
+                "worst": 8.426001
+              }
+            },
+            "2": {
+              "frames": 530,
+              "points": [
+                260
+              ],
+              "evaluationsPerFrame": {
+                "count": 530,
+                "minimum": 0.0,
+                "mean": 1.0207547169811322,
+                "p95": 2.0,
+                "worst": 2.0
+              },
+              "capMs": {
+                "count": 530,
+                "minimum": 0.001667,
+                "mean": 0.054039905660377356,
+                "p95": 0.08575,
+                "worst": 0.748875
+              }
+            }
+          },
+          "supportFloorAfterCorrectionM": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.02385796850081845,
+            "p95": 0.16596677899360657,
+            "worst": 1.0369418859481812
+          },
+          "correctionM": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.01987928808893265,
+            "p95": 0.06746383011341095,
+            "worst": 0.18753205239772797
+          }
+        }
+      },
+      "markers": {
+        "main": {
+          "observedBlockFrames": 6984,
+          "blocks": {
+            "count": 6984,
+            "minimum": 1.0,
+            "mean": 1.0,
+            "p95": 1.0,
+            "worst": 1.0
+          },
+          "elapsedMs": {
+            "count": 6984,
+            "minimum": 10.653791,
+            "mean": 17.18045564318442,
+            "p95": 17.574417,
+            "worst": 375.114958
+          }
+        },
+        "render": {
+          "observedBlockFrames": 0,
+          "blocks": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.0,
+            "p95": 0.0,
+            "worst": 0.0
+          },
+          "elapsedMs": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.0,
+            "p95": 0.0,
+            "worst": 0.0
+          }
+        },
+        "wait": {
+          "observedBlockFrames": 6984,
+          "blocks": {
+            "count": 6984,
+            "minimum": 1.0,
+            "mean": 1.0,
+            "p95": 1.0,
+            "worst": 1.0
+          },
+          "elapsedMs": {
+            "count": 6984,
+            "minimum": 4.1e-05,
+            "mean": 0.00659715578465063,
+            "p95": 0.000667,
+            "worst": 42.824166
+          }
+        },
+        "ground": {
+          "observedBlockFrames": 6984,
+          "blocks": {
+            "count": 6984,
+            "minimum": 2.0,
+            "mean": 2.2110538373424973,
+            "p95": 4.0,
+            "worst": 8.0
+          },
+          "elapsedMs": {
+            "count": 6984,
+            "minimum": 0.021,
+            "mean": 0.7832916248568156,
+            "p95": 1.493709,
+            "worst": 24.302875
+          }
+        },
+        "cap": {
+          "observedBlockFrames": 6984,
+          "blocks": {
+            "count": 6984,
+            "minimum": 2.0,
+            "mean": 2.2110538373424973,
+            "p95": 4.0,
+            "worst": 8.0
+          },
+          "elapsedMs": {
+            "count": 6984,
+            "minimum": 0.000709,
+            "mean": 0.19902840435280642,
+            "p95": 2.443417,
+            "worst": 8.426001
+          }
+        },
+        "pose": {
+          "observedBlockFrames": 6984,
+          "blocks": {
+            "count": 6984,
+            "minimum": 2.0,
+            "mean": 2.2110538373424973,
+            "p95": 4.0,
+            "worst": 8.0
+          },
+          "elapsedMs": {
+            "count": 6984,
+            "minimum": 0.153876,
+            "mean": 0.44646285294959903,
+            "p95": 0.752583,
+            "worst": 31.366875
+          }
+        },
+        "contact": {
+          "observedBlockFrames": 726,
+          "blocks": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.10552691867124857,
+            "p95": 1.0,
+            "worst": 3.0
+          },
+          "elapsedMs": {
+            "count": 6984,
+            "minimum": 0.0,
+            "mean": 0.15596849942726232,
+            "p95": 1.386958,
+            "worst": 34.727083
+          }
+        }
+      },
+      "retroBody": {
+        "frames": 407,
+        "metrics": {
+          "wallMs": {
+            "count": 407,
+            "minimum": 7.4002919999998085,
+            "mean": 16.86410493611791,
+            "p95": 19.733416999997644,
+            "worst": 34.99020900000005
+          },
+          "groundMs": {
+            "count": 407,
+            "minimum": 0.021084,
+            "mean": 0.06299066584766586,
+            "p95": 0.082375,
+            "worst": 1.709459
+          },
+          "capMs": {
+            "count": 407,
+            "minimum": 0.002042,
+            "mean": 3.1088971351351353,
+            "p95": 5.653834,
+            "worst": 8.426001
+          },
+          "poseMs": {
+            "count": 407,
+            "minimum": 0.153876,
+            "mean": 0.3201990884520885,
+            "p95": 0.548001,
+            "worst": 2.231792
+          },
+          "contactMs": {
+            "count": 407,
+            "minimum": 0.0,
+            "mean": 0.2011884742014742,
+            "p95": 1.48225,
+            "worst": 4.891459
+          }
+        },
+        "scansA": {
+          "count": 407,
+          "minimum": 0.0,
+          "mean": 1.0024570024570025,
+          "p95": 2.0,
+          "worst": 2.0
+        },
+        "scansB": {
+          "count": 407,
+          "minimum": 0.0,
+          "mean": 0.7911547911547911,
+          "p95": 2.0,
+          "worst": 2.0
+        }
+      },
+      "bothNativeSupport": {
+        "frames": 6047,
+        "metrics": {
+          "wallMs": {
+            "count": 6047,
+            "minimum": 9.759375000001569,
+            "mean": 17.244770685133133,
+            "p95": 18.45004199999778,
+            "worst": 388.194833
+          },
+          "groundMs": {
+            "count": 6047,
+            "minimum": 0.021542,
+            "mean": 0.843981044815611,
+            "p95": 1.509832,
+            "worst": 24.302875
+          },
+          "capMs": {
+            "count": 6047,
+            "minimum": 0.000709,
+            "mean": 0.015884255333223084,
+            "p95": 0.042541,
+            "worst": 6.970375
+          },
+          "poseMs": {
+            "count": 6047,
+            "minimum": 0.162042,
+            "mean": 0.46051057764180586,
+            "p95": 0.768167,
+            "worst": 31.366875
+          },
+          "contactMs": {
+            "count": 6047,
+            "minimum": 0.0,
+            "mean": 0.1566188746485861,
+            "p95": 1.402708,
+            "worst": 34.727083
+          }
+        },
+        "scansA": {
+          "count": 6047,
+          "minimum": 0.0,
+          "mean": 1.0458078385976517,
+          "p95": 2.0,
+          "worst": 4.0
+        },
+        "scansB": {
+          "count": 6047,
+          "minimum": 0.0,
+          "mean": 0.9826360178600959,
+          "p95": 2.0,
+          "worst": 4.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,746 @@
+{
+  "scope": "Observed rendered player phases; opponent work and all other scene work coexist. Inclusive CPU markers overlap. No causal, energy, or iPhone heat verdict.",
+  "windows": [
+    {
+      "playerMove": "frontKick",
+      "phase": "active",
+      "renderedFrames": 200,
+      "wallMs": {
+        "samples": 200,
+        "median": 16.69195800000267,
+        "p95": 19.947250000001304,
+        "worst": 22.965499999997974
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 200,
+          "median": 16.661292,
+          "p95": 17.272708,
+          "worst": 17.806583
+        },
+        "render": {
+          "samples": 200,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 200,
+          "median": 0.000292,
+          "p95": 0.000542,
+          "worst": 0.000709
+        },
+        "ground": {
+          "samples": 200,
+          "median": 1.5302715,
+          "p95": 3.024124,
+          "worst": 4.407377
+        },
+        "cap": {
+          "samples": 200,
+          "median": 0.0023534999999999997,
+          "p95": 0.0635,
+          "worst": 0.142542
+        },
+        "pose": {
+          "samples": 200,
+          "median": 0.43820899999999996,
+          "p95": 0.742,
+          "worst": 1.218583
+        },
+        "contact": {
+          "samples": 200,
+          "median": 0.0,
+          "p95": 2.176333,
+          "worst": 4.213542
+        }
+      },
+      "opponentAttackingFrames": 1,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "frontKick",
+      "phase": "recovery",
+      "renderedFrames": 823,
+      "wallMs": {
+        "samples": 823,
+        "median": 16.654709000000878,
+        "p95": 18.018707999999606,
+        "worst": 21.146291999997402
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 823,
+          "median": 16.658958,
+          "p95": 17.198167,
+          "worst": 17.792541
+        },
+        "render": {
+          "samples": 823,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 823,
+          "median": 0.000292,
+          "p95": 0.0005,
+          "worst": 0.000833
+        },
+        "ground": {
+          "samples": 823,
+          "median": 1.459792,
+          "p95": 2.04575,
+          "worst": 4.841167
+        },
+        "cap": {
+          "samples": 823,
+          "median": 0.002,
+          "p95": 0.055042,
+          "worst": 0.165459
+        },
+        "pose": {
+          "samples": 823,
+          "median": 0.352208,
+          "p95": 0.586126,
+          "worst": 1.13225
+        },
+        "contact": {
+          "samples": 823,
+          "median": 0.0,
+          "p95": 1.591417,
+          "worst": 4.3945
+        }
+      },
+      "opponentAttackingFrames": 88,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "frontKick",
+      "phase": "startup",
+      "renderedFrames": 581,
+      "wallMs": {
+        "samples": 581,
+        "median": 16.661708000000885,
+        "p95": 17.645208000004686,
+        "worst": 19.623667000001177
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 581,
+          "median": 16.661542,
+          "p95": 16.9245,
+          "worst": 17.8
+        },
+        "render": {
+          "samples": 581,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 581,
+          "median": 0.000292,
+          "p95": 0.0005,
+          "worst": 0.004666
+        },
+        "ground": {
+          "samples": 581,
+          "median": 1.464209,
+          "p95": 1.871959,
+          "worst": 3.183626
+        },
+        "cap": {
+          "samples": 581,
+          "median": 0.002041,
+          "p95": 0.052042,
+          "worst": 4.879833
+        },
+        "pose": {
+          "samples": 581,
+          "median": 0.361792,
+          "p95": 0.515375,
+          "worst": 1.050292
+        },
+        "contact": {
+          "samples": 581,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 2.212375
+        }
+      },
+      "opponentAttackingFrames": 60,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "idle",
+      "phase": "idle",
+      "renderedFrames": 1370,
+      "wallMs": {
+        "samples": 1370,
+        "median": 16.682229000004156,
+        "p95": 19.36366600000028,
+        "worst": 34.376417000000714
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 1370,
+          "median": 16.6599165,
+          "p95": 17.4385,
+          "worst": 33.392666
+        },
+        "render": {
+          "samples": 1370,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 1370,
+          "median": 0.00025,
+          "p95": 0.0005,
+          "worst": 0.002292
+        },
+        "ground": {
+          "samples": 1370,
+          "median": 0.8091035,
+          "p95": 2.083416,
+          "worst": 4.698958
+        },
+        "cap": {
+          "samples": 1370,
+          "median": 0.0022705,
+          "p95": 7.357542,
+          "worst": 18.522082
+        },
+        "pose": {
+          "samples": 1370,
+          "median": 0.330688,
+          "p95": 0.648375,
+          "worst": 2.483248
+        },
+        "contact": {
+          "samples": 1370,
+          "median": 0.0,
+          "p95": 1.956875,
+          "worst": 15.770792
+        }
+      },
+      "opponentAttackingFrames": 1187,
+      "playerDownFrames": 269
+    },
+    {
+      "playerMove": "jab",
+      "phase": "active",
+      "renderedFrames": 169,
+      "wallMs": {
+        "samples": 169,
+        "median": 16.642500000003224,
+        "p95": 20.197625000008657,
+        "worst": 22.20512499999927
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 169,
+          "median": 16.661416,
+          "p95": 17.428083,
+          "worst": 17.702458
+        },
+        "render": {
+          "samples": 169,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 169,
+          "median": 0.000292,
+          "p95": 0.000541,
+          "worst": 0.000667
+        },
+        "ground": {
+          "samples": 169,
+          "median": 1.0595,
+          "p95": 3.136958,
+          "worst": 3.838791
+        },
+        "cap": {
+          "samples": 169,
+          "median": 0.002625,
+          "p95": 0.097834,
+          "worst": 0.156292
+        },
+        "pose": {
+          "samples": 169,
+          "median": 0.408541,
+          "p95": 1.061375,
+          "worst": 2.2075
+        },
+        "contact": {
+          "samples": 169,
+          "median": 0.0,
+          "p95": 2.289,
+          "worst": 5.055125
+        }
+      },
+      "opponentAttackingFrames": 11,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "jab",
+      "phase": "recovery",
+      "renderedFrames": 481,
+      "wallMs": {
+        "samples": 481,
+        "median": 16.64258300000654,
+        "p95": 17.630875000001822,
+        "worst": 19.62866699999921
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 481,
+          "median": 16.658375,
+          "p95": 16.893917,
+          "worst": 17.708625
+        },
+        "render": {
+          "samples": 481,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 481,
+          "median": 0.000291,
+          "p95": 0.000542,
+          "worst": 0.00075
+        },
+        "ground": {
+          "samples": 481,
+          "median": 1.471833,
+          "p95": 2.941666,
+          "worst": 4.281917
+        },
+        "cap": {
+          "samples": 481,
+          "median": 0.001834,
+          "p95": 0.05575,
+          "worst": 0.126291
+        },
+        "pose": {
+          "samples": 481,
+          "median": 0.375083,
+          "p95": 0.63604,
+          "worst": 1.037041
+        },
+        "contact": {
+          "samples": 481,
+          "median": 0.0,
+          "p95": 1.992209,
+          "worst": 2.789875
+        }
+      },
+      "opponentAttackingFrames": 15,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "jab",
+      "phase": "startup",
+      "renderedFrames": 310,
+      "wallMs": {
+        "samples": 310,
+        "median": 16.66318750000073,
+        "p95": 17.917459000003078,
+        "worst": 18.875833000009834
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 310,
+          "median": 16.6575,
+          "p95": 17.284167,
+          "worst": 17.790916
+        },
+        "render": {
+          "samples": 310,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 310,
+          "median": 0.000291,
+          "p95": 0.000541,
+          "worst": 0.000792
+        },
+        "ground": {
+          "samples": 310,
+          "median": 1.2650005,
+          "p95": 1.682083,
+          "worst": 1.914125
+        },
+        "cap": {
+          "samples": 310,
+          "median": 0.028125,
+          "p95": 0.067458,
+          "worst": 5.677792
+        },
+        "pose": {
+          "samples": 310,
+          "median": 0.35875049999999997,
+          "p95": 0.516625,
+          "worst": 0.879125
+        },
+        "contact": {
+          "samples": 310,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        }
+      },
+      "opponentAttackingFrames": 117,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "jumpKick",
+      "phase": "active",
+      "renderedFrames": 133,
+      "wallMs": {
+        "samples": 133,
+        "median": 16.68033400000013,
+        "p95": 19.83079199999338,
+        "worst": 22.742458999999826
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 133,
+          "median": 16.661792,
+          "p95": 17.515125,
+          "worst": 17.749959
+        },
+        "render": {
+          "samples": 133,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 133,
+          "median": 0.00025,
+          "p95": 0.000584,
+          "worst": 0.000833
+        },
+        "ground": {
+          "samples": 133,
+          "median": 1.793667,
+          "p95": 3.357541,
+          "worst": 4.439416
+        },
+        "cap": {
+          "samples": 133,
+          "median": 0.004208,
+          "p95": 0.108792,
+          "worst": 0.168916
+        },
+        "pose": {
+          "samples": 133,
+          "median": 0.48925,
+          "p95": 0.767084,
+          "worst": 1.026541
+        },
+        "contact": {
+          "samples": 133,
+          "median": 1.245209,
+          "p95": 2.437542,
+          "worst": 4.313208
+        }
+      },
+      "opponentAttackingFrames": 0,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "jumpKick",
+      "phase": "recovery",
+      "renderedFrames": 716,
+      "wallMs": {
+        "samples": 716,
+        "median": 16.673415999996166,
+        "p95": 17.769333999993364,
+        "worst": 20.306833000006463
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 716,
+          "median": 16.662020499999997,
+          "p95": 17.261666,
+          "worst": 17.833708
+        },
+        "render": {
+          "samples": 716,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 716,
+          "median": 0.00025,
+          "p95": 0.0005,
+          "worst": 0.001
+        },
+        "ground": {
+          "samples": 716,
+          "median": 1.204396,
+          "p95": 1.867501,
+          "worst": 3.716209
+        },
+        "cap": {
+          "samples": 716,
+          "median": 0.032813,
+          "p95": 0.066291,
+          "worst": 0.103208
+        },
+        "pose": {
+          "samples": 716,
+          "median": 0.33975,
+          "p95": 0.537791,
+          "worst": 0.984957
+        },
+        "contact": {
+          "samples": 716,
+          "median": 0.0,
+          "p95": 1.138416,
+          "worst": 3.373583
+        }
+      },
+      "opponentAttackingFrames": 148,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "jumpKick",
+      "phase": "startup",
+      "renderedFrames": 845,
+      "wallMs": {
+        "samples": 845,
+        "median": 16.666790999998682,
+        "p95": 17.81820799999778,
+        "worst": 47.567624999999225
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 845,
+          "median": 16.66075,
+          "p95": 16.947833,
+          "worst": 47.427958
+        },
+        "render": {
+          "samples": 845,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 845,
+          "median": 0.000291,
+          "p95": 0.0005,
+          "worst": 0.004708
+        },
+        "ground": {
+          "samples": 845,
+          "median": 1.215666,
+          "p95": 1.868792,
+          "worst": 2.942292
+        },
+        "cap": {
+          "samples": 845,
+          "median": 0.001917,
+          "p95": 0.052709,
+          "worst": 0.102208
+        },
+        "pose": {
+          "samples": 845,
+          "median": 0.337833,
+          "p95": 0.530166,
+          "worst": 1.432083
+        },
+        "contact": {
+          "samples": 845,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 1.958208
+        }
+      },
+      "opponentAttackingFrames": 211,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "sideKick",
+      "phase": "active",
+      "renderedFrames": 143,
+      "wallMs": {
+        "samples": 143,
+        "median": 16.77270899999428,
+        "p95": 19.31070799999901,
+        "worst": 23.530207999996833
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 143,
+          "median": 16.662,
+          "p95": 17.023792,
+          "worst": 17.703458
+        },
+        "render": {
+          "samples": 143,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 143,
+          "median": 0.00025,
+          "p95": 0.0005,
+          "worst": 0.000583
+        },
+        "ground": {
+          "samples": 143,
+          "median": 1.630709,
+          "p95": 2.977374,
+          "worst": 4.75771
+        },
+        "cap": {
+          "samples": 143,
+          "median": 0.002874,
+          "p95": 0.10875,
+          "worst": 0.161501
+        },
+        "pose": {
+          "samples": 143,
+          "median": 0.426125,
+          "p95": 0.716624,
+          "worst": 1.002123
+        },
+        "contact": {
+          "samples": 143,
+          "median": 1.171542,
+          "p95": 2.055167,
+          "worst": 4.494666
+        }
+      },
+      "opponentAttackingFrames": 8,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "sideKick",
+      "phase": "recovery",
+      "renderedFrames": 747,
+      "wallMs": {
+        "samples": 747,
+        "median": 16.6300839999991,
+        "p95": 18.139707999992538,
+        "worst": 20.01787500000063
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 747,
+          "median": 16.65825,
+          "p95": 17.228208,
+          "worst": 17.818584
+        },
+        "render": {
+          "samples": 747,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 747,
+          "median": 0.000291,
+          "p95": 0.0005,
+          "worst": 0.000834
+        },
+        "ground": {
+          "samples": 747,
+          "median": 1.212458,
+          "p95": 2.101334,
+          "worst": 3.460333
+        },
+        "cap": {
+          "samples": 747,
+          "median": 0.027667,
+          "p95": 0.06575,
+          "worst": 0.135208
+        },
+        "pose": {
+          "samples": 747,
+          "median": 0.355417,
+          "p95": 0.603126,
+          "worst": 0.915292
+        },
+        "contact": {
+          "samples": 747,
+          "median": 0.0,
+          "p95": 1.488791,
+          "worst": 2.427959
+        }
+      },
+      "opponentAttackingFrames": 133,
+      "playerDownFrames": 0
+    },
+    {
+      "playerMove": "sideKick",
+      "phase": "startup",
+      "renderedFrames": 665,
+      "wallMs": {
+        "samples": 665,
+        "median": 16.649292000000315,
+        "p95": 17.911583000000064,
+        "worst": 20.208167000006938
+      },
+      "inclusiveCpuMarkersMs": {
+        "main": {
+          "samples": 665,
+          "median": 16.661958,
+          "p95": 17.134834,
+          "worst": 18.996667
+        },
+        "render": {
+          "samples": 665,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 665,
+          "median": 0.00025,
+          "p95": 0.000541,
+          "worst": 0.003917
+        },
+        "ground": {
+          "samples": 665,
+          "median": 1.174458,
+          "p95": 1.778708,
+          "worst": 3.288666
+        },
+        "cap": {
+          "samples": 665,
+          "median": 0.002251,
+          "p95": 0.066834,
+          "worst": 7.304791
+        },
+        "pose": {
+          "samples": 665,
+          "median": 0.339208,
+          "p95": 0.513167,
+          "worst": 0.928041
+        },
+        "contact": {
+          "samples": 665,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 2.377375
+        }
+      },
+      "opponentAttackingFrames": 203,
+      "playerDownFrames": 0
+    }
+  ]
+}

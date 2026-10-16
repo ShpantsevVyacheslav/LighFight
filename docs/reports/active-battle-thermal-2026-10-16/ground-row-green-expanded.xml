@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="9" result="Passed" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.0532742">
+  <test-suite type="TestSuite" id="1000" name="LeaseUnitUnity" fullname="LeaseUnitUnity" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.053274" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1012" name="Grounding.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/GroundingRowQA/Library/ScriptAssemblies/Grounding.Tests.dll" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.045703" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="8761" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1013" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.034853" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1014" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.034736" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1006" name="GroundingPerformanceTests" fullname="LighFight.Tests.GroundingPerformanceTests" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.034046" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1008" name="BoneAndSupportSetChangesInvalidateCachedMinimum" fullname="LighFight.Tests.GroundingPerformanceTests.BoneAndSupportSetChangesInvalidateCachedMinimum" methodname="BoneAndSupportSetChangesInvalidateCachedMinimum" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="1774306193" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.018549" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1009" name="CorrectionLimitChangesUseSameRawFloorMeasurement" fullname="LighFight.Tests.GroundingPerformanceTests.CorrectionLimitChangesUseSameRawFloorMeasurement" methodname="CorrectionLimitChangesUseSameRawFloorMeasurement" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="1645891407" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.000417" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1011" name="FloorMinimumMatchesOriginalWeightedXYZUnderTransforms" fullname="LighFight.Tests.GroundingPerformanceTests.FloorMinimumMatchesOriginalWeightedXYZUnderTransforms" methodname="FloorMinimumMatchesOriginalWeightedXYZUnderTransforms" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="649362001" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.004406" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1007" name="RepeatedIdenticalPoseScansSupportOnce" fullname="LighFight.Tests.GroundingPerformanceTests.RepeatedIdenticalPoseScansSupportOnce" methodname="RepeatedIdenticalPoseScansSupportOnce" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="1672398266" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.000236" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="WorldTransformChangesInvalidateCachedFloor" fullname="LighFight.Tests.GroundingPerformanceTests.WorldTransformChangesInvalidateCachedFloor" methodname="WorldTransformChangesInvalidateCachedFloor" classname="LighFight.Tests.GroundingPerformanceTests" runstate="Runnable" seed="409077685" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.000240" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1001" name="VerticalFloorCacheTests" fullname="VerticalFloorCacheTests" classname="VerticalFloorCacheTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.010519" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1003" name="HorizontalLocalMotionUnderTiltedParentStillInvalidatesFloor" fullname="VerticalFloorCacheTests.HorizontalLocalMotionUnderTiltedParentStillInvalidatesFloor" methodname="HorizontalLocalMotionUnderTiltedParentStillInvalidatesFloor" classname="VerticalFloorCacheTests" runstate="Runnable" seed="783333543" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.001063" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1002" name="HorizontalWorldMotionRetainsExactFloorWithoutRescan" fullname="VerticalFloorCacheTests.HorizontalWorldMotionRetainsExactFloorWithoutRescan" methodname="HorizontalWorldMotionRetainsExactFloorWithoutRescan" classname="VerticalFloorCacheTests" runstate="Runnable" seed="870596085" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.000351" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1004" name="SubEpsilonVerticalChangeInvalidatesExactly" fullname="VerticalFloorCacheTests.SubEpsilonVerticalChangeInvalidatesExactly" methodname="SubEpsilonVerticalChangeInvalidatesExactly" classname="VerticalFloorCacheTests" runstate="Runnable" seed="677231364" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.000235" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1005" name="WeightedMinimumIsBitExactAcrossScaleShearAndPoseChanges" fullname="VerticalFloorCacheTests.WeightedMinimumIsBitExactAcrossScaleShearAndPoseChanges" methodname="WeightedMinimumIsBitExactAcrossScaleShearAndPoseChanges" classname="VerticalFloorCacheTests" runstate="Runnable" seed="172981154" result="Passed" start-time="2026-10-16 06:21:23Z" end-time="2026-10-16 06:21:23Z" duration="0.008028" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/ground-row-green-expanded.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

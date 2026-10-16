@@ -1,0 +1,14 @@
+{
+  "reviewer": "floor_cache_review",
+  "decision": "Approve scoped promotion; no confirmed Critical/Important correctness issues",
+  "scope": "Exact world-Y floor arithmetic/cache invalidation, test evidence and actual-player limits",
+  "limitations": [
+    "No whole-frame/tail improvement established",
+    "No phone thermal improvement measured",
+    "No deterministic contact or independent full-mesh parity claimed"
+  ],
+  "optionalCoverage": [
+    "Explicit in-place support edit with InvalidateMinimumCache",
+    "Negative signed-floor correction"
+  ]
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="8" result="Passed" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-16 06:48:15Z" end-time="2026-10-16 06:48:18Z" duration="3.4182022">
+  <test-suite type="TestSuite" id="1013" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-10-16 06:48:15Z" end-time="2026-10-16 06:48:18Z" duration="3.418202" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1011" name="SelectedContent.PlayMode.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.dll" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-10-16 06:48:15Z" end-time="2026-10-16 06:48:18Z" duration="3.411113" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="11855" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="SelectedContentLifecycleTests" fullname="SelectedContentLifecycleTests" classname="SelectedContentLifecycleTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-16 06:48:15Z" end-time="2026-10-16 06:48:18Z" duration="3.244658" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="CancellationLatestSelectionWarmupAndDestroyRelease" fullname="SelectedContentLifecycleTests.CancellationLatestSelectionWarmupAndDestroyRelease" methodname="CancellationLatestSelectionWarmupAndDestroyRelease" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="1002623384" result="Passed" start-time="2026-10-16 06:48:15Z" end-time="2026-10-16 06:48:15Z" duration="0.538637" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1004" name="DisablePendingRequestReleasesAndResumeLoadsFresh" fullname="SelectedContentLifecycleTests.DisablePendingRequestReleasesAndResumeLoadsFresh" methodname="DisablePendingRequestReleasesAndResumeLoadsFresh" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="340587818" result="Passed" start-time="2026-10-16 06:48:15Z" end-time="2026-10-16 06:48:16Z" duration="0.513160" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1003" name="FailureReleasesAllAndRetryClearsLoadingError" fullname="SelectedContentLifecycleTests.FailureReleasesAllAndRetryClearsLoadingError" methodname="FailureReleasesAllAndRetryClearsLoadingError" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="370809857" result="Passed" start-time="2026-10-16 06:48:16Z" end-time="2026-10-16 06:48:16Z" duration="0.533196" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Selected content: fixture failure
+FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1007" name="LegacyInlineCatalogRemainsImmediateAndUsesTypedWarmup" fullname="SelectedContentLifecycleTests.LegacyInlineCatalogRemainsImmediateAndUsesTypedWarmup" methodname="LegacyInlineCatalogRemainsImmediateAndUsesTypedWarmup" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="84405850" result="Passed" start-time="2026-10-16 06:48:16Z" end-time="2026-10-16 06:48:17Z" duration="0.516636" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1005" name="RebuildReleasesWarmupAndInstancesBeforeOldAssets" fullname="SelectedContentLifecycleTests.RebuildReleasesWarmupAndInstancesBeforeOldAssets" methodname="RebuildReleasesWarmupAndInstancesBeforeOldAssets" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="1083277395" result="Passed" start-time="2026-10-16 06:48:17Z" end-time="2026-10-16 06:48:17Z" duration="0.466396" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1006" name="WarmupFailureReleasesAssetsAndRetryGetsFreshLeases" fullname="SelectedContentLifecycleTests.WarmupFailureReleasesAssetsAndRetryGetsFreshLeases" methodname="WarmupFailureReleasesAssetsAndRetryGetsFreshLeases" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="1090193365" result="Passed" start-time="2026-10-16 06:48:17Z" end-time="2026-10-16 06:48:18Z" duration="0.666578" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[InvalidOperationException: fixture warmup failure
+SelectedWarmupProbe+<Warmup>d__8.MoveNext () (at Assets/LighFight/Tests/SelectedContentPlayMode/SelectedContentLifecycleTests.cs:4)
+LighFight.Runtime.Prototype+<WarmActorCurves>d__12.MoveNext () (at Assets/LighFight/Runtime/ActorCurveWarmup.cs:48)
+UnityEngine.Debug:LogException(Exception, Object)
+LighFight.Runtime.<WarmActorCurves>d__12:MoveNext() (at Assets/LighFight/Runtime/ActorCurveWarmup.cs:49)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1008" name="SelectedDeliveryTeardownTests" fullname="SelectedDeliveryTeardownTests" classname="SelectedDeliveryTeardownTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-16 06:48:18Z" end-time="2026-10-16 06:48:18Z" duration="0.165305" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1010" name="BootstrapDestroyOwnsGameAndReleasesCatalogAndSelectedAssets" fullname="SelectedDeliveryTeardownTests.BootstrapDestroyOwnsGameAndReleasesCatalogAndSelectedAssets" methodname="BootstrapDestroyOwnsGameAndReleasesCatalogAndSelectedAssets" classname="SelectedDeliveryTeardownTests" runstate="Runnable" seed="104214325" result="Passed" start-time="2026-10-16 06:48:18Z" end-time="2026-10-16 06:48:18Z" duration="0.099822" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1009" name="DownloaderDestroyReleasesPendingOperation" fullname="SelectedDeliveryTeardownTests.DownloaderDestroyReleasesPendingOperation" methodname="DownloaderDestroyReleasesPendingOperation" classname="SelectedDeliveryTeardownTests" runstate="Runnable" seed="1108424952" result="Passed" start-time="2026-10-16 06:48:18Z" end-time="2026-10-16 06:48:18Z" duration="0.049973" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/main-ground-row-play-metal.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

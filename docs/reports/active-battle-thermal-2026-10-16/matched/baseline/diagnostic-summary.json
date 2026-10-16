@@ -1,0 +1,269 @@
+{
+  "scope": "Actual EOF support state; rawMinimum+correction is cached support floor, NOT independent full mesh floor",
+  "frames": 7112,
+  "actors": {
+    "A": {
+      "minimumEvaluations": 7353,
+      "evaluationsPerFrame": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 1.03388638920135,
+        "p95": 2.0,
+        "worst": 3.0
+      },
+      "supportKinds": {
+        "0": 0,
+        "1": 6709,
+        "2": 403
+      },
+      "bodyMode": {
+        "1": {
+          "frames": 6709,
+          "points": [
+            10731
+          ],
+          "evaluationsPerFrame": {
+            "count": 6709,
+            "minimum": 0.0,
+            "mean": 1.0359218959606498,
+            "p95": 2.0,
+            "worst": 3.0
+          },
+          "capMs": {
+            "count": 6709,
+            "minimum": 0.000625,
+            "mean": 0.02480078789685497,
+            "p95": 0.065,
+            "worst": 4.870625
+          }
+        },
+        "2": {
+          "frames": 403,
+          "points": [
+            58198
+          ],
+          "evaluationsPerFrame": {
+            "count": 403,
+            "minimum": 0.0,
+            "mean": 1.0,
+            "p95": 1.0,
+            "worst": 3.0
+          },
+          "capMs": {
+            "count": 403,
+            "minimum": 0.001957,
+            "mean": 5.004517905707196,
+            "p95": 8.851459,
+            "worst": 14.439292
+          }
+        }
+      },
+      "supportFloorAfterCorrectionM": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.06640172837140071,
+        "p95": 0.4813650846481323,
+        "worst": 1.046128511428833
+      },
+      "correctionM": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.00827078436630716,
+        "p95": 0.05104570835828781,
+        "worst": 0.21119242906570435
+      }
+    },
+    "B": {
+      "minimumEvaluations": 6882,
+      "evaluationsPerFrame": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.9676602924634421,
+        "p95": 2.0,
+        "worst": 3.0
+      },
+      "supportKinds": {
+        "0": 0,
+        "1": 6599,
+        "2": 513
+      },
+      "bodyMode": {
+        "1": {
+          "frames": 6599,
+          "points": [
+            142
+          ],
+          "evaluationsPerFrame": {
+            "count": 6599,
+            "minimum": 0.0,
+            "mean": 0.9625700863767237,
+            "p95": 2.0,
+            "worst": 3.0
+          },
+          "capMs": {
+            "count": 6599,
+            "minimum": 0.000625,
+            "mean": 0.32357864297620853,
+            "p95": 4.768709,
+            "worst": 14.439292
+          }
+        },
+        "2": {
+          "frames": 513,
+          "points": [
+            260
+          ],
+          "evaluationsPerFrame": {
+            "count": 513,
+            "minimum": 0.0,
+            "mean": 1.0331384015594542,
+            "p95": 2.0,
+            "worst": 3.0
+          },
+          "capMs": {
+            "count": 513,
+            "minimum": 0.001583,
+            "mean": 0.09339909746588694,
+            "p95": 0.108167,
+            "worst": 3.326125
+          }
+        }
+      },
+      "supportFloorAfterCorrectionM": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.013810634871611235,
+        "p95": 0.03126676380634308,
+        "worst": 1.0369418859481812
+      },
+      "correctionM": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.021624845694795704,
+        "p95": 0.06589581817388535,
+        "worst": 0.18927456438541412
+      }
+    }
+  },
+  "markers": {
+    "main": {
+      "observedBlockFrames": 7112,
+      "blocks": {
+        "count": 7112,
+        "minimum": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "worst": 1.0
+      },
+      "elapsedMs": {
+        "count": 7112,
+        "minimum": 9.397125,
+        "mean": 16.8709260378234,
+        "p95": 17.384417,
+        "worst": 188.144417
+      }
+    },
+    "render": {
+      "observedBlockFrames": 0,
+      "blocks": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.0,
+        "p95": 0.0,
+        "worst": 0.0
+      },
+      "elapsedMs": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.0,
+        "p95": 0.0,
+        "worst": 0.0
+      }
+    },
+    "wait": {
+      "observedBlockFrames": 7112,
+      "blocks": {
+        "count": 7112,
+        "minimum": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "worst": 1.0
+      },
+      "elapsedMs": {
+        "count": 7112,
+        "minimum": 4.1e-05,
+        "mean": 0.001002636811023622,
+        "p95": 0.000541,
+        "worst": 5.13
+      }
+    },
+    "ground": {
+      "observedBlockFrames": 7112,
+      "blocks": {
+        "count": 7112,
+        "minimum": 2.0,
+        "mean": 2.2086614173228347,
+        "p95": 4.0,
+        "worst": 6.0
+      },
+      "elapsedMs": {
+        "count": 7112,
+        "minimum": 0.041625,
+        "mean": 1.212613524887514,
+        "p95": 2.398251,
+        "worst": 14.076667
+      }
+    },
+    "cap": {
+      "observedBlockFrames": 7112,
+      "blocks": {
+        "count": 7112,
+        "minimum": 2.0,
+        "mean": 2.2086614173228347,
+        "p95": 4.0,
+        "worst": 6.0
+      },
+      "elapsedMs": {
+        "count": 7112,
+        "minimum": 0.000625,
+        "mean": 0.30697542210348705,
+        "p95": 4.763375,
+        "worst": 14.439292
+      }
+    },
+    "pose": {
+      "observedBlockFrames": 7112,
+      "blocks": {
+        "count": 7112,
+        "minimum": 2.0,
+        "mean": 2.2086614173228347,
+        "p95": 4.0,
+        "worst": 6.0
+      },
+      "elapsedMs": {
+        "count": 7112,
+        "minimum": 0.150709,
+        "mean": 0.3534788897637795,
+        "p95": 0.587833,
+        "worst": 3.263917
+      }
+    },
+    "contact": {
+      "observedBlockFrames": 734,
+      "blocks": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.10433070866141732,
+        "p95": 1.0,
+        "worst": 2.0
+      },
+      "elapsedMs": {
+        "count": 7112,
+        "minimum": 0.0,
+        "mean": 0.18017576912260966,
+        "p95": 1.648917,
+        "worst": 10.352791
+      }
+    }
+  }
+}

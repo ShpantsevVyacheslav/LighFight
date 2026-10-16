@@ -1,0 +1,295 @@
+{
+  "status": "COMPLETED_DIAGNOSTIC_NOT_POWER_OR_QUALITY_ACCEPTANCE",
+  "configuration": {
+    "scope": "Development diagnostic; not power meter",
+    "frameBufferCapacity": "74000",
+    "frameBufferStructBytes": "200",
+    "unity": "6000.3.26f1",
+    "deviceModel": "MacBookPro17,1",
+    "OS": "Mac OS X 26.4.0",
+    "graphics": "Metal Apple M1",
+    "durationSeconds": "120",
+    "shadowDiagnostic": "keep",
+    "actualLightShadows": "Light:Soft",
+    "authoredMaterialInvariant": "not_requested",
+    "stage": "fight",
+    "actor": "0",
+    "opponent": "1",
+    "arena": "0",
+    "qualityLevel": "5",
+    "requestedGraphicsTier": "2",
+    "targetFPS": "60",
+    "vSyncCount": "1",
+    "displayRefreshHz": "60.0024000960038",
+    "AA": "4",
+    "shadows": "All",
+    "shadowResolution": "High",
+    "shadowCascades": "4",
+    "shadowDistance": "25",
+    "textureMipmapLimit": "0",
+    "streamingMipmaps": "False",
+    "screenBrightness": "-1",
+    "screen": "1280x720",
+    "cameraPixels": "1280x720",
+    "cameraHDR": "True",
+    "cameraMSAA": "True",
+    "targetRT": "backbuffer",
+    "frameTimingEnabled": "True",
+    "cpuTimerHz": "999999999",
+    "gpuTimerHz": "1000000000",
+    "mainMarker": "True",
+    "renderMarker": "True",
+    "waitMarker": "True",
+    "groundMarker": "True",
+    "capMarker": "True",
+    "poseMarker": "True",
+    "contactMarker": "True",
+    "workloadIds": "jab;frontKick;jumpKick;sideKick",
+    "workloadIndices": "0;4;11;14",
+    "warmupSeconds": "10",
+    "postCaptureQuietSeconds": "1",
+    "coverageMinStarts": "3",
+    "coverageMinActiveFrames": "3",
+    "actorObject": "RetroHumanoidCandidate(Clone)",
+    "opponentObject": "IslandHumanoidCandidate(Clone)",
+    "allMoveTimings": "jab:10:3:15;cross:14:3:20;hook:18:4:23;body:16:3:20;frontKick:18:4:25;lowKick:17:4:22;sweep:25:5:32;uppercut:22:4:30;knee:16:4:23;elbow:15:3:22;spinKick:29:5:34;jumpKick:30:5:35;backfist:16:3:21;axeKick:31:5:32;sideKick:22:4:26;roundhouseKick:24:4:29;hammer:24:4:26;palm:13:3:18;heelKick:28:5:30;switchKick:20:4:25;highKick:24:4:29;shortHook:13:3:22;doublePunch:27:4:31;stepKick:28:4:33;counterstrike:19:3:26",
+    "allMoveIds": "jab;cross;hook;body;frontKick;lowKick;sweep;uppercut;knee;elbow;spinKick;jumpKick;backfist;axeKick;sideKick;roundhouseKick;hammer;palm;heelKick;switchKick;highKick;shortHook;doublePunch;stepKick;counterstrike",
+    "batchesRecorderValid": "True",
+    "setPassRecorderValid": "True",
+    "trianglesRecorderValid": "True",
+    "verticesRecorderValid": "True"
+  },
+  "result": {
+    "reason": "completed120seconds",
+    "frames": "7183",
+    "errors": "0",
+    "elapsed": "120.00173937500003"
+  },
+  "cpuMarkersMs": {
+    "main": {
+      "samples": 7183,
+      "mean": 16.70197058220799,
+      "median": 16.660375,
+      "p95": 17.228709,
+      "worst": 47.427958
+    },
+    "render": {
+      "samples": 7183,
+      "mean": 0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "worst": 0.0
+    },
+    "wait": {
+      "samples": 7183,
+      "mean": 0.0002870811638591118,
+      "median": 0.000291,
+      "p95": 0.000541,
+      "worst": 0.004708
+    },
+    "ground": {
+      "samples": 7183,
+      "mean": 1.179111047333983,
+      "median": 1.214083,
+      "p95": 2.244875,
+      "worst": 4.841167
+    },
+    "cap": {
+      "samples": 7183,
+      "mean": 0.39163069497424474,
+      "median": 0.002291,
+      "p95": 4.842417,
+      "worst": 18.522082
+    },
+    "pose": {
+      "samples": 7183,
+      "mean": 0.37004397939579564,
+      "median": 0.353334,
+      "p95": 0.616875,
+      "worst": 2.483248
+    },
+    "contact": {
+      "samples": 7183,
+      "mean": 0.1896992536544619,
+      "median": 0.0,
+      "p95": 1.789916,
+      "worst": 15.770792
+    }
+  },
+  "cpuMarkerScope": "Inclusive per-frame recorder samples; overlapping markers must not be summed; unavailable recorders are null. Valid-but-all-zero timing without sample counts does not prove zero work",
+  "cpuMarkerPositiveSamples": {
+    "main": 7183,
+    "render": 0,
+    "wait": 7183,
+    "ground": 7183,
+    "cap": 7183,
+    "pose": 7183,
+    "contact": 724
+  },
+  "wallMs": {
+    "samples": 7183,
+    "mean": 16.706353804120845,
+    "median": 16.663375000000258,
+    "p95": 18.396750000007955,
+    "worst": 47.567624999999225
+  },
+  "validUniqueGpuMs": {
+    "samples": 7183,
+    "mean": 3.554111780133228,
+    "median": 3.5354999999981374,
+    "p95": 3.8303750043269247,
+    "worst": 5.29412500327453
+  },
+  "gpuMissingOrInvalid": 0,
+  "gpuNewZeroOrNegative": 0,
+  "gpuRepeated": 0,
+  "gpuCompletedPositiveAfterEarlierZero": 0,
+  "processCpuCoreEquivalents": null,
+  "observedThermalStates": [
+    -1
+  ],
+  "maxPhysicalFootprintBytes": null,
+  "fightImpactsObserved": true,
+  "buckets": [
+    {
+      "seconds": [
+        0,
+        60
+      ],
+      "cpuMarkersMs": {
+        "main": {
+          "samples": 3583,
+          "mean": 16.734587781747138,
+          "median": 16.660541,
+          "p95": 17.311916,
+          "worst": 47.427958
+        },
+        "render": {
+          "samples": 3583,
+          "mean": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 3583,
+          "mean": 0.0002782394641361987,
+          "median": 0.00025,
+          "p95": 0.0005,
+          "worst": 0.004708
+        },
+        "ground": {
+          "samples": 3583,
+          "mean": 1.1405032456042423,
+          "median": 1.075708,
+          "p95": 2.104209,
+          "worst": 4.841167
+        },
+        "cap": {
+          "samples": 3583,
+          "mean": 0.4225103784538097,
+          "median": 0.002292,
+          "p95": 4.846333,
+          "worst": 18.522082
+        },
+        "pose": {
+          "samples": 3583,
+          "mean": 0.3689644658107731,
+          "median": 0.350375,
+          "p95": 0.625458,
+          "worst": 2.483248
+        },
+        "contact": {
+          "samples": 3583,
+          "mean": 0.18853750181412224,
+          "median": 0.0,
+          "p95": 1.765916,
+          "worst": 10.440708
+        }
+      },
+      "wallMs": {
+        "samples": 3583,
+        "mean": 16.741115557075076,
+        "median": 16.665750000001367,
+        "p95": 18.60975000000309,
+        "worst": 47.567624999999225
+      },
+      "processCpuCoreEquivalents": null,
+      "cpuCoveredSeconds": 0,
+      "observedThermalStates": [
+        -1
+      ],
+      "maxPhysicalFootprintBytes": null
+    },
+    {
+      "seconds": [
+        60,
+        120
+      ],
+      "cpuMarkersMs": {
+        "main": {
+          "samples": 3599,
+          "mean": 16.66953282245068,
+          "median": 16.660333,
+          "p95": 17.093583,
+          "worst": 33.237375
+        },
+        "render": {
+          "samples": 3599,
+          "mean": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "worst": 0.0
+        },
+        "wait": {
+          "samples": 3599,
+          "mean": 0.0002958591275354265,
+          "median": 0.000292,
+          "p95": 0.000542,
+          "worst": 0.004666
+        },
+        "ground": {
+          "samples": 3599,
+          "mean": 1.2174907679911087,
+          "median": 1.276584,
+          "p95": 2.431166,
+          "worst": 4.698958
+        },
+        "cap": {
+          "samples": 3599,
+          "mean": 0.3609964843011948,
+          "median": 0.00225,
+          "p95": 4.838541,
+          "worst": 14.583625
+        },
+        "pose": {
+          "samples": 3599,
+          "mean": 0.37109741539316476,
+          "median": 0.356626,
+          "p95": 0.606208,
+          "worst": 1.432083
+        },
+        "contact": {
+          "samples": 3599,
+          "mean": 0.19090854959711032,
+          "median": 0.0,
+          "p95": 1.8815,
+          "worst": 15.770792
+        }
+      },
+      "wallMs": {
+        "samples": 3599,
+        "mean": 16.67180939149765,
+        "median": 16.659957999991093,
+        "p95": 18.187125000011406,
+        "worst": 25.800375000002873
+      },
+      "processCpuCoreEquivalents": null,
+      "cpuCoveredSeconds": 0,
+      "observedThermalStates": [
+        -1
+      ],
+      "maxPhysicalFootprintBytes": null
+    }
+  ]
+}
