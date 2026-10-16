@@ -228,6 +228,7 @@ namespace LighFight.Runtime
             if(advancedMoves)for (int i = 0; i < Moves.All.Length; i++) GUI.Box(AttackArea(i), T(MoveNames[i],Moves.All[i].Id),moveButtonStyle);
             else if(!gesturesEnabled)DrawMainAttackControls();
             GUI.enabled=wasEnabled;
+            if(!optionsOpen)DrawFightDiagnostics();
             if(optionsOpen)OptionsGUI();
             GUI.matrix = saved;
         }

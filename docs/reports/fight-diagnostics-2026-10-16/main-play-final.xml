@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="20" result="Passed" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:44Z" duration="4.6505967">
+  <test-suite type="TestSuite" id="1029" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:44Z" duration="4.650597" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1025" name="SelectedContent.PlayMode.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.dll" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:44Z" duration="4.643670" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="36264" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1026" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:41Z" duration="1.253388" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1027" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:41Z" duration="1.253041" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1011" name="FightDiagnosticsIntegrationTests" fullname="LighFight.Tests.FightDiagnosticsIntegrationTests" classname="LighFight.Tests.FightDiagnosticsIntegrationTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:41Z" duration="1.245397" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1012" name="DiagnosticsAreLazyAndOwnerToggleClosesJournal" fullname="LighFight.Tests.FightDiagnosticsIntegrationTests.DiagnosticsAreLazyAndOwnerToggleClosesJournal" methodname="DiagnosticsAreLazyAndOwnerToggleClosesJournal" classname="LighFight.Tests.FightDiagnosticsIntegrationTests" runstate="Runnable" seed="652928300" result="Passed" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:40Z" duration="0.026188" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1013" name="RealUpdatesWriteOneSecondSamplesAndPreserveRenderSettings" fullname="LighFight.Tests.FightDiagnosticsIntegrationTests.RealUpdatesWriteOneSecondSamplesAndPreserveRenderSettings" methodname="RealUpdatesWriteOneSecondSamplesAndPreserveRenderSettings" classname="LighFight.Tests.FightDiagnosticsIntegrationTests" runstate="Runnable" seed="1698748529" result="Passed" start-time="2026-10-16 10:40:40Z" end-time="2026-10-16 10:40:41Z" duration="1.210784" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[LF_DIAG FPS 5002.7 | p95 unavailable ms [buffer overflow] GPU 0.00 ms | CPU unavailable cores | footprint unavailable Thermal unavailable | low power unavailable | network/ping unavailable stage=fight; label="a,b"
+]]></output>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1014" name="FightDiagnosticsTests" fullname="LighFight.Tests.FightDiagnosticsTests" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.006590" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1021" name="CpuUsesCoreEquivalentsAndRejectsMissingOrResetCounters" fullname="LighFight.Tests.FightDiagnosticsTests.CpuUsesCoreEquivalentsAndRejectsMissingOrResetCounters" methodname="CpuUsesCoreEquivalentsAndRejectsMissingOrResetCounters" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="1429610760" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000757" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1024" name="DesktopNativeMetricsAreExplicitlyUnavailable" fullname="LighFight.Tests.FightDiagnosticsTests.DesktopNativeMetricsAreExplicitlyUnavailable" methodname="DesktopNativeMetricsAreExplicitlyUnavailable" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="850188185" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000679" asserts="0">
+              <properties>
+                <property name="Category" value="UnityLifecycle" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1019" name="GpuRequiresUniquePositiveTimestampAndValue" fullname="LighFight.Tests.FightDiagnosticsTests.GpuRequiresUniquePositiveTimestampAndValue" methodname="GpuRequiresUniquePositiveTimestampAndValue" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="689696016" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000216" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1022" name="InactiveOwnerDoesNotStartJournalAndDisableClosesIt" fullname="LighFight.Tests.FightDiagnosticsTests.InactiveOwnerDoesNotStartJournalAndDisableClosesIt" methodname="InactiveOwnerDoesNotStartJournalAndDisableClosesIt" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="933198805" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000912" asserts="0">
+              <properties>
+                <property name="Category" value="UnityLifecycle" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1015" name="InvalidDeltaIsRejectedWithoutPoisoningWindow" fullname="LighFight.Tests.FightDiagnosticsTests.InvalidDeltaIsRejectedWithoutPoisoningWindow" methodname="InvalidDeltaIsRejectedWithoutPoisoningWindow" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="534490429" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000267" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1017" name="OverflowIsExplicitAndCannotReportIncompleteP95" fullname="LighFight.Tests.FightDiagnosticsTests.OverflowIsExplicitAndCannotReportIncompleteP95" methodname="OverflowIsExplicitAndCannotReportIncompleteP95" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="1942950566" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000129" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1023" name="PauseAndFocusResetSamplesWithoutRestartingJournal" fullname="LighFight.Tests.FightDiagnosticsTests.PauseAndFocusResetSamplesWithoutRestartingJournal" methodname="PauseAndFocusResetSamplesWithoutRestartingJournal" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="1168490035" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000744" asserts="0">
+              <properties>
+                <property name="Category" value="UnityLifecycle" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1020" name="PauseWindowClearKeepsGpuWatermark" fullname="LighFight.Tests.FightDiagnosticsTests.PauseWindowClearKeepsGpuWatermark" methodname="PauseWindowClearKeepsGpuWatermark" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="791635916" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000174" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1016" name="PercentileUsesNearestRankAndRealElapsed" fullname="LighFight.Tests.FightDiagnosticsTests.PercentileUsesNearestRankAndRealElapsed" methodname="PercentileUsesNearestRankAndRealElapsed" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="105426046" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000951" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1018" name="TakeResetsWindowAndBackgroundResetDropsLag" fullname="LighFight.Tests.FightDiagnosticsTests.TakeResetsWindowAndBackgroundResetDropsLag" methodname="TakeResetsWindowAndBackgroundResetDropsLag" classname="LighFight.Tests.FightDiagnosticsTests" runstate="Runnable" seed="623743866" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:41Z" duration="0.000160" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1001" name="SelectedContentLifecycleTests" fullname="SelectedContentLifecycleTests" classname="SelectedContentLifecycleTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:44Z" duration="3.223097" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1002" name="CancellationLatestSelectionWarmupAndDestroyRelease" fullname="SelectedContentLifecycleTests.CancellationLatestSelectionWarmupAndDestroyRelease" methodname="CancellationLatestSelectionWarmupAndDestroyRelease" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="1216531236" result="Passed" start-time="2026-10-16 10:40:41Z" end-time="2026-10-16 10:40:42Z" duration="0.521804" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1004" name="DisablePendingRequestReleasesAndResumeLoadsFresh" fullname="SelectedContentLifecycleTests.DisablePendingRequestReleasesAndResumeLoadsFresh" methodname="DisablePendingRequestReleasesAndResumeLoadsFresh" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="1184621373" result="Passed" start-time="2026-10-16 10:40:42Z" end-time="2026-10-16 10:40:42Z" duration="0.516595" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1003" name="FailureReleasesAllAndRetryClearsLoadingError" fullname="SelectedContentLifecycleTests.FailureReleasesAllAndRetryClearsLoadingError" methodname="FailureReleasesAllAndRetryClearsLoadingError" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="1195019394" result="Passed" start-time="2026-10-16 10:40:42Z" end-time="2026-10-16 10:40:43Z" duration="0.533194" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Selected content: fixture failure
+FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1007" name="LegacyInlineCatalogRemainsImmediateAndUsesTypedWarmup" fullname="SelectedContentLifecycleTests.LegacyInlineCatalogRemainsImmediateAndUsesTypedWarmup" methodname="LegacyInlineCatalogRemainsImmediateAndUsesTypedWarmup" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="559106807" result="Passed" start-time="2026-10-16 10:40:43Z" end-time="2026-10-16 10:40:43Z" duration="0.516518" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+        <test-case id="1005" name="RebuildReleasesWarmupAndInstancesBeforeOldAssets" fullname="SelectedContentLifecycleTests.RebuildReleasesWarmupAndInstancesBeforeOldAssets" methodname="RebuildReleasesWarmupAndInstancesBeforeOldAssets" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="977918861" result="Passed" start-time="2026-10-16 10:40:43Z" end-time="2026-10-16 10:40:44Z" duration="0.466861" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1006" name="WarmupFailureReleasesAssetsAndRetryGetsFreshLeases" fullname="SelectedContentLifecycleTests.WarmupFailureReleasesAssetsAndRetryGetsFreshLeases" methodname="WarmupFailureReleasesAssetsAndRetryGetsFreshLeases" classname="SelectedContentLifecycleTests" runstate="Runnable" seed="769157031" result="Passed" start-time="2026-10-16 10:40:44Z" end-time="2026-10-16 10:40:44Z" duration="0.666217" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[InvalidOperationException: fixture warmup failure
+SelectedWarmupProbe+<Warmup>d__8.MoveNext () (at Assets/LighFight/Tests/SelectedContentPlayMode/SelectedContentLifecycleTests.cs:4)
+LighFight.Runtime.Prototype+<WarmActorCurves>d__12.MoveNext () (at Assets/LighFight/Runtime/ActorCurveWarmup.cs:48)
+UnityEngine.Debug:LogException(Exception, Object)
+LighFight.Runtime.<WarmActorCurves>d__12:MoveNext() (at Assets/LighFight/Runtime/ActorCurveWarmup.cs:49)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/Coroutines.cs:17)
+
+FILMIC_RUNTIME source=ARGBHalf linear=Linear shaderSupported=True
+]]></output>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1008" name="SelectedDeliveryTeardownTests" fullname="SelectedDeliveryTeardownTests" classname="SelectedDeliveryTeardownTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-16 10:40:44Z" end-time="2026-10-16 10:40:44Z" duration="0.166628" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1010" name="BootstrapDestroyOwnsGameAndReleasesCatalogAndSelectedAssets" fullname="SelectedDeliveryTeardownTests.BootstrapDestroyOwnsGameAndReleasesCatalogAndSelectedAssets" methodname="BootstrapDestroyOwnsGameAndReleasesCatalogAndSelectedAssets" classname="SelectedDeliveryTeardownTests" runstate="Runnable" seed="1454671212" result="Passed" start-time="2026-10-16 10:40:44Z" end-time="2026-10-16 10:40:44Z" duration="0.099968" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1009" name="DownloaderDestroyReleasesPendingOperation" fullname="SelectedDeliveryTeardownTests.DownloaderDestroyReleasesPendingOperation" methodname="DownloaderDestroyReleasesPendingOperation" classname="SelectedDeliveryTeardownTests" runstate="Runnable" seed="1458412599" result="Passed" start-time="2026-10-16 10:40:44Z" end-time="2026-10-16 10:40:44Z" duration="0.049849" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: /Users/macbook1/Documents/ChatGPT/LighFight/.tools/thermal-sustain-review/FightDiagnosticsReview/main-play-final.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

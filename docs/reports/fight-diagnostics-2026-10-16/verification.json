@@ -1,0 +1,22 @@
+{
+  "mainEditMode": {
+    "passed": 277,
+    "failed": 0,
+    "graphics": "Metal"
+  },
+  "mainPlayMode": {
+    "passed": 20,
+    "failed": 0,
+    "includes": "actual frame-window/CSV and opt-in owner lifecycle"
+  },
+  "nativeIOS": {
+    "arm64ClangSyntax": "passed -Wall -Wextra -Werror",
+    "deviceLinkRun": "not verified"
+  },
+  "review": {
+    "critical": 0,
+    "important": 0,
+    "minorFixed": "GPU timestamp watermark survives pause and enable/disable sample resets"
+  },
+  "phone": "Offline during this task; no physical CPU/GPU/thermal/Console/export proof"
+}

@@ -15,6 +15,7 @@ namespace LighFight.Runtime
         public TextAsset embeddedDescriptor;
         private EmbeddedContentDescriptor embedded;
         public bool IsPlaying => playing;
+        public string ContentVersion => embedded?.contentVersion ?? manifest?.contentVersion;
         public string ErrorCode { get; private set; }
         public GameContent OpenedContent => playing && loadedContent.IsValid() ? loadedContent.Result : null;
         private ContentManifest manifest;
