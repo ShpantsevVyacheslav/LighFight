@@ -8,7 +8,8 @@ namespace LighFight.Runtime {
   private bool soundEnabled=true,cameraShake=true,leftHanded,shadowsEnabled=true;
   private float controlsScale=1,controlsOpacity=.75f;
   private Rect ControlRect(Rect rect){var center=rect.center;rect.width*=controlsScale;rect.height*=controlsScale;rect.center=center;if(leftHanded)rect.x=960-rect.xMax;return rect;}
-  private void LoadOptions(){attackBindings.Load("lf.attackButton.");shadowsEnabled=PlayerPrefs.GetInt("lf.shadows",1)==1;controlsScale=PlayerPrefs.GetFloat("lf.controlScale",1);controlsOpacity=PlayerPrefs.GetFloat("lf.controlOpacity",.75f);gesturesEnabled=PlayerPrefs.GetInt("lf.swipes",1)==1;graphicsQuality=PlayerPrefs.GetInt("lf.graphics",2);frameRate=PlayerPrefs.GetInt("lf.fps",60);soundEnabled=PlayerPrefs.GetInt("lf.sound",1)==1;cameraShake=PlayerPrefs.GetInt("lf.shake",1)==1;leftHanded=PlayerPrefs.GetInt("lf.left",0)==1;ApplyOptions();SetFightDiagnostics(PlayerPrefs.GetInt("lf.diagnostics",0)==1);}
+  private void LoadOptions(){LoadOptionsForDevice(Application.isMobilePlatform&&!Application.isEditor);}
+  private void LoadOptionsForDevice(bool mobile){attackBindings.Load("lf.attackButton.");shadowsEnabled=PlayerPrefs.GetInt("lf.shadows",1)==1;controlsScale=PlayerPrefs.GetFloat("lf.controlScale",1);controlsOpacity=PlayerPrefs.GetFloat("lf.controlOpacity",.75f);gesturesEnabled=PlayerPrefs.GetInt("lf.swipes",1)==1;graphicsQuality=PlayerPrefs.GetInt("lf.graphics",mobile?1:2);frameRate=PlayerPrefs.GetInt("lf.fps",mobile?30:60);soundEnabled=PlayerPrefs.GetInt("lf.sound",1)==1;cameraShake=PlayerPrefs.GetInt("lf.shake",1)==1;leftHanded=PlayerPrefs.GetInt("lf.left",0)==1;ApplyOptions();SetFightDiagnostics(PlayerPrefs.GetInt("lf.diagnostics",0)==1);}
   private void ApplyVisualQuality(){
    FightGraphicsQuality.ApplyGlobal(graphicsQuality,frameRate,shadowsEnabled);
    FightGraphicsQuality.ApplyLights(gameObject,graphicsQuality,shadowsEnabled);

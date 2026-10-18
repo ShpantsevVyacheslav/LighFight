@@ -41,6 +41,17 @@ namespace LighFight.Tests {
    Set("graphicsQuality",2);Set("frameRate",requested==30?60:30);typeof(Prototype).GetMethod("LoadOptions",Flags).Invoke(game,null);
    Assert.AreEqual(requested,Application.targetFrameRate);Assert.AreEqual(0,QualitySettings.antiAliasing,"Saved Low tier must be applied on reload");
   }
+  [TestCase(true,1,30)][TestCase(false,2,60)]public void FreshDeviceUsesAppropriateInitialBudget(bool mobile,int tier,int fps){
+   PlayerPrefs.DeleteKey("lf.graphics");PlayerPrefs.DeleteKey("lf.fps");
+   typeof(Prototype).GetMethod("LoadOptionsForDevice",Flags).Invoke(game,new object[]{mobile});
+   Assert.AreEqual(tier,PlayerPrefs.GetInt("lf.graphics"));Assert.AreEqual(fps,Application.targetFrameRate);
+   Assert.AreEqual(FightGraphicsQuality.Antialiasing(tier),QualitySettings.antiAliasing);
+  }
+  [TestCase(true)][TestCase(false)]public void DeviceDefaultsPreserveExplicitMaximumAndSixtyFps(bool mobile){
+   PlayerPrefs.SetInt("lf.graphics",2);PlayerPrefs.SetInt("lf.fps",60);
+   typeof(Prototype).GetMethod("LoadOptionsForDevice",Flags).Invoke(game,new object[]{mobile});
+   Assert.AreEqual(2,PlayerPrefs.GetInt("lf.graphics"));Assert.AreEqual(60,Application.targetFrameRate);Assert.AreEqual(4,QualitySettings.antiAliasing);
+  }
   [Test]public void CorruptSavedTierAndFpsAreNormalizedAndReapplied(){
    PlayerPrefs.SetInt("lf.graphics",-100);PlayerPrefs.SetInt("lf.fps",-1);typeof(Prototype).GetMethod("LoadOptions",Flags).Invoke(game,null);
    Assert.AreEqual(0,PlayerPrefs.GetInt("lf.graphics"));Assert.AreEqual(60,PlayerPrefs.GetInt("lf.fps"));Assert.AreEqual(0,QualitySettings.antiAliasing);Assert.AreEqual(60,Application.targetFrameRate);
