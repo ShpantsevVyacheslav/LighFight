@@ -1,0 +1,626 @@
+{
+  "sourceBlend": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/stage02-bound-original-dense.blend",
+  "method": "Read-only material library load; no mesh or scene evaluation",
+  "materials": [
+    {
+      "name": "Material",
+      "nodes": [
+        {
+          "name": "Material Output",
+          "type": "ShaderNodeOutputMaterial",
+          "inputs": [
+            {
+              "name": "Surface",
+              "default": null,
+              "links": [
+                {
+                  "node": "Principled BSDF",
+                  "socket": "BSDF"
+                }
+              ]
+            },
+            {
+              "name": "Volume",
+              "default": null,
+              "links": []
+            },
+            {
+              "name": "Displacement",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Thickness",
+              "default": 0.0,
+              "links": []
+            }
+          ]
+        },
+        {
+          "name": "Principled BSDF",
+          "type": "ShaderNodeBsdfPrincipled",
+          "inputs": [
+            {
+              "name": "Base Color",
+              "default": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Metallic",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Roughness",
+              "default": 0.5,
+              "links": []
+            },
+            {
+              "name": "IOR",
+              "default": 1.4500000476837158,
+              "links": []
+            },
+            {
+              "name": "Alpha",
+              "default": 1.0,
+              "links": []
+            },
+            {
+              "name": "Normal",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Subsurface Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Subsurface Radius",
+              "default": [
+                1.0,
+                0.20000000298023224,
+                0.10000000149011612
+              ],
+              "links": []
+            },
+            {
+              "name": "Subsurface Scale",
+              "default": 0.05000000074505806,
+              "links": []
+            },
+            {
+              "name": "Subsurface IOR",
+              "default": 1.399999976158142,
+              "links": []
+            },
+            {
+              "name": "Subsurface Anisotropy",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Specular IOR Level",
+              "default": 0.5,
+              "links": []
+            },
+            {
+              "name": "Specular Tint",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Anisotropic",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Anisotropic Rotation",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Tangent",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Transmission Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Coat Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Coat Roughness",
+              "default": 0.029999999329447746,
+              "links": []
+            },
+            {
+              "name": "Coat IOR",
+              "default": 1.5,
+              "links": []
+            },
+            {
+              "name": "Coat Tint",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Coat Normal",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Sheen Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Sheen Roughness",
+              "default": 0.5,
+              "links": []
+            },
+            {
+              "name": "Sheen Tint",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Emission Color",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Emission Strength",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Thin Film Thickness",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Thin Film IOR",
+              "default": 1.3300000429153442,
+              "links": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tripo_mat_7b8f380e",
+      "nodes": [
+        {
+          "name": "Principled BSDF",
+          "type": "ShaderNodeBsdfPrincipled",
+          "inputs": [
+            {
+              "name": "Base Color",
+              "default": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+              ],
+              "links": [
+                {
+                  "node": "Image Texture",
+                  "socket": "Color"
+                }
+              ]
+            },
+            {
+              "name": "Metallic",
+              "default": 0.0,
+              "links": [
+                {
+                  "node": "Image Texture.003",
+                  "socket": "Color"
+                }
+              ]
+            },
+            {
+              "name": "Roughness",
+              "default": 0.5,
+              "links": [
+                {
+                  "node": "Image Texture.002",
+                  "socket": "Color"
+                }
+              ]
+            },
+            {
+              "name": "IOR",
+              "default": 1.5,
+              "links": []
+            },
+            {
+              "name": "Alpha",
+              "default": 1.0,
+              "links": []
+            },
+            {
+              "name": "Normal",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": [
+                {
+                  "node": "Normal Map",
+                  "socket": "Normal"
+                }
+              ]
+            },
+            {
+              "name": "Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Subsurface Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Subsurface Radius",
+              "default": [
+                1.0,
+                0.20000000298023224,
+                0.10000000149011612
+              ],
+              "links": []
+            },
+            {
+              "name": "Subsurface Scale",
+              "default": 0.05000000074505806,
+              "links": []
+            },
+            {
+              "name": "Subsurface IOR",
+              "default": 1.399999976158142,
+              "links": []
+            },
+            {
+              "name": "Subsurface Anisotropy",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Specular IOR Level",
+              "default": 0.5,
+              "links": []
+            },
+            {
+              "name": "Specular Tint",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Anisotropic",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Anisotropic Rotation",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Tangent",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Transmission Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Coat Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Coat Roughness",
+              "default": 0.029999999329447746,
+              "links": []
+            },
+            {
+              "name": "Coat IOR",
+              "default": 1.5,
+              "links": []
+            },
+            {
+              "name": "Coat Tint",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Coat Normal",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Sheen Weight",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Sheen Roughness",
+              "default": 0.5,
+              "links": []
+            },
+            {
+              "name": "Sheen Tint",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Emission Color",
+              "default": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Emission Strength",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Thin Film Thickness",
+              "default": 0.0,
+              "links": []
+            },
+            {
+              "name": "Thin Film IOR",
+              "default": 1.3300000429153442,
+              "links": []
+            }
+          ]
+        },
+        {
+          "name": "Material Output",
+          "type": "ShaderNodeOutputMaterial",
+          "inputs": [
+            {
+              "name": "Surface",
+              "default": null,
+              "links": [
+                {
+                  "node": "Principled BSDF",
+                  "socket": "BSDF"
+                }
+              ]
+            },
+            {
+              "name": "Volume",
+              "default": null,
+              "links": []
+            },
+            {
+              "name": "Displacement",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            },
+            {
+              "name": "Thickness",
+              "default": 0.0,
+              "links": []
+            }
+          ]
+        },
+        {
+          "name": "Normal Map",
+          "type": "ShaderNodeNormalMap",
+          "inputs": [
+            {
+              "name": "Strength",
+              "default": 1.0,
+              "links": []
+            },
+            {
+              "name": "Color",
+              "default": [
+                0.5,
+                0.5,
+                1.0,
+                1.0
+              ],
+              "links": [
+                {
+                  "node": "Image Texture.001",
+                  "socket": "Color"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Image Texture",
+          "type": "ShaderNodeTexImage",
+          "inputs": [
+            {
+              "name": "Vector",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            }
+          ],
+          "image": {
+            "name": "striped-sailor-apose-h31-original_basecolor",
+            "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-apose-original/unpacked/tripo_convert_7b8f380e-26b3-4dc1-92a2-d433761960f0.fbm/striped-sailor-apose-h31-original_basecolor.JPEG",
+            "size": [
+              4096,
+              4096
+            ],
+            "colorspace": "sRGB",
+            "fileSha256": "c03341d3855dbf41146625659d4c437a8dc6063be9da7a2cce08b08ebe9b8db9"
+          }
+        },
+        {
+          "name": "Image Texture.001",
+          "type": "ShaderNodeTexImage",
+          "inputs": [
+            {
+              "name": "Vector",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            }
+          ],
+          "image": {
+            "name": "striped-sailor-apose-h31-original_normal",
+            "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-apose-original/unpacked/tripo_convert_7b8f380e-26b3-4dc1-92a2-d433761960f0.fbm/striped-sailor-apose-h31-original_normal.PNG",
+            "size": [
+              4096,
+              4096
+            ],
+            "colorspace": "Non-Color",
+            "fileSha256": "dc44f95a2112f16029ef80e6778751e81f3b19b1ef112605d786b7f8816a6d53"
+          }
+        },
+        {
+          "name": "Image Texture.002",
+          "type": "ShaderNodeTexImage",
+          "inputs": [
+            {
+              "name": "Vector",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            }
+          ],
+          "image": {
+            "name": "striped-sailor-apose-h31-original_roughness",
+            "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-apose-original/unpacked/tripo_convert_7b8f380e-26b3-4dc1-92a2-d433761960f0.fbm/striped-sailor-apose-h31-original_roughness.JPEG",
+            "size": [
+              4096,
+              4096
+            ],
+            "colorspace": "Non-Color",
+            "fileSha256": "d5fe420e8e4fc5c7c7317d2a1ffd810f26917d9b76feaef43986a58d56ceda47"
+          }
+        },
+        {
+          "name": "Image Texture.003",
+          "type": "ShaderNodeTexImage",
+          "inputs": [
+            {
+              "name": "Vector",
+              "default": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "links": []
+            }
+          ],
+          "image": {
+            "name": "striped-sailor-apose-h31-original_metallic",
+            "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-apose-original/unpacked/tripo_convert_7b8f380e-26b3-4dc1-92a2-d433761960f0.fbm/striped-sailor-apose-h31-original_metallic.JPEG",
+            "size": [
+              4096,
+              4096
+            ],
+            "colorspace": "Non-Color",
+            "fileSha256": "ee67c0f4765ed449e6208c6e62e879aeca04970c3f7145eac50cda7c65102fec"
+          }
+        }
+      ]
+    }
+  ]
+}
