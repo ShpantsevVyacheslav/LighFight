@@ -54,3 +54,17 @@ FreshIsland actions210/191/192 SUCCEEDED3each; tasks in island-ultra-v2/motion-t
 FreshIsland Combat_Stance89 task01a1304e-bbbe-7315-abea-09c752a53a8d consumed3; total560/1200 remaining640.
 
 2026-10-15 read-only Scene inspection: workspace displayed3677credits afterautomatic daily-check-in popup reporting+50alreadyreceived (expiry9Nov2026). No Generate action and no new credit spending. Existing LighFight—Courtyard composition inspected; available output is image composition1344×768, no Unitysceneexport observed. Approvedspendtotal remains560/1200 (640remaining); accountrewardbalance is separate.
+
+2026-10-18 autonomous arena work: kitchen architectural cutaway preview task `01a14e9b-122e-7590-be53-25728567fafe`, Meshy7.1 / geometry4K / no remesh / GLB+FBX.25 credits reserved,10 texture reserved only after geometry passes subject/depth/floor visual gate. Prior actual560/1200 remains until provider consumption confirmed; available after both reservations605. No rig or charactergeneration requested.
+
+2026-10-18 kitchen preview SUCCEEDED, provider consumed25. Actualtotal585/1200, remaining615. DownloadedsourceGLB10731972bytes; subject/floor/depthreview running before10texturecreditspend. Autonomousunique-dance acquisition allocation up to45 within same remainingbudget; actualcharges trackedseparately by task, not spentuntilconfirmed.
+
+2026-10-18 correction: kitchen task above rejected by user: wrong provider and wrong room reference. No texture generation or game promotion. Cancelled10-credit texture reservation. Actual585/1200, remaining615 unchanged. Arena work continues through Tripo using verified project photos.
+
+2026-10-18 unique dance acquisition: old source API tasks expired; oversized local dataURI attempt returned no task and balance unchanged, not retried. Fresh technical donor preview01a14ed4-6417-7560-b96f-ccd9fe495787 created Meshy6lite/Tpose/no remesh/FBX+GLB,5reserved. Allocation expanded45→53 within existing615remaining to include5donor+10texture+5rig+33elevenactions. Actual585 remains until consumption confirmed. Technical donor never replaces roster models.
+
+Technical donor preview SUCCEEDED consumed5. Actual590/1200, remaining610. Texturing2K/noPBR task01a14ed5-7d99-733f-beb2-cf61d7785dfb launched,10reserved, inherited6lite. No animation/rig charges yet.
+
+Technicaldonor refine consumed10,rig01a14ed7-2c69-7244-a3d0-94bd689fb49e consumed5. Actual605/1200,remaining595. Eleven distinctdance actions63,64,65,66,67,70,71,74,75,77,82 launched,33reserved. TaskIDs in art/source/unique-dances-20261018/acquisition.json. No source roster changes.
+
+Eleven dance tasks all SUCCEEDED consumed3each=33. Actual638/1200, remaining562. Totaldonor+texture+rig+11actions53 asallocated. Animationdownload tool returnsURLsonly despite save_to; returnedFBXURLs being downloaded locally, no manualstatusHTTPfallback.

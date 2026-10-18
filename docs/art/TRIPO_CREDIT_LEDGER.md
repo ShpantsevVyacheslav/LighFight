@@ -44,3 +44,7 @@ AI-стойка поднимает руки в середине, но опуск
 2026-10-14: Ведьма: полныйFBX8родных движений успешно скачан черезChrome, без списаниякредитов; source/native/Update-contactгейты пройдены. Гала: оригинал1 933 246треугольников/4Kсохранён; отдельная100 000рабочаякопия5 иUnity Humanoid Compatibleриг20завершены. Кобальт: оригинал1 966 715треугольников/4Kсохранён; рабочая99 999копия5готова. Свежий баланс2130, послеProпотрачено1000; ригКобальта ещё не запускался.
 
 2026-10-14: Кобальт Unity Humanoid Compatible риг99 999завершён20кредитов. Свежийбаланс2110, послеProпотрачено1020. Гала все8родныхдвиженийготовы; экспортChromeзапущен, покаожидаетсяфайл. Кобальтготовитродныепресеты; AI-textmotionновые не запускались.
+
+2026-10-18 Kitchen reference retry: original assets/references/photo-01.jpg uploaded and screenshot verified. H3.1 HD geometry+texture, private,8K off,no remesh/rig. Task fc90f092-5429-4009-9216-31908f216ec1; quoted55,balance2110→2055. In progress; not promoted before visual/geometry/floor checks.
+
+2026-10-18 Kitchen direct photo task fc90f092 rejected: extracted table/chairs only (1945012triangles), no room. Prepared cutaway reference through built-in imagegen using originalphoto01, visually matched fridge/window/coffee cabinet/garland/table/floor. Retry bcc8d1cd-5796-4f40-82e5-e86b8a206812 H3.1 same55;balance2055→2000. Not promoted; review pending.
