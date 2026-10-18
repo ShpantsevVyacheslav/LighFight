@@ -51,7 +51,7 @@ namespace LighFight.Runtime
   }
   private Texture2D selectionBackdrop,selectionHalo;
   private Texture2D[] arenaImages,portraits;
-  private void ReleaseSelectionRender(){if(selectionDisplayCamera!=null)selectionDisplayCamera.enabled=false;if(fightCamera!=null){fightCamera.targetTexture=null;fightCamera.clearFlags=CameraClearFlags.Skybox;}if(selectionRender!=null){selectionRender.Release();Destroy(selectionRender);selectionRender=null;}}
+  private void ReleaseSelectionRender(){if(selectionLighting)selectionLighting.SetPreviewEnabled(false);if(selectionDisplayCamera!=null)selectionDisplayCamera.enabled=false;if(fightCamera!=null){fightCamera.targetTexture=null;fightCamera.clearFlags=CameraClearFlags.Skybox;}if(selectionRender!=null){selectionRender.Release();Destroy(selectionRender);selectionRender=null;}}
 
   private void UpdateSelection()
   {
@@ -61,6 +61,7 @@ namespace LighFight.Runtime
    // The opaque portrait grid does not display the 3D preview. Stop its entire
    // animation/late-update hierarchy and release its HDR/MSAA target until shown.
    if(rosterOpen){
+    if(selectionLighting)selectionLighting.SetPreviewEnabled(false);
     if(selectionRender!=null)ReleaseSelectionRender();
     selectionDisplayCamera.enabled=true;fightCamera.enabled=false;
     player.gameObject.SetActive(false);dragging=false;return;
@@ -82,6 +83,7 @@ namespace LighFight.Runtime
    selectionDisplayCamera.enabled=selecting;
    fightCamera.targetTexture=selectionRender;fightCamera.rect=new Rect(0,0,1,1);
    fightCamera.clearFlags=CameraClearFlags.SolidColor;fightCamera.backgroundColor=Color.clear;
+   if(selectionLighting)selectionLighting.SetPreviewEnabled(true);
    var center=new Vector3(match.A.X,1,0);
    fightCamera.transform.position=center+new Vector3(0,.18f,-previewDistance);fightCamera.transform.LookAt(center);
    previewClock+=Time.deltaTime;

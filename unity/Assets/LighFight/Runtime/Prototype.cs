@@ -26,6 +26,7 @@ namespace LighFight.Runtime
                 public GameContent content;
         private HitFeedback feedback;
         private Camera fightCamera;
+        private SelectionStudioLighting selectionLighting;
         private bool training;
         private bool russian = true;
         private string T(string ru,string en) => russian?ru:en;
@@ -61,6 +62,10 @@ namespace LighFight.Runtime
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = new Color(.45f,.43f,.4f);
             light.transform.rotation = Quaternion.Euler(45, -30, 0);
+            selectionLighting = camera.gameObject.AddComponent<SelectionStudioLighting>();
+            selectionLighting.configuration = Resources.Load<SelectionStudioLightingConfig>("SelectionStudio/PreviewLighting");
+            selectionLighting.ownedKeyLight = light;
+            selectionLighting.SetSelectedRenderers(player ? player.GetComponentsInChildren<Renderer>(true) : null);
             LoadOptions();
             bridge = FindFirstObjectByType<HostBridge>();
             if (bridge != null) { bridge.LaunchRequested += OnLaunch; if(bridge.CurrentLaunch!=null)OnLaunch(bridge.CurrentLaunch); }
@@ -71,6 +76,7 @@ namespace LighFight.Runtime
         private void OnLaunch(LaunchRequest request) { russian=string.IsNullOrEmpty(request.locale)||request.locale.StartsWith("ru"); Reset(); selecting = true; }
         private void RebuildViews()
         {
+            if(selectionLighting)selectionLighting.SetPreviewEnabled(false);
             ReleaseActorWarmup();CancelSelectedContent();beginFightAfterWarmup=false;
             if(player)player.gameObject.SetActive(false);if(opponent)opponent.gameObject.SetActive(false);
             if (player != null) Destroy(player.gameObject);
@@ -95,6 +101,7 @@ namespace LighFight.Runtime
         }
         private void ConfigureActorViews()
         {
+            if(selectionLighting)selectionLighting.SetSelectedRenderers(player.GetComponentsInChildren<Renderer>(true));
             player.transform.SetParent(transform,true);opponent.transform.SetParent(transform,true);arena.transform.SetParent(transform,true);
             player.gameObject.SetActive(false);opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
             foreach(var fighter in new[]{player,opponent}){
