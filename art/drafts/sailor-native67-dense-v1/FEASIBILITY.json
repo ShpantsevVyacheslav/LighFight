@@ -1,0 +1,189 @@
+{
+  "status": "OFFLINE_FEASIBILITY_ONLY_NO_CANDIDATE_NO_ENGINE",
+  "lineageTaskId": "44623258-1c14-4afb-b55f-bb15ec154b50",
+  "sameTaskId": true,
+  "source": {
+    "source": "art/source/tripo-striped-sailor-apose-original/unpacked/tripo_convert_7b8f380e-26b3-4dc1-92a2-d433761960f0.fbx",
+    "sha256": "2148fa7a80a0a8be70c4a32f3fe61aa8344c059c2b9183f52818f943917c3b23",
+    "vertices": 994452,
+    "triangles": 1988914
+  },
+  "nativeDonor": {
+    "source": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx",
+    "sha256": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "vertices": 49992,
+    "triangles": 99999,
+    "clusterBindCount": 67,
+    "weightStats": {
+      "maxInfluences": 4,
+      "unweighted": 0,
+      "positiveCount": 123876,
+      "maxSumDeviation": 5.21540641784668e-08
+    },
+    "reconstructedMeshBindMaxDisagreement": 1.6727989771148088e-07
+  },
+  "restSample": {
+    "status": "SAMPLED_RAW_REST_FEASIBILITY_ONLY",
+    "sampleCount": 512,
+    "sampling": "Fixed seed44623258 withoutreplacement, all original vertices eligible; no full-surface acceptance.",
+    "triangleMethod": "Exact closest closed donor triangle via projected barycentric interior plus3segments, float64; all99999donortriangles per sample.",
+    "sourceFileGlobalMatrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        3.814697265625e-05
+      ],
+      [
+        0.0,
+        -4.371139000186241e-08,
+        0.999999999999999,
+        0.0
+      ],
+      [
+        0.0,
+        -0.999999999999999,
+        -4.371139000186241e-08,
+        -1.1444091796875e-05
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "donorFileGlobalBindMatrix": [
+      [
+        1.0000000000000069,
+        3.970466940254533e-23,
+        2.80102175423752e-16,
+        -2.9448502662440812e-08
+      ],
+      [
+        1.6363051759706681e-15,
+        2.320797859812732e-23,
+        1.0000000596046388,
+        9.047996318845009e-08
+      ],
+      [
+        0.0,
+        -1.0000000000000058,
+        -4.1464548662333746e-23,
+        1.865647556299581e-08
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "fileUnitsM": 1,
+    "axisConvention": "Shared source/nativeFBX YUp globals; UnitScaleFactor100=>1m/fileunit. No fit/rescale/shape edit.",
+    "heightM": 0.9799804668157699,
+    "sourceVsExistingDenseRawFloat32PositionsBitExact": true,
+    "bounds": {
+      "source": {
+        "min": [
+          -0.2477112114429474,
+          1.67746145384988e-09,
+          -0.09780125333744934
+        ],
+        "max": [
+          0.2477875053882599,
+          0.9799804684932314,
+          0.09777830917531646
+        ]
+      },
+      "nativeDonor": {
+        "min": [
+          -0.24777220154189564,
+          1.656644722462014e-08,
+          -0.09780118983961876
+        ],
+        "max": [
+          0.24777223205185775,
+          0.980041652801233,
+          0.09780119735024749
+        ]
+      }
+    },
+    "distanceM": {
+      "median": 2.9434159155275544e-05,
+      "p95": 8.337832680485722e-05,
+      "p99": 0.00012242927615080013,
+      "max": 0.00015382412805261929
+    },
+    "distanceNormalizedHeight": {
+      "median": 3.003545494219425e-05,
+      "p95": 8.508162114269142e-05,
+      "p99": 0.00012493032289572775,
+      "max": 0.00015696652460067578
+    },
+    "worstOriginalVertexID": 151002,
+    "worstDonorTriangleID": 86815,
+    "elapsedSeconds": 14.89220166701125,
+    "limits": [
+      "Only512samples, not all994452originalvertices.",
+      "Full DCC bind/pose/material/parity and continuous field reconstruction not performed.",
+      "No candidate skin weights constructed."
+    ]
+  },
+  "alternativeControls": [
+    {
+      "actionId": 66,
+      "catalogName": "Boom_Dance",
+      "source": "art/source/unique-dances-20261018/action-66.fbx",
+      "sourceSHA256": "0fb6c83c907dcb085038290f598e89e5d81d7f0fd5907745890e700a0b02f40e",
+      "alreadyAssignedActor": "Bone",
+      "positionSamplesPerClip": 32,
+      "upperArmElevationProxyDeg": {
+        "median": -59.17231369900921,
+        "p95": -15.59763121920528,
+        "max": 1.4996513482543063
+      },
+      "positionAuditSHA256": "f6c84c91e2c4b464e0b37b18835db47475096509caa4f1c3e83d498b2a188b94"
+    },
+    {
+      "actionId": 64,
+      "catalogName": "All_Night_Dance",
+      "source": "art/source/unique-dances-20261018/action-64.fbx",
+      "sourceSHA256": "bb5e14a1f24703cd4e0d2df91385449ce98ad1eb3f8d9df066c225a19975128a",
+      "alreadyAssignedActor": "Summer",
+      "positionSamplesPerClip": 32,
+      "upperArmElevationProxyDeg": {
+        "median": -53.09736513272292,
+        "p95": 13.805663940692632,
+        "max": 25.165656300489236
+      },
+      "positionAuditSHA256": "9e236000b99290e681f9df0d0920c439c8c6f9e09e9545040d741bcb60b0b6f7"
+    }
+  ],
+  "stopIfDonorBad": true,
+  "primaryComparison": {
+    "ownNativeClip": "dance_01",
+    "phases": [
+      0.45,
+      0.5,
+      0.55
+    ],
+    "C1": false,
+    "correctives": false,
+    "DQS": false,
+    "weightEdits": false,
+    "targets": [
+      "untouched native67donor",
+      "original-dense freshRigify sourceweights"
+    ]
+  },
+  "remainingGates": [
+    "same raw dance donor-vsRigify visual",
+    "full994452rest distance and native bind authority in DCC",
+    "original UV/maps/triangles preservation",
+    "conditional spatial transfer: actual influences/no silent pruning",
+    "fullmotion/temporal/skin quality",
+    "portable runtime import/memory/performance"
+  ],
+  "noSkeletonFixedClaimFromDanceSelection": true
+}
