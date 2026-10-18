@@ -44,7 +44,7 @@ namespace LighFight.Runtime
   private bool selectionRenderFallback;
   public static Vector2Int SelectionPreviewSize(Vector2 safePixels,int quality)
   {
-   float scale=quality==0?.65f:quality==1?.85f:1f;
+   float scale=FightGraphicsQuality.RenderScale(quality);
    var size=new Vector2(430*Mathf.Max(1,safePixels.x)/960,378*Mathf.Max(1,safePixels.y)/540)*scale;
    size*=Mathf.Min(1,2048/Mathf.Max(size.x,size.y));
    return new Vector2Int(Mathf.Max(1,Mathf.RoundToInt(size.x)),Mathf.Max(1,Mathf.RoundToInt(size.y)));
@@ -68,7 +68,7 @@ namespace LighFight.Runtime
    player.gameObject.SetActive(true);fightCamera.enabled=true;
    var previewSize=SelectionPreviewSize(UiArea.size,graphicsQuality);
    var renderFormat=!selectionRenderFallback&&QualitySettings.activeColorSpace==ColorSpace.Linear&&SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBHalf)?RenderTextureFormat.ARGBHalf:RenderTextureFormat.ARGB32;
-   var descriptor=new RenderTextureDescriptor(previewSize.x,previewSize.y,renderFormat,24){msaaSamples=graphicsQuality==2?4:2};
+   var descriptor=new RenderTextureDescriptor(previewSize.x,previewSize.y,renderFormat,24){msaaSamples=Mathf.Max(1,FightGraphicsQuality.Antialiasing(graphicsQuality))};
    int renderMsaa=selectionRenderFallback?1:Mathf.Max(1,SystemInfo.GetRenderTextureSupportedMSAASampleCount(descriptor));
    if(selectionRender!=null && (selectionRender.width!=previewSize.x || selectionRender.height!=previewSize.y || selectionRender.format!=renderFormat || selectionRender.antiAliasing!=renderMsaa))ReleaseSelectionRender();
    if(selectionRender==null && SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null){

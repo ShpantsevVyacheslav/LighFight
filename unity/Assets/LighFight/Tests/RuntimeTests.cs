@@ -24,7 +24,7 @@ public class RuntimeTests
         var present=new System.Collections.Generic.HashSet<string>();var values=new System.Collections.Generic.Dictionary<string,float>();
         foreach(var key in ints){if(PlayerPrefs.HasKey(key))present.Add(key);values[key]=PlayerPrefs.GetInt(key);}
         foreach(var key in floats){if(PlayerPrefs.HasKey(key))present.Add(key);values[key]=PlayerPrefs.GetFloat(key);}
-        var distance=QualitySettings.shadowDistance;var resolution=QualitySettings.shadowResolution;var shadows=QualitySettings.shadows;var aa=QualitySettings.antiAliasing;var weights=QualitySettings.skinWeights;var lod=QualitySettings.lodBias;var mip=QualitySettings.globalTextureMipmapLimit;var fps=Application.targetFrameRate;var root=new GameObject("Shadow options regression");
+        var vsync=QualitySettings.vSyncCount;var distance=QualitySettings.shadowDistance;var resolution=QualitySettings.shadowResolution;var shadows=QualitySettings.shadows;var aa=QualitySettings.antiAliasing;var weights=QualitySettings.skinWeights;var lod=QualitySettings.lodBias;var mip=QualitySettings.globalTextureMipmapLimit;var fps=Application.targetFrameRate;var root=new GameObject("Shadow options regression");
         try{
             var host=root.AddComponent<Prototype>();var light=new GameObject("Authored shadow light").AddComponent<Light>();light.transform.SetParent(root.transform);light.shadows=LightShadows.Soft;
             var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance;
@@ -32,9 +32,9 @@ public class RuntimeTests
             typeof(Prototype).GetMethod("ApplyOptions",flags).Invoke(host,null);
             Assert.AreEqual(enabled?ShadowQuality.All:ShadowQuality.Disable,QualitySettings.shadows,"Quality tier must respect shadow choice");
             Assert.AreEqual(enabled?1:0,PlayerPrefs.GetInt("lf.shadows"),"Shadow choice must persist");
-            Assert.AreEqual(enabled?LightShadows.Soft:LightShadows.None,light.shadows,"Light must follow shadow choice");
+            Assert.AreEqual(!enabled?LightShadows.None:quality==0?LightShadows.Hard:LightShadows.Soft,light.shadows,"Light must follow shadow choice");
         }finally{
-            Object.DestroyImmediate(root);QualitySettings.shadowDistance=distance;QualitySettings.shadowResolution=resolution;QualitySettings.shadows=shadows;QualitySettings.antiAliasing=aa;QualitySettings.skinWeights=weights;QualitySettings.lodBias=lod;QualitySettings.globalTextureMipmapLimit=mip;Application.targetFrameRate=fps;
+            Object.DestroyImmediate(root);QualitySettings.vSyncCount=vsync;QualitySettings.shadowDistance=distance;QualitySettings.shadowResolution=resolution;QualitySettings.shadows=shadows;QualitySettings.antiAliasing=aa;QualitySettings.skinWeights=weights;QualitySettings.lodBias=lod;QualitySettings.globalTextureMipmapLimit=mip;Application.targetFrameRate=fps;
             foreach(var key in ints)if(present.Contains(key))PlayerPrefs.SetInt(key,(int)values[key]);else PlayerPrefs.DeleteKey(key);
             foreach(var key in floats)if(present.Contains(key))PlayerPrefs.SetFloat(key,values[key]);else PlayerPrefs.DeleteKey(key);PlayerPrefs.Save();
         }

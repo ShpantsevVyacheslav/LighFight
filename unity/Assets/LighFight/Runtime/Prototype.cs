@@ -64,7 +64,7 @@ namespace LighFight.Runtime
             if (bridge != null) { bridge.LaunchRequested += OnLaunch; if(bridge.CurrentLaunch!=null)OnLaunch(bridge.CurrentLaunch); }
         }
 
-        public void BeginFight() { if(ActorsLoading){beginFightAfterWarmup=true;return;} player.FullPreviewMotion=false; ReleaseSelectionRender(); Reset(); selecting=false; advancedMoves=false; rulesOpen=false; arenaOpen=false; player.gameObject.SetActive(true);opponent.gameObject.SetActive(true);arena.gameObject.SetActive(true);fightCamera.enabled=true;fightCamera.rect=new Rect(0,0,1,1); }
+        public void BeginFight() { if(ActorsLoading){beginFightAfterWarmup=true;return;} player.FullPreviewMotion=false; ReleaseSelectionRender(); ApplyVisualQuality(); Reset(); selecting=false; advancedMoves=false; rulesOpen=false; arenaOpen=false; player.gameObject.SetActive(true);opponent.gameObject.SetActive(true);arena.gameObject.SetActive(true);fightCamera.enabled=true;fightCamera.rect=new Rect(0,0,1,1); }
         public static float FitCameraDistance(float a,float b,float aspect) => Mathf.Max(3.6f,(Mathf.Abs(a-b)+2.2f)/(2*Mathf.Tan(21*Mathf.Deg2Rad)*Mathf.Max(.3f,aspect)));
         private void OnLaunch(LaunchRequest request) { russian=string.IsNullOrEmpty(request.locale)||request.locale.StartsWith("ru"); Reset(); selecting = true; }
         private void RebuildViews()
@@ -99,6 +99,7 @@ namespace LighFight.Runtime
                 var materials=fighter.GetComponent<ShadowlessFighterMaterials>();if(!materials)materials=fighter.gameObject.AddComponent<ShadowlessFighterMaterials>();materials.SetShadows(shadowsEnabled);
             }
             if(arena)foreach(var renderer in arena.GetComponentsInChildren<Renderer>(true)){renderer.receiveShadows=shadowsEnabled;renderer.shadowCastingMode=shadowsEnabled?UnityEngine.Rendering.ShadowCastingMode.On:UnityEngine.Rendering.ShadowCastingMode.Off;}
+            ApplyVisualQuality();
             StartActorWarmup();
         }
         private void OnDestroy()
