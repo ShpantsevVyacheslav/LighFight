@@ -1,0 +1,11 @@
+# Offline diagnostics reliability change — 2026-10-18
+
+Observed: build111 r4's copied CSV ends around27seconds with `stage=options`; copied preferences contain `lf.diagnostics=1`, and no empty or newer journal was found. These facts do not establish why collection stopped. No phone reproduction or phone test was requested for this change.
+
+The HUD and settings now expose a computed capture/journal status: live, warming, suspended with application-pause/focus reason, or off; total samples, age of last sample, flushed CSV row count, recording/closed/error/limit status. Age and suspension status do not depend on sampling Update running. An active capture with a last sample over3seconds old is labelled stale with cause unknown. The latest metrics remain visible alongside their age, rather than implying they are current.
+
+The CSV header and every emitted1Hz row are flushed to the stream immediately, allowing a reader to copy fresh data while diagnostics remains enabled. This is a stream flush, not a promise of durable disk persistence after OS/process termination. Sample count and saved row count are separate; successful row count advances only after flush. The existing20minute/1200row cap remains; status explains OFF/ON starts another journal. A time limit is visible even during suspension, and the existing writer closes on its next attempted sample. Sampling/HUD continues after the journal limit.
+
+Application focus/pause policy, frame/GPU/CPU sampling, quality, frame rate and global time scale were not changed. Added PlayMode integration cases cover header/row reads while enabled, status without Update during suspension, combined pause/focus precedence, stale age, row/time limits and restart, and immediate I/O error status. Unity execution is delegated to the root agent; this subtask did not launch Unity or access the phone. Physical HUD layout and device export remain unverified here.
+
+Root verification: Unity6000.3.26f1 PlayMode diagnostic filter16/16 passed (play-r2.xml). First run15/16 exposed negative-timestamp test/sentinel collision during early PlayMode realtime; corrected never-sampled sentinel to NaN and reran. No claim of reproducing/fixing original27second phone stall.

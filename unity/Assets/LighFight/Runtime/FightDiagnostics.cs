@@ -10,9 +10,20 @@ namespace LighFight.Runtime {
   public string Summary{get;private set;}="Diagnostics off";
   public string LogPath{get;private set;}="";
   public string JournalError{get;private set;}="";
+  public int SampleCount{get;private set;}
+  public int JournalSampleCount=>rows;
+  public double LastSampleAgeSeconds=>double.IsNaN(lastSample)?double.NaN:Math.Max(0,Time.realtimeSinceStartupAsDouble-lastSample);
+  public string SuspensionReason=>appPaused?(appFocused?"application pause":"application pause + focus lost"):!appFocused?"focus lost":"none";
+  public string JournalStatus {
+   get {
+    string capture=!isActiveAndEnabled?"off":suspended?"suspended: "+SuspensionReason:skipNextFrame?"warming":!double.IsNaN(lastSample)&&LastSampleAgeSeconds>3?"live; sample stale (cause unknown)":"live";
+    string state=ioFailed?"error: "+JournalError:limitReached||isActiveAndEnabled&&Time.realtimeSinceStartupAsDouble-sessionStart>1200?"limit reached (20 min); OFF/ON restarts":journal!=null?"recording":"closed";
+    return "Capture "+capture+" | samples "+SampleCount+" | last "+(double.IsNaN(lastSample)?"never":Number(LastSampleAgeSeconds,"F1")+" s ago")+"\nCSV "+state+" | saved "+rows+"/1200";
+   }
+  }
   readonly FightDiagnosticWindow window=new FightDiagnosticWindow(2048);
   readonly FrameTiming[] timing=new FrameTiming[1];
-  StreamWriter journal;double lastRefresh,cpuPrevious=-1,sessionStart;int rows;bool suspended,skipNextFrame,ioFailed;bool appPaused,appFocused=true;
+  StreamWriter journal;double lastRefresh,cpuPrevious=-1,sessionStart,lastSample=double.NaN;bool limitReached;int rows;bool suspended,skipNextFrame,ioFailed;bool appPaused,appFocused=true;
 #if UNITY_IOS && !UNITY_EDITOR
   bool nativeFailed;
  #endif
@@ -25,7 +36,7 @@ namespace LighFight.Runtime {
   [DllImport("__Internal")]static extern int LFDiagnosticsLowPower();
 #endif
   public void SetContext(string value){context=value??"";}
-  void OnEnable(){rows=0;ioFailed=false;
+  void OnEnable(){rows=0;SampleCount=0;lastSample=double.NaN;limitReached=false;ioFailed=false;
 #if UNITY_IOS && !UNITY_EDITOR
    nativeFailed=false;
 #endif
@@ -43,8 +54,9 @@ namespace LighFight.Runtime {
    string current=context;try{if(ContextProvider!=null)current=ContextProvider()??"";}catch{current="context unavailable";}
    if(current.Length>1024)current=current.Substring(0,1024);
    Summary="FPS "+Number(sample.Fps,"F1")+" | p95 "+Number(sample.P95Ms,"F1")+" ms"+(sample.Overflow?" [buffer overflow]":"")+"\nGPU "+Number(sample.GpuMs,"F2")+" ms | CPU "+Number(cpu,"F2")+" cores | footprint "+(native.bytes>0?(native.bytes/1048576d).ToString("F1",CultureInfo.InvariantCulture)+" MiB":"unavailable")+"\nThermal "+Thermal(native.thermal)+" | low power "+(native.lowPower<0?"unavailable":native.lowPower==1?"on":"off")+" | network/ping unavailable\n"+current;
-   Debug.Log("LF_DIAG "+Summary.Replace('\n',' ') + (JournalError.Length==0?"":" | journal unavailable"));
+   SampleCount++;lastSample=now;
    WriteRow(now-sessionStart,sample,native,cpu,current);
+   Debug.Log("LF_DIAG "+Summary.Replace('\n',' ') + " | "+JournalStatus.Replace('\n',' '));
   }
   struct Native{public double cpu;public ulong bytes;public int thermal,lowPower;}
   Native ReadNative(){var n=new Native{cpu=-1,bytes=0,thermal=-1,lowPower=-1};
@@ -56,8 +68,8 @@ namespace LighFight.Runtime {
   static string Thermal(int v){switch(v){case 0:return "nominal";case 1:return "fair";case 2:return "serious";case 3:return "critical";default:return "unavailable";}}
   static string Number(double v,string format="R")=>double.IsNaN(v)||double.IsInfinity(v)?"unavailable":v.ToString(format,CultureInfo.InvariantCulture);
   static string Csv(string s)=>"\""+(s??"").Replace("\"","\"\"").Replace('\r',' ').Replace('\n',' ')+"\"";
-  void OpenJournal(){try{string dir=Path.Combine(Application.persistentDataPath,"Diagnostics");Directory.CreateDirectory(dir);LogPath=Path.Combine(dir,"fight-"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff",CultureInfo.InvariantCulture)+"-"+Guid.NewGuid().ToString("N")+".csv");journal=new StreamWriter(new FileStream(LogPath,FileMode.CreateNew,FileAccess.Write,FileShare.Read));journal.WriteLine("elapsedSeconds,frames,fps,p95Ms,overflow,rejectedFrames,gpuMs,cpuCoreEquivalents,footprintBytes,thermalState,lowPower,context");}catch(Exception e){FailJournal(e);}}
-  void WriteRow(double elapsed,FightDiagnosticWindow.Sample s,Native n,double cpu,string c){if(journal==null||ioFailed)return;if(elapsed>1200||rows>=MaxRows){CloseJournal();return;}try{journal.WriteLine(string.Join(",",Number(elapsed),s.Frames,Number(s.Fps),Number(s.P95Ms),s.Overflow?1:0,s.Rejected,Number(s.GpuMs),Number(cpu),n.bytes>0?n.bytes.ToString(CultureInfo.InvariantCulture):"unavailable",n.thermal,n.lowPower,Csv(c)));rows++;if(rows%10==0)journal.Flush();}catch(Exception e){FailJournal(e);}}
+  void OpenJournal(){try{string dir=Path.Combine(Application.persistentDataPath,"Diagnostics");Directory.CreateDirectory(dir);LogPath=Path.Combine(dir,"fight-"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff",CultureInfo.InvariantCulture)+"-"+Guid.NewGuid().ToString("N")+".csv");journal=new StreamWriter(new FileStream(LogPath,FileMode.CreateNew,FileAccess.Write,FileShare.Read));journal.WriteLine("elapsedSeconds,frames,fps,p95Ms,overflow,rejectedFrames,gpuMs,cpuCoreEquivalents,footprintBytes,thermalState,lowPower,context");journal.Flush();}catch(Exception e){FailJournal(e);}}
+  void WriteRow(double elapsed,FightDiagnosticWindow.Sample s,Native n,double cpu,string c){if(journal==null||ioFailed)return;if(elapsed>1200||rows>=MaxRows){limitReached=true;CloseJournal();return;}try{journal.WriteLine(string.Join(",",Number(elapsed),s.Frames,Number(s.Fps),Number(s.P95Ms),s.Overflow?1:0,s.Rejected,Number(s.GpuMs),Number(cpu),n.bytes>0?n.bytes.ToString(CultureInfo.InvariantCulture):"unavailable",n.thermal,n.lowPower,Csv(c)));journal.Flush();rows++;if(rows>=MaxRows){limitReached=true;CloseJournal();}}catch(Exception e){FailJournal(e);}}
   void FailJournal(Exception e){if(ioFailed)return;ioFailed=true;JournalError=e.GetType().Name;try{journal?.Dispose();}catch{}journal=null;Debug.LogWarning("LF_DIAG journal unavailable: "+JournalError);}
   void CloseJournal(){try{journal?.Dispose();journal=null;}catch(Exception e){FailJournal(e);}}
  }
