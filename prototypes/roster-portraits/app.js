@@ -12,18 +12,18 @@ const portrait=x=>'../../art/portraits/generated-v1/'+x.id+'.png';
 function save(){try{localStorage.setItem('lf.design.prefs',JSON.stringify(prefs))}catch{} paintSummary()}
 function paintSummary(){
  $('#chosenName').textContent=roster[selected].label;$('#chosenStyle').textContent=roster[selected].style;
- $('#continue').innerHTML=(screen==='roster'?'ПРОДОЛЖИТЬ':'В БОЙ')+' <span>↗</span>';
+ $('#continue').innerHTML=(screen==='roster'?'ПРОДОЛЖИТЬ':'В БОЙ') ;
  $('#ruleSummary').textContent=`${prefs.wins} победы · ${prefs.round} сек.`;
- const a=arenas.find(x=>x.id===prefs.arena)||arenas[0];$('#arenaPreviewName').textContent=a.name;$('#arenaPreviewImage').src='../../assets/arena-'+a.id+'.png';
+ const a=arenas.find(x=>x.id===prefs.arena)||arenas[0];$('#arenaPreviewName').textContent=a.name;$('#arenaPreviewImage').src='arenas/'+a.id+'.png';
  $('#opponentName').textContent=opponent===null?'Выбрать':roster[opponent].label;
 }
 function paint(){
  $('#fighters').innerHTML=roster.map((x,i)=>`<button class="fighter ${i===selected?'selected':''}" data-index="${i}" aria-pressed="${i===selected}" aria-label="Выбрать: ${x.label}"><img src="${portrait(x)}" alt="${x.label}"><span class="name">${x.name}</span><span class="style">${x.style}</span><span class="pick"></span></button>`).join('');
  document.querySelectorAll('.fighter').forEach(b=>b.onclick=()=>{selected=+b.dataset.index;openDetail()});paintSummary();
 }
-function toRoster(){screen='roster';viewer.pause?.();$('#detail').hidden=true;$('.roster').hidden=false;paint()}
+function toRoster(){screen='roster';$('.screen').classList.remove('detail-open');viewer.pause?.();$('#detail').hidden=true;$('.roster').hidden=false;paint()}
 function openDetail(){
- screen='detail';$('.roster').hidden=true;$('#detail').hidden=false;
+ screen='detail';$('.screen').classList.add('detail-open');$('.roster').hidden=true;$('#detail').hidden=false;
  if(opponent===selected)opponent=null;
  const x=roster[selected];$('#detailName').textContent=x.name;$('#detailStyle').textContent=x.style;$('#power').textContent=x.power.toLocaleString('ru');
  $('#attributes').innerHTML=['Скорость','Сила','Точность'].map((n,i)=>`<div><span>${n}</span><b>${x.stats[i]}</b><i><em style="width:${x.stats[i]}%"></em></i></div>`).join('');
@@ -78,7 +78,7 @@ function settings(){
  };
  dialog.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{dialog.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));panel(b.dataset.tab)});panel('controls');
 }
-function arena(){show(`<span class="eyebrow">МЕСТО ВСТРЕЧИ</span><h2>Выбери арену</h2><div class="arena-grid">${arenas.map(a=>`<button class="arena-option ${prefs.arena===a.id?'selected':''}" data-arena="${a.id}"><img src="../../assets/arena-${a.id}.png" alt=""><span>${a.name}</span><small>${prefs.arena===a.id?'ВЫБРАНА':'ВЫБРАТЬ'}</small></button>`).join('')}</div>`,'arena');dialog.querySelectorAll('[data-arena]').forEach(b=>b.onclick=()=>{prefs.arena=b.dataset.arena;save();dialog.close()})}
+function arena(){show(`<span class="eyebrow">МЕСТО ВСТРЕЧИ</span><h2>Выбери арену</h2><div class="arena-grid">${arenas.map(a=>`<button class="arena-option ${prefs.arena===a.id?'selected':''}" data-arena="${a.id}"><img src="arenas/${a.id}.png" alt=""><span>${a.name}</span><small>${prefs.arena===a.id?'ВЫБРАНА':'ВЫБРАТЬ'}</small></button>`).join('')}</div>`,'arena');dialog.querySelectorAll('[data-arena]').forEach(b=>b.onclick=()=>{prefs.arena=b.dataset.arena;save();dialog.close()})}
 function opponents(){
  if(opponent===null)opponent=(selected+1)%roster.length;
  const content=()=>`<span class="eyebrow">ПЕРЕД БОЕМ</span><h2>Выбери соперника</h2><div class="opponent-grid">${roster.map((x,i)=>i===selected?'':`<button class="opponent-option ${i===opponent?'selected':''}" data-opponent="${i}" aria-pressed="${i===opponent}"><img src="${portrait(x)}" alt="${x.label}"><strong>${x.label}</strong><small>${x.style}</small></button>`).join('')}</div><button class="continue apply">ПОДТВЕРДИТЬ <span>✓</span></button>`;
