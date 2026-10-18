@@ -12,7 +12,7 @@ const portrait=x=>'../../art/portraits/generated-v1/'+x.id+'.png';
 function save(){try{localStorage.setItem('lf.design.prefs',JSON.stringify(prefs))}catch{} paintSummary()}
 function paintSummary(){
  $('#chosenName').textContent=roster[selected].label;$('#chosenStyle').textContent=roster[selected].style;
- $('#continue').innerHTML=(screen==='roster'?'ПРОДОЛЖИТЬ':'В БОЙ') ;
+ $('#continue').textContent=screen==='roster'?'ПРОДОЛЖИТЬ':'В БОЙ';
  $('#ruleSummary').textContent=`${prefs.wins} победы · ${prefs.round} сек.`;
  const a=arenas.find(x=>x.id===prefs.arena)||arenas[0];$('#arenaPreviewName').textContent=a.name;$('#arenaPreviewImage').src='arenas/'+a.id+'.png';
  $('#opponentName').textContent=opponent===null?'Выбрать':roster[opponent].label;
@@ -34,7 +34,7 @@ async function loadActor(actor){
  if(loadedActor===actor.id){if(readyActor===actor.id)stance();return}
  const ticket=++generation;loadedActor=actor.id;readyActor=null;previewMotion=null;viewer.pause?.();viewer.style.opacity=0;viewer.setAttribute('aria-busy','true');$('#modelStatus').textContent='Загрузка бойца…';$('#dance').disabled=true;
  try{
-  const res=await fetch('models/'+actor.id+'.manifest.json');if(!res.ok)throw new Error('model manifest');await res.json();if(ticket!==generation)return;viewer.src='models/'+actor.id+'.glb';
+  const res=await fetch('models/'+actor.id+'.manifest.json');if(!res.ok)throw new Error('model manifest');const info=await res.json();if(ticket!==generation)return;viewer.src='models/'+actor.id+'.glb?v='+encodeURIComponent(info.glbSHA256||'native');
  }catch{if(ticket!==generation)return;loadedActor=null;viewer.setAttribute('aria-busy','false');$('#modelStatus').textContent='3D-просмотр пока недоступен';}
 }
 function actionName(kind){
