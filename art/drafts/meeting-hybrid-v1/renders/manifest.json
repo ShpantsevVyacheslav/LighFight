@@ -1,6 +1,6 @@
 {
-  "status": "VISUAL_GEOMETRY_REVIEWED_FLOOR_TEXTURE_CHANGED_AFTER_CAPTURE",
-  "masterSHA256": "303ae675e305fa9fdddbac8429ffbc9f068a496f033a420632af912785b54bc5",
+  "status": "ACTUAL_GLB_LAYOUT_AND_FLOOR_REVIEWED_NOT_RUNTIME_ACCEPTED",
+  "masterSHA256": "f5f4813bcb9dfcd633ef2f08680f51b34d722bfed8ce90c97631086c9868af95",
   "sourceUnchanged": true,
   "CPUthreads": 6,
   "samples": 16,
@@ -19,7 +19,7 @@
       ],
       "lensMm": 32.0,
       "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
-      "seconds": 24.150408029556274,
+      "seconds": 12.724601030349731,
       "file": "whole.png"
     },
     {
@@ -36,7 +36,7 @@
       ],
       "lensMm": 32.0,
       "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
-      "seconds": 20.19303607940674,
+      "seconds": 21.34972906112671,
       "file": "fight.png"
     },
     {
@@ -53,10 +53,22 @@
       ],
       "lensMm": 32.0,
       "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
-      "seconds": 28.43697214126587,
+      "seconds": 30.82510471343994,
       "file": "furniture.png"
     }
   ],
   "scope": "Geometry/material/layout review only; no gameplay/runtime/phone claim",
-  "review": "Root opened all three views. Reference-facing windows/board corrected; furniture recognizable. Plain floor was insufficient, a separate reference-derived wood texture has since been added. Updated textured renders pending. No runtime/phone acceptance."
+  "visualReview": {
+    "reviewer": "root",
+    "viewsOpened": [
+      "fight",
+      "whole",
+      "furniture"
+    ],
+    "findings": [
+      "Furniture, windows, board and derived wood floor visible in actual GLB renders.",
+      "Ceiling deliberately cut away; sparse grid exposes background and is not final interior ceiling.",
+      "Expanded empty fight lane remains; no actor/collision/runtime/phone acceptance."
+    ]
+  }
 }
