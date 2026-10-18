@@ -13,3 +13,5 @@ Browser verification: all three models load; roster/detail navigation, next figh
 The detail viewer now uses a full-phone WebGL canvas, rather than a canvas clipped to the central grid column. Geometry may extend into header/footer/side regions; interactive UI controls remain above it. The physical screen remains the viewport boundary. Removed decorative arrows from Continue / Fight. Arena cards use clean captures of current 3D game environments under arenas/, not photographic source references; see their provenance manifest.
 
 Shoulder deformation during native dance is an open art defect. Matched native FBX/GLB sampling reproduces the same deformation; see models/shoulder-audit*. This UI correction does not claim a rig fix. A validated shoulder-weight or motion replacement pass is still required.
+
+Switching detail actors no longer inserts roster portraits while loading or on error. Only the 3D viewer or a loading/error status is shown. Roster portrait assets remain exclusive to roster/opponent selection.

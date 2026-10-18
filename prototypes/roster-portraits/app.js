@@ -7,7 +7,7 @@ const arenas=[{id:'meeting',name:'Переговорная'},{id:'yard',name:'Д
 const defaults={sound:true,haptics:true,volume:70,controls:'Вместе',quality:'Максимум',fps:'60',hand:'Справа',scale:100,mode:'Против бота',difficulty:'Обычная',wins:'2',round:'60',arena:'meeting'};
 let prefs={...defaults};try{prefs={...defaults,...JSON.parse(localStorage.getItem('lf.design.prefs')||'{}')}}catch{}
 const $=s=>document.querySelector(s),dialog=$('#dialog'),viewer=$('#viewer');
-let selected=0,opponent=null,screen='roster',loadedActor=null,manifest={},generation=0,previewMotion=null;
+let selected=0,opponent=null,screen='roster',loadedActor=null,readyActor=null,generation=0,previewMotion=null;
 const portrait=x=>'../../art/portraits/generated-v1/'+x.id+'.png';
 function save(){try{localStorage.setItem('lf.design.prefs',JSON.stringify(prefs))}catch{} paintSummary()}
 function paintSummary(){
@@ -27,15 +27,15 @@ function openDetail(){
  if(opponent===selected)opponent=null;
  const x=roster[selected];$('#detailName').textContent=x.name;$('#detailStyle').textContent=x.style;$('#power').textContent=x.power.toLocaleString('ru');
  $('#attributes').innerHTML=['Скорость','Сила','Точность'].map((n,i)=>`<div><span>${n}</span><b>${x.stats[i]}</b><i><em style="width:${x.stats[i]}%"></em></i></div>`).join('');
- $('#actorCount').textContent=String(selected+1).padStart(2,'0')+' / 03';$('#modelFallback').src=portrait(x);$('#modelFallback').alt=x.label;
+ $('#actorCount').textContent=String(selected+1).padStart(2,'0')+' / 03';
  $('#dance').classList.remove('on');paintSummary();loadActor(x);
 }
 async function loadActor(actor){
- if(loadedActor===actor.id){stance();return}
- const ticket=++generation;loadedActor=actor.id;viewer.pause?.();viewer.style.opacity=0;$('#modelFallback').hidden=false;$('#modelStatus').textContent='Загрузка бойца…';$('#dance').disabled=true;
+ if(loadedActor===actor.id){if(readyActor===actor.id)stance();return}
+ const ticket=++generation;loadedActor=actor.id;readyActor=null;previewMotion=null;viewer.pause?.();viewer.style.opacity=0;viewer.setAttribute('aria-busy','true');$('#modelStatus').textContent='Загрузка бойца…';$('#dance').disabled=true;
  try{
-  const res=await fetch('models/'+actor.id+'.manifest.json');if(!res.ok)throw new Error('model manifest');const info=await res.json();if(ticket!==generation)return;manifest=info;viewer.src='models/'+actor.id+'.glb';
- }catch{if(ticket!==generation)return;loadedActor=null;$('#modelStatus').textContent='3D-просмотр пока недоступен';}
+  const res=await fetch('models/'+actor.id+'.manifest.json');if(!res.ok)throw new Error('model manifest');await res.json();if(ticket!==generation)return;viewer.src='models/'+actor.id+'.glb';
+ }catch{if(ticket!==generation)return;loadedActor=null;viewer.setAttribute('aria-busy','false');$('#modelStatus').textContent='3D-просмотр пока недоступен';}
 }
 function actionName(kind){
  const names=viewer.availableAnimations||[];
@@ -54,8 +54,8 @@ function playMotion(kind){
  if(kind==='dance'&&previewMotion==='dance'){stance();return}
  previewMotion=kind;viewer.animationName=name;viewer.currentTime=0;viewer.play({repetitions:1});$('#dance').classList.toggle('on',kind==='dance');
 }
-viewer.addEventListener('load',()=>{viewer.style.opacity=1;$('#modelFallback').hidden=true;$('#modelStatus').textContent='';$('#dance').disabled=!actionName('dance');stance()});
-viewer.addEventListener('error',()=>{viewer.style.opacity=0;$('#modelFallback').hidden=false;$('#modelStatus').textContent='Не удалось загрузить 3D-модель';loadedActor=null});
+viewer.addEventListener('load',()=>{readyActor=loadedActor;viewer.style.opacity=1;viewer.setAttribute('aria-busy','false');$('#modelStatus').textContent='';$('#dance').disabled=!actionName('dance');stance()});
+viewer.addEventListener('error',()=>{readyActor=null;viewer.style.opacity=0;viewer.setAttribute('aria-busy','false');$('#modelStatus').textContent='Не удалось загрузить 3D-модель';loadedActor=null});
 viewer.addEventListener('finished',()=>{if(screen==='detail')stance()});
 $('#dance').onclick=()=>playMotion('dance');
 const pointers=new Map();let swipe=null;
