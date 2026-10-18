@@ -1,0 +1,7 @@
+# Рабочий кабинет: модуль для Tripo
+
+Настоящий источник: `assets/references/photo-02.jpg`. Производный `workstation-reference-v1.png` создан встроенным imagegen для восстановления отдельного рабочего места. Люди, одежда, мелкие предметы и содержание экранов удалены; на ноутбуке пустой экран.
+
+Промпт: `Use case: precise-object-edit. Asset: reference-derived modular furniture for Tripo 3D game arena reconstruction. From the office photograph faithfully isolate ONE workstation like the right-hand workstation: straight rectangular medium grey-brown woodgrain desktop, four simple square chrome metal legs with dark feet, one open slim black laptop with blank dark screen, and ONE black ribbed padded office swivel chair with curved chrome armrests, chrome five-star wheeled base, matching the pictured middle chairs. Show entire desk and chair from elevated three-quarter view, chair slightly pulled out so its silhouette and legs are visible. Neutral light grey seamless studio background and diffuse lighting. Remove ALL people, clothes, wall, windows, plants, bags, mugs, papers, cables, private screen contents and other clutter. Preserve pictured ordinary office furniture style, not luxury redesign. No room or floor slab, no text/logos, no additional objects. Keep laptop surface blank with no readable content. Entire module fully within frame.`
+
+Tripo-задача и параметры в `generation.json`. Полная арена ещё не собрана и в Unity не подключена.

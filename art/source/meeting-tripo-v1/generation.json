@@ -1,0 +1,31 @@
+{
+  "provider": "Tripo",
+  "taskId": "516b8c42-8e19-4297-b133-7dc815c99ec2",
+  "sourcePhoto": "assets/references/photo-03.jpg",
+  "derivedReference": "furniture-reference-v1.png",
+  "referencePreparation": "built-in imagegen; extracted reference-derived meeting table and mesh chairs",
+  "model": "H3.1 maximum quality",
+  "mode": "HD geometry and texture",
+  "texture8K": false,
+  "privacy": "private",
+  "rig": false,
+  "remesh": false,
+  "credits": 55,
+  "balanceBefore": 1835,
+  "balanceAfter": 1780,
+  "status": "SOURCE_DOWNLOADED_LOCAL_VISUAL_REVIEW_PENDING",
+  "promoteToGame": false,
+  "referenceLimitations": "Derived image has five visible chairs rather than requested six; furniture count and room layout must be reconstructed against original photo. Not an accepted whole-room reconstruction.",
+  "sourceFile": "original-v1.glb",
+  "sourceAudit": {
+    "sha256": "70336cf944c64d94ae0ec4b94a58efce0d13006a036bf276a67325bd417d2cfd",
+    "bytes": 63651048,
+    "triangles": 1910406,
+    "vertices": 1002607,
+    "meshes": 1,
+    "materials": 1,
+    "images": 3,
+    "sourceUnmodified": true,
+    "localVisualReview": "PENDING"
+  }
+}

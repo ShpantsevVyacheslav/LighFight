@@ -48,3 +48,17 @@ AI-стойка поднимает руки в середине, но опуск
 2026-10-18 Kitchen reference retry: original assets/references/photo-01.jpg uploaded and screenshot verified. H3.1 HD geometry+texture, private,8K off,no remesh/rig. Task fc90f092-5429-4009-9216-31908f216ec1; quoted55,balance2110→2055. In progress; not promoted before visual/geometry/floor checks.
 
 2026-10-18 Kitchen direct photo task fc90f092 rejected: extracted table/chairs only (1945012triangles), no room. Prepared cutaway reference through built-in imagegen using originalphoto01, visually matched fridge/window/coffee cabinet/garland/table/floor. Retry bcc8d1cd-5796-4f40-82e5-e86b8a206812 H3.1 same55;balance2055→2000. Not promoted; review pending.
+
+2026-10-18 Kitchen architecture-only component trial849ad72d-f70a-4aae-9250-6ca7e01cd537. Derivedactualphoto01 cutaway with furniture removed, contiguous floor/walls/window preserved; H3.1HD4K/no8K/no rig/remesh/private.55quoted,balance2000→1945. Output1739754tri/918429v, originalGLBdownloaded. Webshowswalls/floor, localgeometry/floorgatepending, no promotion.
+
+Architecturev3 rejected after actualGLBaudit: suspendedextra blind/windowmass, missingrectangularfloorcorner; centralfloorhascontinuouscoveragebutreference fidelityfails. No further identicalroomgeneration approved/launched. Newseparate hybridreview keepsTripo tableunchanged + manually reconstructedstraight architecturefromphoto01, explicitlylabelled, notfullyAIgeneratedroom.
+
+2026-10-18 Matchingfridge+microwavecomponent b5e513fd-e8c9-421e-8e92-fcd570b3b55a, sourcephoto01 isolated via builtinimagegen, correctuploadedthumbnailverified. H3.1HD4K/no8K/no rig/remesh/private.55quoted,balance1945→1890. Pending, notpromoted.
+
+2026-10-18 Matchingcoffeecomponent8d320138-8f8f-44bc-8094-008f529fbba2, actualphoto01 derivedisolatedcabinet/machine/rack/cups, H3.1HD4K/no8K/no rig/remesh/private.55,balance1890→1835. Subjectmatchesweb, originalGLBdownloaded, localreviewpending. Kitchen newwork5generations275total (first3rejectedasfullroom, tablecomponentretained forhybrid), no further kitchen generation launched.
+
+2026-10-18 Переговорная, отдельная группа стола/сетчатых кресел по исходному photo-03 через производное изображение imagegen. Tripo task516b8c42-8e19-4297-b133-7dc815c99ec2: H3.1 HD geometry+texture, private,8K off, без рига/ремеша.55кредитов, подтверждённый UI баланс1835→1780. Генерация запущена; в игру не переносится до локальной проверки. Это мебель для гибридной сборки, не целая комната.
+
+2026-10-18 Санузел, раковина/унитаз по исходному photo-04 через производное изображение imagegen. Tripo task7a14a096-a6ab-435b-ade8-59075b623228: H3.1 HD geometry+texture, private,8K off, без рига/ремеша.55кредитов, подтверждённый UI баланс1780→1725. GLB скачан без изменений:1894538треугольников/980455вершин. Локальная визуальная проверка и гибридная арена ещё не готовы.
+
+2026-10-18 Рабочий кабинет, модуль стол/кресло/ноутбук по исходному photo-02 через производное изображение imagegen без людей/личного содержания экранов. Tripo task24ad1f0f-4b71-4d7d-85bf-a64b340804f6: H3.1 HD geometry+texture, private,8K off, без рига/ремеша.55кредитов, подтверждённый UI баланс1725→1670. Генерация запущена, игровая приёмка не пройдена. Итого новые работы Tripo 18 октября:440кредитов; баланс2110→1670.
