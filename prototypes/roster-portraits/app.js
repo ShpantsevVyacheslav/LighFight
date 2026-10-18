@@ -21,9 +21,9 @@ function paint(){
  $('#fighters').innerHTML=roster.map((x,i)=>`<button class="fighter ${i===selected?'selected':''}" data-index="${i}" aria-pressed="${i===selected}" aria-label="Выбрать: ${x.label}"><img src="${portrait(x)}" alt="${x.label}"><span class="name">${x.name}</span><span class="style">${x.style}</span><span class="pick"></span></button>`).join('');
  document.querySelectorAll('.fighter').forEach(b=>b.onclick=()=>{selected=+b.dataset.index;openDetail()});paintSummary();
 }
-function toRoster(){screen='roster';$('.screen').classList.remove('detail-open');viewer.pause?.();$('#detail').hidden=true;$('.roster').hidden=false;paint()}
+function toRoster(){previewInput.reset();screen='roster';$('.screen').classList.remove('detail-open');viewer.pause?.();$('#detail').hidden=true;$('.roster').hidden=false;paint()}
 function openDetail(){
- screen='detail';$('.screen').classList.add('detail-open');$('.roster').hidden=true;$('#detail').hidden=false;
+ previewInput.reset();orbitYaw=0;orbitRadius=100;updateOrbit();screen='detail';$('.screen').classList.add('detail-open');$('.roster').hidden=true;$('#detail').hidden=false;
  if(opponent===selected)opponent=null;
  const x=roster[selected];$('#detailName').textContent=x.name;$('#detailStyle').textContent=x.style;$('#power').textContent=x.power.toLocaleString('ru');
  $('#attributes').innerHTML=['Скорость','Сила','Точность'].map((n,i)=>`<div><span>${n}</span><b>${x.stats[i]}</b><i><em style="width:${x.stats[i]}%"></em></i></div>`).join('');
@@ -58,10 +58,18 @@ viewer.addEventListener('load',()=>{readyActor=loadedActor;viewer.style.opacity=
 viewer.addEventListener('error',()=>{readyActor=null;viewer.style.opacity=0;viewer.setAttribute('aria-busy','false');$('#modelStatus').textContent='Не удалось загрузить 3D-модель';loadedActor=null});
 viewer.addEventListener('finished',()=>{if(screen==='detail')stance()});
 $('#dance').onclick=()=>playMotion('dance');
-const pointers=new Map();let swipe=null;
-viewer.addEventListener('pointerdown',e=>{pointers.set(e.pointerId,true);if(pointers.size>1){swipe=null;return}swipe={id:e.pointerId,x:e.clientX,y:e.clientY,t:performance.now()}});
-viewer.addEventListener('pointerup',e=>{pointers.delete(e.pointerId);if(!swipe||swipe.id!==e.pointerId)return;const s=swipe;swipe=null;const dx=e.clientX-s.x,dy=e.clientY-s.y;if(performance.now()-s.t<350&&Math.hypot(dx,dy)>50)playMotion(Math.abs(dx)>Math.abs(dy)?'punch':'kick')});
-viewer.addEventListener('pointercancel',e=>{pointers.delete(e.pointerId);swipe=null});
+const previewInput=new PreviewInput();let orbitYaw=0,orbitRadius=100;
+function updateOrbit(){viewer.setAttribute('camera-orbit',`${orbitYaw}deg 80deg ${orbitRadius}%`)}
+function previewEffects(actions){for(const action of actions){if(action.type==='strike')playMotion(action.kind);if(action.type==='orbit'){orbitYaw+=action.dx*.4;updateOrbit()}if(action.type==='zoom'){orbitRadius=Math.max(45,Math.min(180,orbitRadius*action.factor));updateOrbit()}}}
+const pointerData=e=>({id:e.pointerId,x:e.clientX,y:e.clientY,t:e.timeStamp,type:e.pointerType,button:e.button});
+viewer.addEventListener('pointerdown',e=>{if(readyActor!==loadedActor||!readyActor)return;e.preventDefault();previewInput.down(pointerData(e));viewer.setPointerCapture?.(e.pointerId)});
+viewer.addEventListener('pointermove',e=>previewEffects(previewInput.move(pointerData(e))));
+viewer.addEventListener('pointerup',e=>previewEffects(previewInput.up(pointerData(e))));
+viewer.addEventListener('pointercancel',e=>previewInput.cancel(e.pointerId));
+viewer.addEventListener('lostpointercapture',e=>previewInput.cancel(e.pointerId));
+viewer.addEventListener('contextmenu',e=>e.preventDefault());
+viewer.addEventListener('wheel',e=>{e.preventDefault();previewEffects([{type:'zoom',factor:Math.exp(e.deltaY*.001)}])},{passive:false});
+viewer.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();previewEffects([{type:'orbit',dx:e.key==='ArrowLeft'?-15:15}])}if(e.key==='+'||e.key==='-'){e.preventDefault();previewEffects([{type:'zoom',factor:e.key==='+'?.9:1.1}])}});
 $('#previous').onclick=()=>{selected=(selected+roster.length-1)%roster.length;openDetail()};$('#next').onclick=()=>{selected=(selected+1)%roster.length;openDetail()};
 function show(html,kind){$('#dialogContent').innerHTML=html;dialog.dataset.kind=kind||'';dialog.showModal()}
 function choices(key,values){return `<div class="options" data-key="${key}">${values.map(v=>`<button class="${prefs[key]===String(v)?'active':''}" data-value="${v}" aria-pressed="${prefs[key]===String(v)}">${v}</button>`).join('')}</div>`}

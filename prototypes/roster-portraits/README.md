@@ -15,3 +15,7 @@ The detail viewer now uses a full-phone WebGL canvas, rather than a canvas clipp
 Shoulder deformation during native dance is an open art defect. Matched native FBX/GLB sampling reproduces the same deformation; see models/shoulder-audit*. This UI correction does not claim a rig fix. A validated shoulder-weight or motion replacement pass is still required.
 
 Switching detail actors no longer inserts roster portraits while loading or on error. Only the 3D viewer or a loading/error status is shown. Roster portrait assets remain exclusive to roster/opponent selection.
+
+## Gesture arbitration — 2026-10-18
+
+One-finger or left-mouse directional swipe previews one strike. Two fingers provide horizontal yaw and pinch zoom; vertical movement never tilts the actor. Once a gesture contains two pointers it cannot become a strike when one lifts. Right-mouse drag or keyboard arrows rotate horizontally; wheel/+/- zoom. Native model-viewer camera controls are disabled to prevent competing gesture handlers. Pure input-state tests:5/5 passed. Touch-device validation remains separate from desktop/unit proof.
