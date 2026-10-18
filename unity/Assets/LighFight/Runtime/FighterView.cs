@@ -18,6 +18,12 @@ namespace LighFight.Runtime
 
         private void CacheContactPoseHooks(){if(contactPoseHooksChecked)return;contactPoseHooksChecked=true;contactFingerPose=GetComponent<NativeFingerPoseDriver>();foreach(var component in GetComponents<MonoBehaviour>())if(component is IContactPoseHook hook){contactPoseHook=hook;break;}}
 
+        private Fighter stoppedFighter;private string stoppedMove;private int stoppedCombo,stoppedTick,stoppedSerial;private float stoppedFrame,sampleFrameOverride=float.NaN;
+        public bool StrikeStopped(Fighter fighter)=>fighter.Attack.HasValue&&stoppedFighter==fighter&&stoppedMove==fighter.Attack.Value.Id&&stoppedCombo==fighter.ComboCount&&stoppedSerial==fighter.AttackSerial&&fighter.Frame>=stoppedTick;
+        public float ContactAttackFrame(Fighter fighter){if(!float.IsNaN(sampleFrameOverride))return sampleFrameOverride;return StrikeStopped(fighter)?MotionTiming.StoppedFrame(stoppedFrame,stoppedTick,fighter.Frame,fighter.Attack.Value.Duration):fighter.Frame;}
+        public void StopStrikeAtFrame(Fighter fighter,float lastContactFrame){if(!fighter.Attack.HasValue||StrikeStopped(fighter))return;stoppedFighter=fighter;stoppedMove=fighter.Attack.Value.Id;stoppedCombo=fighter.ComboCount;stoppedSerial=fighter.AttackSerial;stoppedTick=fighter.Frame;stoppedFrame=Mathf.Clamp(lastContactFrame,0,fighter.Frame);ClearContactPoseSample();}
+        public void SampleContactPoseAtFrame(Fighter fighter,Fighter other,float frame){sampleFrameOverride=frame;ClearContactPoseSample();try{SampleContactPose(fighter,other);}finally{sampleFrameOverride=float.NaN;}}
+
         [SerializeField] private Animator animator;
         [System.Serializable] public struct ContactPose { public string moveId; public float phase,start,end; public int strikeSide;public float headingOffset; }
         [SerializeField] private ContactPose[] contactPoses = new ContactPose[0];
@@ -59,7 +65,7 @@ namespace LighFight.Runtime
         private Transform nativeRoot;
         private Vector3 nativeRootRest;
         private void AnchorNativeRoot() { if(!nativeRoot)return;var p=animator.transform.InverseTransformPoint(nativeRoot.position);p.x=nativeRootRest.x;p.z=nativeRootRest.z;nativeRoot.position=animator.transform.TransformPoint(p); }
-        private Quaternion NativeHeading(Fighter fighter){if(!nativeMotion||!fighter.Attack.HasValue)return Quaternion.identity;var move=fighter.Attack.Value;float weight=fighter.Frame<=move.Startup?Mathf.SmoothStep(0,1,(float)fighter.Frame/Mathf.Max(1,move.Startup)):fighter.Frame<move.Startup+move.Active?1:1-Mathf.SmoothStep(0,1,(float)(fighter.Frame-move.Startup-move.Active)/Mathf.Max(1,move.Recovery));return Quaternion.Euler(0,System.Array.Find(contactPoses,p=>p.moveId==move.Id).headingOffset*weight,0);}
+        private Quaternion NativeHeading(Fighter fighter){if(!nativeMotion||!fighter.Attack.HasValue)return Quaternion.identity;var move=fighter.Attack.Value;float frame=ContactAttackFrame(fighter);float weight=frame<=move.Startup?Mathf.SmoothStep(0,1,(float)frame/Mathf.Max(1,move.Startup)):frame<move.Startup+move.Active?1:1-Mathf.SmoothStep(0,1,(float)(frame-move.Startup-move.Active)/Mathf.Max(1,move.Recovery));return Quaternion.Euler(0,System.Array.Find(contactPoses,p=>p.moveId==move.Id).headingOffset*weight,0);}
         public int NativeStrikeSide(string move) => nativeMotion?System.Array.Find(contactPoses,p=>p.moveId==move).strikeSide:0;
         private float previousZ;
         private float previousX, stride, motionHold, deathTime, reactionTime;
@@ -175,7 +181,7 @@ namespace LighFight.Runtime
                 int state=Animator.StringToHash("Base Layer."+motion);
                 if(animator.HasState(0,state))
                 {
-                    float phase=fighter.Attack.HasValue?(float)fighter.Frame/fighter.Attack.Value.Duration:fighter.DownTicks>Match.GetUpTicks?1-(fighter.DownTicks-Match.GetUpTicks)/(float)(Match.KnockdownTicks-Match.GetUpTicks):fighter.DownTicks>0?1-fighter.DownTicks/(float)Match.GetUpTicks:Mathf.Repeat(stride*.1f,1);
+                    float phase=fighter.Attack.HasValue?ContactAttackFrame(fighter)/fighter.Attack.Value.Duration:fighter.DownTicks>Match.GetUpTicks?1-(fighter.DownTicks-Match.GetUpTicks)/(float)(Match.KnockdownTicks-Match.GetUpTicks):fighter.DownTicks>0?1-fighter.DownTicks/(float)Match.GetUpTicks:Mathf.Repeat(stride*.1f,1);
                     if(fighter.Health<=0)phase=Mathf.Clamp01(deathTime/(nativeMotion?NativeDuration("Fall"):1));
                     if(motion=="Hit"){phase=Mathf.Clamp01((float)fighter.ReactionTicks/Mathf.Max(1,fighter.ReactionDuration));if(nativeMotion&&highReaction)phase=highReaction.SourcePhase(phase);}
                     if(motion=="Idle" || motion=="Guard")phase=nativeMotion?NativeLoopPhase(nativeTime,NativeDuration(motion)):0;
@@ -188,7 +194,7 @@ namespace LighFight.Runtime
                         {
                             float end=contact.end>contact.start?contact.end:1;
                             float normalized=((nativeMotion?contact.phase:MotionTiming.ContactPhase(motion,contact.phase))-contact.start)/(end-contact.start);
-                            phase=Mathf.Lerp(contact.start,end,MotionTiming.Phase(fighter.Attack.Value,fighter.Frame,normalized));
+                            phase=Mathf.Lerp(contact.start,end,MotionTiming.Phase(fighter.Attack.Value,ContactAttackFrame(fighter),normalized));
                         }
                     }
                     if(!samplingContactPose && contactPoseHook!=null && contactPoseHook.TryGetContactPhase(Animator.StringToHash(motion),out var contactPhase))phase=contactPhase;
@@ -218,8 +224,9 @@ namespace LighFight.Runtime
             if(fighter.Health<=0 || fighter.DownTicks>0){float fall=fighter.Health<=0?1:Mathf.Clamp01(fighter.DownTicks/16f);transform.rotation *= Quaternion.Euler(0,0,78*fall);hips.localPosition=new Vector3(0,Mathf.Lerp(.92f,.20f,fall),0);return;}
             if(!fighter.Attack.HasValue)return;
             var move=fighter.Attack.Value;
-            float preparation=Mathf.Clamp01((float)fighter.Frame/move.Startup);
-            float strike=fighter.Frame<move.Startup?0:1-Mathf.Clamp01((float)(fighter.Frame-move.Startup-move.Active)/move.Recovery);
+            float sourceFrame=ContactAttackFrame(fighter);
+            float preparation=Mathf.Clamp01(sourceFrame/move.Startup);
+            float strike=sourceFrame<move.Startup?0:1-Mathf.Clamp01((sourceFrame-move.Startup-move.Active)/move.Recovery);
             bool kick=move.Id.Contains("Kick")||move.Id=="sweep"||move.Id=="knee";
             float twist=move.Id=="spinKick"?360*preparation:(kick?12:25)*strike;
             Rotate(chest,-5,twist);
@@ -228,7 +235,7 @@ namespace LighFight.Runtime
                 float height=move.Level==Level.Low?35:move.Level==Level.High?115:95;
                 Rotate(legR,-preparation*35*(1-strike)-strike*height,0,move.Id=="spinKick"?-35:0);
                 Rotate(shinR,move.Id=="knee"?-95:-70*(1-strike));Rotate(armR,-70,0,40*strike);
-                if(move.Id=="jumpKick")transform.position+=Vector3.up*Mathf.Sin(Mathf.Clamp01((float)fighter.Frame/move.Duration)*Mathf.PI)*.35f;
+                if(move.Id=="jumpKick")transform.position+=Vector3.up*Mathf.Sin(Mathf.Clamp01(sourceFrame/move.Duration)*Mathf.PI)*.35f;
             }
             else
             {
@@ -262,7 +269,7 @@ namespace LighFight.Runtime
         {
             if(!fighter.Attack.HasValue){float distance=Match.Distance(fighter,other);if(distance>.0001f){fighter.FacingX=(other.X-fighter.X)/distance;fighter.FacingZ=(other.Z-fighter.Z)/distance;}}
             Pose(fighter,fighter.FacingX,delta);
-            if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f){transform.rotation=Quaternion.LookRotation(direction)*NativeHeading(fighter);if(animator!=null && fighter.Attack.HasValue && !nativeMotion && fighter.Attack.Value.Id=="uppercut"){var move=fighter.Attack.Value;float torque=fighter.Frame<move.Startup?Mathf.Clamp01((float)fighter.Frame/move.Startup):1-Mathf.Clamp01((float)(fighter.Frame-move.Startup-move.Active)/move.Recovery);transform.rotation*=Quaternion.Euler(0,-30*torque,0);}}}
+            if(fighter.Health>0 && fighter.DownTicks==0){var direction=fighter.Attack.HasValue?new Vector3(fighter.FacingX,0,fighter.FacingZ):new Vector3(other.X-fighter.X,0,other.Z-fighter.Z);if(direction.sqrMagnitude>.00001f){transform.rotation=Quaternion.LookRotation(direction)*NativeHeading(fighter);if(animator!=null && fighter.Attack.HasValue && !nativeMotion && fighter.Attack.Value.Id=="uppercut"){var move=fighter.Attack.Value;float frame=ContactAttackFrame(fighter);float torque=frame<move.Startup?Mathf.Clamp01(frame/move.Startup):1-Mathf.Clamp01((frame-move.Startup-move.Active)/move.Recovery);transform.rotation*=Quaternion.Euler(0,-30*torque,0);}}}
             ApplySampledContactHeading(fighter);
         }
         public Vector3 BonePoint(string name,Vector3 fallback)

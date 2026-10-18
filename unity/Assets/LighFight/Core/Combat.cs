@@ -53,6 +53,7 @@ namespace LighFight.Core
         public StrikeOutcome Outcome;
         public int LastStrikeIndex=-1;
         public int Frame;
+        public int AttackSerial {get;private set;}
         internal bool Connected, CleanHit;
         internal int ChainStepTicks;
         public int ComboCount { get; private set; }
@@ -64,7 +65,7 @@ namespace LighFight.Core
             if (Frame < move.Startup + move.Active || Frame > move.Startup + move.Active + 6) return false;
             bool allowed = Combos.CanFollow(move.Id,index);
             if (!allowed) return false;
-            LastStrikeIndex=index;Outcome=StrikeOutcome.None;Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount++; ChainStepTicks=12; return true;
+            AttackSerial++;LastStrikeIndex=index;Outcome=StrikeOutcome.None;Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount++; ChainStepTicks=12; return true;
         }
 
         public bool Start(int index)
@@ -72,7 +73,7 @@ namespace LighFight.Core
             if (Health <= 0 || index < 0 || index >= Moves.All.Length || Stun > 0 || DownTicks > 0 || Attack.HasValue)
                 return false;
             Guard=false;
-            LastStrikeIndex=index;Outcome=StrikeOutcome.None;Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1; ChainStepTicks=0;
+            AttackSerial++;LastStrikeIndex=index;Outcome=StrikeOutcome.None;Attack = Moves.All[index]; Frame = 0; Connected = CleanHit = false; ComboCount = 1; ChainStepTicks=0;
             return true;
         }
     }
@@ -86,10 +87,18 @@ namespace LighFight.Core
         public bool Planar { get; }
         public Match(bool planar=false){Planar=planar;}
         private void ConstrainPlane(){
-            if(!Planar)return;
-            A.Z=B.Z=0;A.FacingZ=B.FacingZ=0;
-            A.FacingX=A.FacingX<0?-1:1;B.FacingX=B.FacingX<0?-1:1;
+            if(Planar){A.Z=B.Z=0;A.FacingZ=B.FacingZ=0;A.FacingX=A.FacingX<0?-1:1;B.FacingX=B.FacingX<0?-1:1;}
+            float dx=B.X-A.X,dz=B.Z-A.Z,distance=(float)Math.Sqrt(dx*dx+dz*dz);
+            if(distance>=MinimumSeparation)return;
+            float nx=distance>.000001f?dx/distance:(A.FacingX<0?-1:1),nz=distance>.000001f?dz/distance:0;
+            float correction=(MinimumSeparation-distance)*.5f;
+            A.X=ClampX(A.X-nx*correction);A.Z=ClampZ(A.Z-nz*correction);B.X=ClampX(B.X+nx*correction);B.Z=ClampZ(B.Z+nz*correction);
+            // At a wall, transfer the unavailable half to the actor with space. Never swap sides.
+            float remaining=Math.Max(0,MinimumSeparation-Distance(A,B));A.X=ClampX(A.X-nx*remaining);A.Z=ClampZ(A.Z-nz*remaining);
+            remaining=Math.Max(0,MinimumSeparation-Distance(A,B));B.X=ClampX(B.X+nx*remaining);B.Z=ClampZ(B.Z+nz*remaining);
         }
+        private static float ClampX(float x)=>Math.Max(-5,Math.Min(5,x));
+        private static float ClampZ(float z)=>Math.Max(-1.5f,Math.Min(1.5f,z));
         public int Tick { get; private set; }
         public Action<Match> BeforeContact;
         public Func<Fighter,Fighter,bool> ContactValidator;
@@ -126,7 +135,7 @@ namespace LighFight.Core
         {
             if (!attacker.Attack.HasValue || attacker.Connected || defender.DownTicks > 0) return default;
             var move = attacker.Attack.Value;
-            if (attacker.Frame < move.Startup || attacker.Frame >= move.Startup + move.Active ||
+            if ((RequirePhysicalContact?attacker.Frame<1:attacker.Frame<move.Startup) || attacker.Frame >= move.Startup + move.Active ||
                 (!RequirePhysicalContact && Distance(attacker,defender) > move.Reach) ||
                 (!RequirePhysicalContact && defender.Crouch && move.Level == Level.High)) return default;
             if(RequirePhysicalContact && (ContactValidator==null || !ContactValidator(attacker,defender)))return default;
