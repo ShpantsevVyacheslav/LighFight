@@ -1,0 +1,29 @@
+"""Independent frozen-original holdouts vs actual adaptive skinned FBX reimport.
+No sourceRigify replay. No same-bake oracle; references are original evaluator cache.
+"""
+import bpy,json,math,hashlib
+from fractions import Fraction
+from pathlib import Path
+import numpy as np
+O=Path(__file__).resolve().parents[1];P=O/'dense-def-fbx-packet-v1';import sys;sys.path.insert(0,str(O/'tools/adaptive'));from curve_core import InfluenceBounds,bone_angle_deg
+fit=json.loads((P/'adaptive-box_02-FULL_ADAPTIVE.json').read_text());assert fit['status']=='PASS_DIAGNOSTIC_NOT_EXPORT';export=json.loads((P/'adaptive-box-export.json').read_text());fbx=P/export['file'];assert hashlib.sha256(fbx.read_bytes()).hexdigest()==export['SHA256'];cache=np.load(P/'adaptive-box_02-FULL_ADAPTIVE-cache.npz');cacheWorldPose=cache['worldPose'];cacheWorldSkin=cache['worldSkin'];assert json.loads(str(cache['sourceConfig']))==fit['sourceConfig'];names=list(cache['boneNames']);index={n:i for i,n in enumerate(names)};lookup={Fraction(int(t[0]),int(t[1])):i for i,t in enumerate(cache['times'])};original=np.load(P/'original-indexed-attributes.npz');manifest=json.loads((P/'manifest.json').read_text());remap=np.array([index[n] for n in manifest['boneNames']]);joints=remap[original['jointIndices']];weights=original['weights'].astype(np.float64);raw=original['positionsBlenderLocal'].astype(np.float64);N=len(raw);assert N==994452 and len(original['triangles'])==1988914;sourceMesh=cache['meshWorld'];bounds=InfluenceBounds(cache['boundCorners'],cache['boundActive'],float(cache['maxWeightSum']));sourceBind=cache['armatureWorld']@cache['rest']
+bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False);bpy.ops.import_scene.fbx(filepath=str(fbx),automatic_bone_orientation=False,use_anim=True);rig=next(o for o in bpy.context.scene.objects if o.type=='ARMATURE');body=next(o for o in bpy.context.scene.objects if o.type=='MESH');takes=list(bpy.data.actions);assert len(takes)==1,('One explicit box review take required',[a.name for a in takes]);action=takes[0];rig.animation_data.action=action;assert set(names)==set(b.name for b in rig.data.bones)
+for mod in body.modifiers:mod.show_viewport=False
+actualFPS=bpy.context.scene.render.fps/bpy.context.scene.render.fps_base;actualDuration=float((action.frame_range[1]-action.frame_range[0])/actualFPS);assert abs(actualDuration-67/24)<1e-5,('Incorrect actual imported duration',actualFPS,list(action.frame_range),actualDuration)
+# Verify same-order bind positions before using full-index LBS witness; no assumed index identity.
+co=np.empty(len(body.data.vertices)*3,np.float32);body.data.vertices.foreach_get('co',co);co=co.reshape(-1,3);assert len(co)==N;C=np.array(body.matrix_world);candidateBindPositions=co@C[:3,:3].T+C[:3,3];sourceBindPositions=raw@sourceMesh[:3,:3].T+sourceMesh[:3,3];bindError=float(np.linalg.norm(candidateBindPositions-sourceBindPositions,axis=1).max());assert bindError<1e-5,'Index order or geometry changed; requires independent correspondence, never waive'
+# Explicit fixed per-bone bind gauge, derived only once, never fitted to moving pose.
+candidateBind=np.array([rig.matrix_world@rig.data.bones[n].matrix_local for n in names]);K=np.linalg.inv(sourceBind)@candidateBind
+rows=[];duration=Fraction(67,24);actualMatrices={}
+for row in fit['rows']:
+ t=Fraction(*row['timeRational']);i=lookup[t];frame=float(action.frame_range[0])+float(t/duration)*(action.frame_range[1]-action.frame_range[0]);bpy.context.scene.frame_set(math.floor(frame),subframe=frame%1);bpy.context.view_layer.update();world=np.array([rig.matrix_world@rig.pose.bones[n].matrix for n in names]);skin=world@np.linalg.inv(candidateBind)@sourceMesh;bound=bounds.error_bound(cacheWorldSkin[i],skin);angle=bone_angle_deg(cacheWorldPose[i]@K,world);out={'seconds':float(t),'timeRational':[t.numerator,t.denominator],'surfaceBoundM':bound,'boneMaxDeg':angle};rows.append(out)
+ if len(rows)%192==0:print('FBX_HOLDOUT '+str(len(rows))+'/'+str(len(fit['rows'])),flush=True)
+worst=sorted(rows,key=lambda r:r['surfaceBoundM'],reverse=True)[:3];witness=[]
+for row in worst:
+ t=Fraction(*row['timeRational']);i=lookup[t];frame=float(action.frame_range[0])+float(t/duration)*(action.frame_range[1]-action.frame_range[0]);bpy.context.scene.frame_set(math.floor(frame),subframe=frame%1);bpy.context.view_layer.update();skin=np.array([rig.matrix_world@rig.pose.bones[n].matrix for n in names])@np.linalg.inv(candidateBind)@sourceMesh;D=skin-cacheWorldSkin[i];actual=0.
+ for begin in range(0,N,65536):
+  end=min(N,begin+65536);p=np.concatenate([raw[begin:end],np.ones((end-begin,1))],1);delta=np.zeros((end-begin,4))
+  for k in range(4):delta+=np.einsum('nij,nj->ni',D[joints[begin:end,k]],p)*weights[begin:end,k,None]
+  actual=max(actual,float(np.linalg.norm(delta[:,:3],axis=1).max()))
+ assert actual<=row['surfaceBoundM']+1e-9;witness.append({'seconds':float(t),'originalVertices':N,'allVertexMaxM':actual,'boundM':row['surfaceBoundM']})
+report={'status':'PASS_ORIGINAL_HOLDOUTS_PENDING_UNITY' if max(r['surfaceBoundM'] for r in rows)<=.0001 and max(r['boneMaxDeg'] for r in rows)<=.01 else 'FAIL_FBX_OFFKEY','FBXSHA256':export['SHA256'],'holdouts':len(rows),'scope':'Complete source-fit independent interval thirds plus shifted120Hz grid; finite source samples, not continuous proof','allOriginalVertices':N,'triangles':1988914,'bindWorldIndexWitnessMaxM':bindError,'actualImportedTakeName':action.name,'actualImportedFPS':actualFPS,'actualImportedDurationSeconds':actualDuration,'fixedBoneGauge':'K_i=inv(originalSourceBindWorld_i)*importedBindWorld_i; derived once from unchanged rest, no posefit','maxSurfaceBoundM':max(r['surfaceBoundM'] for r in rows),'maxBoneDeg':max(r['boneMaxDeg'] for r in rows),'allVertexWitnesses':witness,'rows':rows};(P/'adaptive-box-fbx-offkey.json').write_text(json.dumps(report,indent=2));print('RESULT '+json.dumps({k:v for k,v in report.items() if k!='rows'}),flush=True)

@@ -1,0 +1,884 @@
+{
+  "mode": "ADAPTIVE_INTERVAL_NOT_CLIP_ACCEPTANCE",
+  "clip": "box_02",
+  "sourceVertices": 994452,
+  "triangles": 1988914,
+  "allWeightedBones": 136,
+  "sourceCalls": 102,
+  "seconds": 35.94598291703733,
+  "sourceAttributesExact": true,
+  "allOriginalVertexBoundWitness": [
+    {
+      "time": 1.8345238095238094,
+      "vertices": 994452,
+      "actualAllVertexMaxM": 3.250766193594405e-05,
+      "conservativeBoundM": 3.4879206688332854e-05
+    },
+    {
+      "time": 1.8576388888888888,
+      "vertices": 994452,
+      "actualAllVertexMaxM": 3.110016957175146e-05,
+      "conservativeBoundM": 3.325237047940414e-05
+    },
+    {
+      "time": 1.8550347222222223,
+      "vertices": 994452,
+      "actualAllVertexMaxM": 3.116320136592631e-05,
+      "conservativeBoundM": 3.322664374528169e-05
+    }
+  ],
+  "bounds": "ALL994452 source vertices, positive influence support AABBs; joint scales in full matrices; no geometry sampling for bound",
+  "originalConstrainedDEFInheritScale": {
+    "DEF-breast.L": "FULL",
+    "DEF-breast.R": "FULL",
+    "DEF-brow.B.L": "FULL",
+    "DEF-brow.B.L.001": "FULL",
+    "DEF-brow.B.L.002": "FULL",
+    "DEF-brow.B.R.003": "FULL",
+    "DEF-brow.T.L": "FULL",
+    "DEF-brow.T.L.001": "FULL",
+    "DEF-brow.T.L.002": "FULL",
+    "DEF-brow.T.L.003": "FULL",
+    "DEF-brow.T.R": "FULL",
+    "DEF-brow.T.R.001": "FULL",
+    "DEF-brow.T.R.002": "FULL",
+    "DEF-brow.T.R.003": "FULL",
+    "DEF-cheek.B.L": "FULL",
+    "DEF-cheek.B.L.001": "FULL",
+    "DEF-cheek.B.R": "FULL",
+    "DEF-cheek.B.R.001": "FULL",
+    "DEF-cheek.T.L": "FULL",
+    "DEF-cheek.T.L.001": "FULL",
+    "DEF-cheek.T.R": "FULL",
+    "DEF-cheek.T.R.001": "FULL",
+    "DEF-chin": "FULL",
+    "DEF-chin.001": "FULL",
+    "DEF-chin.L": "FULL",
+    "DEF-chin.R": "FULL",
+    "DEF-ear.L": "FULL",
+    "DEF-ear.L.001": "FULL",
+    "DEF-ear.L.003": "FULL",
+    "DEF-ear.L.004": "FULL",
+    "DEF-ear.R": "FULL",
+    "DEF-ear.R.001": "FULL",
+    "DEF-ear.R.003": "FULL",
+    "DEF-ear.R.004": "FULL",
+    "DEF-forehead.L": "FULL",
+    "DEF-forehead.L.001": "FULL",
+    "DEF-forehead.L.002": "FULL",
+    "DEF-forehead.R": "FULL",
+    "DEF-forehead.R.001": "FULL",
+    "DEF-forehead.R.002": "FULL",
+    "DEF-jaw": "FULL",
+    "DEF-jaw.L": "FULL",
+    "DEF-jaw.L.001": "FULL",
+    "DEF-jaw.R": "FULL",
+    "DEF-jaw.R.001": "FULL",
+    "DEF-lid.B.L": "FULL",
+    "DEF-lid.B.L.001": "FULL",
+    "DEF-lid.B.L.002": "FULL",
+    "DEF-lid.B.R": "FULL",
+    "DEF-lid.B.R.001": "FULL",
+    "DEF-lid.B.R.002": "FULL",
+    "DEF-lid.T.L.002": "FULL",
+    "DEF-lid.T.L.003": "FULL",
+    "DEF-lid.T.R.002": "FULL",
+    "DEF-lid.T.R.003": "FULL",
+    "DEF-lip.B.L": "FULL",
+    "DEF-lip.B.L.001": "FULL",
+    "DEF-lip.B.R": "FULL",
+    "DEF-lip.B.R.001": "FULL",
+    "DEF-lip.T.L": "FULL",
+    "DEF-lip.T.L.001": "FULL",
+    "DEF-lip.T.R": "FULL",
+    "DEF-lip.T.R.001": "FULL",
+    "DEF-nose": "FULL",
+    "DEF-nose.002": "FULL",
+    "DEF-nose.004": "FULL",
+    "DEF-nose.L": "FULL",
+    "DEF-nose.L.001": "FULL",
+    "DEF-nose.R": "FULL",
+    "DEF-nose.R.001": "FULL",
+    "DEF-pelvis.L": "FULL",
+    "DEF-pelvis.R": "FULL",
+    "DEF-shoulder.L": "FULL",
+    "DEF-shoulder.R": "FULL",
+    "DEF-spine": "FULL",
+    "DEF-temple.L": "FULL",
+    "DEF-temple.R": "FULL",
+    "DEF-thigh.L": "FULL",
+    "DEF-thigh.R": "FULL",
+    "DEF-tongue.002": "FULL",
+    "DEF-upper_arm.L": "FULL",
+    "DEF-upper_arm.R": "FULL",
+    "DEF-spine.001": "FULL",
+    "DEF-thigh.L.001": "FULL",
+    "DEF-thigh.R.001": "FULL",
+    "DEF-upper_arm.L.001": "FULL",
+    "DEF-upper_arm.R.001": "FULL",
+    "DEF-forearm.L": "FULL",
+    "DEF-forearm.R": "FULL",
+    "DEF-shin.L": "FULL",
+    "DEF-shin.R": "FULL",
+    "DEF-spine.002": "FULL",
+    "DEF-forearm.L.001": "FULL",
+    "DEF-forearm.R.001": "FULL",
+    "DEF-shin.L.001": "FULL",
+    "DEF-shin.R.001": "FULL",
+    "DEF-spine.003": "FULL",
+    "DEF-foot.L": "FULL",
+    "DEF-foot.R": "FULL",
+    "DEF-hand.L": "FULL",
+    "DEF-hand.R": "FULL",
+    "DEF-spine.004": "FULL",
+    "DEF-f_index.01.L": "FULL",
+    "DEF-f_index.03.R": "FULL",
+    "DEF-f_middle.01.L": "FULL",
+    "DEF-f_middle.01.R": "FULL",
+    "DEF-f_pinky.01.L": "FULL",
+    "DEF-f_ring.01.L": "FULL",
+    "DEF-f_ring.01.R": "FULL",
+    "DEF-palm.01.L": "FULL",
+    "DEF-palm.01.R": "FULL",
+    "DEF-palm.02.L": "FULL",
+    "DEF-palm.02.R": "FULL",
+    "DEF-palm.03.L": "FULL",
+    "DEF-palm.03.R": "FULL",
+    "DEF-palm.04.L": "FULL",
+    "DEF-palm.04.R": "FULL",
+    "DEF-spine.005": "FULL",
+    "DEF-thumb.01.L": "FULL",
+    "DEF-thumb.01.R": "FULL",
+    "DEF-toe.L": "FULL",
+    "DEF-toe.R": "FULL",
+    "DEF-f_index.03.L": "FULL",
+    "DEF-f_middle.02.L": "FULL",
+    "DEF-f_middle.02.R": "FULL",
+    "DEF-f_ring.02.L": "FULL",
+    "DEF-f_ring.02.R": "FULL",
+    "DEF-spine.006": "FULL",
+    "DEF-thumb.02.L": "FULL",
+    "DEF-thumb.02.R": "FULL",
+    "DEF-f_middle.03.L": "FULL",
+    "DEF-f_middle.03.R": "FULL",
+    "DEF-f_ring.03.L": "FULL",
+    "DEF-f_ring.03.R": "FULL",
+    "DEF-thumb.03.L": "FULL",
+    "DEF-thumb.03.R": "FULL"
+  },
+  "exportedHierarchyScaleInheritance": "FULL, source constrained DEF world matrices reexpressed in static-bind localTRS",
+  "rows": [
+    {
+      "time": 1.8342013888888888,
+      "timeRational": [
+        2113,
+        1152
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        235,
+        128
+      ],
+      "surfaceBoundM": 3.075742769877056e-05,
+      "boneMaxDeg": 0.004612376031184272
+    },
+    {
+      "time": 1.8350694444444444,
+      "timeRational": [
+        1057,
+        576
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        235,
+        128
+      ],
+      "surfaceBoundM": 3.131603572187284e-05,
+      "boneMaxDeg": 0.004618047655723169
+    },
+    {
+      "time": 1.8368055555555556,
+      "timeRational": [
+        529,
+        288
+      ],
+      "leftRational": [
+        235,
+        128
+      ],
+      "rightRational": [
+        353,
+        192
+      ],
+      "surfaceBoundM": 3.13372388347911e-05,
+      "boneMaxDeg": 0.004660037477567547
+    },
+    {
+      "time": 1.8376736111111112,
+      "timeRational": [
+        2117,
+        1152
+      ],
+      "leftRational": [
+        235,
+        128
+      ],
+      "rightRational": [
+        353,
+        192
+      ],
+      "surfaceBoundM": 3.1606859311766595e-05,
+      "boneMaxDeg": 0.004643008185974093
+    },
+    {
+      "time": 1.8394097222222223,
+      "timeRational": [
+        2119,
+        1152
+      ],
+      "leftRational": [
+        353,
+        192
+      ],
+      "rightRational": [
+        707,
+        384
+      ],
+      "surfaceBoundM": 3.172066871528096e-05,
+      "boneMaxDeg": 0.004702355097601725
+    },
+    {
+      "time": 1.8402777777777777,
+      "timeRational": [
+        265,
+        144
+      ],
+      "leftRational": [
+        353,
+        192
+      ],
+      "rightRational": [
+        707,
+        384
+      ],
+      "surfaceBoundM": 3.1980762000426654e-05,
+      "boneMaxDeg": 0.004713556072112282
+    },
+    {
+      "time": 1.8420138888888888,
+      "timeRational": [
+        1061,
+        576
+      ],
+      "leftRational": [
+        707,
+        384
+      ],
+      "rightRational": [
+        59,
+        32
+      ],
+      "surfaceBoundM": 3.2257571540414354e-05,
+      "boneMaxDeg": 0.004729639447766777
+    },
+    {
+      "time": 1.8428819444444444,
+      "timeRational": [
+        2123,
+        1152
+      ],
+      "leftRational": [
+        707,
+        384
+      ],
+      "rightRational": [
+        59,
+        32
+      ],
+      "surfaceBoundM": 3.2147070894297054e-05,
+      "boneMaxDeg": 0.004720811203438235
+    },
+    {
+      "time": 1.8446180555555556,
+      "timeRational": [
+        2125,
+        1152
+      ],
+      "leftRational": [
+        59,
+        32
+      ],
+      "rightRational": [
+        709,
+        384
+      ],
+      "surfaceBoundM": 3.232272414191966e-05,
+      "boneMaxDeg": 0.004766757318074642
+    },
+    {
+      "time": 1.8454861111111112,
+      "timeRational": [
+        1063,
+        576
+      ],
+      "leftRational": [
+        59,
+        32
+      ],
+      "rightRational": [
+        709,
+        384
+      ],
+      "surfaceBoundM": 3.2474902347669784e-05,
+      "boneMaxDeg": 0.0047871644086091795
+    },
+    {
+      "time": 1.8472222222222223,
+      "timeRational": [
+        133,
+        72
+      ],
+      "leftRational": [
+        709,
+        384
+      ],
+      "rightRational": [
+        355,
+        192
+      ],
+      "surfaceBoundM": 3.2663087434819695e-05,
+      "boneMaxDeg": 0.004808037343811677
+    },
+    {
+      "time": 1.8480902777777777,
+      "timeRational": [
+        2129,
+        1152
+      ],
+      "leftRational": [
+        709,
+        384
+      ],
+      "rightRational": [
+        355,
+        192
+      ],
+      "surfaceBoundM": 3.2535061439504105e-05,
+      "boneMaxDeg": 0.004817044214409669
+    },
+    {
+      "time": 1.8498263888888888,
+      "timeRational": [
+        2131,
+        1152
+      ],
+      "leftRational": [
+        355,
+        192
+      ],
+      "rightRational": [
+        237,
+        128
+      ],
+      "surfaceBoundM": 3.24713689625596e-05,
+      "boneMaxDeg": 0.004853096767472485
+    },
+    {
+      "time": 1.8506944444444444,
+      "timeRational": [
+        533,
+        288
+      ],
+      "leftRational": [
+        355,
+        192
+      ],
+      "rightRational": [
+        237,
+        128
+      ],
+      "surfaceBoundM": 3.264138881274063e-05,
+      "boneMaxDeg": 0.004862141653117314
+    },
+    {
+      "time": 1.8524305555555556,
+      "timeRational": [
+        1067,
+        576
+      ],
+      "leftRational": [
+        237,
+        128
+      ],
+      "rightRational": [
+        89,
+        48
+      ],
+      "surfaceBoundM": 3.2888505526811636e-05,
+      "boneMaxDeg": 0.004872067285984575
+    },
+    {
+      "time": 1.8532986111111112,
+      "timeRational": [
+        2135,
+        1152
+      ],
+      "leftRational": [
+        237,
+        128
+      ],
+      "rightRational": [
+        89,
+        48
+      ],
+      "surfaceBoundM": 3.319578720709238e-05,
+      "boneMaxDeg": 0.004883552467238953
+    },
+    {
+      "time": 1.8550347222222223,
+      "timeRational": [
+        2137,
+        1152
+      ],
+      "leftRational": [
+        89,
+        48
+      ],
+      "rightRational": [
+        713,
+        384
+      ],
+      "surfaceBoundM": 3.322664374528169e-05,
+      "boneMaxDeg": 0.0049071310077906235
+    },
+    {
+      "time": 1.8559027777777777,
+      "timeRational": [
+        1069,
+        576
+      ],
+      "leftRational": [
+        89,
+        48
+      ],
+      "rightRational": [
+        713,
+        384
+      ],
+      "surfaceBoundM": 3.317284795432136e-05,
+      "boneMaxDeg": 0.004939281696094912
+    },
+    {
+      "time": 1.8576388888888888,
+      "timeRational": [
+        535,
+        288
+      ],
+      "leftRational": [
+        713,
+        384
+      ],
+      "rightRational": [
+        119,
+        64
+      ],
+      "surfaceBoundM": 3.325237047940414e-05,
+      "boneMaxDeg": 0.004970561306165841
+    },
+    {
+      "time": 1.8585069444444444,
+      "timeRational": [
+        2141,
+        1152
+      ],
+      "leftRational": [
+        713,
+        384
+      ],
+      "rightRational": [
+        119,
+        64
+      ],
+      "surfaceBoundM": 3.30297798164535e-05,
+      "boneMaxDeg": 0.00497002621722671
+    },
+    {
+      "time": 1.8602430555555556,
+      "timeRational": [
+        2143,
+        1152
+      ],
+      "leftRational": [
+        119,
+        64
+      ],
+      "rightRational": [
+        715,
+        384
+      ],
+      "surfaceBoundM": 3.309318575998431e-05,
+      "boneMaxDeg": 0.0049878504014980165
+    },
+    {
+      "time": 1.8611111111111112,
+      "timeRational": [
+        67,
+        36
+      ],
+      "leftRational": [
+        119,
+        64
+      ],
+      "rightRational": [
+        715,
+        384
+      ],
+      "surfaceBoundM": 3.303823965062552e-05,
+      "boneMaxDeg": 0.004998456006923199
+    },
+    {
+      "time": 1.8628472222222223,
+      "timeRational": [
+        1073,
+        576
+      ],
+      "leftRational": [
+        715,
+        384
+      ],
+      "rightRational": [
+        179,
+        96
+      ],
+      "surfaceBoundM": 3.31871147886738e-05,
+      "boneMaxDeg": 0.005035876518233589
+    },
+    {
+      "time": 1.8637152777777777,
+      "timeRational": [
+        2147,
+        1152
+      ],
+      "leftRational": [
+        715,
+        384
+      ],
+      "rightRational": [
+        179,
+        96
+      ],
+      "surfaceBoundM": 3.289278259944775e-05,
+      "boneMaxDeg": 0.005045564040734593
+    },
+    {
+      "time": 1.8654513888888888,
+      "timeRational": [
+        2149,
+        1152
+      ],
+      "leftRational": [
+        179,
+        96
+      ],
+      "rightRational": [
+        239,
+        128
+      ],
+      "surfaceBoundM": 3.303087916031899e-05,
+      "boneMaxDeg": 0.005075578557560147
+    },
+    {
+      "time": 1.8663194444444444,
+      "timeRational": [
+        1075,
+        576
+      ],
+      "leftRational": [
+        179,
+        96
+      ],
+      "rightRational": [
+        239,
+        128
+      ],
+      "surfaceBoundM": 3.2904374561527846e-05,
+      "boneMaxDeg": 0.00510861432655217
+    },
+    {
+      "time": 1.8680555555555556,
+      "timeRational": [
+        269,
+        144
+      ],
+      "leftRational": [
+        239,
+        128
+      ],
+      "rightRational": [
+        359,
+        192
+      ],
+      "surfaceBoundM": 3.272847651141928e-05,
+      "boneMaxDeg": 0.005099769534978881
+    },
+    {
+      "time": 1.8689236111111112,
+      "timeRational": [
+        2153,
+        1152
+      ],
+      "leftRational": [
+        239,
+        128
+      ],
+      "rightRational": [
+        359,
+        192
+      ],
+      "surfaceBoundM": 3.265477533834802e-05,
+      "boneMaxDeg": 0.0051351427480045685
+    },
+    {
+      "time": 1.8706597222222223,
+      "timeRational": [
+        2155,
+        1152
+      ],
+      "leftRational": [
+        359,
+        192
+      ],
+      "rightRational": [
+        719,
+        384
+      ],
+      "surfaceBoundM": 3.2523367238235976e-05,
+      "boneMaxDeg": 0.005148319236008584
+    },
+    {
+      "time": 1.8715277777777777,
+      "timeRational": [
+        539,
+        288
+      ],
+      "leftRational": [
+        359,
+        192
+      ],
+      "rightRational": [
+        719,
+        384
+      ],
+      "surfaceBoundM": 3.276666419992963e-05,
+      "boneMaxDeg": 0.00518775090705676
+    },
+    {
+      "time": 1.8732638888888888,
+      "timeRational": [
+        1079,
+        576
+      ],
+      "leftRational": [
+        719,
+        384
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 3.259528194830941e-05,
+      "boneMaxDeg": 0.005204652894978413
+    },
+    {
+      "time": 1.8741319444444444,
+      "timeRational": [
+        2159,
+        1152
+      ],
+      "leftRational": [
+        719,
+        384
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 3.2432698863201444e-05,
+      "boneMaxDeg": 0.005224243645586681
+    },
+    {
+      "time": 1.8345238095238094,
+      "timeRational": [
+        1541,
+        840
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        235,
+        128
+      ],
+      "surfaceBoundM": 3.4879206688332854e-05,
+      "boneMaxDeg": 0.005151648935023674,
+      "holdoutGridHz": 120,
+      "holdoutCellOffset": "1/7"
+    },
+    {
+      "time": 1.8428571428571427,
+      "timeRational": [
+        129,
+        70
+      ],
+      "leftRational": [
+        707,
+        384
+      ],
+      "rightRational": [
+        59,
+        32
+      ],
+      "surfaceBoundM": 3.280142285966235e-05,
+      "boneMaxDeg": 0.0048011501598750886,
+      "holdoutGridHz": 120,
+      "holdoutCellOffset": "1/7"
+    },
+    {
+      "time": 1.8511904761904763,
+      "timeRational": [
+        311,
+        168
+      ],
+      "leftRational": [
+        355,
+        192
+      ],
+      "rightRational": [
+        237,
+        128
+      ],
+      "surfaceBoundM": 1.7856858688120286e-05,
+      "boneMaxDeg": 0.0028427498152722133,
+      "holdoutGridHz": 120,
+      "holdoutCellOffset": "1/7"
+    },
+    {
+      "time": 1.8595238095238096,
+      "timeRational": [
+        781,
+        420
+      ],
+      "leftRational": [
+        119,
+        64
+      ],
+      "rightRational": [
+        715,
+        384
+      ],
+      "surfaceBoundM": 8.001820811644903e-06,
+      "boneMaxDeg": 0.0018293348015483535,
+      "holdoutGridHz": 120,
+      "holdoutCellOffset": "1/7"
+    },
+    {
+      "time": 1.8678571428571429,
+      "timeRational": [
+        523,
+        280
+      ],
+      "leftRational": [
+        239,
+        128
+      ],
+      "rightRational": [
+        359,
+        192
+      ],
+      "surfaceBoundM": 2.828365413185124e-05,
+      "boneMaxDeg": 0.0044208860811599145,
+      "holdoutGridHz": 120,
+      "holdoutCellOffset": "1/7"
+    }
+  ],
+  "maxSurfaceBoundM": 3.4879206688332854e-05,
+  "maxBoneDeg": 0.005224243645586681,
+  "acceptedKeys": [
+    [
+      11,
+      6
+    ],
+    [
+      235,
+      128
+    ],
+    [
+      353,
+      192
+    ],
+    [
+      707,
+      384
+    ],
+    [
+      59,
+      32
+    ],
+    [
+      709,
+      384
+    ],
+    [
+      355,
+      192
+    ],
+    [
+      237,
+      128
+    ],
+    [
+      89,
+      48
+    ],
+    [
+      713,
+      384
+    ],
+    [
+      119,
+      64
+    ],
+    [
+      715,
+      384
+    ],
+    [
+      179,
+      96
+    ],
+    [
+      239,
+      128
+    ],
+    [
+      359,
+      192
+    ],
+    [
+      719,
+      384
+    ],
+    [
+      15,
+      8
+    ]
+  ],
+  "status": "PASS_DIAGNOSTIC_NOT_EXPORT"
+}

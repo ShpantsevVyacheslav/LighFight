@@ -1,0 +1,662 @@
+{
+  "mode": "SCREEN_ONLY_96_120_NOT_ACCEPTANCE",
+  "clip": "box_02",
+  "sourceVertices": 994452,
+  "triangles": 1988914,
+  "allWeightedBones": 136,
+  "sourceCalls": 33,
+  "seconds": 11.710198540997226,
+  "sourceAttributesExact": true,
+  "allOriginalVertexBoundWitness": [
+    {
+      "time": 1.859375,
+      "vertices": 994452,
+      "actualAllVertexMaxM": 0.0005581432288646631,
+      "conservativeBoundM": 0.0005964736825165452
+    },
+    {
+      "time": 1.8697916666666667,
+      "vertices": 994452,
+      "actualAllVertexMaxM": 0.0005498563910261605,
+      "conservativeBoundM": 0.0005904277383240717
+    },
+    {
+      "time": 1.8489583333333333,
+      "vertices": 994452,
+      "actualAllVertexMaxM": 0.0005513657913462005,
+      "conservativeBoundM": 0.0005871841992806637
+    }
+  ],
+  "bounds": "ALL994452 source vertices, positive influence support AABBs; joint scales in full matrices; no geometry sampling for bound",
+  "originalConstrainedDEFInheritScale": {
+    "DEF-breast.L": "FULL",
+    "DEF-breast.R": "FULL",
+    "DEF-brow.B.L": "FULL",
+    "DEF-brow.B.L.001": "FULL",
+    "DEF-brow.B.L.002": "FULL",
+    "DEF-brow.B.R.003": "FULL",
+    "DEF-brow.T.L": "FULL",
+    "DEF-brow.T.L.001": "FULL",
+    "DEF-brow.T.L.002": "FULL",
+    "DEF-brow.T.L.003": "FULL",
+    "DEF-brow.T.R": "FULL",
+    "DEF-brow.T.R.001": "FULL",
+    "DEF-brow.T.R.002": "FULL",
+    "DEF-brow.T.R.003": "FULL",
+    "DEF-cheek.B.L": "FULL",
+    "DEF-cheek.B.L.001": "FULL",
+    "DEF-cheek.B.R": "FULL",
+    "DEF-cheek.B.R.001": "FULL",
+    "DEF-cheek.T.L": "FULL",
+    "DEF-cheek.T.L.001": "FULL",
+    "DEF-cheek.T.R": "FULL",
+    "DEF-cheek.T.R.001": "FULL",
+    "DEF-chin": "FULL",
+    "DEF-chin.001": "FULL",
+    "DEF-chin.L": "FULL",
+    "DEF-chin.R": "FULL",
+    "DEF-ear.L": "FULL",
+    "DEF-ear.L.001": "FULL",
+    "DEF-ear.L.003": "FULL",
+    "DEF-ear.L.004": "FULL",
+    "DEF-ear.R": "FULL",
+    "DEF-ear.R.001": "FULL",
+    "DEF-ear.R.003": "FULL",
+    "DEF-ear.R.004": "FULL",
+    "DEF-forehead.L": "FULL",
+    "DEF-forehead.L.001": "FULL",
+    "DEF-forehead.L.002": "FULL",
+    "DEF-forehead.R": "FULL",
+    "DEF-forehead.R.001": "FULL",
+    "DEF-forehead.R.002": "FULL",
+    "DEF-jaw": "FULL",
+    "DEF-jaw.L": "FULL",
+    "DEF-jaw.L.001": "FULL",
+    "DEF-jaw.R": "FULL",
+    "DEF-jaw.R.001": "FULL",
+    "DEF-lid.B.L": "FULL",
+    "DEF-lid.B.L.001": "FULL",
+    "DEF-lid.B.L.002": "FULL",
+    "DEF-lid.B.R": "FULL",
+    "DEF-lid.B.R.001": "FULL",
+    "DEF-lid.B.R.002": "FULL",
+    "DEF-lid.T.L.002": "FULL",
+    "DEF-lid.T.L.003": "FULL",
+    "DEF-lid.T.R.002": "FULL",
+    "DEF-lid.T.R.003": "FULL",
+    "DEF-lip.B.L": "FULL",
+    "DEF-lip.B.L.001": "FULL",
+    "DEF-lip.B.R": "FULL",
+    "DEF-lip.B.R.001": "FULL",
+    "DEF-lip.T.L": "FULL",
+    "DEF-lip.T.L.001": "FULL",
+    "DEF-lip.T.R": "FULL",
+    "DEF-lip.T.R.001": "FULL",
+    "DEF-nose": "FULL",
+    "DEF-nose.002": "FULL",
+    "DEF-nose.004": "FULL",
+    "DEF-nose.L": "FULL",
+    "DEF-nose.L.001": "FULL",
+    "DEF-nose.R": "FULL",
+    "DEF-nose.R.001": "FULL",
+    "DEF-pelvis.L": "FULL",
+    "DEF-pelvis.R": "FULL",
+    "DEF-shoulder.L": "FULL",
+    "DEF-shoulder.R": "FULL",
+    "DEF-spine": "FULL",
+    "DEF-temple.L": "FULL",
+    "DEF-temple.R": "FULL",
+    "DEF-thigh.L": "FULL",
+    "DEF-thigh.R": "FULL",
+    "DEF-tongue.002": "FULL",
+    "DEF-upper_arm.L": "FULL",
+    "DEF-upper_arm.R": "FULL",
+    "DEF-spine.001": "FULL",
+    "DEF-thigh.L.001": "FULL",
+    "DEF-thigh.R.001": "FULL",
+    "DEF-upper_arm.L.001": "FULL",
+    "DEF-upper_arm.R.001": "FULL",
+    "DEF-forearm.L": "FULL",
+    "DEF-forearm.R": "FULL",
+    "DEF-shin.L": "FULL",
+    "DEF-shin.R": "FULL",
+    "DEF-spine.002": "FULL",
+    "DEF-forearm.L.001": "FULL",
+    "DEF-forearm.R.001": "FULL",
+    "DEF-shin.L.001": "FULL",
+    "DEF-shin.R.001": "FULL",
+    "DEF-spine.003": "FULL",
+    "DEF-foot.L": "FULL",
+    "DEF-foot.R": "FULL",
+    "DEF-hand.L": "FULL",
+    "DEF-hand.R": "FULL",
+    "DEF-spine.004": "FULL",
+    "DEF-f_index.01.L": "FULL",
+    "DEF-f_index.03.R": "FULL",
+    "DEF-f_middle.01.L": "FULL",
+    "DEF-f_middle.01.R": "FULL",
+    "DEF-f_pinky.01.L": "FULL",
+    "DEF-f_ring.01.L": "FULL",
+    "DEF-f_ring.01.R": "FULL",
+    "DEF-palm.01.L": "FULL",
+    "DEF-palm.01.R": "FULL",
+    "DEF-palm.02.L": "FULL",
+    "DEF-palm.02.R": "FULL",
+    "DEF-palm.03.L": "FULL",
+    "DEF-palm.03.R": "FULL",
+    "DEF-palm.04.L": "FULL",
+    "DEF-palm.04.R": "FULL",
+    "DEF-spine.005": "FULL",
+    "DEF-thumb.01.L": "FULL",
+    "DEF-thumb.01.R": "FULL",
+    "DEF-toe.L": "FULL",
+    "DEF-toe.R": "FULL",
+    "DEF-f_index.03.L": "FULL",
+    "DEF-f_middle.02.L": "FULL",
+    "DEF-f_middle.02.R": "FULL",
+    "DEF-f_ring.02.L": "FULL",
+    "DEF-f_ring.02.R": "FULL",
+    "DEF-spine.006": "FULL",
+    "DEF-thumb.02.L": "FULL",
+    "DEF-thumb.02.R": "FULL",
+    "DEF-f_middle.03.L": "FULL",
+    "DEF-f_middle.03.R": "FULL",
+    "DEF-f_ring.03.L": "FULL",
+    "DEF-f_ring.03.R": "FULL",
+    "DEF-thumb.03.L": "FULL",
+    "DEF-thumb.03.R": "FULL"
+  },
+  "exportedHierarchyScaleInheritance": "FULL, source constrained DEF world matrices reexpressed in static-bind localTRS",
+  "rows": [
+    {
+      "time": 1.8359375,
+      "timeRational": [
+        235,
+        128
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        59,
+        32
+      ],
+      "surfaceBoundM": 0.00042471898766836206,
+      "boneMaxDeg": 0.0628836776519607,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8385416666666667,
+      "timeRational": [
+        353,
+        192
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        59,
+        32
+      ],
+      "surfaceBoundM": 0.0005667510839854346,
+      "boneMaxDeg": 0.08407274524916339,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8411458333333333,
+      "timeRational": [
+        707,
+        384
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        59,
+        32
+      ],
+      "surfaceBoundM": 0.00042499416993620214,
+      "boneMaxDeg": 0.0631741160193936,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8463541666666667,
+      "timeRational": [
+        709,
+        384
+      ],
+      "leftRational": [
+        59,
+        32
+      ],
+      "rightRational": [
+        89,
+        48
+      ],
+      "surfaceBoundM": 0.00044189993040961664,
+      "boneMaxDeg": 0.06515763023321981,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8489583333333333,
+      "timeRational": [
+        355,
+        192
+      ],
+      "leftRational": [
+        59,
+        32
+      ],
+      "rightRational": [
+        89,
+        48
+      ],
+      "surfaceBoundM": 0.0005871841992806637,
+      "boneMaxDeg": 0.0870035726330871,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8515625,
+      "timeRational": [
+        237,
+        128
+      ],
+      "leftRational": [
+        59,
+        32
+      ],
+      "rightRational": [
+        89,
+        48
+      ],
+      "surfaceBoundM": 0.00043932158870894526,
+      "boneMaxDeg": 0.06529320131146052,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8567708333333333,
+      "timeRational": [
+        713,
+        384
+      ],
+      "leftRational": [
+        89,
+        48
+      ],
+      "rightRational": [
+        179,
+        96
+      ],
+      "surfaceBoundM": 0.00045031870073704717,
+      "boneMaxDeg": 0.06723253206628692,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.859375,
+      "timeRational": [
+        119,
+        64
+      ],
+      "leftRational": [
+        89,
+        48
+      ],
+      "rightRational": [
+        179,
+        96
+      ],
+      "surfaceBoundM": 0.0005964736825165452,
+      "boneMaxDeg": 0.08964963822748735,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8619791666666667,
+      "timeRational": [
+        715,
+        384
+      ],
+      "leftRational": [
+        89,
+        48
+      ],
+      "rightRational": [
+        179,
+        96
+      ],
+      "surfaceBoundM": 0.00044440831794514637,
+      "boneMaxDeg": 0.06722297089471825,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8671875,
+      "timeRational": [
+        239,
+        128
+      ],
+      "leftRational": [
+        179,
+        96
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 0.0004469469462987771,
+      "boneMaxDeg": 0.06951410202605722,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8697916666666667,
+      "timeRational": [
+        359,
+        192
+      ],
+      "leftRational": [
+        179,
+        96
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 0.0005904277383240717,
+      "boneMaxDeg": 0.09275817550235231,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8723958333333333,
+      "timeRational": [
+        719,
+        384
+      ],
+      "leftRational": [
+        179,
+        96
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 0.00043870961425153,
+      "boneMaxDeg": 0.06956516804273002,
+      "candidateRate": 96
+    },
+    {
+      "time": 1.8354166666666667,
+      "timeRational": [
+        881,
+        480
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        221,
+        120
+      ],
+      "surfaceBoundM": 0.00027088761179797094,
+      "boneMaxDeg": 0.040134237955358795,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8375,
+      "timeRational": [
+        147,
+        80
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        221,
+        120
+      ],
+      "surfaceBoundM": 0.00036142103013247833,
+      "boneMaxDeg": 0.05360901608864196,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8395833333333333,
+      "timeRational": [
+        883,
+        480
+      ],
+      "leftRational": [
+        11,
+        6
+      ],
+      "rightRational": [
+        221,
+        120
+      ],
+      "surfaceBoundM": 0.0002710962391961997,
+      "boneMaxDeg": 0.04028383925149152,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.84375,
+      "timeRational": [
+        59,
+        32
+      ],
+      "leftRational": [
+        221,
+        120
+      ],
+      "rightRational": [
+        37,
+        20
+      ],
+      "surfaceBoundM": 0.00027922362502775096,
+      "boneMaxDeg": 0.04131053910337806,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8458333333333334,
+      "timeRational": [
+        443,
+        240
+      ],
+      "leftRational": [
+        221,
+        120
+      ],
+      "rightRational": [
+        37,
+        20
+      ],
+      "surfaceBoundM": 0.0003720472526103931,
+      "boneMaxDeg": 0.05513491714331823,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8479166666666667,
+      "timeRational": [
+        887,
+        480
+      ],
+      "leftRational": [
+        221,
+        120
+      ],
+      "rightRational": [
+        37,
+        20
+      ],
+      "surfaceBoundM": 0.00027866589793118073,
+      "boneMaxDeg": 0.041391812891596894,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8520833333333333,
+      "timeRational": [
+        889,
+        480
+      ],
+      "leftRational": [
+        37,
+        20
+      ],
+      "rightRational": [
+        223,
+        120
+      ],
+      "surfaceBoundM": 0.00028553172397260035,
+      "boneMaxDeg": 0.042403274661012826,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8541666666666667,
+      "timeRational": [
+        89,
+        48
+      ],
+      "leftRational": [
+        37,
+        20
+      ],
+      "rightRational": [
+        223,
+        120
+      ],
+      "surfaceBoundM": 0.0003794344084835696,
+      "boneMaxDeg": 0.05656239135757106,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.85625,
+      "timeRational": [
+        297,
+        160
+      ],
+      "leftRational": [
+        37,
+        20
+      ],
+      "rightRational": [
+        223,
+        120
+      ],
+      "surfaceBoundM": 0.00028347282432137076,
+      "boneMaxDeg": 0.04242341550188942,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8604166666666666,
+      "timeRational": [
+        893,
+        480
+      ],
+      "leftRational": [
+        223,
+        120
+      ],
+      "rightRational": [
+        28,
+        15
+      ],
+      "surfaceBoundM": 0.00028809794566980127,
+      "boneMaxDeg": 0.043409640371198634,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8625,
+      "timeRational": [
+        149,
+        80
+      ],
+      "leftRational": [
+        223,
+        120
+      ],
+      "rightRational": [
+        28,
+        15
+      ],
+      "surfaceBoundM": 0.0003814934812797698,
+      "boneMaxDeg": 0.057921481114057365,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8645833333333333,
+      "timeRational": [
+        179,
+        96
+      ],
+      "leftRational": [
+        223,
+        120
+      ],
+      "rightRational": [
+        28,
+        15
+      ],
+      "surfaceBoundM": 0.00028444589172394374,
+      "boneMaxDeg": 0.04347663019352948,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.86875,
+      "timeRational": [
+        299,
+        160
+      ],
+      "leftRational": [
+        28,
+        15
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 0.0002846810704657472,
+      "boneMaxDeg": 0.0446321671095565,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8708333333333333,
+      "timeRational": [
+        449,
+        240
+      ],
+      "leftRational": [
+        28,
+        15
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 0.00037675162917541363,
+      "boneMaxDeg": 0.05955012314212992,
+      "candidateRate": 120
+    },
+    {
+      "time": 1.8729166666666666,
+      "timeRational": [
+        899,
+        480
+      ],
+      "leftRational": [
+        28,
+        15
+      ],
+      "rightRational": [
+        15,
+        8
+      ],
+      "surfaceBoundM": 0.0002802819236349481,
+      "boneMaxDeg": 0.04466574970704453,
+      "candidateRate": 120
+    }
+  ],
+  "maxSurfaceBoundM": 0.0005964736825165452,
+  "maxBoneDeg": 0.09275817550235231,
+  "acceptedKeys": [],
+  "status": "FAIL_ACCURACY"
+}
