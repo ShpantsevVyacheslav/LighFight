@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Failed(Child)" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 17:49:19Z" end-time="2026-10-18 17:49:19Z" duration="0.101336">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="299" result="Failed" site="Child" start-time="2026-10-18 17:49:19Z" end-time="2026-10-18 17:49:19Z" duration="0.101336" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1365" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="274" result="Failed" site="Child" start-time="2026-10-18 17:49:19Z" end-time="2026-10-18 17:49:19Z" duration="0.087070" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="89403" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1366" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="100" result="Failed" site="Child" start-time="2026-10-18 17:49:19Z" end-time="2026-10-18 17:49:19Z" duration="0.079232" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1367" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="100" result="Failed" site="Child" start-time="2026-10-18 17:49:19Z" end-time="2026-10-18 17:49:19Z" duration="0.077578" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1322" name="SelectionStudioLightingTests" fullname="LighFight.Tests.SelectionStudioLightingTests" classname="LighFight.Tests.SelectionStudioLightingTests" runstate="Runnable" testcasecount="1" result="Failed" site="Child" start-time="2026-10-18 17:49:19Z" end-time="2026-10-18 17:49:19Z" duration="0.070472" total="1" passed="0" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1323" name="ActualRendererPreviewRestoresFightEnvironmentAndDisabledDoesNoWork" fullname="LighFight.Tests.SelectionStudioLightingTests.ActualRendererPreviewRestoresFightEnvironmentAndDisabledDoesNoWork" methodname="ActualRendererPreviewRestoresFightEnvironmentAndDisabledDoesNoWork" classname="LighFight.Tests.SelectionStudioLightingTests" runstate="Runnable" seed="1361769099" result="Failed" start-time="2026-10-18 17:49:19Z" end-time="2026-10-18 17:49:19Z" duration="0.058002" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Actual ForwardBase renderer must receive native global SH
+  Expected: 0.180000007f +/- 0.00400000019f
+  But was:  0.0369675867f
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.SelectionStudioLightingTests+<ActualRendererPreviewRestoresFightEnvironmentAndDisabledDoesNoWork>d__0.MoveNext () [0x00526] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/SelectionStudioLightingTests.cs:73
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in ./Library/PackageCache/com.unity.test-framework@bd7f943e9647/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+              </failure>
+              <output><![CDATA[Releasing render texture that is set to be RenderTexture.active!
+Saving results to: /tmp/lighfight-selection-studio-edit-tests-r3.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

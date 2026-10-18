@@ -1,0 +1,6 @@
+Review-only onevertex Mesh.SetBoneWeights source302 precision probe; no original mesh/source changes.
+EffectiveCount=3
+DEF-foot.R source=0.9973506 readback=0.9973506 delta=0 k65535=65361 latticeResidual=5.6433497590546722E-06
+DEF-shin.R.001 source=0.00171866582 readback=0.00171866582 delta=0 k65535=113 latticeResidual=-5.6036519176022245E-06
+DEF-toe.R source=0.0009307978 readback=0.0009307978 delta=0 k65535=61 latticeResidual=-2.5613537990879995E-09
+PASS_BITEXACT_CPU_READBACK; GPU/player surface remains separate.

@@ -1,0 +1,2 @@
+Known linear HDR [0,.18,.5,1] -> existingFilmic exposure1 -> explicitIEC-sRGB -> rawRGB24readback/PNG. All render targets and upload/readback Texture2D explicitlyLinear. GL.sRGBWrite explicitlyfalse, restored. Exactlyone output transfer.
+Maximumerror=0.001573503 tolerance=1.01/255bytes. No actors/materialfactors/source edits; this qualifies transferonly, not sourceAgX equivalence.

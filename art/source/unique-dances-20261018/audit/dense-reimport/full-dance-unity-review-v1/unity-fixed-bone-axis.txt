@@ -1,0 +1,4 @@
+Fixed FBX bone-local convention derived from FIRST true inverse-bind only, validated against ALL136 unchanged true binds. Not a moving-pose fit.
+QuaternionXYZW=(-0.7071067, -8.688669E-11, -1.08439335E-09, 0.707106948)
+maxJointM=4.243112E-07 maxAllBoneLocalAxisResidualDeg=0.000537722882571425
+Full K_i=inverse(sourceBindWorld)*UnityBindWorld from true inversebind only; predictedUnityPose=sourcePoseWorld*K_i. Each fixedK including unit scale archived; never fit moving poses. Deformation Mpose*inverse(Mbind) cancels fixed bone-local convention. Source points/geometry untouched; raw orientation mismatch retained in CSV.

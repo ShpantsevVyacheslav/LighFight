@@ -1,0 +1,4 @@
+DTB1 little-endian: intvertexCount, vertexCount*12float32(position3 normal3 tangentXYZW4 UV2), intindexCount, int32indices,16float32rowmajor rendererLocalToWorld.
+Imported normals retained. Mikk tangents are derived/imported review attributes, not claimed source tangent preservation.
+Compare independent Blender loop basis through C=ReflectX*B. Vector normals/tangents transform by C; bitangent is cross(N,T)*sign; reflection requires sign reversal (detC=-1). No hand-tuned green flip.
+This diagnostic does not change source or prove final rendered material acceptance.

@@ -1,0 +1,9 @@
+REVIEW ONLY: original desired write and engine readback separate; raw source/FBX unchanged.
+Source mapped via fullposition+UV+corner topology before any mutation; maxPositionM=3.875958E-07
+Imported vertices=1021226 desired nonzero influences=3174322 sourceMinimumPositive=3.17028963E-08
+ImporterPrunedVertices=8765 importerMissingInfluences=9025 importerChangedVertices=142078
+Readback lostNamedPositiveInfluences=0 unexpectedNamedInfluences=0 verticesWithCountMismatch=0
+Readback changedFloatInfluences=937182 maxAbsoluteWeightDelta=2.384185791015625E-07 maxNearest65535LatticeResidual=7.629510038853482E-06 maxNormalizeSourceSumResidual=1.4444736273766523E-07 minimumPositiveReadback=3.17028963E-08
+Imported vertex attributes=Position:Float32:3;Normal:Float32:3;Tangent:Float32:4;TexCoord0:Float32:2;BlendWeight:Float32:4;BlendIndices:UInt32:4
+Restored vertex attributes=Position:Float32:3;Normal:Float32:3;Tangent:Float32:4;TexCoord0:Float32:2;BlendWeight:Float32:4;BlendIndices:UInt32:4
+PASS no pruning/unexpected named weights; nonweight positions/normals/tangents/UV/triangles/binds bitexact clone retention. Engine normalization roundoff quantified above; independent fullpose bound required. GPU/player remains OPEN.

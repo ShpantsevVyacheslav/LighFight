@@ -1,0 +1,3 @@
+PASS full16777216 decoded pixels: both separate scalar sources grayscale; packedR=originalMetalR; packedA=255-originalRoughR; import readback byteexact.
+Original source factors1, normalStrength1; base sRGB; normal/rough/metal/derived pack linear; actual4096x4096; compressionOff; no extra gamma decode.
+Standard shader review material; this verifies maps/packing, not exact cross-renderer BRDF parity.

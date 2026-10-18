@@ -1,0 +1,15 @@
+# Normal / tangent diagnosis — preliminary
+
+The bounded Metal Editor diagnostic exited 0. Source maps, model, imported buffers and material factors were not changed. Material appearance remains rejected.
+
+Actual normal import is NormalMap, linear, uncompressed RGBA32,4096², conversion off, green flip off, strength1. The GPU stores normal RGBA as (1,sourceG,sourceG,sourceR). Both Standard UnpackScaleNormal(strength1) and UnityCG UnpackNormal recover original source R/G and reconstructed Z. Twelve UV witnesses include eight strongest fixed-lattice source XY normals. GPU versus independent reconstructed-Z component error is at most1e-7. Thus a gross channel/swizzle/gamma/green-flip decode error is not supported by these witnesses.
+
+Blender normalizes the original RGB normal, whereas Unity reconstructs Z after dropping the source blue channel. The strongest witness differs1.318472°; this real convention difference is measured, not automatically accepted as visually equivalent. CSV Unity Vector3.Angle can round small angles to zero; gpu-decode-summary.json uses float64 atan2 independently.
+
+The full imported bind basis contains1,021,226 vertices, no nonfinite/zero normals or tangents, unit lengths.99th percentile abs(N·T)=1.19e-7.918 vertices have abs(N·T)>.01, touching1873 faces;852 exceed.1. Some show the +X fallback tangent. This small subset is a real diagnostic requiring original Blender comparison, not evidence that the whole garment basis is wrong. No tangent repair has been applied.
+
+Completed:256 original Blender bind-loop witnesses compared through fixed C=ReflectX*B. Each source triangle all3 position/UV corners is validated before choosing a coincident seam. All256 have correct handedness; no global green-axis reversal is justified. Median tangent errors are about.0001°, but local maxima are collar14.366°,shirt17.452°,hair14.192°. Maximum normal error.03856°. Thus local tangent transport differs even while most basis frames agree. The preliminary nearest-normal-only comparison had a117.96° wrong-seam outlier; this is withdrawn, and retained only as the rejected preliminary diagnostic. Use the FACET comparison artifact and facet-basis-summary.json. The portable reflection prerequisite passes600 cases; a wrong tangent.w sign mutation fails. This mathematical test is not actual importer parity.
+
+Lighting comparison is also unequal: source gallery script05 uses three2m AREA lights, Cycles and AgX; Unity capture uses one Directional1.1, ambient and LDR ARGB32. No material-factor modification was found in source gallery setup. Matched world-normal visualization and lighting/display comparison remain necessary after the tangent oracle. No source-factor fudge or final normal-off material is proposed.
+
+The existing source Normal Map node is explicitly TANGENT with strength1. Independent source40 extraction leaves source geometry/file SHA unchanged. GPU inputs and basis now have separate quantitative evidence; an actual matched-light/display render remains necessary before assigning the wholecloth foil appearance to the local tangent discrepancy.

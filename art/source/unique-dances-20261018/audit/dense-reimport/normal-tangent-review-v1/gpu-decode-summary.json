@@ -1,0 +1,35 @@
+{
+  "status": "GPU_NORMAL_DECODE_DIAGNOSTIC_NO_MATERIAL_ACCEPTANCE",
+  "samples": 12,
+  "maxGPUVsXYComponentError": 1.0000000005838672e-07,
+  "maxGPUVsBlenderNormalizedRGBDeg": 1.318471971840184,
+  "actualEncoding": "RGBA=(1,sourceG,sourceG,sourceR); Standard x*=a decodes sourceR/G with reconstructedZ",
+  "maxAngleWitness": {
+    "u": "0.9766846",
+    "v": "0.4766846",
+    "mode": "1",
+    "sourceR": "0.8666667",
+    "sourceG": "0.7960784",
+    "sourceB": "0.654902",
+    "sourceA": "1",
+    "gpuR": "0.7333333",
+    "gpuG": "0.5921569",
+    "gpuB": "0.3340246",
+    "gpuA": "1",
+    "blenderNormalizedX": "0.7391189",
+    "blenderNormalizedY": "0.5968286",
+    "blenderNormalizedZ": "0.3122481",
+    "cpuXYReconstructX": "0.7333333",
+    "cpuXYReconstructY": "0.5921569",
+    "cpuXYReconstructZ": "0.3340246",
+    "gpuVsBlenderDegrees": "1.318489",
+    "gpuVsXYDegrees": "0",
+    "tick": "120"
+  },
+  "notes": [
+    "Normal import is NormalMap/linear/uncompressed/RGBA32/strength1/no convert/no greenflip",
+    "Unity Vector3.Angle float under-reports tiny errors; this summary uses independent float64 atan2",
+    "Tangent basis comparison pending original Blender loop oracle",
+    "Source map bytes unchanged; no final normaloff or material acceptance"
+  ]
+}

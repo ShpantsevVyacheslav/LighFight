@@ -1,0 +1,234 @@
+{
+  "scope": "Analytic all-original-vertex weight-only bound at15 frozen source key poses; actual Generic Animator/GPU/24Hz interpolation separate",
+  "sourceVertices": 994452,
+  "originalBindLocalAABB": [
+    [
+      -0.24774935841560364,
+      -0.09778977930545807,
+      0.0
+    ],
+    [
+      0.24774935841560364,
+      0.09778977930545807,
+      0.97998046875
+    ]
+  ],
+  "allNamedReadbackPresent": true,
+  "inputSourceWeights": "Original IEEE values retained in raw FBX; desired API writes original weights. Measured engine Float32 readback differences only.",
+  "proof": "For every actual vertex in original AABB and each of136 bones, affine-transformed point lies in transformed eight-corner convex hull. Norm maximum over hull is bounded by max corner norm R. Triangle inequality gives <=4*maxAbsDeltaWeight*R. Full geometry position error and floating evaluation error not included.",
+  "coordinate": "CanonicalB source space; fixed ReflectX orthogonal importer conversion leaves norms/bounds unchanged. Actor rootidentity; additional translation/scaling requires its corresponding norm bound.",
+  "poses": [
+    {
+      "clip": "dance_01",
+      "phase": 0.0,
+      "sourceFrame": 0,
+      "maxAllBoneAABBSupportNormM": 1.1650013484795134,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.1110318646235594e-06,
+      "boundMM": 0.0011110318646235593,
+      "supportWitness": [
+        "DEF-f_index.03.L",
+        3
+      ]
+    },
+    {
+      "clip": "dance_01",
+      "phase": 0.25,
+      "sourceFrame": 139,
+      "maxAllBoneAABBSupportNormM": 1.385201372678162,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.3210309721738453e-06,
+      "boundMM": 0.0013210309721738453,
+      "supportWitness": [
+        "DEF-thumb.02.R",
+        2
+      ]
+    },
+    {
+      "clip": "dance_01",
+      "phase": 0.5,
+      "sourceFrame": 278,
+      "maxAllBoneAABBSupportNormM": 1.501753953651079,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.4321841751585761e-06,
+      "boundMM": 0.0014321841751585762,
+      "supportWitness": [
+        "DEF-f_middle.02.L",
+        3
+      ]
+    },
+    {
+      "clip": "dance_01",
+      "phase": 0.75,
+      "sourceFrame": 417,
+      "maxAllBoneAABBSupportNormM": 1.4742523697604193,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.405956620941562e-06,
+      "boundMM": 0.001405956620941562,
+      "supportWitness": [
+        "DEF-f_middle.03.L",
+        3
+      ]
+    },
+    {
+      "clip": "dance_01",
+      "phase": 1.0,
+      "sourceFrame": 556,
+      "maxAllBoneAABBSupportNormM": 1.1919369026639033,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.136719610847381e-06,
+      "boundMM": 0.001136719610847381,
+      "supportWitness": [
+        "DEF-f_index.03.L",
+        3
+      ]
+    },
+    {
+      "clip": "box_02",
+      "phase": 0.0,
+      "sourceFrame": 0,
+      "maxAllBoneAABBSupportNormM": 1.0611795666463337,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.012019697805723e-06,
+      "boundMM": 0.001012019697805723,
+      "supportWitness": [
+        "DEF-foot.L",
+        5
+      ]
+    },
+    {
+      "clip": "box_02",
+      "phase": 0.2537313432835821,
+      "sourceFrame": 17,
+      "maxAllBoneAABBSupportNormM": 1.137134696715293,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.0844561545517856e-06,
+      "boundMM": 0.0010844561545517856,
+      "supportWitness": [
+        "DEF-f_index.03.L",
+        1
+      ]
+    },
+    {
+      "clip": "box_02",
+      "phase": 0.5074626865671642,
+      "sourceFrame": 34,
+      "maxAllBoneAABBSupportNormM": 1.4856160057654575,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.4167938287405562e-06,
+      "boundMM": 0.0014167938287405562,
+      "supportWitness": [
+        "DEF-f_middle.03.L",
+        3
+      ]
+    },
+    {
+      "clip": "box_02",
+      "phase": 0.746268656716418,
+      "sourceFrame": 50,
+      "maxAllBoneAABBSupportNormM": 1.3490417838309607,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.2865465009984596e-06,
+      "boundMM": 0.0012865465009984595,
+      "supportWitness": [
+        "DEF-f_index.03.R",
+        4
+      ]
+    },
+    {
+      "clip": "box_02",
+      "phase": 1.0,
+      "sourceFrame": 67,
+      "maxAllBoneAABBSupportNormM": 1.5692907330388453,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.4965922670734837e-06,
+      "boundMM": 0.0014965922670734837,
+      "supportWitness": [
+        "DEF-f_ring.02.R",
+        7
+      ]
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 0.0,
+      "sourceFrame": 0,
+      "maxAllBoneAABBSupportNormM": 1.1726279690478325,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.118305176780541e-06,
+      "boundMM": 0.001118305176780541,
+      "supportWitness": [
+        "DEF-f_middle.03.R",
+        7
+      ]
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 0.25,
+      "sourceFrame": 15,
+      "maxAllBoneAABBSupportNormM": 1.3869183757352073,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.3226684338905404e-06,
+      "boundMM": 0.0013226684338905404,
+      "supportWitness": [
+        "DEF-foot.R",
+        1
+      ]
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 0.5,
+      "sourceFrame": 30,
+      "maxAllBoneAABBSupportNormM": 1.4112700308406496,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.3458919819265839e-06,
+      "boundMM": 0.001345891981926584,
+      "supportWitness": [
+        "DEF-f_ring.03.R",
+        7
+      ]
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 0.75,
+      "sourceFrame": 45,
+      "maxAllBoneAABBSupportNormM": 1.3429237597297692,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.2807118985459987e-06,
+      "boundMM": 0.0012807118985459988,
+      "supportWitness": [
+        "DEF-f_ring.03.R",
+        5
+      ]
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 1.0,
+      "sourceFrame": 60,
+      "maxAllBoneAABBSupportNormM": 1.2249959009674325,
+      "measuredMaxWeightDelta": 2.384185791015625e-07,
+      "maxInfluences": 4,
+      "allOriginalVerticesWeightOnlyErrorBoundM": 1.1682471284555745e-06,
+      "boundMM": 0.0011682471284555746,
+      "supportWitness": [
+        "DEF-f_middle.01.L",
+        1
+      ]
+    }
+  ],
+  "maxWeightOnlyBoundM": 1.4965922670734837e-06,
+  "status": "PASS_SOURCE_POSE_CPU_WEIGHT_ONLY_BOUND"
+}

@@ -1,0 +1,284 @@
+{
+  "status": "PREPARED_DERIVED_REVIEW_LIGHT_NOT_SOURCE_EQUIVALENCE",
+  "format": "SIB1 littleendian size,mipCount,sampleCount then mipmajor/UnityCubemapFaceorder float32RGB, SetPixels rowsbottom-to-top",
+  "baseSize": 128,
+  "mips": [
+    {
+      "mip": 0,
+      "size": 128,
+      "perceptualRoughness": 0.0
+    },
+    {
+      "mip": 1,
+      "size": 64,
+      "perceptualRoughness": 0.10235291153946502
+    },
+    {
+      "mip": 2,
+      "size": 32,
+      "perceptualRoughness": 0.21513641626870053
+    },
+    {
+      "mip": 3,
+      "size": 16,
+      "perceptualRoughness": 0.3423888845904498
+    },
+    {
+      "mip": 4,
+      "size": 8,
+      "perceptualRoughness": 0.49171471878602285
+    },
+    {
+      "mip": 5,
+      "size": 4,
+      "perceptualRoughness": 0.6813564455809669
+    },
+    {
+      "mip": 6,
+      "size": 2,
+      "perceptualRoughness": 0.9999999999999997
+    },
+    {
+      "mip": 7,
+      "size": 1,
+      "perceptualRoughness": 0.9999999999999997
+    }
+  ],
+  "importanceSamples": 128,
+  "sourcePanelBlenderPositions": [
+    [
+      -1,
+      -2,
+      2
+    ],
+    [
+      1,
+      -1,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ]
+  ],
+  "fixedC": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0
+    ]
+  ],
+  "panelDirectionsUnity": [
+    [
+      0.3333333333333333,
+      0.6666666666666666,
+      0.6666666666666666
+    ],
+    [
+      -0.5773502691896258,
+      0.5773502691896258,
+      0.5773502691896258
+    ],
+    [
+      0.0,
+      0.8944271909999159,
+      -0.4472135954999579
+    ]
+  ],
+  "panelRadianSigma": [
+    0.35,
+    0.45,
+    0.35
+  ],
+  "panelLinearNeutralAmplitude": [
+    1.5517241379310345,
+    2.586206896551724,
+    1.8620689655172413
+  ],
+  "neutralBackgroundLinear": 0.08,
+  "shRGB": [
+    [
+      1.9530160336639328,
+      1.0875641465974446,
+      0.5379358105093752,
+      -0.379759076560359,
+      -0.10530142618809,
+      0.14655831497320865,
+      -0.009361990249060896,
+      -0.1053014262780264,
+      -0.14293302886570391
+    ],
+    [
+      1.9530160336639328,
+      1.0875641465974446,
+      0.5379358105093752,
+      -0.379759076560359,
+      -0.10530142618809,
+      0.14655831497320865,
+      -0.009361990249060896,
+      -0.1053014262780264,
+      -0.14293302886570391
+    ],
+    [
+      1.9530160336639328,
+      1.0875641465974446,
+      0.5379358105093752,
+      -0.379759076560359,
+      -0.10530142618809,
+      0.14655831497320865,
+      -0.009361990249060896,
+      -0.1053014262780264,
+      -0.14293302886570391
+    ]
+  ],
+  "shConvention": "RealL2 order Y00,Y1-1(y),Y10(z),Y11(x),Y2-2(xy),Y2-1(yz),Y20(z2),Y21(xz),Y22(x2-y2); radianceSH times LambertA_l/PI. Diffuse reflected-light function, not un-convolvedradiance.",
+  "specularMipConvention": "UnityStandard rough*(1.7-.7rough)*6, invert to assign roughness at integer mip. mip7 duplicatesrough1.",
+  "sourceOriginalAssetsUnchanged": true,
+  "approximation": "Smooth broadpanel angular environment follows3sourceareas directions/relativepower/extent; not exact finitearea/Cycles/AgXmatch. Neutralwhite only. No sharp sun.",
+  "artistNormalStrengthAB": [
+    1,
+    0.5,
+    0.25
+  ],
+  "normalCalibrationDisclosure": "1 preserves source setting; .5/.25 explicit derivedartisticcalibration only. Never represent reducedstrength as sourceexact.",
+  "binarySHA256": "03ff5432a09eb70af0adb6a6064f8109732a051bb4af310928e44db463660992",
+  "seconds": 1.452144082984887,
+  "shFlat": [
+    1.9530160336639328,
+    1.0875641465974446,
+    0.5379358105093752,
+    -0.379759076560359,
+    -0.10530142618809,
+    0.14655831497320865,
+    -0.009361990249060896,
+    -0.1053014262780264,
+    -0.14293302886570391,
+    1.9530160336639328,
+    1.0875641465974446,
+    0.5379358105093752,
+    -0.379759076560359,
+    -0.10530142618809,
+    0.14655831497320865,
+    -0.009361990249060896,
+    -0.1053014262780264,
+    -0.14293302886570391,
+    1.9530160336639328,
+    1.0875641465974446,
+    0.5379358105093752,
+    -0.379759076560359,
+    -0.10530142618809,
+    0.14655831497320865,
+    -0.009361990249060896,
+    -0.1053014262780264,
+    -0.14293302886570391
+  ],
+  "probes": [
+    {
+      "direction": {
+        "x": 1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "expected": 0.08832056739572655
+    },
+    {
+      "direction": {
+        "x": -1.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "expected": 0.4013501975847017
+    },
+    {
+      "direction": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      },
+      "expected": 1.2894239000913228
+    },
+    {
+      "direction": {
+        "x": 0.0,
+        "y": -1.0,
+        "z": 0.0
+      },
+      "expected": 0.08107324100254637
+    },
+    {
+      "direction": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 1.0
+      },
+      "expected": 0.5029125712899819
+    },
+    {
+      "direction": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -1.0
+      },
+      "expected": 0.10150077911247618
+    },
+    {
+      "direction": {
+        "x": 0.5773502691896258,
+        "y": 0.5773502691896258,
+        "z": 0.5773502691896258
+      },
+      "expected": 1.3207064335416279
+    },
+    {
+      "direction": {
+        "x": -0.5773502691896258,
+        "y": 0.5773502691896258,
+        "z": 0.5773502691896258
+      },
+      "expected": 2.7198237589526055
+    },
+    {
+      "direction": {
+        "x": 0.5773502691896258,
+        "y": 0.5773502691896258,
+        "z": -0.5773502691896258
+      },
+      "expected": 0.38142195374178617
+    },
+    {
+      "direction": {
+        "x": -0.5773502691896258,
+        "y": -0.5773502691896258,
+        "z": 0.5773502691896258
+      },
+      "expected": 0.17622909526642433
+    },
+    {
+      "direction": {
+        "x": 0.19900743804199786,
+        "y": 0.8955334711889903,
+        "z": 0.3980148760839957
+      },
+      "expected": 1.4528634992545817
+    },
+    {
+      "direction": {
+        "x": -0.7378647873726218,
+        "y": 0.42163702135578396,
+        "z": -0.5270462766947299
+      },
+      "expected": 0.27147683696238356
+    }
+  ]
+}

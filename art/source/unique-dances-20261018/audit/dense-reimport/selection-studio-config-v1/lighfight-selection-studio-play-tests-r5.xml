@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 17:51:22Z" end-time="2026-10-18 17:51:22Z" duration="0.3319964">
+  <test-suite type="TestSuite" id="1056" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="40" result="Passed" start-time="2026-10-18 17:51:22Z" end-time="2026-10-18 17:51:22Z" duration="0.331996" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1052" name="SelectedContent.PlayMode.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.dll" runstate="Runnable" testcasecount="40" result="Passed" start-time="2026-10-18 17:51:22Z" end-time="2026-10-18 17:51:22Z" duration="0.318947" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="89634" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1053" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="32" result="Passed" start-time="2026-10-18 17:51:22Z" end-time="2026-10-18 17:51:22Z" duration="0.316489" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1054" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="32" result="Passed" start-time="2026-10-18 17:51:22Z" end-time="2026-10-18 17:51:22Z" duration="0.314985" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1045" name="SelectionStudioLightingTests" fullname="LighFight.Tests.SelectionStudioLightingTests" classname="LighFight.Tests.SelectionStudioLightingTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-18 17:51:22Z" end-time="2026-10-18 17:51:22Z" duration="0.311482" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1046" name="ActualRendererPreviewRestoresFightEnvironmentAndDisabledDoesNoWork" fullname="LighFight.Tests.SelectionStudioLightingTests.ActualRendererPreviewRestoresFightEnvironmentAndDisabledDoesNoWork" methodname="ActualRendererPreviewRestoresFightEnvironmentAndDisabledDoesNoWork" classname="LighFight.Tests.SelectionStudioLightingTests" runstate="Runnable" seed="2129824216" result="Passed" start-time="2026-10-18 17:51:22Z" end-time="2026-10-18 17:51:22Z" duration="0.296594" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Releasing render texture that is set to be RenderTexture.active!
+Saving results to: /tmp/lighfight-selection-studio-play-tests-r5.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

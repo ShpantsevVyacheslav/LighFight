@@ -1,0 +1,405 @@
+Unity Editor version:    6000.3.26f1 (de8167e7440c)
+Branch:                  6000.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 26.4 (Build 25E246)
+Darwin version:          25.4.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Date:                    2026-10-18T17:46:01Z
+VBCSCompilerServerWatchdog: watching VBCSCompiler (PID 89046)
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-macbook1 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 89048)
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-projectPath
+/Users/macbook1/Documents/ChatGPT/LighFight/unity
+-executeMethod
+DenseRigifyReimportReview.BuildSelectionStudioConfig
+-quit
+-logFile
+/tmp/lighfight-selection-studio-config.log
+Successfully changed project path to: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+/Users/macbook1/Documents/ChatGPT/LighFight/unity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8332712128]  Target information:
+
+Player connection [8332712128]  * "[IP] 192.168.1.67 [Port] 55504 [Flags] 2 [Guid] 3809408053 [EditorId] 3809408053 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-Macbook.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8332712128]  * "[IP] 198.18.0.1 [Port] 55504 [Flags] 2 [Guid] 3809408053 [EditorId] 3809408053 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-Macbook.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8332712128] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8332712128] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-macbook1" at "2026-10-18T17:46:01.96903Z"
+[Package Manager] Connected to IPC stream "Upm-89045" after 0.6 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              0d85d6f3e7374c939aab89dd3220afdd
+  Correlation Id:          847d4eda276440f82aec563c921eb6c4
+  External correlation Id: 68333183127006707
+  Machine Id:              voWz5Q+R3RBpas5xw8nM+4XPYlU=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-macbook1" (connect: 0.59s, validation: 0.05s, handshake: 0.80s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-macbook1-notifications" at "2026-10-18T17:46:02.810691Z"
+[Licensing::Module] Connected to LicensingClient (PId: 89048, launch time: 0.00, total connection time: 1.43s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2476062211363-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 1.46s
+[Licensing::Module] Licensing is initialized (took 0.63s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 1.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.26f1 (de8167e7440c)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+ preferred device: Apple M1 (high power)
+Metal devices available: 1
+0: Apple M1 (high power)
+Using device Apple M1 (high power)
+Initializing Metal device caps: Apple M1
+Mac GPU Family: 2
+Apple GPU Family: 7
+MSL Version: 3.0
+Has Float MSAA: 1
+Has Float Filtering: 1
+ReadWrite Texture Tier: 2
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56045
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.005399 seconds.
+- Loaded All Assemblies, in  0.523 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.789 seconds
+Domain Reload Profiling: 1313ms
+	BeginReloadAssembly (152ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (10ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (56ms)
+	LoadAllAssembliesAndSetupDomain (251ms)
+		LoadAssemblies (144ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (244ms)
+			TypeCache.Refresh (243ms)
+				TypeCache.ScanAssembly (223ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (790ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (719ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (231ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (145ms)
+			ProcessInitializeOnLoadAttributes (194ms)
+			ProcessInitializeOnLoadMethodAttributes (142ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 15 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.addressables@2.7.3 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.addressables@633105437483)
+    com.unity.profiling.core@1.0.3 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.profiling.core@8a49f7027d06)
+    com.unity.scriptablebuildpipeline@2.6.2 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.scriptablebuildpipeline@97537e3e823b)
+  Built-in packages:
+    com.unity.test-framework@1.6.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.test-framework@bd7f943e9647)
+    com.unity.modules.physics@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.physics)
+    com.unity.modules.imgui@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.jsonserialize)
+    com.unity.modules.androidjni@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.androidjni)
+    com.unity.modules.audio@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.audio)
+    com.unity.modules.animation@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.animation)
+    com.unity.ext.nunit@2.0.5 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.ext.nunit@d8c07649098d)
+    com.unity.modules.assetbundle@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.assetbundle)
+    com.unity.modules.imageconversion@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.imageconversion)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://unix:/tmp/ilpp.sock-736a1c1d8c7a58b7440b86c657ec0877
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/macbook1/Documents/ChatGPT/LighFight/unity/
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 88.0282ms
+Starting: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s150ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/200b0aE-inputdata.json
+*** Tundra requires additional run (0.12 seconds), 0 items updated, 300 evaluated
+Starting: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/200b0aE.dag.json" "Library/Bee/200b0aE-inputdata.json" "Library/Bee/buildprogram0.traceevents"
+WorkingDir: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+ExitCode: 0 Duration: 0s695ms
+Starting: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --dagfilejson="Library/Bee/200b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+ExitCode: 0 Duration: 8s902ms
+Finished compiling graph: 303 nodes, 3229 flattened edges (3011 ToBuild, 36 ToUse), maximum node priority 118
+[208/300    0s] WriteText Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp.rsp
+[209/300    0s] WriteText Library/Bee/artifacts/200b0aE.dag/LighFight.Runtime.rsp
+[220/300    0s] WriteText Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp-Editor.rsp
+[221/300    0s] WriteText Library/Bee/artifacts/200b0aE.dag/LighFight.Tests.rsp
+[282/300    4s] Csc Library/Bee/artifacts/200b0aE.dag/LighFight.Runtime.dll (+2 others)
+[283/300    0s] CopyFiles Library/ScriptAssemblies/LighFight.Runtime.pdb
+[284/300    0s] CopyFiles Library/ScriptAssemblies/LighFight.Runtime.dll
+[285/300    1s] Csc Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp.dll (+2 others)
+[286/300    1s] Csc Library/Bee/artifacts/200b0aE.dag/SelectedContent.Tests.dll (+2 others)
+[287/300    1s] Csc Library/Bee/artifacts/200b0aE.dag/SelectedContent.PlayMode.Tests.dll (+2 others)
+[288/300    1s] Csc Library/Bee/artifacts/200b0aE.dag/LighFight.Tests.dll (+2 others)
+[289/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[290/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[291/300    0s] CopyFiles Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.dll
+[292/300    0s] CopyFiles Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.pdb
+[293/300    0s] CopyFiles Library/ScriptAssemblies/SelectedContent.Tests.pdb
+[294/300    0s] CopyFiles Library/ScriptAssemblies/SelectedContent.Tests.dll
+[295/300    0s] CopyFiles Library/ScriptAssemblies/LighFight.Tests.pdb
+[296/300    0s] CopyFiles Library/ScriptAssemblies/LighFight.Tests.dll
+[297/300    2s] Csc Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[298/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[299/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (8.87 seconds), 22 items updated, 300 evaluated
+AssetDatabase: script compilation time: 10.640899s
+Begin MonoManager ReloadAssembly
+Total cache size 46719286
+Total cache size after purge 46719286, took 00:00:00.0795024
+- Loaded All Assemblies, in  0.842 seconds
+Refreshing native plugins compatible for Editor in 1.36 ms, found 0 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.107 seconds
+Domain Reload Profiling: 1949ms
+	BeginReloadAssembly (334ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (20ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (65ms)
+	RebuildCommonClasses (92ms)
+	RebuildNativeTypeToScriptingClass (34ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (341ms)
+		LoadAssemblies (408ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (123ms)
+			TypeCache.Refresh (101ms)
+				TypeCache.ScanAssembly (79ms)
+			BuildScriptInfoCaches (16ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (1108ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (800ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (86ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (294ms)
+			ProcessInitializeOnLoadAttributes (304ms)
+			ProcessInitializeOnLoadMethodAttributes (102ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (66ms)
+Start importing Assets/LighFight/Tests/SelectionStudioProbe.shader using Guid(891a5df600cd84d5c9c61dbed70361ef) (ShaderImporter)Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.45 seconds
+ -> (artifact id: '0ef7420865cd06bae6ca4989b7eabb9b') in 0.518765125 seconds
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.09 seconds
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Refreshing native plugins compatible for Editor in 0.51 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6b8c55744262d4e939e3e5b287af2fee): Total: 13.957 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=5 ms, native=2190 ms
+		Asset DB Callback time: managed=139 ms, native=119 ms
+		Scripting: domain reloads=1, domain reload time=842 ms, compile time=10645 ms, other=14 ms
+		Project Asset Count: scripts=428, non-scripts=1398
+		Asset File Changes: new=9, changed=9, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 14.820ms
+	ApplyChangesToAssetFolders: 0.294ms
+	Scan: 320.203ms
+	OnSourceAssetsModified: 1.643ms
+	CategorizeAssetsWithTransientArtifact: 13.074ms
+	ProcessAssetsWithTransientArtifactChanges: 23.838ms
+	CategorizeAssets: 43.866ms
+	ImportOutOfDateAssets: 1642.133ms (-9529.807ms without children)
+		ImportManagerImport: 522.117ms (2.439ms without children)
+			ImportInProcess: 519.632ms
+			UpdateCategorizedAssets: 0.046ms
+		CompileScripts: 10644.770ms
+		ReloadNativeAssets: 0.112ms
+		UnloadImportedAssets: 3.734ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.650ms
+		InitializingProgressBar: 0.009ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.547ms
+	PostProcessAllAssets: 241.854ms
+	Hotreload: 3.130ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 1.695ms
+	PersistCurrentRevisions: 0.235ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 3.374ms
+	Untracked: 11649.726ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler after 0.10 seconds
+Scanning for USB devices : 0.071ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LighFight
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1254 unused Assets / (1.2 MB). Loaded Objects now: 1953.
+Memory consumption went from 128.1 MB to 126.9 MB.
+Total: 9.561917 ms (FindLiveObjects: 0.150417 ms CreateObjectMapping: 0.070083 ms MarkObjects: 8.546916 ms  DeleteObjects: 0.793583 ms)
+
+Start importing Assets/LighFight/Resources/SelectionStudio using Guid(4568b7eee77d647cd9e4226eb4b909aa) (DefaultImporter) -> (artifact id: '3b77fcde3b8ad326b1d414d41b32beb3') in 0.002697125 seconds
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8f3b1dcffae8b4b148b687384eda40a9): Total: 0.096 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Start importing Assets/LighFight/Resources/SelectionStudio/NeutralStudio128.asset using Guid(6150714f8fd8043a3875cbbc47224593) (NativeFormatImporter) -> (artifact id: 'c9400e5c315dd49b51f262e2a3fba4ec') in 0.033493833 seconds
+Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=149684dd3a5f4435eae41eb139983733): Total: 0.087 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LighFight/Resources/SelectionStudio/PreviewLighting.asset using Guid(ab61f019344d049e2be9a286c7584638) (NativeFormatImporter) -> (artifact id: 'aab764a9de67e15fe7496be55f281f80') in 0.001968458 seconds
+Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=01ad8fff472ac4dfd9cea6872a315f55): Total: 0.017 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LighFight/Resources/SelectionStudio/NeutralStudio128.asset using Guid(6150714f8fd8043a3875cbbc47224593) (NativeFormatImporter) -> (artifact id: 'c9400e5c315dd49b51f262e2a3fba4ec') in 0.022763209 seconds
+Start importing Assets/LighFight/Resources/SelectionStudio/PreviewLighting.asset using Guid(ab61f019344d049e2be9a286c7584638) (NativeFormatImporter) -> (artifact id: 'a717e39d723c9eff169d67292006d056') in 0.001611416 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=545f594860ebd48c5bbdf4fbd055590f): Total: 0.065 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 0.074838 seconds.
+Thread 0x170b67000 may have been prematurely finalized
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] LicenseClient-macbook1-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-macbook1 channel disconnected successfully.
+Thread 0x16fe47000 may have been prematurely finalized
+Thread 0x16fdbb000 may have been prematurely finalized
+AcceleratorClientConnectionCallback - disconnected - :0
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+Cleanup mono
+debugger-agent: Unable to listen on 43
+[usbmuxd] Stop listen thread
+[usbmuxd] Error: 
+[usbmuxd] Listen thread exiting
+Exiting batchmode successfully now!
+[Package Manager] Server process was shutdown

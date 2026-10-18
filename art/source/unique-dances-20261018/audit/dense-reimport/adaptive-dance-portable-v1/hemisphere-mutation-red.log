@@ -1,0 +1,7 @@
+FAIL System.ArithmeticException: Degenerate normalized-linear quaternion
+  at DenseRigifyReview.Adaptive.AdaptiveDanceEvaluator.ComposeInterpolated (System.Double[] trs, System.Int32 a, System.Int32 b, System.Double u, System.Double[] m) [0x00109] in <22860c96647a4f73a9e2800ec989a164>:0 
+  at DenseRigifyReview.Adaptive.AdaptiveDanceEvaluator.Evaluate (System.Double seconds) [0x000f8] in <22860c96647a4f73a9e2800ec989a164>:0 
+  at AdaptiveDanceTests.Small () [0x000ec] in <22860c96647a4f73a9e2800ec989a164>:0 
+  at AdaptiveDanceTests.Main (System.String[] args) [0x00000] in <22860c96647a4f73a9e2800ec989a164>:0 
+
+EXIT=1

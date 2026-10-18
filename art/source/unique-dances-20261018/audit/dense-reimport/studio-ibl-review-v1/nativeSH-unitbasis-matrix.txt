@@ -1,0 +1,11 @@
+Fixed mathematical basis conversion derived from nine native unit-coefficient responses above constant2 offset (avoids negative-value clamp), no scene/light/material fit. Independent extra directions verify analyticalYlm Lambert-convolved radiance.
+Native AddAmbientLight(.18) constant white test passed; maxbasisError=2.086163E-07
+1,0,0,1,0,0,-1,0,1
+1,0,0,-1,0,0,-1,0,1
+1,1,0,0,0,0,-1,0,-1
+1,-1,0,0,0,0,-1,0,-1
+1,0,1,0,0,0,2,0,0
+1,0,-1,0,0,0,2,0,0
+1,0.57735013961792,0.57735013961792,0.57735013961792,0.333333253860474,0.333333253860474,0,0.333333253860474,0
+1,-0.577350258827209,0.57735013961792,0.57735013961792,-0.333333253860474,-0.333333253860474,0,0.333333253860474,0
+1,0.57735013961792,0.57735013961792,-0.577350258827209,-0.333333253860474,0.333333253860474,0,-0.333333253860474,0

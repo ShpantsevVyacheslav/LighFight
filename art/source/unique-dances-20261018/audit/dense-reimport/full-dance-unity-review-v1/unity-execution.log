@@ -1,0 +1,707 @@
+Unity Editor version:    6000.3.26f1 (de8167e7440c)
+Branch:                  6000.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 26.4 (Build 25E246)
+Darwin version:          25.4.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        16384 MB
+Date:                    2026-10-18T19:33:26Z
+VBCSCompilerServerWatchdog: watching VBCSCompiler (PID 98841)
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-macbook1 doesn't exist
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Helpers/UnityLicensingClient.app/Contents/MacOS/Unity.Licensing.Client
+[Licensing::Module] Successfully launched the LicensingClient (PId: 98843)
+Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/MacOS/Unity
+-batchmode
+-projectPath
+/Users/macbook1/Documents/ChatGPT/LighFight/unity
+-executeMethod
+DenseRigifyReimportReview.RunFullDanceReview
+-logFile
+/tmp/lighfight-full-dance-unity-review.log
+Successfully changed project path to: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+/Users/macbook1/Documents/ChatGPT/LighFight/unity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [8332712128]  Target information:
+
+Player connection [8332712128]  * "[IP] 192.168.1.67 [Port] 55504 [Flags] 2 [Guid] 1146837801 [EditorId] 1146837801 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-Macbook.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8332712128]  * "[IP] 198.18.0.1 [Port] 55504 [Flags] 2 [Guid] 1146837801 [EditorId] 1146837801 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-Macbook.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8332712128] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8332712128] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-macbook1" at "2026-10-18T19:33:27.374563Z"
+[Package Manager] Connected to IPC stream "Upm-98840" after 0.6 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              1a4da19dc60a4ea2aa7e915578c42f90
+  Correlation Id:          871bf5d416025f4317911d44fc2f1e0b
+  External correlation Id: 7854453561507263519
+  Machine Id:              voWz5Q+R3RBpas5xw8nM+4XPYlU=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-macbook1" (connect: 0.58s, validation: 0.05s, handshake: 0.78s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-macbook1-notifications" at "2026-10-18T19:33:28.204959Z"
+[Licensing::Module] Connected to LicensingClient (PId: 98843, launch time: 0.00, total connection time: 1.41s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2476062211363-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 1.44s
+[Licensing::Module] Licensing is initialized (took 0.36s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 1.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.26f1 (de8167e7440c)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+ preferred device: Apple M1 (high power)
+Metal devices available: 1
+0: Apple M1 (high power)
+Using device Apple M1 (high power)
+Initializing Metal device caps: Apple M1
+Mac GPU Family: 2
+Apple GPU Family: 7
+MSL Version: 3.0
+Has Float MSAA: 1
+Has Float Filtering: 1
+ReadWrite Texture Tier: 2
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56840
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/6000.3.26f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.005149 seconds.
+- Loaded All Assemblies, in  0.491 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.498 seconds
+Domain Reload Profiling: 990ms
+	BeginReloadAssembly (163ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (218ms)
+		LoadAssemblies (145ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (212ms)
+			TypeCache.Refresh (210ms)
+				TypeCache.ScanAssembly (193ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (499ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (457ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (147ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (84ms)
+			ProcessInitializeOnLoadAttributes (132ms)
+			ProcessInitializeOnLoadMethodAttributes (88ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 15 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.addressables@2.7.3 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.addressables@633105437483)
+    com.unity.profiling.core@1.0.3 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.profiling.core@8a49f7027d06)
+    com.unity.scriptablebuildpipeline@2.6.2 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.scriptablebuildpipeline@97537e3e823b)
+  Built-in packages:
+    com.unity.test-framework@1.6.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.test-framework@bd7f943e9647)
+    com.unity.modules.physics@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.physics)
+    com.unity.modules.imgui@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.jsonserialize)
+    com.unity.modules.androidjni@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.androidjni)
+    com.unity.modules.audio@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.audio)
+    com.unity.modules.animation@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.animation)
+    com.unity.ext.nunit@2.0.5 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.ext.nunit@d8c07649098d)
+    com.unity.modules.assetbundle@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.assetbundle)
+    com.unity.modules.imageconversion@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.imageconversion)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://unix:/tmp/ilpp.sock-736a1c1d8c7a58b7440b86c657ec0877
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/macbook1/Documents/ChatGPT/LighFight/unity/
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 60.6338ms
+Starting: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+DisplayProgressbar: Compiling Scripts
+Starting: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/Scripting/netcorerun/netcorerun "/Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/200b0aE.dag.json" "Library/Bee/200b0aE-inputdata.json" "Library/Bee/buildprogram0.traceevents"
+WorkingDir: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+ExitCode: 4 Duration: 0s115ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/200b0aE-inputdata.json
+*** Tundra requires additional run (0.09 seconds), 0 items updated, 300 evaluated
+ExitCode: 0 Duration: 0s519ms
+Starting: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --dagfilejson="Library/Bee/200b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: /Users/macbook1/Documents/ChatGPT/LighFight/unity
+ExitCode: 0 Duration: 2s826ms
+Finished compiling graph: 303 nodes, 3229 flattened edges (3011 ToBuild, 36 ToUse), maximum node priority 118
+[219/300    0s] WriteText Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp.rsp
+[220/300    0s] WriteText Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp-Editor.rsp
+[294/300    1s] Csc Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp.dll (+2 others)
+[295/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+[296/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[297/300    1s] Csc Library/Bee/artifacts/200b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[298/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[299/300    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (2.80 seconds), 8 items updated, 300 evaluated
+AssetDatabase: script compilation time: 4.250184s
+Begin MonoManager ReloadAssembly
+Total cache size 46719286
+Total cache size after purge 46719286, took 00:00:00.0975883
+- Loaded All Assemblies, in  0.555 seconds
+Start importing Assets/DenseRigifyReview/Runtime using Guid(92c65f9097884ab08e6608f91d9cc898) (DefaultImporter) -> (artifact id: 'b9bced210c97fb4d74071de7bda98a2c') in 0.020070125 seconds
+Start importing Assets/DenseRigifyReview/Tests using Guid(b8fa70baa67f484cb31e7eaba01fb918) (DefaultImporter) -> (artifact id: '7a161404e14c5671f7ad2f793c127bf7') in 0.001702375 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.536 seconds
+Domain Reload Profiling: 1091ms
+	BeginReloadAssembly (272ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (27ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (64ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (22ms)
+	LoadAllAssembliesAndSetupDomain (197ms)
+		LoadAssemblies (247ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (67ms)
+			TypeCache.Refresh (54ms)
+				TypeCache.ScanAssembly (40ms)
+			BuildScriptInfoCaches (8ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (536ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (397ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (46ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (134ms)
+			ProcessInitializeOnLoadAttributes (163ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Start importing Assets/LighFight/Art/Motions/Meshy/Elbow_Strike.fbx using Guid(101c4741974c14cb3a0e129e30cf0404) (FBXImporter)Keyframe reduction: Ratio: 27.083662%;
+ -> (artifact id: '34a867f451ed50045d509456092c262b') in 0.125544958 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-64.fbx using Guid(40c14a27564f04b1aaeddf275918104b) (FBXImporter) -> (artifact id: 'da8d72403d8c76f4d7e0aacd8571e150') in 0.785306333 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoIslandPlayable/Source/Island/model.fbx using Guid(4015649cf3a584665a7c465583a5c61e) (FBXImporter)Launching external process: /Applications/Unity/Hub/Editor/6000.3.26f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.09 seconds
+ -> (artifact id: '84101d2fb1bfbcb6d43bc7ac60c4da44') in 1.175048375 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoRetroPlayable/Source/RetroFull/model.fbx using Guid(70b429c21038045b09081d25a0a3d920) (FBXImporter) -> (artifact id: '3cf267e77954f54951b08451c5cdcc81') in 0.666776958 seconds
+Start importing Assets/LighFight/Art/Drafts/RestoredDetail/island/restored.fbx using Guid(700faf2310a7c4e0d91e150c0e7eeade) (FBXImporter) -> (artifact id: 'd1db3952d8dce80d1deb49fdf86f034b') in 2.014086708 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandFingers/island-finger-candidate.fbx using Guid(f0220ef84a84149aaa2f8bbbca0b770b) (FBXImporter)Keyframe reduction: Ratio: 27.070333%;
+ -> (artifact id: '2b3bfad52f83c14713733da2ffc836cb') in 0.409896041 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Counterstrike.fbx using Guid(1157acd1b72e84accb3d956016f24f67) (FBXImporter)Keyframe reduction: Ratio: 30.801493%;
+ -> (artifact id: '13368e8b0a81abf8d6d2e874d10b4049') in 0.070467084 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandPremium/island-meshy-jab.fbx using Guid(11eadc01e428342968fb5b21b07bcc0b) (FBXImporter)Keyframe reduction: Ratio: 35.875973%;
+ -> (artifact id: '4fd5217a9ebf92f3ad1790c92a375212') in 0.249911958 seconds
+Start importing Assets/DenseRigifyReview/SailorOriginalDenseDEF-CombinedReview24.fbx using Guid(311391c2f13a240b0bb65e3d42723c18) (FBXImporter) -> (artifact id: '0604aa5161ba96b3e643a2e3516c134d') in 5.314961667 seconds
+Start importing Assets/LighFight/Art/Drafts/MeshyWebIsland/SourceStance/native-stance.fbx using Guid(31a89100e60ff4ba3bc204a882e678f3) (FBXImporter) -> (artifact id: '6f2de80ca6eced6faaf6a4d5ef1b944c') in 0.423514875 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/model.fbx using Guid(a1e2efca752184eb5b5f3a0d80727028) (FBXImporter) -> (artifact id: 'b0c8249bfe6be375f3e0855175cff279') in 0.638786458 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandWebVisible/source.fbx using Guid(b1065a9e071ed4a4f9dba76617f9e8a8) (FBXImporter) -> (artifact id: '9809f680afcdef5cea59e4a898a39a3a') in 0.278718458 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoRose/VerifiedNative/native-pack.fbx using Guid(b1a739e7bfc724e5eaf7365e0a440be3) (FBXImporter) -> (artifact id: 'e050ce397d6a9ea5dfa18c384a3282e4') in 6.691838416 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/High_Kick.fbx using Guid(b14b7087f8e5845b99f28a425b9ccb27) (FBXImporter)Keyframe reduction: Ratio: 26.127144%;
+ -> (artifact id: '22bb31394fa12d846efbaee77bcb061e') in 0.062535625 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Roundhouse_Kick.fbx using Guid(c1a271b59a89a43aab261551884d0e96) (FBXImporter)Keyframe reduction: Ratio: 30.037449%;
+ -> (artifact id: '7d34e9c0d2f7092eb95c1bb79f9ae33d') in 0.042565 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandMakeHumanHands/island-finger-candidate.fbx using Guid(c12c1464487a246c69d5515f3df0d048) (FBXImporter)Keyframe reduction: Ratio: 27.307600%;
+ -> (artifact id: '73c3f48e33028bb19408eca94182df6c') in 0.526306167 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/courtyard.fbx using Guid(c1cf961a554264e02bd76279e4ab37bd) (FBXImporter) -> (artifact id: '59ea2e3d7e65fcda90aa1855895d1288') in 2.074547209 seconds
+Start importing Assets/LighFight/Art/Drafts/Island/island-motion-draft.fbx using Guid(1208ccef76acb4de5b9bc5e9cecb4814) (FBXImporter)Keyframe reduction: Ratio: 3.333333%;
+Keyframe reduction: Ratio: 20.850201%;
+Keyframe reduction: Ratio: 8.402368%;
+Keyframe reduction: Ratio: 6.752137%;
+Keyframe reduction: Ratio: 11.742788%;
+Keyframe reduction: Ratio: 9.474358%;
+Keyframe reduction: Ratio: 15.192308%;
+Keyframe reduction: Ratio: 27.362635%;
+Keyframe reduction: Ratio: 13.429486%;
+Keyframe reduction: Ratio: 12.051283%;
+Keyframe reduction: Ratio: 6.752137%;
+Keyframe reduction: Ratio: 13.444057%;
+ -> (artifact id: '17d782cda69a070e1867be150d23ad89') in 0.308111625 seconds
+Start importing Assets/LighFight/Art/Drafts/Rose/rose-motions.fbx using Guid(8282244ac8bc64357a841b913daac39a) (FBXImporter)Keyframe reduction: Ratio: 4.626152%;
+Keyframe reduction: Ratio: 23.417364%;
+Keyframe reduction: Ratio: 22.957981%;
+Keyframe reduction: Ratio: 24.750551%;
+Keyframe reduction: Ratio: 25.545893%;
+Keyframe reduction: Ratio: 22.209152%;
+Keyframe reduction: Ratio: 26.219946%;
+Keyframe reduction: Ratio: 23.874720%;
+Keyframe reduction: Ratio: 21.581699%;
+Keyframe reduction: Ratio: 26.308125%;
+Keyframe reduction: Ratio: 23.092436%;
+Keyframe reduction: Ratio: 25.756094%;
+Keyframe reduction: Ratio: 24.538721%;
+Keyframe reduction: Ratio: 25.030811%;
+Keyframe reduction: Ratio: 29.262691%;
+Keyframe reduction: Ratio: 26.120220%;
+Keyframe reduction: Ratio: 25.217947%;
+Keyframe reduction: Ratio: 25.299721%;
+Keyframe reduction: Ratio: 26.512823%;
+Keyframe reduction: Ratio: 24.850113%;
+Keyframe reduction: Ratio: 31.316240%;
+Keyframe reduction: Ratio: 24.268908%;
+Keyframe reduction: Ratio: 31.340065%;
+Keyframe reduction: Ratio: 24.291317%;
+Keyframe reduction: Ratio: 24.395536%;
+Keyframe reduction: Ratio: 29.049179%;
+Keyframe reduction: Ratio: 25.035810%;
+Keyframe reduction: Ratio: 24.997198%;
+Keyframe reduction: Ratio: 31.137259%;
+Keyframe reduction: Ratio: 24.596081%;
+Keyframe reduction: Ratio: 26.807453%;
+Keyframe reduction: Ratio: 20.633133%;
+ -> (artifact id: 'af205bb8633ec26dc5053402057578b7') in 1.021171375 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoRose/native-pack.fbx using Guid(a28b3d826d88548bea85851ad6c8e2dc) (FBXImporter) -> (artifact id: 'f864d8960bca79a8729897f11eb35dda') in 0.621644583 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-74.fbx using Guid(c255e806ea2f84b4084d5d6f82c5f2fe) (FBXImporter) -> (artifact id: 'e58fa22ce40bc440037e29acfa28a17c') in 0.758112 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandWebVisible/web-native.fbx using Guid(d2539c5f8b0ac4237bfd624a73fb091e) (FBXImporter) -> (artifact id: '8343c6507bfbd6ec5b8dc2425135df39') in 0.303528291 seconds
+Start importing Assets/GuardCrouchV3Review/Acquired/138/source.fbx using Guid(d26bfdedc7728499bb272fbc79a390db) (FBXImporter)File 'source' has animation import warnings. See Import Messages in Animation Import Settings for more details.
+ -> (artifact id: 'a58661602121325f7520c12c395612a4') in 0.233642792 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandWebVisible/web-greeting.fbx using Guid(132c5ffd58c2c4b68a9bd53f44cac377) (FBXImporter) -> (artifact id: '1073ce46ecb5711d3cf5c169deaa9ade') in 0.355514125 seconds
+Start importing Assets/LighFight/Art/Drafts/OriginalIsland/island-motions.fbx using Guid(b37a293ad03da4a0aa54994d0e98359c) (FBXImporter)Keyframe reduction: Ratio: 18.448717%;
+ -> (artifact id: '4d53323224911404445541b4d790fe43') in 0.291819167 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandPremium/island-joints-candidate.fbx using Guid(24d1a853e33064f02afae154aea3cf36) (FBXImporter)Keyframe reduction: Ratio: 35.875973%;
+ -> (artifact id: 'c3ad5f12d33dd49a0796f63d8d6841fb') in 0.2147335 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandFingersV2/island-finger-candidate.fbx using Guid(64b96b557109844c5880ec9611fefb1e) (FBXImporter)Keyframe reduction: Ratio: 27.041965%;
+ -> (artifact id: '0fd72ebc0b38b73a464ed99458a73bb2') in 0.56890375 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoRanger/native-pack.fbx using Guid(7469cea63e3cb469792f32501d9800e4) (FBXImporter) -> (artifact id: '9c59e28cd74104b6f4b0b780270abfad') in 0.585228041 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Leg_Sweep.fbx using Guid(c4a02915c7c6e495890cdad101d319f6) (FBXImporter)Keyframe reduction: Ratio: 24.613073%;
+ -> (artifact id: 'bb619e841710d6c894c5a68cf6da0cc5') in 0.042199625 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Hit_Reaction_to_Waist.fbx using Guid(c404236063efd4a46916fa2b78fe419a) (FBXImporter)Keyframe reduction: Ratio: 28.030302%;
+ -> (artifact id: '43d6d95dcbf001c4b66c3c02c101b195') in 0.036196625 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-75.fbx using Guid(e42307ba478224dac90675125deb998c) (FBXImporter) -> (artifact id: '64396497aa378de433caca264fe56174') in 0.569339708 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-67.fbx using Guid(1501150c5272749a480cb1d0a34817c3) (FBXImporter) -> (artifact id: 'a1f021fa70047b92958da41860006660') in 0.571211958 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFullOriginal/model.fbx using Guid(15b20c7d4820b48eb81fe9d3c44aded3) (FBXImporter) -> (artifact id: 'fa246212cc189f19940ce0670de58121') in 0.54748125 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoWitchPlayable/Source/WitchFull/model.fbx using Guid(455ce3247b2e5436d980aff5e2091404) (FBXImporter) -> (artifact id: '3fba53b3e50823a4f01b1dc752912574') in 0.611964709 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Left_Jab_from_Guard.fbx using Guid(659ac007e82e447aa8a3c9b6cf0e02d9) (FBXImporter)Keyframe reduction: Ratio: 27.672510%;
+ -> (artifact id: 'b885afeaf7c4b8c8e7d3265b7c7c037a') in 0.03819475 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoCourtyard/courtyard.fbx using Guid(75a22759c6d8746e7b38a601f0521117) (FBXImporter) -> (artifact id: '9c81deb1863249aa401167fb876eb5eb') in 4.273661125 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/SummerFullOriginal/model.fbx using Guid(d5aafa3456bb34234b5556d3468b1792) (FBXImporter) -> (artifact id: '5d36796ab734be74b10caad50aad1962') in 0.55697225 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/SummerOriginal/model.fbx using Guid(06dd2545b551f43bab6928a87c40c744) (FBXImporter) -> (artifact id: '490f73006a0f062013284ae63dfb8765') in 0.310070959 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoIsland/native-pack.fbx using Guid(96aeafabb30f4476383b136e62887b23) (FBXImporter)Keyframe reduction: Ratio: 7.249738%;
+Keyframe reduction: Ratio: 7.271243%;
+Keyframe reduction: Ratio: 2.482219%;
+Keyframe reduction: Ratio: 7.018450%;
+Keyframe reduction: Ratio: 9.609282%;
+Keyframe reduction: Ratio: 9.104789%;
+Keyframe reduction: Ratio: 4.789313%;
+ -> (artifact id: 'ffce74366479c9db1b37072fcdf5afe1') in 0.492602542 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Left_Short_Hook_from_Guard.fbx using Guid(a6c2bc17e60534de2a7fc7d6eea7509d) (FBXImporter)Keyframe reduction: Ratio: 28.959276%;
+ -> (artifact id: '8787441eaf4cfd454c3ed9b6e957e13e') in 0.035355417 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Boxing_Guard_Step_Knee_Strike.fbx using Guid(17ff11986a1614826b9c24b6f97e04ae) (FBXImporter)Keyframe reduction: Ratio: 26.874758%;
+ -> (artifact id: 'd16b07ba04e4bf8d30708dbb993df5dd') in 0.041859916 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoPlayable/Source/Rose/model.fbx using Guid(279d050248e0d4a078ff5b937845b15e) (FBXImporter)Keyframe reduction: Ratio: 38.839851%;
+Keyframe reduction: Ratio: 35.871910%;
+Keyframe reduction: Ratio: 44.419224%;
+Keyframe reduction: Ratio: 32.427864%;
+Keyframe reduction: Ratio: 27.429323%;
+Keyframe reduction: Ratio: 39.636269%;
+Keyframe reduction: Ratio: 52.634262%;
+Keyframe reduction: Ratio: 34.616982%;
+ -> (artifact id: 'ab74bfb477701db282a9e574312d36b2') in 0.517252041 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoRangerPlayable/Source/Ranger/model.fbx using Guid(571dbdd50359a421b9479a23bf834582) (FBXImporter) -> (artifact id: 'ded8681ee5d02d012077844787ab2ab6') in 0.60835825 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoCobaltPlayable/Source/CobaltFullOriginal/model.fbx using Guid(872deff0e80714e2384b69f4179f25f0) (FBXImporter) -> (artifact id: 'b92b580dc76729558cf17b1865d9f1d3') in 0.538411584 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandWebVisible/direct-cross.fbx using Guid(c7e4900aa30c1463a9df9576fdf51489) (FBXImporter) -> (artifact id: '6b36a6e37e383fa721d9a3fb3eab5d89') in 0.502240167 seconds
+Start importing Assets/LighFight/Art/Drafts/MeshyNativeIsland/native-motions.fbx using Guid(08dbda29988ca4c5aa5ceca74a4e5ca4) (FBXImporter)Keyframe reduction: Ratio: 29.644014%;
+Keyframe reduction: Ratio: 19.811111%;
+ -> (artifact id: 'ce9482031f53025e44cf66c1a2fef8ed') in 0.236165917 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/Summer/model.fbx using Guid(2876c5b036469481d8efe27afeecdfd8) (FBXImporter) -> (artifact id: '445439ff1a552b5d22dc304369c2d0c1') in 0.390947292 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoSailorPlayable/Source/SailorFullOriginal/model.fbx using Guid(586962e9aaf4148a48560798d1367a85) (FBXImporter) -> (artifact id: 'fb684c61d73e5bcc1c9211be1c9b56d6') in 0.5425515 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandQuality/candidate.fbx using Guid(886386d43218a4635be46ab4c8723ae9) (FBXImporter)Keyframe reduction: Ratio: 6.695000%;
+ -> (artifact id: '3966f8baefe791e1951dba028bee03c7') in 0.471486 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Stand_Dodge.fbx using Guid(a8260bcfede7b40a1ad9cb7525954d6f) (FBXImporter)Keyframe reduction: Ratio: 30.365898%;
+ -> (artifact id: '1bc995f507ba9f6553ab562f7740d6b1') in 0.036382334 seconds
+Start importing Assets/NativeDense/Master/source-native-rig.fbx using Guid(d89679f71251b4f0f982993c50d7d80f) (FBXImporter) -> (artifact id: '03e4e0510500ed2cfd86fe8350586973') in 0.576746917 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-66.fbx using Guid(f8e8908ea03ec40d293278610514659c) (FBXImporter) -> (artifact id: '206b1e6fc62c76799dd7e458980ec838') in 0.569633166 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-65.fbx using Guid(39a12ed2f07c546bdaf1ffa21ca7ad34) (FBXImporter) -> (artifact id: '744c04ff09d399717bf893817d3fe9ac') in 0.567254375 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/source-reference.fbx using Guid(592b0dba7a8ba439a8f457fc08a4b2b3) (FBXImporter) -> (artifact id: '2afbf649a4e19e89e8ef0cb5302b23bc') in 0.019990708 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Lunge_Spin_Kick.fbx using Guid(69ce977eccc0d461b9191c15cff1b611) (FBXImporter)Keyframe reduction: Ratio: 38.680923%;
+ -> (artifact id: '95cca524ff2f5fda74913918a416774b') in 0.036977625 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandMeshyStaticFists/island-finger-candidate.fbx using Guid(b978de89394624fb79d188a1224ff819) (FBXImporter)Keyframe reduction: Ratio: 33.924423%;
+ -> (artifact id: '32f29a6c29d5d469204c9e7bb7ec995d') in 0.487547083 seconds
+Start importing Assets/UniqueDancesReview/GenericSources/action-74.fbx using Guid(d975053f60fa64945ae4f817e3a86939) (FBXImporter) -> (artifact id: '1af41b30b0a26b1bdd3796b2f6323ca1') in 0.567545584 seconds
+Start importing Assets/LighFight/Art/Drafts/Rose/rose-rigged.fbx using Guid(e9875816043a04d1794bc4a0fac7cd26) (FBXImporter) -> (artifact id: 'd6d2ed6b38713b723120b71156d28973') in 0.321478083 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-82.fbx using Guid(2a34d446f5b76442d999204c241161e1) (FBXImporter) -> (artifact id: 'f51ee5416e4c421d11a99400d288013d') in 0.581361583 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Step_in_High_Kick.fbx using Guid(6a95ecd1c1ae24340b0b42ec3e6cc05b) (FBXImporter)Keyframe reduction: Ratio: 41.308445%;
+ -> (artifact id: '8511ebcda6242779bec58bf53f35f5b5') in 0.036477417 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-63.fbx using Guid(facfe188077e047a7a72419947a464c2) (FBXImporter) -> (artifact id: '422d0447dfeba3d54afea2bb4083e25a') in 0.566872416 seconds
+Start importing Assets/LighFight/Art/Drafts/Island/island-rig-draft.fbx using Guid(3b9419d59eba2496cb729bb92063529f) (FBXImporter) -> (artifact id: 'e31fa338ae0722096e1cecb633902739') in 0.197094667 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandPremium/island-joint-correctives.fbx using Guid(5b45c61ca4502456680a74b8ef425acf) (FBXImporter)Keyframe reduction: Ratio: 34.294968%;
+ -> (artifact id: '7e072742c273352f82049cd2a240ab04') in 0.302069375 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoWitchPlayable/Source/WitchFullOriginal/model.fbx using Guid(5bc9e8b14af4a4afa8cc66e5342cc8b0) (FBXImporter) -> (artifact id: '3127b5ffbab012a052bc3fb86d045b71') in 0.545161833 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandWebVisible/direct-jab.fbx using Guid(8ba2c0a1324524450a86d3236c438874) (FBXImporter) -> (artifact id: '1270f52f8add7a1a677fa67e3472c252') in 0.482280042 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoSummerPlayable/Source/SummerFull/model.fbx using Guid(8bce3a46b88b94874978915df5ab53fe) (FBXImporter) -> (artifact id: '2414535d628854d6b51b9e26f41f51f1') in 0.612905375 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoSailorPlayable/Source/SailorFull/model.fbx using Guid(cb91d1731e78d48e4b8b62500b86f8ed) (FBXImporter) -> (artifact id: 'cb584ca88115bd13a24f6f6e04e7411c') in 0.601071667 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandCombat/island-motions.fbx using Guid(eb3028dd437dc4dce8dd2b8c20e00bb6) (FBXImporter)Keyframe reduction: Ratio: 4.178177%;
+Keyframe reduction: Ratio: 22.321426%;
+Keyframe reduction: Ratio: 21.344534%;
+Keyframe reduction: Ratio: 21.164219%;
+Keyframe reduction: Ratio: 23.187084%;
+Keyframe reduction: Ratio: 24.039860%;
+Keyframe reduction: Ratio: 24.475702%;
+Keyframe reduction: Ratio: 20.453432%;
+Keyframe reduction: Ratio: 22.399330%;
+Keyframe reduction: Ratio: 21.911762%;
+Keyframe reduction: Ratio: 24.716383%;
+Keyframe reduction: Ratio: 23.340336%;
+Keyframe reduction: Ratio: 23.963411%;
+Keyframe reduction: Ratio: 23.535351%;
+Keyframe reduction: Ratio: 29.567310%;
+Keyframe reduction: Ratio: 26.341059%;
+Keyframe reduction: Ratio: 23.004200%;
+Keyframe reduction: Ratio: 25.532787%;
+Keyframe reduction: Ratio: 24.663464%;
+Keyframe reduction: Ratio: 23.834137%;
+Keyframe reduction: Ratio: 22.969801%;
+Keyframe reduction: Ratio: 22.731091%;
+Keyframe reduction: Ratio: 29.595957%;
+Keyframe reduction: Ratio: 22.836132%;
+Keyframe reduction: Ratio: 23.212807%;
+Keyframe reduction: Ratio: 22.960529%;
+Keyframe reduction: Ratio: 27.377054%;
+Keyframe reduction: Ratio: 24.712734%;
+Keyframe reduction: Ratio: 22.478989%;
+Keyframe reduction: Ratio: 29.705891%;
+Keyframe reduction: Ratio: 23.500004%;
+Keyframe reduction: Ratio: 18.272133%;
+ -> (artifact id: '34959ec9f2f5065669a9a79574075724') in 0.936625334 seconds
+Start importing Assets/LighFight/Art/Source/Island/Meshy_AI_Island_Pattern_Portra_1010053346_texture.fbx using Guid(fb542c32492b54180919ca46561754f3) (FBXImporter) -> (artifact id: 'c99d8091abbd8ef1605c7e60002c00d9') in 0.189794584 seconds
+Start importing Assets/LighFight/Art/Drafts/IslandWebVisible/source-wave.fbx using Guid(0c0aef92d24a749d7a6ff2a78fd2d6e9) (FBXImporter) -> (artifact id: 'd774ee5422d6012edd3b54412a559a74') in 0.341112833 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoBonePlayable/Source/Bone/model.fbx using Guid(1c54c4c312bd843149aff1e6df277101) (FBXImporter) -> (artifact id: '2714f3aeb484809c49f9d799d02b33a7') in 0.599607667 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-77.fbx using Guid(3c3b684acb75f4ccbad3b635053b31af) (FBXImporter) -> (artifact id: '0b782b50705c852efb6dd67a9f4ec21e') in 0.566538125 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Right_Jab_from_Guard.fbx using Guid(9c3ae1502a4394c588cdbae9697407cd) (FBXImporter)Keyframe reduction: Ratio: 26.766411%;
+ -> (artifact id: 'cb5b6fa2aa779c3962ef1a8ce604fe3b') in 0.040829875 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Left_Hook_from_Guard.fbx using Guid(acb0ea3b1bf6c48cea3963fefa67d6cb) (FBXImporter)Keyframe reduction: Ratio: 33.291790%;
+ -> (artifact id: '894823cdf528b09ee48099021056aa0c') in 0.034451458 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-71.fbx using Guid(cc605b604caed401494391fb69a4c596) (FBXImporter) -> (artifact id: 'e76443c172ce66939941dcf470d8d40a') in 0.58710975 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Right_Uppercut_from_Guard.fbx using Guid(ecd7a61d86a03485d94992d1762b4631) (FBXImporter)Keyframe reduction: Ratio: 38.355831%;
+ -> (artifact id: '1dbc90a04dbfc6936bc571adc66455c4') in 0.033426625 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoGalaPlayable/Source/GalaFull/model.fbx using Guid(fc9862e6356294e068594a79db4976de) (FBXImporter) -> (artifact id: '178eb25153bedc4c483be118f6393730') in 0.699582125 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoRose/Baked/box-02.fbx using Guid(1eb024e531b234af1bc1ed59ead2f568) (FBXImporter) -> (artifact id: '1852f2e73715c847b4d1d47eaa1e8a8b') in 0.697634208 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Spartan_Kick.fbx using Guid(1e7d893e7990245e6885334e6ef27afd) (FBXImporter)Keyframe reduction: Ratio: 43.189781%;
+ -> (artifact id: '4dd1f34c012442d527a0f1e2df7f3890') in 0.045463333 seconds
+Start importing Assets/LighFight/Art/Drafts/MeshyWebIsland/web-motions.fbx using Guid(7e5309c349dfd4724bfdf4077e4fe6b2) (FBXImporter) -> (artifact id: '09d5a409b9485bbfcfa2d48d15cc1bec') in 2.382419791 seconds
+Start importing Assets/DenseRigifyReview/SailorOriginalDenseDEF-BoxAdaptiveTspace-v2.fbx using Guid(9ee5c66fdb11749918319d4764501ec5) (FBXImporter) -> (artifact id: '663b609dec99920efac37402a3ddc6d1') in 3.176167375 seconds
+Start importing Assets/LighFight/Art/Drafts/RestoredDetail/rose/restored.fbx using Guid(fe25f236f234b407b80cba990ea93557) (FBXImporter) -> (artifact id: '2a447bc7975680508d82304f4f408ffd') in 1.071803 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoRetroPlayable/Source/RetroFullOriginal/model.fbx using Guid(5f9efa790e3cb42c08e034c940440b88) (FBXImporter) -> (artifact id: '9353f80ae0af4af9cda263e75f55b855') in 0.55006425 seconds
+Start importing Assets/LighFight/Art/Motions/Meshy/Punch_Forward_with_Both_Fists.fbx using Guid(6f54f5f14e55241dc84e9a2d23b638b3) (FBXImporter)Keyframe reduction: Ratio: 26.044893%;
+ -> (artifact id: 'fc391853eb4b550df56c5672194b5288') in 0.048503541 seconds
+Start importing Assets/UniqueDancesReview/Sources/action-70.fbx using Guid(8f5578883521640a6b64121f2508f0a9) (FBXImporter) -> (artifact id: '5fca613923c737d002f548a97548aa2e') in 0.5583595 seconds
+Start importing Assets/LighFight/Art/Drafts/TripoCobaltPlayable/Source/CobaltFull/model.fbx using Guid(9fd430c132a45ecb8924d19a27d7428c) (FBXImporter) -> (artifact id: '9a6052c29aacb72c0664720cd20a320b') in 0.521739834 seconds
+Start importing Assets/LighFight/Art/Drafts/OriginalIsland/candidate.prefab using Guid(c1ab25918b19949c1ba8e56eccd32e76) (PrefabImporter) -> (artifact id: '04a452ae5f6504f04bdc8d5d7e7a0fd4') in 0.026366625 seconds
+Start importing Assets/LighFight/Art/Fighters/fighter-4.prefab using Guid(02b17408131414fdab1a1f07a14c44d9) (PrefabImporter) -> (artifact id: 'eeb550686e4b081ba09c3f36635b2b62') in 0.026641875 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm using Guid(e9dd15dda521a4ff9aa405d9aa66f54e) (DefaultImporter) -> (artifact id: '424ba1d63ffacc89c86b9825b36fbc74') in 1.037902042 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm using Guid(e9dd15dda521a4ff9aa405d9aa66f54e) (DefaultImporter) -> (artifact id: '424ba1d63ffacc89c86b9825b36fbc74') in 0.00067725 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm using Guid(e9dd15dda521a4ff9aa405d9aa66f54e) (DefaultImporter) -> (artifact id: '424ba1d63ffacc89c86b9825b36fbc74') in 0.000619541 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm using Guid(e9dd15dda521a4ff9aa405d9aa66f54e) (DefaultImporter) -> (artifact id: '424ba1d63ffacc89c86b9825b36fbc74') in 0.000646083 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm using Guid(e9dd15dda521a4ff9aa405d9aa66f54e) (DefaultImporter) -> (artifact id: '424ba1d63ffacc89c86b9825b36fbc74') in 0.000589667 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm using Guid(e9dd15dda521a4ff9aa405d9aa66f54e) (DefaultImporter) -> (artifact id: '424ba1d63ffacc89c86b9825b36fbc74') in 0.00070875 seconds
+Start importing Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm using Guid(e9dd15dda521a4ff9aa405d9aa66f54e) (DefaultImporter) -> (artifact id: '424ba1d63ffacc89c86b9825b36fbc74') in 0.000599458 seconds
+An infinite import loop has been detected when processing post process all assets callbacks. Please check if any custom code is trying to import them:
+Assets/LighFight/Art/Drafts/CourtyardReferenceV2/Textures/courtyard.fbm (changed)
+Assets/LighFight/Art/Drafts/CourtyardReferenceV2/courtyard.fbx (changed)
+Asset Pipeline Refresh (id=9155b49f0923547b2b3b3a4e57b0390b): Total: 66.372 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=104 (actual=97, local cache=7, cache server=0)
+		Asset DB Process Time: managed=54 ms, native=61217 ms
+		Asset DB Callback time: managed=150 ms, native=130 ms
+		Scripting: domain reloads=1, domain reload time=555 ms, compile time=4252 ms, other=11 ms
+		Project Asset Count: scripts=431, non-scripts=1400
+		Asset File Changes: new=8, changed=8, moved=0, deleted=0
+		Scan Filter Count: 7
+	InvokeCustomDependenciesCallbacks: 0.003ms
+	InvokePackagesCallback: 9.834ms
+	ApplyChangesToAssetFolders: 0.388ms
+	Scan: 219.318ms
+	OnSourceAssetsModified: 0.730ms
+	CategorizeAssetsWithTransientArtifact: 7.595ms
+	ProcessAssetsWithTransientArtifactChanges: 13.948ms
+	CategorizeAssets: 27.007ms
+	ImportOutOfDateAssets: 60882.427ms (-3712.595ms without children)
+		ImportManagerImport: 60332.480ms (104.049ms without children)
+			ImportInProcess: 60227.094ms
+			UpdateCategorizedAssets: 1.337ms
+		CompileScripts: 4252.377ms
+		ReloadNativeAssets: 0.610ms
+		UnloadImportedAssets: 3.539ms
+		ReloadImportedAssets: 2.004ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.916ms
+		InitializingProgressBar: 0.040ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 2.055ms
+	PostProcessAllAssets: 1370.943ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.388ms
+	UnloadStreamsBegin: 2.518ms
+	PersistCurrentRevisions: 0.790ms
+	UnloadStreamsEnd: 0.003ms
+	GenerateScriptTypeHashes: 1.910ms
+	Untracked: 3836.562ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 0.315ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LighFight
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1508 unused Assets / (1.1 MB). Loaded Objects now: 1960.
+Memory consumption went from 193.7 MB to 192.6 MB.
+Total: 8.380792 ms (FindLiveObjects: 0.118083 ms CreateObjectMapping: 0.052792 ms MarkObjects: 7.302833 ms  DeleteObjects: 0.906542 ms)
+
+[Project] Loading completed in 71.259 seconds
+	Project init time: 				69.427 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		1.001 seconds
+		Asset Database init time: 		0.364 seconds
+		Global illumination init time: 	0.002 seconds
+		Assemblies load time: 			1.008 seconds
+		Unity extensions init time: 	0.003 seconds
+		Asset Database refresh time: 	66.373 seconds
+	Scene opening time: 			1.382 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1792352077965,"processId":98840,"projectLoad":71.25884675,"projectInit":69.426849208,"templateInit":0.0,"packageManagerInit":1.001297208,"assetDatabaseInit":0.363992708,"globalIlluminationInit":0.0024345,"assembliesLoad":1.007661958,"unityExtensionsInit":0.003458792,"assetDatabaseRefresh":66.372688875,"sceneOpening":1.382148209}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1792352077965,"processId":98840,"editorVersion":"6000.3.26f1 (de8167e7440c)","branch":"6000.3/staging","buildType":"Release","platform":"OSX"}
+Subscribe to USB device events
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Start Indexing on Editor startup
+[Indexing] Starting Initial Indexing for Assets
+[UnityConnectServicesConfig] config is NOT valid, switching to default
+Created GICache directory at /Users/macbook1/Library/Caches/com.unity3d.UnityEditor/GiCache. Took: 0.003s, timestamps: [71.265 - 71.267]
+[Licensing::Client] Successfully resolved entitlement details
+TrimDiskCacheJob: Current cache size 0mb
+Start importing Assets/DenseRigifyReview/SailorOriginalDenseDEF-DanceAdaptiveTspace-v1.fbx using Guid(9be0b1c2bb79a412baa2c5eea15cc08d) (FBXImporter) -> (artifact id: '84b495a97b404c4aebe976fa9383da05') in 42.110265625 seconds
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0cfc424fa694f4a1a9c9e13dfd722097): Total: 42.284 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=5 ms, native=42240 ms
+		Asset DB Callback time: managed=6 ms, native=31 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=431, non-scripts=1401
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 3
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.108ms
+	Scan: 105.875ms
+	OnSourceAssetsModified: 0.631ms
+	CategorizeAssetsWithTransientArtifact: 0.012ms
+	ProcessAssetsWithTransientArtifactChanges: 0.027ms
+	CategorizeAssets: 1.532ms
+	ImportOutOfDateAssets: 42128.420ms (1.608ms without children)
+		ImportManagerImport: 42125.327ms (2.576ms without children)
+			ImportInProcess: 42122.493ms
+			UpdateCategorizedAssets: 0.259ms
+		ReloadNativeAssets: 0.059ms
+		UnloadImportedAssets: 0.118ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.226ms
+		InitializingProgressBar: 0.004ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 1.077ms
+	PostProcessAllAssets: 17.357ms
+	Hotreload: 20.174ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.141ms
+	UnloadStreamsBegin: 1.105ms
+	PersistCurrentRevisions: 0.169ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 8.406ms
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 288 unused Assets / (26.4 KB). Loaded Objects now: 1973.
+Memory consumption went from 3.85 GB to 3.85 GB.
+Total: 16.161000 ms (FindLiveObjects: 0.123667 ms CreateObjectMapping: 0.053458 ms MarkObjects: 14.857208 ms  DeleteObjects: 1.126042 ms)
+
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Start importing Assets/DenseRigifyReview/DenseOriginal4K.mat using Guid(a9bb34cefb4534031bf45e59be520a00) (NativeFormatImporter) -> (artifact id: 'a27b42f8851035f7b6194d9bc3eeafe3') in 0.016274542 seconds
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=835b805649d544ba392a4c59a9de23a6): Total: 0.205 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/DenseRigifyReview/FullDanceReview.controller using Guid(59090459a5ffe475580b492e37b4eec9) (NativeFormatImporter) -> (artifact id: '74ac0eefc408af4535a2e2589a734ea5') in 0.001509042 seconds
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=304173445ed064fa4b7285083784c6d1): Total: 0.029 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/DenseRigifyReview/FullDanceReview.controller using Guid(59090459a5ffe475580b492e37b4eec9) (NativeFormatImporter) -> (artifact id: 'f55aaa954d8c3a9fc72dbe09f93394c8') in 0.000938875 seconds
+Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8fbbf869031554bfc92f7398830a70aa): Total: 0.010 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Starting new worker id: 0 with log in 
+Starting new worker id: 1 with log in 
+Worker ready: AssetImportWorker0 0
+Worker ready: AssetImportWorker1 1
+[Worker0] Start importing Assets/DenseRigifyReview/DenseOriginal4K.mat using Guid(a9bb34cefb4534031bf45e59be520a00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) 
+[Worker0] (ScriptedImporter)
+[Worker0]  -> (artifact id: 'e9dc119c9b4f41c0a256e6dbb86eafcb') in 0.555849084 seconds
+[Worker0] Start importing Assets/DenseRigifyReview/SailorOriginalDenseDEF-DanceAdaptiveTspace-v1.fbx using Guid(9be0b1c2bb79a412baa2c5eea15cc08d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) 
+[Worker0] (ScriptedImporter)
+[Worker1] Start importing Assets/DenseRigifyReview/FullDanceReview.controller using Guid(59090459a5ffe475580b492e37b4eec9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) 
+[Worker1] (ScriptedImporter)
+[Worker1]  -> (artifact id: 'a5f65c3e9ea505cda813b8d63017281c') in 21.297625666 seconds
+[Worker0]  -> (artifact id: 'bdb27618642d4579ffe46f478c762afe') in 24.280330083 seconds
+Request Asset Garbage Collect because used heap size increased from 2.59 GB to 3.91 GB, exceeding the threshold of 0.65 GB.
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7 unused Assets / (2.5 KB). Loaded Objects now: 2555.
+Memory consumption went from 3.91 GB to 3.91 GB.
+Total: 15.596667 ms (FindLiveObjects: 0.611541 ms CreateObjectMapping: 0.040125 ms MarkObjects: 14.372167 ms  DeleteObjects: 0.572333 ms)
+
+AGENT_RESULT fullDance Unity import/source pose/capture review complete; no catalog promotion
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DenseRigifyReimportReview/<FullDanceSteps>d__12:MoveNext () (at Assets/DenseRigifyReview/Editor/DenseRigifyDanceReview.cs:129)
+DenseRigifyReimportReview:PumpReview () (at Assets/DenseRigifyReview/Editor/DenseRigifyReimportReview.cs:211)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions () (at /Users/bokken/build/output/unity/unity/Editor/Mono/EditorApplication.cs:392)
+
+(Filename: Assets/DenseRigifyReview/Editor/DenseRigifyDanceReview.cs Line: 129)
+
+Unloading the last loaded scene (build index: -1), is not supported. Please use SceneManager.LoadScene()/EditorSceneManager.OpenScene() to switch to another scene.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:35)
+UnityEditor.SceneManagement.EditorSceneManager:CloseScene (UnityEngine.SceneManagement.Scene,bool)
+DenseRigifyReimportReview/<FullDanceSteps>d__12:<>m__Finally1 () (at Assets/DenseRigifyReview/Editor/DenseRigifyDanceReview.cs:133)
+DenseRigifyReimportReview/<FullDanceSteps>d__12:MoveNext () (at Assets/DenseRigifyReview/Editor/DenseRigifyDanceReview.cs:130)
+DenseRigifyReimportReview:PumpReview () (at Assets/DenseRigifyReview/Editor/DenseRigifyReimportReview.cs:211)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions () (at /Users/bokken/build/output/unity/unity/Editor/Mono/EditorApplication.cs:392)
+
+[Assets/DenseRigifyReview/Editor/DenseRigifyDanceReview.cs line 133]
+
+Thread 0x17d2bb000 may have been prematurely finalized
+Killing ADB server in 0.265042 seconds.
+Thread 0x17ef87000 may have been prematurely finalized
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] LicenseClient-macbook1-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-macbook1 channel disconnected successfully.
+Thread 0x16f7e3000 may have been prematurely finalized
+Thread 0x16f757000 may have been prematurely finalized
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+debugger-agent: Unable to listen on 43
+[usbmuxd] Stop listen thread
+[usbmuxd] Error: 
+[usbmuxd] Listen thread exiting

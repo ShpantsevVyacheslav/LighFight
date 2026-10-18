@@ -1,0 +1,7 @@
+Diagnostic only; no source/material factor/importer changes; source mesh/weights restored clone same as preceding gate.
+Three normal paths: actual imported normal XY-Z reconstruction; original rawRGB normalized (preserveZ); rawXY reconstruction custom Standard control.
+All use same Standard BRDF/metalR/smoothA sourcefactors1. Raw procedural RGBnormal is linear, sourcebyteLoadImage, strength1; no greenflip.
+HDR ARGBHalf Linear -> existing FittedFilmic exposure1 -> ARGB32sRGB; not BlenderAgX exact equivalence.
+Soft angular quadrature uses source area panel positions(-1,-2,2)/(1,-1,1)/(0,1,2),relative powers450/250/300,size2m,2x2samples,panelcosine/inverse-square at actorcentre, fixed C. Total direct intensity normalized1.1 for A/B; approximate angular area integration, NOT exact positional area-light/occlusion or crossrenderer radiometric match.
+All source shader/maps factors unchanged; lighting normalization affects light only and is explicitly diagnostic. Ambient.15 matched sourceworldcolor value, not claimed identical world shader irradiance.
+No material acceptance until saved images reviewed; local source tangent transport pending.
