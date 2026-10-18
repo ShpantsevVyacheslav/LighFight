@@ -1,0 +1,7 @@
+# Actual Unity shared-kernel diagnostic: integration RED
+
+One bounded first-pose export, Unity 6000.3.26f1 batchmode, EXIT0 (export completed, not acceptance). No benchmark. All143168 actual restored points retained. Shared review BVH, full typed shared traversal and all-leaf scan give 0x3C4000E3 (0.0117189614). Independent per-operation double→float rounding oracle matches every point (0 mismatches). Unchanged production CandidateFootGrounding and independent original typed expression give 0x3C4000E2 (0.0117189605). Independent double minimum: 0.011718961216843781. Same row snapshot, zero rows changed after Candidate reset.
+
+Thus explicit common arithmetic boundaries explain and reproduce the discrepancy but DO NOT establish production compatibility. Integration stays RED with existing Candidate parity gate unchanged. No epsilon, geometry, weights, masks, production math or physical semantics changed. Possible next investigation: production-authoritative point evaluator as exact leaf, with conservatively valid bounds; requires explicit scope and independent validation.
+
+GC.GetAllocatedBytesForCurrentThread still returns0 for observed new byte[1048576] kept alive: unsupported here. No zero-allocation claim. The independent diagnostic oracle deliberately allocates and is not a performance path. No performance or thermal benefit measured. witness.json contains bits, influences, row snapshot and offsets; actual-pose0.fsf and IDs preserve the complete actual fixture; unity.log captures run. Engine exited and heavy window explicitly released to root.

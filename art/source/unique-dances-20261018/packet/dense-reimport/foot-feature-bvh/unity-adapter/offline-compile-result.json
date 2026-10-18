@@ -1,0 +1,13 @@
+{
+  "stage": "offline compile only; actual engine job awaiting builder+explicit handoff",
+  "compilerExit": 0,
+  "coreByteIdentical": true,
+  "sources": {
+    "unity/Assets/DenseRigifyReview/Runtime/ExactFootFeatureBounds.cs": "9ea7f32bf5a11b4a4151dc7a4e94fa439d2e7716654a29c1dbb7dc5736f999c9",
+    "unity/Assets/DenseRigifyReview/Runtime/DenseFootFeatureAdapter.cs": "ba454ed80612ad5a07425aaeec63e6eeef227b7fec48cdf349ca45ca9ac3ee22",
+    "unity/Assets/DenseRigifyReview/Tests/DenseFootAdapterChecks.cs": "e0826484cf8658f587f5006f78439652d892b85c3209f0c7fb37e67250c82079",
+    "unity/Assets/DenseRigifyReview/Editor/DenseFootAdapterReview.cs": "89d740b4f25b486072ae4b3b13bf343e3e04481b9d6c92d4cbbebd9f393d2991"
+  },
+  "outputDLLSha256": "acb5ae262a440ff5696a116d3268343ca4758f1e69a9866c7caac367907cfbc1",
+  "warnings": "CS0436 offline-only: current Unity Assembly-CSharp already contains the identical named review types; compiler selects supplied source. Not duplicate source files in Unity."
+}

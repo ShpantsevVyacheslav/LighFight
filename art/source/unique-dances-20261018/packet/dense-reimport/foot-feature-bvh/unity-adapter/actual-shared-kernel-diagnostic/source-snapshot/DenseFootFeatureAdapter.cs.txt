@@ -1,0 +1,64 @@
+using System;
+using System.Diagnostics;
+using UnityEngine;
+// REVIEW ONLY: a manually queried measurement owner. Never attached to gameplay or applies a correction.
+// Same immutable-authoring-data contract as CandidateFootGrounding's exact-row cache.
+public sealed class DenseFootFeatureAdapter : IDisposable {
+ public struct Sample {public float Minimum;public bool Held;public long RowTicks,FeatureTicks,FullTicks,ManagedAllocatedBytes;public ExactFootFeatureBounds.Statistics Statistics;}
+ readonly CandidateFootGrounding grounding;CandidateFootGrounding.Point[] points;Transform[] bones;float[] rows;ExactFootFeatureBounds tree;bool valid,disposed;float last;
+ public int PointCount{get;private set;}public int NodeCount=>tree==null?0:tree.NodeCount;
+ public int FeatureQueries{get;private set;}public int FullQueries{get;private set;}public int RowCaptures{get;private set;}public int HeldHits{get;private set;}
+ public long BuildTicks{get;private set;}public long BuildAllocatedBytes{get;private set;}
+ public DenseFootFeatureAdapter(CandidateFootGrounding source,int expectedPoints){
+  if(!source||source.shoePoints==null||source.bones==null||!source.nativeRig)throw new ArgumentException("Typed restored support required");
+  if(source.shoePoints.Length!=expectedPoints||expectedPoints<1)throw new ArgumentException("Actual restored point count mismatch");
+  grounding=source;points=source.shoePoints;bones=source.bones;PointCount=points.Length;
+  long before=GC.GetAllocatedBytesForCurrentThread(),start=Stopwatch.GetTimestamp();
+  var indices=new int[checked(PointCount*4)];var weights=new float[indices.Length];var xyz=new float[checked(PointCount*12)];rows=new float[checked(bones.Length*4)];
+  for(int p=0;p<PointCount;p++){
+   var influences=points[p].influences;if(influences==null||influences.Length<1||influences.Length>4)throw new ArgumentException("Unsupported original influence group");
+   for(int k=0;k<influences.Length;k++){var inf=influences[k];if(inf.bone<0||inf.bone>=bones.Length||!Finite(inf.weight)||inf.weight<=0||!Finite(inf.bindPoint.x)||!Finite(inf.bindPoint.y)||!Finite(inf.bindPoint.z))throw new ArgumentException("Invalid original typed influence");int slot=p*4+k;indices[slot]=inf.bone;weights[slot]=inf.weight;xyz[slot*3]=inf.bindPoint.x;xyz[slot*3+1]=inf.bindPoint.y;xyz[slot*3+2]=inf.bindPoint.z;}
+  }
+  for(int b=0;b<bones.Length;b++)if(!bones[b])throw new ArgumentException("Original bone missing");
+  tree=new ExactFootFeatureBounds(bones.Length,indices,weights,xyz);BuildTicks=Stopwatch.GetTimestamp()-start;BuildAllocatedBytes=GC.GetAllocatedBytesForCurrentThread()-before;
+ }
+ static bool Finite(float f)=>!float.IsNaN(f)&&!float.IsInfinity(f);
+ public void Invalidate(){valid=false;}
+ public bool TryMeasure(bool active,out Sample sample){
+  sample=new Sample{Minimum=float.NaN};if(disposed)throw new ObjectDisposedException(nameof(DenseFootFeatureAdapter));
+  // Before ResetForSample/Transform reads/counters: inactive work must be exactly zero.
+  if(!active)return false;
+  if(!grounding||!ReferenceEquals(points,grounding.shoePoints)||!ReferenceEquals(bones,grounding.bones))throw new InvalidOperationException("Restored support owner changed; rebuild review adapter");
+  long allocated=GC.GetAllocatedBytesForCurrentThread(),start=Stopwatch.GetTimestamp();bool same=valid;valid=false;grounding.ResetForSample();
+  for(int b=0;b<bones.Length;b++){
+   var m=bones[b].localToWorldMatrix;int i=b*4;
+   if(rows[i]!=m.m10||rows[i+1]!=m.m11||rows[i+2]!=m.m12||rows[i+3]!=m.m13)same=false;
+   rows[i]=m.m10;rows[i+1]=m.m11;rows[i+2]=m.m12;rows[i+3]=m.m13;
+  }
+  RowCaptures++;sample.RowTicks=Stopwatch.GetTimestamp()-start;
+  if(same){valid=true;HeldHits++;sample.Minimum=last;sample.Held=true;sample.ManagedAllocatedBytes=GC.GetAllocatedBytesForCurrentThread()-allocated;return true;}
+  float accelerated,full;
+  // Alternate ordering to expose cache/order bias in the review timings.
+  if((FeatureQueries&1)==0){start=Stopwatch.GetTimestamp();full=FullFloatMinimum(points,rows);sample.FullTicks=Stopwatch.GetTimestamp()-start;start=Stopwatch.GetTimestamp();accelerated=tree.Minimum(rows,out sample.Statistics);sample.FeatureTicks=Stopwatch.GetTimestamp()-start;}
+  else {start=Stopwatch.GetTimestamp();accelerated=tree.Minimum(rows,out sample.Statistics);sample.FeatureTicks=Stopwatch.GetTimestamp()-start;start=Stopwatch.GetTimestamp();full=FullFloatMinimum(points,rows);sample.FullTicks=Stopwatch.GetTimestamp()-start;}
+  FeatureQueries++;FullQueries++;
+  // Numeric exact equality follows the portable core's guarantee. Fail closed on mismatch/nonfinite.
+  if(!Finite(accelerated)||!Finite(full)||accelerated!=full)throw new InvalidOperationException("Exact full-foot feature minimum mismatch");
+  valid=true;last=accelerated;sample.Minimum=accelerated;sample.ManagedAllocatedBytes=GC.GetAllocatedBytesForCurrentThread()-allocated;return true;
+ }
+ // Typed traversal with the SAME scalar arithmetic contract as the leaf.
+ // Independent original-expression and double oracles below remain separate.
+ public static float FullFloatMinimum(CandidateFootGrounding.Point[] points,float[] rows){
+  float min=float.PositiveInfinity;
+  foreach(var point in points){float y=0;foreach(var inf in point.influences){int b=inf.bone*4;var p=inf.bindPoint;y=DenseFootScalarKernel.Accumulate(y,rows[b],rows[b+1],rows[b+2],rows[b+3],p.x,p.y,p.z,inf.weight);}min=Mathf.Min(min,y);}return min;
+ }
+ public static float OriginalExpressionMinimum(CandidateFootGrounding.Point[] points,float[] rows){
+  float min=float.PositiveInfinity;
+  foreach(var point in points){float y=0;foreach(var inf in point.influences){int b=inf.bone*4;var p=inf.bindPoint;y+=(rows[b]*p.x+rows[b+1]*p.y+rows[b+2]*p.z+rows[b+3])*inf.weight;}min=Mathf.Min(min,y);}return min;
+ }
+ public static double IndependentDoubleMinimum(CandidateFootGrounding.Point[] points,float[] rows){
+  double min=double.PositiveInfinity;
+  foreach(var point in points){double y=0;foreach(var inf in point.influences){int b=inf.bone*4;var p=inf.bindPoint;y+=((double)rows[b]*p.x+(double)rows[b+1]*p.y+(double)rows[b+2]*p.z+rows[b+3])*inf.weight;}if(y<min)min=y;}return min;
+ }
+ public void Dispose(){if(disposed)return;disposed=true;valid=false;tree=null;points=null;bones=null;rows=null;}
+}
