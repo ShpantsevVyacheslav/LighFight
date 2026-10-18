@@ -1,7 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using UnityEngine.TestTools;
 using LighFight.Runtime;
 namespace LighFight.Tests {
  public sealed class FightGraphicsQualityTests {
@@ -46,6 +50,51 @@ namespace LighFight.Tests {
    Assert.Less(low.x*low.y,high.x*high.y);Assert.Less(high.x*high.y,maximum.x*maximum.y);Assert.AreEqual(original,maximum);
    Assert.AreEqual((float)original.x/original.y,(float)low.x/low.y,.003f);var portrait=MobileFightResolution.Size(original,FightGraphicsQuality.RenderScale(0),false);Assert.AreEqual(new Vector2Int(low.y,low.x),portrait);
    Assert.Less(Prototype.SelectionPreviewSize(original,0).x,Prototype.SelectionPreviewSize(original,1).x);
+  }
+
+  [UnityTest]public IEnumerator ActualFightStartupLightsDiffuseSurfacesIndependentlyOfIncomingSkybox(){
+   if(SystemInfo.graphicsDeviceType==GraphicsDeviceType.Null)Assert.Ignore("Requires a real graphics device and camera render");
+   var previous=SceneManager.GetActiveScene();var scene=SceneManager.CreateScene("Fight startup ambient GPU regression");
+   Material sky=null,mat=null;Cubemap cube=null;RenderTexture target=null;Texture2D readback=null;
+   try{
+    SceneManager.SetActiveScene(scene);SceneManager.MoveGameObjectToScene(root,scene);game.enabled=false;
+    cube=new Cubemap(4,TextureFormat.RGBA32,false);var black=new Color[16];for(int face=0;face<6;face++)cube.SetPixels(black,(CubemapFace)face);cube.Apply();
+    sky=new Material(Shader.Find("Skybox/Cubemap"));sky.SetTexture("_Tex",cube);RenderSettings.skybox=sky;
+    RenderSettings.ambientMode=AmbientMode.Skybox;RenderSettings.ambientProbe=new SphericalHarmonicsL2();
+
+    // Exercise the real startup, including the camera/actor/options path, without running its UI.
+    typeof(Prototype).GetMethod("Start",Flags).Invoke(game,null);
+    foreach(var light in root.GetComponentsInChildren<Light>(true))light.enabled=false;
+    foreach(var camera in root.GetComponentsInChildren<Camera>(true))camera.enabled=false;
+    foreach(var listener in root.GetComponentsInChildren<AudioListener>(true))listener.enabled=false;
+    var sphere=GameObject.CreatePrimitive(PrimitiveType.Sphere);sphere.name="18 percent diffuse startup witness";
+    sphere.transform.SetParent(root.transform,false);sphere.layer=29;
+    var renderer=sphere.GetComponent<Renderer>();mat=new Material(Shader.Find("Legacy Shaders/Diffuse"));mat.color=new Color(.18f,.18f,.18f).gamma;renderer.sharedMaterial=mat; // Shader Color properties are sRGB; the card reflects 18% in linear light.
+    renderer.reflectionProbeUsage=ReflectionProbeUsage.Off;
+    var cameraObject=new GameObject("Actual ambient regression camera");cameraObject.transform.SetParent(root.transform,false);
+    var probe=cameraObject.AddComponent<Camera>();probe.enabled=false;probe.cullingMask=1<<29;probe.clearFlags=CameraClearFlags.SolidColor;probe.backgroundColor=Color.black;
+    probe.renderingPath=RenderingPath.Forward;probe.orthographic=true;probe.orthographicSize=.7f;probe.allowHDR=true;
+    probe.transform.position=new Vector3(0,0,-2);probe.transform.LookAt(Vector3.zero);
+    target=new RenderTexture(64,64,24,RenderTextureFormat.ARGBFloat,RenderTextureReadWrite.Linear);target.Create();probe.targetTexture=target;
+    readback=new Texture2D(64,64,TextureFormat.RGBAFloat,false,true);
+    yield return null;yield return null;
+    Color filled=ReadAmbient(probe,target,readback);
+    Assert.Greater(filled.grayscale,.005f,"Real startup must provide diffuse fill with no direct lights");
+
+    // Control reproduces the previous behavior: the same ambientLight color with a black skybox.
+    RenderSettings.ambientMode=AmbientMode.Skybox;RenderSettings.ambientProbe=new SphericalHarmonicsL2();DynamicGI.UpdateEnvironment();
+    yield return null;yield return null;
+    Color skyOnly=ReadAmbient(probe,target,readback);
+    Debug.Log("Startup diffuse="+filled+"; incoming-skybox control="+skyOnly);
+    Assert.Less(skyOnly.grayscale,filled.grayscale*.2f,"The fixture must distinguish ignored ambientLight from actual fill");
+   }finally{
+    if(root)Object.DestroyImmediate(root);if(target){target.Release();Object.DestroyImmediate(target);}if(readback)Object.DestroyImmediate(readback);
+    if(mat)Object.DestroyImmediate(mat);if(sky)Object.DestroyImmediate(sky);if(cube)Object.DestroyImmediate(cube);
+    SceneManager.SetActiveScene(previous);SceneManager.UnloadSceneAsync(scene);
+   }
+  }
+  static Color ReadAmbient(Camera camera,RenderTexture target,Texture2D texture){
+   var old=RenderTexture.active;try{camera.Render();RenderTexture.active=target;texture.ReadPixels(new Rect(0,0,64,64),0,0);texture.Apply();return texture.GetPixel(32,32);}finally{RenderTexture.active=old;}
   }
  }
 }
