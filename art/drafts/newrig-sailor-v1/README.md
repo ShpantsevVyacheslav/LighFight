@@ -40,3 +40,21 @@ BLENDER=/Users/macbook1/Applications/Blender.app/Contents/MacOS/Blender
 ```
 
 Final75% retarget scene is saved as `stage04-dance75-retarget-review.blend`; `stage04-preservation.json` independently confirms dense attribute hashes exact after retarget. Blender exited normally. Large `.blend` files are local reproducible review artifacts (one exceeds100MB); commit scripts/JSON/PNGs separately unless large-file storage is deliberately configured.
+
+## Full-body motion gallery and portability finding
+
+`gallery-v1/all-motion-fullbody-sheet.png` and `all-motion-shoulders-sheet.png` show26actual rendered images at13authored phases (boxing3/kick3/headhit2/walk2/dance3).54FK controls include root translation scaled by measured height, legs/feet/toes and all30fingersegments. Source phases/times and limitations are in `gallery-v1/manifest.json`. Whole-body minimum reaches−32.953mm; noIKfoot-contact solver is claimed. Box frame0 is authored boxing start, not standalone guard idle. Facial expressions are not retargeted.
+
+**Additional gate caught:** generated Rigify DEF bones use segmented B-bones8–10. Thus gallery-v1 is explicitly a Blender deformation diagnostic, not portableGLB/GPU proof. Armature PreserveVolume isfalse. `09_game_lbs_gate.py` creates a separate single-segment trueLBS variant and independently compares final evaluated mesh samples against weighted4x4matrices before corrective inversion. No game export accepted until that variant is visually checked.
+
+NEW autoheat partition audit (`newrig-partition-audit.json`) found collarCentral mean61.68% shoulder/arm influence and axillaryTorso mean36.18%; not equivalent to earlier native67-bone Neck audit. Geometric region masks are approximate and need visual review before treating every flagged vertex as a leak. This supports a targeted sleeve/body partition experiment before blind smoothing or arbitrary cap flattening.
+
+## Bounded gameLBS + partition result
+
+True matrix-LBS variant (`game-lbs-v1/report.json`) disables52segmentedDEF B-bones, preserves skinweights/basegeometry, and matches actual evaluated mesh against independent weighted4x4skinning on12,000vertices each in dance75% and kick45%: maximum0.271micrometres. This proves the chosen matrix deformation math, not final visual quality or Unity import.
+
+`partition-v1/rest-mask-red-treatment-green-feather.png` shows the actual geometry mask. `partition-v1/samephase-before-after-NOT-ACCEPTED.png` compares unchanged-LBS versus the targeted collar/torso partition at dance50/75%.172,867vertices were treated with smooth regionfalloff; centralcollar arm/clavicle contribution was progressively capped20%, axillarytorso5%, with excess reassignedto spine002/003. Lateral sleeves, distal arms and head weights were retained; max4weights/0unweighted remain. **Viewed result: no compelling shoulderfix; sleeveball andcollarpull remain.** It is not promoted, and the measured collararmfraction must not be equated with proven erroneous leakage. Rastermean absolute difference~1.81/1.87byte is not a qualitymetric.
+
+The gallery is the requested actuallocal new-rig screenshotcollection, with originaldense detail preserved. The experiment proves localfresh-rig/fullgeometry feasibility but doesnot prove the remaining garmentdeformation solved. No new GLB replaces the originalprototype models; noUnity/main/phone changed. `FINAL-LOCAL-REVIEW.json` records allthree originalGLB hashes unchanged.
+
+Next justified art step: deliberately sculpted few local pose-space shoulder/garmentcorrectives on the trueLBS variant, exactprotectedcollar/head/distal anchors, firstsamephase visualgate then shoulder elevation/twist +othermotions/intermediates. `06_designed_cap_corrective.py` is an **unexecuted diagnostic idea**, not a tested fix or accepted target: a numerical radial-envelope limit must not masquerade as anatomical sculpture. No all8export or per-framefullmesh morphbake should proceed before visualacceptance.
