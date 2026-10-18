@@ -30,26 +30,26 @@ def architecture(path):
  # Keep fight lane z[-.55,.55] clear; furniture starts at z=.92.
  box((0,-.045,1.7),(6.8,.09,7),1)
  box((0,1.5,5.24),(6.96,3,.12),0)
- # Left wall with two actual window openings; no concealed solid wall behind panes.
+ # Photo-left wall (positive glTF X when viewed toward +Z) with two actual window openings; no concealed solid wall behind panes.
  windows=[(.42,1.92),(2.62,4.12)]
  edges=[-1.8,.42,1.92,2.62,4.12,5.3]
  for a,b in zip(edges,edges[1:]):
   gap=any(abs(a-x)<1e-8 and abs(b-y)<1e-8 for x,y in windows)
   if gap:
-   box((-3.46,.43,(a+b)/2),(.12,.86,b-a),0);box((-3.46,2.7,(a+b)/2),(.12,.6,b-a),0)
-  else:box((-3.46,1.5,(a+b)/2),(.12,3,b-a),0)
+   box((3.46,.43,(a+b)/2),(.12,.86,b-a),0);box((3.46,2.7,(a+b)/2),(.12,.6,b-a),0)
+  else:box((3.46,1.5,(a+b)/2),(.12,3,b-a),0)
  for a,b in windows:
   z=(a+b)/2
-  box((-3.43,1.63,z),(.025,1.46,b-a-.12),3)
-  for h in [.9,1.72,2.4]:box((-3.39,h,z),(.1,.055,b-a),2)
-  for q in [a,b]:box((-3.39,1.65,q),(.1,1.55,.065),2)
-  box((-3.27,.89,z),(.35,.07,b-a+.14),2)
-  for j in range(12):box((-3.31,.46,a+.09+j*(b-a-.18)/11),(.16,.58,.055),4)
+  box((3.43,1.63,z),(.025,1.46,b-a-.12),3)
+  for h in [.9,1.72,2.4]:box((3.39,h,z),(.1,.055,b-a),2)
+  for q in [a,b]:box((3.39,1.65,q),(.1,1.55,.065),2)
+  box((3.27,.89,z),(.35,.07,b-a+.14),2)
+  for j in range(12):box((3.31,.46,a+.09+j*(b-a-.18)/11),(.16,.58,.055),4)
  # Whiteboard and AC, matching photo-03 layout. No unreadable private text reproduced.
- box((1.28,1.7,5.13),(1.22,1.4,.055),5)
- for x in [.65,1.91]:box((x,1.7,5.09),(.035,1.46,.035),4)
- for y in [.98,2.42]:box((1.28,y,5.09),(1.29,.035,.035),4)
- box((-3.26,2.65,2.25),(.31,.34,.83),2)
+ box((-1.28,1.7,5.13),(1.22,1.4,.055),5)
+ for x in [-.65,-1.91]:box((x,1.7,5.09),(.035,1.46,.035),4)
+ for y in [.98,2.42]:box((-1.28,y,5.09),(1.29,.035,.035),4)
+ box((3.26,2.65,2.25),(.31,.34,.83),2)
  # Sparse ceiling beams expose the room in cutaway, preserving camera visibility.
  for j in range(9):box((0,3.015,-1.8+j*.875),(6.8,.035,.025),6)
  for j in range(9):box((-3.4+j*.85,3.015,1.7),(.025,.035,7),6)
@@ -67,6 +67,11 @@ def architecture(path):
   if not b['p']:continue
   attrs={'POSITION':accessor(b['p'],'f','VEC3',34962),'NORMAL':accessor(b['n'],'f','VEC3',34962),'TEXCOORD_0':accessor(b['uv'],'f','VEC2',34962)};idx=accessor(b['i'],'I','SCALAR',34963)
   g['meshes'].append({'name':materials[m][0],'primitives':[{'attributes':attrs,'indices':idx,'material':m}]});g['nodes'].append({'name':materials[m][0],'mesh':len(g['meshes'])-1});g['scenes'][0]['nodes'].append(len(g['nodes'])-1)
+ texture=OUT/'textures/reference-derived-floor-v1.png'
+ assert texture.exists(),'Missing generated reference-derived floor asset'
+ payload=texture.read_bytes();data.extend(b'\0'*((-len(data))%4));view=len(g['bufferViews']);g['bufferViews'].append({'buffer':0,'byteOffset':len(data),'byteLength':len(payload)});data.extend(payload)
+ g['images']=[{'name':'Photo03-derived floor basecolor','bufferView':view,'mimeType':'image/png'}];g['textures']=[{'source':0}]
+ g['materials'][1]['pbrMetallicRoughness'].update(baseColorFactor=[1,1,1,1],baseColorTexture={'index':0})
  return write(path,g,data)
 def main():
  OUT.mkdir(parents=True,exist_ok=True);before=hashlib.sha256(SOURCE.read_bytes()).hexdigest();assert before==SHA
@@ -80,10 +85,11 @@ def main():
  digest=combine([(SOURCE,wrapper),(arch,{'name':'ROLE_photo-based-architecture'})],destination)
  original,raw=load(SOURCE);assembled,combined=load(destination)
  assert combined[:len(raw)]==raw,'Source binary payload changed'
- assert audit_images(destination)==audit_images(SOURCE),'Original texture payload altered'
+ originalImages=audit_images(SOURCE);assert audit_images(destination)[:len(originalImages)]==originalImages,'Original texture payload altered'
  assert hashlib.sha256(SOURCE.read_bytes()).hexdigest()==before
  tris=sum(assembled['accessors'][p['indices']]['count']//3 for m in assembled['meshes'] for p in m['primitives'])
- manifest={'status':'REVIEW_ONLY_UNRENDERED_NOT_PROMOTED','sourcePhoto':'assets/references/photo-03.jpg','sourceTripo':str(SOURCE.relative_to(ROOT)),'sourceSHA256':before,'sourceBinaryPrefixExact':True,'originalImagesExact':True,'masterSHA256':digest,'trianglesIncludingArchitecture':tris,'furnitureWrapper':wrapper,'roomDimensionsGameMetres':[6.8,3,7],'dimensionsScope':'Unmeasured expanded game space; not metric reconstruction from photograph','fightLane':{'x':[-2.7,2.7],'z':[-.55,.55]},'sourceFurnitureZMinGameMetres':3-.4897918701171875*scale,'architecture':'Manually authored from photo: two left windows/radiators, warm wall, board, ceiling grid. Furniture supplied by Tripo. Right/front intentionally open cutaway.','pending':['actual GLB import/raster/collision/layout review','measured static environment budget','Unity prefab/camera/shadow/profile acceptance']}
+ manifest={'status':'REVIEW_ONLY_UNRENDERED_NOT_PROMOTED','sourcePhoto':'assets/references/photo-03.jpg','sourceTripo':str(SOURCE.relative_to(ROOT)),'sourceSHA256':before,'sourceBinaryPrefixExact':True,'originalImagesExact':True,'masterSHA256':digest,'trianglesIncludingArchitecture':tris,'furnitureWrapper':wrapper,'roomDimensionsGameMetres':[6.8,3,7],'dimensionsScope':'Unmeasured expanded game space; not metric reconstruction from photograph','fightLane':{'x':[-2.7,2.7],'z':[-.55,.55]},'sourceFurnitureZMinGameMetres':3-.4897918701171875*scale,'referenceFacing':'Front camera looks along +glTF Z: photo-left windows at +X, board at -X',
+ 'architecture':'Manually authored from photo: two left windows/radiators, warm wall, board, ceiling grid. Furniture supplied by Tripo. Right/front intentionally open cutaway.','pending':['actual GLB import/raster/collision/layout review','measured static environment budget','Unity prefab/camera/shadow/profile acceptance']}
  assert manifest['sourceFurnitureZMinGameMetres']>.55
  (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2));print(json.dumps(manifest,indent=2))
 if __name__=='__main__':main()

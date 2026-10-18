@@ -1,0 +1,62 @@
+{
+  "status": "VISUAL_GEOMETRY_REVIEWED_FLOOR_TEXTURE_CHANGED_AFTER_CAPTURE",
+  "masterSHA256": "303ae675e305fa9fdddbac8429ffbc9f068a496f033a420632af912785b54bc5",
+  "sourceUnchanged": true,
+  "CPUthreads": 6,
+  "samples": 16,
+  "views": [
+    {
+      "view": "whole",
+      "location": [
+        -8,
+        5.5,
+        -8
+      ],
+      "target": [
+        0,
+        1.2,
+        1.9
+      ],
+      "lensMm": 32.0,
+      "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
+      "seconds": 24.150408029556274,
+      "file": "whole.png"
+    },
+    {
+      "view": "fight",
+      "location": [
+        0,
+        2.1,
+        -6.4
+      ],
+      "target": [
+        0,
+        1.1,
+        2.3
+      ],
+      "lensMm": 32.0,
+      "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
+      "seconds": 20.19303607940674,
+      "file": "fight.png"
+    },
+    {
+      "view": "furniture",
+      "location": [
+        -1.8,
+        1.75,
+        0.75
+      ],
+      "target": [
+        0,
+        0.9,
+        3
+      ],
+      "lensMm": 32.0,
+      "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
+      "seconds": 28.43697214126587,
+      "file": "furniture.png"
+    }
+  ],
+  "scope": "Geometry/material/layout review only; no gameplay/runtime/phone claim",
+  "review": "Root opened all three views. Reference-facing windows/board corrected; furniture recognizable. Plain floor was insufficient, a separate reference-derived wood texture has since been added. Updated textured renders pending. No runtime/phone acceptance."
+}
