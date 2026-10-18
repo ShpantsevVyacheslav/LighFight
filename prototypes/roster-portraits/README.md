@@ -19,3 +19,7 @@ Switching detail actors no longer inserts roster portraits while loading or on e
 ## Gesture arbitration — 2026-10-18
 
 One-finger or left-mouse directional swipe previews one strike. Two fingers provide horizontal yaw and pinch zoom; vertical movement never tilts the actor. Once a gesture contains two pointers it cannot become a strike when one lifts. Right-mouse drag or keyboard arrows rotate horizontally; wheel/+/- zoom. Native model-viewer camera controls are disabled to prevent competing gesture handlers. Pure input-state tests:5/5 passed. Touch-device validation remains separate from desktop/unit proof.
+
+## Native shoulder-motion pilot
+
+Sailor selects a versioned `sailor-trapezius-v1.glb` and prefers `Dance_TrapeziusSupport_v1`. Original sailor.glb is retained unchanged. The derived dance corrects clavicle/upper-arm rhythm, keeping original99999triangle geometry,67bones,UVs,weights,maps and9originalclips exact. Five phases were independently rendered front/back;8897subframes checked. This is a localized prototype improvement, not acceptance of the full2M fresh rig or complete cloth correction; residual sleeve creases remain. Evidence: art/drafts/newrig-sailor-v1/native67-trapezius-v1/README.md.

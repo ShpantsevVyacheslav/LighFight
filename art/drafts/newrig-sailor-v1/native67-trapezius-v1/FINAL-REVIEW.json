@@ -1,0 +1,136 @@
+{
+  "status": "PROTOTYPE_PILOT_REVIEW_READY_NOT_SHIPPING_ACCEPTANCE",
+  "derivedClip": "Dance_TrapeziusSupport_v1",
+  "candidateSHA256": "21d0e02f8e8fe36116c4c23188454b4f22ef10b759a78fb4f9d0bf0bb38c7da9",
+  "sourceSHA256": "3984974ec6475885ed14b99ccc6acfd04c175dd0b79d58fbcd549c44385ca29f",
+  "finalCandidate": "sailor-native67-trapezius-candidate.glb",
+  "preservedSource": "source/sailor-native67-original.glb",
+  "allOriginalClipsAndMeshPayloadExact": true,
+  "sourceFileUnmodified": true,
+  "bones": 67,
+  "triangles": 99999,
+  "extraBytes": 325436,
+  "continuousCurve": {
+    "capDegrees": 15,
+    "entryExitFadeSeconds": 0.5,
+    "samplingHz": 192,
+    "maxNeighborSupportAngleStepDegrees": 1.3690727001872787,
+    "entrySupportDegrees": [
+      0.0,
+      0.0
+    ],
+    "exitSupportDegrees": [
+      0.0,
+      0.0
+    ]
+  },
+  "numericalGate": {
+    "status": "PASS",
+    "actualSubframeSamples": 8897,
+    "exactAncestorClosureNodes": 14,
+    "independentSamplingHz": 384,
+    "rotationMaxErrorDeg": 0.007463861297818905,
+    "actualWorldMatrixAxisMaxErrorDeg": 0.007321798181127204,
+    "handMovementMedianM": 0.021105681673368945,
+    "handMovementP95M": 0.021105869554291494,
+    "handMovementMaxM": 0.021106656337885953,
+    "sourceRestHeightM": 0.9800415883497848,
+    "handMovementMaxPercentRestHeight": 2.153649048039461,
+    "bindRestSurfaceMaxErrorM": 1.2582351033027152e-06,
+    "entryReturnSurfaceMaxM": 1.0358876924136597e-07,
+    "headVertices": 7148,
+    "fullFootVertices": 11286,
+    "poseSurfaceRows": [
+      {
+        "phase": 0,
+        "maxSurfaceMovementM": 1.0358876924136597e-07,
+        "headSurfaceMaxM": 1.5981071096445439e-10,
+        "fullFootSurfaceMaxM": 0.0,
+        "originalFullMeshFloorY": 0.006701090376887744,
+        "correctedFullMeshFloorY": 0.006701090376887744
+      },
+      {
+        "phase": 0.25,
+        "maxSurfaceMovementM": 0.0244056143142637,
+        "headSurfaceMaxM": 0.0001897005597163298,
+        "fullFootSurfaceMaxM": 0.0,
+        "originalFullMeshFloorY": -0.002651254268694954,
+        "correctedFullMeshFloorY": -0.002651254268694954
+      },
+      {
+        "phase": 0.5,
+        "maxSurfaceMovementM": 0.024398541950697787,
+        "headSurfaceMaxM": 0.00016171558582609038,
+        "fullFootSurfaceMaxM": 0.0,
+        "originalFullMeshFloorY": -0.0036200459316521206,
+        "correctedFullMeshFloorY": -0.0036200459316521206
+      },
+      {
+        "phase": 0.75,
+        "maxSurfaceMovementM": 0.024412955575564072,
+        "headSurfaceMaxM": 0.00018138965895060625,
+        "fullFootSurfaceMaxM": 0.0,
+        "originalFullMeshFloorY": 0.007208802936852609,
+        "correctedFullMeshFloorY": 0.007208802936852609
+      },
+      {
+        "phase": 1,
+        "maxSurfaceMovementM": 1.372713448199027e-08,
+        "headSurfaceMaxM": 0.0,
+        "fullFootSurfaceMaxM": 0.0,
+        "originalFullMeshFloorY": 0.007000015410013708,
+        "correctedFullMeshFloorY": 0.007000015410013708
+      }
+    ],
+    "originalClipPayloadsBitExact": true,
+    "originalSourceFileStillExact": true,
+    "limits": "GLB numerical proof, not Unity/iPhone/visual acceptance. Derivedanimationintentionallymovesarmsviajointgirdle."
+  },
+  "actualRenders": {
+    "count": 20,
+    "actualRenderedSHA256": "676e23630e0ae9e810c37d0bb9fd53d330e57da4d96900140cf49880432efbd8",
+    "finalCandidateSameRenderedPhaseMatrices": {
+      "status": "PASS",
+      "actualRenderedCandidateSHA256": "676e23630e0ae9e810c37d0bb9fd53d330e57da4d96900140cf49880432efbd8",
+      "finalCandidateSHA256": "21d0e02f8e8fe36116c4c23188454b4f22ef10b759a78fb4f9d0bf0bb38c7da9",
+      "allFiveRenderedPosesWorldMatrixExactWithin": 1e-12,
+      "rows": [
+        {
+          "phase": 0,
+          "allNodeWorldMatrixMaxAbsDelta": 0.0
+        },
+        {
+          "phase": 0.25,
+          "allNodeWorldMatrixMaxAbsDelta": 0.0
+        },
+        {
+          "phase": 0.5,
+          "allNodeWorldMatrixMaxAbsDelta": 0.0
+        },
+        {
+          "phase": 0.75,
+          "allNodeWorldMatrixMaxAbsDelta": 0.0
+        },
+        {
+          "phase": 1,
+          "allNodeWorldMatrixMaxAbsDelta": 0.0
+        }
+      ],
+      "basis": "Both exported GLB rotation tracks independently parsed and interpolated; complete hierarchy matrices compared. All mesh/skin/material/BIN originals exact in both. Existing PNGs are actual R2 renders; no R3 GPU render claimed."
+    },
+    "pixelEntryReturnComparison": "render-entry-return-pixels.json"
+  },
+  "visualVerdict": "Localized medial trapezius improvement on front/back three-quarter at dance25/50/75. Outer sleeve ledge/stripe waviness remain. Root approved prototype pilot conditional on final phase/end and numerical checks. No claim all clothing deformation fixed.",
+  "limits": [
+    "Blender actual GLB import/render and independent GLB numeric proof; no new browser/Unity/iPhone player proof.",
+    "No2M fresh-rig acceptance or mass rerig.",
+    "Only4derived dance rotation tracks changed; original dance and allother clips retained.",
+    "Eleven unique dances are not available locally: see ../DANCE-INVENTORY.md; do not count renamed duplicate dance_01 takes as unique."
+  ],
+  "rootPrototypeIntegration": [
+    "Retain source baseline and candidate as versioned assets; do not overwrite downloaded FBX.",
+    "Use exactderived clip Dance_TrapeziusSupport_v1 for Sailor dance only; keep PreviewGuard/otherclips unchanged.",
+    "Update model manifest hash if selecting candidate; invalidate browser model cache.",
+    "Do not promote to Unity/main or other fighters based on this pilot."
+  ]
+}

@@ -34,11 +34,12 @@ async function loadActor(actor){
  if(loadedActor===actor.id){if(readyActor===actor.id)stance();return}
  const ticket=++generation;loadedActor=actor.id;readyActor=null;previewMotion=null;viewer.pause?.();viewer.style.opacity=0;viewer.setAttribute('aria-busy','true');$('#modelStatus').textContent='Загрузка бойца…';$('#dance').disabled=true;
  try{
-  const res=await fetch('models/'+actor.id+'.manifest.json');if(!res.ok)throw new Error('model manifest');const info=await res.json();if(ticket!==generation)return;viewer.src='models/'+actor.id+'.glb?v='+encodeURIComponent(info.glbSHA256||'native');
+  const res=await fetch('models/'+actor.id+'.manifest.json');if(!res.ok)throw new Error('model manifest');const info=await res.json();if(ticket!==generation)return;viewer.src='models/'+(info.glbFile||actor.id+'.glb')+'?v='+encodeURIComponent(info.glbSHA256||'native');
  }catch{if(ticket!==generation)return;loadedActor=null;viewer.setAttribute('aria-busy','false');$('#modelStatus').textContent='3D-просмотр пока недоступен';}
 }
 function actionName(kind){
  const names=viewer.availableAnimations||[];
+ if(kind==='dance'&&names.includes('Dance_TrapeziusSupport_v1'))return 'Dance_TrapeziusSupport_v1';
  const patterns={guard:/PreviewGuard/i,dance:/dance/i,punch:/box_02|box_01|punch/i,kick:/front_kick|kick/i,greeting:/greet/i};return names.find(n=>patterns[kind].test(n));
 }
 function stance(){
