@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Failed(Child)" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 12:47:10Z" end-time="2026-10-18 12:47:15Z" duration="4.7178019">
+  <test-suite type="TestSuite" id="1046" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="33" result="Failed" site="Child" start-time="2026-10-18 12:47:10Z" end-time="2026-10-18 12:47:15Z" duration="4.717802" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1042" name="SelectedContent.PlayMode.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.dll" runstate="Runnable" testcasecount="33" result="Failed" site="Child" start-time="2026-10-18 12:47:10Z" end-time="2026-10-18 12:47:15Z" duration="4.689144" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="63313" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1043" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="25" result="Failed" site="Child" start-time="2026-10-18 12:47:10Z" end-time="2026-10-18 12:47:15Z" duration="4.685780" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1044" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="25" result="Failed" site="Child" start-time="2026-10-18 12:47:10Z" end-time="2026-10-18 12:47:15Z" duration="4.678973" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1036" name="SelectionDancePlaybackTests" fullname="LighFight.Tests.SelectionDancePlaybackTests" classname="LighFight.Tests.SelectionDancePlaybackTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-18 12:47:10Z" end-time="2026-10-18 12:47:15Z" duration="4.664434" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1037" name="ActualNativeDanceReachesItsFullEndBeforeBlendedIdleReturn" fullname="LighFight.Tests.SelectionDancePlaybackTests.ActualNativeDanceReachesItsFullEndBeforeBlendedIdleReturn" methodname="ActualNativeDanceReachesItsFullEndBeforeBlendedIdleReturn" classname="LighFight.Tests.SelectionDancePlaybackTests" runstate="Runnable" seed="1631396512" result="Failed" start-time="2026-10-18 12:47:10Z" end-time="2026-10-18 12:47:13Z" duration="3.235539" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Manual state must be recorded for return blending
+  Expected string length 5 but was 4. Strings differ at index 0.
+  Expected: "Dance"
+  But was:  "Idle"
+  -----------^
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.SelectionDancePlaybackTests+<ActualNativeDanceReachesItsFullEndBeforeBlendedIdleReturn>d__4.MoveNext () [0x0024f] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/SelectedContentPlayMode/SelectionDancePlaybackTests.cs:26
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in ./Library/PackageCache/com.unity.test-framework@bd7f943e9647/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1038" name="ToggleOffReturnsSmoothlyAndDoesNotRecaptureAllBonesEachDanceFrame" fullname="LighFight.Tests.SelectionDancePlaybackTests.ToggleOffReturnsSmoothlyAndDoesNotRecaptureAllBonesEachDanceFrame" methodname="ToggleOffReturnsSmoothlyAndDoesNotRecaptureAllBonesEachDanceFrame" classname="LighFight.Tests.SelectionDancePlaybackTests" runstate="Runnable" seed="1969183278" result="Failed" start-time="2026-10-18 12:47:13Z" end-time="2026-10-18 12:47:15Z" duration="1.395009" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  Expected: 0.2800000011920929d +/- 9.9999997473787516E-05d
+  But was:  0.0d
+]]></message>
+                <stack-trace><![CDATA[at LighFight.Tests.SelectionDancePlaybackTests+<ToggleOffReturnsSmoothlyAndDoesNotRecaptureAllBonesEachDanceFrame>d__5.MoveNext () [0x001ac] in /Users/macbook1/Documents/ChatGPT/LighFight/unity/Assets/LighFight/Tests/SelectedContentPlayMode/SelectionDancePlaybackTests.cs:42
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in ./Library/PackageCache/com.unity.test-framework@bd7f943e9647/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+              </failure>
+              <output><![CDATA[Saving results to: /tmp/lighfight-selection-dance-playback-mutation.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

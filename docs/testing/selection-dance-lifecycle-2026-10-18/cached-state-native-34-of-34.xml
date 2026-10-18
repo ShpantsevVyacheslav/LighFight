@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="34" result="Passed" total="34" passed="34" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 21:25:50Z" end-time="2026-10-18 21:25:57Z" duration="7.2817273">
+  <test-suite type="TestSuite" id="1000" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="310" result="Passed" start-time="2026-10-18 21:25:50Z" end-time="2026-10-18 21:25:57Z" duration="7.281727" total="34" passed="34" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1376" name="LighFight.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/LighFight.Tests.dll" runstate="Runnable" testcasecount="285" result="Passed" start-time="2026-10-18 21:25:50Z" end-time="2026-10-18 21:25:57Z" duration="7.209622" total="34" passed="34" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="14907" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1377" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="111" result="Passed" start-time="2026-10-18 21:25:50Z" end-time="2026-10-18 21:25:57Z" duration="7.190535" total="34" passed="34" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1378" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="111" result="Passed" start-time="2026-10-18 21:25:50Z" end-time="2026-10-18 21:25:57Z" duration="7.189055" total="34" passed="34" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1282" name="NativeContactSamplingTests" fullname="LighFight.Tests.NativeContactSamplingTests" classname="LighFight.Tests.NativeContactSamplingTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 21:25:50Z" end-time="2026-10-18 21:25:52Z" duration="1.630637" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1284" name="ArtistKickContactsMatchAlwaysSampledReference" fullname="LighFight.Tests.NativeContactSamplingTests.ArtistKickContactsMatchAlwaysSampledReference" methodname="ArtistKickContactsMatchAlwaysSampledReference" classname="LighFight.Tests.NativeContactSamplingTests" runstate="Runnable" seed="1481720419" result="Passed" start-time="2026-10-18 21:25:42Z" end-time="2026-10-18 21:25:48Z" duration="5.780076" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+              </properties>
+            </test-case>
+            <test-case id="1283" name="CloseNativeStrikeHasGeometricStopAndBoundedRecovery" fullname="LighFight.Tests.NativeContactSamplingTests.CloseNativeStrikeHasGeometricStopAndBoundedRecovery" methodname="CloseNativeStrikeHasGeometricStopAndBoundedRecovery" classname="LighFight.Tests.NativeContactSamplingTests" runstate="Runnable" seed="1649329931" result="Passed" start-time="2026-10-18 21:25:48Z" end-time="2026-10-18 21:25:52Z" duration="3.407700" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1291" name="NativeMotionLookupTests" fullname="LighFight.Tests.NativeMotionLookupTests" classname="LighFight.Tests.NativeMotionLookupTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.015625" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1294" name="ContactSideUsesFirstMatchAndReconfigurationImmediately" fullname="LighFight.Tests.NativeMotionLookupTests.ContactSideUsesFirstMatchAndReconfigurationImmediately" methodname="ContactSideUsesFirstMatchAndReconfigurationImmediately" classname="LighFight.Tests.NativeMotionLookupTests" runstate="Runnable" seed="165817443" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.009410" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1293" name="DuplicateClipsRetainFirstMatchAndNullClipDoesNotCreateMotion" fullname="LighFight.Tests.NativeMotionLookupTests.DuplicateClipsRetainFirstMatchAndNullClipDoesNotCreateMotion" methodname="DuplicateClipsRetainFirstMatchAndNullClipDoesNotCreateMotion" classname="LighFight.Tests.NativeMotionLookupTests" runstate="Runnable" seed="1593088936" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.001892" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1292" name="ReplacingAndUpdatingClipTableDoesNotRetainStaleLookup" fullname="LighFight.Tests.NativeMotionLookupTests.ReplacingAndUpdatingClipTableDoesNotRetainStaleLookup" methodname="ReplacingAndUpdatingClipTableDoesNotRetainStaleLookup" classname="LighFight.Tests.NativeMotionLookupTests" runstate="Runnable" seed="1490403280" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000841" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1295" name="NativeRigBonesTests" fullname="LighFight.Tests.NativeRigBonesTests" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.027354" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1312" name="ClosedFistContactUsesThreeNativeKnuckles" fullname="LighFight.Tests.NativeRigBonesTests.ClosedFistContactUsesThreeNativeKnuckles" methodname="ClosedFistContactUsesThreeNativeKnuckles" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="265258425" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.002420" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1313" name="LegacyMixamoJointStillResolves" fullname="LighFight.Tests.NativeRigBonesTests.LegacyMixamoJointStillResolves" methodname="LegacyMixamoJointStillResolves" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1026712053" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.002514" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1314" name="MissingAnimatedJointCannotBecomeSyntheticContact" fullname="LighFight.Tests.NativeRigBonesTests.MissingAnimatedJointCannotBecomeSyntheticContact" methodname="MissingAnimatedJointCannotBecomeSyntheticContact" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="924903015" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000424" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1315" name="RigifySubdivisionCannotReplaceRealUpperArm" fullname="LighFight.Tests.NativeRigBonesTests.RigifySubdivisionCannotReplaceRealUpperArm" methodname="RigifySubdivisionCannotReplaceRealUpperArm" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="716425830" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.001239" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1311" name="TripoContactUsesActualJoint" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.016995" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1296" name="TripoContactUsesActualJoint(&quot;Chest&quot;,&quot;Spine1&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Chest&quot;,&quot;Spine1&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1487571275" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000870" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1297" name="TripoContactUsesActualJoint(&quot;UpperChest&quot;,&quot;Spine2&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;UpperChest&quot;,&quot;Spine2&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="973546124" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000307" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1298" name="TripoContactUsesActualJoint(&quot;Left_Hand&quot;,&quot;LeftHand&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Left_Hand&quot;,&quot;LeftHand&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1454423742" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000301" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1299" name="TripoContactUsesActualJoint(&quot;Right_LowerArm&quot;,&quot;RightForeArm&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Right_LowerArm&quot;,&quot;RightForeArm&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1465791118" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000290" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1300" name="TripoContactUsesActualJoint(&quot;Left_LowerLeg&quot;,&quot;LeftLeg&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Left_LowerLeg&quot;,&quot;LeftLeg&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="2126056060" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000240" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1301" name="TripoContactUsesActualJoint(&quot;Right_Toes&quot;,&quot;RightToeBase&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Right_Toes&quot;,&quot;RightToeBase&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="19380623" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000506" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1302" name="TripoContactUsesActualJoint(&quot;Left_MiddleProximal&quot;,&quot;LeftHandMiddle1&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;Left_MiddleProximal&quot;,&quot;LeftHandMiddle1&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="394873596" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000409" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1303" name="TripoContactUsesActualJoint(&quot;DEF-spine&quot;,&quot;Hips&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-spine&quot;,&quot;Hips&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="111752437" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000251" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1304" name="TripoContactUsesActualJoint(&quot;DEF-spine.006&quot;,&quot;Head&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-spine.006&quot;,&quot;Head&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="398103066" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000234" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1305" name="TripoContactUsesActualJoint(&quot;DEF-upper_arm.L&quot;,&quot;LeftArm&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-upper_arm.L&quot;,&quot;LeftArm&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="541135244" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000231" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1306" name="TripoContactUsesActualJoint(&quot;DEF-forearm.R&quot;,&quot;RightForeArm&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-forearm.R&quot;,&quot;RightForeArm&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1093875266" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000246" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1307" name="TripoContactUsesActualJoint(&quot;DEF-hand.L&quot;,&quot;LeftHand&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-hand.L&quot;,&quot;LeftHand&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1255239431" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000234" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1308" name="TripoContactUsesActualJoint(&quot;DEF-shin.R&quot;,&quot;RightLeg&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-shin.R&quot;,&quot;RightLeg&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="655366552" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000238" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1309" name="TripoContactUsesActualJoint(&quot;DEF-toe.L&quot;,&quot;LeftToeBase&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-toe.L&quot;,&quot;LeftToeBase&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="252488501" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000236" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1310" name="TripoContactUsesActualJoint(&quot;DEF-f_index.01.L&quot;,&quot;LeftHandIndex1&quot;)" fullname="LighFight.Tests.NativeRigBonesTests.TripoContactUsesActualJoint(&quot;DEF-f_index.01.L&quot;,&quot;LeftHandIndex1&quot;)" methodname="TripoContactUsesActualJoint" classname="LighFight.Tests.NativeRigBonesTests" runstate="Runnable" seed="1129455431" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000250" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1363" name="VictoryPresentationTests" fullname="LighFight.Tests.VictoryPresentationTests" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:57Z" duration="5.493225" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1370" name="CompletedPreviewHoldsItsLastFrameWhileDanceLoops" fullname="LighFight.Tests.VictoryPresentationTests.CompletedPreviewHoldsItsLastFrameWhileDanceLoops" methodname="CompletedPreviewHoldsItsLastFrameWhileDanceLoops" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1668453353" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.000876" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1369" name="LoopingResultAndEarlyOneShotNeverSuspendAnimator" fullname="LighFight.Tests.VictoryPresentationTests.LoopingResultAndEarlyOneShotNeverSuspendAnimator" methodname="LoopingResultAndEarlyOneShotNeverSuspendAnimator" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="305841354" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.002742" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1368" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.035386" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1364" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,0,&quot;Fall&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,0,&quot;Fall&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="2090189827" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.022509" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1365" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,0,&quot;Fall&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,0,&quot;Fall&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1556144230" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.003160" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1366" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,20,&quot;Defeat&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(0,20,&quot;Defeat&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="284462254" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.002852" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1367" name="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,20,&quot;Defeat&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat(1,20,&quot;Defeat&quot;)" methodname="ResultPresentationKeepsKnockoutsDownAndAllowsStandingDecisionDefeat" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="401874391" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:52Z" duration="0.003252" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1375" name="WinnerUsesAnAvailableAuthoredAnimation" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:57Z" duration="5.450581" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1371" name="WinnerUsesAnAvailableAuthoredAnimation(0,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(0,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="440039321" result="Passed" start-time="2026-10-18 21:25:52Z" end-time="2026-10-18 21:25:57Z" duration="5.442687" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1372" name="WinnerUsesAnAvailableAuthoredAnimation(3,&quot;Greeting&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(3,&quot;Greeting&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1414846997" result="Passed" start-time="2026-10-18 21:25:57Z" end-time="2026-10-18 21:25:57Z" duration="0.000149" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1373" name="WinnerUsesAnAvailableAuthoredAnimation(4,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(4,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1293762356" result="Passed" start-time="2026-10-18 21:25:57Z" end-time="2026-10-18 21:25:57Z" duration="0.000112" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1374" name="WinnerUsesAnAvailableAuthoredAnimation(5,&quot;Victory&quot;)" fullname="LighFight.Tests.VictoryPresentationTests.WinnerUsesAnAvailableAuthoredAnimation(5,&quot;Victory&quot;)" methodname="WinnerUsesAnAvailableAuthoredAnimation" classname="LighFight.Tests.VictoryPresentationTests" runstate="Runnable" seed="1559443996" result="Passed" start-time="2026-10-18 21:25:57Z" end-time="2026-10-18 21:25:57Z" duration="0.000045" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Saving results to: /tmp/lighfight-cached-state-regression.xml
+]]></output>
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

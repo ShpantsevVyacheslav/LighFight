@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Passed" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 21:24:32Z" end-time="2026-10-18 21:25:04Z" duration="32.6528136">
+  <test-suite type="TestSuite" id="1068" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="48" result="Passed" start-time="2026-10-18 21:24:32Z" end-time="2026-10-18 21:25:04Z" duration="32.652814" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1064" name="SelectedContent.PlayMode.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.dll" runstate="Runnable" testcasecount="48" result="Passed" start-time="2026-10-18 21:24:32Z" end-time="2026-10-18 21:25:04Z" duration="32.645180" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="14787" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1065" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="40" result="Passed" start-time="2026-10-18 21:24:32Z" end-time="2026-10-18 21:25:04Z" duration="32.643453" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1066" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="40" result="Passed" start-time="2026-10-18 21:24:32Z" end-time="2026-10-18 21:25:04Z" duration="32.642658" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1011" name="DenseAdaptiveReviewPlaybackTests" fullname="LighFight.Tests.DenseAdaptiveReviewPlaybackTests" classname="LighFight.Tests.DenseAdaptiveReviewPlaybackTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 21:24:32Z" end-time="2026-10-18 21:25:02Z" duration="30.830705" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1013" name="CancelWarmupDisableAndDisposeRetainOnlyOwnedResources" fullname="LighFight.Tests.DenseAdaptiveReviewPlaybackTests.CancelWarmupDisableAndDisposeRetainOnlyOwnedResources" methodname="CancelWarmupDisableAndDisposeRetainOnlyOwnedResources" classname="LighFight.Tests.DenseAdaptiveReviewPlaybackTests" runstate="Runnable" seed="1369619651" result="Passed" start-time="2026-10-18 21:24:32Z" end-time="2026-10-18 21:24:38Z" duration="6.232432" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1012" name="FullAuthoredOwnerEntryEndpointAndSmoothNeutralReturn" fullname="LighFight.Tests.DenseAdaptiveReviewPlaybackTests.FullAuthoredOwnerEntryEndpointAndSmoothNeutralReturn" methodname="FullAuthoredOwnerEntryEndpointAndSmoothNeutralReturn" classname="LighFight.Tests.DenseAdaptiveReviewPlaybackTests" runstate="Runnable" seed="394530931" result="Passed" start-time="2026-10-18 21:24:38Z" end-time="2026-10-18 21:25:02Z" duration="24.588542" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1051" name="SelectionDancePlaybackTests" fullname="LighFight.Tests.SelectionDancePlaybackTests" classname="LighFight.Tests.SelectionDancePlaybackTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 21:25:02Z" end-time="2026-10-18 21:25:04Z" duration="1.807061" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1052" name="ActualNativeDanceReachesItsFullEndBeforeBlendedIdleReturn" fullname="LighFight.Tests.SelectionDancePlaybackTests.ActualNativeDanceReachesItsFullEndBeforeBlendedIdleReturn" methodname="ActualNativeDanceReachesItsFullEndBeforeBlendedIdleReturn" classname="LighFight.Tests.SelectionDancePlaybackTests" runstate="Runnable" seed="1583089420" result="Passed" start-time="2026-10-18 21:25:02Z" end-time="2026-10-18 21:25:04Z" duration="1.246468" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1053" name="ToggleOffReturnsSmoothlyAndDoesNotRecaptureAllBonesEachDanceFrame" fullname="LighFight.Tests.SelectionDancePlaybackTests.ToggleOffReturnsSmoothlyAndDoesNotRecaptureAllBonesEachDanceFrame" methodname="ToggleOffReturnsSmoothlyAndDoesNotRecaptureAllBonesEachDanceFrame" classname="LighFight.Tests.SelectionDancePlaybackTests" runstate="Runnable" seed="2082248383" result="Passed" start-time="2026-10-18 21:25:04Z" end-time="2026-10-18 21:25:04Z" duration="0.559743" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /tmp/lighfight-selection-cached-hash-tests.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

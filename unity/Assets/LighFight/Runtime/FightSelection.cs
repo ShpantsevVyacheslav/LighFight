@@ -49,6 +49,23 @@ namespace LighFight.Runtime
    size*=Mathf.Min(1,2048/Mathf.Max(size.x,size.y));
    return new Vector2Int(Mathf.Max(1,Mathf.RoundToInt(size.x)),Mathf.Max(1,Mathf.RoundToInt(size.y)));
   }
+  // A completed one-shot is sampled on its final frame; Idle starts on the next update.
+  private void UpdateSelectionPose(float delta){
+   previewClock+=Mathf.Max(0,delta);previewFighter.X=match.A.X;previewFighter.Guard=false;player.FullPreviewMotion=true;
+   bool dancing=previewMove==-2&&player.HasNativeMotion("Dance");
+   if(dancing){
+    previewFighter.Attack=null;previewFrame=0;
+    player.transform.position=new Vector3(previewFighter.X,0,previewFighter.Z);
+    player.PreviewSelectionMotion("Dance",previewClock,delta,previewFighter);
+    if(previewClock>=player.PreviewDuration("Dance"))previewMove=-1;
+    return;
+   }
+   if(previewMove==-2)previewMove=-1;
+   if(previewMove>=0){if(!previewFighter.Attack.HasValue)previewFighter.Start(previewMove);float clipSeconds=player.PreviewDuration(previewFighter.Attack.Value.Id);previewFrame+=delta*(clipSeconds>0?previewFighter.Attack.Value.Duration/clipSeconds:60);previewFighter.Frame=Mathf.Min((int)previewFrame,previewFighter.Attack.Value.Duration);if(previewFrame>previewFighter.Attack.Value.Duration+1){previewFrame=0;previewFighter.Attack=null;previewMove=-1;}}
+   else {previewFighter.Attack=null;previewFrame=0;}
+   player.Pose(previewFighter,1,delta);
+   if(previewMove==-1)player.transform.position+=Vector3.up*Mathf.Sin(previewClock*2)*.004f;
+  }
   private Texture2D selectionBackdrop,selectionHalo;
   private Texture2D[] arenaImages,portraits;
   private void ReleaseSelectionRender(){if(selectionLighting)selectionLighting.SetPreviewEnabled(false);if(selectionDisplayCamera!=null)selectionDisplayCamera.enabled=false;if(fightCamera!=null){fightCamera.targetTexture=null;fightCamera.clearFlags=CameraClearFlags.Skybox;}if(selectionRender!=null){selectionRender.Release();Destroy(selectionRender);selectionRender=null;}}
@@ -86,12 +103,8 @@ namespace LighFight.Runtime
    if(selectionLighting)selectionLighting.SetPreviewEnabled(true);
    var center=new Vector3(match.A.X,1,0);
    fightCamera.transform.position=center+new Vector3(0,.18f,-previewDistance);fightCamera.transform.LookAt(center);
-   previewClock+=Time.deltaTime;
-   previewFighter.X=match.A.X;previewFighter.Guard=false;
-   if(previewMove>=0){if(!previewFighter.Attack.HasValue)previewFighter.Start(previewMove);float clipSeconds=player.PreviewDuration(previewFighter.Attack.Value.Id);previewFrame+=Time.deltaTime*(clipSeconds>0?previewFighter.Attack.Value.Duration/clipSeconds:60);previewFighter.Frame=Mathf.Min((int)previewFrame,previewFighter.Attack.Value.Duration);if(previewFrame>previewFighter.Attack.Value.Duration+1){previewFrame=0;previewFighter.Attack=null;previewMove=-1;}}
-   else {previewFighter.Attack=null;previewFrame=0;}
-   player.FullPreviewMotion=true;player.Pose(previewFighter,1,Time.deltaTime);if(previewMove==-2)player.PreviewNativeMotion("Dance",previewClock);player.transform.rotation=Quaternion.Euler(0,(player.UsesNativeMotion?180:90)+previewYaw,0);
-   if(previewMove==-1)player.transform.position+=Vector3.up*Mathf.Sin(previewClock*2)*.004f;
+   UpdateSelectionPose(Time.deltaTime);
+   player.transform.rotation=Quaternion.Euler(0,(player.UsesNativeMotion?180:90)+previewYaw,0);
    var renderers=player.GetComponentsInChildren<Renderer>();
    if(renderers.Length>0){var bounds=renderers[0].bounds;foreach(var renderer in renderers)bounds.Encapsulate(renderer.bounds);
     float vertical=Mathf.Tan(fightCamera.fieldOfView*Mathf.Deg2Rad*.5f);

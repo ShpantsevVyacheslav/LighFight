@@ -32,6 +32,8 @@ namespace LighFight.Runtime
         [SerializeField] private bool nativeMotion;
         [System.Serializable] public struct NativeClip { public string state; public AnimationClip clip; }
         [SerializeField] private NativeClip[] nativeClips = new NativeClip[0];
+        private readonly System.Collections.Generic.Dictionary<string,int> nativeStateHashes=new System.Collections.Generic.Dictionary<string,int>(System.StringComparer.Ordinal);
+        private int NativeStateHash(string motion){motion=motion??string.Empty;if(nativeStateHashes.TryGetValue(motion,out int hash))return hash;hash=Animator.StringToHash("Base Layer."+motion);nativeStateHashes.Add(motion,hash);return hash;}
         // Linear lookups avoid capturing delegates in the per-frame animation path.
         private NativeClip FindNativeClip(string state){for(int i=0;i<nativeClips.Length;i++)if(nativeClips[i].state==state)return nativeClips[i];return default;}
         private ContactPose FindContactPose(string move){for(int i=0;i<contactPoses.Length;i++)if(contactPoses[i].moveId==move)return contactPoses[i];return default;}
@@ -55,7 +57,30 @@ namespace LighFight.Runtime
         }
         public bool UsesNativeMotion => nativeMotion;
         public bool HasNativeMotion(string state){if(!nativeMotion)return false;for(int i=0;i<nativeClips.Length;i++)if(nativeClips[i].state==state&&nativeClips[i].clip)return true;return false;}
-        public bool PreviewNativeMotion(string state,float seconds){ResumeResultPose();if(!HasNativeMotion(state)||!animator)return false;if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);var clip=FindNativeClip(state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        public bool PreviewNativeMotion(string state,float seconds){ResumeResultPose();if(!HasNativeMotion(state)||!animator)return false;if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);var clip=FindNativeClip(state).clip;animator.Play(NativeStateHash(state),0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        // Selection only: record manual animation as the current pose authority, so entry and
+        // the subsequent Pose(Idle) share the normal bone blend. Other preview callers stay immediate.
+        public bool PreviewSelectionMotion(string state,float seconds,float delta,Fighter selectionFighter=null){
+            ResumeResultPose();if(!HasNativeMotion(state)||!animator)return false;
+            if(selectionFighter!=null){
+                if(!hasPosition)Pose(selectionFighter,1,0);
+                // Manual preview placement is not gameplay locomotion. Keep its history current
+                // without evaluating Idle over the dance, including on the return frame.
+                previousX=selectionFighter.X;previousZ=selectionFighter.Z;motionHold=0;backing=false;
+            }
+            BeginPoseBlend(state,.28f);blendElapsed+=Mathf.Max(0,delta);
+            if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);
+            var clip=FindNativeClip(state).clip;
+            animator.Play(NativeStateHash(state),0,NativePreviewPhase(seconds,clip.length,false));
+            animator.Update(0);AnchorNativeRoot();return true;
+        }
+        void BeginPoseBlend(string motion,float duration){
+            if(motion==previousMotion)return;
+            blendFromRecovery=RecoveryBodySupportRequired;
+            if(blendBones==null){blendBones=animator.GetComponentsInChildren<Transform>();blendRotations=new Quaternion[blendBones.Length];blendPositions=new Vector3[blendBones.Length];}
+            for(int i=0;i<blendBones.Length;i++){blendRotations[i]=blendBones[i].localRotation;blendPositions[i]=blendBones[i].localPosition;}
+            blendElapsed=0;blendDuration=previousMotion==null?0:duration;previousMotion=motion;
+        }
         public static float NativePreviewPhase(float seconds,float duration,bool loop)=>loop?NativeLoopPhase(seconds,duration):Mathf.Clamp(seconds/Mathf.Max(.001f,duration),0,.999999f);
         public void UseNativeMotion(NativeClip[] clips = null) { nativeMotion=true; if(clips!=null)nativeClips=clips; }
         public static float NativeLoopPhase(float seconds,float duration) => Mathf.Repeat(seconds/Mathf.Max(.001f,duration),1);
@@ -173,15 +198,9 @@ namespace LighFight.Runtime
                 bool reviewLowAttack=reviewDuckLayer>=0&&fighter.Crouch&&(attackId=="jab"||attackId=="cross"||attackId=="body"||attackId=="uppercut");
                 string attackMotion=reviewLowAttack?(attackId=="jab"?"CrouchJab":attackId=="cross"?"CrouchCross":attackId=="body"?"CrouchBody":"CrouchUppercut"):composedPosture&&fighter.Crouch&&attackId=="uppercut"?"CrouchUppercut":attackId;
                 string motion=fighter.Health<=0?"Fall":fighter.DownTicks>Match.GetUpTicks?"Fall":fighter.DownTicks>0?"GetUp":fighter.Stun>0?(fighter.LastBlocked?(composedPosture&&fighter.Crouch?"Crouch":"Guard"):"Hit"):fighter.Attack.HasValue?attackMotion:fighter.Guard&&!composedPosture?"Guard":fighter.Crouch?"Crouch":moving&&backing&&composedPosture?"WalkBack":fighter.Guard?"Guard":moving?(backing?"WalkBack":"Walk"):"Idle";
-                if(motion!=previousMotion)
-                {
-                    blendFromRecovery=RecoveryBodySupportRequired;
-                    if(blendBones==null){blendBones=animator.GetComponentsInChildren<Transform>();blendRotations=new Quaternion[blendBones.Length];blendPositions=new Vector3[blendBones.Length];}
-                    for(int i=0;i<blendBones.Length;i++){blendRotations[i]=blendBones[i].localRotation;blendPositions[i]=blendBones[i].localPosition;}
-                    blendElapsed=0;blendDuration=previousMotion==null?0:motion=="Hit"||motion=="Fall"?.04f:fighter.Attack.HasValue?.06f:FullPreviewMotion?.28f:.10f;previousMotion=motion;
-                }
+                BeginPoseBlend(motion,motion=="Hit"||motion=="Fall"?.04f:fighter.Attack.HasValue?.06f:FullPreviewMotion?.28f:.10f);
                 blendElapsed+=delta;
-                int state=Animator.StringToHash("Base Layer."+motion);
+                int state=NativeStateHash(motion);
                 if(animator.HasState(0,state))
                 {
                     float phase=fighter.Attack.HasValue?ContactAttackFrame(fighter)/fighter.Attack.Value.Duration:fighter.DownTicks>Match.GetUpTicks?1-(fighter.DownTicks-Match.GetUpTicks)/(float)(Match.KnockdownTicks-Match.GetUpTicks):fighter.DownTicks>0?1-fighter.DownTicks/(float)Match.GetUpTicks:Mathf.Repeat(stride*.1f,1);
