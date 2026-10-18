@@ -1,0 +1,300 @@
+{
+  "role": "retro",
+  "blenderVersion": "4.2.22 LTS",
+  "sourceFBX": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbx",
+  "sourceSHA256": "215a1f367cb3ce5db53fddab1a4f0dea6b3e8165a5fcabf944a470cb1079eec8",
+  "glb": "prototypes/roster-portraits/models/retro.glb",
+  "glbSHA256": "0c315c5b78abda61d17e0e6d336ca71f02b0db9f623063f3895f609eb119bbe4",
+  "bytes": 14861276,
+  "sourceTriangles": 100000,
+  "glbTriangles": 100000,
+  "sourceControlVertices": 49982,
+  "sourceBones": 67,
+  "glbSkinJoints": [
+    67
+  ],
+  "sourcePreservationHashBeforeAfter": "c3f5ddc024e4e9d3a062f15576543c109c89ccc090873ab6d8291a89a3e4b534",
+  "framesPerSecond": 24.0,
+  "sourceClips": [
+    {
+      "name": "box_02",
+      "sourceAction": "Armature|box_02",
+      "firstFrame": 1.0,
+      "lastFrame": 68.0,
+      "durationSeconds": 2.7916666666666665,
+      "fcurves": 679
+    },
+    {
+      "name": "cheer",
+      "sourceAction": "Armature|cheer",
+      "firstFrame": 1.0,
+      "lastFrame": 291.0,
+      "durationSeconds": 12.083333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "dance_01",
+      "sourceAction": "Armature|dance_01",
+      "firstFrame": 1.0,
+      "lastFrame": 557.0,
+      "durationSeconds": 23.166666666666668,
+      "fcurves": 679
+    },
+    {
+      "name": "defeat_02",
+      "sourceAction": "Armature|defeat_02",
+      "firstFrame": 1.0,
+      "lastFrame": 204.0,
+      "durationSeconds": 8.458333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "front_kick_01",
+      "sourceAction": "Armature|front_kick_01",
+      "firstFrame": 1.0,
+      "lastFrame": 61.0,
+      "durationSeconds": 2.5,
+      "fcurves": 679
+    },
+    {
+      "name": "greet_01",
+      "sourceAction": "Armature|greet_01",
+      "firstFrame": 1.0,
+      "lastFrame": 85.0,
+      "durationSeconds": 3.5,
+      "fcurves": 679
+    },
+    {
+      "name": "hit_to_head",
+      "sourceAction": "Armature|hit_to_head",
+      "firstFrame": 1.0,
+      "lastFrame": 45.0,
+      "durationSeconds": 1.8333333333333333,
+      "fcurves": 679
+    },
+    {
+      "name": "walk",
+      "sourceAction": "Armature|walk",
+      "firstFrame": 1.0,
+      "lastFrame": 57.0,
+      "durationSeconds": 2.3333333333333335,
+      "fcurves": 679
+    }
+  ],
+  "animations": [
+    {
+      "name": "box_02",
+      "durationSeconds": 2.7916666666666665,
+      "channels": 204
+    },
+    {
+      "name": "cheer",
+      "durationSeconds": 12.083333333333334,
+      "channels": 204
+    },
+    {
+      "name": "dance_01",
+      "durationSeconds": 23.166666666666668,
+      "channels": 204
+    },
+    {
+      "name": "defeat_02",
+      "durationSeconds": 8.458333333333334,
+      "channels": 204
+    },
+    {
+      "name": "front_kick_01",
+      "durationSeconds": 2.5,
+      "channels": 204
+    },
+    {
+      "name": "greet_01",
+      "durationSeconds": 3.5,
+      "channels": 204
+    },
+    {
+      "name": "hit_to_head",
+      "durationSeconds": 1.8333333333333333,
+      "channels": 204
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 2.3333333333333335,
+      "channels": 204
+    },
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "channels": 204,
+      "derived": true
+    }
+  ],
+  "defaultAnimation": "PreviewGuard",
+  "defaultAnimationTimeSeconds": 0,
+  "defaultAnimationPlayback": "loop constant clip; fullnative motions only ongesture",
+  "firstFrameGuardCandidate": {
+    "animation": "box_02",
+    "seconds": 0,
+    "sourceFrame": 1,
+    "poseValidity": "native authored crouched/open-hand combat-start; not A/T pose; not closed-fist standalone guard",
+    "derivedClip": "PreviewGuard"
+  },
+  "danceAnimation": "dance_01",
+  "punchAnimation": "box_02",
+  "boxingIdleAnimation": null,
+  "inputs": {
+    "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbx": "215a1f367cb3ce5db53fddab1a4f0dea6b3e8165a5fcabf944a470cb1079eec8",
+    "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_basecolor.JPEG": "96e41895170fbb2014e10b118a7981fdc4781afc453657f2d73e8b1b6313a6bd",
+    "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_metallic.JPEG": "b0d459a35fb54850dd25aefccdccb58de86e975d09a5e57d3e7f1ea112787415",
+    "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_normal.JPEG": "446a499d8e9597570e3a843167dd0426dcad7c3411bf1d428b303e27f14c17f0",
+    "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_rm.PNG": "859839326b5970312eb6ee339501fe30716b6c92897868ba1cbd409125c54c98",
+    "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_roughness.JPEG": "d0b3ff6bc9fa122ed68347e81cd15bc846cc1336828c930b37f96d6c4d0989cc"
+  },
+  "sourceImages": [
+    {
+      "name": "retro_character_3d_model_basecolor",
+      "file": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_basecolor.JPEG",
+      "sha256": "96e41895170fbb2014e10b118a7981fdc4781afc453657f2d73e8b1b6313a6bd",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorSpace": "sRGB"
+    },
+    {
+      "name": "retro_character_3d_model_normal",
+      "file": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_normal.JPEG",
+      "sha256": "446a499d8e9597570e3a843167dd0426dcad7c3411bf1d428b303e27f14c17f0",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "retro_character_3d_model_roughness",
+      "file": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_roughness.JPEG",
+      "sha256": "d0b3ff6bc9fa122ed68347e81cd15bc846cc1336828c930b37f96d6c4d0989cc",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "retro_character_3d_model_metallic",
+      "file": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_metallic.JPEG",
+      "sha256": "b0d459a35fb54850dd25aefccdccb58de86e975d09a5e57d3e7f1ea112787415",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    }
+  ],
+  "embeddedImages": [
+    {
+      "name": "retro_character_3d_model_normal",
+      "mimeType": "image/jpeg",
+      "bytes": 348741,
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "446a499d8e9597570e3a843167dd0426dcad7c3411bf1d428b303e27f14c17f0",
+      "source": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_normal.JPEG",
+      "method": "untouched original normal bytes; no gamma/Y-flip"
+    },
+    {
+      "name": "retro_character_3d_model_basecolor",
+      "mimeType": "image/jpeg",
+      "bytes": 2175806,
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "sha256": "96e41895170fbb2014e10b118a7981fdc4781afc453657f2d73e8b1b6313a6bd",
+      "source": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbm/retro_character_3d_model_basecolor.JPEG",
+      "method": "untouched original basecolor bytes"
+    },
+    {
+      "name": "retro_character_3d_model_roughness",
+      "mimeType": "image/png",
+      "bytes": 3607460,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sha256": "2b637f0c0d03bd5301dca061523981683b3d8c7545deb966358940ed858d580b",
+      "source": null,
+      "method": "derivedglTF ORM R=255,G=original roughnessR,B=original metallicR; raw scalar values, no gamma conversion"
+    }
+  ],
+  "limits": [
+    "Original native FBX imported by Blender; glTF baked at source24fps, not original FBX tangent/curve serialization.",
+    "No standalone boxing idle in these8takes. box_02 is a punch loop, not guard.",
+    "Native source material scalar encoding retained; no guessed gamma correction, normalYflip, recolor or originaldense-atlas substitution.",
+    "Portable prototype export, not shipping Unity/native-phone parity proof."
+  ],
+  "derivedClips": [
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "sourceAnimation": "box_02",
+      "sourceSeconds": 0,
+      "identicalKeyframes": 2,
+      "authoredIdle": false
+    }
+  ],
+  "validation": {
+    "triangles": 100000,
+    "sourceClips": 8,
+    "totalClips": 9,
+    "skinJoints": [
+      67
+    ],
+    "glbSplitVertices": 58211,
+    "weightsSumMin": 0.9999999031424522,
+    "weightsSumMax": 1.0000000521540642,
+    "maxInfluences": 4,
+    "originalBasecolorNormalBytesPreserved": true,
+    "finiteNormalizedWeights": true
+  },
+  "glbRoundtrip": {
+    "scope": "actual Blender glTF reimport skin deformation nearest original FBX vertex at samephase; subframe bake interpolation limit explicit",
+    "samples": [
+      {
+        "clip": "box_02",
+        "phase": 0,
+        "verticesCompared": 58211,
+        "nearestSourceVertexMaxM": 5.847699867445044e-06,
+        "nearestSourceVertexP95M": 4.093199095223099e-06
+      },
+      {
+        "clip": "box_02",
+        "phase": 0.45,
+        "verticesCompared": 58211,
+        "nearestSourceVertexMaxM": 2.754602064669598e-06,
+        "nearestSourceVertexP95M": 2.0933082396368263e-06
+      },
+      {
+        "clip": "dance_01",
+        "phase": 0.35,
+        "verticesCompared": 58211,
+        "nearestSourceVertexMaxM": 3.981866939284373e-06,
+        "nearestSourceVertexP95M": 3.0543342290911824e-06
+      }
+    ],
+    "glbActions": [
+      "box_02_Armature",
+      "cheer_Armature",
+      "dance_01_Armature",
+      "defeat_02_Armature",
+      "front_kick_01_Armature",
+      "greet_01_Armature",
+      "hit_to_head_Armature",
+      "PreviewGuard_Armature",
+      "walk_Armature"
+    ]
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "role": "sailor",
+  "blenderVersion": "4.2.22 LTS",
+  "sourceFBX": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx",
+  "sourceSHA256": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+  "glb": "prototypes/roster-portraits/models/sailor.glb",
+  "glbSHA256": "3984974ec6475885ed14b99ccc6acfd04c175dd0b79d58fbcd549c44385ca29f",
+  "bytes": 13362024,
+  "sourceTriangles": 99999,
+  "glbTriangles": 99999,
+  "sourceControlVertices": 49992,
+  "sourceBones": 67,
+  "glbSkinJoints": [
+    67
+  ],
+  "sourcePreservationHashBeforeAfter": "118dc40571bf3a1c8949a88dc11baba0a7a7d2fc63b8c8342196b33b2a965b89",
+  "framesPerSecond": 24.0,
+  "sourceClips": [
+    {
+      "name": "box_02",
+      "sourceAction": "Armature|box_02",
+      "firstFrame": 1.0,
+      "lastFrame": 68.0,
+      "durationSeconds": 2.7916666666666665,
+      "fcurves": 679
+    },
+    {
+      "name": "cheer",
+      "sourceAction": "Armature|cheer",
+      "firstFrame": 1.0,
+      "lastFrame": 291.0,
+      "durationSeconds": 12.083333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "dance_01",
+      "sourceAction": "Armature|dance_01",
+      "firstFrame": 1.0,
+      "lastFrame": 557.0,
+      "durationSeconds": 23.166666666666668,
+      "fcurves": 679
+    },
+    {
+      "name": "defeat_02",
+      "sourceAction": "Armature|defeat_02",
+      "firstFrame": 1.0,
+      "lastFrame": 204.0,
+      "durationSeconds": 8.458333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "front_kick_01",
+      "sourceAction": "Armature|front_kick_01",
+      "firstFrame": 1.0,
+      "lastFrame": 61.0,
+      "durationSeconds": 2.5,
+      "fcurves": 679
+    },
+    {
+      "name": "greet_01",
+      "sourceAction": "Armature|greet_01",
+      "firstFrame": 1.0,
+      "lastFrame": 85.0,
+      "durationSeconds": 3.5,
+      "fcurves": 679
+    },
+    {
+      "name": "hit_to_head",
+      "sourceAction": "Armature|hit_to_head",
+      "firstFrame": 1.0,
+      "lastFrame": 45.0,
+      "durationSeconds": 1.8333333333333333,
+      "fcurves": 679
+    },
+    {
+      "name": "walk",
+      "sourceAction": "Armature|walk",
+      "firstFrame": 1.0,
+      "lastFrame": 57.0,
+      "durationSeconds": 2.3333333333333335,
+      "fcurves": 679
+    }
+  ],
+  "animations": [
+    {
+      "name": "box_02",
+      "durationSeconds": 2.7916666666666665,
+      "channels": 204
+    },
+    {
+      "name": "cheer",
+      "durationSeconds": 12.083333333333334,
+      "channels": 204
+    },
+    {
+      "name": "dance_01",
+      "durationSeconds": 23.166666666666668,
+      "channels": 204
+    },
+    {
+      "name": "defeat_02",
+      "durationSeconds": 8.458333333333334,
+      "channels": 204
+    },
+    {
+      "name": "front_kick_01",
+      "durationSeconds": 2.5,
+      "channels": 204
+    },
+    {
+      "name": "greet_01",
+      "durationSeconds": 3.5,
+      "channels": 204
+    },
+    {
+      "name": "hit_to_head",
+      "durationSeconds": 1.8333333333333333,
+      "channels": 204
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 2.3333333333333335,
+      "channels": 204
+    },
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "channels": 204,
+      "derived": true
+    }
+  ],
+  "defaultAnimation": "PreviewGuard",
+  "defaultAnimationTimeSeconds": 0,
+  "defaultAnimationPlayback": "loop constant clip; fullnative motions only ongesture",
+  "firstFrameGuardCandidate": {
+    "animation": "box_02",
+    "seconds": 0,
+    "sourceFrame": 1,
+    "poseValidity": "native authored crouched/open-hand combat-start; not A/T pose; not closed-fist standalone guard",
+    "derivedClip": "PreviewGuard"
+  },
+  "danceAnimation": "dance_01",
+  "punchAnimation": "box_02",
+  "boxingIdleAnimation": null,
+  "inputs": {
+    "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_basecolor.JPEG": "314bceb2ddff5b41e4015696f26c1959381824338b7f7735cdaeb401341e6b6a",
+    "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_metallic.JPEG": "f9492e96830e5a1330631c73c8e039d85ccc21055eb56ae5aa4d201b4e0cb88b",
+    "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_normal.JPEG": "2765d0778b4c36ef8a425dd306d51432341df2155961ed2b9c7c4497beaf9ecb",
+    "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_rm.PNG": "dc31ce0b600aa35a74906988058d3bd0144132303a3f688d46ed220673a67176",
+    "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_roughness.JPEG": "ac18768454f2eb249e7ee3566bfc77731caf5ed03d509e685814119e8a47ec65"
+  },
+  "sourceImages": [
+    {
+      "name": "sailor-h31-unity-native-full-pack_basecolor",
+      "file": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_basecolor.JPEG",
+      "sha256": "314bceb2ddff5b41e4015696f26c1959381824338b7f7735cdaeb401341e6b6a",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorSpace": "sRGB"
+    },
+    {
+      "name": "sailor-h31-unity-native-full-pack_normal",
+      "file": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_normal.JPEG",
+      "sha256": "2765d0778b4c36ef8a425dd306d51432341df2155961ed2b9c7c4497beaf9ecb",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "sailor-h31-unity-native-full-pack_roughness",
+      "file": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_roughness.JPEG",
+      "sha256": "ac18768454f2eb249e7ee3566bfc77731caf5ed03d509e685814119e8a47ec65",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "sailor-h31-unity-native-full-pack_metallic",
+      "file": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_metallic.JPEG",
+      "sha256": "f9492e96830e5a1330631c73c8e039d85ccc21055eb56ae5aa4d201b4e0cb88b",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    }
+  ],
+  "embeddedImages": [
+    {
+      "name": "sailor-h31-unity-native-full-pack_normal",
+      "mimeType": "image/jpeg",
+      "bytes": 324043,
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "2765d0778b4c36ef8a425dd306d51432341df2155961ed2b9c7c4497beaf9ecb",
+      "source": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_normal.JPEG",
+      "method": "untouched original normal bytes; no gamma/Y-flip"
+    },
+    {
+      "name": "sailor-h31-unity-native-full-pack_basecolor",
+      "mimeType": "image/jpeg",
+      "bytes": 1564764,
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "sha256": "314bceb2ddff5b41e4015696f26c1959381824338b7f7735cdaeb401341e6b6a",
+      "source": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbm/sailor-h31-unity-native-full-pack_basecolor.JPEG",
+      "method": "untouched original basecolor bytes"
+    },
+    {
+      "name": "sailor-h31-unity-native-full-pack_roughness",
+      "mimeType": "image/png",
+      "bytes": 2823736,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sha256": "274674efa735a1daadcb60c2304e400e2789e4c081d13b41001b31dc7988793e",
+      "source": null,
+      "method": "derivedglTF ORM R=255,G=original roughnessR,B=original metallicR; raw scalar values, no gamma conversion"
+    }
+  ],
+  "limits": [
+    "Original native FBX imported by Blender; glTF baked at source24fps, not original FBX tangent/curve serialization.",
+    "No standalone boxing idle in these8takes. box_02 is a punch loop, not guard.",
+    "Native source material scalar encoding retained; no guessed gamma correction, normalYflip, recolor or originaldense-atlas substitution.",
+    "Portable prototype export, not shipping Unity/native-phone parity proof."
+  ],
+  "derivedClips": [
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "sourceAnimation": "box_02",
+      "sourceSeconds": 0,
+      "identicalKeyframes": 2,
+      "authoredIdle": false
+    }
+  ],
+  "validation": {
+    "triangles": 99999,
+    "sourceClips": 8,
+    "totalClips": 9,
+    "skinJoints": [
+      67
+    ],
+    "glbSplitVertices": 57037,
+    "weightsSumMin": 0.9999999022111297,
+    "weightsSumMax": 1.0000000521540642,
+    "maxInfluences": 4,
+    "originalBasecolorNormalBytesPreserved": true,
+    "finiteNormalizedWeights": true
+  },
+  "glbRoundtrip": {
+    "scope": "actual Blender glTF reimport skin deformation nearest original FBX vertex at samephase; subframe bake interpolation limit explicit",
+    "samples": [
+      {
+        "clip": "box_02",
+        "phase": 0,
+        "verticesCompared": 57037,
+        "nearestSourceVertexMaxM": 2.9878876830480294e-06,
+        "nearestSourceVertexP95M": 2.050389184660162e-06
+      },
+      {
+        "clip": "box_02",
+        "phase": 0.45,
+        "verticesCompared": 57037,
+        "nearestSourceVertexMaxM": 2.9793100111419335e-06,
+        "nearestSourceVertexP95M": 1.8693423271542997e-06
+      },
+      {
+        "clip": "dance_01",
+        "phase": 0.35,
+        "verticesCompared": 57037,
+        "nearestSourceVertexMaxM": 2.5558126708347118e-06,
+        "nearestSourceVertexP95M": 1.6901490198506508e-06
+      }
+    ],
+    "glbActions": [
+      "box_02_Armature",
+      "cheer_Armature",
+      "dance_01_Armature",
+      "defeat_02_Armature",
+      "front_kick_01_Armature",
+      "greet_01_Armature",
+      "hit_to_head_Armature",
+      "PreviewGuard_Armature",
+      "walk_Armature"
+    ]
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "role": "summer",
+  "blenderVersion": "4.2.22 LTS",
+  "sourceFBX": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbx",
+  "sourceSHA256": "5b94ab2e5547fe9463de4663694f55f2854e18d4c7b7ef9e499bb54dacbbad67",
+  "glb": "prototypes/roster-portraits/models/summer.glb",
+  "glbSHA256": "698592ecc35018baf856c44787b1cc5d0f5a75e3427328ca5635bb52e5f2aa6e",
+  "bytes": 13495024,
+  "sourceTriangles": 100000,
+  "glbTriangles": 100000,
+  "sourceControlVertices": 49994,
+  "sourceBones": 67,
+  "glbSkinJoints": [
+    67
+  ],
+  "sourcePreservationHashBeforeAfter": "d7a8395f4db790ce90a0686b799b11c7877cef5c944665c133efaec77fd95965",
+  "framesPerSecond": 24.0,
+  "sourceClips": [
+    {
+      "name": "box_02",
+      "sourceAction": "Armature|box_02",
+      "firstFrame": 1.0,
+      "lastFrame": 68.0,
+      "durationSeconds": 2.7916666666666665,
+      "fcurves": 679
+    },
+    {
+      "name": "cheer",
+      "sourceAction": "Armature|cheer",
+      "firstFrame": 1.0,
+      "lastFrame": 291.0,
+      "durationSeconds": 12.083333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "dance_01",
+      "sourceAction": "Armature|dance_01",
+      "firstFrame": 1.0,
+      "lastFrame": 557.0,
+      "durationSeconds": 23.166666666666668,
+      "fcurves": 679
+    },
+    {
+      "name": "defeat_02",
+      "sourceAction": "Armature|defeat_02",
+      "firstFrame": 1.0,
+      "lastFrame": 204.0,
+      "durationSeconds": 8.458333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "front_kick_01",
+      "sourceAction": "Armature|front_kick_01",
+      "firstFrame": 1.0,
+      "lastFrame": 61.0,
+      "durationSeconds": 2.5,
+      "fcurves": 679
+    },
+    {
+      "name": "greet_01",
+      "sourceAction": "Armature|greet_01",
+      "firstFrame": 1.0,
+      "lastFrame": 85.0,
+      "durationSeconds": 3.5,
+      "fcurves": 679
+    },
+    {
+      "name": "hit_to_head",
+      "sourceAction": "Armature|hit_to_head",
+      "firstFrame": 1.0,
+      "lastFrame": 45.0,
+      "durationSeconds": 1.8333333333333333,
+      "fcurves": 679
+    },
+    {
+      "name": "walk",
+      "sourceAction": "Armature|walk",
+      "firstFrame": 1.0,
+      "lastFrame": 57.0,
+      "durationSeconds": 2.3333333333333335,
+      "fcurves": 679
+    }
+  ],
+  "animations": [
+    {
+      "name": "box_02",
+      "durationSeconds": 2.7916666666666665,
+      "channels": 204
+    },
+    {
+      "name": "cheer",
+      "durationSeconds": 12.083333333333334,
+      "channels": 204
+    },
+    {
+      "name": "dance_01",
+      "durationSeconds": 23.166666666666668,
+      "channels": 204
+    },
+    {
+      "name": "defeat_02",
+      "durationSeconds": 8.458333333333334,
+      "channels": 204
+    },
+    {
+      "name": "front_kick_01",
+      "durationSeconds": 2.5,
+      "channels": 204
+    },
+    {
+      "name": "greet_01",
+      "durationSeconds": 3.5,
+      "channels": 204
+    },
+    {
+      "name": "hit_to_head",
+      "durationSeconds": 1.8333333333333333,
+      "channels": 204
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 2.3333333333333335,
+      "channels": 204
+    },
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "channels": 204,
+      "derived": true
+    }
+  ],
+  "defaultAnimation": "PreviewGuard",
+  "defaultAnimationTimeSeconds": 0,
+  "defaultAnimationPlayback": "loop constant clip; fullnative motions only ongesture",
+  "firstFrameGuardCandidate": {
+    "animation": "box_02",
+    "seconds": 0,
+    "sourceFrame": 1,
+    "poseValidity": "native authored crouched/open-hand combat-start; not A/T pose; not closed-fist standalone guard",
+    "derivedClip": "PreviewGuard"
+  },
+  "danceAnimation": "dance_01",
+  "punchAnimation": "box_02",
+  "boxingIdleAnimation": null,
+  "inputs": {
+    "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbx": "5b94ab2e5547fe9463de4663694f55f2854e18d4c7b7ef9e499bb54dacbbad67",
+    "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_basecolor.JPEG": "10dccf78cb97d93234649c9083f9e3814bd3f521fbf5b46c0ce8028ef77e95c4",
+    "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_metallic.JPEG": "033fbb0dd5ee909f895cfee5dd66fa0166c6e2177926a54c592c35f2b1377923",
+    "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_normal.JPEG": "5afb17e2b299b50a623d0c24e543d21872020fd0643d7c7c763bd4b3a459f4f0",
+    "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_rm.PNG": "839960d290de1baee157380ef2baf0ca73a6354a5a8a4612b5736f5e8e5399a3",
+    "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_roughness.JPEG": "a2a45bbb554618573263ca3cfff22b0a79c20f24079e6fd479416d7cce8a9059"
+  },
+  "sourceImages": [
+    {
+      "name": "summer-h31-unity-native-full-pack_basecolor",
+      "file": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_basecolor.JPEG",
+      "sha256": "10dccf78cb97d93234649c9083f9e3814bd3f521fbf5b46c0ce8028ef77e95c4",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorSpace": "sRGB"
+    },
+    {
+      "name": "summer-h31-unity-native-full-pack_normal",
+      "file": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_normal.JPEG",
+      "sha256": "5afb17e2b299b50a623d0c24e543d21872020fd0643d7c7c763bd4b3a459f4f0",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "summer-h31-unity-native-full-pack_roughness",
+      "file": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_roughness.JPEG",
+      "sha256": "a2a45bbb554618573263ca3cfff22b0a79c20f24079e6fd479416d7cce8a9059",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "summer-h31-unity-native-full-pack_metallic",
+      "file": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_metallic.JPEG",
+      "sha256": "033fbb0dd5ee909f895cfee5dd66fa0166c6e2177926a54c592c35f2b1377923",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    }
+  ],
+  "embeddedImages": [
+    {
+      "name": "summer-h31-unity-native-full-pack_normal",
+      "mimeType": "image/jpeg",
+      "bytes": 196128,
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5afb17e2b299b50a623d0c24e543d21872020fd0643d7c7c763bd4b3a459f4f0",
+      "source": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_normal.JPEG",
+      "method": "untouched original normal bytes; no gamma/Y-flip"
+    },
+    {
+      "name": "summer-h31-unity-native-full-pack_basecolor",
+      "mimeType": "image/jpeg",
+      "bytes": 1872831,
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "sha256": "10dccf78cb97d93234649c9083f9e3814bd3f521fbf5b46c0ce8028ef77e95c4",
+      "source": "art/source/tripo-summer-native-full-pack/unpacked/tripo_convert_68858dee-8c9d-48f2-b057-f6dc36870370.fbm/summer-h31-unity-native-full-pack_basecolor.JPEG",
+      "method": "untouched original basecolor bytes"
+    },
+    {
+      "name": "summer-h31-unity-native-full-pack_roughness",
+      "mimeType": "image/png",
+      "bytes": 2847975,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sha256": "6a165814e434d5876d9e66274caf119605ba91c463287410c48f291d91af0adb",
+      "source": null,
+      "method": "derivedglTF ORM R=255,G=original roughnessR,B=original metallicR; raw scalar values, no gamma conversion"
+    }
+  ],
+  "limits": [
+    "Original native FBX imported by Blender; glTF baked at source24fps, not original FBX tangent/curve serialization.",
+    "No standalone boxing idle in these8takes. box_02 is a punch loop, not guard.",
+    "Native source material scalar encoding retained; no guessed gamma correction, normalYflip, recolor or originaldense-atlas substitution.",
+    "Portable prototype export, not shipping Unity/native-phone parity proof."
+  ],
+  "derivedClips": [
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "sourceAnimation": "box_02",
+      "sourceSeconds": 0,
+      "identicalKeyframes": 2,
+      "authoredIdle": false
+    }
+  ],
+  "validation": {
+    "triangles": 100000,
+    "sourceClips": 8,
+    "totalClips": 9,
+    "skinJoints": [
+      67
+    ],
+    "glbSplitVertices": 55987,
+    "weightsSumMin": 0.9999999022111297,
+    "weightsSumMax": 1.0000000521540642,
+    "maxInfluences": 4,
+    "originalBasecolorNormalBytesPreserved": true,
+    "finiteNormalizedWeights": true
+  },
+  "glbRoundtrip": {
+    "scope": "actual Blender glTF reimport skin deformation nearest original FBX vertex at samephase; subframe bake interpolation limit explicit",
+    "samples": [
+      {
+        "clip": "box_02",
+        "phase": 0,
+        "verticesCompared": 55987,
+        "nearestSourceVertexMaxM": 1.921398506965488e-06,
+        "nearestSourceVertexP95M": 8.256708952103509e-07
+      },
+      {
+        "clip": "box_02",
+        "phase": 0.45,
+        "verticesCompared": 55987,
+        "nearestSourceVertexMaxM": 8.561058280065481e-07,
+        "nearestSourceVertexP95M": 5.080072469354491e-07
+      },
+      {
+        "clip": "dance_01",
+        "phase": 0.35,
+        "verticesCompared": 55987,
+        "nearestSourceVertexMaxM": 1.3718406535190297e-06,
+        "nearestSourceVertexP95M": 6.108112984293257e-07
+      }
+    ],
+    "glbActions": [
+      "box_02_Armature",
+      "cheer_Armature",
+      "dance_01_Armature",
+      "defeat_02_Armature",
+      "front_kick_01_Armature",
+      "greet_01_Armature",
+      "hit_to_head_Armature",
+      "PreviewGuard_Armature",
+      "walk_Armature"
+    ]
+  }
+}
