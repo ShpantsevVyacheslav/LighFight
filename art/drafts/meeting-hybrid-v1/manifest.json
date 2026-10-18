@@ -1,12 +1,12 @@
 {
-  "status": "ACTUAL_GLB_REVIEWED_NOT_RUNTIME_ACCEPTED",
+  "status": "CEILING_CHANGED_REQUIRES_FRESH_ACTUAL_RENDERS",
   "sourcePhoto": "assets/references/photo-03.jpg",
   "sourceTripo": "art/source/meeting-tripo-v1/original-v1.glb",
   "sourceSHA256": "70336cf944c64d94ae0ec4b94a58efce0d13006a036bf276a67325bd417d2cfd",
   "sourceBinaryPrefixExact": true,
   "originalImagesExact": true,
-  "masterSHA256": "f5f4813bcb9dfcd633ef2f08680f51b34d722bfed8ce90c97631086c9868af95",
-  "trianglesIncludingArchitecture": 1911270,
+  "masterSHA256": "1ad45186127e2810aae04eda2bf05e35f2d9bfb77ba8c9c02617bff377c3ee46",
+  "trianglesIncludingArchitecture": 1911282,
   "furnitureWrapper": {
     "name": "ROLE_meeting-furniture",
     "scale": [
@@ -38,12 +38,10 @@
   },
   "sourceFurnitureZMinGameMetres": 1.178632513273619,
   "referenceFacing": "Front camera looks along +glTF Z: photo-left windows at +X, board at -X",
-  "architecture": "Manually authored from photo: two left windows/radiators, warm wall, board, ceiling grid. Furniture supplied by Tripo. Right/front intentionally open cutaway.",
+  "architecture": "Manually authored from photo: two left windows/radiators, warm wall, board, ceiling grid and separate opaque ceiling. Furniture supplied by Tripo. Right/front intentionally open cutaway.",
   "pending": [
-    "finish ceiling for interior gameplay view",
-    "collision and actual camera validation",
+    "actual GLB import/raster/collision/layout review",
     "measured static environment budget",
-    "Unity prefab/shadow/profile acceptance"
-  ],
-  "renderEvidence": "renders/manifest.json"
+    "Unity prefab/camera/shadow/profile acceptance"
+  ]
 }

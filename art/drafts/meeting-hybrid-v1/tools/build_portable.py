@@ -7,7 +7,7 @@ from glb_static import load,write,combine,audit_images
 OUT=ROOT/'art/drafts/meeting-hybrid-v1'
 SOURCE=ROOT/'art/source/meeting-tripo-v1/original-v1.glb'
 SHA='70336cf944c64d94ae0ec4b94a58efce0d13006a036bf276a67325bd417d2cfd'
-materials=[('Warm plaster',[.68,.61,.48,1]),('Light oak',[.42,.31,.19,1]),('White frame',[.82,.83,.79,1]),('Window daylight',[.46,.63,.72,1]),('Radiator',[.64,.66,.64,1]),('Board',[.76,.79,.72,1]),('Ceiling grid',[.44,.44,.41,1])]
+materials=[('Warm plaster',[.68,.61,.48,1]),('Light oak',[.42,.31,.19,1]),('White frame',[.82,.83,.79,1]),('Window daylight',[.46,.63,.72,1]),('Radiator',[.64,.66,.64,1]),('Board',[.76,.79,.72,1]),('Ceiling grid',[.44,.44,.41,1]),('Ceiling panels',[.82,.81,.77,1])]
 batches=[{'p':[],'n':[],'uv':[],'i':[]} for _ in materials]
 def box(center,size,mat):
  assert all(x>0 for x in size)
@@ -50,7 +50,9 @@ def architecture(path):
  for x in [-.65,-1.91]:box((x,1.7,5.09),(.035,1.46,.035),4)
  for y in [.98,2.42]:box((-1.28,y,5.09),(1.29,.035,.035),4)
  box((3.26,2.65,2.25),(.31,.34,.83),2)
- # Sparse ceiling beams expose the room in cutaway, preserving camera visibility.
+ # Full ceiling is separate so review whole-room shots can explicitly hide it as a cutaway.
+ box((0,3.065,1.7),(6.8,.06,7),7)
+ # Grid remains visible below the panels in the actual interior view.
  for j in range(9):box((0,3.015,-1.8+j*.875),(6.8,.035,.025),6)
  for j in range(9):box((-3.4+j*.85,3.015,1.7),(.025,.035,7),6)
  box((.6,3,2.9),(1.1,.025,.55),2)
@@ -88,8 +90,8 @@ def main():
  originalImages=audit_images(SOURCE);assert audit_images(destination)[:len(originalImages)]==originalImages,'Original texture payload altered'
  assert hashlib.sha256(SOURCE.read_bytes()).hexdigest()==before
  tris=sum(assembled['accessors'][p['indices']]['count']//3 for m in assembled['meshes'] for p in m['primitives'])
- manifest={'status':'REVIEW_ONLY_UNRENDERED_NOT_PROMOTED','sourcePhoto':'assets/references/photo-03.jpg','sourceTripo':str(SOURCE.relative_to(ROOT)),'sourceSHA256':before,'sourceBinaryPrefixExact':True,'originalImagesExact':True,'masterSHA256':digest,'trianglesIncludingArchitecture':tris,'furnitureWrapper':wrapper,'roomDimensionsGameMetres':[6.8,3,7],'dimensionsScope':'Unmeasured expanded game space; not metric reconstruction from photograph','fightLane':{'x':[-2.7,2.7],'z':[-.55,.55]},'sourceFurnitureZMinGameMetres':3-.4897918701171875*scale,'referenceFacing':'Front camera looks along +glTF Z: photo-left windows at +X, board at -X',
- 'architecture':'Manually authored from photo: two left windows/radiators, warm wall, board, ceiling grid. Furniture supplied by Tripo. Right/front intentionally open cutaway.','pending':['actual GLB import/raster/collision/layout review','measured static environment budget','Unity prefab/camera/shadow/profile acceptance']}
+ manifest={'status':'CEILING_CHANGED_REQUIRES_FRESH_ACTUAL_RENDERS','sourcePhoto':'assets/references/photo-03.jpg','sourceTripo':str(SOURCE.relative_to(ROOT)),'sourceSHA256':before,'sourceBinaryPrefixExact':True,'originalImagesExact':True,'masterSHA256':digest,'trianglesIncludingArchitecture':tris,'furnitureWrapper':wrapper,'roomDimensionsGameMetres':[6.8,3,7],'dimensionsScope':'Unmeasured expanded game space; not metric reconstruction from photograph','fightLane':{'x':[-2.7,2.7],'z':[-.55,.55]},'sourceFurnitureZMinGameMetres':3-.4897918701171875*scale,'referenceFacing':'Front camera looks along +glTF Z: photo-left windows at +X, board at -X',
+ 'architecture':'Manually authored from photo: two left windows/radiators, warm wall, board, ceiling grid and separate opaque ceiling. Furniture supplied by Tripo. Right/front intentionally open cutaway.','pending':['actual GLB import/raster/collision/layout review','measured static environment budget','Unity prefab/camera/shadow/profile acceptance']}
  assert manifest['sourceFurnitureZMinGameMetres']>.55
  (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2));print(json.dumps(manifest,indent=2))
 if __name__=='__main__':main()
