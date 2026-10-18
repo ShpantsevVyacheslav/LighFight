@@ -1,0 +1,98 @@
+{
+  "attributes": {
+    "POSITION": [
+      {
+        "count": 1002607,
+        "min": [
+          -0.3742218017578125,
+          0.0,
+          -0.4897918701171875
+        ],
+        "max": [
+          0.3742218017578125,
+          0.3764801025390625,
+          0.4897918701171875
+        ],
+        "finite": true
+      }
+    ],
+    "NORMAL": [
+      {
+        "count": 1002607,
+        "min": [
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "finite": true
+      }
+    ],
+    "TEXCOORD_0": [
+      {
+        "count": 1002607,
+        "min": [
+          0.0,
+          0.0
+        ],
+        "max": [
+          1.0,
+          1.0
+        ],
+        "finite": true
+      }
+    ]
+  },
+  "images": [
+    {
+      "mimeType": "image/jpeg",
+      "bytes": 3527922,
+      "sha256": "a5c99ef3c8b55969b5215b49aa24bd874d51e4c1e9da2a4ade8932cbe8ea484c"
+    },
+    {
+      "mimeType": "image/jpeg",
+      "bytes": 2366569,
+      "sha256": "65ce90949bd6ef5e86af930df1d7b93f659724ab28e1e6a4b0520b6991d757ae"
+    },
+    {
+      "mimeType": "image/png",
+      "bytes": 2746212,
+      "sha256": "cc69c2f2e44cc49d18660fb43b77621597bce3e76bf612edd92957ea82191738"
+    }
+  ],
+  "materials": [
+    {
+      "name": "tripo_material_3c22dda2-2b0c-47af-9289-7ce98ade1f12",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 2
+      }
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 1
+    },
+    {
+      "source": 2,
+      "sampler": 2
+    }
+  ],
+  "status": "FINITE_SOURCE_BUFFERS_ONLY_NOT_VISUAL_ACCEPTANCE"
+}
