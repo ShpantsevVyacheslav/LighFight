@@ -38,3 +38,5 @@ BLENDER=/Users/macbook1/Applications/Blender.app/Contents/MacOS/Blender
 "$BLENDER" --background --factory-startup --python-exit-code 1 --python art/drafts/newrig-sailor-v1/tools/03_pose_review.py
 "$BLENDER" --background --factory-startup --python-exit-code 1 --python art/drafts/newrig-sailor-v1/tools/04_native_rotation_pilot.py
 ```
+
+Final75% retarget scene is saved as `stage04-dance75-retarget-review.blend`; `stage04-preservation.json` independently confirms dense attribute hashes exact after retarget. Blender exited normally. Large `.blend` files are local reproducible review artifacts (one exceeds100MB); commit scripts/JSON/PNGs separately unless large-file storage is deliberately configured.
