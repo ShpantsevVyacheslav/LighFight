@@ -32,6 +32,9 @@ namespace LighFight.Runtime
         [SerializeField] private bool nativeMotion;
         [System.Serializable] public struct NativeClip { public string state; public AnimationClip clip; }
         [SerializeField] private NativeClip[] nativeClips = new NativeClip[0];
+        // Linear lookups avoid capturing delegates in the per-frame animation path.
+        private NativeClip FindNativeClip(string state){for(int i=0;i<nativeClips.Length;i++)if(nativeClips[i].state==state)return nativeClips[i];return default;}
+        private ContactPose FindContactPose(string move){for(int i=0;i<contactPoses.Length;i++)if(contactPoses[i].moveId==move)return contactPoses[i];return default;}
         public const string CombatPostureLayerName="Review independent source arms";
         private int postureLayer=-2;
         private static readonly int PostureGuardState=Animator.StringToHash(CombatPostureLayerName+".SourceGuard"),PostureUppercutState=Animator.StringToHash(CombatPostureLayerName+".SourceUppercut");
@@ -43,7 +46,7 @@ namespace LighFight.Runtime
         public void ResumeResultPose(){if(resultPose)resultPose.Resume();}
         public void RequestResultPoseHold(string motion,float seconds){
             if(!nativeMotion||!HasNativeMotion(motion))return;
-            var clip=System.Array.Find(nativeClips,c=>c.state==motion).clip;
+            var clip=FindNativeClip(motion).clip;
             float duration=clip.isLooping?float.PositiveInfinity:clip.length;
             foreach(var component in GetComponents<MonoBehaviour>())if(component is IResultMotionSource source && component.enabled && source.TryGetResultDuration(motion,out var authoredDuration)){duration=authoredDuration;break;}
             // Complete even the short carrier's source blend before holding the final pose.
@@ -51,22 +54,22 @@ namespace LighFight.Runtime
             if(!resultPose)resultPose=gameObject.AddComponent<SettledActorPose>();resultPose.Request();
         }
         public bool UsesNativeMotion => nativeMotion;
-        public bool HasNativeMotion(string state)=>nativeMotion&&System.Array.Exists(nativeClips,c=>c.state==state&&c.clip);
-        public bool PreviewNativeMotion(string state,float seconds){ResumeResultPose();if(!HasNativeMotion(state)||!animator)return false;if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);var clip=System.Array.Find(nativeClips,c=>c.state==state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
+        public bool HasNativeMotion(string state){if(!nativeMotion)return false;for(int i=0;i<nativeClips.Length;i++)if(nativeClips[i].state==state&&nativeClips[i].clip)return true;return false;}
+        public bool PreviewNativeMotion(string state,float seconds){ResumeResultPose();if(!HasNativeMotion(state)||!animator)return false;if(HasCombatPosture)animator.SetLayerWeight(postureLayer,0);var clip=FindNativeClip(state).clip;animator.Play("Base Layer."+state,0,NativePreviewPhase(seconds,clip.length,clip.isLooping));animator.Update(0);AnchorNativeRoot();blendElapsed=blendDuration;return true;}
         public static float NativePreviewPhase(float seconds,float duration,bool loop)=>loop?NativeLoopPhase(seconds,duration):Mathf.Clamp(seconds/Mathf.Max(.001f,duration),0,.999999f);
         public void UseNativeMotion(NativeClip[] clips = null) { nativeMotion=true; if(clips!=null)nativeClips=clips; }
         public static float NativeLoopPhase(float seconds,float duration) => Mathf.Repeat(seconds/Mathf.Max(.001f,duration),1);
         public float PreviewDuration(string motion) => HasNativeMotion(motion)?NativeDuration(motion):0;
         public bool FullPreviewMotion {get;set;}
-        private float NativeDuration(string motion) { var entry=System.Array.Find(nativeClips,c=>c.state==motion);return entry.clip?entry.clip.length:1; }
+        private float NativeDuration(string motion) { var entry=FindNativeClip(motion);return entry.clip?entry.clip.length:1; }
         private float nativeTime;
         private NativeHighReaction highReaction;
         private bool highReactionCached;
         private Transform nativeRoot;
         private Vector3 nativeRootRest;
         private void AnchorNativeRoot() { if(!nativeRoot)return;var p=animator.transform.InverseTransformPoint(nativeRoot.position);p.x=nativeRootRest.x;p.z=nativeRootRest.z;nativeRoot.position=animator.transform.TransformPoint(p); }
-        private Quaternion NativeHeading(Fighter fighter){if(!nativeMotion||!fighter.Attack.HasValue)return Quaternion.identity;var move=fighter.Attack.Value;float frame=ContactAttackFrame(fighter);float weight=frame<=move.Startup?Mathf.SmoothStep(0,1,(float)frame/Mathf.Max(1,move.Startup)):frame<move.Startup+move.Active?1:1-Mathf.SmoothStep(0,1,(float)(frame-move.Startup-move.Active)/Mathf.Max(1,move.Recovery));return Quaternion.Euler(0,System.Array.Find(contactPoses,p=>p.moveId==move.Id).headingOffset*weight,0);}
-        public int NativeStrikeSide(string move) => nativeMotion?System.Array.Find(contactPoses,p=>p.moveId==move).strikeSide:0;
+        private Quaternion NativeHeading(Fighter fighter){if(!nativeMotion||!fighter.Attack.HasValue)return Quaternion.identity;var move=fighter.Attack.Value;float frame=ContactAttackFrame(fighter);float weight=frame<=move.Startup?Mathf.SmoothStep(0,1,(float)frame/Mathf.Max(1,move.Startup)):frame<move.Startup+move.Active?1:1-Mathf.SmoothStep(0,1,(float)(frame-move.Startup-move.Active)/Mathf.Max(1,move.Recovery));return Quaternion.Euler(0,FindContactPose(move.Id).headingOffset*weight,0);}
+        public int NativeStrikeSide(string move) => nativeMotion?FindContactPose(move).strikeSide:0;
         private float previousZ;
         private float previousX, stride, motionHold, deathTime, reactionTime;
         private int previousHitSerial;
@@ -189,7 +192,7 @@ namespace LighFight.Runtime
                     if(motion=="Crouch" && (!moving||fighter.Stun>0))phase=.3f;
                     if(fighter.Attack.HasValue)
                     {
-                        var contact=System.Array.Find(contactPoses,p=>p.moveId==fighter.Attack.Value.Id);
+                        var contact=FindContactPose(fighter.Attack.Value.Id);
                         if(contact.phase>0 && !FullPreviewMotion)
                         {
                             float end=contact.end>contact.start?contact.end:1;
