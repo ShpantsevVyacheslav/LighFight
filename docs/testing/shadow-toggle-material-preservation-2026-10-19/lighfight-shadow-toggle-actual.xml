@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="14" result="Passed" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.2437113">
+  <test-suite type="TestSuite" id="1073" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="52" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.243711" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1069" name="SelectedContent.PlayMode.Tests.dll" fullname="/Users/macbook1/Documents/ChatGPT/LighFight/unity/Library/ScriptAssemblies/SelectedContent.PlayMode.Tests.dll" runstate="Runnable" testcasecount="52" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.234101" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="27023" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1070" name="LighFight" fullname="LighFight" runstate="Runnable" testcasecount="44" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.232610" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1071" name="Tests" fullname="LighFight.Tests" runstate="Runnable" testcasecount="44" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.231643" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1037" name="FightGraphicsQualityTests" fullname="LighFight.Tests.FightGraphicsQualityTests" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.218910" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1050" name="ActualFightStartupLightsDiffuseSurfacesIndependentlyOfIncomingSkybox" fullname="LighFight.Tests.FightGraphicsQualityTests.ActualFightStartupLightsDiffuseSurfacesIndependentlyOfIncomingSkybox" methodname="ActualFightStartupLightsDiffuseSurfacesIndependentlyOfIncomingSkybox" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1081209696" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.177266" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Startup diffuse=RGBA(0.031, 0.028, 0.024, 1.000); incoming-skybox control=RGBA(0.000, 0.000, 0.000, 1.000)
+]]></output>
+            </test-case>
+            <test-case id="1048" name="CorruptSavedTierAndFpsAreNormalizedAndReapplied" fullname="LighFight.Tests.FightGraphicsQualityTests.CorruptSavedTierAndFpsAreNormalizedAndReapplied" methodname="CorruptSavedTierAndFpsAreNormalizedAndReapplied" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1169172073" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.006222" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1047" name="DeviceDefaultsPreserveExplicitMaximumAndSixtyFps" fullname="LighFight.Tests.FightGraphicsQualityTests.DeviceDefaultsPreserveExplicitMaximumAndSixtyFps" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.005793" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1045" name="DeviceDefaultsPreserveExplicitMaximumAndSixtyFps(True)" fullname="LighFight.Tests.FightGraphicsQualityTests.DeviceDefaultsPreserveExplicitMaximumAndSixtyFps(True)" methodname="DeviceDefaultsPreserveExplicitMaximumAndSixtyFps" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1127412029" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.002012" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="DeviceDefaultsPreserveExplicitMaximumAndSixtyFps(False)" fullname="LighFight.Tests.FightGraphicsQualityTests.DeviceDefaultsPreserveExplicitMaximumAndSixtyFps(False)" methodname="DeviceDefaultsPreserveExplicitMaximumAndSixtyFps" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1231236294" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.001454" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1044" name="FreshDeviceUsesAppropriateInitialBudget" fullname="LighFight.Tests.FightGraphicsQualityTests.FreshDeviceUsesAppropriateInitialBudget" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.004315" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1042" name="FreshDeviceUsesAppropriateInitialBudget(True,1,30)" fullname="LighFight.Tests.FightGraphicsQualityTests.FreshDeviceUsesAppropriateInitialBudget(True,1,30)" methodname="FreshDeviceUsesAppropriateInitialBudget" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1711492475" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.001921" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1043" name="FreshDeviceUsesAppropriateInitialBudget(False,2,60)" fullname="LighFight.Tests.FightGraphicsQualityTests.FreshDeviceUsesAppropriateInitialBudget(False,2,60)" methodname="FreshDeviceUsesAppropriateInitialBudget" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="68943762" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.001452" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1049" name="MobileFramebufferBudgetRestoresMaximumWithoutCompoundingAndPreservesAspect" fullname="LighFight.Tests.FightGraphicsQualityTests.MobileFramebufferBudgetRestoresMaximumWithoutCompoundingAndPreservesAspect" methodname="MobileFramebufferBudgetRestoresMaximumWithoutCompoundingAndPreservesAspect" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1838924302" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.003418" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1041" name="RequestedFpsPersistsAndOverridesDesktopVsync" fullname="LighFight.Tests.FightGraphicsQualityTests.RequestedFpsPersistsAndOverridesDesktopVsync" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.005181" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1039" name="RequestedFpsPersistsAndOverridesDesktopVsync(30)" fullname="LighFight.Tests.FightGraphicsQualityTests.RequestedFpsPersistsAndOverridesDesktopVsync(30)" methodname="RequestedFpsPersistsAndOverridesDesktopVsync" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1040851231" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.002464" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1040" name="RequestedFpsPersistsAndOverridesDesktopVsync(60)" fullname="LighFight.Tests.FightGraphicsQualityTests.RequestedFpsPersistsAndOverridesDesktopVsync(60)" methodname="RequestedFpsPersistsAndOverridesDesktopVsync" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="806810476" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.001798" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1038" name="TiersChangeActualRenderBudgetsWhileKeepingSourceDetail" fullname="LighFight.Tests.FightGraphicsQualityTests.TiersChangeActualRenderBudgetsWhileKeepingSourceDetail" methodname="TiersChangeActualRenderBudgetsWhileKeepingSourceDetail" classname="LighFight.Tests.FightGraphicsQualityTests" runstate="Runnable" seed="1676742123" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.006536" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1062" name="ShadowTogglePreservationTests" fullname="LighFight.Tests.ShadowTogglePreservationTests" classname="LighFight.Tests.ShadowTogglePreservationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.010235" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1066" name="ExternalFlagUpdatesAndDisableReleaseOwnedOverrides" fullname="LighFight.Tests.ShadowTogglePreservationTests.ExternalFlagUpdatesAndDisableReleaseOwnedOverrides" methodname="ExternalFlagUpdatesAndDisableReleaseOwnedOverrides" classname="LighFight.Tests.ShadowTogglePreservationTests" runstate="Runnable" seed="77995327" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.006208" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1065" name="NewChildAndRuntimeMaterialReplacementSurviveRepeatedToggle" fullname="LighFight.Tests.ShadowTogglePreservationTests.NewChildAndRuntimeMaterialReplacementSurviveRepeatedToggle" methodname="NewChildAndRuntimeMaterialReplacementSurviveRepeatedToggle" classname="LighFight.Tests.ShadowTogglePreservationTests" runstate="Runnable" seed="389210672" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.001231" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1063" name="OffKeepsExactPbrMaterialShaderMapsAndKeywords" fullname="LighFight.Tests.ShadowTogglePreservationTests.OffKeepsExactPbrMaterialShaderMapsAndKeywords" methodname="OffKeepsExactPbrMaterialShaderMapsAndKeywords" classname="LighFight.Tests.ShadowTogglePreservationTests" runstate="Runnable" seed="297943136" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.001068" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1064" name="RestoreReturnsAuthoredFlagsAndRepeatedEnabledDoesNotOverwriteUpdates" fullname="LighFight.Tests.ShadowTogglePreservationTests.RestoreReturnsAuthoredFlagsAndRepeatedEnabledDoesNotOverwriteUpdates" methodname="RestoreReturnsAuthoredFlagsAndRepeatedEnabledDoesNotOverwriteUpdates" classname="LighFight.Tests.ShadowTogglePreservationTests" runstate="Runnable" seed="573786307" result="Passed" start-time="2026-10-18 22:48:57Z" end-time="2026-10-18 22:48:57Z" duration="0.000462" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: /tmp/lighfight-shadow-toggle-actual.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
