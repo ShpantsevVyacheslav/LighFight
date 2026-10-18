@@ -1,6 +1,6 @@
 {
-  "status": "ACTUAL_GLB_LAYOUT_AND_FLOOR_REVIEWED_NOT_RUNTIME_ACCEPTED",
-  "masterSHA256": "f5f4813bcb9dfcd633ef2f08680f51b34d722bfed8ce90c97631086c9868af95",
+  "status": "ACTUAL_INTERIOR_REVIEWED_NOT_RUNTIME_ACCEPTED",
+  "masterSHA256": "ce4e171039d76c8d9dfc20c2f10ef3e428615a60aded370cd0b96839aef864dd",
   "sourceUnchanged": true,
   "CPUthreads": 6,
   "samples": 16,
@@ -18,8 +18,12 @@
         1.9
       ],
       "lensMm": 32.0,
+      "cutawayHiddenMeshes": [
+        "Ceiling panels",
+        "Right wall"
+      ],
       "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
-      "seconds": 12.724601030349731,
+      "seconds": 11.95704698562622,
       "file": "whole.png"
     },
     {
@@ -35,8 +39,9 @@
         2.3
       ],
       "lensMm": 32.0,
+      "cutawayHiddenMeshes": [],
       "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
-      "seconds": 21.34972906112671,
+      "seconds": 35.608110189437866,
       "file": "fight.png"
     },
     {
@@ -52,8 +57,9 @@
         3
       ],
       "lensMm": 32.0,
+      "cutawayHiddenMeshes": [],
       "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
-      "seconds": 30.82510471343994,
+      "seconds": 41.30677819252014,
       "file": "furniture.png"
     }
   ],
@@ -62,13 +68,12 @@
     "reviewer": "root",
     "viewsOpened": [
       "fight",
-      "whole",
-      "furniture"
+      "whole"
     ],
     "findings": [
-      "Furniture, windows, board and derived wood floor visible in actual GLB renders.",
-      "Ceiling deliberately cut away; sparse grid exposes background and is not final interior ceiling.",
-      "Expanded empty fight lane remains; no actor/collision/runtime/phone acceptance."
+      "Opaque ceiling and inferred plain right wall close interior without dark background gaps.",
+      "Overview explicitly hides ceiling/right wall only; furniture binary/maps unchanged.",
+      "Collision, actor spacing, environment budget and Unity/phone acceptance remain open."
     ]
   }
 }
