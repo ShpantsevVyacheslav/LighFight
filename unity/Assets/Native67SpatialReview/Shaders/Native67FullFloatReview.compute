@@ -1,0 +1,20 @@
+#pragma kernel Skin
+// Full variable CSR, every positive Float32 coefficient; no top4/top8/threshold.
+StructuredBuffer<float4> _Positions;
+StructuredBuffer<uint> _Offsets;
+StructuredBuffer<uint> _BoneIndices;
+StructuredBuffer<float> _Weights;
+StructuredBuffer<float4> _Rows;
+RWStructuredBuffer<float4> _Output;
+uint _Count;
+[numthreads(256,1,1)]
+void Skin(uint3 tid:SV_DispatchThreadID) {
+ uint v=tid.x;if(v>=_Count)return;
+ float4 p=_Positions[v];float3 sum=0;
+ for(uint k=_Offsets[v];k<_Offsets[v+1];k++){
+  uint b=_BoneIndices[k]*3;
+  float3 q=float3(dot(_Rows[b],p),dot(_Rows[b+1],p),dot(_Rows[b+2],p));
+  sum+=q*_Weights[k];
+ }
+ _Output[v]=float4(sum,1);
+}

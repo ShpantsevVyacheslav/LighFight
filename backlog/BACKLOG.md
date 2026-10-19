@@ -251,3 +251,8 @@
 ### 2026-10-19 — full-detail native67 interchange / importer diagnostic
 
 192-Hz derived8-take carrier passed6,816 independent sampled holds without reducing original994,452vertices/1,988,914triangles/4K maps. Actual isolated Unity import preserves all8takes/full original-ID coverage but clamps minWeight.001, UNorm16/max7 versus source max10: binding gate remains OPEN, no game promotion. Full seam/corner proof and typed all-positive weight restoration next. Phone heat P0 remains OPEN. Evidence: `docs/reports/native67-interchange-2026-10-19/README.md`.
+
+
+### 2026-10-19 — full-positive Float32 weight mechanism
+
+Full seam/oriented-triangle/cornerUV/true-bind coordinate verification PASS. Standard SetBoneWeights remains rejected: UNorm16 loses119,731 positive seam coefficients. Actual Metal Float32 CSR preserves all2,922,048 source positives/max10 and full994,452vertex positions across5poses within0.0002mm CPU reference. Review mechanism only; real renderer/normals/Blenderoffkey/phonebudget remain OPEN, no production promotion. Evidence: `docs/reports/native67-float-weights-2026-10-19/README.md`.

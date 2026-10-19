@@ -1,0 +1,41 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using Unity.Collections;
+using UnityEditor;
+using UnityEngine;
+// Isolated review only. Sources/catalogs are never written. Failed clone is destroyed.
+public static class Native67FullWeightRestoreReview {
+ const int N=994452; const string Asset="Assets/Native67SpatialReview/SailorReview.fbx";
+ [Serializable] public class Result {
+  public string status="RUNNING_NO_ACCEPTANCE",error,unity;public bool allOriginalIds,allTriangles,allCornerUV,positionsVerified,allPositivePreserved; public int vertices,triangles,positiveBefore,positiveRequested,positiveAfter,missingPositive,extraPositive,countMismatchVertices,maxRequested,maxAfter,winding; public float bindJointMaxM,vertexMaxM,cornerUVMax,minRequested,minAfter,maxWeightDelta;public string weightFormatBefore,weightFormatAfter;public float[] coordinateMap;
+ }
+ struct Key:IEquatable<Key> {public int a,b,c;public Key(int x,int y,int z){if(x<=y&&x<=z){a=x;b=y;c=z;}else if(y<=x&&y<=z){a=y;b=z;c=x;}else{a=z;b=x;c=y;}} public bool Equals(Key k)=>a==k.a&&b==k.b&&c==k.c;public override bool Equals(object o)=>o is Key k&&Equals(k);public override int GetHashCode(){unchecked{return (a*73856093)^(b*19349663)^(c*83492791);}}}
+ static T[] Read<T>(string p,int bytes) where T:struct {byte[] a=File.ReadAllBytes(p);if(a.Length%bytes!=0)throw new Exception("Malformed packet");T[] x=new T[a.Length/bytes];Buffer.BlockCopy(a,0,x,0,a.Length);return x;}
+ static Matrix4x4 Mat(float[] a,int offset=0){var m=new Matrix4x4();for(int i=0;i<16;i++)m[i/4,i%4]=a[offset+i];return m;}
+ static Vector3 P(float[] p,int i)=>new Vector3(p[3*i],p[3*i+1],p[3*i+2]);
+ static Matrix4x4 CoordinateMap(SkinnedMeshRenderer skin,string[] names,float[] rest,out float max){
+ var maps=skin.bones.Select((b,i)=>new{name=b.name,rest=skin.transform.localToWorldMatrix*skin.sharedMesh.bindposes[i].inverse}).ToDictionary(b=>b.name,b=>(Vector3)b.rest.GetColumn(3));Matrix4x4 best=Matrix4x4.zero;double score=double.PositiveInfinity;int[][] perms={new[]{0,1,2},new[]{0,2,1},new[]{1,0,2},new[]{1,2,0},new[]{2,0,1},new[]{2,1,0}};
+ foreach(var perm in perms)for(int mask=0;mask<8;mask++){var m=Matrix4x4.zero;m[3,3]=1;for(int j=0;j<3;j++)m[j,perm[j]]=((mask>>j)&1)==0?1:-1;double s=0;for(int i=0;i<names.Length;i++){var q=m.MultiplyPoint3x4(Mat(rest,16*i).GetColumn(3));s+=(q-maps[names[i]]).sqrMagnitude;}if(s<score){score=s;best=m;}}
+ max=0;for(int i=0;i<names.Length;i++)max=Math.Max(max,Vector3.Distance(best.MultiplyPoint3x4(Mat(rest,16*i).GetColumn(3)),maps[names[i]]));if(max>1e-5f)throw new Exception("No fixed signed-axis/unit1 bind coordinate map; max="+max);return best;
+ }
+ public static void Run(){var r=new Result{unity=Application.unityVersion};Mesh clone=null;int exit=1;try{
+ string packet=Environment.GetEnvironmentVariable("LF_NATIVE67_PACKET");var pos=Read<float>(packet+"/positions.bin",4);var tri=Read<int>(packet+"/triangles.bin",4);var uv=Read<float>(packet+"/uv.bin",4);var counts=File.ReadAllBytes(packet+"/counts.bin");var indices=Read<int>(packet+"/indices.bin",4);var weights=Read<float>(packet+"/weights.bin",4);var names=File.ReadAllLines(packet+"/bones.txt");var rest=Read<float>(packet+"/rest.bin",4);var meshWorld=Mat(Read<float>(packet+"/meshWorld.bin",4));
+ if(pos.Length!=N*3||tri.Length!=1988914*3||uv.Length!=tri.Length*2||counts.Length!=N||weights.Length!=2922048||names.Length!=67)throw new Exception("Packet shape");
+ var prefab=AssetDatabase.LoadAssetAtPath<GameObject>(Asset);var skin=prefab.GetComponentsInChildren<SkinnedMeshRenderer>(true).Single();var mesh=skin.sharedMesh;r.vertices=mesh.vertexCount;r.triangles=mesh.triangles.Length/3;
+ var ids=SailorNative67SpatialImportReview.ReadSourceVertexIds(mesh,new SailorNative67SpatialImportReview.SourceIndexLayerContract{layerName="__LF_SOURCE_VERTEX_ID_V1",originalVertexCount=N,denominator=1048576,originalUVLayerNames=new[]{"UVMap"},exportUVLayerOrder=new[]{"UVMap","__LF_SOURCE_VERTEX_ID_V1"},manifestCandidateChannel=1,verifiedImportedV=0});r.allOriginalIds=true;
+ var C=CoordinateMap(skin,names,rest,out r.bindJointMaxM);r.coordinateMap=new float[16];for(int i=0;i<16;i++)r.coordinateMap[i]=C[i/4,i%4];var sourceMap=C*meshWorld;var vertices=mesh.vertices;var targetMap=skin.transform.localToWorldMatrix;
+ for(int i=0;i<vertices.Length;i++)r.vertexMaxM=Math.Max(r.vertexMaxM,Vector3.Distance(sourceMap.MultiplyPoint3x4(P(pos,ids[i])),targetMap.MultiplyPoint3x4(vertices[i])));if(r.vertexMaxM>1e-5f)throw new Exception("Full original/seam position mismatch "+r.vertexMaxM);r.positionsVerified=true;
+ var lookup=new Dictionary<Key,int>(tri.Length/3);for(int i=0;i<tri.Length;i+=3){var key=new Key(tri[i],tri[i+1],tri[i+2]);if(lookup.ContainsKey(key))throw new Exception("Ambiguous duplicate source face; no nearest fallback");lookup.Add(key,i);}
+ var targetTri=mesh.triangles;var tuv=mesh.uv;var used=new bool[tri.Length/3];for(int i=0;i<targetTri.Length;i+=3){int x=ids[targetTri[i]],y=ids[targetTri[i+1]],z=ids[targetTri[i+2]];if(r.winding==0)r.winding=lookup.ContainsKey(new Key(x,y,z))?1:-1;var key=r.winding==1?new Key(x,y,z):new Key(x,z,y);if(!lookup.TryGetValue(key,out int at)||used[at/3])throw new Exception("Missing/extra/repeated oriented face "+i/3);used[at/3]=true;
+ for(int j=0;j<3;j++){int ui=targetTri[i+j],id=ids[ui],corner=-1;for(int k=0;k<3;k++)if(tri[at+k]==id)corner=at+k;if(corner<0)throw new Exception("Corner index");float delta=Vector2.Distance(tuv[ui],new Vector2(uv[2*corner],uv[2*corner+1]));r.cornerUVMax=Math.Max(r.cornerUVMax,delta);}}
+ if(used.Any(x=>!x)||r.cornerUVMax>0)throw new Exception("Incomplete topology or nonexact UV");r.allTriangles=r.allCornerUV=true;
+ var offsets=new int[N+1];for(int i=0;i<N;i++)offsets[i+1]=offsets[i]+counts[i];if(offsets[N]!=weights.Length)throw new Exception("CSR mismatch");var boneMap=skin.bones.Select((b,i)=>new{b.name,i}).ToDictionary(b=>b.name,b=>b.i);var remap=names.Select(n=>boneMap[n]).ToArray();int total=0;foreach(int id in ids)total+=counts[id];r.positiveRequested=total;r.minRequested=weights.Min();r.maxRequested=counts.Max();r.weightFormatBefore=mesh.GetVertexAttributeFormat(UnityEngine.Rendering.VertexAttribute.BlendWeight).ToString();using(var before=mesh.GetAllBoneWeights())r.positiveBefore=before.Length;
+ clone=UnityEngine.Object.Instantiate(mesh);clone.name="Native67_ALL_POSITIVE_REVIEW_ONLY";
+ using(var nc=new NativeArray<byte>(ids.Length,Allocator.TempJob))using(var nw=new NativeArray<BoneWeight1>(total,Allocator.TempJob)){var ncWrite=nc;var nwWrite=nw;int dest=0;for(int v=0;v<ids.Length;v++){int id=ids[v];ncWrite[v]=counts[id];var row=new List<BoneWeight1>(counts[id]);for(int k=offsets[id];k<offsets[id+1];k++)row.Add(new BoneWeight1{boneIndex=remap[indices[k]],weight=weights[k]});row.Sort((a,b)=>b.weight.CompareTo(a.weight));foreach(var w in row)nwWrite[dest++]=w;}clone.SetBoneWeights(nc,nw);}
+ r.weightFormatAfter=clone.GetVertexAttributeFormat(UnityEngine.Rendering.VertexAttribute.BlendWeight).ToString();r.minAfter=float.PositiveInfinity;
+ using(var ac=clone.GetBonesPerVertex())using(var aw=clone.GetAllBoneWeights()){r.positiveAfter=aw.Count(w=>w.weight>0);int at=0;for(int v=0;v<ids.Length;v++){int id=ids[v];r.maxAfter=Math.Max(r.maxAfter,ac[v]);if(ac[v]!=counts[id])r.countMismatchVertices++;var actual=new Dictionary<int,float>();for(int k=0;k<ac[v];k++){var w=aw[at++];actual.Add(w.boneIndex,w.weight);if(w.weight>0)r.minAfter=Math.Min(r.minAfter,w.weight);}for(int k=offsets[id];k<offsets[id+1];k++){int b=remap[indices[k]];if(!actual.TryGetValue(b,out float w)||!(w>0))r.missingPositive++;else r.maxWeightDelta=Math.Max(r.maxWeightDelta,Math.Abs(w-weights[k]));actual.Remove(b);}r.extraPositive+=actual.Count;}}
+ r.allPositivePreserved=r.missingPositive==0&&r.extraPositive==0&&r.countMismatchVertices==0;r.status=r.allPositivePreserved?"ALL_POSITIVE_READBACK_PASS_PENDING_SURFACE_GPU":"RESTORE_READBACK_REJECTED_NO_PROMOTION";exit=r.allPositivePreserved?0:2;
+ }catch(Exception e){r.status="FAILED_NO_PROMOTION";r.error=e.ToString();Debug.LogException(e);}finally{if(clone!=null)UnityEngine.Object.DestroyImmediate(clone);File.WriteAllText(Environment.GetEnvironmentVariable("LF_NATIVE67_REPORT"),JsonUtility.ToJson(r,true));Debug.Log("AGENT_RESULT "+r.status);EditorApplication.Exit(exit);}}
+}
