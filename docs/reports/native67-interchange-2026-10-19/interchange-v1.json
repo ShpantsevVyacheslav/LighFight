@@ -1,0 +1,424 @@
+{
+  "status": "FAILED_INTERCHANGE_NO_ACCEPTANCE",
+  "limits": [
+    "Derived96Hz carrier, not original curve-bit preservation.",
+    "Shifted120Hz finite holds, not continuous guarantee.",
+    "BOX-start diagnostic is not an authored guard/idle.",
+    "Unity typed Unlimited readback remains separate."
+  ],
+  "sourceGeometry": {
+    "vertices": 994452,
+    "polygons": 1988914,
+    "triangles": 1988914,
+    "corners": 5966742,
+    "positions_sha256": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "triangle_corner_indices_sha256": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygon_sizes_sha256": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "material_indices_sha256": "00b59321048ce9ddca825cbff0f1fd3494c65dfb2de9ca03099b4d06f4b0ac32",
+    "uv_sha256": {
+      "UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+    },
+    "object_world_matrix_sha256": "c405f74280b8db1fd038b5c18ac23fc4eb0be58a5bb6e5c0aabefada40ec0450"
+  },
+  "sourceMaterialSHA256": "d423c11a9f62cac1470dd9545665d99672545ae3a53a5bba2903df0b02e2f1c9",
+  "sourceNativeBinding": {
+    "bone_count": 67,
+    "local_rest_matrices_sha256": "fd1487c748f127f902b7ce261d13984ba97e93515ff36a5b162d3eab67103568",
+    "parent_names": {
+      "Hips": null,
+      "Spine": "Hips",
+      "Chest": "Spine",
+      "UpperChest": "Chest",
+      "Neck": "UpperChest",
+      "Neck_Twist_A": "Neck",
+      "Head": "Neck",
+      "Left_Eye": "Head",
+      "Right_Eye": "Head",
+      "Left_Shoulder": "UpperChest",
+      "Left_UpperArm": "Left_Shoulder",
+      "Left_LowerArm": "Left_UpperArm",
+      "Left_Hand": "Left_LowerArm",
+      "Left_ThumbProximal": "Left_Hand",
+      "Left_ThumbIntermediate": "Left_ThumbProximal",
+      "Left_ThumbDistal": "Left_ThumbIntermediate",
+      "Left_ThumbDistalEnd": "Left_ThumbDistal",
+      "Left_IndexProximal": "Left_Hand",
+      "Left_IndexIntermediate": "Left_IndexProximal",
+      "Left_IndexDistal": "Left_IndexIntermediate",
+      "Left_IndexDistalEnd": "Left_IndexDistal",
+      "Left_MiddleProximal": "Left_Hand",
+      "Left_MiddleIntermediate": "Left_MiddleProximal",
+      "Left_MiddleDistal": "Left_MiddleIntermediate",
+      "Left_MiddleDistalEnd": "Left_MiddleDistal",
+      "Left_RingProximal": "Left_Hand",
+      "Left_RingIntermediate": "Left_RingProximal",
+      "Left_RingDistal": "Left_RingIntermediate",
+      "Left_RingDistalEnd": "Left_RingDistal",
+      "Left_PinkyProximal": "Left_Hand",
+      "Left_PinkyIntermediate": "Left_PinkyProximal",
+      "Left_PinkyDistal": "Left_PinkyIntermediate",
+      "Left_PinkyDistalEnd": "Left_PinkyDistal",
+      "Right_Shoulder": "UpperChest",
+      "Right_UpperArm": "Right_Shoulder",
+      "Right_LowerArm": "Right_UpperArm",
+      "Right_Hand": "Right_LowerArm",
+      "Right_ThumbProximal": "Right_Hand",
+      "Right_ThumbIntermediate": "Right_ThumbProximal",
+      "Right_ThumbDistal": "Right_ThumbIntermediate",
+      "Right_ThumbDistalEnd": "Right_ThumbDistal",
+      "Right_IndexProximal": "Right_Hand",
+      "Right_IndexIntermediate": "Right_IndexProximal",
+      "Right_IndexDistal": "Right_IndexIntermediate",
+      "Right_IndexDistalEnd": "Right_IndexDistal",
+      "Right_MiddleProximal": "Right_Hand",
+      "Right_MiddleIntermediate": "Right_MiddleProximal",
+      "Right_MiddleDistal": "Right_MiddleIntermediate",
+      "Right_MiddleDistalEnd": "Right_MiddleDistal",
+      "Right_RingProximal": "Right_Hand",
+      "Right_RingIntermediate": "Right_RingProximal",
+      "Right_RingDistal": "Right_RingIntermediate",
+      "Right_RingDistalEnd": "Right_RingDistal",
+      "Right_PinkyProximal": "Right_Hand",
+      "Right_PinkyIntermediate": "Right_PinkyProximal",
+      "Right_PinkyDistal": "Right_PinkyIntermediate",
+      "Right_PinkyDistalEnd": "Right_PinkyDistal",
+      "Left_UpperLeg": "Hips",
+      "Left_LowerLeg": "Left_UpperLeg",
+      "Left_Foot": "Left_LowerLeg",
+      "Left_Toes": "Left_Foot",
+      "Left_ToesEnd": "Left_Toes",
+      "Right_UpperLeg": "Hips",
+      "Right_LowerLeg": "Right_UpperLeg",
+      "Right_Foot": "Right_LowerLeg",
+      "Right_Toes": "Right_Foot",
+      "Right_ToesEnd": "Right_Toes"
+    },
+    "armature_world_matrix_sha256": "ada6a147b7eb5afd405f829c4cbe91737b2058e9da7587da0195332ad7ade501"
+  },
+  "weightArchiveSHA256": "4a80d2d2ee2578a9c3ed35a88eb0c3e9024bcc3e9c9d0585b0f98c629c79ad1a",
+  "weights": {
+    "maxInfluences": 10,
+    "histogram": {
+      "1": 102548,
+      "2": 379375,
+      "3": 191198,
+      "4": 180277,
+      "5": 95357,
+      "6": 33325,
+      "7": 10362,
+      "8": 1375,
+      "9": 571,
+      "10": 64
+    },
+    "unweighted": 0,
+    "minPositiveDonor": 0.003921568682234659,
+    "donorRawSumMaxErrorBeforeExplicitNormalization": 5.21540641784668e-08,
+    "minPositiveBaseline": 3.216800010050827e-10,
+    "minPositiveStored": 4.958639233886919e-18,
+    "sumMaxError": 5.21540641784668e-08,
+    "positiveInfluences": 2922048,
+    "stableBaryOnly": 159748,
+    "transition": 80145,
+    "fieldOnly": 754559,
+    "stableBaryOnlyBounds": {
+      "min": [
+        -0.2477112114429474,
+        -0.0926055489551536,
+        1.6774613880305317e-09
+      ],
+      "max": [
+        0.2477875053882599,
+        0.021764742220750095,
+        0.9773254400708347
+      ]
+    }
+  },
+  "sourceFiles": [
+    {
+      "path": "art/source/tripo-striped-sailor-apose-original/unpacked/tripo_convert_7b8f380e-26b3-4dc1-92a2-d433761960f0.fbx",
+      "sha256": "2148fa7a80a0a8be70c4a32f3fe61aa8344c059c2b9183f52818f943917c3b23",
+      "matchesSource": true
+    },
+    {
+      "path": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx",
+      "sha256": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+      "matchesSource": true
+    }
+  ],
+  "elapsedSeconds": 149.2843545419746,
+  "reviewUVProvenance": {
+    "name": "__LF_SOURCE_VERTEX_ID_V1",
+    "encoding": "U=originalVertexID/1048576,V=0",
+    "denominator": 1048576,
+    "sourceOriginalVertexCount": 994452,
+    "sourceTriangleCornerCount": 5966742,
+    "originalVertexCoverage": 994452,
+    "allOriginalUVNamesInOrder": [
+      "UVMap"
+    ],
+    "derivedLayerIndex": 1,
+    "activeUVBefore": "UVMap",
+    "renderUVBefore": "UVMap",
+    "activeUVAfter": "UVMap",
+    "renderUVAfter": "UVMap",
+    "perLoopCoordinateFloat32SHA256": "d64b24e6506431afedd5845a3a4391b5e3ecac67d32df0a51dcb04bcc52300f7",
+    "originalUVChannelsUnchanged": true,
+    "runtimeRemoval": "Separate reviewed step only after full seam/corner/weight parity; no automatic stripping.",
+    "BlenderReimportBitExact": true,
+    "BlenderImportedActiveUV": "UVMap",
+    "actualFBXLayerOrder": [
+      {
+        "name": "UVMap",
+        "index": 0
+      },
+      {
+        "name": "__LF_SOURCE_VERTEX_ID_V1",
+        "index": 1
+      }
+    ]
+  },
+  "sourceActionHashes": {
+    "box_02": "93bdbf272cf3a9f41d0ded26332c57eb9a5e911a15d1ed5ffc570068bf7a0586",
+    "cheer": "19845f9e9492a3e1120fd4fe10557cb8d374b3ed4c12dcf23adebc3cc7371d3d",
+    "dance_01": "f5e471b73ebcbd4a5f23a01bc3236afee535426ff395948be2b9226db70672ce",
+    "defeat_02": "70c32cc0bbfe224068283604b18e643a881561b4aad6aeb3eafedf135a070b72",
+    "front_kick_01": "92a89cc6e2be1279dcc099fa4e30110460bfd57b519361ed2386edb60bb803ba",
+    "greet_01": "7b75997ed877baaec46a559acd49a74cf804330de1659d5821c03d142b62f35e",
+    "hit_to_head": "8e62180b405db69cd9f3313ac1b7b0727e830d778c2edf329c8350d49eea68d3",
+    "walk": "66488b1c30c5a4c4208e61a7b2a3c5663f0dde101fc80d3eef9577ac5ca0b25e"
+  },
+  "detailShots": [
+    {
+      "file": "BOX-start-diagnostic-detail-head.png",
+      "cameraSelectionOnly": "family total weight>.5; NO source weight pruning",
+      "selectedVertices": 118504,
+      "familyNames": [
+        "Neck",
+        "Head"
+      ],
+      "projectedBounds": [
+        0.10000002219773566,
+        0.8999998668135861,
+        0.1158742555517142,
+        0.8846455196294745
+      ]
+    },
+    {
+      "file": "BOX-start-diagnostic-detail-handR.png",
+      "cameraSelectionOnly": "family total weight>.5; NO source weight pruning",
+      "selectedVertices": 29086,
+      "familyNames": [
+        "Right_Hand",
+        "Right_ThumbProximal",
+        "Right_ThumbIntermediate",
+        "Right_ThumbDistal",
+        "Right_ThumbDistalEnd",
+        "Right_IndexProximal",
+        "Right_IndexIntermediate",
+        "Right_IndexDistal",
+        "Right_IndexDistalEnd",
+        "Right_MiddleProximal",
+        "Right_MiddleIntermediate",
+        "Right_MiddleDistal",
+        "Right_MiddleDistalEnd",
+        "Right_RingProximal",
+        "Right_RingIntermediate",
+        "Right_RingDistal",
+        "Right_RingDistalEnd",
+        "Right_PinkyProximal",
+        "Right_PinkyIntermediate",
+        "Right_PinkyDistal",
+        "Right_PinkyDistalEnd"
+      ],
+      "projectedBounds": [
+        0.15794610710385773,
+        0.8420538928961423,
+        0.10417950920139801,
+        0.9000000201710808
+      ]
+    },
+    {
+      "file": "BOX-start-diagnostic-detail-handL.png",
+      "cameraSelectionOnly": "family total weight>.5; NO source weight pruning",
+      "selectedVertices": 28968,
+      "familyNames": [
+        "Left_Hand",
+        "Left_ThumbProximal",
+        "Left_ThumbIntermediate",
+        "Left_ThumbDistal",
+        "Left_ThumbDistalEnd",
+        "Left_IndexProximal",
+        "Left_IndexIntermediate",
+        "Left_IndexDistal",
+        "Left_IndexDistalEnd",
+        "Left_MiddleProximal",
+        "Left_MiddleIntermediate",
+        "Left_MiddleDistal",
+        "Left_MiddleDistalEnd",
+        "Left_RingProximal",
+        "Left_RingIntermediate",
+        "Left_RingDistal",
+        "Left_RingDistalEnd",
+        "Left_PinkyProximal",
+        "Left_PinkyIntermediate",
+        "Left_PinkyDistal",
+        "Left_PinkyDistalEnd"
+      ],
+      "projectedBounds": [
+        0.1,
+        0.8999996397325735,
+        0.2904114462509283,
+        0.7090077803222824
+      ]
+    },
+    {
+      "file": "BOX-start-diagnostic-detail-feet.png",
+      "cameraSelectionOnly": "family total weight>.5; NO source weight pruning",
+      "selectedVertices": 110312,
+      "familyNames": [
+        "Left_Foot",
+        "Left_Toes",
+        "Right_Foot",
+        "Right_Toes"
+      ],
+      "projectedBounds": [
+        0.1,
+        0.9,
+        0.4279091767032726,
+        0.5771109258943735
+      ]
+    }
+  ],
+  "rawImages": [
+    {
+      "image": "striped-sailor-apose-h31-original_basecolor",
+      "file": "original-maps/original-0.jpg",
+      "SHA256": "c03341d3855dbf41146625659d4c437a8dc6063be9da7a2cce08b08ebe9b8db9",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "colorSpace": "sRGB"
+    },
+    {
+      "image": "striped-sailor-apose-h31-original_normal",
+      "file": "original-maps/original-1.png",
+      "SHA256": "dc44f95a2112f16029ef80e6778751e81f3b19b1ef112605d786b7f8816a6d53",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "image": "striped-sailor-apose-h31-original_roughness",
+      "file": "original-maps/original-2.jpg",
+      "SHA256": "d5fe420e8e4fc5c7c7317d2a1ffd810f26917d9b76feaef43986a58d56ceda47",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "image": "striped-sailor-apose-h31-original_metallic",
+      "file": "original-maps/original-3.jpg",
+      "SHA256": "ee67c0f4765ed449e6208c6e62e879aeca04970c3f7145eac50cda7c65102fec",
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "colorSpace": "Non-Color"
+    }
+  ],
+  "sourceTakeTiming": [
+    {
+      "semantic": "box_02",
+      "duration": 2.7916666666666665,
+      "holdouts": 337
+    },
+    {
+      "semantic": "cheer",
+      "duration": 12.083333333333334,
+      "holdouts": 1452
+    },
+    {
+      "semantic": "dance_01",
+      "duration": 23.166666666666668,
+      "holdouts": 2782
+    },
+    {
+      "semantic": "defeat_02",
+      "duration": 8.458333333333334,
+      "holdouts": 1017
+    },
+    {
+      "semantic": "front_kick_01",
+      "duration": 2.5,
+      "holdouts": 302
+    },
+    {
+      "semantic": "greet_01",
+      "duration": 3.5,
+      "holdouts": 422
+    },
+    {
+      "semantic": "hit_to_head",
+      "duration": 1.8333333333333333,
+      "holdouts": 222
+    },
+    {
+      "semantic": "walk",
+      "duration": 2.3333333333333335,
+      "holdouts": 282
+    }
+  ],
+  "export": {
+    "file": "SailorOriginalDenseNative67-EightReview96-Tspace.fbx",
+    "SHA256": "29382bd89210bbd0bd888958f9739f4d9b61fd9915fec562a1e84c29f263ca1f",
+    "bytes": 197843084,
+    "sampleHz": 96,
+    "originalCurveBitsClaim": false
+  },
+  "rawFBX": {
+    "rawPositionsExact": true,
+    "rawOrientedTrianglesExact": true,
+    "rawCornerUVExact": true,
+    "rawAllPositiveNamedWeightsExact": true,
+    "positiveWeights": 2922048,
+    "bones": 67,
+    "UVLayers": [
+      {
+        "name": "UVMap",
+        "index": 0
+      },
+      {
+        "name": "__LF_SOURCE_VERTEX_ID_V1",
+        "index": 1
+      }
+    ],
+    "allOriginalUVLayersExact": true,
+    "reviewUVExact": true,
+    "rawTangentLayerPresent": true,
+    "rawBinormalLayerPresent": true
+  },
+  "reimport": {
+    "vertices": 994452,
+    "triangles": 1988914,
+    "allNamedPositiveWeightsExact": true,
+    "UVOrientedTopologyExact": true,
+    "bindWorldMaxM": 1.1825348775666143e-07,
+    "holdouts": 6816,
+    "maxSurfaceBoundM": 7.221036219300317e-05,
+    "maxBoneDeg": 0.020572456039818075,
+    "worst": {
+      "clip": "box_02",
+      "seconds": 1.7864166666666665,
+      "boundM": 7.221036219300317e-05,
+      "boneDeg": 0.019095581679253744
+    },
+    "fixedGauge": "K=inv(sourceBindWorld)*importBindWorld, never moving fit",
+    "scope": "All-original-positive-support bound, shifted120Hz+exact0/end finite samples, not continuous proof"
+  },
+  "error": "AssertionError('Interchange offkey RED; no threshold waiver/rebake')"
+}

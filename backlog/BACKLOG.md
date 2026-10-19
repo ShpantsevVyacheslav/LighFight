@@ -246,3 +246,8 @@
 
 - GPU-диагностика V6–V8: после явного ожидания завершения заставки контрольные кадры повторяются точно. На исходных двух 100k-актёрах повторные GPU-буферы позиций, нормалей и тангенсов стабильны, но повтор Greeting PNG всё ещё расходится при одинаковых захваченных состояниях. Это не подтверждает деформацию скелета как причину расхождения. Основной проект остаётся на CPU; замеры скорости не разрешены до завершения проверки корректности. V10 Metal trace содержит nonzero device и ресурсы, но completion gate не пройден и команды в Xcode не проверены.
 - Аудит памяти по коду не доказал загрузку всех 11 моделей: embedded-путь держит выбранных двух актёров, арену и метаданные портретов. Исторический журнал iPhone показывает до 1,55–1,64 GiB без разбивки по ресурсам; нужен снимок идентифицированной актуальной сборки. См. docs/reports/selected-residency-audit-2026-10-19/README.md. Лишние ресурсы в production не освобождались без проверки владения.
+
+
+### 2026-10-19 — full-detail native67 interchange / importer diagnostic
+
+192-Hz derived8-take carrier passed6,816 independent sampled holds without reducing original994,452vertices/1,988,914triangles/4K maps. Actual isolated Unity import preserves all8takes/full original-ID coverage but clamps minWeight.001, UNorm16/max7 versus source max10: binding gate remains OPEN, no game promotion. Full seam/corner proof and typed all-positive weight restoration next. Phone heat P0 remains OPEN. Evidence: `docs/reports/native67-interchange-2026-10-19/README.md`.
