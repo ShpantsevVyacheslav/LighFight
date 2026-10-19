@@ -1,0 +1,59 @@
+{
+  "status": "ARTIST_TARGET_SPECIFICATION_NOT_RENDERED_RESULT",
+  "sourceView": "../weight-witness-v1/renders/worst-edge-side.png",
+  "sourceFrame": "dance50 original C1 ON",
+  "dimensions": [
+    640,
+    768
+  ],
+  "targetMeaning": "Fill the narrow visible internal under-sleeve groove into a continuous shallow concave garment transition, retaining outer sleeve cap and torso silhouette. Explicit surface targets, not max-ratio minimization or radial volume inflation.",
+  "creaseControls": [
+    {
+      "pixelTopLeft": [
+        178,
+        499
+      ],
+      "towardCameraMM": 1.0
+    },
+    {
+      "pixelTopLeft": [
+        226,
+        488
+      ],
+      "towardCameraMM": 3.0
+    },
+    {
+      "pixelTopLeft": [
+        276,
+        473
+      ],
+      "towardCameraMM": 3.0
+    },
+    {
+      "pixelTopLeft": [
+        322,
+        451
+      ],
+      "towardCameraMM": 1.0
+    }
+  ],
+  "compensationControls": [
+    [
+      325,
+      391
+    ],
+    [
+      245,
+      590
+    ]
+  ],
+  "creaseSupportRadiusM": 0.022,
+  "compensationRadiusM": 0.035,
+  "compensationMaximumM": 0.001,
+  "maximumTotalDeltaM": 0.0035,
+  "maskFeatherM": 0.006,
+  "inverseConditionMaximum": 50,
+  "volumeToleranceM3": 1e-12,
+  "scope": "Proposed controls must ray-hit actual garment in the correct -X view; otherwise fail and inspect, never snap to another region. Compensation must preserve explicit control positions and fit inside the reviewed cloth patch; no source changes.",
+  "sourceViewSHA256": "8a3b2f1425234b31b2dd7af6de27280632f2f25959b323c5370cb75d1eddc4c2"
+}

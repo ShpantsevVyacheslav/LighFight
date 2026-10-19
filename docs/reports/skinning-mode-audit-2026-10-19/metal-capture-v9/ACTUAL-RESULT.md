@@ -1,0 +1,9 @@
+# V9 actual one-frame Metal capture: request fenced, command proof incomplete
+
+GPU build EXIT0/39.758s, player EXIT0/17.218s, no stop reason. Child-only METAL_CAPTURE_ENABLED=1; file/aggregate1GiB budget respected (trace17952logical bytes; ~3.5MiB filesystem allocation). Independent startup/calibration/witness run completed. No timing. Heavy explicitly released to root/dense; V8 untouched.
+
+GPUTraceDocument supported=true. Capture requested uptime10.309072/frame7792/draw7792, finished10.327618/frame7793/draw7793. Splash finish observed2.523164, so >2real-second settle. Bone-world actualpose SHA changes d22a7c4826e9ac8be0fa83dc27a91309f8c3a72003b157105232370ff4e2eaff to896f83a5a1c72c52d99c4ae5cc116d828636672626be33e55f112865fa09e7da after advancing source attack5frames. Source identity1ca5676f74834281ea8220689c5a6e76bd0c832b08ea57584d3b051194147f26; calibrated layoutff84087e65d1d70956e872c264cd6204a7178b7bea094872e62e4e89c3148adf. New review manifest3119dd3ce7297135f20ab1e1cbde1e2f043df5736ad748a394d0c3ac512d2dde.
+
+Trace bundle exists, metadata says captured_frames_count1. However deviceId0, capture stream8bytes and zlib store0 decompresses184bytes: no compute/draw command or binding evidence established by offline inspection. This may be an incomplete/empty capture; cause unestablished. Cannot claim dispatch, absence of dispatch, or unsupported GPU. Root will inspect actual bundle in Xcode. No retry authorized or performed.
+
+Trace original: .tools/skinning-current100k-review/CurrentBufferBuildsV9/Traces/dynamic-phase1-v9.gputrace. Small copy plus native metadata, request/fence/source refs, source/build/DLL/scene hashes and runtime snapshots/logs retained in evidence/. Raw runtime binaries remain owned output with inventory. Frozen V8 Greeting pixel RED remains relevant and unexplained.

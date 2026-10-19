@@ -1,0 +1,108 @@
+{
+  "status": "PASS_NATIVE_MOTION_CARRIER_PENDING_UNITY",
+  "role": "master",
+  "triangles": 1992276,
+  "vertices": 1026465,
+  "allOriginalPositionsTopologyUVExact": true,
+  "allPositiveNamedWeightsExact": true,
+  "actions": [
+    "box_02",
+    "cheer",
+    "dance_01",
+    "dance_02",
+    "dance_05",
+    "fall",
+    "front_kick_01",
+    "greet_01",
+    "hit_to_head"
+  ],
+  "sampleHz": 96,
+  "offKeyCases": [
+    {
+      "clip": "box_02",
+      "phase": 0.173,
+      "maxSurfaceErrorM": 5.0168771793478134e-06,
+      "p99SurfaceErrorM": 4.848890449655651e-06
+    },
+    {
+      "clip": "box_02",
+      "phase": 0.417,
+      "maxSurfaceErrorM": 4.173509458091549e-06,
+      "p99SurfaceErrorM": 3.7024049257437024e-06
+    },
+    {
+      "clip": "box_02",
+      "phase": 0.683,
+      "maxSurfaceErrorM": 3.484715003170513e-06,
+      "p99SurfaceErrorM": 3.352855960996739e-06
+    },
+    {
+      "clip": "hit_to_head",
+      "phase": 0.173,
+      "maxSurfaceErrorM": 5.42481032133102e-06,
+      "p99SurfaceErrorM": 5.0586443962978895e-06
+    },
+    {
+      "clip": "hit_to_head",
+      "phase": 0.417,
+      "maxSurfaceErrorM": 4.246069731281845e-06,
+      "p99SurfaceErrorM": 3.4584207117981626e-06
+    },
+    {
+      "clip": "hit_to_head",
+      "phase": 0.683,
+      "maxSurfaceErrorM": 2.368198932187597e-06,
+      "p99SurfaceErrorM": 2.2382922093001383e-06
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 0.173,
+      "maxSurfaceErrorM": 4.88512517807955e-06,
+      "p99SurfaceErrorM": 4.243728261104569e-06
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 0.417,
+      "maxSurfaceErrorM": 1.0546972195287604e-05,
+      "p99SurfaceErrorM": 1.004527344582922e-05
+    },
+    {
+      "clip": "front_kick_01",
+      "phase": 0.683,
+      "maxSurfaceErrorM": 5.1477497865148536e-06,
+      "p99SurfaceErrorM": 4.604863089689943e-06
+    }
+  ],
+  "originalSourceSHA256": "a86c3e5ab308031a6b53e8c6270120c9444fffa1b0c6b180a21c595fcc4855fd",
+  "sourceUnchanged": true,
+  "fbx": "unity/Assets/Native67SpatialReview/MasterDenseMotionReview.fbx",
+  "fbxSHA256": "e59395d4f58a330a3c35e3df7375d7b86e6675a60234742b045229aeac531b2b",
+  "textureBindings": [
+    {
+      "node": "Image Texture",
+      "image": "master-h31-original_basecolor.jpg",
+      "source": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/master-native67-bary/original-image-0.jpg",
+      "sha256": "5233aecff02825ef6768bf8cb7e3362121019f225f4033f706098313eeaf6b74",
+      "colorSpace": "sRGB"
+    },
+    {
+      "node": "Image Texture.001",
+      "image": "master-h31-original_rm.jpg",
+      "source": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/master-native67-bary/original-image-1.jpg",
+      "sha256": "b136605f917c37f3987f920471d76014b94569632163a3b285647fe70218a58f",
+      "colorSpace": "Non-Color"
+    },
+    {
+      "node": "Image Texture.002",
+      "image": "master-h31-original_normal.png",
+      "source": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/master-native67-bary/original-image-2.png",
+      "sha256": "932ee1969513173f808962270adfffa82009f3be6af009162d696fc2f9f3c615",
+      "colorSpace": "Non-Color"
+    }
+  ],
+  "limits": [
+    "96Hz derived animation carrier, not original key bit preservation",
+    "FBX PBR material equivalence still needs explicit Unity inspection",
+    "Finite off-key surface samples, not continuous guarantee or phone acceptance"
+  ]
+}

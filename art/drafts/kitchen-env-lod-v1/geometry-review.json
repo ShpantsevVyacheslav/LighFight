@@ -1,0 +1,407 @@
+{
+  "table": {
+    "source": {
+      "vertices": 1076312,
+      "triangles": 1988865,
+      "finitePositions": true,
+      "finiteUVs": true,
+      "nonfinitePositionValues": 0,
+      "nonfiniteUVvalues": 0,
+      "UVvaluesOutside0to1": 0,
+      "UVmin": 0.0,
+      "UVmax": 1.0,
+      "geometricDegenerateTriangles": 0,
+      "UVdegenerateTriangles": 120539,
+      "boundsMinLocal": [
+        -0.24425509572029114,
+        -0.491180419921875,
+        0.0
+      ],
+      "boundsMaxLocal": [
+        0.24425509572029114,
+        0.491180419921875,
+        0.3198699951171875
+      ]
+    },
+    "LODs": {
+      "300000": {
+        "geometry": {
+          "vertices": 167742,
+          "triangles": 171725,
+          "finitePositions": true,
+          "finiteUVs": true,
+          "nonfinitePositionValues": 0,
+          "nonfiniteUVvalues": 0,
+          "UVvaluesOutside0to1": 0,
+          "UVmin": 0.0,
+          "UVmax": 1.0,
+          "geometricDegenerateTriangles": 0,
+          "UVdegenerateTriangles": 5779,
+          "boundsMinLocal": [
+            -0.24654026329517365,
+            -0.4905480444431305,
+            -0.005941055715084076
+          ],
+          "boundsMaxLocal": [
+            0.2441810518503189,
+            0.491180419921875,
+            0.32030928134918213
+          ]
+        },
+        "protection": {
+          "protectedVertices": 161101,
+          "totalVertices": 1076312,
+          "protectedFraction": 0.1496787176952408,
+          "method": "Zero weights on existing topological/UV-normal split boundaries and atlas0/1border; one on interior. Source copy only, no UV clamp."
+        },
+        "correspondence": {
+          "surfaceSamples": 6000,
+          "distanceSceneUnitsP50P95P99Max": [
+            0.00013307227252903984,
+            0.00371784651604066,
+            0.011464721068214194,
+            0.030834401113307486
+          ],
+          "nearestSourceUVdistance4KTexelsP50P95P99Max": [
+            1.8533265317416494,
+            11.589799070590846,
+            26.00015373382389,
+            3571.9263988286402
+          ],
+          "geometricFaceNormalAngleDegP50P95P99Max": [
+            0.8541746167870464,
+            43.30610919959539,
+            85.22396497688817,
+            176.68501894512266
+          ],
+          "limits": "Nearest-surface UV ambiguity near atlas seams can inflate UV tail; not alone a texture acceptance. Face normals include source dense noise, not tangent-normal-map error."
+        },
+        "method": "Boundary-protected collapse on new static copy; no atlas rebake/repacking, UV clamping, source changes, or vertex welding. Achieved triangles may exceed target. Seam/holes/shading require raster review."
+      },
+      "100000": {
+        "geometry": {
+          "vertices": 167742,
+          "triangles": 171725,
+          "finitePositions": true,
+          "finiteUVs": true,
+          "nonfinitePositionValues": 0,
+          "nonfiniteUVvalues": 0,
+          "UVvaluesOutside0to1": 0,
+          "UVmin": 0.0,
+          "UVmax": 1.0,
+          "geometricDegenerateTriangles": 0,
+          "UVdegenerateTriangles": 5779,
+          "boundsMinLocal": [
+            -0.24654026329517365,
+            -0.4905480444431305,
+            -0.005941055715084076
+          ],
+          "boundsMaxLocal": [
+            0.2441810518503189,
+            0.491180419921875,
+            0.32030928134918213
+          ]
+        },
+        "protection": {
+          "protectedVertices": 161101,
+          "totalVertices": 1076312,
+          "protectedFraction": 0.1496787176952408,
+          "method": "Zero weights on existing topological/UV-normal split boundaries and atlas0/1border; one on interior. Source copy only, no UV clamp."
+        },
+        "correspondence": {
+          "surfaceSamples": 6000,
+          "distanceSceneUnitsP50P95P99Max": [
+            0.00013307227252903984,
+            0.00371784651604066,
+            0.011464721068214194,
+            0.030834401113307486
+          ],
+          "nearestSourceUVdistance4KTexelsP50P95P99Max": [
+            1.8533265317416494,
+            11.589799070590846,
+            26.00015373382389,
+            3571.9263988286402
+          ],
+          "geometricFaceNormalAngleDegP50P95P99Max": [
+            0.8541746167870464,
+            43.30610919959539,
+            85.22396497688817,
+            176.68501894512266
+          ],
+          "limits": "Nearest-surface UV ambiguity near atlas seams can inflate UV tail; not alone a texture acceptance. Face normals include source dense noise, not tangent-normal-map error."
+        },
+        "method": "Boundary-protected collapse on new static copy; no atlas rebake/repacking, UV clamping, source changes, or vertex welding. Achieved triangles may exceed target. Seam/holes/shading require raster review."
+      }
+    }
+  },
+  "fridge": {
+    "source": {
+      "vertices": 1026269,
+      "triangles": 1974944,
+      "finitePositions": true,
+      "finiteUVs": true,
+      "nonfinitePositionValues": 0,
+      "nonfiniteUVvalues": 0,
+      "UVvaluesOutside0to1": 0,
+      "UVmin": 0.0,
+      "UVmax": 1.0,
+      "geometricDegenerateTriangles": 38,
+      "UVdegenerateTriangles": 77621,
+      "boundsMinLocal": [
+        -0.334747314453125,
+        -0.1807403564453125,
+        0.0
+      ],
+      "boundsMaxLocal": [
+        0.334747314453125,
+        0.1807403564453125,
+        0.977783203125
+      ]
+    },
+    "LODs": {
+      "300000": {
+        "geometry": {
+          "vertices": 88745,
+          "triangles": 99896,
+          "finitePositions": true,
+          "finiteUVs": true,
+          "nonfinitePositionValues": 0,
+          "nonfiniteUVvalues": 0,
+          "UVvaluesOutside0to1": 0,
+          "UVmin": 0.0,
+          "UVmax": 1.0,
+          "geometricDegenerateTriangles": 25,
+          "UVdegenerateTriangles": 2201,
+          "boundsMinLocal": [
+            -0.3346921503543854,
+            -0.1807403564453125,
+            2.8396116249496117e-05
+          ],
+          "boundsMaxLocal": [
+            0.3347403407096863,
+            0.18072509765625,
+            0.9778119921684265
+          ]
+        },
+        "protection": {
+          "protectedVertices": 76551,
+          "totalVertices": 1026269,
+          "protectedFraction": 0.07459155445599545,
+          "method": "Zero weights on existing topological/UV-normal split boundaries and atlas0/1border; one on interior. Source copy only, no UV clamp."
+        },
+        "correspondence": {
+          "surfaceSamples": 6000,
+          "distanceSceneUnitsP50P95P99Max": [
+            1.0953513734917849e-05,
+            8.03689590780087e-05,
+            0.00016759002612171358,
+            0.0003897031931361372
+          ],
+          "nearestSourceUVdistance4KTexelsP50P95P99Max": [
+            1.355307174837927,
+            5.030761932110022,
+            8.680586090861162,
+            34.54849158870171
+          ],
+          "geometricFaceNormalAngleDegP50P95P99Max": [
+            0.11364091540157657,
+            3.9651422734992807,
+            14.299627576025348,
+            56.65200712140196
+          ],
+          "limits": "Nearest-surface UV ambiguity near atlas seams can inflate UV tail; not alone a texture acceptance. Face normals include source dense noise, not tangent-normal-map error."
+        },
+        "method": "Boundary-protected collapse on new static copy; no atlas rebake/repacking, UV clamping, source changes, or vertex welding. Achieved triangles may exceed target. Seam/holes/shading require raster review."
+      },
+      "100000": {
+        "geometry": {
+          "vertices": 79707,
+          "triangles": 81820,
+          "finitePositions": true,
+          "finiteUVs": true,
+          "nonfinitePositionValues": 0,
+          "nonfiniteUVvalues": 0,
+          "UVvaluesOutside0to1": 0,
+          "UVmin": 0.0,
+          "UVmax": 1.0,
+          "geometricDegenerateTriangles": 25,
+          "UVdegenerateTriangles": 2166,
+          "boundsMinLocal": [
+            -0.334686279296875,
+            -0.1807403564453125,
+            3.0517578125e-05
+          ],
+          "boundsMaxLocal": [
+            0.334716796875,
+            0.18125763535499573,
+            0.9775855541229248
+          ]
+        },
+        "protection": {
+          "protectedVertices": 76551,
+          "totalVertices": 1026269,
+          "protectedFraction": 0.07459155445599545,
+          "method": "Zero weights on existing topological/UV-normal split boundaries and atlas0/1border; one on interior. Source copy only, no UV clamp."
+        },
+        "correspondence": {
+          "surfaceSamples": 6000,
+          "distanceSceneUnitsP50P95P99Max": [
+            2.895318965727943e-05,
+            0.0007207324119557797,
+            0.00258347495018509,
+            0.012618229881267595
+          ],
+          "nearestSourceUVdistance4KTexelsP50P95P99Max": [
+            2.3233307957853855,
+            14.832655622019606,
+            25.238570001011812,
+            4127.333494303567
+          ],
+          "geometricFaceNormalAngleDegP50P95P99Max": [
+            0.17705722994803824,
+            10.488550019306057,
+            47.28391038610632,
+            164.09671553009449
+          ],
+          "limits": "Nearest-surface UV ambiguity near atlas seams can inflate UV tail; not alone a texture acceptance. Face normals include source dense noise, not tangent-normal-map error."
+        },
+        "method": "Boundary-protected collapse on new static copy; no atlas rebake/repacking, UV clamping, source changes, or vertex welding. Achieved triangles may exceed target. Seam/holes/shading require raster review."
+      }
+    }
+  },
+  "coffee": {
+    "source": {
+      "vertices": 1044438,
+      "triangles": 1967143,
+      "finitePositions": true,
+      "finiteUVs": true,
+      "nonfinitePositionValues": 0,
+      "nonfiniteUVvalues": 0,
+      "UVvaluesOutside0to1": 0,
+      "UVmin": 0.0,
+      "UVmax": 1.0,
+      "geometricDegenerateTriangles": 2,
+      "UVdegenerateTriangles": 86959,
+      "boundsMinLocal": [
+        -0.19504547119140625,
+        -0.1644744873046875,
+        0.0
+      ],
+      "boundsMaxLocal": [
+        0.19504547119140625,
+        0.1644744873046875,
+        0.981414794921875
+      ]
+    },
+    "LODs": {
+      "300000": {
+        "geometry": {
+          "vertices": 124780,
+          "triangles": 127827,
+          "finitePositions": true,
+          "finiteUVs": true,
+          "nonfinitePositionValues": 0,
+          "nonfiniteUVvalues": 0,
+          "UVvaluesOutside0to1": 0,
+          "UVmin": 0.0,
+          "UVmax": 1.0,
+          "geometricDegenerateTriangles": 0,
+          "UVdegenerateTriangles": 2381,
+          "boundsMinLocal": [
+            -0.19499339163303375,
+            -0.163787841796875,
+            -0.005006134510040283
+          ],
+          "boundsMaxLocal": [
+            0.19493605196475983,
+            0.1643969714641571,
+            0.981414794921875
+          ]
+        },
+        "protection": {
+          "protectedVertices": 119735,
+          "totalVertices": 1044438,
+          "protectedFraction": 0.1146406009739209,
+          "method": "Zero weights on existing topological/UV-normal split boundaries and atlas0/1border; one on interior. Source copy only, no UV clamp."
+        },
+        "correspondence": {
+          "surfaceSamples": 6000,
+          "distanceSceneUnitsP50P95P99Max": [
+            3.620116011203694e-05,
+            0.001901542795009476,
+            0.004899118361378164,
+            0.01443120770425299
+          ],
+          "nearestSourceUVdistance4KTexelsP50P95P99Max": [
+            1.7193754603231848,
+            10.647452377832614,
+            25.885562526164843,
+            3107.790723965738
+          ],
+          "geometricFaceNormalAngleDegP50P95P99Max": [
+            0.6687334091551826,
+            36.713785030265605,
+            83.86156694303739,
+            179.4826559610923
+          ],
+          "limits": "Nearest-surface UV ambiguity near atlas seams can inflate UV tail; not alone a texture acceptance. Face normals include source dense noise, not tangent-normal-map error."
+        },
+        "method": "Boundary-protected collapse on new static copy; no atlas rebake/repacking, UV clamping, source changes, or vertex welding. Achieved triangles may exceed target. Seam/holes/shading require raster review."
+      },
+      "100000": {
+        "geometry": {
+          "vertices": 124780,
+          "triangles": 127827,
+          "finitePositions": true,
+          "finiteUVs": true,
+          "nonfinitePositionValues": 0,
+          "nonfiniteUVvalues": 0,
+          "UVvaluesOutside0to1": 0,
+          "UVmin": 0.0,
+          "UVmax": 1.0,
+          "geometricDegenerateTriangles": 0,
+          "UVdegenerateTriangles": 2381,
+          "boundsMinLocal": [
+            -0.19499339163303375,
+            -0.163787841796875,
+            -0.005006134510040283
+          ],
+          "boundsMaxLocal": [
+            0.19493605196475983,
+            0.1643969714641571,
+            0.981414794921875
+          ]
+        },
+        "protection": {
+          "protectedVertices": 119735,
+          "totalVertices": 1044438,
+          "protectedFraction": 0.1146406009739209,
+          "method": "Zero weights on existing topological/UV-normal split boundaries and atlas0/1border; one on interior. Source copy only, no UV clamp."
+        },
+        "correspondence": {
+          "surfaceSamples": 6000,
+          "distanceSceneUnitsP50P95P99Max": [
+            3.620116011203694e-05,
+            0.001901542795009476,
+            0.004899118361378164,
+            0.01443120770425299
+          ],
+          "nearestSourceUVdistance4KTexelsP50P95P99Max": [
+            1.7193754603231848,
+            10.647452377832614,
+            25.885562526164843,
+            3107.790723965738
+          ],
+          "geometricFaceNormalAngleDegP50P95P99Max": [
+            0.6687334091551826,
+            36.713785030265605,
+            83.86156694303739,
+            179.4826559610923
+          ],
+          "limits": "Nearest-surface UV ambiguity near atlas seams can inflate UV tail; not alone a texture acceptance. Face normals include source dense noise, not tangent-normal-map error."
+        },
+        "method": "Boundary-protected collapse on new static copy; no atlas rebake/repacking, UV clamping, source changes, or vertex welding. Achieved triangles may exceed target. Seam/holes/shading require raster review."
+      }
+    }
+  }
+}

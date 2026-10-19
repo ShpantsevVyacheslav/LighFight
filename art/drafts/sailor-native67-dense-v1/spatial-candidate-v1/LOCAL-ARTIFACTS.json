@@ -1,0 +1,261 @@
+{
+  "status": "COMPLETED_SPATIAL_AB_NOT_QUALITY_ACCEPTED",
+  "sourceGeometry": {
+    "vertices": 994452,
+    "triangles": 1988914,
+    "originalUVMapsMaterialsPreserved": true
+  },
+  "sourcePostExitSHA": [
+    {
+      "path": "art/source/tripo-striped-sailor-apose-original/unpacked/tripo_convert_7b8f380e-26b3-4dc1-92a2-d433761960f0.fbx",
+      "sha256": "2148fa7a80a0a8be70c4a32f3fe61aa8344c059c2b9183f52818f943917c3b23",
+      "matchesSource": true
+    },
+    {
+      "path": "art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx",
+      "sha256": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+      "matchesSource": true
+    }
+  ],
+  "nativeBones": 67,
+  "nativeAuthoredActionsUnchanged": true,
+  "inferredWeights": {
+    "maxInfluences": 10,
+    "histogram": {
+      "1": 102548,
+      "2": 379375,
+      "3": 191198,
+      "4": 180277,
+      "5": 95357,
+      "6": 33325,
+      "7": 10362,
+      "8": 1375,
+      "9": 571,
+      "10": 64
+    },
+    "unweighted": 0,
+    "minPositiveDonor": 0.003921568682234659,
+    "donorRawSumMaxErrorBeforeExplicitNormalization": 5.21540641784668e-08,
+    "minPositiveBaseline": 3.216800010050827e-10,
+    "minPositiveStored": 4.958639233886919e-18,
+    "sumMaxError": 5.21540641784668e-08,
+    "positiveInfluences": 2922048,
+    "stableBaryOnly": 159748,
+    "transition": 80145,
+    "fieldOnly": 754559,
+    "stableBaryOnlyBounds": {
+      "min": [
+        -0.2477112114429474,
+        -0.0926055489551536,
+        1.6774613880305317e-09
+      ],
+      "max": [
+        0.2477875053882599,
+        0.021764742220750095,
+        0.9773254400708347
+      ]
+    }
+  },
+  "gameImportRequirements": {
+    "QualitySettingsSkinWeights": "Unlimited",
+    "variableWeightsAPI": "SetBoneWeights NativeArray<byte> bonesPerVertex + NativeArray<BoneWeight1> allPositiveWeights",
+    "noImplicitMax4or8": true,
+    "ModelImporterMinBoneWeightZeroAloneInsufficient": "Installed Unity6000.3 previously clamps getter.001 and prunes. Must restore authoritative variable positive CSR and verify named readback/counts, not trust importer config.",
+    "smallestPositiveMustSurvive": 4.958639233886919e-18,
+    "sameOriginalVerticesMaySplitByUVNormals": "Map corners/position/UV, no unchecked integer reuse after FBX importer."
+  },
+  "limits": [
+    "Only3selected native dance phases actual evaluated/rendered; no all8/fullclip skin acceptance.",
+    "No export/Unity/avatar/game/phone promotion.",
+    "No render-capacity claim from this diagnostic process RAM."
+  ],
+  "resources": {
+    "seconds": 178.4146502079675,
+    "peakRSSBytes": 1869660160,
+    "pressureLevels": [
+      "1"
+    ]
+  },
+  "files": [
+    {
+      "path": "SailorOriginalDenseNative67Spatial.blend",
+      "bytes": 106691856,
+      "sha256": "627d34d22298ee24e3fa7bcc8970d85351cac8d22b1412d24c65553349a63ede",
+      "ordinaryGitAllowed": false
+    },
+    {
+      "path": "comparison-backthreequarter.jpg",
+      "bytes": 463875,
+      "sha256": "276653955ba52634f362acfc5a7050e4a60b81d7f7279f329c52352f97236d53",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "comparison-front.jpg",
+      "bytes": 360020,
+      "sha256": "c4332b65daae5893e22e2699a87bf1249c0dc531106b199495be0cb51c6a8cb0",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "comparison-side.jpg",
+      "bytes": 555802,
+      "sha256": "4523c4dd1d8f64a513cad7bd90cf135f80f974b61f88d73b3a3df79fa23b53e8",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance45-Sailor_OriginalDense_UNTOUCHED-backthreequarter-clay.png",
+      "bytes": 415625,
+      "sha256": "b21af9899131854274a54c0543c9fd8d677762bc402f8e8baf5506c060153e3f",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance45-Sailor_OriginalDense_UNTOUCHED-front-clay.png",
+      "bytes": 380167,
+      "sha256": "756f5f36e60e4093c4344063cc4a9517cde8e8235919afbc495109343cdd6992",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance45-Sailor_OriginalDense_UNTOUCHED-side-clay.png",
+      "bytes": 432415,
+      "sha256": "55e4e093a7658421862447bfd0893b4030e42128d0f5fb914e3cce7ac75b6178",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance45-tripo_node_f24a44a7-backthreequarter-clay.png",
+      "bytes": 413760,
+      "sha256": "dd20d0938c1c37eb84943000c938e94c22992039177b6dc11b7505ed0791a780",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance45-tripo_node_f24a44a7-front-clay.png",
+      "bytes": 379416,
+      "sha256": "4fdf15a99a29a84ea8949fceb76fd3f269c05d17ca37626803cbbe5d31d0effb",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance45-tripo_node_f24a44a7-side-clay.png",
+      "bytes": 430855,
+      "sha256": "32a98b38590464e91b69e9b76685411f61759615266116ebf4675da7b194ab2e",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance50-Sailor_OriginalDense_UNTOUCHED-backthreequarter-clay.png",
+      "bytes": 440012,
+      "sha256": "9ff466033d67d4d1d2bb77f9790fa7469486fe991356e9a0d8c81bef06f50adb",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance50-Sailor_OriginalDense_UNTOUCHED-front-clay.png",
+      "bytes": 396972,
+      "sha256": "9dd340b2b6a747a0955f18da64bf263890dd71ebe5d48981812f7252ddae4739",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance50-Sailor_OriginalDense_UNTOUCHED-side-clay.png",
+      "bytes": 460559,
+      "sha256": "db66562924689929a08f04004b501b3a6fca6d3b05326aa59de067cd6c20f735",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance50-tripo_node_f24a44a7-backthreequarter-clay.png",
+      "bytes": 437846,
+      "sha256": "98fd7b44900ed848e67dd69d34585134579c540de7e25f9fea6eef9cc2c40bcf",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance50-tripo_node_f24a44a7-front-clay.png",
+      "bytes": 395879,
+      "sha256": "ca0f16f327b2166023b61b43fc0759b18d61eaf68c9befd2a957c2dee8c6ed00",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance50-tripo_node_f24a44a7-side-clay.png",
+      "bytes": 458566,
+      "sha256": "44805e3fe3fb6812c2245f15780075db1ff679433f0b6641df87d5fc6abb1aa7",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance55-Sailor_OriginalDense_UNTOUCHED-backthreequarter-clay.png",
+      "bytes": 405078,
+      "sha256": "62259571ec60fe5f7f1f9981cdfc9a21e38c5098de0dfff6eb1621ac537f722d",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance55-Sailor_OriginalDense_UNTOUCHED-front-clay.png",
+      "bytes": 386105,
+      "sha256": "78511baeb7caf3fbddd1e722ff4bc924af0073189bc11c7c75569bfdd59457aa",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance55-Sailor_OriginalDense_UNTOUCHED-side-clay.png",
+      "bytes": 451504,
+      "sha256": "e62df24dbb2bb7e8dfe057cacf4a3b93701e95a9d08a9c77191cf45cc431e817",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance55-tripo_node_f24a44a7-backthreequarter-clay.png",
+      "bytes": 404352,
+      "sha256": "6cb2c4aa51e2c2da4c1d4af8ae4937c7a2660032a4cbfe14545fc840a542b805",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance55-tripo_node_f24a44a7-front-clay.png",
+      "bytes": 385560,
+      "sha256": "28706db74326b4ab710db3d60213b1a0151854d6e87b3730ce9ff781b10b596f",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "dance55-tripo_node_f24a44a7-side-clay.png",
+      "bytes": 449906,
+      "sha256": "1e0959f5984eccd27b29525b0c91ad4f26cddba2f3a8f8052ee2e86ab8a49bbe",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "derived-native67-weights-csr.npz",
+      "bytes": 12686465,
+      "sha256": "4a80d2d2ee2578a9c3ed35a88eb0c3e9024bcc3e9c9d0585b0f98c629c79ad1a",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "process-guard.json",
+      "bytes": 2168,
+      "sha256": "501c199868d8bbf4e31189df28daff14a0fc0d9e8de16e520aa8bbe119f41d3f",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "spatial-report.json",
+      "bytes": 30688,
+      "sha256": "6d550da448db4765cba4a9320439f87ed2926f399bcda55f3622fe4029c45d09",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "stable-mask-front.png",
+      "bytes": 26250,
+      "sha256": "4505e20caa366bb37d78dedcdc41bbe48c98fd1e62dfff4c370d5c1f51eca5ed",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "stable-mask-side-minusX.png",
+      "bytes": 16019,
+      "sha256": "005a2619cebd04ec52a0fc610e1bb4adff7ad8a415d50b4b3d3465111e7bb617",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "stable-masks.npz",
+      "bytes": 9371136,
+      "sha256": "41dcf3e9e148676f70dd8d6a9616e5709a282a2a9182f04ac4e7f4adc78eb2b6",
+      "ordinaryGitAllowed": true
+    },
+    {
+      "path": "weights-float32.local",
+      "bytes": 266513136,
+      "sha256": "36351fe51bdaa6addea736f904178b86d1cee71984d93624c9daf3e8befd2162",
+      "ordinaryGitAllowed": false
+    },
+    {
+      "path": "RESULT.md",
+      "bytes": 3680,
+      "sha256": "57ef19114eb48fa8d7cdf32c7f9c6f03b2ab2fb1f0f7c0791e13d9b517557e65",
+      "ordinaryGitAllowed": true
+    }
+  ]
+}

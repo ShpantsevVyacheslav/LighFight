@@ -1,0 +1,213 @@
+{
+  "status": "COUNTEREXAMPLE_RENDERED_NOT_LEAK_DIAGNOSIS",
+  "stage": "renders",
+  "cases": [],
+  "maskStatus": "PROVISIONAL_NOT_ANATOMICAL_TRUTH",
+  "maskSHA256": "03780bb62f3e6e500aec31ea3a7c7f33eb13d157e4e5834ebc40796e6f0e8a45",
+  "probeScriptSHA256": "4d97cb33fad16420fa82903465cee4f37314f1377b9889160bc8d3365061e703",
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sourceAttributes": {
+    "positions": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "loopVertexIndices": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygonStarts": "7b638feadc801e5555a8882879c9d17a5b2e449938fae59482d0cda848f41592",
+    "polygonSizes": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "uv:UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+  },
+  "sourceHashes": {
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/stage02-bound-original-dense.blend": "dedd8c00b27278ef6f02a8753a61ed0636053d2733ede83357134a7a8033052d",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/tools/27_actual_arm_elevation.py": "97f88ea6dfbc7b87d0a638ba80cc5f76608b8ea3453ee7b933cc3bc81e7c7516"
+  },
+  "limits": [
+    "Metrics/masks only; no corrective or weight mutation.",
+    "Orientation opposition is a transported-normal witness, not a self-intersection proof.",
+    "Closed sections are not whole-garment volume.",
+    "C1 OFF/ON hand movement is measured natural girdle translation, not automatically an anchor failure."
+  ],
+  "referenceWeightStats": {
+    "unweighted": 0,
+    "maxInfluences": 4,
+    "maxSumDeviation": 1.825392246246338e-07,
+    "nonzeroInfluences": 3088451,
+    "reference": "untouched original-indexed sidecar; actual render readback separately checked"
+  },
+  "marker": {
+    "originalVertexIndex": 664129,
+    "adjacentOriginalTriangleIndex": 911907,
+    "adjacentOriginalTriangleVertexIndices": [
+      659391,
+      666656,
+      664129
+    ],
+    "allAdjacentOriginalTriangleIndices": [
+      911907,
+      911908,
+      911910,
+      914183,
+      914187,
+      914189
+    ],
+    "positionBlenderLocal": [
+      -0.03739166259765625,
+      0.03153229504823685,
+      0.853668212890625
+    ],
+    "originalNamedWeights": [
+      {
+        "bone": "DEF-spine.004",
+        "weight": 0.4820789098739624
+      },
+      {
+        "bone": "DEF-jaw.R.001",
+        "weight": 0.11266996711492538
+      },
+      {
+        "bone": "DEF-tongue.002",
+        "weight": 0.16717620193958282
+      },
+      {
+        "bone": "DEF-shoulder.R",
+        "weight": 0.23807485401630402
+      }
+    ],
+    "interpretation": "Geometric/anatomical counterexample only; bone names do not establish a leakage diagnosis. Red 3D sphere radius2mm marks exact world position; red edges mark its first original adjacent triangle."
+  },
+  "renders": [
+    {
+      "file": "vertex664129-OFF-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.2814183831214905,
+        -1.7731956243515015,
+        0.8682329058647156
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.8082329177856445
+      ],
+      "orthoScale": 0.34,
+      "material": "source-normal1",
+      "markerWorldM": [
+        0.24117827429057004,
+        0.22675659813197524,
+        0.8159073436019758
+      ],
+      "variant": "OFF"
+    },
+    {
+      "file": "vertex664129-OFF-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        1.1314184665679932,
+        2.226804256439209,
+        0.9282329082489014
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.8082329177856445
+      ],
+      "orthoScale": 0.34,
+      "material": "source-normal1",
+      "markerWorldM": [
+        0.24117827429057004,
+        0.22675659813197524,
+        0.8159073436019758
+      ],
+      "variant": "OFF"
+    },
+    {
+      "file": "vertex664129-OFF-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        2.2814183235168457,
+        0.22680434584617615,
+        0.8682329058647156
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.8082329177856445
+      ],
+      "orthoScale": 0.34,
+      "material": "source-normal1",
+      "markerWorldM": [
+        0.24117827429057004,
+        0.22675659813197524,
+        0.8159073436019758
+      ],
+      "variant": "OFF"
+    },
+    {
+      "file": "vertex664129-ON-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.2814183831214905,
+        -1.7731956243515015,
+        0.8682329058647156
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.8082329177856445
+      ],
+      "orthoScale": 0.34,
+      "material": "source-normal1",
+      "markerWorldM": [
+        0.2432675721267036,
+        0.22825988047700252,
+        0.8176194168896356
+      ],
+      "variant": "ON"
+    },
+    {
+      "file": "vertex664129-ON-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        1.1314184665679932,
+        2.226804256439209,
+        0.9282329082489014
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.8082329177856445
+      ],
+      "orthoScale": 0.34,
+      "material": "source-normal1",
+      "markerWorldM": [
+        0.2432675721267036,
+        0.22825988047700252,
+        0.8176194168896356
+      ],
+      "variant": "ON"
+    },
+    {
+      "file": "vertex664129-ON-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        2.2814183235168457,
+        0.22680434584617615,
+        0.8682329058647156
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.8082329177856445
+      ],
+      "orthoScale": 0.34,
+      "material": "source-normal1",
+      "markerWorldM": [
+        0.2432675721267036,
+        0.22825988047700252,
+        0.8176194168896356
+      ],
+      "variant": "ON"
+    }
+  ],
+  "sourceAttributesExact": true,
+  "seconds": 56.33553016703809,
+  "markerScriptSHA256": "4d97cb33fad16420fa82903465cee4f37314f1377b9889160bc8d3365061e703"
+}

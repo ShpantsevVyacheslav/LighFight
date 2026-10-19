@@ -261,3 +261,92 @@ Full seam/oriented-triangle/cornerUV/true-bind coordinate verification PASS. Sta
 ### 2026-10-19 — broader dance/shoulder visual review
 
 Full Float32 PNT snapshot rendering and alternative bary/DQS transfer tested. Neither alone removes shoulder fold. Experimental C1 clavicle correction passes6816finite pose-only holds on8clips, but translates wrists<=2.251cm at sourceheight and remains NOT DEPLOYED. User suggested dance-specific issue; new12frame survey plus16frame gallery without corrections supports pose-sensitive defect strongest45–50%, with neutral/walk/greet calmer. Global skeleton adjustment deferred in favor of same-model alternative-dance comparison. Actual uncorrected Unity-vs-Blender temporal gate RED (.1704mm/.07949deg); static pixel repeats also RED. No game/phone/user acceptance changes. Evidence: `docs/reports/native67-surface-review-2026-10-19/README.md`.
+
+### 2026-10-19 — user-preferred zero upper-arm twist for dances
+
+IN PROGRESS: user prefers0% upper-arm axial twist vs100% on Sailor Bubble frame. Candidate extended to55poses/11dances on original dense geometry, full-positive weights and raw4K maps. All endpoint gates passed (max hand0.541um/elbow0.378um). Dense1111pose full-quaternion audit retained source-equivalent forearm angular steps, but some source clips contain fast changes; no blanket motion-quality acceptance. Begin/end250ms C1 correction fade under validation. Earlier subjective rejection superseded by user art direction. No combat rig or game build promotion yet. Evidence: docs/reports/native67-zero-twist-dances-2026-10-19/.
+
+### 2026-10-19 — playable full-density zero-twist review
+
+ГОТОВ КОД (локальное превью), проверено агентом: separate twist-review page with original/zero Bubble, all1.99Mtriangles/all-positive weights,96Hz bake, correction fade250ms and controller return350ms. CPU glTF roundtrip max0.144um; browser model/dance visually loaded. User phone/game validation not claimed. Return pose currently native box_02 combat-start hold, NOT authored fighting idle. Production/roster models unchanged. Evidence: docs/reports/native67-zero-twist-web-preview-2026-10-19/.
+
+
+### 2026-10-19 — основное web-превью Моряка и детали переговорной
+- **Готов код / локально проверено ассистентом:** полный меш Моряка с танцем 0% твиста, родная Meshy guard, возврат после танца; основной экран без рамки iframe. 5/5 тестов жестов. Телефон/игра не проверены. Отчёт: docs/reports/native67-zero-twist-main-preview-2026-10-19/README.md.
+- **В работе:** meeting_arena_details добавляет предметы по шести фото пользователя в 3D-переговорную, с сохранением свободной зоны боя.
+
+### 2026-10-19 — замена деталей переговорной на Meshy
+- **В работе (по прямому запросу пользователя):** ручные упрощенные интерьерные предметы отклонены. Пять новых Meshy7.1 моделей с исходными PBR4K полностью получены: печка, желтая чаша, сетевой шкаф, кресло-мешок, растение. Потрачено175из ранее согласованного общего лимита, остаток387. Источники и SHA: art/source/meeting-meshy-props-v1/source-manifest.json.
+- **Локально проверено ассистентом:** исходная печка и желтая чаша узнаваемы; ковёр восстановлен отдельной текстурой и в проверочной 3D-сцене перенесён на стену напротив окон. Каталог Unity и телефон пока прежние.
+- **В работе:** проверка остальных исходных моделей, расстановка, отдельные игровые LOD с визуальным сравнением (12k печка отклонена из-за заломов), Unity validation и обновление карточки арены после актуальных рендеров. Полные исходники не изменять. Производительность на iPhone остаётся отдельной незакрытой проверкой.
+
+### 2026-10-19 — уточнения переговорной после просмотра Meshy
+- **В работе:** ковёр на всю стену напротив окон; уменьшить шкаф и поставить слева вверху; печку уменьшить до~20см.
+- **В работе:** Meshy-модель открытого ноутбука, несколько экземпляров на столе; отдельная Meshy-модель кальяна по фото, размещение на столе. Резервдо70кредитоввнутри387остатка.
+- **В работе:** сидящие зрители из ростера, исключающие обоих активных участников боя; сидячая поза и контакты со стулом/полом. Отдельно взаимодействие одного зрителя с кальяном. Игровой бюджет включает фоновых героев, качество/нагрев не считаются проверенными пользователем.
+
+### 2026-10-19 — обновлённая расстановка и подготовка зрителей
+- **Локально проверено ассистентом:** actual 3D render `art/drafts/meeting-meshy-v1/placement-review/whole.png`: ковёр на всю стену напротив окон, шкаф уменьшен и перенесён влево вверх, печка~20см, три ноутбука и кальян на столе. Всего7Meshy моделей скачаны, расход245, остаток317/1200 общего лимита; originals неизменны. Карточка арены обновлена actual render.
+- **Готов код / в работе визуальная проверка:** bounded selected-only загрузка максимум2 статичных сидящих зрителей; исключение обоих участников боя, low/high/max бюджеты0/1/2, отложенное освобождение handles. Четыре теста выбора PASS. Сидячий bake Моряка с контактами ног имеет ошибки<0.001см; исправлена native mesh copy ошибка повторного запекания. Контекст стула/стола и остальные3кандидата ещё проверяются, accepted=false до actual render.
+- **В работе:** подключение кальяна к кисти/рту, тонкий отдельный шланг и ограниченный дым без liveAnimator/ParticleSystem. Установленная сборка телефона не обновлена; нагрев не считается проверенным.
+
+### 2026-10-19 — исправления по новому скриншоту переговорной
+- **В работе:** стол шире на35% и длиннее на15%, стулья и якоря зрителей перемещаются согласованно.
+- **Причина подтверждена измерением:** actual LOD столешница Y≈0.942м, прежнее размещение предметов Y=1.05м создавало зазор≈10.8см. Ноутбуки, блюдце растения и основание кальяна нужно посадить по своим опорным поверхностям на actual столешницу; общий bounding box растения для этого не подходит.
+- **В работе:** единый широкий ковёр вместо достроенных боковых полос. Новый цельный референс `art/source/meeting-meshy-props-v1/inputs/rug-coherent-wide.png` создан и визуально проверен; финальная плоскость/рендер ещё проверяются.
+- **Зрители:**8/9/3 прошли отдельный визуальный отсмотр поз;10(Дачник) отклонён из-за деформации верхних частей ног/шорт. Включать в игровой пул только после отдельного исправления. Числовой IK PASS сам по себе недостаточен. Каталог переговорной не обновлять до проверки новой расстановки в Unity.
+
+### 2026-10-19 — переговорная перенесена в игровой каталог
+- **Готов код / локально проверено ассистентом:** арена0 теперь `Assets/LighFight/Art/Drafts/MeetingMeshyV1/arena.prefab`; стол1.35×шире/1.15×длиннее, три ноутбука/блюдце растения/основание кальяна опираются на actualY.942523. Единый широкий ковёр без повторенных боковых панелей, уменьшенный ящик слева вверху и печка~20см. Actual Unity whole+table closeup и отдельный rug-wall просмотрены; ArenaLayoutValidator PASS,239151треугольник окружения.
+- **Готов код / локально проверено ассистентом:** selected-only фоновые сидящие9/8/3; исключение активных бойцов проверено на55парах,5/5тестовPASS. На максимуме не более2зрителей, на высоком1, на низком0. Статичные позы без Animator; мундштук/отдельный шланг/4ограниченных дымовых плоскости.6адресов зарегистрированы в embeddedкаталоге, материалы закреплены как зависимости для сборки. Дачник10не включён из-за отклонённой деформации.
+- **Не протестировано пользователем/на телефоне:** новая арена и нагрузка фоновых персонажей. Телефонная сборка не обновлена. Резерв старого каталога и путь прежней арены: `art/drafts/meeting-meshy-v1/unity/promotion.json` и `GameContent-before-promotion.asset`.
+
+### 2026-10-19 — ROSTER-40 · P1 · Полный состав и высокая детализация
+- **В работе, по прямому поручению владельца:** все11 запланированных персонажей в новом списке и выборе соперника; отдельные портреты из исходных фото, исходные геометрия/UV/карты без уменьшения, проверенная привязка/движения и явно разделённые профили превью/боя. Это сквозной этап QUALITY-10/DENSITY-11/RIG-12/PORTRAIT-24, а не закрытие всей индивидуальности ROSTER-07B.
+- Read-only инвентаризация: `art/drafts/full-roster-v1/inventory.json`.10найденных originals~1.86–1.99Mtris безскелета; nativepacks11~100ktris/67bones. НедостающийoriginalОстровного нужно найти/сверить, не выдаватьnative100kзаoriginal2M.
+- Лицевые исходники Костяной леди, Ведьмы и Розовой пантеры заменены присланными владельцем фотографиями в `art/references/identity-originals/`. ПромежуточныеA/Tпозы — только costume-reference, не источник идентичности. Прежние портреты этих3отклонены; 3D-лица также требуют пересмотра по originals.
+- Пользовательская приёмка всего состава/нового качества и телефонная версия остаются открытыми.
+
+### 2026-10-19 — порядок ROSTER-40 уточнён владельцем
+- Окончательные анимированные превью отложены до привязки исходных моделей и проверки плеч всех бойцов.
+- Сначала original geometry + скелет, затем отдельная проверка zero upper-arm axial twist на танцах и боевых движениях; нельзя слепо применять поправку ко всем клипам.
+- Мастер стихий: запущен перенос на original 1 992 276 tris. Новый скрипт `art/drafts/full-roster-v1/reconstruct_dense_preserving_weights.py` не отсекает положительные коэффициенты базового переноса, не ограничивает число влияний, не изменяет геометрию/UV/карты. Статус: в работе, не подключено в игру, не принято визуально.
+
+### 2026-10-19 — документация и полный recipe исправлений
+- По указанию владельца переносить на всех бойцов **полный подтверждённый набор Моряка**, с измерением осей/параметров каждого бойца; не ограничиваться zero twist. Отклонённые эксперименты не включать молча.
+- Созданы `docs/README.md`, `docs/ARCHITECTURE.md`, `docs/art/CHARACTER_PIPELINE.md`: карта кода/контента, стадии переноса, матрица готовности и границы web/editor/phone.
+- Мастер: завершён проверочный transfer original1 992 276tris, без изменения geometry/UV/material,0unweighted, max8influences; 6pose native/zero diagnostics. Полный recipe Моряка ещё НЕ перенесён, не назначено в игру. Визуальное A/B и endpoint-proof сохранены в `art/drafts/full-roster-v1/master-dense-positive/`.
+
+### 2026-10-19 — ROSTER-40: перенос полного эталона
+- Заморожен `art/drafts/full-roster-v1/sailor-guard-v3-recipe.json` с9SHA-зависимостями. Выявлена фактическая full-bary weight authority, а не spatial-кандидат; native strikes в эталоне ещё без zero-twist.
+- Мастер: original1 992 276tris, full-bary rig67, экспорт/reimport всех положительных весов PASS. Unity1155retarget/twist samples PASS,16видов сохранены, endpoint shift≤4.35e−7m. Просмотрены передний лист и центральный задний кадр; кандидат не назначен в игру. Открыты loop/transition, исходные весовые коэффициенты черезUnityseams, боевые клипы и runtime/телефон.
+- Для всех11 записан read-only native-clip inventory. Рейнджер: front_kick_01 отсутствует, требуется явный mapping, нет ложного закрытия по универсальным именам.
+- Архитектурная карта и матрица обновлены, ссылка добавлена в корневойREADME; историческийCanvasотмечен отдельно от текущегоUnity.
+
+### 2026-10-19 — RIG-12: source Float32 и цикл стойки Мастера
+- Gate по source-ID выявил потерю влияний у20 734Unity-вершин и округление2 653 849коэффициентов при обычномFBXимпорте. Стандартный importedskin не принят; суммавесов≈1не является достаточной проверкой.
+- RawFloat32GPU gate: все2 801 001положительных sourceweights сохранены побитно,5позMetalGPU vsCPUdouble≤0.188µm. Это не renderer/mobile acceptance.
+- GuardLoop358keys, возврат из танца773keys: численные границы безскачкаPASS. Полный surface/transition/nativeattackgate остаётся в работе.
+
+### 2026-10-19 — ROSTER-40: Рейнджер
+- Full-bary перенос:1 986 463tris,1 018 962originalvertices,0unweighted,max7influences. Полный positive named-weight FBX reimportPASS.
+- Выполняется единая последовательность import→GPU Float32→guard/return→surface. Не назначен в игру.
+- PBR carrierFBXне принят: предупреждение packed-imagecopy; нейтральные geometry/weight review не закрывают проверку материалов. Originalкарты сохранены.
+
+### 2026-10-19 — ROSTER-40: два full-density проверочных бойца
+- Мастер: rawFloat32GPU и численные loop/return gatesPASS; raw-surface36кадров, лист переходов просмотрен.
+- Рейнджер: вся последовательность6этаповPASS, source2 772 074положительных коэффициента сохранены побитно, GPUпозицииvsCPUdouble≤0.193µm; raw36кадров, лист просмотрен.
+- Общий рецепт версионирован в `native67-full-density-recipe-v2.json`; стандартные Unity importedweights не authority из-за потерь. Productionназначение/боевые клипы/PBR/уникальные танцы/телефон остаются открыты. Ни один из этих кандидатов не выдан за законченную игровую интеграцию.
+
+### 2026-10-19 — отдельный аудит плеч/трапеций Моряка и Ретро
+- ВебМоряк: full-density+Float32/zero-twist/GuardLoop подключены; nativeудары ещё без этойкоррекции. ВебРетро:100ktris, без новогонабора.
+- РеальныеGameContent8/9 указывают на прежниеHumanoidCandidate: полного новогонабора в игре нет. Статус «исправлено у обоих» запрещён до реального переноса/проверки.
+- ДополнительныйclavicleC1support существует какэксперимент; позднийcontrolledreport не принимаетего. Автоматическивключатьотклонённыйвариантнельзя.
+- Добавлены отчёт `docs/reports/shoulder-rollout-audit-2026-10-19.md` и JSONasset-audit. Следующий приоритетпереноса — Ретро наoriginalFBXбезGLBконвертации/уменьшения.
+
+### 2026-10-19 — RIG-12: Ретро проверен, не закрыт
+- Original1 921 472tris привязан безупрощения,0unweighted,max7; весьexport/import/rawGPU/loop/return pipelineзавершён. Source2 777 122positivecoefficientsсохранены; GPU/CPUdouble≤0.192µm.
+- Дополнительноfixed-camera4gainsweep(100/50/25/0),40кадров,3092отсчёта, endpointshift≤0.379µm. Просмотренылисты45/50/55% иupperbody50%.
+- **Визуальнонепринят:** подмышечная/плечеваядеформацияостаётся; нужноотделитьвкладweights/surface/normals. Лучшийgainневыбран. НеподменятьвизуальнуюпроверкуматематическимPASS.
+- Моряк/Ретро в реальномGameContent пока прежние; дополнительныеclavicleC1экспериментыотклонены, неподключатьмеханически. Подробныйаудит:docs/reports/shoulder-rollout-audit-2026-10-19.md.
+- Master native carrier: полныйsourcegeometry/UV/namedweightsroundtripPASS;9off-keyповерхностей3боевыхклипов≤10.55µm. Unity/nativeplaybackещёоткрыт.

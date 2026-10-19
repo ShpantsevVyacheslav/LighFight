@@ -1,0 +1,20 @@
+"""Offline exact donor-triangle distance on512frozen original rest samples only."""
+import os
+for k in ['OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS']:os.environ[k]='1'
+import json,math,time,sys
+from pathlib import Path
+import numpy as np
+sys.path.insert(0,str(Path(__file__).resolve().parent));from audit_sources_offline import Reader,child,ROOT,O
+start=time.monotonic();source=next((ROOT/'art/source/tripo-striped-sailor-apose-original/unpacked').glob('*.fbx'));donor=next((ROOT/'art/source/tripo-striped-sailor-native-full-pack/unpacked').glob('*.fbx'))
+def geometry(p):
+ ns=Reader(p).all();objs=next(n for n in ns if n.name=='Objects').c;g=next(n for n in objs if n.name=='Geometry' and n.p[-1]=='Mesh');verts=child(g,'Vertices').p[0].reshape(-1,3);indices=child(g,'PolygonVertexIndex').p[0].copy();assert len(indices)%3==0 and np.all(indices[2::3]<0) and np.all(indices.reshape(-1,3)[:,:2]>=0);indices[indices<0]=-indices[indices<0]-1;return verts,indices.reshape(-1,3)
+sv,st=geometry(source);dv,dt=geometry(donor);meta=json.loads((O/'offline-source-audit.json').read_text());props=meta['original']['meshModelProperties'];assert props.get('Lcl Scaling',[1,1,1])==[1,1,1] and props.get('Lcl Rotation')[1:]==[0.,0.]
+ang=math.radians(props['Lcl Rotation'][0]);c,s=math.cos(ang),math.sin(ang);sm=np.eye(4);sm[:3,:3]=[[1,0,0],[0,c,-s],[0,s,c]];sm[:3,3]=props['Lcl Translation'];dm=np.array(meta['nativeDonor']['reconstructedMeshBind']);sp=sv@sm[:3,:3].T+sm[:3,3];dp=dv@dm[:3,:3].T+dm[:3,3];a,b,c=dp[dt[:,0]],dp[dt[:,1]],dp[dt[:,2]];ab=b-a;ac=c-a;d00=(ab*ab).sum(1);d01=(ab*ac).sum(1);d11=(ac*ac).sum(1);den=d00*d11-d01*d01;normal=np.cross(ab,ac);normal2=(normal*normal).sum(1);good=den>0;denSafe=np.where(good,den,1);normalSafe=np.where(normal2>0,normal2,1)
+ids=np.random.default_rng(44623258).choice(len(sv),512,replace=False);dist=[];closest=[]
+for index in ids:
+ p=sp[index];ap=p-a;d20=(ap*ab).sum(1);d21=(ap*ac).sum(1);v=(d11*d20-d01*d21)/denSafe;w=(d00*d21-d01*d20)/denSafe;inside=good&(v>=0)&(w>=0)&(v+w<=1);proj=(ap*normal).sum(1)**2/normalSafe;dd=np.where(inside,proj,np.inf)
+ for x,y in [(a,b),(b,c),(c,a)]:
+  e=y-x;ee=(e*e).sum(1);t=np.clip(((p-x)*e).sum(1)/np.where(ee>0,ee,1),0,1);d=p-(x+e*t[:,None]);dd=np.minimum(dd,(d*d).sum(1))
+ j=int(np.argmin(dd));closest.append(j);dist.append(math.sqrt(max(float(dd[j]),0)))
+dist=np.array(dist);npz=ROOT/'art/drafts/newrig-sailor-v1/dense-def-fbx-packet-v1/original-indexed-attributes.npz';z=np.load(npz);rawmatch=bool(np.array_equal(sv.astype(np.float32),z['positionsBlenderLocal']));bounds={label:{'min':p.min(0).tolist(),'max':p.max(0).tolist()} for label,p in [('source',sp),('nativeDonor',dp)]};height=float(sp[:,1].ptp()) if hasattr(sp[:,1],'ptp') else float(np.ptp(sp[:,1]));r={'status':'SAMPLED_RAW_REST_FEASIBILITY_ONLY','sampleCount':len(ids),'sampling':'Fixed seed44623258 withoutreplacement, all original vertices eligible; no full-surface acceptance.','triangleMethod':'Exact closest closed donor triangle via projected barycentric interior plus3segments, float64; all99999donortriangles per sample.','sourceFileGlobalMatrix':sm.tolist(),'donorFileGlobalBindMatrix':dm.tolist(),'fileUnitsM':1,'axisConvention':'Shared source/nativeFBX YUp globals; UnitScaleFactor100=>1m/fileunit. No fit/rescale/shape edit.','heightM':height,'sourceVsExistingDenseRawFloat32PositionsBitExact':rawmatch,'bounds':bounds,'distanceM':dict(zip(['median','p95','p99','max'],map(float,np.quantile(dist,[.5,.95,.99,1])))),'distanceNormalizedHeight':dict(zip(['median','p95','p99','max'],map(float,np.quantile(dist/height,[.5,.95,.99,1])))),'worstOriginalVertexID':int(ids[np.argmax(dist)]),'worstDonorTriangleID':int(closest[np.argmax(dist)]),'elapsedSeconds':time.monotonic()-start,'limits':['Only512samples, not all994452originalvertices.','Full DCC bind/pose/material/parity and continuous field reconstruction not performed.','No candidate skin weights constructed.']};(O/'sampled-rest-alignment.json').write_text(json.dumps(r,indent=2)+'\n');print(json.dumps(r,indent=2))
+if not rawmatch:raise RuntimeError('Original indexed geometry did not match existing source sidecar')

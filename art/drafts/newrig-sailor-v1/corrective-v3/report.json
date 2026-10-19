@@ -1,0 +1,30 @@
+{
+  "status": "DIAGNOSTIC_NOT_ACCEPTED",
+  "method": "designed convex upperarm top-contour with measured endpoint anchors and3mm arch; one-direction posed sculpt with inverse exact LBS",
+  "sides": [
+    {
+      "side": "L",
+      "maskedVertices": 48033,
+      "movedVertices": 1681,
+      "maxDesiredDisplacementM": 0.0026858517210308613,
+      "designedContour": {
+        "startUpperArmT": 0.1,
+        "startRadius": 0.013705099701229606,
+        "endUpperArmT": 0.8,
+        "endRadius": 0.04224991610467992,
+        "convexArchRiseM": 0.003,
+        "sourceEndpointQuantile": 0.94
+      }
+    }
+  ],
+  "targetCount": 1,
+  "changedVertices": 1696,
+  "maxRestSpaceDeltaM": 0.0027466659278221495,
+  "collarCentralChestExactZero": true,
+  "basePositionsSHA256": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+  "limitations": [
+    "One selected dance pose only; not portable animation accepted.",
+    "Contour endpoints from current garment;3mm convex rise is explicit art design, not source-authored anatomy.",
+    "No source mesh/UV/skin weight changes; proposed art corrective may alter silhouette."
+  ]
+}

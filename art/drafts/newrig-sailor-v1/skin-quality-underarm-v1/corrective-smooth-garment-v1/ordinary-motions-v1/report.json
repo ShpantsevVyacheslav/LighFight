@@ -1,0 +1,902 @@
+{
+  "status": "COMPLETED_BLENDER_ONLY_DIAGNOSTIC_NOT_GAME_ACCEPTANCE",
+  "cases": [
+    {
+      "case": {
+        "name": "box-extreme",
+        "clip": "box_02",
+        "phase": 0.664179104477612
+      },
+      "modes": {
+        "LBS": {
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.465658413024943,
+                  "median": 1.048675564638647,
+                  "p95": 1.4507461402590465,
+                  "p99": 1.7488532854125833,
+                  "max": 2.8291114976323195
+                },
+                "logStrainAbs": {
+                  "min": 1.7812640250104487e-10,
+                  "median": 0.06186449786299128,
+                  "p95": 0.3750087075102273,
+                  "p99": 0.5599041230459987,
+                  "max": 1.0399627039260697
+                },
+                "worstEdgeCanonicalIDs": [
+                  2655810,
+                  527132,
+                  515026,
+                  531951,
+                  532587,
+                  548282,
+                  524369,
+                  546270
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    884093,
+                    885368
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    168313,
+                    169087
+                  ],
+                  [
+                    174008,
+                    175911
+                  ],
+                  [
+                    174221,
+                    176752
+                  ],
+                  [
+                    179474,
+                    181303
+                  ],
+                  [
+                    171455,
+                    174221
+                  ],
+                  [
+                    178808,
+                    180021
+                  ]
+                ],
+                "worstRatios": [
+                  2.8291114976323195,
+                  2.6500482238925116,
+                  2.6191337896007356,
+                  2.6081810658475835,
+                  2.5975307984058023,
+                  2.5837747409938654,
+                  2.569867743160908,
+                  2.536737623245608
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.0007793345748126968
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.4007459784488043,
+                  "median": 1.038514380085354,
+                  "p95": 1.7704508709032774,
+                  "p99": 2.5669481774377236,
+                  "max": 15.518321613057305
+                },
+                "logStrainAbs": {
+                  "min": 1.864544590216695e-08,
+                  "median": 0.10309382050194875,
+                  "p95": 0.5746330948533117,
+                  "p99": 0.9427177039548623,
+                  "max": 2.742021365418568
+                },
+                "worstEdgeCanonicalIDs": [
+                  1629859,
+                  1672488,
+                  1654619,
+                  1660968,
+                  1672486,
+                  1639597,
+                  1629135,
+                  1682075
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    544907,
+                    545004
+                  ],
+                  [
+                    541404,
+                    541643
+                  ],
+                  [
+                    559072,
+                    559075
+                  ]
+                ],
+                "worstRatios": [
+                  15.518321613057305,
+                  15.388665205176263,
+                  15.114824093850212,
+                  14.971981027972413,
+                  14.686569945695588,
+                  14.225820818216064,
+                  13.710725578508214,
+                  13.186111134627664
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.0018504051558418991
+            }
+          },
+          "renders": [
+            {
+              "file": "box-extreme-LBS-source-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "source-normal1"
+            },
+            {
+              "file": "box-extreme-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "diagnostic-flat-clay"
+            }
+          ]
+        },
+        "CorrectiveSmooth": {
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.465658413024943,
+                  "median": 1.048685464818093,
+                  "p95": 1.450656822356178,
+                  "p99": 1.7486177563058354,
+                  "max": 2.8291114976323195
+                },
+                "logStrainAbs": {
+                  "min": 1.7812640250104487e-10,
+                  "median": 0.06189779689063855,
+                  "p95": 0.37494229521490624,
+                  "p99": 0.5592029978076961,
+                  "max": 1.0399627039260697
+                },
+                "worstEdgeCanonicalIDs": [
+                  2655810,
+                  527132,
+                  515026,
+                  531951,
+                  532587,
+                  548282,
+                  524369,
+                  546270
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    884093,
+                    885368
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    168313,
+                    169087
+                  ],
+                  [
+                    174008,
+                    175911
+                  ],
+                  [
+                    174221,
+                    176752
+                  ],
+                  [
+                    179474,
+                    181303
+                  ],
+                  [
+                    171455,
+                    174221
+                  ],
+                  [
+                    178808,
+                    180021
+                  ]
+                ],
+                "worstRatios": [
+                  2.8291114976323195,
+                  2.6500482238925116,
+                  2.6191337896007356,
+                  2.6081810658475835,
+                  2.5975307984058023,
+                  2.5837747409938654,
+                  2.569867743160908,
+                  2.536737623245608
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.0007791421624671584
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.2918211286953632,
+                  "median": 1.0382113460583837,
+                  "p95": 1.7768550613722227,
+                  "p99": 2.584588127453633,
+                  "max": 21.76381084158469
+                },
+                "logStrainAbs": {
+                  "min": 1.864544590216695e-08,
+                  "median": 0.10306363792663203,
+                  "p95": 0.5792868963418755,
+                  "p99": 0.9498188710678176,
+                  "max": 3.0802485372417023
+                },
+                "worstEdgeCanonicalIDs": [
+                  2074592,
+                  2010252,
+                  1629859,
+                  1672488,
+                  2020503,
+                  1654619,
+                  1660968,
+                  1672486
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    690025,
+                    690026
+                  ],
+                  [
+                    668590,
+                    668608
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    672002,
+                    672048
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ]
+                ],
+                "worstRatios": [
+                  21.76381084158469,
+                  16.262664896049596,
+                  15.518321613057305,
+                  15.388665205176263,
+                  15.36345761346793,
+                  15.114824093850212,
+                  14.971981027972413,
+                  14.686569945695588
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.001782376076370954
+            }
+          },
+          "renders": [
+            {
+              "file": "box-extreme-CorrectiveSmooth-source-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "source-normal1"
+            },
+            {
+              "file": "box-extreme-CorrectiveSmooth-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "diagnostic-flat-clay"
+            }
+          ]
+        }
+      },
+      "independentOriginalLBSMaxErrorM": 2.4494347491750527e-07,
+      "maxDeltaM": 0.0021602132776816934,
+      "protectedMaxDeltaM": 0.0,
+      "outsideReviewedSupportMaxDeltaM": 0.0,
+      "orientation": {
+        "opposed": 10,
+        "newCollapsed": 0,
+        "opposedOriginalTriangleIDs": [
+          304685,
+          304688,
+          478899,
+          498978,
+          534499,
+          534643,
+          534644,
+          534666,
+          581549,
+          581661
+        ]
+      },
+      "changedSurfaceArea": {
+        "baselineM2": 0.013401129999571569,
+        "candidateM2": 0.013326403313582109,
+        "volumePreservationClaim": false
+      }
+    },
+    {
+      "case": {
+        "name": "kick-high-flexion",
+        "clip": "front_kick_01",
+        "phase": 0.45
+      },
+      "modes": {
+        "LBS": {
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.26062718453572425,
+                  "median": 0.9696011689466149,
+                  "p95": 1.1213906315345827,
+                  "p99": 1.2208879365576346,
+                  "max": 2.0403453945128827
+                },
+                "logStrainAbs": {
+                  "min": 1.204069170447086e-08,
+                  "median": 0.07011728067077264,
+                  "p95": 0.3750201198519411,
+                  "p99": 0.6482652523511916,
+                  "max": 1.3446643045525473
+                },
+                "worstEdgeCanonicalIDs": [
+                  553296,
+                  684853,
+                  636557,
+                  674844,
+                  643210,
+                  650918,
+                  645288,
+                  647139
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    181166,
+                    182026
+                  ],
+                  [
+                    225287,
+                    225564
+                  ],
+                  [
+                    209096,
+                    210251
+                  ],
+                  [
+                    221931,
+                    222190
+                  ],
+                  [
+                    211324,
+                    212692
+                  ],
+                  [
+                    213901,
+                    214996
+                  ],
+                  [
+                    212021,
+                    212639
+                  ],
+                  [
+                    212639,
+                    213901
+                  ]
+                ],
+                "worstRatios": [
+                  0.26062718453572425,
+                  0.26986139936162296,
+                  0.29029441849392357,
+                  0.294578891405428,
+                  0.2979541239323156,
+                  0.302856908139943,
+                  0.3108024725974479,
+                  0.3131229977829902
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.00022405700782859658
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.06514288152728914,
+                  "median": 0.9504145973560472,
+                  "p95": 1.1747347446484269,
+                  "p99": 1.4042695354980808,
+                  "max": 9.681657071489726
+                },
+                "logStrainAbs": {
+                  "min": 2.3835299227826595e-08,
+                  "median": 0.083300726127091,
+                  "p95": 0.37135142702193413,
+                  "p99": 0.69945141297782,
+                  "max": 2.7311722442007134
+                },
+                "worstEdgeCanonicalIDs": [
+                  2920583,
+                  2935718,
+                  1672488,
+                  1660968,
+                  2921431,
+                  422074,
+                  1672486,
+                  1654619
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    973209,
+                    974656
+                  ],
+                  [
+                    978361,
+                    978810
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    973498,
+                    974978
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    549937,
+                    550710
+                  ]
+                ],
+                "worstRatios": [
+                  0.06514288152728914,
+                  0.10254925776061076,
+                  9.681657071489726,
+                  9.099303079557124,
+                  0.1100194066430948,
+                  8.769375253534456,
+                  8.507557366899759,
+                  8.492917701459337
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.00046831732621243325
+            }
+          },
+          "renders": [
+            {
+              "file": "kick-high-flexion-LBS-source-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "source-normal1"
+            },
+            {
+              "file": "kick-high-flexion-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "diagnostic-flat-clay"
+            }
+          ]
+        },
+        "CorrectiveSmooth": {
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.26062718453572425,
+                  "median": 0.9696164142749996,
+                  "p95": 1.1214181655573139,
+                  "p99": 1.2208879365576346,
+                  "max": 2.0403453945128827
+                },
+                "logStrainAbs": {
+                  "min": 1.204069170447086e-08,
+                  "median": 0.07010857242071776,
+                  "p95": 0.3748915118633856,
+                  "p99": 0.6482652523511916,
+                  "max": 1.3446643045525473
+                },
+                "worstEdgeCanonicalIDs": [
+                  553296,
+                  684853,
+                  636557,
+                  674844,
+                  643210,
+                  650918,
+                  645288,
+                  647139
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    181166,
+                    182026
+                  ],
+                  [
+                    225287,
+                    225564
+                  ],
+                  [
+                    209096,
+                    210251
+                  ],
+                  [
+                    221931,
+                    222190
+                  ],
+                  [
+                    211324,
+                    212692
+                  ],
+                  [
+                    213901,
+                    214996
+                  ],
+                  [
+                    212021,
+                    212639
+                  ],
+                  [
+                    212639,
+                    213901
+                  ]
+                ],
+                "worstRatios": [
+                  0.26062718453572425,
+                  0.26986139936162296,
+                  0.29029441849392357,
+                  0.294578891405428,
+                  0.2979541239323156,
+                  0.302856908139943,
+                  0.3108024725974479,
+                  0.3131229977829902
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.00022405700782859658
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.06514288152728914,
+                  "median": 0.9508804747251549,
+                  "p95": 1.1737923697852093,
+                  "p99": 1.39921924303155,
+                  "max": 9.681657071489726
+                },
+                "logStrainAbs": {
+                  "min": 2.3835299227826595e-08,
+                  "median": 0.08269592673085857,
+                  "p95": 0.37402468816685264,
+                  "p99": 0.7033217639999245,
+                  "max": 2.7311722442007134
+                },
+                "worstEdgeCanonicalIDs": [
+                  2920583,
+                  1896535,
+                  2935718,
+                  1672488,
+                  1660968,
+                  2921431,
+                  422074,
+                  1672486
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    973209,
+                    974656
+                  ],
+                  [
+                    630649,
+                    631541
+                  ],
+                  [
+                    978361,
+                    978810
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    973498,
+                    974978
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    555893,
+                    556269
+                  ]
+                ],
+                "worstRatios": [
+                  0.06514288152728914,
+                  0.10131065967424496,
+                  0.10254925776061076,
+                  9.681657071489726,
+                  9.099303079557124,
+                  0.1100194066430948,
+                  8.769375253534456,
+                  8.507557366899759
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "absoluteExcessP99M": 0.0004399945813567787
+            }
+          },
+          "renders": [
+            {
+              "file": "kick-high-flexion-CorrectiveSmooth-source-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "source-normal1"
+            },
+            {
+              "file": "kick-high-flexion-CorrectiveSmooth-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7832188606262207,
+                0.12726424634456635,
+                0.7473041415214539
+              ],
+              "cameraTarget": [
+                0.2167810741828959,
+                0.12726424497061356,
+                0.6873041445586632
+              ],
+              "orthoScale": 0.32,
+              "material": "diagnostic-flat-clay"
+            }
+          ]
+        }
+      },
+      "independentOriginalLBSMaxErrorM": 3.0742879362934803e-07,
+      "maxDeltaM": 0.0006051933481009868,
+      "protectedMaxDeltaM": 0.0,
+      "outsideReviewedSupportMaxDeltaM": 0.0,
+      "orientation": {
+        "opposed": 42,
+        "newCollapsed": 0,
+        "opposedOriginalTriangleIDs": [
+          154205,
+          154208,
+          154210,
+          154212,
+          154217,
+          154220,
+          154222,
+          154223,
+          154224,
+          154225,
+          154226,
+          154277,
+          154279,
+          304668,
+          304678,
+          388171,
+          401066,
+          401068,
+          401069,
+          401178,
+          401180,
+          401181,
+          401183,
+          401185,
+          401188,
+          478928,
+          479323,
+          479326,
+          486518,
+          486851,
+          486852,
+          486885,
+          486886,
+          494495,
+          499007,
+          499008,
+          499011,
+          499015,
+          499023,
+          499842,
+          499843,
+          499855
+        ]
+      },
+      "changedSurfaceArea": {
+        "baselineM2": 0.00766982766255246,
+        "candidateM2": 0.007634891341172169,
+        "volumePreservationClaim": false
+      }
+    }
+  ],
+  "limits": [
+    "Blender-only local modifier diagnostic, not a portable game deformation path.",
+    "Original source weights, not B-derived weights.",
+    "Opposed baseline normals are not self-intersection proof."
+  ],
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sourceAttrs": {
+    "positions": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "loopVertexIndices": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygonStarts": "7b638feadc801e5555a8882879c9d17a5b2e449938fae59482d0cda848f41592",
+    "polygonSizes": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "uv:UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+  },
+  "sourceHashes": {
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/stage02-bound-original-dense.blend": "dedd8c00b27278ef6f02a8753a61ed0636053d2733ede83357134a7a8033052d",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/tools/27_actual_arm_elevation.py": "97f88ea6dfbc7b87d0a638ba80cc5f76608b8ea3453ee7b933cc3bc81e7c7516"
+  },
+  "originalActualWeightsSHA256": "fec208ccb7b6eacb13555f3bb3eb0a8493a956ae4958e87f9c10d198089f930d",
+  "maskSHA256": "48a7794ba64e0325ddaf909664109f30571d85ebd706bc7e60bb632818bc8521",
+  "configuration": {
+    "rest_source": "ORCO",
+    "smooth_type": "LENGTH_WEIGHTED",
+    "factor": 0.5,
+    "iterations": 5,
+    "scale": 1.0,
+    "use_only_smooth": false,
+    "use_pin_boundary": false,
+    "afterOriginalLBS": true,
+    "diagnosticVGDoesNotCountAsSkinBone": true
+  },
+  "priorNative100kExperiment": "prototypes/roster-portraits/tools/shoulder/try_corrective_v5.py: BIND,.5x10/1x20,rejected; this full2M/localORCO5 test is distinct but same algorithm family",
+  "protectedScopeFailures": [],
+  "originalActualWeightsUnchangedAfterRemoval": true,
+  "sourceRestAttrsUnchanged": true,
+  "elapsedSeconds": 93.17477454099571
+}

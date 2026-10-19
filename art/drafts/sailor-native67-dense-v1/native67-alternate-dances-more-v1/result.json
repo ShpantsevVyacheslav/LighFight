@@ -1,0 +1,459 @@
+{
+    "status": "SURFACE_NUMERIC_PASS_FRAMEBUFFER_REPEAT_RED_NO_PROMOTION",
+    "error": "",
+    "device": "Apple M1",
+    "api": "Metal",
+    "unity": "6000.3.26f1",
+    "allPositiveInputsExact": true,
+    "originalMapsBytesUnchanged": true,
+    "seamVertices": 1305574,
+    "originalVertices": 994452,
+    "triangles": 1988914,
+    "positiveCoefficients": 2608534,
+    "maximumInfluences": 7,
+    "smallestWeight": 1.7814954844652676e-7,
+    "weightPacket": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/native67-bary-weight-packet-v1",
+    "weightPacketSHA256": "393fa311fbc639a310bfe0b4946a844aa9e478c3a5a81ad291b91e899490e59c",
+    "skinningMethod": "LinearBlend_all_positive_Float32",
+    "poseAdjustment": "NONE",
+    "maxRigidMatrixOrthogonalityError": 0.0,
+    "rigidProjectionGate": "DQS variant2 explicitly projects near-rigid matrices to unit quaternion+original translation. Every positive-support seam/bone point must move <=10um world from original matrix; orthogonality guard2e-4/determinant positive. Does not alter source bones or curves. Variant1 exact-near-rigidity1e-5 gate rejected and retained.",
+    "normalConvention": "Linear blended bone normal; normalize. Linear blended tangent; Gram-Schmidt to normal; preserve source tangent.w. Not corrective geometry or a proof of surface derivative normals.",
+    "alternativeDances": [
+        {
+            "action": "action-70",
+            "sourceSHA256": "1dce28283860fa1e61e8d421eaffad1aa51401932dd84bbddd66fd9325654493",
+            "clipName": "Armature|Armature|Cardio_Dance|baselayer",
+            "calibration": "True inverse-bind restoration; virtual straight-arm T reference; preserve native target clavicle/feet rest, 22 named joints. No shoulder correction, source manipulation, Humanoid solve or foot grounding.",
+            "duration": 4.300000190734863,
+            "sourceBindErrorM": 5.205004072195152e-7,
+            "targetBindErrorM": 3.5327460068401708e-7,
+            "sourceHeightM": 0.8606886267662048,
+            "targetHeightM": 0.446494460105896,
+            "hipHeightScale": 0.5187641978263855,
+            "maxArmDirectionMismatchDeg": 0.00013681796554010361,
+            "samples": 5
+        },
+        {
+            "action": "action-71",
+            "sourceSHA256": "a173b1a70de3fbf46b23e5f57b1baf44449b040ec8413a51d8403f4f55bb4b94",
+            "clipName": "Armature|Armature|Denim_Pop_Dance|baselayer",
+            "calibration": "True inverse-bind restoration; virtual straight-arm T reference; preserve native target clavicle/feet rest, 22 named joints. No shoulder correction, source manipulation, Humanoid solve or foot grounding.",
+            "duration": 16.0,
+            "sourceBindErrorM": 5.978629360470222e-7,
+            "targetBindErrorM": 3.5327460068401708e-7,
+            "sourceHeightM": 0.8606888055801392,
+            "targetHeightM": 0.446494460105896,
+            "hipHeightScale": 0.518764078617096,
+            "maxArmDirectionMismatchDeg": 0.00020027977006975561,
+            "samples": 5
+        },
+        {
+            "action": "action-82",
+            "sourceSHA256": "8f094a65fab68bbedb6d54df071c1cdc28bab4290df0fd66ea0bf3f90ec700d7",
+            "clipName": "Armature|Armature|Shake_It_Off_Dance|baselayer",
+            "calibration": "True inverse-bind restoration; virtual straight-arm T reference; preserve native target clavicle/feet rest, 22 named joints. No shoulder correction, source manipulation, Humanoid solve or foot grounding.",
+            "duration": 16.266666412353517,
+            "sourceBindErrorM": 5.976195893708791e-7,
+            "targetBindErrorM": 3.5327460068401708e-7,
+            "sourceHeightM": 0.8606886267662048,
+            "targetHeightM": 0.446494460105896,
+            "hipHeightScale": 0.5187641978263855,
+            "maxArmDirectionMismatchDeg": 0.00019502769282553345,
+            "samples": 5
+        }
+    ],
+    "poses": [
+        {
+            "clip": "action-70",
+            "phase": 0.10000000149011612,
+            "seconds": 0.43000003695487978,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.4120612760695995e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000004319904292060528,
+            "maxTangentOrthogonality": 0.000004309531504986808,
+            "prunedMaxWorldPositionDifferenceM": 0.020625639706850053,
+            "prunedDifferenceQuantilesM": [
+                0.0000874158795340918,
+                0.0013599435333162547,
+                0.0034512761048972608,
+                0.020625639706850053
+            ],
+            "files": [
+                "action-70-10-front-full-full-float.png",
+                "action-70-10-front-shoulders-full-float.png",
+                "action-70-10-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 46,
+            "repeatChangedBytes": 198
+        },
+        {
+            "clip": "action-70",
+            "phase": 0.30000001192092898,
+            "seconds": 1.290000081062317,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.4168237383799484e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.8907454091277033e-7,
+            "maxTangentVectorError": 0.0000030570654416806066,
+            "maxTangentOrthogonality": 0.0000030451092243310997,
+            "prunedMaxWorldPositionDifferenceM": 0.01525904145091772,
+            "prunedDifferenceQuantilesM": [
+                0.0000757524830987677,
+                0.0011101893614977599,
+                0.002499199006706476,
+                0.01525904145091772
+            ],
+            "files": [
+                "action-70-30-front-full-full-float.png",
+                "action-70-30-front-shoulders-full-float.png",
+                "action-70-30-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 62,
+            "repeatChangedBytes": 13092
+        },
+        {
+            "clip": "action-70",
+            "phase": 0.5,
+            "seconds": 2.1500000953674318,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.805450422680503e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000012205278835608624,
+            "maxTangentOrthogonality": 0.000012174609764770139,
+            "prunedMaxWorldPositionDifferenceM": 0.01853162795305252,
+            "prunedDifferenceQuantilesM": [
+                0.00010682613356038928,
+                0.001623700256459415,
+                0.00436557549983263,
+                0.01853162795305252
+            ],
+            "files": [
+                "action-70-50-front-full-full-float.png",
+                "action-70-50-front-shoulders-full-float.png",
+                "action-70-50-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 68,
+            "repeatChangedBytes": 10018
+        },
+        {
+            "clip": "action-70",
+            "phase": 0.699999988079071,
+            "seconds": 3.009999990463257,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.4766583229966123e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9768624781590916e-7,
+            "maxTangentVectorError": 0.000007194051704573212,
+            "maxTangentOrthogonality": 0.000006987406322878087,
+            "prunedMaxWorldPositionDifferenceM": 0.018816979601979257,
+            "prunedDifferenceQuantilesM": [
+                0.00010958473285427317,
+                0.0015801447443664075,
+                0.004014014732092619,
+                0.018816979601979257
+            ],
+            "files": [
+                "action-70-70-front-full-full-float.png",
+                "action-70-70-front-shoulders-full-float.png",
+                "action-70-70-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 67,
+            "repeatChangedBytes": 277
+        },
+        {
+            "clip": "action-70",
+            "phase": 0.8999999761581421,
+            "seconds": 3.870000123977661,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.441333702842832e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.8871638474138309e-7,
+            "maxTangentVectorError": 0.000005960614544164855,
+            "maxTangentOrthogonality": 0.0000059567714743025139,
+            "prunedMaxWorldPositionDifferenceM": 0.020340697839856149,
+            "prunedDifferenceQuantilesM": [
+                0.00008689285459695384,
+                0.0013232191558927298,
+                0.0032923617400228979,
+                0.020340697839856149
+            ],
+            "files": [
+                "action-70-90-front-full-full-float.png",
+                "action-70-90-front-shoulders-full-float.png",
+                "action-70-90-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 59,
+            "repeatChangedBytes": 6642
+        },
+        {
+            "clip": "action-71",
+            "phase": 0.10000000149011612,
+            "seconds": 1.600000023841858,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.6824270392443563e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9768624781590916e-7,
+            "maxTangentVectorError": 0.000005904772024223348,
+            "maxTangentOrthogonality": 0.00000589636010772665,
+            "prunedMaxWorldPositionDifferenceM": 0.01891586184501648,
+            "prunedDifferenceQuantilesM": [
+                0.00009690361184766516,
+                0.0012080795131623746,
+                0.003273329231888056,
+                0.01891586184501648
+            ],
+            "files": [
+                "action-71-10-front-full-full-float.png",
+                "action-71-10-front-shoulders-full-float.png",
+                "action-71-10-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 51,
+            "repeatChangedBytes": 3566
+        },
+        {
+            "clip": "action-71",
+            "phase": 0.30000001192092898,
+            "seconds": 4.800000190734863,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.9290734479472724e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9371509552001954e-7,
+            "maxTangentVectorError": 0.0000027947921807935929,
+            "maxTangentOrthogonality": 0.0000028042952635587428,
+            "prunedMaxWorldPositionDifferenceM": 0.013467410579323769,
+            "prunedDifferenceQuantilesM": [
+                0.00008048880408750847,
+                0.0011048826854676009,
+                0.002677530748769641,
+                0.013467410579323769
+            ],
+            "files": [
+                "action-71-30-front-full-full-float.png",
+                "action-71-30-front-shoulders-full-float.png",
+                "action-71-30-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 12,
+            "repeatChangedBytes": 78
+        },
+        {
+            "clip": "action-71",
+            "phase": 0.5,
+            "seconds": 8.0,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.5582578407678446e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000004666443146561505,
+            "maxTangentOrthogonality": 0.000004669519967137603,
+            "prunedMaxWorldPositionDifferenceM": 0.009305010549724102,
+            "prunedDifferenceQuantilesM": [
+                0.0000693819674779661,
+                0.0008821015362627804,
+                0.0018361599650233985,
+                0.009305010549724102
+            ],
+            "files": [
+                "action-71-50-front-full-full-float.png",
+                "action-71-50-front-shoulders-full-float.png",
+                "action-71-50-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 21,
+            "repeatChangedBytes": 303
+        },
+        {
+            "clip": "action-71",
+            "phase": 0.699999988079071,
+            "seconds": 11.199999809265137,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.7644090883581096e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.884864389012364e-7,
+            "maxTangentVectorError": 0.0000027882299491466257,
+            "maxTangentOrthogonality": 0.000002689746224859846,
+            "prunedMaxWorldPositionDifferenceM": 0.012451199814677239,
+            "prunedDifferenceQuantilesM": [
+                0.00009527037036605179,
+                0.0011196157429367304,
+                0.002733474364504218,
+                0.012451199814677239
+            ],
+            "files": [
+                "action-71-70-front-full-full-float.png",
+                "action-71-70-front-shoulders-full-float.png",
+                "action-71-70-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": true,
+            "repeatMaxByteDifference": 0,
+            "repeatChangedBytes": 0
+        },
+        {
+            "clip": "action-71",
+            "phase": 0.8999999761581421,
+            "seconds": 14.399999618530274,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.5275635687846935e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9371509552001954e-7,
+            "maxTangentVectorError": 0.000003981037025369005,
+            "maxTangentOrthogonality": 0.000003955509782826994,
+            "prunedMaxWorldPositionDifferenceM": 0.010961294174194336,
+            "prunedDifferenceQuantilesM": [
+                0.00008129562775138766,
+                0.0011722176568582655,
+                0.0026250749360769989,
+                0.010961294174194336
+            ],
+            "files": [
+                "action-71-90-front-full-full-float.png",
+                "action-71-90-front-shoulders-full-float.png",
+                "action-71-90-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 44,
+            "repeatChangedBytes": 2896
+        },
+        {
+            "clip": "action-82",
+            "phase": 0.10000000149011612,
+            "seconds": 1.6266666650772095,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.4689885088458368e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.884864389012364e-7,
+            "maxTangentVectorError": 0.000005515684279089328,
+            "maxTangentOrthogonality": 0.000005320467607816681,
+            "prunedMaxWorldPositionDifferenceM": 0.010836349800229073,
+            "prunedDifferenceQuantilesM": [
+                0.00006932246469659731,
+                0.0008411112357862294,
+                0.0018153814598917962,
+                0.010836349800229073
+            ],
+            "files": [
+                "action-82-10-front-full-full-float.png",
+                "action-82-10-front-shoulders-full-float.png",
+                "action-82-10-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": true,
+            "repeatMaxByteDifference": 0,
+            "repeatChangedBytes": 0
+        },
+        {
+            "clip": "action-82",
+            "phase": 0.30000001192092898,
+            "seconds": 4.880000114440918,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.853450784976125e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000005388619229051983,
+            "maxTangentOrthogonality": 0.000005424495611805469,
+            "prunedMaxWorldPositionDifferenceM": 0.02072823978960514,
+            "prunedDifferenceQuantilesM": [
+                0.00009644331294111907,
+                0.0012739661615341902,
+                0.003647521371021867,
+                0.02072823978960514
+            ],
+            "files": [
+                "action-82-30-front-full-full-float.png",
+                "action-82-30-front-shoulders-full-float.png",
+                "action-82-30-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 80,
+            "repeatChangedBytes": 9343
+        },
+        {
+            "clip": "action-82",
+            "phase": 0.5,
+            "seconds": 8.133333206176758,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.5276448716995788e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9371509552001954e-7,
+            "maxTangentVectorError": 0.0000035333039249962896,
+            "maxTangentOrthogonality": 0.000003509696398396045,
+            "prunedMaxWorldPositionDifferenceM": 0.011705078184604645,
+            "prunedDifferenceQuantilesM": [
+                0.00007956869376357645,
+                0.0009290164452977479,
+                0.002062943996861577,
+                0.011705078184604645
+            ],
+            "files": [
+                "action-82-50-front-full-full-float.png",
+                "action-82-50-front-shoulders-full-float.png",
+                "action-82-50-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": true,
+            "repeatMaxByteDifference": 0,
+            "repeatChangedBytes": 0
+        },
+        {
+            "clip": "action-82",
+            "phase": 0.699999988079071,
+            "seconds": 11.386666297912598,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.4531742941977437e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.8907454091277033e-7,
+            "maxTangentVectorError": 0.0000035469772683427438,
+            "maxTangentOrthogonality": 0.000003522622137097642,
+            "prunedMaxWorldPositionDifferenceM": 0.00873582437634468,
+            "prunedDifferenceQuantilesM": [
+                0.0000733551787561737,
+                0.0008413824834860861,
+                0.0018741602543741465,
+                0.00873582437634468
+            ],
+            "files": [
+                "action-82-70-front-full-full-float.png",
+                "action-82-70-front-shoulders-full-float.png",
+                "action-82-70-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 16,
+            "repeatChangedBytes": 193
+        },
+        {
+            "clip": "action-82",
+            "phase": 0.8999999761581421,
+            "seconds": 14.639999389648438,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.459987116241679e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.8907454091277033e-7,
+            "maxTangentVectorError": 0.00000487857732878183,
+            "maxTangentOrthogonality": 0.000004887077011517249,
+            "prunedMaxWorldPositionDifferenceM": 0.02102796547114849,
+            "prunedDifferenceQuantilesM": [
+                0.00009318950469605625,
+                0.0011388275306671858,
+                0.002740320283919573,
+                0.02102796547114849
+            ],
+            "files": [
+                "action-82-90-front-full-full-float.png",
+                "action-82-90-front-shoulders-full-float.png",
+                "action-82-90-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 66,
+            "repeatChangedBytes": 9344
+        }
+    ],
+    "limits": "Editor snapshot harness with synchronous GPU readback then owned Mesh clone upload; NOT realtime implementation/performance/mobile acceptance. Normals/tangents checked vs independent CPU for full seam surface. Baseline is explicit CPU linear blend skinning of all imported typed weights, with normalized linear normals/orthogonalized linear tangents. DQS candidate has different positional AND normal deformation. NOT SMR.BakeMesh or whole-renderer parity. Blender native pose oracle remains separate. No production writes."
+}

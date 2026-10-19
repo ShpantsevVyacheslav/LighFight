@@ -1,0 +1,28 @@
+"""Versioned source-exact coffee component swap + portable authored floor bake, no source geometry writes."""
+import bpy,json,hashlib,struct,sys
+from pathlib import Path
+from mathutils import Vector,Matrix
+import numpy as np
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+ROOT=Path(__file__).resolve().parents[4];OUT=ROOT/'art/drafts/kitchen-hybrid-v3';BASE=ROOT/'art/drafts/kitchen-hybrid-v2/kitchen-hybrid-v2.blend';SOURCE=ROOT/'art/source/kitchen-tripo-v1/coffee-original-v5.glb'
+def sha(b):return hashlib.sha256(b).hexdigest()
+def meshhash(mesh):
+ mesh.calc_loop_triangles();p=np.empty(len(mesh.vertices)*3,np.float32);mesh.vertices.foreach_get('co',p);t=np.empty(len(mesh.loop_triangles)*3,np.int32);mesh.loop_triangles.foreach_get('vertices',t);uv=np.empty(len(mesh.uv_layers.active.data)*2,np.float32);mesh.uv_layers.active.data.foreach_get('uv',uv);return {'positionSHA256':sha(p.tobytes()),'triangleSHA256':sha(t.tobytes()),'loopUVSHA256':sha(uv.tobytes()),'vertices':len(mesh.vertices),'triangles':len(mesh.loop_triangles)}
+def main():
+ baseSHA=sha(BASE.read_bytes());raw=SOURCE.read_bytes();sourceSHA=sha(raw);assert sourceSHA=='02a063da6e13e062cc524e6b891c93aea9419c0532ebc958cc2d46f0f63bd520';length=struct.unpack_from('<I',raw,12)[0];g=json.loads(raw[20:20+length]);off=20+length;size=struct.unpack_from('<I',raw,off)[0];binary=raw[off+8:off+8+size];images=[]
+ for im in g.get('images',[]):
+  v=g['bufferViews'][im['bufferView']];start=v.get('byteOffset',0);images.append({'name':im.get('name'),'SHA256':sha(binary[start:start+v['byteLength']]),'bytes':v['byteLength']})
+ bpy.ops.wm.open_mainfile(filepath=str(BASE));furniture=bpy.data.objects['UNCHANGED_TRIPO_TABLE_AND_4_CHAIRS'].children[0];furnitureBefore=meshhash(furniture.data);remove=['BLOCKOUT_CoffeeCupboard','BLOCKOUT_CoffeeMachine'];unchanged={o.name:np.asarray(o.matrix_world).copy() for o in bpy.context.scene.objects if o.name not in remove and o.type!='CAMERA'}
+ for name in remove:assert name in bpy.data.objects;bpy.data.objects.remove(bpy.data.objects[name],do_unlink=True)
+ before=set(bpy.data.objects);bpy.ops.import_scene.gltf(filepath=str(SOURCE));new=[o for o in bpy.data.objects if o not in before];meshes=[o for o in new if o.type=='MESH'];assert len(meshes)==1;obj=meshes[0];original=meshhash(obj.data);mats=[m.name for m in obj.data.materials];matrix=obj.matrix_world.copy();root=bpy.data.objects.new('UNCHANGED_TRIPO_COFFEE_GROUP',None);bpy.context.scene.collection.objects.link(root);obj.parent=root;obj.matrix_parent_inverse=Matrix.Identity(4);obj.matrix_basis=matrix;scale=1.65/.981414794921875;root.scale=(scale,)*3;root.location=(-2.35,1.5,.002);root['provenance']='Unchanged Tripo coffee cabinet+machine+cups+rack original-v5; uniform parent transform only';bpy.context.view_layer.update();pts=[obj.matrix_world@Vector(c) for c in obj.bound_box];lo=[min(v[i] for v in pts) for i in range(3)];hi=[max(v[i] for v in pts) for i in range(3)];assert hi[1]<2.8 and lo[2]>=0
+ for name,matrix in unchanged.items():assert np.array_equal(matrix,np.asarray(bpy.data.objects[name].matrix_world)),name
+ assert meshhash(furniture.data)==furnitureBefore and meshhash(obj.data)==original
+ report={'status':'EXPLORATORY_HYBRID_V3_NOT_PROMOTED','provenance':'Three unchanged Tripo components + manually reconstructed photo-based architecture','baseBlend':str(BASE.relative_to(ROOT)),'baseBlendSHA256':baseSHA,'newSource':str(SOURCE.relative_to(ROOT)),'newSourceSHA256':sourceSHA,'newSourceMeshHashes':original,'newSourceEmbeddedImages':images,'newSourceMaterials':mats,'uniformParentScale':scale,'parentTranslation':list(root.location),'newComponentWorldBoundsMin':lo,'newComponentWorldBoundsMax':hi,'removedOnlyNamedBlockouts':remove,'existingFurnitureHashes':furnitureBefore,'allOtherObjectWorldMatricesExact':True,'tableGeometryUVUnchanged':True,'newGeometryUVUnchanged':True,'remainingBlockouts':[o.name for o in bpy.data.objects if o.name.startswith('BLOCKOUT_')],'limits':['Exploratory layout only, not finished arena.','No appliance blockouts remain; generated component visual fidelity still needs review.','Custom floor now uses a baked base-color PNG and scalar PBR material; actual glTF player export not yet tested.','No Unity/mobile/performance acceptance.']};(OUT/'manifest.json').write_text(json.dumps(report,indent=2))
+ from bake_floor import bake_floor
+ report['floorBake']=bake_floor(OUT)
+ report['totalSourceFurnitureTriangles']=1988865+1974944+original['triangles'];report['runtimeBudget']='Full master ~5.93M source triangles plus architecture; not mobile accepted, no LOD or reduction performed.'
+ scene=bpy.context.scene;scene.render.engine='CYCLES';scene.cycles.device='CPU';scene.render.threads_mode='FIXED';scene.render.threads=6;scene.cycles.samples=16;scene.cycles.use_denoising=True;target=Vector((0,0,1.15));camera=scene.camera
+ for view,direction in [('interior-threequarter',(-2,-3,2.1)),('top',(0,0,4))]:
+  camera.location=target+Vector(direction)*5.6;camera.rotation_euler=(target-camera.location).to_track_quat('-Z','Y').to_euler();scene.render.filepath=str(OUT/f'{view}.png');bpy.ops.render.render(write_still=True)
+ assert sha(SOURCE.read_bytes())==sourceSHA and sha(BASE.read_bytes())==baseSHA;assert meshhash(furniture.data)==furnitureBefore and meshhash(obj.data)==original;report['sourceAndBasePreservedAfterRenders']=True;(OUT/'manifest.json').write_text(json.dumps(report,indent=2));bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'kitchen-hybrid-v3.blend'));print('RESULT '+json.dumps({'status':report['status'],'newTriangles':original['triangles'],'newVertices':original['vertices'],'unchangedExistingTableTriangles':furnitureBefore['triangles'],'sourcePreserved':True,'boundsMin':lo,'boundsMax':hi}),flush=True)
+main()

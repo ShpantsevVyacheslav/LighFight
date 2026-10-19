@@ -1,0 +1,14 @@
+{
+  "scope": "local web prototype, Sailor guard-v3",
+  "checks": {
+    "full_size_borderless_model": "PASS screenshot main-guard.png",
+    "dance_zero_start_and_auto_return": "PASS visual",
+    "switch_sailor_summer_sailor": "PASS visual",
+    "horizontal_swipe_punch": "PASS visual",
+    "vertical_swipe_kick": "INCONCLUSIVE screenshot after short clip ended",
+    "preview_input_unit_tests": "5/5 PASS",
+    "phone_performance": "NOT_RUN",
+    "Unity_game_integration": "NOT_DONE"
+  },
+  "one_shot_update": "Use non-looping AnimationGroup for attacks/dance; full clip duration and smooth return blend. Source clips unchanged."
+}

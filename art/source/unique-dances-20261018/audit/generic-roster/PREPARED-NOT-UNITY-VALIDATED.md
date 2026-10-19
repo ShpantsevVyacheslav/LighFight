@@ -1,0 +1,11 @@
+# Remaining ten Generic V4 review variants — offline preparation
+
+No Unity/Blender/player launched for this stage. Standalone Unity-bundled Roslyn compilation of the current Editor source set plus new batch exited0. This proves compilation only, not asset import/evaluation.
+
+`UniqueDanceRosterV4Batch.Run` is the single bounded future Unity entrypoint, after explicit heavy-window release/routing. Processes actors0–8 and10; leaves reviewed Sailor9 and production catalog unchanged. Each actor gets its own actual imported source+target inverse-bind calibration, clock, controller, source curve asset and original-prefab variant; C1 is explicitlyfalse.
+
+The batch performs exact original Generic channel/key-bit extraction, independent317Hz source/FK checks across four translated/yawed/uniform-scale root cases,65frozen full-original-surface bounds/floor checks plus hand/foot joint ranges, typed warmup/explicit disposal lease checks and Editor CPU/wall/allocation measurements. It rebuilds each variant twice and requires byte-identical source/clock/controller/prefab outputs. Failures are retained per actor and prevent a success claim.
+
+The65-pose surface/joint bounds are sampled review bounds, not certified continuous motion bounds or final visual/player acceptance. Editor warm measurements are not phone timings. Final per-actor source/render/end/return/player gates remain pending. Combat→Dance winner fallback entry snapshot remains a separately recorded open edge; no per-frame combat cache is added.
+
+Raw source mesh/UV/normals/topology, all skin weights/indices and all bind links match across11motion FBXs (`offline-original-source-inventory.json`). They are one original donor, not11model replacements. Original acquired FBXs remain untouched. Ten source-copy hashes and stable GUID metadata are prepared OUTSIDE Unity Assets to avoid autoimport during dense2M priority. Run `python3 art/source/unique-dances-20261018/packet/tools/prepare_generic_roster_imports.py --stage` immediately before the authorized dedicated Unity batch. Import metadata disables compression/mesh/bone optimization and welding, preserves custom max4 weights with minWeight0. Reviewed Sailor74 metadata is unchanged; import/evaluation remains pending.

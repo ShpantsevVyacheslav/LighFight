@@ -1,0 +1,89 @@
+{
+    "status": "FINITE8_CLIP_POSE_GATES_PASS_NOT_VISUAL_OR_RUNTIME_ACCEPTANCE",
+    "error": "",
+    "unity": "6000.3.26f1",
+    "samples": 6816,
+    "clips": [
+        {
+            "clip": "box_02",
+            "samples": 337,
+            "maxWristShiftM": 0.022504080086946489,
+            "maxClavicleLengthErrorM": 1.4156103134155274e-7,
+            "maxRotationErrorDeg": 0.000032308311347151175,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.40661507844924929,
+            "maxResampleRepeatErrorM": 0.0
+        },
+        {
+            "clip": "cheer",
+            "samples": 1452,
+            "maxWristShiftM": 0.0225041713565588,
+            "maxClavicleLengthErrorM": 1.7136335372924806e-7,
+            "maxRotationErrorDeg": 0.0000398265037802048,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.21938806772232057,
+            "maxResampleRepeatErrorM": 0.0
+        },
+        {
+            "clip": "dance_01",
+            "samples": 2782,
+            "maxWristShiftM": 0.022504229098558427,
+            "maxClavicleLengthErrorM": 1.6391277313232423e-7,
+            "maxRotationErrorDeg": 0.000048236321163130924,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.27940842509269717,
+            "maxResampleRepeatErrorM": 0.0
+        },
+        {
+            "clip": "defeat_02",
+            "samples": 1017,
+            "maxWristShiftM": 0.018863052129745485,
+            "maxClavicleLengthErrorM": 5.960464477539063e-8,
+            "maxRotationErrorDeg": 0.000029476836061803624,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.11524875462055206,
+            "maxResampleRepeatErrorM": 0.0
+        },
+        {
+            "clip": "front_kick_01",
+            "samples": 302,
+            "maxWristShiftM": 0.016120031476020814,
+            "maxClavicleLengthErrorM": 1.1175870895385742e-7,
+            "maxRotationErrorDeg": 0.000023412709197145887,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.12484998255968094,
+            "maxResampleRepeatErrorM": 0.0
+        },
+        {
+            "clip": "greet_01",
+            "samples": 422,
+            "maxWristShiftM": 0.022504214197397233,
+            "maxClavicleLengthErrorM": 1.1920928955078126e-7,
+            "maxRotationErrorDeg": 0.000039236449083546177,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.148400217294693,
+            "maxResampleRepeatErrorM": 0.0
+        },
+        {
+            "clip": "hit_to_head",
+            "samples": 222,
+            "maxWristShiftM": 0.011017310433089733,
+            "maxClavicleLengthErrorM": 1.1175870895385742e-7,
+            "maxRotationErrorDeg": 0.000028877244403702207,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.046911899000406268,
+            "maxResampleRepeatErrorM": 0.0
+        },
+        {
+            "clip": "walk",
+            "samples": 282,
+            "maxWristShiftM": 0.0,
+            "maxClavicleLengthErrorM": 0.0,
+            "maxRotationErrorDeg": 0.000002414836444586399,
+            "maxNeckShiftM": 0.0,
+            "maxCorrectionVelocityMps": 0.0,
+            "maxResampleRepeatErrorM": 0.0
+        }
+    ],
+    "scope": "All8 native clips, original independent shifted120Hz+endpoints finite schedule. Pose-only; no surface/camera/floor/entry-return/phone acceptance. MUST resample authored pose before each Apply; Apply is not idempotent without fresh baseline. C1 activation <=16deg, source bones/curves/assets unchanged."
+}

@@ -1,0 +1,651 @@
+{
+  "status": "ASSEMBLED_PENDING_ACTUAL_RENDER",
+  "scene": "gameplay",
+  "masterSHA256": "3222bb6f5d360641d0e3ad5b2fc52629be18d7c39714dd3df1d0bf86d597f8aa",
+  "missing": [],
+  "assets": [
+    {
+      "id": "burner",
+      "source": "art/drafts/meeting-meshy-v1/lod/burner-30k-weld.glb",
+      "sourceSHA256": "a36484f292190f457505def5fb52c492d70e58e33f18a0a10c089675837f0db6",
+      "sourceTriangles": 30000,
+      "sourceWorldBounds": [
+        [
+          -0.5641728043556213,
+          -0.6144588589668274,
+          -0.9515569806098938
+        ],
+        [
+          0.5631740093231201,
+          0.6215953230857849,
+          0.9505115151405334
+        ]
+      ],
+      "uniformScale": 0.16180520474262436,
+      "placement": {
+        "name": "Meshy burner",
+        "translation": [
+          5.9500808051173655,
+          1.0244226414810467,
+          2.8400845808771606
+        ],
+        "scale": [
+          0.16180520474262436,
+          0.16180520474262436,
+          0.16180520474262436
+        ],
+        "rotation": [
+          0,
+          0.0,
+          0,
+          1.0
+        ]
+      },
+      "placedBounds": [
+        [
+          5.858794708998383,
+          0.9249999999999998,
+          2.686117708805303
+        ],
+        [
+          6.041205291001617,
+          1.1249999999999998,
+          2.993882291194697
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": null,
+          "SHA256": "1f005f7bfb5b0d274f0e25c031c28d15536422e16015cc5888cb5b7a12f01c1d",
+          "bytes": 10354521
+        },
+        {
+          "name": null,
+          "SHA256": "b4faa2640f6fa4754b073adfa3f306cdcf46d31ab69e32d42e08779da77ee187",
+          "bytes": 2225733
+        },
+        {
+          "name": null,
+          "SHA256": "dca11f932aff74b5c222b1cd81f9b36b07e3ae55f174e657e03c32eb921588cd",
+          "bytes": 7769936
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    },
+    {
+      "id": "cabinet",
+      "source": "art/drafts/meeting-meshy-v1/lod/cabinet-40k-rebaked-v2.glb",
+      "sourceSHA256": "dc690e95707a11dd1e136d5212a3814f024d7a1d7093c02bb2942508fdcf8db0",
+      "sourceTriangles": 40000,
+      "sourceWorldBounds": [
+        [
+          -0.9524096846580505,
+          -0.6941481232643127,
+          -0.5176305770874023
+        ],
+        [
+          0.9524219036102295,
+          0.6967443823814392,
+          0.4955998361110687
+        ]
+      ],
+      "uniformScale": 0.44575694921308934,
+      "placement": {
+        "name": "Meshy cabinet",
+        "translation": [
+          5.250002723341423,
+          2.4694213497282917,
+          6.765089822056742
+        ],
+        "scale": [
+          0.44575694921308934,
+          0.44575694921308934,
+          0.44575694921308934
+        ],
+        "rotation": [
+          0,
+          1.0,
+          0,
+          6.123233995736766e-17
+        ]
+      },
+      "placedBounds": [
+        [
+          4.825454041224404,
+          2.16,
+          6.544172751081366
+        ],
+        [
+          5.674545958775596,
+          2.7800000000000002,
+          6.9958272489186335
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": "cabinet-40k-rebaked-v2-normal",
+          "SHA256": "bb82b618f5dd52a09d116697abc9a10f8a3a6c498845e850ab0c44d598ec167e",
+          "bytes": 1353706
+        },
+        {
+          "name": "cabinet-40k-rebaked-v2-base",
+          "SHA256": "9ffb92e5ac38c355eb97eab83aed40d8c8acf4ddf7942ba89d1d1c63da6a5c48",
+          "bytes": 1232193
+        },
+        {
+          "name": "cabinet-40k-rebaked-v2-rm",
+          "SHA256": "010ccba4e895eaf5b791c9e9b542a1ce98c41717931719da1f96801bde1bd74b",
+          "bytes": 1024715
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    },
+    {
+      "id": "beanbag",
+      "source": "art/drafts/meeting-meshy-v1/lod/beanbag-10k-weld.glb",
+      "sourceSHA256": "c551a0c6b3c5b20abba210d6ce97327e1e843f95f74b4b9f38cd7716c41c122e",
+      "sourceTriangles": 10000,
+      "sourceWorldBounds": [
+        [
+          -0.9530526399612427,
+          -0.31485509872436523,
+          -0.872703492641449
+        ],
+        [
+          0.952176570892334,
+          0.32369935512542725,
+          0.8741878271102905
+        ]
+      ],
+      "uniformScale": 0.6298454764203298,
+      "placement": {
+        "name": "Meshy beanbag",
+        "translation": [
+          -5.499724105929958,
+          0.1983100596594178,
+          6.249532549324653
+        ],
+        "scale": [
+          0.6298454764203298,
+          0.6298454764203298,
+          0.6298454764203298
+        ],
+        "rotation": [
+          0,
+          0.0,
+          0,
+          1.0
+        ]
+      },
+      "placedBounds": [
+        [
+          -6.1,
+          0.0,
+          5.6998642022282135
+        ],
+        [
+          -4.8999999999999995,
+          0.40219063420534606,
+          6.8001357977717865
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": null,
+          "SHA256": "9a1da1cb8ee03224a94e4a230b1024c9a5a87fdd63574ab72fb4170f46c4a8a7",
+          "bytes": 10307857
+        },
+        {
+          "name": null,
+          "SHA256": "3f655a58cc0ee1639e300678668cb917c099696cf6c44dc51305e862807a77ad",
+          "bytes": 1212082
+        },
+        {
+          "name": null,
+          "SHA256": "e0b0bd1a79b1c8e7352ba154d7428e1084a352e96760f89074cbc38dae5d7514",
+          "bytes": 8086061
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes.",
+      "materialFactorOverride": {
+        "baseColorFactor": [
+          0.26,
+          0.29,
+          0.34,
+          1
+        ],
+        "roughnessFactor": 0.94,
+        "metallicFactor": 0
+      },
+      "materialDerivative": "art/drafts/meeting-meshy-v1/beanbag-material-c551a0c6.glb"
+    },
+    {
+      "id": "ceramic",
+      "source": "art/drafts/meeting-meshy-v1/lod/ceramic-15k-weld.glb",
+      "sourceSHA256": "57687211790fbcc69df3735fb3bea15e9bef7e6b5c34002f80ce3b207057d1fb",
+      "sourceTriangles": 15000,
+      "sourceWorldBounds": [
+        [
+          -0.6637458205223083,
+          -0.6290414929389954,
+          -0.9517371654510498
+        ],
+        [
+          0.678107500076294,
+          0.624030590057373,
+          0.9499324560165405
+        ]
+      ],
+      "uniformScale": 0.27133315362591587,
+      "placement": {
+        "name": "Meshy ceramic",
+        "translation": [
+          5.976948399902374,
+          1.0956798120406919,
+          4.919755161248878
+        ],
+        "scale": [
+          0.27133315362591587,
+          0.27133315362591587,
+          0.27133315362591587
+        ],
+        "rotation": [
+          0,
+          1.0,
+          0,
+          6.123233995736766e-17
+        ]
+      },
+      "placedBounds": [
+        [
+          5.792955353409287,
+          0.9249999999999999,
+          4.662006992226298
+        ],
+        [
+          6.1570446465907125,
+          1.265,
+          5.177993007773701
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": null,
+          "SHA256": "a0f336189dd12d43feb9fdcc553f8746122e49b7a020cd99416c9434c793076e",
+          "bytes": 9854591
+        },
+        {
+          "name": null,
+          "SHA256": "789809189dd737228f533a9845f8f6a1d4558d9999b4a9262a269a47b70987c9",
+          "bytes": 1846698
+        },
+        {
+          "name": null,
+          "SHA256": "8ea0be71a7262567e9c959c77a27b52f6fd6a53e656407d483274e6768530372",
+          "bytes": 6869018
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    },
+    {
+      "id": "plant",
+      "source": "art/drafts/meeting-meshy-v1/lod/plant-35k-weld.glb",
+      "sourceSHA256": "0426114d59e0309afbe54583d3bdf6a7cb61f481d709978d29c631258ed79595",
+      "sourceTriangles": 35000,
+      "sourceWorldBounds": [
+        [
+          -0.9515494704246521,
+          -0.5591259598731995,
+          -0.4846382439136505
+        ],
+        [
+          0.950867772102356,
+          0.5503086447715759,
+          0.4828040301799774
+        ]
+      ],
+      "uniformScale": 0.3965984098187396,
+      "placement": {
+        "name": "Meshy plant",
+        "translation": [
+          0.3376351802352994,
+          1.1520532005124182,
+          4.570363723125021
+        ],
+        "scale": [
+          0.3965984098187396,
+          0.3965984098187396,
+          0.3965984098187396
+        ],
+        "rotation": [
+          0,
+          0.0,
+          0,
+          1.0
+        ]
+      },
+      "placedBounds": [
+        [
+          -0.039747826598981406,
+          0.9303047339383309,
+          4.37815696625152
+        ],
+        [
+          0.7147478265989815,
+          1.370304733938331,
+          4.7618430337484785
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": null,
+          "SHA256": "698c97bc577950af93ae54ac91e1b4b3dba0f9bece9700558ac39a5f8f54a0ea",
+          "bytes": 14523003
+        },
+        {
+          "name": null,
+          "SHA256": "541f380010b3ffbc7619dd44e7767d553cc06910c1cd5d6b0a0e9d6b18f515dc",
+          "bytes": 2376742
+        },
+        {
+          "name": null,
+          "SHA256": "a091eb63697b76715922b7689058db5963a623a4a18d2dcb671abe1d774a77e3",
+          "bytes": 10086970
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    },
+    {
+      "id": "laptop-1",
+      "source": "art/drafts/meeting-meshy-v1/lod/laptop-5k-rebaked.glb",
+      "sourceSHA256": "0850d253c378964eb39a720dbf8f3568f2f43b9a36c7c8b6c0585254c6cb0e75",
+      "sourceTriangles": 5000,
+      "sourceWorldBounds": [
+        [
+          -0.8265261054039001,
+          -0.5372306704521179,
+          -0.9515190720558167
+        ],
+        [
+          0.8284494876861572,
+          0.5341634154319763,
+          0.9497388005256653
+        ]
+      ],
+      "uniformScale": 0.20544109618267858,
+      "placement": {
+        "name": "Meshy laptop-1",
+        "translation": [
+          0.5401828704673286,
+          1.0528923796744398,
+          3.8563925708822233
+        ],
+        "scale": [
+          0.20544109618267858,
+          0.20544109618267858,
+          0.20544109618267858
+        ],
+        "rotation": [
+          0,
+          0.7071067811865475,
+          0,
+          0.7071067811865476
+        ]
+      },
+      "placedBounds": [
+        [
+          0.3447017492654565,
+          0.9425231218338014,
+          3.6861950000000006
+        ],
+        [
+          0.7352982507345436,
+          1.1626314972814686,
+          4.026195
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": "laptop-5k-rebaked-normal",
+          "SHA256": "7ed6cd0d6a8da389943ced14bbf161d8f4619b792a43dc23f7100de979b740a8",
+          "bytes": 4200558
+        },
+        {
+          "name": "laptop-5k-rebaked-base",
+          "SHA256": "597d0cafd35b09568baf2297cd83e060aaf66a80edf966416f605de5638c237f",
+          "bytes": 4885213
+        },
+        {
+          "name": "laptop-5k-rebaked-rm",
+          "SHA256": "853898f7088efa0833266ac98950091494d2816dad2383ef0df3da8bbd62e124",
+          "bytes": 3723411
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    },
+    {
+      "id": "laptop-2",
+      "source": "art/drafts/meeting-meshy-v1/lod/laptop-5k-rebaked.glb",
+      "sourceSHA256": "0850d253c378964eb39a720dbf8f3568f2f43b9a36c7c8b6c0585254c6cb0e75",
+      "sourceTriangles": 5000,
+      "sourceWorldBounds": [
+        [
+          -0.8265261054039001,
+          -0.5372306704521179,
+          -0.9515190720558167
+        ],
+        [
+          0.8284494876861572,
+          0.5341634154319763,
+          0.9497388005256653
+        ]
+      ],
+      "uniformScale": 0.20544109618267858,
+      "placement": {
+        "name": "Meshy laptop-2",
+        "translation": [
+          -0.5401828704673286,
+          1.0528923796744398,
+          3.581492429117777
+        ],
+        "scale": [
+          0.20544109618267858,
+          0.20544109618267858,
+          0.20544109618267858
+        ],
+        "rotation": [
+          0,
+          -0.7071067811865475,
+          0,
+          0.7071067811865476
+        ]
+      },
+      "placedBounds": [
+        [
+          -0.7352982507345436,
+          0.9425231218338014,
+          3.4116899999999997
+        ],
+        [
+          -0.3447017492654565,
+          1.1626314972814686,
+          3.75169
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": "laptop-5k-rebaked-normal",
+          "SHA256": "7ed6cd0d6a8da389943ced14bbf161d8f4619b792a43dc23f7100de979b740a8",
+          "bytes": 4200558
+        },
+        {
+          "name": "laptop-5k-rebaked-base",
+          "SHA256": "597d0cafd35b09568baf2297cd83e060aaf66a80edf966416f605de5638c237f",
+          "bytes": 4885213
+        },
+        {
+          "name": "laptop-5k-rebaked-rm",
+          "SHA256": "853898f7088efa0833266ac98950091494d2816dad2383ef0df3da8bbd62e124",
+          "bytes": 3723411
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    },
+    {
+      "id": "laptop-3",
+      "source": "art/drafts/meeting-meshy-v1/lod/laptop-5k-rebaked.glb",
+      "sourceSHA256": "0850d253c378964eb39a720dbf8f3568f2f43b9a36c7c8b6c0585254c6cb0e75",
+      "sourceTriangles": 5000,
+      "sourceWorldBounds": [
+        [
+          -0.8265261054039001,
+          -0.5372306704521179,
+          -0.9515190720558167
+        ],
+        [
+          0.8284494876861572,
+          0.5341634154319763,
+          0.9497388005256653
+        ]
+      ],
+      "uniformScale": 0.20544109618267858,
+      "placement": {
+        "name": "Meshy laptop-3",
+        "translation": [
+          -0.5401993940269757,
+          1.0528923796744398,
+          6.055849119146039
+        ],
+        "scale": [
+          0.20544109618267858,
+          0.20544109618267858,
+          0.20544109618267858
+        ],
+        "rotation": [
+          0,
+          -0.6755902076156602,
+          0,
+          0.7372773368101241
+        ]
+      },
+      "placedBounds": [
+        [
+          -0.7493715581954465,
+          0.9425231218338014,
+          5.8696555372243155
+        ],
+        [
+          -0.3306284418045535,
+          1.1626314972814686,
+          6.242404462775684
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": "laptop-5k-rebaked-normal",
+          "SHA256": "7ed6cd0d6a8da389943ced14bbf161d8f4619b792a43dc23f7100de979b740a8",
+          "bytes": 4200558
+        },
+        {
+          "name": "laptop-5k-rebaked-base",
+          "SHA256": "597d0cafd35b09568baf2297cd83e060aaf66a80edf966416f605de5638c237f",
+          "bytes": 4885213
+        },
+        {
+          "name": "laptop-5k-rebaked-rm",
+          "SHA256": "853898f7088efa0833266ac98950091494d2816dad2383ef0df3da8bbd62e124",
+          "bytes": 3723411
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    },
+    {
+      "id": "hookah",
+      "source": "art/drafts/meeting-meshy-v1/lod/hookah-15k-body.glb",
+      "sourceSHA256": "a2f1fff9b6533ea7beb31ee240fbeb01fbd391e1c934c9db3274b5290ebd6e78",
+      "sourceTriangles": 13006,
+      "sourceWorldBounds": [
+        [
+          -0.5656846165657043,
+          -0.951837420463562,
+          -0.25164684653282166
+        ],
+        [
+          0.07861417531967163,
+          0.9502870440483093,
+          0.35591956973075867
+        ]
+      ],
+      "uniformScale": 0.34172316908126454,
+      "placement": {
+        "name": "Meshy hookah",
+        "translation": [
+          0.1912216273742021,
+          1.2677880216047457,
+          4.8741837972900335
+        ],
+        "scale": [
+          0.34172316908126454,
+          0.34172316908126454,
+          0.34172316908126454
+        ],
+        "rotation": [
+          0,
+          0.0,
+          0,
+          1.0
+        ]
+      },
+      "placedBounds": [
+        [
+          -0.0020859124991504108,
+          0.9425231218338013,
+          4.788190239403531
+        ],
+        [
+          0.2180859124991504,
+          1.5925231218338012,
+          4.995809760596469
+        ]
+      ],
+      "sourceImages": [
+        {
+          "name": null,
+          "SHA256": "79b628f5496fb4d551790f1a006ffc3986e024ac1b5893e8ba2806112c4e3cd2",
+          "bytes": 10146543
+        },
+        {
+          "name": null,
+          "SHA256": "b3e6f2e3f72ef40709daf5b5f66ff74b2bb9b627787a277e610e9aec1b3071cc",
+          "bytes": 1470756
+        },
+        {
+          "name": null,
+          "SHA256": "d3ca0bce1991cfae62c93ca104e79e29052d54f62c05b1f6dba235079d0e76be",
+          "bytes": 7839411
+        }
+      ],
+      "scope": "Bounding-box normalization only; no topology, vertex, UV, material or stored image changes."
+    }
+  ],
+  "rug": {
+    "texture": "art/source/meeting-meshy-props-v1/inputs/rug-coherent-wide.png",
+    "imageSHA256": "122e115c840c907f8b488e37cd7cdfe1f8b1b56d7adf1a7ad7fe12a7023ed866",
+    "normal": [
+      1,
+      0,
+      0
+    ],
+    "center": [
+      -6.42,
+      1.5,
+      2.3625
+    ],
+    "sizeAlongZ": 8.796666666666667,
+    "height": 2.9
+  },
+  "catalogPublished": false,
+  "imageAndGeometryPayloadsCopied": true,
+  "sourceBinaryChunksExact": true,
+  "reusedModelInstances": 2
+}

@@ -1,0 +1,3 @@
+# Source visual review
+Blender4.2.22, original GLB, no remesh/rig/mesh edits. Standard color transform; original base-color emission renders isolate albedo/silhouette, not final game lighting. Four views at art/previews/island-ultra-v2.
+Front/side: torso width and shirt hem preserved, no pinched waist apparent in rest pose. Face has continuous silhouette but soft eyelid/lip detail and photographic lighting baked into albedo. Hands are edge-on in front and close views; finger separation and fist deformation are not accepted from these images. Watch outline asymmetrical. This is conditional approval for rig testing, not production/artistic completion. Must inspect back/palms/clay and animation before promotion. 294040 triangles does not guarantee anatomical correctness.

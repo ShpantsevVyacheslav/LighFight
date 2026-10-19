@@ -57,7 +57,7 @@ public static class DenseSkinningBenchmarkBuild {
    string scene=Folder+"/Benchmark.unity";EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),scene);AssetDatabase.SaveAssets();
    string build="DenseSkinningBuilds/"+mode+".app";
    File.WriteAllText("DenseSkinningBuilds/manifest-"+mode+".json",qa.buildManifest);
-   var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{scene},target=BuildTarget.StandaloneOSX,locationPathName=build,options=BuildOptions.Development});
+   var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{scene},target=BuildTarget.StandaloneOSX,locationPathName=build,options=BuildOptions.Development|BuildOptions.CleanBuildCache});
    if(report.summary.result!=BuildResult.Succeeded)throw new Exception("Benchmark build failed "+mode);
    File.WriteAllText("DenseSkinningBuilds/build-result-"+mode+".txt","Succeeded\nbytes="+report.summary.totalSize+"\nmode="+PlayerSettings.meshDeformation+"\n");
   }finally{

@@ -1,0 +1,20 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+process.chdir(path.resolve(__dirname,'..'));
+const nodes={},listeners={},images=[],drawn=new Set(),noop=()=>{},gradient={addColorStop:noop};
+const ctx=new Proxy({createLinearGradient:()=>gradient,createRadialGradient:()=>gradient,drawImage(im,...args){drawn.add(im.file);if(args.length===8){const [x,y,w,h]=args;assert(x>=0&&y>=0&&w>0&&h>0);assert(x+w<=im.naturalWidth+.01&&y+h<=im.naturalHeight+.01)}}},{get:(o,k)=>k in o?o[k]:noop,set:(o,k,v)=>(o[k]=v,true)});
+let nextFrame;
+const env={console,Image:class{set src(v){this.file=v;const b=fs.readFileSync(v);assert.equal(b.toString('ascii',1,4),'PNG');this.naturalWidth=b.readUInt32BE(16);this.naturalHeight=b.readUInt32BE(20);images.push(this)}},window:{addEventListener:(k,v)=>listeners[k]=v},document:{addEventListener:noop,querySelector:s=>nodes[s]??=(s==='#arena'?{getContext:()=>ctx,focus:noop}:{value:s==='#mode'?'ai':s==='#name1'?'Первый':'Второй',disabled:false,innerHTML:'',classList:{add:noop,remove:noop},click(){this.onclick()}})},requestAnimationFrame:f=>nextFrame=f};
+vm.createContext(env);vm.runInContext(fs.readFileSync('fight-core.js','utf8'),env);env.Fight=env.window.Fight;env.FIGHT_MOVES=env.window.FIGHT_MOVES;vm.runInContext(fs.readFileSync('assets/sprite-layout.js','utf8'),env);env.SPRITE_LAYOUT=env.window.SPRITE_LAYOUT;vm.runInContext(fs.readFileSync('game.js','utf8'),env);
+assert(nodes['#start'].disabled);images.forEach(im=>im.onload());assert(!nodes['#start'].disabled);
+assert.equal((nodes['#roster'].innerHTML.match(/class="card"/g)||[]).length,8);assert.equal((nodes['#stages'].innerHTML.match(/data-stage=/g)||[]).length,5);assert.equal((nodes['#moves'].innerHTML.match(/<tr>/g)||[]).length,14);
+let t=1000;function frame(n=1){for(let i=0;i<n;i++){t+=16;nextFrame(t)}}function key(code,up=false){listeners[up?'keyup':'keydown']({target:{matches:()=>false},code,repeat:false,preventDefault:noop})}function read(code){return vm.runInContext(code,env)}
+nodes['#mode'].value='two';nodes['#start'].onclick();assert.equal(read('state'),'playing');assert(nodes['#mode'].disabled);
+key('ArrowRight');frame(50);key('ArrowRight',true);assert(read('game.fighters[0].x')>-2.8);
+key('KeyA');frame(30);key('KeyA',true);assert(read('game.fighters[1].x')<2.8);
+key('ArrowDown');key('KeyJ');frame(1);assert.equal(read('game.fighters[0].move.type'),'body');key('ArrowDown',true);key('KeyJ',true);frame(90);
+nodes['#pause'].onclick();assert.equal(read('state'),'paused');const time=read('game.remaining');frame(90);assert.equal(read('game.remaining'),time);nodes['#start'].onclick();assert.equal(read('state'),'playing');
+frame(30);vm.runInContext('game.fighters[1].hp=0',env);frame(1);assert.equal(read('state'),'roundEnd');nodes['#start'].onclick();assert.equal(read('game.fighters[0].wins'),1);assert.equal(read('game.round'),2);
+vm.runInContext('game.fighters[1].hp=0',env);frame(1);assert.equal(read('state'),'matchEnd');nodes['#stages'].onclick({target:{closest:()=>({dataset:{stage:'4'}})}});assert.equal(read('stageIndex'),4);assert.equal(read('game.fighters[0].wins'),0);
+nodes['#roster'].onclick({target:{closest:()=>({dataset:{index:'4',player:'0'}})}});assert.equal(read('selected[0]'),4);assert.equal(nodes['#name1'].value,'Розовая пантера');nodes['#mode'].value='ai';nodes['#start'].onclick();frame(600);assert(drawn.has('assets/arena-yard.png'));
+read('characters.forEach((c,i)=>{selected[0]=i;visuals=[{},{}];for(let n=0;n<16;n++){game.pose=()=>n;drawFighter(game.fighters[0],0)}})');
+assert.equal(drawn.size,10);console.log('App checks passed: 8 atlases, 5 arenas, loading, selection, 14 moves, arrows, WASD, pause, rounds, AI, sprite bounds.');

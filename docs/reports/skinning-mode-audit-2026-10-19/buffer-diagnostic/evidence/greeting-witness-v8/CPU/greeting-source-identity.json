@@ -1,0 +1,955 @@
+{
+    "snapshotSHA": "1ba15bd0ef44d7f56662c0cbc97162bc0cdca39e906be866745cacb2044085f9",
+    "reviewSourceManifestSHA": "1d49e2deef40cd34f09f31a3885b5667e7eb01bcac06544c72e2d5dc73290762",
+    "assets": [
+        {
+            "path": "Assets/CombatStanceSourceReview/MasterCandidateV2/arms-only.mask",
+            "guid": "9789964090088484d83e925a81fc644c",
+            "sourceSHA": "f2f0f4e67e68e28f40b3bbf9f1fac7f7904a1f8e28d5fcb8fb10e33d77cbe435",
+            "metaSHA": "8de56bde752eea041cd7a0309206e28f2790935fc09d86e96a6fe8e563e477a6",
+            "objectNamesAndTypes": [
+                "UnityEngine.AvatarMask:arms-only"
+            ]
+        },
+        {
+            "path": "Assets/GuardCrouchV3Review/Acquired/138/Scene.human.anim",
+            "guid": "c2476c5482d8044938715ba7b77215f2",
+            "sourceSHA": "77b76865948abd5853e75b22c82b8037000f8fd9c59676dbf19331eec0ba2eee",
+            "metaSHA": "e9002ef00adb1eb7ea6065b1c9cbbcaa410076fe7ad6a5f69e2e5a126549b968",
+            "objectNamesAndTypes": [
+                "UnityEngine.AnimationClip:Scene.human"
+            ]
+        },
+        {
+            "path": "Assets/GuardCrouchV3Review/CombinedRoster/Master/idle-lower.mask",
+            "guid": "7b93c464b86a64656aada6eb346e0f5a",
+            "sourceSHA": "67bd46a043a58d45177317c23bca08ad528f761e819f90b43376c07f4d44de38",
+            "metaSHA": "1511605bc7900440fe7659d97f73ce69a9ce4ba598184c2c494cc896a60885ac",
+            "objectNamesAndTypes": [
+                "UnityEngine.AvatarMask:idle-lower"
+            ]
+        },
+        {
+            "path": "Assets/GuardCrouchV3Review/CombinedRoster/Master/lower.mask",
+            "guid": "afeeb4e7b33f24acd9db20dad3850487",
+            "sourceSHA": "7368e65a193d1f03ef8d5a1248b381d59f0cc5dfbef05babdd6a379ec0558ef8",
+            "metaSHA": "f87fe3da9238def4d3a051f9f5b97c4c6d978bcdaa0379a9ecbc703ad21dbb10",
+            "objectNamesAndTypes": [
+                "UnityEngine.AvatarMask:lower"
+            ]
+        },
+        {
+            "path": "Assets/GuardCrouchV3Review/CombinedRoster/Master/review.controller",
+            "guid": "4a697471f6395445197aef7bf9024398",
+            "sourceSHA": "65f8ba3d4ecd23fd0a44212ca0e95ba5d492d1fdb38701f53712a336116a34a1",
+            "metaSHA": "7d1fe1d0a7517674d0a4f7bcbe4eeab38563f1c02c5f6ab55ca408aab223b9f1",
+            "objectNamesAndTypes": [
+                "UnityEditor.Animations.AnimatorController:review",
+                "UnityEditor.Animations.AnimatorState:Crouch",
+                "UnityEditor.Animations.AnimatorState:CrouchBody",
+                "UnityEditor.Animations.AnimatorState:CrouchCross",
+                "UnityEditor.Animations.AnimatorState:CrouchJab",
+                "UnityEditor.Animations.AnimatorState:CrouchUppercut",
+                "UnityEditor.Animations.AnimatorState:Dance",
+                "UnityEditor.Animations.AnimatorState:Defeat",
+                "UnityEditor.Animations.AnimatorState:Fall",
+                "UnityEditor.Animations.AnimatorState:GetUp",
+                "UnityEditor.Animations.AnimatorState:Greeting",
+                "UnityEditor.Animations.AnimatorState:Guard",
+                "UnityEditor.Animations.AnimatorState:Hit",
+                "UnityEditor.Animations.AnimatorState:Idle",
+                "UnityEditor.Animations.AnimatorState:Marker",
+                "UnityEditor.Animations.AnimatorState:Source",
+                "UnityEditor.Animations.AnimatorState:Source",
+                "UnityEditor.Animations.AnimatorState:SourceGuard",
+                "UnityEditor.Animations.AnimatorState:SourceUppercut",
+                "UnityEditor.Animations.AnimatorState:Source_body",
+                "UnityEditor.Animations.AnimatorState:Source_cross",
+                "UnityEditor.Animations.AnimatorState:Source_jab",
+                "UnityEditor.Animations.AnimatorState:Victory",
+                "UnityEditor.Animations.AnimatorState:Walk",
+                "UnityEditor.Animations.AnimatorState:WalkBack",
+                "UnityEditor.Animations.AnimatorState:axeKick",
+                "UnityEditor.Animations.AnimatorState:backfist",
+                "UnityEditor.Animations.AnimatorState:body",
+                "UnityEditor.Animations.AnimatorState:counterstrike",
+                "UnityEditor.Animations.AnimatorState:cross",
+                "UnityEditor.Animations.AnimatorState:doublePunch",
+                "UnityEditor.Animations.AnimatorState:elbow",
+                "UnityEditor.Animations.AnimatorState:frontKick",
+                "UnityEditor.Animations.AnimatorState:hammer",
+                "UnityEditor.Animations.AnimatorState:heelKick",
+                "UnityEditor.Animations.AnimatorState:highKick",
+                "UnityEditor.Animations.AnimatorState:hook",
+                "UnityEditor.Animations.AnimatorState:jab",
+                "UnityEditor.Animations.AnimatorState:jumpKick",
+                "UnityEditor.Animations.AnimatorState:knee",
+                "UnityEditor.Animations.AnimatorState:lowKick",
+                "UnityEditor.Animations.AnimatorState:palm",
+                "UnityEditor.Animations.AnimatorState:shortHook",
+                "UnityEditor.Animations.AnimatorState:sideKick",
+                "UnityEditor.Animations.AnimatorState:stepKick",
+                "UnityEditor.Animations.AnimatorState:switchKick",
+                "UnityEditor.Animations.AnimatorState:uppercut",
+                "UnityEditor.Animations.AnimatorStateMachine:Base Layer",
+                "UnityEditor.Animations.AnimatorStateMachine:Review dedicated Block1",
+                "UnityEditor.Animations.AnimatorStateMachine:Review independent source arms",
+                "UnityEditor.Animations.AnimatorStateMachine:Review source idle duck",
+                "UnityEditor.Animations.AnimatorStateMachine:Review source shallow duck"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/MasterHumanoidCandidate.prefab",
+            "guid": "74c6545d8c9d9453b9fd1b455128e1f0",
+            "sourceSHA": "010ed0f100009e5f95109801d5b6648aff96e0a56375a64c3d26a9c240194bec",
+            "metaSHA": "f75ce0d6e53c5c1caa9854da18d81d2870b1a3fa77b02022e3049ef72c26a5cb",
+            "objectNamesAndTypes": [
+                "CandidateFootGrounding:MasterHumanoidCandidate",
+                "LighFight.Runtime.FighterView:MasterHumanoidCandidate",
+                "LighFight.Runtime.NativeFingerPoseDriver:MasterHumanoidCandidate",
+                "LighFight.Runtime.NativeHighReaction:MasterHumanoidCandidate",
+                "NativeSupportOverlay:MasterHumanoidCandidate",
+                "UnityEngine.Animator:Native Provider Rig",
+                "UnityEngine.GameObject:Armature",
+                "UnityEngine.GameObject:Chest",
+                "UnityEngine.GameObject:Head",
+                "UnityEngine.GameObject:Hips",
+                "UnityEngine.GameObject:Left_Eye",
+                "UnityEngine.GameObject:Left_Foot",
+                "UnityEngine.GameObject:Left_Hand",
+                "UnityEngine.GameObject:Left_IndexDistal",
+                "UnityEngine.GameObject:Left_IndexDistalEnd",
+                "UnityEngine.GameObject:Left_IndexIntermediate",
+                "UnityEngine.GameObject:Left_IndexProximal",
+                "UnityEngine.GameObject:Left_LowerArm",
+                "UnityEngine.GameObject:Left_LowerLeg",
+                "UnityEngine.GameObject:Left_MiddleDistal",
+                "UnityEngine.GameObject:Left_MiddleDistalEnd",
+                "UnityEngine.GameObject:Left_MiddleIntermediate",
+                "UnityEngine.GameObject:Left_MiddleProximal",
+                "UnityEngine.GameObject:Left_PinkyDistal",
+                "UnityEngine.GameObject:Left_PinkyDistalEnd",
+                "UnityEngine.GameObject:Left_PinkyIntermediate",
+                "UnityEngine.GameObject:Left_PinkyProximal",
+                "UnityEngine.GameObject:Left_RingDistal",
+                "UnityEngine.GameObject:Left_RingDistalEnd",
+                "UnityEngine.GameObject:Left_RingIntermediate",
+                "UnityEngine.GameObject:Left_RingProximal",
+                "UnityEngine.GameObject:Left_Shoulder",
+                "UnityEngine.GameObject:Left_ThumbDistal",
+                "UnityEngine.GameObject:Left_ThumbDistalEnd",
+                "UnityEngine.GameObject:Left_ThumbIntermediate",
+                "UnityEngine.GameObject:Left_ThumbProximal",
+                "UnityEngine.GameObject:Left_Toes",
+                "UnityEngine.GameObject:Left_ToesEnd",
+                "UnityEngine.GameObject:Left_UpperArm",
+                "UnityEngine.GameObject:Left_UpperLeg",
+                "UnityEngine.GameObject:MasterHumanoidCandidate",
+                "UnityEngine.GameObject:Native Provider Rig",
+                "UnityEngine.GameObject:Neck",
+                "UnityEngine.GameObject:Neck_Twist_A",
+                "UnityEngine.GameObject:Right_Eye",
+                "UnityEngine.GameObject:Right_Foot",
+                "UnityEngine.GameObject:Right_Hand",
+                "UnityEngine.GameObject:Right_IndexDistal",
+                "UnityEngine.GameObject:Right_IndexDistalEnd",
+                "UnityEngine.GameObject:Right_IndexIntermediate",
+                "UnityEngine.GameObject:Right_IndexProximal",
+                "UnityEngine.GameObject:Right_LowerArm",
+                "UnityEngine.GameObject:Right_LowerLeg",
+                "UnityEngine.GameObject:Right_MiddleDistal",
+                "UnityEngine.GameObject:Right_MiddleDistalEnd",
+                "UnityEngine.GameObject:Right_MiddleIntermediate",
+                "UnityEngine.GameObject:Right_MiddleProximal",
+                "UnityEngine.GameObject:Right_PinkyDistal",
+                "UnityEngine.GameObject:Right_PinkyDistalEnd",
+                "UnityEngine.GameObject:Right_PinkyIntermediate",
+                "UnityEngine.GameObject:Right_PinkyProximal",
+                "UnityEngine.GameObject:Right_RingDistal",
+                "UnityEngine.GameObject:Right_RingDistalEnd",
+                "UnityEngine.GameObject:Right_RingIntermediate",
+                "UnityEngine.GameObject:Right_RingProximal",
+                "UnityEngine.GameObject:Right_Shoulder",
+                "UnityEngine.GameObject:Right_ThumbDistal",
+                "UnityEngine.GameObject:Right_ThumbDistalEnd",
+                "UnityEngine.GameObject:Right_ThumbIntermediate",
+                "UnityEngine.GameObject:Right_ThumbProximal",
+                "UnityEngine.GameObject:Right_Toes",
+                "UnityEngine.GameObject:Right_ToesEnd",
+                "UnityEngine.GameObject:Right_UpperArm",
+                "UnityEngine.GameObject:Right_UpperLeg",
+                "UnityEngine.GameObject:Spine",
+                "UnityEngine.GameObject:UpperChest",
+                "UnityEngine.GameObject:tripo_node_24406674",
+                "UnityEngine.SkinnedMeshRenderer:tripo_node_24406674",
+                "UnityEngine.Transform:Armature",
+                "UnityEngine.Transform:Chest",
+                "UnityEngine.Transform:Head",
+                "UnityEngine.Transform:Hips",
+                "UnityEngine.Transform:Left_Eye",
+                "UnityEngine.Transform:Left_Foot",
+                "UnityEngine.Transform:Left_Hand",
+                "UnityEngine.Transform:Left_IndexDistal",
+                "UnityEngine.Transform:Left_IndexDistalEnd",
+                "UnityEngine.Transform:Left_IndexIntermediate",
+                "UnityEngine.Transform:Left_IndexProximal",
+                "UnityEngine.Transform:Left_LowerArm",
+                "UnityEngine.Transform:Left_LowerLeg",
+                "UnityEngine.Transform:Left_MiddleDistal",
+                "UnityEngine.Transform:Left_MiddleDistalEnd",
+                "UnityEngine.Transform:Left_MiddleIntermediate",
+                "UnityEngine.Transform:Left_MiddleProximal",
+                "UnityEngine.Transform:Left_PinkyDistal",
+                "UnityEngine.Transform:Left_PinkyDistalEnd",
+                "UnityEngine.Transform:Left_PinkyIntermediate",
+                "UnityEngine.Transform:Left_PinkyProximal",
+                "UnityEngine.Transform:Left_RingDistal",
+                "UnityEngine.Transform:Left_RingDistalEnd",
+                "UnityEngine.Transform:Left_RingIntermediate",
+                "UnityEngine.Transform:Left_RingProximal",
+                "UnityEngine.Transform:Left_Shoulder",
+                "UnityEngine.Transform:Left_ThumbDistal",
+                "UnityEngine.Transform:Left_ThumbDistalEnd",
+                "UnityEngine.Transform:Left_ThumbIntermediate",
+                "UnityEngine.Transform:Left_ThumbProximal",
+                "UnityEngine.Transform:Left_Toes",
+                "UnityEngine.Transform:Left_ToesEnd",
+                "UnityEngine.Transform:Left_UpperArm",
+                "UnityEngine.Transform:Left_UpperLeg",
+                "UnityEngine.Transform:MasterHumanoidCandidate",
+                "UnityEngine.Transform:Native Provider Rig",
+                "UnityEngine.Transform:Neck",
+                "UnityEngine.Transform:Neck_Twist_A",
+                "UnityEngine.Transform:Right_Eye",
+                "UnityEngine.Transform:Right_Foot",
+                "UnityEngine.Transform:Right_Hand",
+                "UnityEngine.Transform:Right_IndexDistal",
+                "UnityEngine.Transform:Right_IndexDistalEnd",
+                "UnityEngine.Transform:Right_IndexIntermediate",
+                "UnityEngine.Transform:Right_IndexProximal",
+                "UnityEngine.Transform:Right_LowerArm",
+                "UnityEngine.Transform:Right_LowerLeg",
+                "UnityEngine.Transform:Right_MiddleDistal",
+                "UnityEngine.Transform:Right_MiddleDistalEnd",
+                "UnityEngine.Transform:Right_MiddleIntermediate",
+                "UnityEngine.Transform:Right_MiddleProximal",
+                "UnityEngine.Transform:Right_PinkyDistal",
+                "UnityEngine.Transform:Right_PinkyDistalEnd",
+                "UnityEngine.Transform:Right_PinkyIntermediate",
+                "UnityEngine.Transform:Right_PinkyProximal",
+                "UnityEngine.Transform:Right_RingDistal",
+                "UnityEngine.Transform:Right_RingDistalEnd",
+                "UnityEngine.Transform:Right_RingIntermediate",
+                "UnityEngine.Transform:Right_RingProximal",
+                "UnityEngine.Transform:Right_Shoulder",
+                "UnityEngine.Transform:Right_ThumbDistal",
+                "UnityEngine.Transform:Right_ThumbDistalEnd",
+                "UnityEngine.Transform:Right_ThumbIntermediate",
+                "UnityEngine.Transform:Right_ThumbProximal",
+                "UnityEngine.Transform:Right_Toes",
+                "UnityEngine.Transform:Right_ToesEnd",
+                "UnityEngine.Transform:Right_UpperArm",
+                "UnityEngine.Transform:Right_UpperLeg",
+                "UnityEngine.Transform:Spine",
+                "UnityEngine.Transform:UpperChest",
+                "UnityEngine.Transform:tripo_node_24406674"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/NativeClips/hit_to_head.anim",
+            "guid": "ec0fc4e53f98b4ffd95a49bda7bafbc3",
+            "sourceSHA": "0643591b5e8b6e863c0e470a391ed0de1c5ca822bdd52842137f85d2b6e72040",
+            "metaSHA": "e0bedddc40a27471f3c2bfef68cacacfbaafb1c6665197f99b171bcc4c0e6707",
+            "objectNamesAndTypes": [
+                "UnityEngine.AnimationClip:hit_to_head"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/derived-metal-smooth.png",
+            "guid": "228bd33757a674f999114277604ab093",
+            "sourceSHA": "e836925fc3d0ea86ad00f8fed074d76e10f52abfb57a20d3a16da8d168144d04",
+            "metaSHA": "7e676716e50f10ac6372e081a55e055c3d9544110e660b968bacd4103d8d6fb3",
+            "objectNamesAndTypes": [
+                "UnityEngine.Texture2D:derived-metal-smooth"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/master-h31-unity-native-pack_basecolor.JPEG",
+            "guid": "116e6099542fe4eb1bc924e91d4e9665",
+            "sourceSHA": "267aeca3fc7556a10ab2e5094dc866ccfba55a3fd393db0bf8f53de5fae2cb00",
+            "metaSHA": "a64a90105dc69115c985bf625735d36d6b6932816306f53254127880b2e935c0",
+            "objectNamesAndTypes": [
+                "UnityEngine.Texture2D:master-h31-unity-native-pack_basecolor"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/master-h31-unity-native-pack_normal.JPEG",
+            "guid": "07a99d5efdff14d7a90ba2190b96ed33",
+            "sourceSHA": "05127f0597dfc2cf197ffd8f652630a7fcda4f2a656aecb1465e5643dd50091e",
+            "metaSHA": "31f1898ed29780e4a43e73d4bf70ec4676159d218614e6ec291c14adc1af0538",
+            "objectNamesAndTypes": [
+                "UnityEngine.Texture2D:master-h31-unity-native-pack_normal"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/model.fbx",
+            "guid": "a1e2efca752184eb5b5f3a0d80727028",
+            "sourceSHA": "4e1f58d4611a0e72546f39bd576980eac6120e67bb7cc5624052ca5ce138fd38",
+            "metaSHA": "4cfe8cc21da9eeae18d1693da787c9ba98cfac7b6e8ba071099c92ca51e0f787",
+            "objectNamesAndTypes": [
+                "UnityEngine.AnimationClip:__preview__box_02",
+                "UnityEngine.AnimationClip:__preview__cheer",
+                "UnityEngine.AnimationClip:__preview__dance_01",
+                "UnityEngine.AnimationClip:__preview__dance_02",
+                "UnityEngine.AnimationClip:__preview__dance_05",
+                "UnityEngine.AnimationClip:__preview__fall",
+                "UnityEngine.AnimationClip:__preview__front_kick_01",
+                "UnityEngine.AnimationClip:__preview__greet_01",
+                "UnityEngine.AnimationClip:__preview__hit_to_head",
+                "UnityEngine.AnimationClip:box_02",
+                "UnityEngine.AnimationClip:cheer",
+                "UnityEngine.AnimationClip:dance_01",
+                "UnityEngine.AnimationClip:dance_02",
+                "UnityEngine.AnimationClip:dance_05",
+                "UnityEngine.AnimationClip:fall",
+                "UnityEngine.AnimationClip:front_kick_01",
+                "UnityEngine.AnimationClip:greet_01",
+                "UnityEngine.AnimationClip:hit_to_head",
+                "UnityEngine.Animator:model",
+                "UnityEngine.Avatar:modelAvatar",
+                "UnityEngine.GameObject:Armature",
+                "UnityEngine.GameObject:Chest",
+                "UnityEngine.GameObject:Head",
+                "UnityEngine.GameObject:Hips",
+                "UnityEngine.GameObject:Left_Eye",
+                "UnityEngine.GameObject:Left_Foot",
+                "UnityEngine.GameObject:Left_Hand",
+                "UnityEngine.GameObject:Left_IndexDistal",
+                "UnityEngine.GameObject:Left_IndexDistalEnd",
+                "UnityEngine.GameObject:Left_IndexIntermediate",
+                "UnityEngine.GameObject:Left_IndexProximal",
+                "UnityEngine.GameObject:Left_LowerArm",
+                "UnityEngine.GameObject:Left_LowerLeg",
+                "UnityEngine.GameObject:Left_MiddleDistal",
+                "UnityEngine.GameObject:Left_MiddleDistalEnd",
+                "UnityEngine.GameObject:Left_MiddleIntermediate",
+                "UnityEngine.GameObject:Left_MiddleProximal",
+                "UnityEngine.GameObject:Left_PinkyDistal",
+                "UnityEngine.GameObject:Left_PinkyDistalEnd",
+                "UnityEngine.GameObject:Left_PinkyIntermediate",
+                "UnityEngine.GameObject:Left_PinkyProximal",
+                "UnityEngine.GameObject:Left_RingDistal",
+                "UnityEngine.GameObject:Left_RingDistalEnd",
+                "UnityEngine.GameObject:Left_RingIntermediate",
+                "UnityEngine.GameObject:Left_RingProximal",
+                "UnityEngine.GameObject:Left_Shoulder",
+                "UnityEngine.GameObject:Left_ThumbDistal",
+                "UnityEngine.GameObject:Left_ThumbDistalEnd",
+                "UnityEngine.GameObject:Left_ThumbIntermediate",
+                "UnityEngine.GameObject:Left_ThumbProximal",
+                "UnityEngine.GameObject:Left_Toes",
+                "UnityEngine.GameObject:Left_ToesEnd",
+                "UnityEngine.GameObject:Left_UpperArm",
+                "UnityEngine.GameObject:Left_UpperLeg",
+                "UnityEngine.GameObject:Neck",
+                "UnityEngine.GameObject:Neck_Twist_A",
+                "UnityEngine.GameObject:Right_Eye",
+                "UnityEngine.GameObject:Right_Foot",
+                "UnityEngine.GameObject:Right_Hand",
+                "UnityEngine.GameObject:Right_IndexDistal",
+                "UnityEngine.GameObject:Right_IndexDistalEnd",
+                "UnityEngine.GameObject:Right_IndexIntermediate",
+                "UnityEngine.GameObject:Right_IndexProximal",
+                "UnityEngine.GameObject:Right_LowerArm",
+                "UnityEngine.GameObject:Right_LowerLeg",
+                "UnityEngine.GameObject:Right_MiddleDistal",
+                "UnityEngine.GameObject:Right_MiddleDistalEnd",
+                "UnityEngine.GameObject:Right_MiddleIntermediate",
+                "UnityEngine.GameObject:Right_MiddleProximal",
+                "UnityEngine.GameObject:Right_PinkyDistal",
+                "UnityEngine.GameObject:Right_PinkyDistalEnd",
+                "UnityEngine.GameObject:Right_PinkyIntermediate",
+                "UnityEngine.GameObject:Right_PinkyProximal",
+                "UnityEngine.GameObject:Right_RingDistal",
+                "UnityEngine.GameObject:Right_RingDistalEnd",
+                "UnityEngine.GameObject:Right_RingIntermediate",
+                "UnityEngine.GameObject:Right_RingProximal",
+                "UnityEngine.GameObject:Right_Shoulder",
+                "UnityEngine.GameObject:Right_ThumbDistal",
+                "UnityEngine.GameObject:Right_ThumbDistalEnd",
+                "UnityEngine.GameObject:Right_ThumbIntermediate",
+                "UnityEngine.GameObject:Right_ThumbProximal",
+                "UnityEngine.GameObject:Right_Toes",
+                "UnityEngine.GameObject:Right_ToesEnd",
+                "UnityEngine.GameObject:Right_UpperArm",
+                "UnityEngine.GameObject:Right_UpperLeg",
+                "UnityEngine.GameObject:Spine",
+                "UnityEngine.GameObject:UpperChest",
+                "UnityEngine.GameObject:model",
+                "UnityEngine.GameObject:tripo_node_24406674",
+                "UnityEngine.Material:tripo_mat_24406674",
+                "UnityEngine.Mesh:tripo_node_24406674",
+                "UnityEngine.SkinnedMeshRenderer:tripo_node_24406674",
+                "UnityEngine.Transform:Armature",
+                "UnityEngine.Transform:Chest",
+                "UnityEngine.Transform:Head",
+                "UnityEngine.Transform:Hips",
+                "UnityEngine.Transform:Left_Eye",
+                "UnityEngine.Transform:Left_Foot",
+                "UnityEngine.Transform:Left_Hand",
+                "UnityEngine.Transform:Left_IndexDistal",
+                "UnityEngine.Transform:Left_IndexDistalEnd",
+                "UnityEngine.Transform:Left_IndexIntermediate",
+                "UnityEngine.Transform:Left_IndexProximal",
+                "UnityEngine.Transform:Left_LowerArm",
+                "UnityEngine.Transform:Left_LowerLeg",
+                "UnityEngine.Transform:Left_MiddleDistal",
+                "UnityEngine.Transform:Left_MiddleDistalEnd",
+                "UnityEngine.Transform:Left_MiddleIntermediate",
+                "UnityEngine.Transform:Left_MiddleProximal",
+                "UnityEngine.Transform:Left_PinkyDistal",
+                "UnityEngine.Transform:Left_PinkyDistalEnd",
+                "UnityEngine.Transform:Left_PinkyIntermediate",
+                "UnityEngine.Transform:Left_PinkyProximal",
+                "UnityEngine.Transform:Left_RingDistal",
+                "UnityEngine.Transform:Left_RingDistalEnd",
+                "UnityEngine.Transform:Left_RingIntermediate",
+                "UnityEngine.Transform:Left_RingProximal",
+                "UnityEngine.Transform:Left_Shoulder",
+                "UnityEngine.Transform:Left_ThumbDistal",
+                "UnityEngine.Transform:Left_ThumbDistalEnd",
+                "UnityEngine.Transform:Left_ThumbIntermediate",
+                "UnityEngine.Transform:Left_ThumbProximal",
+                "UnityEngine.Transform:Left_Toes",
+                "UnityEngine.Transform:Left_ToesEnd",
+                "UnityEngine.Transform:Left_UpperArm",
+                "UnityEngine.Transform:Left_UpperLeg",
+                "UnityEngine.Transform:Neck",
+                "UnityEngine.Transform:Neck_Twist_A",
+                "UnityEngine.Transform:Right_Eye",
+                "UnityEngine.Transform:Right_Foot",
+                "UnityEngine.Transform:Right_Hand",
+                "UnityEngine.Transform:Right_IndexDistal",
+                "UnityEngine.Transform:Right_IndexDistalEnd",
+                "UnityEngine.Transform:Right_IndexIntermediate",
+                "UnityEngine.Transform:Right_IndexProximal",
+                "UnityEngine.Transform:Right_LowerArm",
+                "UnityEngine.Transform:Right_LowerLeg",
+                "UnityEngine.Transform:Right_MiddleDistal",
+                "UnityEngine.Transform:Right_MiddleDistalEnd",
+                "UnityEngine.Transform:Right_MiddleIntermediate",
+                "UnityEngine.Transform:Right_MiddleProximal",
+                "UnityEngine.Transform:Right_PinkyDistal",
+                "UnityEngine.Transform:Right_PinkyDistalEnd",
+                "UnityEngine.Transform:Right_PinkyIntermediate",
+                "UnityEngine.Transform:Right_PinkyProximal",
+                "UnityEngine.Transform:Right_RingDistal",
+                "UnityEngine.Transform:Right_RingDistalEnd",
+                "UnityEngine.Transform:Right_RingIntermediate",
+                "UnityEngine.Transform:Right_RingProximal",
+                "UnityEngine.Transform:Right_Shoulder",
+                "UnityEngine.Transform:Right_ThumbDistal",
+                "UnityEngine.Transform:Right_ThumbDistalEnd",
+                "UnityEngine.Transform:Right_ThumbIntermediate",
+                "UnityEngine.Transform:Right_ThumbProximal",
+                "UnityEngine.Transform:Right_Toes",
+                "UnityEngine.Transform:Right_ToesEnd",
+                "UnityEngine.Transform:Right_UpperArm",
+                "UnityEngine.Transform:Right_UpperLeg",
+                "UnityEngine.Transform:Spine",
+                "UnityEngine.Transform:UpperChest",
+                "UnityEngine.Transform:model",
+                "UnityEngine.Transform:tripo_node_24406674"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/Source/Master/native-pbr.mat",
+            "guid": "8d449b033dcc9493385b1c54d1d2195d",
+            "sourceSHA": "b720f441786f25295c89ce3f31cc8bad3d8cc8cd6c4af1ba8c496efa478a99a1",
+            "metaSHA": "964daa911e4c249becf3edd2260c074c4769b1616ac5bb039f0010f7c726f09c",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.Material:Standard"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoMasterPlayable/fist.asset",
+            "guid": "6e07d942ba11448c7a1f711ebf900e9e",
+            "sourceSHA": "9d53ceee3e4f67ee83ce4083be67dd4c5ea7e6fda9b1f9df060cdead9956a573",
+            "metaSHA": "35c3d4843dcd622e502879dae39848eedb0d08842129f49f8a4e46b1a8bbc90b",
+            "objectNamesAndTypes": [
+                "LighFight.Runtime.NativeFingerPose:fist"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_SmartRigArmature.anim",
+            "guid": "3c161cf2b13b146c7a3e90e17ad08d14",
+            "sourceSHA": "3dd4dd1e658e90250c46982397e4bf2211a6c066268eab277439c1c179c4bb33",
+            "metaSHA": "ede918814a2097494e305da796c318005a2a6a390589ed27092e2f2f04a0c33d",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Boxing_Guard_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Boxing_Guard_Step_Knee_Strike_SmartRigArmature.anim",
+            "guid": "654975b9b4e9741a28a2a303d41e568d",
+            "sourceSHA": "59f6b9c737d5ec702cb5798cf43405a0d103103eee9085133fef6d39a80db6fc",
+            "metaSHA": "acfc1ba0de2c996635c839f95e8141fd317516adfc22249abddbdc003b1f9c09",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Boxing_Guard_Step_Knee_Strike_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Counterstrike_SmartRigArmature.anim",
+            "guid": "da9be69f328424591856314e0f44ddf6",
+            "sourceSHA": "8d8c35e9609d3a95325778206fa0f7e31e46b86b3884c8220fa62c37d926e9cb",
+            "metaSHA": "57c0c6c0c446454d535f8ba3c1700cdde5d5116adf72a968a961f3e9b9c53a83",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Counterstrike_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Elbow_Strike_SmartRigArmature.anim",
+            "guid": "e528363a9a9994b15afac7de7c21cdf6",
+            "sourceSHA": "ef07be32e42b26f0947dac6563601b6b4fd9cd8479df6151fee19978b099a40d",
+            "metaSHA": "b0656b378a0e7cfef45b904f576773fe3bf06d90f9fee048579f36e44ba5249d",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Elbow_Strike_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_High_Kick_SmartRigArmature.anim",
+            "guid": "3a584ca26cd9d4c4c8f256cd278035ec",
+            "sourceSHA": "56b49734f45a3d4b3ed56392402a2d6ee0432b0b905c6848a7d355ff8d68109b",
+            "metaSHA": "9732772a550b24e787ba56fb78bd03beb8ccd4604177c52eaf761833f5f93c91",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|High_Kick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Hit_Reaction_to_Waist_SmartRigArmature.anim",
+            "guid": "f2edbeca0f19242fdbae7a7208089501",
+            "sourceSHA": "3eee76e8cbebdd297120bf8766e5c40b058191e61d747aa4253cecbbdcab3857",
+            "metaSHA": "0b3478bb8da1dd8fb78b5258d48df769915571e59b071a6198382fa2a4f2f525",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Hit_Reaction_to_Waist_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Left_Hook_from_Guard_SmartRigArmature.anim",
+            "guid": "5e3479b7776de45678bb32d021303dca",
+            "sourceSHA": "42e2e0c6010f3696445cf0e4de34b3079375d67c47d6c26abf6ef85c8467c8b1",
+            "metaSHA": "e1da7fb447596f21f69ebc0c27b99db4b802aaeb34ceeda8e52bc020d264fe45",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Left_Hook_from_Guard_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Left_Jab_from_Guard_SmartRigArmature.anim",
+            "guid": "b6f94e477ff8c4706add2427d94131d5",
+            "sourceSHA": "342772d5fcccbb2bc27f853c1b841629901b4a02d7fa720ee57d9c8604bdeb1e",
+            "metaSHA": "633a0361de2f2c223f77d4e522472403e64f1f6a8dd5dfdebc6da0e17cf0a795",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Left_Jab_from_Guard_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Left_Short_Hook_from_Guard_SmartRigArmature.anim",
+            "guid": "2a6811d69acb44411bb03602f4d358f1",
+            "sourceSHA": "26d98cf2e435033d2d3a61251622f330644e8db66d7ff5feb32df35c8acee438",
+            "metaSHA": "0fa64c13c93fa08c8a98f77f74d5bbf70891ca01e2a599aeb9f0b096008f6762",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Left_Short_Hook_from_Guard_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Punch_Forward_with_Both_Fists_SmartRigArmature.anim",
+            "guid": "82cf7d069151e4d578cbbef9c632683b",
+            "sourceSHA": "b7be7a560494273959acd611c04dffbb78c39a7bf983bdb15b661d4563020e86",
+            "metaSHA": "f5de086967052a9648c1870af8772c34b73c3a9f3b16846d170c6565fa123421",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Punch_Forward_with_Both_Fists_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Right_Jab_from_Guard_SmartRigArmature.anim",
+            "guid": "082e73914f80b45c9b46c9c85d4034b4",
+            "sourceSHA": "43b82e8dbe82d10e6abae212b32852cdce3fea0e25d409e4d413b02853a2b66a",
+            "metaSHA": "b0b4e8b7ea83c92d2859ed050943adbe2fd2bf3474565be008b3ed40252bc1f5",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Right_Jab_from_Guard_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Right_Uppercut_from_Guard_SmartRigArmature.anim",
+            "guid": "8655da0121ee64c11bdb54615ba4e13f",
+            "sourceSHA": "ad1275a582eb54d0aa6cb2b89e0ae0d0fce52b1e02a3391f5564e65371c988e7",
+            "metaSHA": "39bf4865c4a0b923d0a055ca0b196cec24995bdd8229b8d68f15c2aec8ffd6e8",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Right_Uppercut_from_Guard_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Rising_Flying_Kick_SmartRigArmature.anim",
+            "guid": "2c867a5d792694752a1d27fffa414a86",
+            "sourceSHA": "9b0351acdd0b83b3ce7e14f5d77a8118c07848a0384ea085c8c332d9d2829306",
+            "metaSHA": "e5252b436fef01510ca9fdc86f692eb2d0e42f9db2f64432c5829b967abb9aa2",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Rising_Flying_Kick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Spartan_Kick_SmartRigArmature.anim",
+            "guid": "a148f061acfe048478777775c6eb75b8",
+            "sourceSHA": "498a36885f3a4281fc984161856b0c8ab6f3984d2649f7c992ebccc4e63a1ef9",
+            "metaSHA": "3d5284ed7fa5bb5917146e536b760d143c07bc7bb48aedf569cf58b032412bc9",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Spartan_Kick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Stand_Up1_SmartRigArmature.anim",
+            "guid": "47233dc25ca474b18958b25e92f162fc",
+            "sourceSHA": "e99024e629599f5b1bbf408600a720fc16dfe80715b8d95186674857b9b85e74",
+            "metaSHA": "1822041e30dc7f09e91acb6dfbaa75eb37800ce65a13c2ba5305270d58d91572",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Stand_Up1_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Step_in_High_Kick_SmartRigArmature.anim",
+            "guid": "ce4a3520723d849e3aacab78f324e52f",
+            "sourceSHA": "681f3464df42294608481ec6118bdbe3b82cc2c6cccee95d1834bacd2d0c698a",
+            "metaSHA": "fa913edca87a5dfd4a454c5d03b6817eefc29acc94534dbeeb2da38443ef6bb5",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Step_in_High_Kick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Back_SmartRigArmature.anim",
+            "guid": "68e914e81e9694b3a9ccc2f83afdfa20",
+            "sourceSHA": "88a616eae7a8968834c24eef4da5fc465812f82656b49569073087c1f80a0b84",
+            "metaSHA": "92d49cf18cc3197474589eb70d3def84e08ab0d784148464c749eff7b8b80158",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Walk_Fight_Back_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_Walk_Fight_Forward_SmartRigArmature.anim",
+            "guid": "8a149e972f1794f3f957178dc8968b6f",
+            "sourceSHA": "494f4887bdc699e8b7a56bfa8234811dfae6105dd943287e0eb2aeb6ddc560ef",
+            "metaSHA": "97cc6154fa63942005e94d02aa85bc3f6628ef88b25775d814a306e6438e1d6a",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|Walk_Fight_Forward_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_air_squat_SmartRigArmature.anim",
+            "guid": "840f4859e624947929c9eebad22cd56d",
+            "sourceSHA": "21d30b49c24c6150a7b6eeada06af88c6c5bc84d7dce5f186898b4cfaa5b34b9",
+            "metaSHA": "dd5a0cd5fef0d620e3290e4d9fd38f88d76558a3bb1b4b501e0bf55b99c19db2",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|air_squat_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_axeKick_SmartRigArmature.anim",
+            "guid": "394a5c0c0ad7c439e98df4a236fd61cd",
+            "sourceSHA": "4c406b5e47df77a1a76a2befa899a8a77e6b5267151d1e3a4db98e59322ec941",
+            "metaSHA": "413761dc68614750d00b7c7462005a8f86ea08c3dc372b7205820c472ff0d445",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|axeKick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_backfist_SmartRigArmature.anim",
+            "guid": "234aae0c733684fbd85df16a55e8a36b",
+            "sourceSHA": "1a6ec3741ef7191836c4afba6e7c2fd2f1d9f38ebcc9ec3d12275385d962bb1b",
+            "metaSHA": "7615c28532438bbef5669cd48085bfa26e10e13434b11e258c5e0f530481926a",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|backfist_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_body_SmartRigArmature.anim",
+            "guid": "5b59598c515b446198f3cf002abc9d74",
+            "sourceSHA": "3499f37effe61dd9cf1e4568231043505432d5cc97a794d883866c6371d625f8",
+            "metaSHA": "981d803174b097156a85b8f143b7a23687006413c44389674171c1d7cf2c23b4",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|body_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_falling_down_SmartRigArmature.anim",
+            "guid": "a098fb985e85140858bb5b667e038f92",
+            "sourceSHA": "b11d7d9e6c02b2efdef6775f6c50df07c69559b63efc6529b8bcea55d22c143d",
+            "metaSHA": "50c08dfc5fd234e0307b0acb4a1c36e2b3d701d1f1a7691943bdec4306d7ba9a",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|falling_down_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_hammerReach_SmartRigArmature.anim",
+            "guid": "adb022f1f5b6f45c3bb9aac4515553f2",
+            "sourceSHA": "35a65e0707fce0b3529c8049a79785fca39a50a7cd70b29b38dd3ff053012d29",
+            "metaSHA": "48166efc6950e2d741d09babae97c6182fd645e3ca525bafdc2f067bf929740b",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|hammerReach_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_heelKick_SmartRigArmature.anim",
+            "guid": "000a088a4c3f44a78bb0172d91e3afca",
+            "sourceSHA": "5c57d5ed2b6ea0cab2c0a4a433613e0b09d555341092bc25466a0e6f909ae103",
+            "metaSHA": "05c35766edff6452ec731b1cb39f3fffdb9e6d56a9750d0a4cab87ccc0d0c15b",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|heelKick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_lowKick_SmartRigArmature.anim",
+            "guid": "dc6f24cf020c6442f90dc71ea2696ada",
+            "sourceSHA": "98dd7792d6faa706c8c5a0155591128e13c5ed1b78b6cf66ed876304f9fbed34",
+            "metaSHA": "cfcd68ad8f6c26fa41b1dcaa8f2294adbc1fec064e84a8736e5fd7c24726402d",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|lowKick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_palmReach_SmartRigArmature.anim",
+            "guid": "dc173010baf574c5c9677c227d9c38f9",
+            "sourceSHA": "c0825d70addd2472368090ff35661bb5892100e6a1852167f9226ee5ecded696",
+            "metaSHA": "6b7a3a3ab8072b4dec93827aa11385fb213224b04fb130c5adf808535ba219a0",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|palmReach_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_sideKick_SmartRigArmature.anim",
+            "guid": "5f196360cf5e34bda9e322ef55199a89",
+            "sourceSHA": "cbd547b8b23e77157572209be358e5dd19ebc73cda31645bd8a8dcd5df67474f",
+            "metaSHA": "31d91134a88d397b463a554db52180d347e3b1c531ee7ecd5bbbd1c4eb0b11d5",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|sideKick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Art/Drafts/TripoPlayable/Clips/SmartRigArmature_switchKick_SmartRigArmature.anim",
+            "guid": "18b03b074f7d14d2d91c84d443dd1c2b",
+            "sourceSHA": "7b82d7fa94192a7cd437a4557bea30a54e3535c85480e65476b3532dcf2b62d8",
+            "metaSHA": "0257b157e59d307fa4576513a227fcdec96b4acb4d0ddca02c4908be4192501b",
+            "objectNamesAndTypes": [
+                "UnityEditor.AssetImporters.ImportLog:Import Logs",
+                "UnityEngine.AnimationClip:SmartRigArmature|switchKick_SmartRigArmature"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Resources/Shaders/FittedFilmic.shader",
+            "guid": "b9c066507c6bf476883b5c83f0c57865",
+            "sourceSHA": "60afbb07a29eb7271896b0d9a5a5d8e05035085c712ff2c84d9b5a59eb144405",
+            "metaSHA": "b9001dc59e607c7d498aef95f2d9f6169fb9ee8571d5a2f6d40598c21ed5947a",
+            "objectNamesAndTypes": [
+                "UnityEngine.Shader:Hidden/LighFight/FittedFilmic"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Runtime/FighterView.cs",
+            "guid": "bd1a2be5a4d0f445db7390ec418c21e4",
+            "sourceSHA": "dc5bf551871784fe5f0c17e5c9cf497e96be83a4fd097d91f6a8f3030022634c",
+            "metaSHA": "2f913c874ea3e1bdeae0d0871f438ba09d63783f1b97eaf90e172656fa05782d",
+            "objectNamesAndTypes": [
+                "UnityEditor.MonoScript:FighterView"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Runtime/NativeFingerPose.cs",
+            "guid": "8bc09a7c3f14d48efb5040ade10db508",
+            "sourceSHA": "7828182ebb10242781a7ff914b34696a7e10f1d1b77ed03e360038e9185da865",
+            "metaSHA": "8b0f8d11bac5546b4a24b797d299146d6c22f017445e14040a2a32637d7016c8",
+            "objectNamesAndTypes": [
+                "UnityEditor.MonoScript:NativeFingerPose"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Runtime/NativeFingerPoseDriver.cs",
+            "guid": "94d4c4e0251e6470cb53c36fa08aa4a6",
+            "sourceSHA": "785605854b4b74114b60a8677de1dc775cbfe2f6e331317522f0af190eb7c01b",
+            "metaSHA": "9e0f68652661642182aac776f098953d3a257dc0ea733a4b64f3231174cbcd6c",
+            "objectNamesAndTypes": [
+                "UnityEditor.MonoScript:NativeFingerPoseDriver"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Runtime/NativeHighReaction.cs",
+            "guid": "415ee6e0e3d04fb9bd88e420cdfdfdf3",
+            "sourceSHA": "3c18ad4f27a3fedce2c52aa72808d42f1b53f376098c328fb1d32b373772e566",
+            "metaSHA": "b97b0d8d3fd6d57224bf86057f06fc50481316537cc1da11452c463d742dd190",
+            "objectNamesAndTypes": [
+                "UnityEditor.MonoScript:NativeHighReaction"
+            ]
+        },
+        {
+            "path": "Assets/LighFight/Runtime/TestCandidates/CandidateFootGrounding.cs",
+            "guid": "7004e0a5a4fb9495cb532e1e73ab8abc",
+            "sourceSHA": "a90db8f33afd7dfb5150a306de405f9bbfeac6dfaf837925610134c0a7029f0a",
+            "metaSHA": "abeed1ad41b339550f1b0ed4e6b871235d53c83d7a04edf940acb30aaac453b2",
+            "objectNamesAndTypes": [
+                "UnityEditor.MonoScript:CandidateFootGrounding"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Dance.carrier.anim",
+            "guid": "7462e2f73e0fc471e8ebf8e8468d5628",
+            "sourceSHA": "012a55fdb1f19bd0c57b6f8ab7d2c50b3d6a2d39735fa9c62a0f7c3e398aa78b",
+            "metaSHA": "5d1457df5ea49e1afc42541ef92edcf1a29802e5c021b3bd643e5e058d632ff0",
+            "objectNamesAndTypes": [
+                "UnityEngine.AnimationClip:Dance.carrier"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Dance.pose.asset",
+            "guid": "54f1f33cc34304f818c2ee9ae72f662c",
+            "sourceSHA": "2125e793450ac827f741118fa013c104e15d60a47c60b040fe3f28ba23ac3e76",
+            "metaSHA": "09b40dfc4717afe91a875c39d32d98dc2febccaf53effae168668b6091d6d494",
+            "objectNamesAndTypes": [
+                "NativeSupportPoseData:Dance.pose"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Dance.pose.asset.curves.bytes",
+            "guid": "186a30f2668644535895ba5a4c1c1f69",
+            "sourceSHA": "8527c8d136e24a3ba008af8864cf6613650ebcbf3a8ae6d4e37da0363c833b6a",
+            "metaSHA": "50a0ab757789b69d8cbd23f4e2d81c94f203f01d9d4caba81ff257b9f2f31375",
+            "objectNamesAndTypes": [
+                "UnityEngine.TextAsset:Dance.pose.asset.curves"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Defeat.carrier.anim",
+            "guid": "325e089dcb1024786be2531d1caebb8d",
+            "sourceSHA": "bcf233455c61ae58969a1513ce72740f37a1e4b8c35d2b367b02e52300643784",
+            "metaSHA": "94bf4a30823197d6d002fa915180be1764e5a461f91c85a12fd508f2eff08ad1",
+            "objectNamesAndTypes": [
+                "UnityEngine.AnimationClip:Defeat.carrier"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Defeat.pose.asset",
+            "guid": "6830f840288674972b975ed806e67061",
+            "sourceSHA": "71f41cd74e0809af50b2a57bc2b6f7df9360a361700aba6bd35c6437c37ab64c",
+            "metaSHA": "97faf4c0962cd70dc04fa67f69cf2967f290c9983f43f3505432a92f366e3fea",
+            "objectNamesAndTypes": [
+                "NativeSupportPoseData:Defeat.pose"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Defeat.pose.asset.curves.bytes",
+            "guid": "bfc372e73315f45bba793e1a527e86c2",
+            "sourceSHA": "82973319cc384c9f7a5fe76271ab52f1e71afd7fc150743931ee972ec5516435",
+            "metaSHA": "3679327bf6990ef2ce85dbb896941de0672e81ed5af1c20631de0e948d983979",
+            "objectNamesAndTypes": [
+                "UnityEngine.TextAsset:Defeat.pose.asset.curves"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Greeting.carrier.anim",
+            "guid": "5bbf3ccc3d0b74439a5659e9a7aa8edd",
+            "sourceSHA": "856f717a9ca958f0dca103f16d22af60cb69bbf773ee87f9c550ac3b1d11b8e3",
+            "metaSHA": "328a365b4287a7be6022de3669e8fbcefe20ef333586b7eae4d82d5463ee15d8",
+            "objectNamesAndTypes": [
+                "UnityEngine.AnimationClip:Greeting.carrier"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Greeting.pose.asset",
+            "guid": "77435e5082fed4749b9f1f5354202f5d",
+            "sourceSHA": "639ab105849565f9f497628f2c86bf3f5e453d9157b4aa7489d30788ba801083",
+            "metaSHA": "e1854755293b7dcec65fb96ec3e225d8bd6179f9a3e59d677ebc1b7531dff6d4",
+            "objectNamesAndTypes": [
+                "NativeSupportPoseData:Greeting.pose"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Greeting.pose.asset.curves.bytes",
+            "guid": "ee0e5c3ecff6442f3b2d5c075f146074",
+            "sourceSHA": "1b09ad1c17648efb51f99566d87ceca73ec5b5706b1764ac2209c883ed128df6",
+            "metaSHA": "67004120f6eb2514aaf6b4646cdf853f3a84769c8906e8f2199ad3e3c748c763",
+            "objectNamesAndTypes": [
+                "UnityEngine.TextAsset:Greeting.pose.asset.curves"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Victory.carrier.anim",
+            "guid": "361c047e04d604699b342a85c955acd8",
+            "sourceSHA": "fb54a630d9869383684947bf74b1534c0c4d9938cc820bf0e0a9861e1defb1ef",
+            "metaSHA": "813c8a93ac3f1ec9faf45931f0144b3c33f76603cbdb07ab5f81b3657479852c",
+            "objectNamesAndTypes": [
+                "UnityEngine.AnimationClip:Victory.carrier"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Victory.pose.asset",
+            "guid": "c9056e7c9391d481487a9aa0e6ed7155",
+            "sourceSHA": "fa9322e15e372ecdae607ba99d2fe992dcc447771af4a8ad08f5fde4afb0dd51",
+            "metaSHA": "14ee070c87973be3e511fb92161f1d65d4d65bd9d2f6a69ffaf9a361bb1de84c",
+            "objectNamesAndTypes": [
+                "NativeSupportPoseData:Victory.pose"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/Master/Clips/Victory.pose.asset.curves.bytes",
+            "guid": "fb1aa88575366469398c47c09681189c",
+            "sourceSHA": "d2891edb8c887fbca1ddb7b7ac781459c2688a604821418f46db899aafe77266",
+            "metaSHA": "6125dd68a9cc0011a4b015087748250defe005c0e605e76432f3803e367aeddc",
+            "objectNamesAndTypes": [
+                "UnityEngine.TextAsset:Victory.pose.asset.curves"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/NativeSupportOverlay.cs",
+            "guid": "786ce4e09ff564593b40a49d4511b529",
+            "sourceSHA": "929be4fac6d70f8ba8ebc4418366287db8f2f031ff21a3450f066bd533582587",
+            "metaSHA": "49f0b25bbae4ad69d7fa3621eeaa049aaa552101da8a0f104b203ed34910d443",
+            "objectNamesAndTypes": [
+                "UnityEditor.MonoScript:NativeSupportOverlay"
+            ]
+        },
+        {
+            "path": "Assets/NativeSupport/NativeSupportPoseData.cs",
+            "guid": "9f1961ec5b7ca41628af2532a4fe1342",
+            "sourceSHA": "b458c8e8acdee6850bf22d6dc7c88cd91ebaf8ffe0bbf56b615c4cfb0a43d3e0",
+            "metaSHA": "655323176bfceacac126cb273571dede0c6f3f8a645b465bd2ced87b2e0203c4",
+            "objectNamesAndTypes": [
+                "UnityEditor.MonoScript:NativeSupportPoseData"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,263 @@
+{
+  "role": "witch",
+  "blenderVersion": "4.2.22 LTS",
+  "sourceFBX": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbx",
+  "sourceSHA256": "80741798a295acac477fd37c4eb0df49e0628ffe2c05d3d34453481fc61a7c4d",
+  "glb": "prototypes/roster-portraits/models/witch.glb",
+  "glbSHA256": "d90714ba4b0e0321373005a86a358946cfc4280da2aca1bf491c1365e126f242",
+  "bytes": 13592036,
+  "sourceTriangles": 99999,
+  "glbTriangles": 99999,
+  "sourceControlVertices": 49992,
+  "sourceBones": 67,
+  "glbSkinJoints": [
+    67
+  ],
+  "sourcePreservationHashBeforeAfter": "37cf2499830ae08c5433a6d54245d57321899fec76bacbf884d97f2ee4ffbb9c",
+  "framesPerSecond": 24.0,
+  "sourceClips": [
+    {
+      "name": "box_02",
+      "sourceAction": "Armature|box_02",
+      "firstFrame": 1.0,
+      "lastFrame": 68.0,
+      "durationSeconds": 2.7916666666666665,
+      "fcurves": 679
+    },
+    {
+      "name": "cheer",
+      "sourceAction": "Armature|cheer",
+      "firstFrame": 1.0,
+      "lastFrame": 291.0,
+      "durationSeconds": 12.083333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "dance_01",
+      "sourceAction": "Armature|dance_01",
+      "firstFrame": 1.0,
+      "lastFrame": 557.0,
+      "durationSeconds": 23.166666666666668,
+      "fcurves": 679
+    },
+    {
+      "name": "defeat_02",
+      "sourceAction": "Armature|defeat_02",
+      "firstFrame": 1.0,
+      "lastFrame": 204.0,
+      "durationSeconds": 8.458333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "front_kick_01",
+      "sourceAction": "Armature|front_kick_01",
+      "firstFrame": 1.0,
+      "lastFrame": 61.0,
+      "durationSeconds": 2.5,
+      "fcurves": 679
+    },
+    {
+      "name": "greet_01",
+      "sourceAction": "Armature|greet_01",
+      "firstFrame": 1.0,
+      "lastFrame": 85.0,
+      "durationSeconds": 3.5,
+      "fcurves": 679
+    },
+    {
+      "name": "hit_to_head",
+      "sourceAction": "Armature|hit_to_head",
+      "firstFrame": 1.0,
+      "lastFrame": 45.0,
+      "durationSeconds": 1.8333333333333333,
+      "fcurves": 679
+    },
+    {
+      "name": "walk",
+      "sourceAction": "Armature|walk",
+      "firstFrame": 1.0,
+      "lastFrame": 57.0,
+      "durationSeconds": 2.3333333333333335,
+      "fcurves": 679
+    }
+  ],
+  "animations": [
+    {
+      "name": "box_02",
+      "durationSeconds": 2.7916666666666665,
+      "channels": 204
+    },
+    {
+      "name": "cheer",
+      "durationSeconds": 12.083333333333334,
+      "channels": 204
+    },
+    {
+      "name": "dance_01",
+      "durationSeconds": 23.166666666666668,
+      "channels": 204
+    },
+    {
+      "name": "defeat_02",
+      "durationSeconds": 8.458333333333334,
+      "channels": 204
+    },
+    {
+      "name": "front_kick_01",
+      "durationSeconds": 2.5,
+      "channels": 204
+    },
+    {
+      "name": "greet_01",
+      "durationSeconds": 3.5,
+      "channels": 204
+    },
+    {
+      "name": "hit_to_head",
+      "durationSeconds": 1.8333333333333333,
+      "channels": 204
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 2.3333333333333335,
+      "channels": 204
+    },
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "channels": 204,
+      "derived": true
+    }
+  ],
+  "defaultAnimation": "PreviewGuard",
+  "defaultAnimationTimeSeconds": 0,
+  "defaultAnimationPlayback": "loop constant clip; fullnative motions only ongesture",
+  "firstFrameGuardCandidate": {
+    "animation": "box_02",
+    "seconds": 0,
+    "sourceFrame": 1,
+    "poseValidity": "native authored crouched/open-hand combat-start; not A/T pose; not closed-fist standalone guard",
+    "derivedClip": "PreviewGuard"
+  },
+  "danceAnimation": "dance_01",
+  "punchAnimation": "box_02",
+  "boxingIdleAnimation": null,
+  "inputs": {
+    "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbx": "80741798a295acac477fd37c4eb0df49e0628ffe2c05d3d34453481fc61a7c4d",
+    "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_basecolor.JPEG": "62910d3f60daf7dcf4d1f6e8b1c19bf9c6862966e58baea3a6ec52cb8fb1e162",
+    "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_metallic.JPEG": "11e7afbeff21e0fd7508f006dcb80bb450f549207ef0ab5a880dcc633da65774",
+    "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_normal.JPEG": "2446156da4d028ab55ccc54e31860f37c6698e2a997659c677649306f7ccfb35",
+    "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_rm.PNG": "1e1a29bc875ddd07b62f13607d316f4af931299fce87433cbff5580df6c7d2df",
+    "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_roughness.JPEG": "4f19ab34a30f63465e71f48a6f66df2d51a655968e2086d3401e3d336051f37e"
+  },
+  "sourceImages": [
+    {
+      "name": "witch-h31-unity-native-full-pack_basecolor",
+      "file": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_basecolor.JPEG",
+      "sha256": "62910d3f60daf7dcf4d1f6e8b1c19bf9c6862966e58baea3a6ec52cb8fb1e162",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorSpace": "sRGB"
+    },
+    {
+      "name": "witch-h31-unity-native-full-pack_normal",
+      "file": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_normal.JPEG",
+      "sha256": "2446156da4d028ab55ccc54e31860f37c6698e2a997659c677649306f7ccfb35",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "witch-h31-unity-native-full-pack_roughness",
+      "file": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_roughness.JPEG",
+      "sha256": "4f19ab34a30f63465e71f48a6f66df2d51a655968e2086d3401e3d336051f37e",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "witch-h31-unity-native-full-pack_metallic",
+      "file": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_metallic.JPEG",
+      "sha256": "11e7afbeff21e0fd7508f006dcb80bb450f549207ef0ab5a880dcc633da65774",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    }
+  ],
+  "embeddedImages": [
+    {
+      "name": "witch-h31-unity-native-full-pack_normal",
+      "mimeType": "image/jpeg",
+      "bytes": 273464,
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "2446156da4d028ab55ccc54e31860f37c6698e2a997659c677649306f7ccfb35",
+      "source": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_normal.JPEG",
+      "method": "untouched original normal bytes; no gamma/Y-flip"
+    },
+    {
+      "name": "witch-h31-unity-native-full-pack_basecolor",
+      "mimeType": "image/jpeg",
+      "bytes": 1035111,
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "sha256": "62910d3f60daf7dcf4d1f6e8b1c19bf9c6862966e58baea3a6ec52cb8fb1e162",
+      "source": "art/source/tripo-witch-native-full-pack/unpacked/tripo_convert_a684e22a-599f-47b5-833b-289a0aff537f.fbm/witch-h31-unity-native-full-pack_basecolor.JPEG",
+      "method": "untouched original basecolor bytes"
+    },
+    {
+      "name": "witch-h31-unity-native-full-pack_roughness",
+      "mimeType": "image/png",
+      "bytes": 3472857,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sha256": "42452ed5b64ed858563a684cc36a97c1288ad71452e53895a4b06358f258df41",
+      "source": null,
+      "method": "derivedglTF ORM R=255,G=original roughnessR,B=original metallicR; raw scalar values, no gamma conversion"
+    }
+  ],
+  "limits": [
+    "Original native FBX imported by Blender; glTF baked at source24fps, not original FBX tangent/curve serialization.",
+    "No standalone boxing idle in these8takes. box_02 is a punch loop, not guard.",
+    "Native source material scalar encoding retained; no guessed gamma correction, normalYflip, recolor or originaldense-atlas substitution.",
+    "Portable prototype export, not shipping Unity/native-phone parity proof."
+  ],
+  "derivedClips": [
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "sourceAnimation": "box_02",
+      "sourceSeconds": 0,
+      "identicalKeyframes": 2,
+      "authoredIdle": false
+    }
+  ],
+  "validation": {
+    "triangles": 99999,
+    "sourceClips": 8,
+    "totalClips": 9,
+    "skinJoints": [
+      67
+    ],
+    "glbSplitVertices": 59402,
+    "weightsSumMin": 0.9999999031424522,
+    "weightsSumMax": 1.0000000521540642,
+    "maxInfluences": 4,
+    "originalBasecolorNormalBytesPreserved": true,
+    "finiteNormalizedWeights": true
+  }
+}

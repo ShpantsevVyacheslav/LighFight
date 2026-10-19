@@ -1,0 +1,3 @@
+import bpy,json
+from pathlib import Path
+root=Path(__file__).resolve().parents[2];folder=root/'art/source/original-island/meshy-rig';bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(folder/'original-rig.glb'));arm=next(o for o in bpy.data.objects if o.type=='ARMATURE');mesh=next(o for o in bpy.data.objects if o.type=='MESH');mesh.data.calc_loop_triangles();print('triangles',len(mesh.data.loop_triangles),'verts',len(mesh.data.vertices));print('world',arm.matrix_world);print('bones',[(b.name,list(b.head_local)) for b in arm.data.bones]);bpy.ops.wm.save_as_mainfile(filepath=str(folder/'rigged.blend'))

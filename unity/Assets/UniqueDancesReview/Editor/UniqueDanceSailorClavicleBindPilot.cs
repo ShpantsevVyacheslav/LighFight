@@ -1,0 +1,50 @@
+using System;using System.IO;using System.Linq;using System.Collections.Generic;using UnityEngine;using UnityEditor;using UnityEditor.SceneManagement;using LighFight.Runtime;
+public static class UniqueDanceSailorClavicleBindPilot {
+ const string Folder="Assets/UniqueDancesReview/Fighter-9",Output="../art/source/unique-dances-20261018/audit/sailor-analytic-c1-anatomic-v4";
+ public static void Run(){
+  Directory.CreateDirectory(Output);UniqueDanceExactGenericSetup.RunAnatomicV4();
+  var original=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset").fighters[9];var rest=(GameObject)PrefabUtility.InstantiatePrefab(original);var actor=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Folder+"/Review.exact-generic-anatomic-v4.prefab"));
+  try{
+   var a=rest.GetComponentInChildren<Animator>();UniqueDanceExactGenericSetup.RestoreMathematicalSkinBind(rest,a);Vector3 up=a.GetBoneTransform(HumanBodyBones.Neck).position-a.GetBoneTransform(HumanBodyBones.UpperChest).position;var c=actor.GetComponent<ExactGenericDanceRetarget>();c.clavicleSupport=true;c.supportRestArmElevation=new float[2];c.supportRestClavicleElevation=new float[2];
+   for(int s=0;s<2;s++){var shoulder=a.GetBoneTransform(s==0?HumanBodyBones.LeftShoulder:HumanBodyBones.RightShoulder);var arm=a.GetBoneTransform(s==0?HumanBodyBones.LeftUpperArm:HumanBodyBones.RightUpperArm);var elbow=a.GetBoneTransform(s==0?HumanBodyBones.LeftLowerArm:HumanBodyBones.RightLowerArm);c.supportRestArmElevation[s]=Elevation(elbow.position-arm.position,up);c.supportRestClavicleElevation[s]=Elevation(arm.position-shoulder.position,up);}
+   PrefabUtility.SaveAsPrefabAsset(actor,Folder+"/Review.exact-generic-anatomic-v4.support.prefab");AssetDatabase.SaveAssets();
+  }finally{Destroy(rest);Destroy(actor);}
+  CheckAndRender();
+ }
+ public static void CheckAndRender(){
+  EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+  var before=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Folder+"/Review.exact-generic-anatomic-v4.prefab"));var after=(GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(Folder+"/Review.exact-generic-anatomic-v4.support.prefab"));
+  var a=before.GetComponent<ExactGenericDanceRetarget>();var b=after.GetComponent<ExactGenericDanceRetarget>();
+  try{
+   foreach(var actor in new[]{before,after}){foreach(var script in actor.GetComponentsInChildren<MonoBehaviour>(true))script.enabled=false;actor.GetComponentInChildren<Animator>().enabled=false;}
+   var sa=before.GetComponentInChildren<SkinnedMeshRenderer>();var sb=after.GetComponentInChildren<SkinnedMeshRenderer>();if(sa.sharedMesh!=sb.sharedMesh||!sa.sharedMaterials.SequenceEqual(sb.sharedMaterials)||a.targetAnimator.avatar!=b.targetAnimator.avatar)throw new Exception("Corrective changed original assets");
+   float restMin=float.PositiveInfinity,restMax=float.NegativeInfinity;foreach(var v in sa.sharedMesh.vertices){float y=sa.transform.TransformPoint(v).y;restMin=Mathf.Min(restMin,y);restMax=Mathf.Max(restMax,y);}float height=restMax-restMin;double armAngle=0,matrixAngle=0;float hands=0,headFeet=0,endpoint=0,minimumOuterLift=0,minimumFloor=100;
+   var rows=new List<string>{"seconds,maxArmWorldRotationDeltaDeg,maxArmMatrixAxisDeltaDeg,maxHandDeltaM,maxHeadFootDeltaM,minOuterClavicleLiftAlongTorsoUpM,beforeMinAllSurfaceY,afterMinAllSurfaceY"};var phaseCandidates=new Dictionary<string,float>();var extrema=new[]{float.NegativeInfinity,float.NegativeInfinity,float.NegativeInfinity};var meshA=new Mesh();var meshB=new Mesh();var verts=new List<Vector3>();var oracleA=new OriginalSkinWorldOracle(sa);var oracleB=new OriginalSkinWorldOracle(sb);
+   int count=Mathf.CeilToInt(a.source.duration*384);
+   for(int k=0;k<=count;k++){
+    float time=a.source.duration*k/count;a.EvaluateForReview(time);b.EvaluateForReview(time);double da=0,dm=0;float dh=0,df=0,outer=0;Vector3 up=(a.targetMapped[4].position-a.targetMapped[3].position).normalized;
+    for(int side=0;side<2;side++){int s=side==0?6:10;da=Math.Max(da,Angle(a.targetMapped[s+1].rotation,b.targetMapped[s+1].rotation));for(int axis=0;axis<3;axis++)dm=Math.Max(dm,AxisAngle(a.targetMapped[s+1].localToWorldMatrix.GetColumn(axis),b.targetMapped[s+1].localToWorldMatrix.GetColumn(axis)));dh=Mathf.Max(dh,Vector3.Distance(a.targetMapped[s+3].position,b.targetMapped[s+3].position));outer=Mathf.Min(outer,Vector3.Dot(b.targetMapped[s+1].position-a.targetMapped[s+1].position,up));float elevation=Elevation(a.targetMapped[s+2].position-a.targetMapped[s+1].position,up);if(elevation>extrema[side]){extrema[side]=elevation;phaseCandidates[side==0?"left-max":"right-max"]=time/a.source.duration;}}
+    foreach(int f in new[]{0,4,5,16,17,20,21})df=Mathf.Max(df,Vector3.Distance(a.targetMapped[f].position,b.targetMapped[f].position));
+    float lean=Vector3.Angle(up,Vector3.up);if(lean>extrema[2]){extrema[2]=lean;phaseCandidates["torso-max"]=time/a.source.duration;}
+    armAngle=Math.Max(armAngle,da);matrixAngle=Math.Max(matrixAngle,dm);hands=Mathf.Max(hands,dh);headFeet=Mathf.Max(headFeet,df);minimumOuterLift=Mathf.Min(minimumOuterLift,outer);if(k==0||k==count)endpoint=Mathf.Max(endpoint,dh);
+    before.GetComponent<CandidateFootGrounding>().ApplyForReview();after.GetComponent<CandidateFootGrounding>().ApplyForReview();
+    // Full original-surface floor proof on a separately spaced128Hz grid and endpoints.
+    float floorA=float.NaN,floorB=float.NaN;if(k%3==0||k==count){floorA=oracleA.Minimum(out _);floorB=oracleB.Minimum(out _);minimumFloor=Mathf.Min(minimumFloor,floorA,floorB);}
+    rows.Add(time+","+da+","+dm+","+dh+","+df+","+outer+","+floorA+","+floorB);
+   }
+   UnityEngine.Object.DestroyImmediate(meshA);UnityEngine.Object.DestroyImmediate(meshB);File.WriteAllLines(Output+"/kinematics-and-full-surface-floor.csv",rows);File.WriteAllText(Output+"/summary.txt","worldArmAngleDeg="+armAngle+" matrixAxisDeg="+matrixAngle+" maxHandDeltaM="+hands+" sourceHeightM="+height+" maxHeadFeetDeltaM="+headFeet+" minOuterClavicleLiftAlongTorsoUpM="+minimumOuterLift+" endpointHandDeltaM="+endpoint+" minimumFullSourceSurfaceY="+minimumFloor);
+   bool gateFailed=armAngle>.02||matrixAngle>.02||hands>height*.03f||headFeet>.00001f||minimumOuterLift<-.00001f||endpoint>.00001f||minimumFloor<-.006f;
+   // Render matched source-time/camera/material pairs. No lower-shoulder workaround.
+   var phases=new Dictionary<string,float>{{"phase-0",0},{"phase-25",.25f},{"phase-50",.5f},{"phase-75",.75f},{"phase-100",1}};foreach(var p in phaseCandidates)phases[p.Key]=p.Value;File.WriteAllLines(Output+"/source-extreme-phases.csv",phases.Select(p=>p.Key+","+p.Value));
+   var camera=new GameObject("SailorC1Camera").AddComponent<Camera>();camera.orthographic=true;camera.backgroundColor=new Color(.15f,.17f,.2f);camera.clearFlags=CameraClearFlags.SolidColor;RenderSettings.ambientLight=new Color(.6f,.6f,.6f);var key=new GameObject("SailorC1Key").AddComponent<Light>();key.type=LightType.Directional;key.intensity=1.1f;key.transform.rotation=Quaternion.Euler(32,-35,0);
+   foreach(var phase in phases){foreach(bool corrected in new[]{false,true}){before.SetActive(!corrected);after.SetActive(corrected);var actor=corrected?after:before;var driver=corrected?b:a;driver.EvaluateForReview(phase.Value*driver.source.duration);actor.GetComponent<CandidateFootGrounding>().ApplyForReview();string label=phase.Key+"-"+(corrected?"after":"before");Vector3 center=(driver.targetMapped[4].position+driver.targetMapped[3].position)*.5f;foreach(bool back in new[]{false,true}){string view=back?"back":"front";camera.orthographicSize=1.65f;camera.transform.position=new Vector3(0,1.1f,back?-5:5);camera.transform.LookAt(new Vector3(0,1.1f,0));Save(camera,label+"-body-"+view);camera.orthographicSize=.38f;camera.transform.position=center+new Vector3(0,0,back?-4:4);camera.transform.LookAt(center);Save(camera,label+"-neck-"+view);}}}
+   UnityEngine.Object.DestroyImmediate(camera.gameObject);UnityEngine.Object.DestroyImmediate(key.gameObject);if(gateFailed)throw new Exception("Sailor analytic C1 kinematic/floor RED; paired images retained, not accepted");Debug.Log("AGENT_RESULT Sailor analytic C1 paired review prepared; visual acceptance remains open");
+  }finally{Destroy(before);Destroy(after);}
+ }
+ static float Floor(SkinnedMeshRenderer skin,Mesh mesh,List<Vector3> vertices){skin.BakeMesh(mesh,true);mesh.GetVertices(vertices);float min=float.PositiveInfinity;foreach(var p in vertices)min=Mathf.Min(min,skin.transform.TransformPoint(p).y);return min;}
+ static void Save(Camera camera,string name){var rt=RenderTexture.GetTemporary(960,720,24);camera.targetTexture=rt;camera.Render();var old=RenderTexture.active;RenderTexture.active=rt;var tex=new Texture2D(960,720,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,960,720),0,0);tex.Apply();File.WriteAllBytes(Output+"/"+name+".png",tex.EncodeToPNG());UnityEngine.Object.DestroyImmediate(tex);RenderTexture.active=old;camera.targetTexture=null;RenderTexture.ReleaseTemporary(rt);}
+ static void Destroy(GameObject a){if(!a)return;foreach(var b in a.GetComponents<MonoBehaviour>())if(b is IActorCurveWarmup w)w.Dispose();UnityEngine.Object.DestroyImmediate(a);}
+ static float Elevation(Vector3 v,Vector3 up)=>Mathf.Asin(Mathf.Clamp(Vector3.Dot(v.normalized,up.normalized),-1,1))*Mathf.Rad2Deg;
+ static double Angle(Quaternion a,Quaternion b){double d=(double)a.x*b.x+(double)a.y*b.y+(double)a.z*b.z+(double)a.w*b.w,aa=(double)a.x*a.x+(double)a.y*a.y+(double)a.z*a.z+(double)a.w*a.w,bb=(double)b.x*b.x+(double)b.y*b.y+(double)b.z*b.z+(double)b.w*b.w;return 2*Math.Acos(Math.Min(1,Math.Abs(d)/Math.Sqrt(aa*bb)))*180/Math.PI;}
+ static double AxisAngle(Vector4 a,Vector4 b){double d=(double)a.x*b.x+(double)a.y*b.y+(double)a.z*b.z,aa=(double)a.x*a.x+(double)a.y*a.y+(double)a.z*a.z,bb=(double)b.x*b.x+(double)b.y*b.y+(double)b.z*b.z;return Math.Acos(Math.Max(-1,Math.Min(1,d/Math.Sqrt(aa*bb))))*180/Math.PI;}
+}

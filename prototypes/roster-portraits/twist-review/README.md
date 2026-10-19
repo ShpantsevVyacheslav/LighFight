@@ -1,0 +1,1 @@
+Local full-density review. Regenerate via art/drafts/sailor-native67-dense-v1/tools/build_zero_twist_gltf_v2.py. Validation: validate_zero_twist_gltf.py. Source and limitations: docs/reports/native67-zero-twist-web-preview-2026-10-19/. Large binary is generated local output. Vendor Babylon8.26.0 from npm via jsDelivr.

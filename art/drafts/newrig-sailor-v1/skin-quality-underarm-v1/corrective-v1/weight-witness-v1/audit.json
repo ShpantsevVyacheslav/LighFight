@@ -1,0 +1,4079 @@
+{
+  "auditScriptSHA256": "f0ffc2c1d7b91f7639ea01eb06f2677d834b145d3408d7a5b1c8e7cfb1358f4f",
+  "sourceIndexedSHA256": "83c3bf5070bd8e73e755c659789a29beebc997e765fdd4a9575a3ebd13c6b437",
+  "sourceCacheSHA256": "59efba581371c4bcdc644c3d24f71735fcf4d988cb59dfdcc467629d85bdf983",
+  "status": "OFFLINE_MEASURED_NOT_WEIGHT_LEAK_DIAGNOSIS",
+  "sourceSeconds": 11.583333333333334,
+  "sourceRational": [
+    139,
+    12
+  ],
+  "sourceCache": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/dense-def-fbx-packet-v1/adaptive-dance_01-FULL_ADAPTIVE_TIGHT008_EXACT_BATCH-cache.npz",
+  "sourcePose": "Frozen original fullDance C1 sample, not exported/interpolated take",
+  "regions": {
+    "sleeve_armhole_R": {
+      "originalNeighborEdges": 71949,
+      "restEdgeLengthMM": {
+        "min": 0.0821710938588639,
+        "median": 1.0265899815023931,
+        "p95": 1.9040066929577177,
+        "p99": 2.4051012518627117,
+        "max": 4.397232445340314
+      },
+      "weightL1Jump": {
+        "min": 0.0,
+        "median": 0.017872890457510948,
+        "p95": 0.053156693186610926,
+        "p99": 0.09436168730258963,
+        "max": 0.41689226031303406
+      },
+      "weightL1PerRestMM": {
+        "min": 0.0,
+        "median": 0.018550402390406437,
+        "p95": 0.039717082943116704,
+        "p99": 0.0711058328635091,
+        "max": 0.2846894800823756
+      },
+      "interpretation": "Spatial original-mesh neighbors in overlapping envelope; not proven garment armhole seam",
+      "absoluteLengthDistributions": {
+        "restGreaterThan0.1MM": {
+          "edgeCount": 71947,
+          "signedPosedMinusRestMM": {
+            "min": -1.2075465553648994,
+            "median": 1.5808435680289556e-07,
+            "p95": 0.43562523546164034,
+            "p99": 0.743795513020582,
+            "max": 1.9059901368752843
+          },
+          "positiveEdgeExcessMM": {
+            "min": 0.0,
+            "median": 1.5808435680289556e-07,
+            "p95": 0.43562523546164034,
+            "p99": 0.743795513020582,
+            "max": 1.9059901368752843
+          },
+          "absoluteLengthChangeMM": {
+            "min": 4.26559829125317e-11,
+            "median": 0.07828405278105217,
+            "p95": 0.4613090515683415,
+            "p99": 0.7528374548704732,
+            "max": 1.9059901368752843
+          },
+          "candidateDeltaPosedEdgeMM": {
+            "min": -0.12444172719732524,
+            "median": 0.0,
+            "p95": 0.0,
+            "p99": 0.002661829774326744,
+            "max": 0.04342599379142495
+          },
+          "scope": "Diagnostic thresholded distribution only; full-region strict fence remains unchanged RED."
+        },
+        "restGreaterThan1.0MM": {
+          "edgeCount": 37892,
+          "signedPosedMinusRestMM": {
+            "min": -1.2075465553648994,
+            "median": -0.0008964173778147231,
+            "p95": 0.45501496505721684,
+            "p99": 0.804108655027089,
+            "max": 1.9059901368752843
+          },
+          "positiveEdgeExcessMM": {
+            "min": 0.0,
+            "median": 0.0,
+            "p95": 0.45501496505721684,
+            "p99": 0.804108655027089,
+            "max": 1.9059901368752843
+          },
+          "absoluteLengthChangeMM": {
+            "min": 1.8099931275994408e-10,
+            "median": 0.10125250477331854,
+            "p95": 0.49498713041043346,
+            "p99": 0.8167236550546327,
+            "max": 1.9059901368752843
+          },
+          "candidateDeltaPosedEdgeMM": {
+            "min": -0.12444172719732524,
+            "median": 0.0,
+            "p95": 0.0,
+            "p99": 0.0066699110465997325,
+            "max": 0.04342599379142495
+          },
+          "scope": "Diagnostic thresholded distribution only; full-region strict fence remains unchanged RED."
+        }
+      },
+      "meanNamedWeight": {
+        "DEF-breast.R": 0.1764603925565833,
+        "DEF-shoulder.R": 0.33736723350498815,
+        "DEF-spine.002": 5.777683662305964e-05,
+        "DEF-spine.003": 0.004874025489758327,
+        "DEF-upper_arm.R": 0.43734240033754956,
+        "DEF-upper_arm.R.001": 0.04389789317051383
+      }
+    },
+    "torso_underarm_R": {
+      "originalNeighborEdges": 128183,
+      "restEdgeLengthMM": {
+        "min": 0.043158372875155504,
+        "median": 1.0366786364928195,
+        "p95": 1.9611881384922376,
+        "p99": 2.508102502133974,
+        "max": 4.806167347504887
+      },
+      "weightL1Jump": {
+        "min": 0.0,
+        "median": 0.01443549431860447,
+        "p95": 0.04098814858589321,
+        "p99": 0.06584648614749303,
+        "max": 0.202083058655262
+      },
+      "weightL1PerRestMM": {
+        "min": 0.0,
+        "median": 0.01459232145156252,
+        "p95": 0.03258771084362107,
+        "p99": 0.051586419008068755,
+        "max": 0.2742325745653294
+      },
+      "interpretation": "Spatial original-mesh neighbors in overlapping envelope; not proven garment armhole seam",
+      "absoluteLengthDistributions": {
+        "restGreaterThan0.1MM": {
+          "edgeCount": 128168,
+          "signedPosedMinusRestMM": {
+            "min": -1.222152034342088,
+            "median": 0.03768542268497852,
+            "p95": 1.0949126343922184,
+            "p99": 2.4516649317619525,
+            "max": 15.831174083677464
+          },
+          "positiveEdgeExcessMM": {
+            "min": 0.0,
+            "median": 0.03768542268497852,
+            "p95": 1.0949126343922184,
+            "p99": 2.4516649317619525,
+            "max": 15.831174083677464
+          },
+          "absoluteLengthChangeMM": {
+            "min": 8.485008485756285e-10,
+            "median": 0.09006454011149595,
+            "p95": 1.0956774116782735,
+            "p99": 2.4516649317619525,
+            "max": 15.831174083677464
+          },
+          "candidateDeltaPosedEdgeMM": {
+            "min": -0.03747727742140893,
+            "median": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "max": 0.0011846818243079447
+          },
+          "scope": "Diagnostic thresholded distribution only; full-region strict fence remains unchanged RED."
+        },
+        "restGreaterThan1.0MM": {
+          "edgeCount": 68672,
+          "signedPosedMinusRestMM": {
+            "min": -1.222152034342088,
+            "median": 0.04041199898790181,
+            "p95": 1.3779979293762559,
+            "p99": 3.0704778171658695,
+            "max": 15.36343267111447
+          },
+          "positiveEdgeExcessMM": {
+            "min": 0.0,
+            "median": 0.04041199898790181,
+            "p95": 1.3779979293762559,
+            "p99": 3.0704778171658695,
+            "max": 15.36343267111447
+          },
+          "absoluteLengthChangeMM": {
+            "min": 1.0566448107110493e-08,
+            "median": 0.1104678271740821,
+            "p95": 1.3779979293762559,
+            "p99": 3.0704778171658695,
+            "max": 15.36343267111447
+          },
+          "candidateDeltaPosedEdgeMM": {
+            "min": -0.03747727742140893,
+            "median": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "max": 0.0011846818243079447
+          },
+          "scope": "Diagnostic thresholded distribution only; full-region strict fence remains unchanged RED."
+        }
+      },
+      "meanNamedWeight": {
+        "DEF-breast.R": 0.5421531380206281,
+        "DEF-pelvis.R": 0.010915592980777038,
+        "DEF-shoulder.R": 0.061615282014879855,
+        "DEF-spine": 2.9665155182529907e-05,
+        "DEF-spine.001": 0.06261080847251844,
+        "DEF-spine.002": 0.1421994857557741,
+        "DEF-spine.003": 0.01845761413787803,
+        "DEF-upper_arm.R": 0.06315774912500147,
+        "DEF-upper_arm.R.001": 0.09482135392316819,
+        "DEF-forearm.R": 0.004039322218399837
+      }
+    },
+    "medial_trapezius_R": {
+      "originalNeighborEdges": 83018,
+      "restEdgeLengthMM": {
+        "min": 0.044199486641884604,
+        "median": 1.046105523827534,
+        "p95": 1.966818657144716,
+        "p99": 2.500099730348749,
+        "max": 4.899886944522806
+      },
+      "weightL1Jump": {
+        "min": 0.0,
+        "median": 0.016722247004508972,
+        "p95": 0.05385399281512943,
+        "p99": 0.08849363796412948,
+        "max": 0.32458020001649857
+      },
+      "weightL1PerRestMM": {
+        "min": 0.0,
+        "median": 0.017169705188488357,
+        "p95": 0.039699670367485965,
+        "p99": 0.060010168951311664,
+        "max": 0.33350578601440084
+      },
+      "interpretation": "Spatial original-mesh neighbors in overlapping envelope; not proven garment armhole seam",
+      "absoluteLengthDistributions": {
+        "restGreaterThan0.1MM": {
+          "edgeCount": 83009,
+          "signedPosedMinusRestMM": {
+            "min": -1.7411047358541945,
+            "median": 0.002307312157941643,
+            "p95": 0.24043458176172586,
+            "p99": 0.5107252498224394,
+            "max": 2.6242121784689094
+          },
+          "positiveEdgeExcessMM": {
+            "min": 0.0,
+            "median": 0.002307312157941643,
+            "p95": 0.24043458176172586,
+            "p99": 0.5107252498224394,
+            "max": 2.6242121784689094
+          },
+          "absoluteLengthChangeMM": {
+            "min": 4.26559829125317e-11,
+            "median": 0.03757666366736075,
+            "p95": 0.2744233220144879,
+            "p99": 0.5491134819903652,
+            "max": 2.6242121784689094
+          },
+          "candidateDeltaPosedEdgeMM": {
+            "min": -0.004580150836182642,
+            "median": 0.0,
+            "p95": 0.0,
+            "p99": 6.998864797771801e-05,
+            "max": 0.0026297218280264736
+          },
+          "scope": "Diagnostic thresholded distribution only; full-region strict fence remains unchanged RED."
+        },
+        "restGreaterThan1.0MM": {
+          "edgeCount": 45106,
+          "signedPosedMinusRestMM": {
+            "min": -1.7411047358541945,
+            "median": 0.0018584241651348546,
+            "p95": 0.28400046925058203,
+            "p99": 0.5987313278940501,
+            "max": 2.6242121784689094
+          },
+          "positiveEdgeExcessMM": {
+            "min": 0.0,
+            "median": 0.0018584241651348546,
+            "p95": 0.28400046925058203,
+            "p99": 0.5987313278940501,
+            "max": 2.6242121784689094
+          },
+          "absoluteLengthChangeMM": {
+            "min": 3.661381094144378e-10,
+            "median": 0.05150201189976973,
+            "p95": 0.3292951530642296,
+            "p99": 0.6600175812301315,
+            "max": 2.6242121784689094
+          },
+          "candidateDeltaPosedEdgeMM": {
+            "min": -0.004580150836182642,
+            "median": 0.0,
+            "p95": 0.0,
+            "p99": 7.662574777351133e-05,
+            "max": 0.0026297218280264736
+          },
+          "scope": "Diagnostic thresholded distribution only; full-region strict fence remains unchanged RED."
+        }
+      },
+      "meanNamedWeight": {
+        "DEF-breast.R": 0.15927945236422023,
+        "DEF-chin.R": 0.0005856446030761342,
+        "DEF-jaw": 0.0036685580903166874,
+        "DEF-jaw.R": 0.0005060969987183741,
+        "DEF-jaw.R.001": 0.014484814851303712,
+        "DEF-shoulder.L": 4.30788890697438e-06,
+        "DEF-shoulder.R": 0.6353547331202323,
+        "DEF-spine.002": 0.004515020311582058,
+        "DEF-spine.003": 0.06780713803054692,
+        "DEF-spine.004": 0.04683476770644023,
+        "DEF-tongue.002": 0.00219813641222567,
+        "DEF-upper_arm.R": 0.06323089635345852,
+        "DEF-upper_arm.R.001": 0.0015304464494772202
+      }
+    }
+  },
+  "worstEdges": [
+    {
+      "originalVertexIDs": [
+        145536,
+        146384
+      ],
+      "restLengthM": 0.0002416543726305064,
+      "posedLengthM": 0.0009209917542521162,
+      "poseToRestRatio": 3.8111942450150824,
+      "weightL1Jump": 0.021975446958094835,
+      "weightL1PerRestMM": 0.09093751012606613,
+      "restWorldM": [
+        [
+          -0.12075044214725494,
+          -0.022796584274527316,
+          0.7248382578329094
+        ],
+        [
+          -0.1205444484949112,
+          -0.02290721049256251,
+          0.7248992929939951
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.1695117468649141,
+          0.12861218528824986,
+          0.6834560318635785
+        ],
+        [
+          0.17042942594471971,
+          0.12861058173623735,
+          0.6833780040063193
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5301748514175415
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.17760087549686432
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.29222434759140015
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.007219557184726
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.522186279296875
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1746017336845398
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.29599252343177795
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          145706,
+          146470,
+          145536
+        ],
+        [
+          145536,
+          146470,
+          145695
+        ],
+        [
+          146080,
+          145706,
+          145536
+        ],
+        [
+          146080,
+          145536,
+          146384
+        ],
+        [
+          146080,
+          146384,
+          147045
+        ],
+        [
+          147946,
+          147045,
+          146384
+        ],
+        [
+          147946,
+          146384,
+          147992
+        ],
+        [
+          146010,
+          146384,
+          145536
+        ],
+        [
+          146010,
+          145536,
+          145695
+        ],
+        [
+          146384,
+          146010,
+          147127
+        ],
+        [
+          146384,
+          147127,
+          147992
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        243835,
+        243836,
+        375783,
+        375786,
+        375787,
+        375791,
+        375794,
+        375796,
+        375797,
+        375799,
+        375800
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0002105787337419266,
+          1.4372899823808484e-05,
+          -6.109799029750093e-05
+        ],
+        "weightGradientVectorM": [
+          0.0007071003460637213,
+          -1.59764518363535e-05,
+          -1.6929866961671453e-05
+        ],
+        "constantMeanWeightsLengthM": 0.00021973381117181755,
+        "weightGradientLengthM": 0.0007074834039128081,
+        "residualM": 5.46581753953602e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.6793373816216097,
+      "absoluteLengthChangeMM": 0.6793373816216097,
+      "candidateDeltaPosedEdgeMM": 0.0001216234205823636,
+      "baselineMetricRatio": 3.811197152338212,
+      "weightJumpPercentileInRegion": 61.80349970117722
+    },
+    {
+      "originalVertexIDs": [
+        145855,
+        146794
+      ],
+      "restLengthM": 0.00024432681851480634,
+      "posedLengthM": 0.00085432919259135,
+      "poseToRestRatio": 3.4966656455667686,
+      "weightL1Jump": 0.020485451444983482,
+      "weightL1PerRestMM": 0.08384446525153788,
+      "restWorldM": [
+        [
+          -0.12154389917850494,
+          -0.022836638511109557,
+          0.7267761240455978
+        ],
+        [
+          -0.1213379055261612,
+          -0.022964430868174027,
+          0.7268066416293087
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.16905343668209305,
+          0.12801861957736843,
+          0.6853244408611767
+        ],
+        [
+          0.1699008667329664,
+          0.12800785520389785,
+          0.6852166224654626
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.004916022531688213
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5552488565444946
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.16348086297512054
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.27635425329208374
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.011515826918184757
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5472567677497864
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.16123022139072418
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.27999716997146606
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          145290,
+          145567,
+          145855
+        ],
+        [
+          145855,
+          145567,
+          145469
+        ],
+        [
+          146336,
+          145290,
+          145855
+        ],
+        [
+          146336,
+          145855,
+          146794
+        ],
+        [
+          146336,
+          146794,
+          148016
+        ],
+        [
+          146794,
+          145855,
+          145469
+        ],
+        [
+          146794,
+          145469,
+          146239
+        ],
+        [
+          148016,
+          146794,
+          148178
+        ],
+        [
+          146794,
+          146239,
+          148404
+        ],
+        [
+          146794,
+          148404,
+          148178
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        243795,
+        243796,
+        375769,
+        375772,
+        375773,
+        375774,
+        375776,
+        375778,
+        375780,
+        375781
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.00020272728834054877,
+          -5.527930390923832e-07,
+          -9.156182898108683e-05
+        ],
+        "weightGradientVectorM": [
+          0.000644702762532825,
+          -1.0211580431480048e-05,
+          -1.62565667331375e-05
+        ],
+        "constantMeanWeightsLengthM": 0.00022244601040346366,
+        "weightGradientLengthM": 0.0006449885304052418,
+        "residualM": 6.732879882045568e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.6100023740765437,
+      "absoluteLengthChangeMM": 0.6100023740765437,
+      "candidateDeltaPosedEdgeMM": 7.444688580773677e-05,
+      "baselineMetricRatio": 3.496668241663028,
+      "weightJumpPercentileInRegion": 57.69642385578674
+    },
+    {
+      "originalVertexIDs": [
+        884093,
+        885368
+      ],
+      "restLengthM": 0.0005394796609394476,
+      "posedLengthM": 0.0018732721711746914,
+      "poseToRestRatio": 3.4723684817191867,
+      "weightL1Jump": 0.022540381643921137,
+      "weightL1PerRestMM": 0.041781707960350925,
+      "restWorldM": [
+        [
+          -0.1497802734375,
+          0.0670090330403534,
+          0.7108001679698812
+        ],
+        [
+          -0.1492919921875,
+          0.06723791487695789,
+          0.7108154267489389
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.1010975821366014,
+          0.1880994072605274,
+          0.7154424526776136
+        ],
+        [
+          0.10267714404828578,
+          0.18879189756225323,
+          0.714711296075736
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.41240549087524414
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.3715115785598755
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.20969395339488983
+          },
+          {
+            "bone": "DEF-forearm.R",
+            "weight": 0.006389043293893337
+          }
+        ],
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.4116479754447937
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.36738789081573486
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.2138458639383316
+          },
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.007118224631994963
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          886994,
+          886323,
+          885368
+        ],
+        [
+          886994,
+          885368,
+          884842
+        ],
+        [
+          885368,
+          886323,
+          884093
+        ],
+        [
+          885368,
+          884093,
+          884842
+        ],
+        [
+          883881,
+          884842,
+          884093
+        ],
+        [
+          882195,
+          883881,
+          884093
+        ],
+        [
+          880667,
+          882195,
+          884093
+        ],
+        [
+          880894,
+          880667,
+          884093
+        ],
+        [
+          880894,
+          884093,
+          882286
+        ],
+        [
+          882286,
+          884093,
+          884236
+        ],
+        [
+          884956,
+          884236,
+          884093
+        ],
+        [
+          884956,
+          884093,
+          886323
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        131420,
+        131421,
+        131422,
+        131423,
+        131430,
+        131536,
+        131542,
+        131591,
+        131593,
+        131596,
+        131672,
+        131673
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.00022550617563615478,
+          0.00045899604131040153,
+          -0.00012065876690413177
+        ],
+        "weightGradientVectorM": [
+          0.0013540557360482174,
+          0.00023349426041542143,
+          -0.0006104978349735111
+        ],
+        "constantMeanWeightsLengthM": 0.0005254416610999643,
+        "weightGradientLengthM": 0.001503560478490762,
+        "residualM": 2.9691307538447725e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.3337925102352437,
+      "absoluteLengthChangeMM": 1.3337925102352437,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "baselineMetricRatio": 3.4723692269500774,
+      "weightJumpPercentileInRegion": 63.275375613281625
+    },
+    {
+      "originalVertexIDs": [
+        145354,
+        146219
+      ],
+      "restLengthM": 0.00022900895721134537,
+      "posedLengthM": 0.0007768409786471274,
+      "poseToRestRatio": 3.3921860005248816,
+      "weightL1Jump": 0.016691336873918772,
+      "weightL1PerRestMM": 0.07288508308657485,
+      "restWorldM": [
+        [
+          -0.1201172024011612,
+          -0.02277178880232921,
+          0.7234649668162006
+        ],
+        [
+          -0.1199340969324112,
+          -0.022886229716963045,
+          0.7235412607665155
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.17013526941694504,
+          0.12908561368964688,
+          0.6820988025413264
+        ],
+        [
+          0.1709097659029835,
+          0.12904912062486878,
+          0.6820507884242087
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5093453526496887
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.18682225048542023
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.30383244156837463
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.004182303790003061
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5037881135940552
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1840338110923767
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.3079957962036133
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          145695,
+          146323,
+          145354
+        ],
+        [
+          145354,
+          146323,
+          145269
+        ],
+        [
+          146010,
+          145695,
+          145354
+        ],
+        [
+          146010,
+          145354,
+          146219
+        ],
+        [
+          146010,
+          146219,
+          147127
+        ],
+        [
+          146219,
+          145354,
+          145269
+        ],
+        [
+          148354,
+          147127,
+          146219
+        ],
+        [
+          146219,
+          145269,
+          145665
+        ],
+        [
+          148354,
+          146219,
+          147722
+        ],
+        [
+          147722,
+          146219,
+          145665
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        243841,
+        243842,
+        375798,
+        375801,
+        375802,
+        375803,
+        375805,
+        375807,
+        375809,
+        375810
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.00020392046321982758,
+          -1.90505537407008e-07,
+          -3.922912057470252e-05
+        ],
+        "weightGradientVectorM": [
+          0.000570576022818654,
+          -3.6302559240683594e-05,
+          -8.784996543069164e-06
+        ],
+        "constantMeanWeightsLengthM": 0.00020765961454556682,
+        "weightGradientLengthM": 0.0005717972103702836,
+        "residualM": 1.3812309528216886e-16,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.547832021435782,
+      "absoluteLengthChangeMM": 0.547832021435782,
+      "candidateDeltaPosedEdgeMM": 0.00011519424045420071,
+      "baselineMetricRatio": 3.3921882540940698,
+      "weightJumpPercentileInRegion": 46.13128743971424
+    },
+    {
+      "originalVertexIDs": [
+        172375,
+        172387
+      ],
+      "restLengthM": 0.0002370106131807251,
+      "posedLengthM": 0.000775973179071297,
+      "poseToRestRatio": 3.274001820667848,
+      "weightL1Jump": 0.015190491452813148,
+      "weightL1PerRestMM": 0.06409203051692082,
+      "restWorldM": [
+        [
+          -0.1099853664636612,
+          -0.026573138555577608,
+          0.7188262951073628
+        ],
+        [
+          -0.11022187769412994,
+          -0.02657504590354344,
+          0.7188415538965087
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.19979278804087341,
+          0.12970532256358638,
+          0.6754067154520937
+        ],
+        [
+          0.19902120485274233,
+          0.12962374148571226,
+          0.6754184749658754
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.003919599577784538
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.2791714668273926
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.13251657783985138
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5843923091888428
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.004222117364406586
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.28466472029685974
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.13431605696678162
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5767970681190491
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          172375,
+          175362,
+          175558
+        ],
+        [
+          172375,
+          175558,
+          173769
+        ],
+        [
+          173769,
+          173202,
+          172375
+        ],
+        [
+          175362,
+          172375,
+          171185
+        ],
+        [
+          173202,
+          175416,
+          172387
+        ],
+        [
+          173202,
+          172387,
+          172375
+        ],
+        [
+          172375,
+          172387,
+          171185
+        ],
+        [
+          172387,
+          175416,
+          174221
+        ],
+        [
+          172387,
+          174221,
+          171455
+        ],
+        [
+          172387,
+          171455,
+          171185
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        492052,
+        492053,
+        492056,
+        492058,
+        492059,
+        492060,
+        492061,
+        492062,
+        492064,
+        492065
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.00015925323648961848,
+          -0.00014265602448280506,
+          6.0976450982187196e-05
+        ],
+        "weightGradientVectorM": [
+          -0.0006123299516414287,
+          6.107494660869078e-05,
+          -4.921693720070911e-05
+        ],
+        "constantMeanWeightsLengthM": 0.0002223296251695669,
+        "weightGradientLengthM": 0.0006173333181417212,
+        "residualM": 1.5550382869940706e-16,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.5389625658905719,
+      "absoluteLengthChangeMM": 0.5389625658905719,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "baselineMetricRatio": 3.2740040386571194,
+      "weightJumpPercentileInRegion": 41.23198376627889
+    },
+    {
+      "originalVertexIDs": [
+        166565,
+        166798
+      ],
+      "restLengthM": 0.0002836824442781689,
+      "posedLengthM": 0.0008799644541399429,
+      "poseToRestRatio": 3.101934828498168,
+      "weightL1Jump": 0.016268178820610046,
+      "weightL1PerRestMM": 0.05734644194146202,
+      "restWorldM": [
+        [
+          -0.10973359644412994,
+          -0.025705295005684914,
+          0.7170410167491157
+        ],
+        [
+          -0.10991670191287994,
+          -0.025741534639046115,
+          0.7168273937038249
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.19929228601007012,
+          0.13072678914959873,
+          0.6739244809023086
+        ],
+        [
+          0.19843711778824163,
+          0.1306932075672821,
+          0.6737197932616128
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.2664157450199127
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1431000530719757
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5904842019081116
+          }
+        ],
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.27071890234947205
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1469310075044632
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5823501348495483
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          170926,
+          166750,
+          166798
+        ],
+        [
+          166798,
+          166750,
+          162656
+        ],
+        [
+          171359,
+          170926,
+          166798
+        ],
+        [
+          169087,
+          171359,
+          166798
+        ],
+        [
+          168313,
+          169087,
+          166565
+        ],
+        [
+          168313,
+          166565,
+          169609
+        ],
+        [
+          166565,
+          169087,
+          166798
+        ],
+        [
+          169609,
+          166565,
+          164999
+        ],
+        [
+          164999,
+          166565,
+          166798
+        ],
+        [
+          164999,
+          166798,
+          162656
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        376570,
+        376571,
+        376573,
+        492073,
+        492079,
+        492080,
+        492081,
+        492082,
+        492083,
+        492085
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.00016071573070529585,
+          -0.000131007328485217,
+          -0.00015409880619225182
+        ],
+        "weightGradientVectorM": [
+          -0.0006944524911231961,
+          9.74257461685879e-05,
+          -5.05888345034909e-05
+        ],
+        "constantMeanWeightsLengthM": 0.0002583387471573862,
+        "weightGradientLengthM": 0.0007030755781707543,
+        "residualM": 6.987068957943234e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.596282009861774,
+      "absoluteLengthChangeMM": 0.596282009861774,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "baselineMetricRatio": 3.1019369374111343,
+      "weightJumpPercentileInRegion": 44.847044434252034
+    },
+    {
+      "originalVertexIDs": [
+        146080,
+        147045
+      ],
+      "restLengthM": 0.00023883782718650388,
+      "posedLengthM": 0.0007282045863028195,
+      "poseToRestRatio": 3.048949971120691,
+      "weightL1Jump": 0.015799198765307665,
+      "weightL1PerRestMM": 0.06615032028812745,
+      "restWorldM": [
+        [
+          -0.1208648830652237,
+          -0.022865248799296235,
+          0.7254333506093484
+        ],
+        [
+          -0.1207428127527237,
+          -0.023002577894188907,
+          0.7255859385059762
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.1697405972473902,
+          0.1284470062886789,
+          0.6839559418345131
+        ],
+        [
+          0.17046295782563597,
+          0.12835986662896415,
+          0.6839856705111353
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.004103527870029211
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5345465540885925
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1724826842546463
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.2888672947883606
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.008879384025931358
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.529759407043457
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.16937021911144257
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.2919910252094269
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          146239,
+          145706,
+          146080
+        ],
+        [
+          146080,
+          145706,
+          145536
+        ],
+        [
+          146239,
+          146080,
+          147045
+        ],
+        [
+          146239,
+          147045,
+          148404
+        ],
+        [
+          146080,
+          145536,
+          146384
+        ],
+        [
+          146080,
+          146384,
+          147045
+        ],
+        [
+          148404,
+          147045,
+          147946
+        ],
+        [
+          147946,
+          147045,
+          146384
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        375782,
+        375783,
+        375784,
+        375785,
+        375786,
+        375787,
+        375790,
+        375791
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.00020849158077684873,
+          -5.724618361106268e-05,
+          3.734832964084855e-05
+        ],
+        "weightGradientVectorM": [
+          0.0005138689974688426,
+          -2.9893476103676252e-05,
+          -7.619653018762704e-06
+        ],
+        "constantMeanWeightsLengthM": 0.00021941003286044653,
+        "weightGradientLengthM": 0.0005147941584607587,
+        "residualM": 1.4237466853132554e-16,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.48936675911631566,
+      "absoluteLengthChangeMM": 0.48936675911631566,
+      "candidateDeltaPosedEdgeMM": 1.2438445935888075e-05,
+      "baselineMetricRatio": 3.0489520265753627,
+      "weightJumpPercentileInRegion": 43.28760649904794
+    },
+    {
+      "originalVertexIDs": [
+        171185,
+        171455
+      ],
+      "restLengthM": 0.00030114975291703174,
+      "posedLengthM": 0.0008867879110186563,
+      "poseToRestRatio": 2.944674210850078,
+      "weightL1Jump": 0.017315573059022427,
+      "weightL1PerRestMM": 0.05749821439764872,
+      "restWorldM": [
+        [
+          -0.10988618433475494,
+          -0.026386218414907334,
+          0.7182464611148174
+        ],
+        [
+          -0.1101837307214737,
+          -0.026430087432795037,
+          0.7182617199057975
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.19979922052197194,
+          0.12993068939849764,
+          0.6749208419515069
+        ],
+        [
+          0.1989231373627114,
+          0.1297938983118787,
+          0.6749334631959186
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.0005795728648081422
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.2749350070953369
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.13521957397460938
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5892659425735474
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.0010207133600488305
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.28083088994026184
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1375403106212616
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5806081295013428
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          175362,
+          172375,
+          171185
+        ],
+        [
+          172375,
+          172387,
+          171185
+        ],
+        [
+          175362,
+          171185,
+          169609
+        ],
+        [
+          172387,
+          174221,
+          171455
+        ],
+        [
+          172387,
+          171455,
+          171185
+        ],
+        [
+          171455,
+          174221,
+          171658
+        ],
+        [
+          171455,
+          171658,
+          169856
+        ],
+        [
+          171455,
+          169856,
+          171185
+        ],
+        [
+          171185,
+          169856,
+          169643
+        ],
+        [
+          171185,
+          169643,
+          169609
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        492058,
+        492061,
+        492063,
+        492064,
+        492065,
+        492066,
+        492069,
+        492070,
+        492074,
+        492075
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.00017989816495694394,
+          -0.000212436156028104,
+          6.731236186563333e-05
+        ],
+        "weightGradientVectorM": [
+          -0.0006961849943035932,
+          7.56450694091831e-05,
+          -5.4691117453965765e-05
+        ],
+        "constantMeanWeightsLengthM": 0.0002863973187772587,
+        "weightGradientLengthM": 0.0007024150063515,
+        "residualM": 3.930816992507031e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.5856381581016246,
+      "absoluteLengthChangeMM": 0.5856381581016246,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "baselineMetricRatio": 2.944676211318899,
+      "weightJumpPercentileInRegion": 48.14660384438977
+    }
+  ],
+  "largestAbsoluteEdgeExcess": [
+    {
+      "originalVertexIDs": [
+        290465,
+        300366
+      ],
+      "restLengthM": 0.003169205398495939,
+      "posedLengthM": 0.005075195535371223,
+      "poseToRestRatio": 1.601409469319925,
+      "weightL1Jump": 0.07942997850477695,
+      "weightL1PerRestMM": 0.02506305793321989,
+      "restWorldM": [
+        [
+          -0.08554841578006744,
+          -0.048412287314940135,
+          0.731109621257295
+        ],
+        [
+          -0.08345796167850494,
+          -0.050369227071567234,
+          0.729751589116273
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.2610584584843096,
+          0.1259443365926035,
+          0.6913389011168131
+        ],
+        [
+          0.2661247701915018,
+          0.12588994382167248,
+          0.6910437116280278
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.051971327513456345
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.047196727246046066
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.9008318781852722
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.03457668051123619
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.024876447394490242
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.9405469298362732
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          285472,
+          287271,
+          290465
+        ],
+        [
+          290465,
+          287271,
+          290547
+        ],
+        [
+          285600,
+          285472,
+          290465
+        ],
+        [
+          289397,
+          285600,
+          290465
+        ],
+        [
+          293888,
+          289397,
+          290465
+        ],
+        [
+          300192,
+          293888,
+          300366
+        ],
+        [
+          300366,
+          293888,
+          290465
+        ],
+        [
+          300192,
+          300366,
+          305299
+        ],
+        [
+          300366,
+          290465,
+          296678
+        ],
+        [
+          296678,
+          290465,
+          290547
+        ],
+        [
+          305299,
+          300366,
+          303740
+        ],
+        [
+          303740,
+          300366,
+          296678
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        645341,
+        645342,
+        645344,
+        645362,
+        645403,
+        645404,
+        645405,
+        645406,
+        645408,
+        645409,
+        645410,
+        645411
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.002890600494224797,
+          -9.484760602937464e-05,
+          -0.001185432468338072
+        ],
+        "weightGradientVectorM": [
+          0.0021757112129674166,
+          4.045483509835905e-05,
+          0.0008902429795527855
+        ],
+        "constantMeanWeightsLengthM": 0.0031256707156340443,
+        "weightGradientLengthM": 0.002351146196764039,
+        "residualM": 3.645761801184567e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.9059901368752843,
+      "absoluteLengthChangeMM": 1.9059901368752843,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 98.46002029215138
+    },
+    {
+      "originalVertexIDs": [
+        179673,
+        184266
+      ],
+      "restLengthM": 0.0015023370473481903,
+      "posedLengthM": 0.0032566056547218753,
+      "poseToRestRatio": 2.167693102203786,
+      "weightL1Jump": 0.06436691805720329,
+      "weightL1PerRestMM": 0.04284452558153899,
+      "restWorldM": [
+        [
+          -0.10984041541814804,
+          -0.027746157947415744,
+          0.7192230236742622
+        ],
+        [
+          -0.10942079871892929,
+          -0.02849002396823823,
+          0.7179870617927151
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.20246282206060423,
+          0.12867493802292385,
+          0.67573142001661
+        ],
+        [
+          0.20551762367182677,
+          0.12819854556347704,
+          0.6747083277768677
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.01194034144282341
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.2666112780570984
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.12117138504981995
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.6002770066261292
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.01578950136899948
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.24166378378868103
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1139354407787323
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.6286113262176514
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          188068,
+          187755,
+          184266
+        ],
+        [
+          184266,
+          187755,
+          184293
+        ],
+        [
+          184293,
+          184318,
+          179673
+        ],
+        [
+          184293,
+          179673,
+          184266
+        ],
+        [
+          188068,
+          184266,
+          183972
+        ],
+        [
+          183972,
+          184266,
+          180037
+        ],
+        [
+          180037,
+          184266,
+          179999
+        ],
+        [
+          179999,
+          184266,
+          179673
+        ],
+        [
+          179999,
+          179673,
+          175362
+        ],
+        [
+          184318,
+          179569,
+          179673
+        ],
+        [
+          179673,
+          179569,
+          175558
+        ],
+        [
+          179673,
+          175558,
+          175362
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        377269,
+        377270,
+        377273,
+        377274,
+        377276,
+        377279,
+        377282,
+        377283,
+        377287,
+        492039,
+        492042,
+        492044
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0004211201105856617,
+          -0.000293695735069759,
+          -0.0012522455344849213
+        ],
+        "weightGradientVectorM": [
+          0.0026336815006368828,
+          -0.00018269672437707177,
+          0.0002291532947426827
+        ],
+        "constantMeanWeightsLengthM": 0.0013534098458986002,
+        "weightGradientLengthM": 0.0026499372770664746,
+        "residualM": 5.250586947982455e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.754268607373685,
+      "absoluteLengthChangeMM": 1.754268607373685,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 97.13964057874328
+    },
+    {
+      "originalVertexIDs": [
+        261867,
+        268125
+      ],
+      "restLengthM": 0.00202329094602374,
+      "posedLengthM": 0.0037238495517385355,
+      "poseToRestRatio": 1.840491383138351,
+      "weightL1Jump": 0.04939413582906127,
+      "weightL1PerRestMM": 0.02441276966426049,
+      "restWorldM": [
+        [
+          -0.09456636756658554,
+          -0.04240032112589386,
+          0.7213439959945035
+        ],
+        [
+          -0.0932464748620987,
+          -0.04371257701995197,
+          0.7205505390206141
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.2484348902073131,
+          0.12461232991465784,
+          0.6805513580681245
+        ],
+        [
+          0.2521429366773275,
+          0.12432382444737612,
+          0.6803663946783807
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.014474481344223022
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.06779422610998154
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.014770649373531342
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.9029607176780701
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.00972446147352457
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.055311642587184906
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.007306182291358709
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.9276577830314636
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          259776,
+          256094,
+          261867
+        ],
+        [
+          261867,
+          256094,
+          260417
+        ],
+        [
+          265343,
+          259776,
+          261867
+        ],
+        [
+          260417,
+          265577,
+          261867
+        ],
+        [
+          268125,
+          261867,
+          265577
+        ],
+        [
+          268125,
+          265577,
+          268287
+        ],
+        [
+          261867,
+          268125,
+          265343
+        ],
+        [
+          265343,
+          268125,
+          270693
+        ],
+        [
+          270693,
+          268125,
+          270477
+        ],
+        [
+          270477,
+          268125,
+          268287
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        378760,
+        378761,
+        378763,
+        604724,
+        604732,
+        604733,
+        604734,
+        604735,
+        604736,
+        604737
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0018272653003122777,
+          -0.00012549016595355178,
+          -0.0007212526045043109
+        ],
+        "weightGradientVectorM": [
+          0.0018807811697022039,
+          -0.00016301530132816822,
+          0.0005362892147603611
+        ],
+        "constantMeanWeightsLengthM": 0.001968464269165336,
+        "weightGradientLengthM": 0.00196252845040315,
+        "residualM": 1.394680422648085e-16,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.7005586057147957,
+      "absoluteLengthChangeMM": 1.7005586057147957,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 93.84008116860554
+    },
+    {
+      "originalVertexIDs": [
+        150237,
+        159522
+      ],
+      "restLengthM": 0.0017404442249548877,
+      "posedLengthM": 0.0034259254865274154,
+      "poseToRestRatio": 1.9684201523988598,
+      "weightL1Jump": 0.06108470261096954,
+      "weightL1PerRestMM": 0.035097190553493814,
+      "restWorldM": [
+        [
+          -0.1185455471277237,
+          -0.023424102169481622,
+          0.7203826914540892
+        ],
+        [
+          -0.1178741604089737,
+          -0.0247325452349221,
+          0.7194519053784705
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.17319983687997667,
+          0.12951060701061257,
+          0.6788446200464194
+        ],
+        [
+          0.1762560583850718,
+          0.12864875143494678,
+          0.6775586649469988
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.4528926908969879
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.20234781503677368
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.34475958347320557
+          }
+        ],
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.4244064390659332
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.200291708111763
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.37530192732810974
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          152206,
+          147065,
+          150237
+        ],
+        [
+          150237,
+          147065,
+          145250
+        ],
+        [
+          157817,
+          152206,
+          150237
+        ],
+        [
+          157817,
+          150237,
+          159522
+        ],
+        [
+          163292,
+          157817,
+          159522
+        ],
+        [
+          166934,
+          163292,
+          159522
+        ],
+        [
+          163302,
+          166934,
+          159522
+        ],
+        [
+          163302,
+          159522,
+          158233
+        ],
+        [
+          158233,
+          159522,
+          153203
+        ],
+        [
+          153203,
+          159522,
+          152607
+        ],
+        [
+          152607,
+          159522,
+          150237
+        ],
+        [
+          152607,
+          150237,
+          147064
+        ],
+        [
+          147064,
+          150237,
+          145250
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        375837,
+        375838,
+        375840,
+        375843,
+        375845,
+        375847,
+        375863,
+        375867,
+        375871,
+        375874,
+        375875,
+        375876,
+        375878
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0006103416283292641,
+          -0.0006467447019095825,
+          -0.0012900380359544559
+        ],
+        "weightGradientVectorM": [
+          0.0024458798767658997,
+          -0.00021511087375621974,
+          4.082936533897179e-06
+        ],
+        "constantMeanWeightsLengthM": 0.001566841966162817,
+        "weightGradientLengthM": 0.0024553243634899396,
+        "residualM": 9.250830748144939e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.6854812615725276,
+      "absoluteLengthChangeMM": 1.6854812615725276,
+      "candidateDeltaPosedEdgeMM": -0.00046415878345203165,
+      "weightJumpPercentileInRegion": 96.6462355279434
+    },
+    {
+      "originalVertexIDs": [
+        887905,
+        888050
+      ],
+      "restLengthM": 0.0022725992927022575,
+      "posedLengthM": 0.0038917803507728336,
+      "poseToRestRatio": 1.7124797861506293,
+      "weightL1Jump": 0.07187656965106726,
+      "weightL1PerRestMM": 0.03162747162769803,
+      "restWorldM": [
+        [
+          -0.1486053466796875,
+          0.06767279030187576,
+          0.7093658417689925
+        ],
+        [
+          -0.1480255126953125,
+          0.06769567858151504,
+          0.711563107392992
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.10070128317027169,
+          0.18885906430004484,
+          0.7136040425181323
+        ],
+        [
+          0.10449062193735471,
+          0.18973024718666315,
+          0.7137710945609411
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.3960977792739868
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.3750554323196411
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.21889635920524597
+          },
+          {
+            "bone": "DEF-forearm.R",
+            "weight": 0.00995040312409401
+          }
+        ],
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.41629132628440857
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.3490675389766693
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.22389857470989227
+          },
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.010742510668933392
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          889191,
+          889533,
+          888050
+        ],
+        [
+          889533,
+          888618,
+          888050
+        ],
+        [
+          888744,
+          889191,
+          888050
+        ],
+        [
+          888618,
+          888948,
+          887905
+        ],
+        [
+          888618,
+          887905,
+          888050
+        ],
+        [
+          888744,
+          888050,
+          888051
+        ],
+        [
+          888050,
+          887905,
+          886994
+        ],
+        [
+          887905,
+          888948,
+          887869
+        ],
+        [
+          886994,
+          887905,
+          886323
+        ],
+        [
+          886323,
+          887905,
+          887869
+        ],
+        [
+          888050,
+          886994,
+          886714
+        ],
+        [
+          888050,
+          886714,
+          888051
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        131400,
+        131402,
+        131406,
+        131409,
+        131410,
+        131411,
+        131413,
+        131414,
+        131415,
+        131416,
+        131417,
+        131418
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0015400453985147723,
+          0.00021117906820144382,
+          0.0014167108245097555
+        ],
+        "weightGradientVectorM": [
+          0.002249293368568262,
+          0.000660003818416877,
+          -0.0012496587817006546
+        ],
+        "constantMeanWeightsLengthM": 0.0021031894799603923,
+        "weightGradientLengthM": 0.0026564210451077938,
+        "residualM": 2.331840371170645e-16,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.619181058070576,
+      "absoluteLengthChangeMM": 1.619181058070576,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 97.9541063809087
+    },
+    {
+      "originalVertexIDs": [
+        174008,
+        174891
+      ],
+      "restLengthM": 0.0010368839081021128,
+      "posedLengthM": 0.0026140258154167435,
+      "poseToRestRatio": 2.521040007459845,
+      "weightL1Jump": 0.04482113476842642,
+      "weightL1PerRestMM": 0.043226762820985365,
+      "restWorldM": [
+        [
+          -0.11074067652225494,
+          -0.0268115571880378,
+          0.7176055919927845
+        ],
+        [
+          -0.11142732203006744,
+          -0.026958423066113506,
+          0.7168426525460792
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.19669154437548633,
+          0.1294409143047805,
+          0.6742839270979216
+        ],
+        [
+          0.19417186058277414,
+          0.1292177291790026,
+          0.6736247511365576
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.0012827847385779023
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.2930245101451874
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.14737215638160706
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5583205223083496
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.001004305318929255
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.3045791983604431
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1582280844449997
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.5361884832382202
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          177262,
+          174435,
+          174891
+        ],
+        [
+          177262,
+          174891,
+          177859
+        ],
+        [
+          174435,
+          172408,
+          174891
+        ],
+        [
+          172408,
+          173533,
+          174891
+        ],
+        [
+          174891,
+          173533,
+          174008
+        ],
+        [
+          174008,
+          173533,
+          171359
+        ],
+        [
+          174891,
+          174008,
+          175911
+        ],
+        [
+          174891,
+          175911,
+          177859
+        ],
+        [
+          175911,
+          174008,
+          176752
+        ],
+        [
+          176752,
+          174008,
+          174221
+        ],
+        [
+          171658,
+          174221,
+          174008
+        ],
+        [
+          171658,
+          174008,
+          171359
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        376546,
+        376547,
+        376551,
+        376569,
+        376574,
+        376575,
+        376576,
+        376577,
+        376578,
+        376580,
+        492067,
+        492068
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.0006103451015877432,
+          -0.0004945071067738986,
+          -0.0005228062170268451
+        ],
+        "weightGradientVectorM": [
+          -0.0019093386911244337,
+          0.00027132198099598837,
+          -0.00013636974433711962
+        ],
+        "constantMeanWeightsLengthM": 0.0009436020147519637,
+        "weightGradientLengthM": 0.001933335605105054,
+        "residualM": 4.114672233053117e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.5771419073146307,
+      "absoluteLengthChangeMM": 1.5771419073146307,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 91.91788628055984
+    },
+    {
+      "originalVertexIDs": [
+        157763,
+        170308
+      ],
+      "restLengthM": 0.002120746113425685,
+      "posedLengthM": 0.003691760017468558,
+      "poseToRestRatio": 1.740783582767096,
+      "weightL1Jump": 0.0670238547027111,
+      "weightL1PerRestMM": 0.03160390311617551,
+      "restWorldM": [
+        [
+          -0.12300874292850494,
+          -0.024497940785483754,
+          0.7324371348604032
+        ],
+        [
+          -0.1220550686120987,
+          -0.02623172072605946,
+          0.7316741954830641
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.17109494797605093,
+          0.1253417891473807,
+          0.6900592606059406
+        ],
+        [
+          0.17433625621182447,
+          0.12424094223342502,
+          0.688676817471732
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.030466455966234207
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.6000232696533203
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.1182611733675003
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.25124916434288025
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.03581558167934418
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5679135322570801
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.11685895919799805
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.2794119417667389
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          157763,
+          166706,
+          155612
+        ],
+        [
+          157763,
+          155612,
+          151895
+        ],
+        [
+          151895,
+          151944,
+          157763
+        ],
+        [
+          157763,
+          151944,
+          156463
+        ],
+        [
+          166706,
+          157763,
+          170255
+        ],
+        [
+          157763,
+          156463,
+          162419
+        ],
+        [
+          157763,
+          162419,
+          170308
+        ],
+        [
+          157763,
+          170308,
+          170255
+        ],
+        [
+          170308,
+          162419,
+          169674
+        ],
+        [
+          170255,
+          170308,
+          175970
+        ],
+        [
+          175970,
+          170308,
+          169674
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        384175,
+        384176,
+        384180,
+        384181,
+        384182,
+        384183,
+        384184,
+        384185,
+        384187,
+        384189,
+        384190
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0009625417444351963,
+          -0.0009379551397532526,
+          -0.0014023907094888517
+        ],
+        "weightGradientVectorM": [
+          0.002278766491338344,
+          -0.0001628917742024185,
+          1.994757528036705e-05
+        ],
+        "constantMeanWeightsLengthM": 0.0019424073095081111,
+        "weightGradientLengthM": 0.002284668106729913,
+        "residualM": 5.993363306535172e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.5710139040428732,
+      "absoluteLengthChangeMM": 1.5710139040428732,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 97.44124310275333
+    },
+    {
+      "originalVertexIDs": [
+        170990,
+        175753
+      ],
+      "restLengthM": 0.0010194952403940034,
+      "posedLengthM": 0.0025536720045985467,
+      "poseToRestRatio": 2.5048395553191907,
+      "weightL1Jump": 0.04867813130840659,
+      "weightL1PerRestMM": 0.04774728648031157,
+      "restWorldM": [
+        [
+          -0.10961152613162994,
+          -0.02635379353483832,
+          0.717178345879025
+        ],
+        [
+          -0.10938264429569244,
+          -0.027112918318710974,
+          0.7165374767715824
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.2007755447807657,
+          0.13011026338193282,
+          0.6740158322926086
+        ],
+        [
+          0.20319537734711168,
+          0.1295068714110016,
+          0.6734666791378899
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.2619530260562897
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.13558053970336914
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.6024664640426636
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.003648506011813879
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.24488146603107452
+          },
+          {
+            "bone": "DEF-upper_arm.R.001",
+            "weight": 0.12831303477287292
+          },
+          {
+            "bone": "DEF-breast.R",
+            "weight": 0.6231570243835449
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          180037,
+          179999,
+          175753
+        ],
+        [
+          180037,
+          175753,
+          179953
+        ],
+        [
+          179999,
+          175362,
+          175753
+        ],
+        [
+          175910,
+          179953,
+          175753
+        ],
+        [
+          175910,
+          175753,
+          171259
+        ],
+        [
+          171259,
+          175753,
+          170990
+        ],
+        [
+          170990,
+          175753,
+          175362
+        ],
+        [
+          171259,
+          170990,
+          166531
+        ],
+        [
+          166531,
+          170990,
+          169609
+        ],
+        [
+          169609,
+          170990,
+          175362
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        377285,
+        377286,
+        377288,
+        377555,
+        377558,
+        377560,
+        377561,
+        377562,
+        377567,
+        377568
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.00041284287080151056,
+          -0.00043680806621343606,
+          -0.0006990975587009128
+        ],
+        "weightGradientVectorM": [
+          0.002006989695544496,
+          -0.00016658390471779925,
+          0.00014994440398228247
+        ],
+        "constantMeanWeightsLengthM": 0.0009219424706901893,
+        "weightGradientLengthM": 0.002019465562870142,
+        "residualM": 8.063893509617505e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 1.5341767642045434,
+      "absoluteLengthChangeMM": 1.5341767642045434,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 93.56488623886364
+    }
+  ],
+  "largestNeighborWeightJumps": [
+    {
+      "originalVertexIDs": [
+        556134,
+        556298
+      ],
+      "restLengthM": 0.0020964462352171154,
+      "posedLengthM": 0.0018808356800191046,
+      "poseToRestRatio": 0.8971542644041709,
+      "weightL1Jump": 0.41689226031303406,
+      "weightL1PerRestMM": 0.19885664287968693,
+      "restWorldM": [
+        [
+          -0.1277160793542862,
+          0.011459402952169108,
+          0.7931823725464704
+        ],
+        [
+          -0.1295013576745987,
+          0.011488967739277512,
+          0.792083739732678
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.18039723209254477,
+          0.15329506656293226,
+          0.7503307512781804
+        ],
+        [
+          0.17903774564710545,
+          0.15244471175463065,
+          0.7493477781555071
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.7249732613563538
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.27502676844596863
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.5165271162986755
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.48347288370132446
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          559597,
+          560545,
+          556298
+        ],
+        [
+          556298,
+          560545,
+          559561
+        ],
+        [
+          559561,
+          554574,
+          556298
+        ],
+        [
+          550222,
+          556298,
+          554574
+        ],
+        [
+          556298,
+          550222,
+          552492
+        ],
+        [
+          552492,
+          552583,
+          556298
+        ],
+        [
+          556298,
+          552583,
+          556134
+        ],
+        [
+          556134,
+          552583,
+          552667
+        ],
+        [
+          556298,
+          556134,
+          559597
+        ],
+        [
+          559597,
+          556134,
+          560009
+        ],
+        [
+          560009,
+          556134,
+          556020
+        ],
+        [
+          556020,
+          556134,
+          552667
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244371,
+        244372,
+        244380,
+        244438,
+        244439,
+        244676,
+        244682,
+        244683,
+        244684,
+        244685,
+        244686,
+        244687
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.0016639518825352056,
+          -0.0008018002764183505,
+          -0.0006114978979203827
+        ],
+        "weightGradientVectorM": [
+          0.0003044654370959049,
+          -4.855453188323117e-05,
+          -0.0003714752247529485
+        ],
+        "constantMeanWeightsLengthM": 0.0019456487940576646,
+        "weightGradientLengthM": 0.0004827531331412089,
+        "residualM": 8.277228566575059e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0,
+      "absoluteLengthChangeMM": 0.2156105551980108,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 100.0
+    },
+    {
+      "originalVertexIDs": [
+        548743,
+        548913
+      ],
+      "restLengthM": 0.001976853453442431,
+      "posedLengthM": 0.0018811221098308968,
+      "poseToRestRatio": 0.9515738794674787,
+      "weightL1Jump": 0.38787126541137695,
+      "weightL1PerRestMM": 0.19620638279279126,
+      "restWorldM": [
+        [
+          -0.1301727443933487,
+          0.010156684671235214,
+          0.790985106978414
+        ],
+        [
+          -0.1285095363855362,
+          0.010185294947416202,
+          0.7920532222115384
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.1787346589959535,
+          0.15103378040993615,
+          0.7483022216462623
+        ],
+        [
+          0.18023308507351232,
+          0.15185950625776679,
+          0.7490842168549501
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.45906928181648254
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5409306883811951
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.6530049443244934
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.346995085477829
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          550222,
+          545112,
+          548743
+        ],
+        [
+          548743,
+          545112,
+          543320
+        ],
+        [
+          550222,
+          548743,
+          552492
+        ],
+        [
+          552492,
+          548743,
+          552583
+        ],
+        [
+          548743,
+          543320,
+          548913
+        ],
+        [
+          548743,
+          548913,
+          552583
+        ],
+        [
+          548913,
+          543320,
+          545216
+        ],
+        [
+          552583,
+          548913,
+          552667
+        ],
+        [
+          547670,
+          552667,
+          548913
+        ],
+        [
+          547670,
+          548913,
+          545216
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244672,
+        244673,
+        244674,
+        244675,
+        244677,
+        244678,
+        244679,
+        244681,
+        244689,
+        244690
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0015698569757918298,
+          0.000774582990880597,
+          0.0005280376136882488
+        ],
+        "weightGradientVectorM": [
+          -7.143089823300613e-05,
+          5.114285695006701e-05,
+          0.00025395759499954873
+        ],
+        "constantMeanWeightsLengthM": 0.0018284565774645514,
+        "weightGradientLengthM": 0.0002687236965683226,
+        "residualM": 3.7687996616019466e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0,
+      "absoluteLengthChangeMM": 0.09573134361153413,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 99.99861012661746
+    },
+    {
+      "originalVertexIDs": [
+        581353,
+        585491
+      ],
+      "restLengthM": 0.0014298361137705972,
+      "posedLengthM": 0.0011285217996055577,
+      "poseToRestRatio": 0.789266538127612,
+      "weightL1Jump": 0.3861185312271118,
+      "weightL1PerRestMM": 0.2700439074859321,
+      "restWorldM": [
+        [
+          -0.12427522242069244,
+          0.015945488057289813,
+          0.7975158684441274
+        ],
+        [
+          -0.1253662258386612,
+          0.01671033483637021,
+          0.7969970695825698
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.18099084821747685,
+          0.15861605323933928,
+          0.7550702257177743
+        ],
+        [
+          0.18077220716563108,
+          0.15866116814487374,
+          0.7539640059439809
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.8505570292472839
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.14944297075271606
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.657497763633728
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.342502236366272
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          588627,
+          589168,
+          585491
+        ],
+        [
+          585491,
+          589168,
+          587068
+        ],
+        [
+          587068,
+          579799,
+          585491
+        ],
+        [
+          579799,
+          581623,
+          585491
+        ],
+        [
+          585491,
+          581623,
+          581353
+        ],
+        [
+          581353,
+          581623,
+          575922
+        ],
+        [
+          585491,
+          581353,
+          585379
+        ],
+        [
+          585491,
+          585379,
+          588627
+        ],
+        [
+          581353,
+          575922,
+          576037
+        ],
+        [
+          585379,
+          581353,
+          583908
+        ],
+        [
+          583908,
+          581353,
+          576037
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244263,
+        244264,
+        244275,
+        244293,
+        244294,
+        244295,
+        244296,
+        244297,
+        244298,
+        244299,
+        244301
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.0013211396762837424,
+          0.00010189507767008335,
+          -0.00026055231669820666
+        ],
+        "weightGradientVectorM": [
+          0.0011024986244379878,
+          -5.678017213563841e-05,
+          -0.0008456674570949951
+        ],
+        "constantMeanWeightsLengthM": 0.0013504370258702574,
+        "weightGradientLengthM": 0.0013906403750880108,
+        "residualM": 1.2736791922363955e-16,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0,
+      "absoluteLengthChangeMM": 0.30131431416503945,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 99.99722025323493
+    },
+    {
+      "originalVertexIDs": [
+        512044,
+        516922
+      ],
+      "restLengthM": 0.0019990491938506163,
+      "posedLengthM": 0.002605644495176322,
+      "poseToRestRatio": 1.3034419078788488,
+      "weightL1Jump": 0.35882946848869324,
+      "weightL1PerRestMM": 0.179500069129118,
+      "restWorldM": [
+        [
+          -0.1298980861902237,
+          0.003985933923533909,
+          0.7875061033418961
+        ],
+        [
+          -0.1316375881433487,
+          0.004782252418049067,
+          0.7869262693227128
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.17999420499175786,
+          0.14600735116704752,
+          0.74400428018893
+        ],
+        [
+          0.17741014633403324,
+          0.14582389640056467,
+          0.7442842238213558
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.4301903247833252
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5698097348213196
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.250775545835495
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.7492244243621826
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          516710,
+          512435,
+          516922
+        ],
+        [
+          516922,
+          512435,
+          506678
+        ],
+        [
+          522500,
+          516710,
+          516922
+        ],
+        [
+          506678,
+          506560,
+          512044
+        ],
+        [
+          512044,
+          506560,
+          511737
+        ],
+        [
+          506678,
+          512044,
+          516922
+        ],
+        [
+          511737,
+          521644,
+          512044
+        ],
+        [
+          519068,
+          512044,
+          521644
+        ],
+        [
+          512044,
+          519068,
+          517576
+        ],
+        [
+          512044,
+          517576,
+          516922
+        ],
+        [
+          516922,
+          517576,
+          523353
+        ],
+        [
+          516922,
+          523353,
+          522500
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244514,
+        244515,
+        244517,
+        244574,
+        244575,
+        244576,
+        244581,
+        244596,
+        244598,
+        244599,
+        244600,
+        244607
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.0018144154263736094,
+          -5.654874681738148e-05,
+          0.0003884821877818167
+        ],
+        "weightGradientVectorM": [
+          -0.0007696432313510151,
+          -0.00012690601966549447,
+          -0.00010853855535591928
+        ],
+        "constantMeanWeightsLengthM": 0.0018563996095811077,
+        "weightGradientLengthM": 0.0007875509249505844,
+        "residualM": 2.7168419625073046e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.6065953013257058,
+      "absoluteLengthChangeMM": 0.6065953013257058,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 99.99583037985239
+    },
+    {
+      "originalVertexIDs": [
+        543320,
+        548913
+      ],
+      "restLengthM": 0.0024169200587829437,
+      "posedLengthM": 0.002423363817874325,
+      "poseToRestRatio": 1.0026661035262483,
+      "weightL1Jump": 0.3453183174133301,
+      "weightL1PerRestMM": 0.1428753574858481,
+      "restWorldM": [
+        [
+          -0.1301117092370987,
+          0.009212547077983541,
+          0.7905273433478085
+        ],
+        [
+          -0.1285095363855362,
+          0.010185294947416202,
+          0.7920532222115384
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.17899948339154614,
+          0.15027807864445517,
+          0.7477240676764082
+        ],
+        [
+          0.18023308507351232,
+          0.15185950625776679,
+          0.7490842168549501
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.480345755815506
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5196542143821716
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.6530049443244934
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.346995085477829
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          541700,
+          537689,
+          543320
+        ],
+        [
+          541700,
+          543320,
+          545112
+        ],
+        [
+          537689,
+          540336,
+          543320
+        ],
+        [
+          548743,
+          545112,
+          543320
+        ],
+        [
+          548743,
+          543320,
+          548913
+        ],
+        [
+          548743,
+          548913,
+          552583
+        ],
+        [
+          548913,
+          543320,
+          545216
+        ],
+        [
+          545216,
+          543320,
+          540336
+        ],
+        [
+          552583,
+          548913,
+          552667
+        ],
+        [
+          547670,
+          552667,
+          548913
+        ],
+        [
+          547670,
+          548913,
+          545216
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244667,
+        244668,
+        244670,
+        244673,
+        244677,
+        244678,
+        244679,
+        244680,
+        244681,
+        244689,
+        244690
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0012426770572083025,
+          0.001525689696427101,
+          0.0011212572231298146
+        ],
+        "weightGradientVectorM": [
+          -9.07537524209509e-06,
+          5.5737916884512906e-05,
+          0.00023889195541207386
+        ],
+        "constantMeanWeightsLengthM": 0.002264772191350929,
+        "weightGradientLengthM": 0.0002454759543723458,
+        "residualM": 3.028322427908752e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.006443759091381406,
+      "absoluteLengthChangeMM": 0.006443759091381406,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 99.99444050646986
+    },
+    {
+      "originalVertexIDs": [
+        540336,
+        541353
+      ],
+      "restLengthM": 0.0018280741778384081,
+      "posedLengthM": 0.0019396264409123492,
+      "poseToRestRatio": 1.0610217377534676,
+      "weightL1Jump": 0.3444618582725525,
+      "weightL1PerRestMM": 0.18842881894423927,
+      "restWorldM": [
+        [
+          -0.1296997219324112,
+          0.008685165179676919,
+          0.7904968257927362
+        ],
+        [
+          -0.1282043606042862,
+          0.008855871996345898,
+          0.7915344234415242
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.17955352785492365,
+          0.15004229439900746,
+          0.7475377905032405
+        ],
+        [
+          0.18097254744982322,
+          0.15095651333054774,
+          0.7484931636579768
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.5358448624610901
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.4641551077365875
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.7080758213996887
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.29192420840263367
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          537689,
+          533900,
+          540336
+        ],
+        [
+          537689,
+          540336,
+          543320
+        ],
+        [
+          540336,
+          533900,
+          532829
+        ],
+        [
+          545216,
+          543320,
+          540336
+        ],
+        [
+          542704,
+          545216,
+          541353
+        ],
+        [
+          541353,
+          545216,
+          540336
+        ],
+        [
+          541353,
+          540336,
+          537813
+        ],
+        [
+          537813,
+          540336,
+          532829
+        ],
+        [
+          542704,
+          541353,
+          537488
+        ],
+        [
+          537488,
+          541353,
+          537813
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244669,
+        244670,
+        244671,
+        244680,
+        244709,
+        244710,
+        244712,
+        244713,
+        244714,
+        244715
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0013349219082256216,
+          0.0008302585784616697,
+          0.0006493724587834679
+        ],
+        "weightGradientVectorM": [
+          8.409768667396247e-05,
+          8.396035307860206e-05,
+          0.00030600069595271284
+        ],
+        "constantMeanWeightsLengthM": 0.0017008910601200814,
+        "weightGradientLengthM": 0.00032826542266364286,
+        "residualM": 8.278542105275325e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.11155226307394112,
+      "absoluteLengthChangeMM": 0.11155226307394112,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 99.99305063308732
+    },
+    {
+      "originalVertexIDs": [
+        512044,
+        521644
+      ],
+      "restLengthM": 0.0025547876314741154,
+      "posedLengthM": 0.002895265916649648,
+      "poseToRestRatio": 1.13327068010701,
+      "weightL1Jump": 0.33055225014686584,
+      "weightL1PerRestMM": 0.12938541195149628,
+      "restWorldM": [
+        [
+          -0.1298980861902237,
+          0.003985933923533909,
+          0.7875061033418961
+        ],
+        [
+          -0.1288604885339737,
+          0.005608610846267257,
+          0.7891845700678416
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.17999420499175786,
+          0.14600735116704752,
+          0.74400428018893
+        ],
+        [
+          0.1812440790852925,
+          0.14794666429982492,
+          0.7457534068428522
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.4301903247833252
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.5698097348213196
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.5954664349555969
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.40453359484672546
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          506678,
+          506560,
+          512044
+        ],
+        [
+          512044,
+          506560,
+          511737
+        ],
+        [
+          506678,
+          512044,
+          516922
+        ],
+        [
+          511737,
+          515368,
+          521644
+        ],
+        [
+          511737,
+          521644,
+          512044
+        ],
+        [
+          515368,
+          519993,
+          521644
+        ],
+        [
+          519993,
+          524127,
+          521644
+        ],
+        [
+          521644,
+          524127,
+          528891
+        ],
+        [
+          519068,
+          512044,
+          521644
+        ],
+        [
+          512044,
+          519068,
+          517576
+        ],
+        [
+          512044,
+          517576,
+          516922
+        ],
+        [
+          519068,
+          521644,
+          527994
+        ],
+        [
+          527994,
+          521644,
+          528891
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244574,
+        244575,
+        244576,
+        244580,
+        244581,
+        244583,
+        244587,
+        244594,
+        244596,
+        244598,
+        244599,
+        244603,
+        244604
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          0.0006604693700445146,
+          0.001793441113921038,
+          0.0014617151981322547
+        ],
+        "weightGradientVectorM": [
+          0.0005894047234900994,
+          0.0001458720188563696,
+          0.00028741145579007366
+        ],
+        "constantMeanWeightsLengthM": 0.002406088555793437,
+        "weightGradientLengthM": 0.0006717751996591144,
+        "residualM": 9.216643180409948e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.34047828517553247,
+      "absoluteLengthChangeMM": 0.34047828517553247,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 99.99166075970479
+    },
+    {
+      "originalVertexIDs": [
+        542704,
+        545216
+      ],
+      "restLengthM": 0.0015596948713948952,
+      "posedLengthM": 0.0015956737554942556,
+      "poseToRestRatio": 1.0230678992149171,
+      "weightL1Jump": 0.3302346169948578,
+      "weightL1PerRestMM": 0.21173027048522397,
+      "restWorldM": [
+        [
+          -0.1274719387292862,
+          0.00910287367097443,
+          0.7921447749932276
+        ],
+        [
+          -0.1288299709558487,
+          0.009524398622135288,
+          0.7915039058341771
+        ]
+      ],
+      "posedWorldM": [
+        [
+          0.18152794296468888,
+          0.15155966801763288,
+          0.7492264581978332
+        ],
+        [
+          0.1801648746556055,
+          0.15116155263675665,
+          0.7484986370231924
+        ]
+      ],
+      "sourceNamedWeights": [
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.7906153202056885
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.2093847393989563
+          }
+        ],
+        [
+          {
+            "bone": "DEF-shoulder.R",
+            "weight": 0.6254979968070984
+          },
+          {
+            "bone": "DEF-upper_arm.R",
+            "weight": 0.374502032995224
+          }
+        ]
+      ],
+      "adjacentOriginalTriangles": [
+        [
+          548913,
+          543320,
+          545216
+        ],
+        [
+          545216,
+          543320,
+          540336
+        ],
+        [
+          547670,
+          548913,
+          545216
+        ],
+        [
+          545277,
+          547670,
+          542704
+        ],
+        [
+          542704,
+          547670,
+          545216
+        ],
+        [
+          541540,
+          545277,
+          542704
+        ],
+        [
+          542704,
+          545216,
+          541353
+        ],
+        [
+          541353,
+          545216,
+          540336
+        ],
+        [
+          541540,
+          542704,
+          538451
+        ],
+        [
+          542704,
+          541353,
+          537488
+        ],
+        [
+          542704,
+          537488,
+          538451
+        ]
+      ],
+      "adjacentOriginalTriangleIDs": [
+        244679,
+        244680,
+        244690,
+        244703,
+        244704,
+        244708,
+        244709,
+        244710,
+        244711,
+        244714,
+        244716
+      ],
+      "exactEdgeDecomposition": {
+        "constantMeanWeightsVectorM": [
+          -0.0013856590958367986,
+          -0.0003066857604408743,
+          -0.00033169916561872584
+        ],
+        "weightGradientVectorM": [
+          2.2590786753415304e-05,
+          -9.142962043534944e-05,
+          -0.0003961220090220319
+        ],
+        "constantMeanWeightsLengthM": 0.001457440092080841,
+        "weightGradientLengthM": 0.00040716380631232566,
+        "residualM": 1.1252352432400332e-17,
+        "interpretation": "Exact algebraic decomposition of original LBS edge; does not establish whether a weight is anatomically wrong."
+      },
+      "positiveEdgeExcessMM": 0.03597888409936044,
+      "absoluteLengthChangeMM": 0.03597888409936044,
+      "candidateDeltaPosedEdgeMM": 0.0,
+      "weightJumpPercentileInRegion": 99.99027088632225
+    }
+  ]
+}

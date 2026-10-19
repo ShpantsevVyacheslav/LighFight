@@ -1,0 +1,468 @@
+{
+  "schema": "full-roster-closed-bary-positive-preservation/v1",
+  "blender_version": "4.2.22 LTS",
+  "inputs": {
+    "source": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-retro-denim-apose-original/unpacked/tripo_convert_4d373b02-5da2-4c9b-b016-4fc09eb6490f.fbx",
+    "donor": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbx",
+    "sha256": {
+      "source": "97830ea133ef024a1851c0e61463f290c0af9144436803677eae24edd2dba68f",
+      "donor": "215a1f367cb3ce5db53fddab1a4f0dea6b3e8165a5fcabf944a470cb1079eec8"
+    }
+  },
+  "parameters": {
+    "source": "art/source/tripo-retro-denim-apose-original/unpacked/tripo_convert_4d373b02-5da2-4c9b-b016-4fc09eb6490f.fbx",
+    "donor": "art/source/tripo-retro-denim-native-full-pack/unpacked/tripo_convert_dd0e116a-d94f-4677-b6fa-caf3a00da382.fbx",
+    "out": "art/drafts/full-roster-v1/retro-native67-bary",
+    "overwrite": false,
+    "sigma_height": 0.007,
+    "neighbors": 48,
+    "min_weight": 0.0,
+    "stable_low": 0.75,
+    "stable_high": 0.95,
+    "batch_size": 5000,
+    "max_align_p99_height": 0.001,
+    "max_align_max_height": 0.002,
+    "metrics_samples": 5000,
+    "pose": null,
+    "export_fbx": false
+  },
+  "height": 0.981048583060582,
+  "source_preservation": {
+    "vertices": 960718,
+    "polygons": 1921472,
+    "triangles": 1921472,
+    "corners": 5764416,
+    "positions_sha256": "c0d73780bbfe3cb290fa5199e0461a21a2f84233289f217f0f221359c5321970",
+    "triangle_corner_indices_sha256": "acbaad177b369b293514e314d115ebc7c48d702eccb1dfc67ba9dc43750e7d4d",
+    "polygon_sizes_sha256": "e203ab400d3c60280aacb9cc51f1aab2eb2bfb85efbe130eb21920ef3226745a",
+    "material_indices_sha256": "9bc08a184c33eb46412d87e43e76c6a34716ca750b91a3bd89f0c6a04abe2e70",
+    "uv_sha256": {
+      "UVMap": "5fc7273c06501a95e70203149b7981c5975d1e28e6c329155529790ef76b2695"
+    },
+    "object_world_matrix_sha256": "1e08b3c58959fadfb03429d3c0cae1da894e1410cfb1c26af8bc83b8accd9cab"
+  },
+  "source_material_sha256": "4889be997ae64aa9096b62a6532accaf4eccfc44c888fbdd3f4b12492ee50cc4",
+  "native_bind_preservation": {
+    "bone_count": 67,
+    "local_rest_matrices_sha256": "07ea0b005e7657168b22a8fa92aef15dcc92214db9b575e67b53b3d605a3ecf4",
+    "parent_names": {
+      "Hips": null,
+      "Spine": "Hips",
+      "Chest": "Spine",
+      "UpperChest": "Chest",
+      "Neck": "UpperChest",
+      "Neck_Twist_A": "Neck",
+      "Head": "Neck",
+      "Left_Eye": "Head",
+      "Right_Eye": "Head",
+      "Left_Shoulder": "UpperChest",
+      "Left_UpperArm": "Left_Shoulder",
+      "Left_LowerArm": "Left_UpperArm",
+      "Left_Hand": "Left_LowerArm",
+      "Left_ThumbProximal": "Left_Hand",
+      "Left_ThumbIntermediate": "Left_ThumbProximal",
+      "Left_ThumbDistal": "Left_ThumbIntermediate",
+      "Left_ThumbDistalEnd": "Left_ThumbDistal",
+      "Left_IndexProximal": "Left_Hand",
+      "Left_IndexIntermediate": "Left_IndexProximal",
+      "Left_IndexDistal": "Left_IndexIntermediate",
+      "Left_IndexDistalEnd": "Left_IndexDistal",
+      "Left_MiddleProximal": "Left_Hand",
+      "Left_MiddleIntermediate": "Left_MiddleProximal",
+      "Left_MiddleDistal": "Left_MiddleIntermediate",
+      "Left_MiddleDistalEnd": "Left_MiddleDistal",
+      "Left_RingProximal": "Left_Hand",
+      "Left_RingIntermediate": "Left_RingProximal",
+      "Left_RingDistal": "Left_RingIntermediate",
+      "Left_RingDistalEnd": "Left_RingDistal",
+      "Left_PinkyProximal": "Left_Hand",
+      "Left_PinkyIntermediate": "Left_PinkyProximal",
+      "Left_PinkyDistal": "Left_PinkyIntermediate",
+      "Left_PinkyDistalEnd": "Left_PinkyDistal",
+      "Right_Shoulder": "UpperChest",
+      "Right_UpperArm": "Right_Shoulder",
+      "Right_LowerArm": "Right_UpperArm",
+      "Right_Hand": "Right_LowerArm",
+      "Right_ThumbProximal": "Right_Hand",
+      "Right_ThumbIntermediate": "Right_ThumbProximal",
+      "Right_ThumbDistal": "Right_ThumbIntermediate",
+      "Right_ThumbDistalEnd": "Right_ThumbDistal",
+      "Right_IndexProximal": "Right_Hand",
+      "Right_IndexIntermediate": "Right_IndexProximal",
+      "Right_IndexDistal": "Right_IndexIntermediate",
+      "Right_IndexDistalEnd": "Right_IndexDistal",
+      "Right_MiddleProximal": "Right_Hand",
+      "Right_MiddleIntermediate": "Right_MiddleProximal",
+      "Right_MiddleDistal": "Right_MiddleIntermediate",
+      "Right_MiddleDistalEnd": "Right_MiddleDistal",
+      "Right_RingProximal": "Right_Hand",
+      "Right_RingIntermediate": "Right_RingProximal",
+      "Right_RingDistal": "Right_RingIntermediate",
+      "Right_RingDistalEnd": "Right_RingDistal",
+      "Right_PinkyProximal": "Right_Hand",
+      "Right_PinkyIntermediate": "Right_PinkyProximal",
+      "Right_PinkyDistal": "Right_PinkyIntermediate",
+      "Right_PinkyDistalEnd": "Right_PinkyDistal",
+      "Left_UpperLeg": "Hips",
+      "Left_LowerLeg": "Left_UpperLeg",
+      "Left_Foot": "Left_LowerLeg",
+      "Left_Toes": "Left_Foot",
+      "Left_ToesEnd": "Left_Toes",
+      "Right_UpperLeg": "Hips",
+      "Right_LowerLeg": "Right_UpperLeg",
+      "Right_Foot": "Right_LowerLeg",
+      "Right_Toes": "Right_Foot",
+      "Right_ToesEnd": "Right_Toes"
+    },
+    "armature_world_matrix_sha256": "ada6a147b7eb5afd405f829c4cbe91737b2058e9da7587da0195332ad7ade501"
+  },
+  "rest_alignment": {
+    "distance": {
+      "p50": 0.00019683116261148825,
+      "p95": 0.0003599750547436996,
+      "p99": 0.0004058186756446953,
+      "max": 0.0009441357105970383
+    },
+    "normalized_height": {
+      "p50": 0.00020063345078939223,
+      "p95": 0.00036692887687649853,
+      "p99": 0.0004136580824352866,
+      "max": 0.0009623740627111591
+    }
+  },
+  "stable_groups": [],
+  "weights": {
+    "unweighted": 0,
+    "max_influences": 7,
+    "weight_sum_max_error": 5.21540641784668e-08
+  },
+  "original_maps": {
+    "images": [
+      {
+        "index": 0,
+        "original_name": "retro-denim-apose-h31-original_basecolor.JPEG",
+        "original_path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-retro-denim-apose-original/unpacked/tripo_convert_4d373b02-5da2-4c9b-b016-4fc09eb6490f.fbm/retro-denim-apose-h31-original_basecolor.JPEG",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/retro-native67-bary/original-image-0.jpeg",
+        "bytes": 4701511,
+        "mime": "image/jpeg",
+        "sha256": "bbc749c6e8546089c4b0e93fb4931bf91a8f8f1653cbf3c0cf2d2a509360bd9c"
+      },
+      {
+        "index": 1,
+        "original_name": "retro-denim-apose-h31-original_metallic.JPEG",
+        "original_path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-retro-denim-apose-original/unpacked/tripo_convert_4d373b02-5da2-4c9b-b016-4fc09eb6490f.fbm/retro-denim-apose-h31-original_metallic.JPEG",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/retro-native67-bary/original-image-1.jpeg",
+        "bytes": 1658869,
+        "mime": "image/jpeg",
+        "sha256": "1b76c0c58c0fe8ed3e32c5c36b8f55f556b4f91234254e9a22c313f0486da880"
+      },
+      {
+        "index": 2,
+        "original_name": "retro-denim-apose-h31-original_normal.PNG",
+        "original_path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-retro-denim-apose-original/unpacked/tripo_convert_4d373b02-5da2-4c9b-b016-4fc09eb6490f.fbm/retro-denim-apose-h31-original_normal.PNG",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/retro-native67-bary/original-image-2.png",
+        "bytes": 7459747,
+        "mime": "image/png",
+        "sha256": "ba700a47b7c65b492fd10f550a035fb7733ce0178e82f0bdf2c854a033908190"
+      },
+      {
+        "index": 3,
+        "original_name": "retro-denim-apose-h31-original_rm.JPEG",
+        "original_path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-retro-denim-apose-original/unpacked/tripo_convert_4d373b02-5da2-4c9b-b016-4fc09eb6490f.fbm/retro-denim-apose-h31-original_rm.JPEG",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/retro-native67-bary/original-image-3.jpeg",
+        "bytes": 1823712,
+        "mime": "image/jpeg",
+        "sha256": "de734d52719522d9cf75707cd9722e634118e0c8a903441a88eb6d437cee68ca"
+      },
+      {
+        "index": 4,
+        "original_name": "retro-denim-apose-h31-original_roughness.JPEG",
+        "original_path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-retro-denim-apose-original/unpacked/tripo_convert_4d373b02-5da2-4c9b-b016-4fc09eb6490f.fbm/retro-denim-apose-h31-original_roughness.JPEG",
+        "path": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/retro-native67-bary/original-image-4.jpeg",
+        "bytes": 1663081,
+        "mime": "image/jpeg",
+        "sha256": "7adf3a10ca761f0c1e8363d426d73b7098ad38c554703e9a70c82ce5a34a6a8d"
+      }
+    ],
+    "source_material_metadata": [],
+    "source_texture_metadata": [],
+    "method": "Original FBM image bytes copied, material graph imported directly by Blender; no GLB conversion"
+  },
+  "poses": {
+    "box_02:24": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9982616660441843,
+            1.3004176796838334,
+            1.7597050221674995,
+            24.77397904036787
+          ],
+          "edges_over_5": 1129,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00018985623319167644,
+            "p95": 0.00037633727770298715,
+            "p99": 0.0004736489005154004,
+            "max": 0.0014186027692630887
+          },
+          "normalized_height": {
+            "p50": 0.00019352378309276085,
+            "p95": 0.00038360717726019844,
+            "p99": 0.00048279861843106243,
+            "max": 0.001446006644072067
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9982616660441843,
+            1.3004176796838334,
+            1.7597050221674995,
+            24.77397904036787
+          ],
+          "edges_over_5": 1129,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00018985623319167644,
+            "p95": 0.00037633727770298715,
+            "p99": 0.0004736489005154004,
+            "max": 0.0014186027692630887
+          },
+          "normalized_height": {
+            "p50": 0.00019352378309276085,
+            "p95": 0.00038360717726019844,
+            "p99": 0.00048279861843106243,
+            "max": 0.001446006644072067
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9923209038113432,
+            1.2409625313400645,
+            1.6039318401826657,
+            12.546434715996007
+          ],
+          "edges_over_5": 70,
+          "edge_count": 150000
+        }
+      }
+    },
+    "box_02:44": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999822984874203,
+            1.2498611047944326,
+            1.6689163046205326,
+            17.74960648968862
+          ],
+          "edges_over_5": 956,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00019262915157014504,
+            "p95": 0.0003715882106916976,
+            "p99": 0.00045843570987926896,
+            "max": 0.0014857645146548748
+          },
+          "normalized_height": {
+            "p50": 0.00019635026735291636,
+            "p95": 0.0003787663700939785,
+            "p99": 0.00046729154681522997,
+            "max": 0.0015144657872291382
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9999822984874203,
+            1.2498611047944326,
+            1.6689163046205326,
+            17.74960648968862
+          ],
+          "edges_over_5": 956,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00019262915157014504,
+            "p95": 0.0003715882106916976,
+            "p99": 0.00045843570987926896,
+            "max": 0.0014857645146548748
+          },
+          "normalized_height": {
+            "p50": 0.00019635026735291636,
+            "p95": 0.0003787663700939785,
+            "p99": 0.00046729154681522997,
+            "max": 0.0015144657872291382
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9975001452442187,
+            1.2012559542515282,
+            1.5519359962478256,
+            16.341563809678426
+          ],
+          "edges_over_5": 51,
+          "edge_count": 150000
+        }
+      }
+    },
+    "front_kick_01:24": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9996270567625486,
+            1.3254003502945628,
+            1.9977037506068376,
+            26.061939663375934
+          ],
+          "edges_over_5": 987,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00019096599862677976,
+            "p95": 0.0003727256786078214,
+            "p99": 0.00046931821911130205,
+            "max": 0.0015798615058884025
+          },
+          "normalized_height": {
+            "p50": 0.0001946549864340278,
+            "p95": 0.0003799258110592518,
+            "p99": 0.0004783842790406646,
+            "max": 0.0016103804981397567
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9996270567625486,
+            1.3254003502945628,
+            1.9977037506068376,
+            26.061939663375934
+          ],
+          "edges_over_5": 987,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00019096599862677976,
+            "p95": 0.0003727256786078214,
+            "p99": 0.00046931821911130205,
+            "max": 0.0015798615058884025
+          },
+          "normalized_height": {
+            "p50": 0.0001946549864340278,
+            "p95": 0.0003799258110592518,
+            "p99": 0.0004783842790406646,
+            "max": 0.0016103804981397567
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9980762103257598,
+            1.2294138598771864,
+            1.7927751811398982,
+            14.631890600343851
+          ],
+          "edges_over_5": 63,
+          "edge_count": 150000
+        }
+      }
+    },
+    "front_kick_01:34": {
+      "spatial": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9992098833981267,
+            1.3317543761653226,
+            1.9292051903634755,
+            28.757061323649808
+          ],
+          "edges_over_5": 1031,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00018902216834248975,
+            "p95": 0.00037346409808378654,
+            "p99": 0.00047251191776013005,
+            "max": 0.0015798980602994561
+          },
+          "normalized_height": {
+            "p50": 0.00019267360618655235,
+            "p95": 0.0003806784949616754,
+            "p99": 0.00048163967199874274,
+            "max": 0.0016104177586910534
+          }
+        }
+      },
+      "rejected_baseline": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9992098833981267,
+            1.3317543761653226,
+            1.9292051903634755,
+            28.757061323649808
+          ],
+          "edges_over_5": 1031,
+          "edge_count": 2882208
+        },
+        "donor_surface_distance": {
+          "samples": 5004,
+          "distance": {
+            "p50": 0.00018902216834248975,
+            "p95": 0.00037346409808378654,
+            "p99": 0.00047251191776013005,
+            "max": 0.0015798980602994561
+          },
+          "normalized_height": {
+            "p50": 0.00019267360618655235,
+            "p95": 0.0003806784949616754,
+            "p99": 0.00048163967199874274,
+            "max": 0.0016104177586910534
+          }
+        }
+      },
+      "donor": {
+        "strain": {
+          "strain_p50_p95_p99_max": [
+            0.9974354573724775,
+            1.2481858317040975,
+            1.7452412594966105,
+            16.34541712557964
+          ],
+          "edges_over_5": 68,
+          "edge_count": 150000
+        }
+      }
+    }
+  },
+  "blend": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/full-roster-v1/retro-native67-bary/original-dense-native-spatial.blend",
+  "visual_status": "Parameter reproduction only; consult reviewed SPATIAL_REPORT.md. No automatic visual acceptance.",
+  "elapsed_seconds": 97.37509417533875
+}

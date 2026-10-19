@@ -1,0 +1,45 @@
+{
+  "status": "OFFLINE AUDIT ONLY; no Unity/player/Blender or settings changes",
+  "head": "60967f8689dc8e500872ccbb15ae0ff9550aad5e",
+  "code": [
+    {
+      "name": "FighterView",
+      "ownedSHA": "2d6e83c6f2372219660d1105ccfba60a896c69a19e0c16ebe8c014354feb481e",
+      "mainSHA": "dc5bf551871784fe5f0c17e5c9cf497e96be83a4fd097d91f6a8f3030022634c",
+      "matches": false
+    },
+    {
+      "name": "CandidateFootGrounding",
+      "ownedSHA": "dc9dd3228b609e13fc877a15018e79cbdc84ed1f53bc4facbfcbb7614535f29d",
+      "mainSHA": "a90db8f33afd7dfb5150a306de405f9bbfeac6dfaf837925610134c0a7029f0a",
+      "matches": false
+    },
+    {
+      "name": "NativeSupportOverlay",
+      "ownedSHA": "70a4736dc4877894c63d32227c0a3d257ba20267e13e42fedbf994fafeeb4ed1",
+      "mainSHA": "929be4fac6d70f8ba8ebc4418366287db8f2f031ff21a3450f066bd533582587",
+      "matches": false
+    }
+  ],
+  "oldDependencyListingSHA": {
+    "CPU": "49ec9a05cbcb5402c9a85812e2734bdb3f9e94f7273bdf4cc1dd94c847766894",
+    "GPU": "49ec9a05cbcb5402c9a85812e2734bdb3f9e94f7273bdf4cc1dd94c847766894",
+    "GPUBatched": "49ec9a05cbcb5402c9a85812e2734bdb3f9e94f7273bdf4cc1dd94c847766894"
+  },
+  "localEvidence": {
+    ".tools/tripo-dense-review/shoe-unity/Assets/DenseSkinningBenchmark/Benchmark.unity": "4f61f2aff80800eae5ac7acf06dd6f2c9f1641ba64eb21a87682753b1f70aa7a",
+    ".tools/tripo-dense-review/shoe-unity/Assets/DenseSkinningBenchmark/DenseSkinningBenchmark.cs": "9ef56920730a001f5ed2d53ee2962e04325d0ea7f407ce5a80a80f9bece1dfb8",
+    ".tools/tripo-dense-review/shoe-unity/Assets/DenseSkinningBenchmark/DenseBenchmarkRenderCounter.cs": "72ce487e1c5dc5f8d7acaedb5acaa4372332f5ba6a343e53edfb42c2528f8721",
+    ".tools/tripo-dense-review/shoe-unity/ProjectSettings/ProjectSettings.asset": "3005e7e846ecab7bd7fa89b7d7e7fcda0588fc5fe136f4f3b847f82439dd04b6",
+    ".tools/tripo-dense-review/shoe-unity/Packages/manifest.json": "fcbc30d04151ace4525be5bfe6addf3f4f561ef3c293518e208ca318e367e0d4",
+    ".tools/tripo-dense-review/shoe-unity/Packages/packages-lock.json": "3577ba5ed071bc383294bfed0b63a517bbb7fd80287ba20180953c10c030be41",
+    ".tools/tripo-dense-review/shoe-unity/DenseSkinningBuilds/DenseSkinningEvidence/GPUBatched/summary.csv": "0bd09fcd41bf3d42bb98dea1a6846b49c5c25a81c544dd28319fc725dae02895",
+    ".tools/tripo-dense-review/shoe-unity/DenseSkinningBuilds/DenseSkinningEvidence/GPUBatched/runtime.json": "22203be91f20847c11eab54bb4da31a2084be7b7b1a07fe48ab88211e37960a7",
+    ".tools/tripo-dense-review/shoe-unity/DenseSkinningBuilds/DenseSkinningEvidence/GPUBatched/build-manifest.json": "78a08f8fb14f4eb53e69e4f0576efac08d4c314b261cb1b755a44abbee01e6d3"
+  },
+  "limits": [
+    "Old player binary/compiler assembly SHA not archived; apps removed",
+    "Asset dependency listings exclude benchmark source, editor builder, scene, package/import metadata",
+    "Current main project settings unchanged CPU0"
+  ]
+}

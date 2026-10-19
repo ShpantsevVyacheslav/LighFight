@@ -1,0 +1,211 @@
+{
+  "status": "MEASURED_SEAT_SURFACES_PENDING_SEATED_CHARACTER_POSE_VISUAL_CHECK",
+  "source": "art/source/meeting-tripo-v1/original-v1.glb",
+  "sourceSHA256": "70336cf944c64d94ae0ec4b94a58efce0d13006a036bf276a67325bd417d2cfd",
+  "coordinates": "Authored glTF Y-up metres; verify Unity FBX handedness in capture. Yaw convention: +Z forward, +90 faces +X.",
+  "seatDetection": "Transformed original furniture positions; upward-facing normals y>.65, seat band y[.54,.71], |x|>.65, spatial Z clusters. Medians of actual seat top vertices. Five chair clusters, not a guessed six.",
+  "maximumBackgroundCharacters": 2,
+  "performancePolicy": "Static seated low-LOD prefabs only; selected-only AddressableSelectedAssetProvider handles, exclude both active fighter IDs; defer-release after instance destruction; no live roster loading, no per-frame Animator.",
+  "anchors": [
+    {
+      "id": "window-front",
+      "review": {
+        "seatSurfaceCenter": [
+          0.952,
+          0.6134,
+          2.1793
+        ],
+        "pelvisTargetEstimate": [
+          0.952,
+          0.6983999999999999,
+          2.1793
+        ],
+        "floorRoot": [
+          0.952,
+          0,
+          2.1793
+        ]
+      },
+      "gameplay": {
+        "seatSurfaceCenter": [
+          0.952,
+          0.6134,
+          3.9793000000000003
+        ],
+        "pelvisTargetEstimate": [
+          0.952,
+          0.6983999999999999,
+          3.9793000000000003
+        ],
+        "floorRoot": [
+          0.952,
+          0,
+          3.9793000000000003
+        ]
+      },
+      "feetFloorY": 0,
+      "yawFaceTable": -90,
+      "notes": "Pelvis offset is a pose-authoring estimate; seat surface median is measured. Hips/thighs/hands/feet contact requires actual posed render."
+    },
+    {
+      "id": "window-back",
+      "review": {
+        "seatSurfaceCenter": [
+          1.004,
+          0.6122,
+          3.8282
+        ],
+        "pelvisTargetEstimate": [
+          1.004,
+          0.6971999999999999,
+          3.8282
+        ],
+        "floorRoot": [
+          1.004,
+          0,
+          3.8282
+        ]
+      },
+      "gameplay": {
+        "seatSurfaceCenter": [
+          1.004,
+          0.6122,
+          5.6282
+        ],
+        "pelvisTargetEstimate": [
+          1.004,
+          0.6971999999999999,
+          5.6282
+        ],
+        "floorRoot": [
+          1.004,
+          0,
+          5.6282
+        ]
+      },
+      "feetFloorY": 0,
+      "yawFaceTable": -90,
+      "notes": "Pelvis offset is a pose-authoring estimate; seat surface median is measured. Hips/thighs/hands/feet contact requires actual posed render."
+    },
+    {
+      "id": "rug-front",
+      "review": {
+        "seatSurfaceCenter": [
+          -0.962,
+          0.6134,
+          1.9406
+        ],
+        "pelvisTargetEstimate": [
+          -0.962,
+          0.6983999999999999,
+          1.9406
+        ],
+        "floorRoot": [
+          -0.962,
+          0,
+          1.9406
+        ]
+      },
+      "gameplay": {
+        "seatSurfaceCenter": [
+          -0.962,
+          0.6134,
+          3.7406
+        ],
+        "pelvisTargetEstimate": [
+          -0.962,
+          0.6983999999999999,
+          3.7406
+        ],
+        "floorRoot": [
+          -0.962,
+          0,
+          3.7406
+        ]
+      },
+      "feetFloorY": 0,
+      "yawFaceTable": 90,
+      "notes": "Pelvis offset is a pose-authoring estimate; seat surface median is measured. Hips/thighs/hands/feet contact requires actual posed render."
+    },
+    {
+      "id": "rug-middle",
+      "review": {
+        "seatSurfaceCenter": [
+          -0.966,
+          0.613,
+          3.011
+        ],
+        "pelvisTargetEstimate": [
+          -0.966,
+          0.698,
+          3.011
+        ],
+        "floorRoot": [
+          -0.966,
+          0,
+          3.011
+        ]
+      },
+      "gameplay": {
+        "seatSurfaceCenter": [
+          -0.966,
+          0.613,
+          4.811
+        ],
+        "pelvisTargetEstimate": [
+          -0.966,
+          0.698,
+          4.811
+        ],
+        "floorRoot": [
+          -0.966,
+          0,
+          4.811
+        ]
+      },
+      "feetFloorY": 0,
+      "yawFaceTable": 90,
+      "notes": "Pelvis offset is a pose-authoring estimate; seat surface median is measured. Hips/thighs/hands/feet contact requires actual posed render."
+    },
+    {
+      "id": "rug-back",
+      "review": {
+        "seatSurfaceCenter": [
+          -0.965,
+          0.6127,
+          4.0922
+        ],
+        "pelvisTargetEstimate": [
+          -0.965,
+          0.6977,
+          4.0922
+        ],
+        "floorRoot": [
+          -0.965,
+          0,
+          4.0922
+        ]
+      },
+      "gameplay": {
+        "seatSurfaceCenter": [
+          -0.965,
+          0.6127,
+          5.8922
+        ],
+        "pelvisTargetEstimate": [
+          -0.965,
+          0.6977,
+          5.8922
+        ],
+        "floorRoot": [
+          -0.965,
+          0,
+          5.8922
+        ]
+      },
+      "feetFloorY": 0,
+      "yawFaceTable": 90,
+      "notes": "Pelvis offset is a pose-authoring estimate; seat surface median is measured. Hips/thighs/hands/feet contact requires actual posed render."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "status": "EXPLORATORY_HYBRID_V2_NOT_PROMOTED",
+  "provenance": "Tripo table+chairs and fridge+microwave components + manually reconstructed photo-based architecture",
+  "baseBlend": "art/drafts/kitchen-hybrid-v1/kitchen-hybrid-v1.blend",
+  "baseBlendSHA256": "b297e5799b7af7bde03603d685fb7a32faf306c107df215e454f020693864e9e",
+  "newSource": "art/source/kitchen-tripo-v1/fridge-microwave-original-v4.glb",
+  "newSourceSHA256": "8b8d3029b3d66cedadf3fb0ac4dc1b9eebac2ca3ccd3b3ee445f22caaf039fdf",
+  "newSourceMeshHashes": {
+    "positionSHA256": "0917d5e92a986cee02c8a9b462455051453248b215822b9bd14a233dad2271b5",
+    "triangleSHA256": "b729f44ada29a86d99694bb9694ef2a5a7496aa89411993033e509e5290b845d",
+    "loopUVSHA256": "03d7e3aef38a788d3809614adab76692bf288fc91f1f30a3a2b2b7bfd1738549",
+    "vertices": 1026269,
+    "triangles": 1974944
+  },
+  "newSourceEmbeddedImages": [
+    {
+      "name": "lighfight-fridge-microwave-v4-original_basecolor.jpg",
+      "SHA256": "11e8e8f2c74d480fd5f4eeb41752774feafd55b3b2e5bbe229b5070f22ef63c4",
+      "bytes": 2397581
+    },
+    {
+      "name": "lighfight-fridge-microwave-v4-original_rm.jpg",
+      "SHA256": "967ab2c28f499489f5358bfa9673d8f23e22d4810063401b7d7d4110c0a49653",
+      "bytes": 861208
+    },
+    {
+      "name": "lighfight-fridge-microwave-v4-original_normal.png",
+      "SHA256": "06c08183e75ea2f8046fc493e18bcabd2359a9755d2bd1756fd20bf19fa92105",
+      "bytes": 2597724
+    }
+  ],
+  "newSourceMaterials": [
+    "tripo_material_adaa9881-9160-4148-a914-4d539453167d"
+  ],
+  "uniformParentScale": 2.0249887640449438,
+  "parentTranslation": [
+    0.3499999940395355,
+    2.4000000953674316,
+    0.0020000000949949026
+  ],
+  "newComponentWorldBoundsMin": [
+    -0.327859491109848,
+    2.0340030193328857,
+    0.0020000000949949026
+  ],
+  "newComponentWorldBoundsMax": [
+    1.0278594493865967,
+    2.7659971714019775,
+    1.9819998741149902
+  ],
+  "removedOnlyNamedBlockouts": [
+    "BLOCKOUT_Fridge",
+    "BLOCKOUT_Fridge_FreezerSeam",
+    "BLOCKOUT_MicrowaveCupboard",
+    "BLOCKOUT_Microwave",
+    "BLOCKOUT_Microwave_Front"
+  ],
+  "existingFurnitureHashes": {
+    "positionSHA256": "3bb4bfe4f28f80410f2a833edf784c69358933af717817a5bbb8ed5b1ef822f9",
+    "triangleSHA256": "f3624ca5495048b41e676655cc0068393908599fccd4a71cd3550902d2451e72",
+    "loopUVSHA256": "8568ef998a1bf1e74893fc3b299dc163f7312fb8748e1d24b21c81a1b0406a42",
+    "vertices": 1076312,
+    "triangles": 1988865
+  },
+  "allOtherObjectWorldMatricesExact": true,
+  "tableGeometryUVUnchanged": true,
+  "newGeometryUVUnchanged": true,
+  "remainingBlockouts": [
+    "BLOCKOUT_CoffeeCupboard",
+    "BLOCKOUT_CoffeeMachine"
+  ],
+  "limits": [
+    "Exploratory layout only, not finished arena.",
+    "Coffee cupboard/machine still unfinished blockouts pending authentic component.",
+    "Procedural floor material remains Blender-only lookdev until baked for glTF.",
+    "No Unity/mobile/performance acceptance."
+  ],
+  "sourceAndBasePreservedAfterRenders": true
+}

@@ -1,0 +1,30 @@
+{
+  "status": "DIAGNOSTIC_NOT_ACCEPTED",
+  "method": "art-directed broad upper-sleeve grab sculpt24mm with25mm axisclearance withGaussian brushand exactprotectedanchors; inverse exact LBS",
+  "sides": [
+    {
+      "side": "L",
+      "maskedVertices": 22098,
+      "movedVertices": 11044,
+      "maxDesiredDisplacementM": 0.02094665348317459,
+      "sculptStroke": {
+        "posedUpperArmCenterT": 0.65,
+        "gaussianSigmaUpperArmLength": 0.3,
+        "direction": "negative chest-up projectedperpendicularhumerus",
+        "maxBrushStrengthM": 0.024,
+        "artAuthored": true,
+        "minimumClothHeightAboveHumeralAxisM": 0.025
+      }
+    }
+  ],
+  "targetCount": 1,
+  "changedVertices": 11044,
+  "maxRestSpaceDeltaM": 0.021528495750954668,
+  "collarCentralChestExactZero": true,
+  "basePositionsSHA256": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+  "limitations": [
+    "One selected dance pose only; not portable animation accepted.",
+    "24mm posedgrab stroke is explicit art design, not source-authored anatomy; requirevisualcontinuity gate.",
+    "No source mesh/UV/skin weight changes; proposed art corrective may alter silhouette."
+  ]
+}

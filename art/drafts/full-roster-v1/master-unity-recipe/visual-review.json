@@ -1,0 +1,62 @@
+{
+  "status": "CANDIDATE_NOT_PROMOTED",
+  "reviewedFront": [
+    "action-guard-0-front.png",
+    "action-guard-50-front.png",
+    "action-guard-100-front.png",
+    "action-67-25-front.png",
+    "action-67-45-front.png",
+    "action-67-50-front.png",
+    "action-67-55-front.png",
+    "action-67-75-front.png"
+  ],
+  "reviewedBack": [
+    "action-67-50.png"
+  ],
+  "captureChecks": [
+    {
+      "file": "action-guard-0-front.png",
+      "range": 244
+    },
+    {
+      "file": "action-guard-50-front.png",
+      "range": 244
+    },
+    {
+      "file": "action-guard-100-front.png",
+      "range": 244
+    },
+    {
+      "file": "action-67-25-front.png",
+      "range": 244
+    },
+    {
+      "file": "action-67-45-front.png",
+      "range": 244
+    },
+    {
+      "file": "action-67-50-front.png",
+      "range": 244
+    },
+    {
+      "file": "action-67-55-front.png",
+      "range": 244
+    },
+    {
+      "file": "action-67-75-front.png",
+      "range": 244
+    }
+  ],
+  "observations": [
+    "Full original density visible; upper-arm twist correction sampled with preserved elbow/wrist endpoints.",
+    "Waist/sleeve layered surfaces require comparison with original rest geometry before surface acceptance."
+  ],
+  "open": [
+    "Full source-positive coefficient correspondence through Unity UV seams",
+    "Guard cyclic seam derivation and return transitions for Master",
+    "Native strikes, crouch and block with full runtime ordering",
+    "GPU/iPhone quality and thermal acceptance"
+  ],
+  "render": "Independent all-positive CPU LBS, neutral material; not GPU performance proof",
+  "reviewedContactSheet": "contact-front.jpg"
+}

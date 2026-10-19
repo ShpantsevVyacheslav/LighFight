@@ -1,0 +1,34 @@
+{
+  "source": "actual procedural top-face color evaluated as emission",
+  "candidate": "actual saved PNG reloaded sRGB evaluated as emission",
+  "probePixels": 262144,
+  "savedPNGNormalizedRGB_MAE": 0.001275933813303709,
+  "savedPNGNormalizedRGB_Max": 0.007843166589736938,
+  "savedPNGNormalizedRGB_P95": 0.003921568393707275,
+  "bakeResolution": [
+    2048,
+    2048
+  ],
+  "roughness": 0.55,
+  "metallic": 0.0,
+  "lightingBaked": false,
+  "normalMapAdded": false,
+  "limits": "Procedural-floor lookdev bake only. Source Tripo maps unchanged. Probe compares512px rendered filtered samples, not mathematical identity.",
+  "portableFloor": {
+    "file": "portable-floor.glb",
+    "SHA256": "ced88d3c78cc695a85c3d3eb874f2b4a81f27e56e7d3bbbb088d10d97ba48d9a",
+    "triangles": 12,
+    "meshes": 1,
+    "images": 1,
+    "hasPBRBaseColorTexture": true,
+    "scope": "Only manually authored floor exported; full master remains source-exact blend."
+  },
+  "independentSavedPNGByteComparison": {
+    "pixels": 262144,
+    "RGB8_MAE": 0.3253631591796875,
+    "RGB8_P95": 1.0,
+    "RGB8_Max": 2,
+    "pixelsOver2Fraction": 0.0,
+    "metricSpace": "Saved display PNG byte values; not linear radiometry."
+  }
+}

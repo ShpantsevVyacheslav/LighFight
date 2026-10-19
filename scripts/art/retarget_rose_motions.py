@@ -3,28 +3,38 @@ import bpy,json,math,sys
 from pathlib import Path
 from mathutils import Matrix,Vector
 root=Path('/Users/macbook1/Documents/ChatGPT/LighFight');folder=root/'.tools/meshy/motion-expansion';out=root/'unity/Assets/LighFight/Art/Drafts/Rose'
-island='--island' in sys.argv
-if island:
+original='--original-island' in sys.argv
+island='--island' in sys.argv or original
+if original:
+ bpy.ops.wm.open_mainfile(filepath=str(root/('art/source/original-island/provider-rigged.blend' if '--provider-rig' in sys.argv else 'art/source/original-island/rigged.blend')));out=root/'unity/Assets/LighFight/Art/Drafts/OriginalIsland';out.mkdir(parents=True,exist_ok=True)
+elif island:
  bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.fbx(filepath=str(root/'unity/Assets/LighFight/Art/Drafts/IslandMeshyStaticFists/island-finger-candidate.fbx'));out=root/'unity/Assets/LighFight/Art/Drafts/IslandCombat';out.mkdir(parents=True,exist_ok=True)
 else:bpy.ops.wm.open_mainfile(filepath=str(root/'art/source/rose-hands-v1/rigged.blend'))
 scene=bpy.context.scene;scene.render.fps=60;target=next(o for o in scene.objects if o.type=='ARMATURE');bodies=[o for o in scene.objects if o.type=='MESH' and any(m.type=='ARMATURE' and m.object==target for m in o.modifiers)];target.animation_data_create()
 for a in list(bpy.data.actions):bpy.data.actions.remove(a)
 names={a['action_id']:a['key'] for a in json.loads((folder/'library.json').read_text())};tasks=json.loads((root/'art/source/motion-expansion/tasks.json').read_text());audit=[]
 entries=[(str(t['action_id']),names[t['action_id']]) for t in tasks['animations']]+[(t['name'],t['name']) for t in tasks.get('custom_motions',[])]+([] if any(t['action_id']==689 for t in tasks['animations']) else [('Walk','Walk')])
+if '--review-only' in sys.argv:entries=entries[:1]
 for source_id,motion_name in entries:
  path=folder/(('191' if motion_name=='axeKick' else source_id)+'-animation_glb_url.glb')
  if not path.exists():continue
  before=set(bpy.data.objects);bpy.ops.import_scene.gltf(filepath=str(path));added=set(bpy.data.objects)-before;source=next(o for o in added if o.type=='ARMATURE');source_action=source.animation_data.action or next(a for a in bpy.data.actions if a.name.startswith(source.name))
  source.animation_data.action=source_action
  for track in source.animation_data.nla_tracks:track.mute=True
- action=bpy.data.actions.new(motion_name);target.animation_data.action=action;first,last=source_action.frame_range
+ action=bpy.data.actions.new(motion_name);action.use_fake_user=True;target.animation_data.action=action;first,last=source_action.frame_range
  if motion_name=='axeKick':last=first+180
  for frame in range(math.ceil(first),math.floor(last)+1):
   scene.frame_set(math.ceil(first) if motion_name=='axeKick' else frame)
   for bone in sorted(target.pose.bones,key=lambda b:len(b.parent_recursive)):
    if bone.name not in source.pose.bones:continue
    incoming=source.pose.bones[bone.name];bone.rotation_mode='QUATERNION'
-   if island:
+   if original:
+    rest=bone.bone.matrix_local.to_quaternion()
+    parent_rest=bone.parent.bone.matrix_local.to_quaternion() if bone.parent else Matrix.Identity(4).to_quaternion()
+    parent_pose=bone.parent.matrix.to_quaternion() if bone.parent else Matrix.Identity(4).to_quaternion()
+    bone.rotation_quaternion=(parent_rest.inverted()@rest).inverted()@parent_pose.inverted()@incoming.matrix.to_quaternion()
+    bone.location=Vector((0,0,0));bpy.context.view_layer.update()
+   elif island:
     desired=incoming.matrix.to_quaternion()@incoming.bone.matrix_local.to_quaternion().inverted()@bone.bone.matrix_local.to_quaternion()
     if (bone.parent.name if bone.parent else None)!=(incoming.parent.name if incoming.parent else None):raise RuntimeError("Skeleton hierarchy mismatch: "+bone.name)
     parent_rotation=(incoming.parent.matrix.to_quaternion()@incoming.parent.bone.matrix_local.to_quaternion().inverted()) if incoming.parent else Matrix.Identity(4).to_quaternion()
@@ -53,4 +63,5 @@ bpy.ops.object.select_all(action='DESELECT');target.select_set(True)
 for body in bodies:body.select_set(True)
 bpy.context.view_layer.objects.active=target
 bpy.ops.export_scene.fbx(filepath=str(out/('island-motions.fbx' if island else 'rose-motions.fbx')),use_selection=True,add_leaf_bones=False,bake_anim=True,bake_anim_use_all_actions=True,bake_anim_use_nla_strips=False,bake_anim_simplify_factor=0,path_mode='COPY',embed_textures=False)
-(root/('art/source/motion-expansion/island-baked-audit.json' if island else 'art/source/motion-expansion/rose-baked-audit.json')).write_text(json.dumps(audit,indent=2))
+if original:bpy.ops.wm.save_as_mainfile(filepath=str(root/'art/source/original-island/animated.blend'))
+(root/('art/source/original-island/motions.json' if original else 'art/source/motion-expansion/island-baked-audit.json' if island else 'art/source/motion-expansion/rose-baked-audit.json')).write_text(json.dumps(audit,indent=2))

@@ -1,0 +1,397 @@
+{
+  "method": "Actual evaluated semantic head vectors; rest heads from raw native clusters and original Rigify DEF rest. Pose mismatch is not skin-weight error.",
+  "limits": [
+    "Raw callback equality proves no C1, not native-vsRigify pose equivalence.",
+    "Rest head vectors differ anatomically; angular delta here is absolute world direction, not local bone quaternion error.",
+    "World -X camera depth is X coordinate; camera follows shared target."
+  ],
+  "poses": [
+    {
+      "phase": 0.45,
+      "limbs": [
+        {
+          "side": "Right",
+          "segment": "upperarm",
+          "nativeVectorM": [
+            -0.1205090715084225,
+            -0.035487592220306396,
+            -0.025728881359100342
+          ],
+          "rigifyVectorM": [
+            -0.13582110591232777,
+            -0.07058797776699066,
+            -0.022100746631622314
+          ],
+          "worldDirectionDeltaDeg": 11.392499010634856,
+          "nativeLengthMm": 128.2333063342262,
+          "rigifyLengthMm": 154.65600026560912,
+          "nativePoseVsRestDeg": 48.40119576362617,
+          "rigifyPoseVsRestDeg": 61.38221513162104,
+          "nativeRestLengthMm": 128.23330770538306,
+          "rigifyRestLengthMm": 154.65599983376075,
+          "nativeDepthDeltaMm": -120.5090715084225,
+          "rigifyDepthDeltaMm": -135.82110591232777
+        },
+        {
+          "side": "Right",
+          "segment": "forearm",
+          "nativeVectorM": [
+            -0.1298837959766388,
+            -0.034331075847148895,
+            0.02874988317489624
+          ],
+          "rigifyVectorM": [
+            -0.13057248294353485,
+            -0.04585527256131172,
+            0.006408631801605225
+          ],
+          "worldDirectionDeltaDeg": 10.447474280090828,
+          "nativeLengthMm": 137.38624024513518,
+          "rigifyLengthMm": 138.53862235954432,
+          "nativePoseVsRestDeg": 74.30822740332567,
+          "rigifyPoseVsRestDeg": 71.92402348514302,
+          "nativeRestLengthMm": 137.3861699424307,
+          "rigifyRestLengthMm": 138.5385133591625,
+          "nativeDepthDeltaMm": -129.8837959766388,
+          "rigifyDepthDeltaMm": -130.57248294353485
+        },
+        {
+          "side": "Left",
+          "segment": "upperarm",
+          "nativeVectorM": [
+            0.08845916390419006,
+            0.08148524165153503,
+            -0.03904569149017334
+          ],
+          "rigifyVectorM": [
+            0.10633842647075653,
+            0.08693346381187439,
+            -0.0710858702659607
+          ],
+          "worldDirectionDeltaDeg": 9.882071703926714,
+          "nativeLengthMm": 126.44933495113058,
+          "rigifyLengthMm": 154.65603456081487,
+          "nativePoseVsRestDeg": 60.577169235204295,
+          "rigifyPoseVsRestDeg": 58.03756678360137,
+          "nativeRestLengthMm": 126.44960835722632,
+          "rigifyRestLengthMm": 154.65599983376075,
+          "nativeDepthDeltaMm": 88.45916390419006,
+          "rigifyDepthDeltaMm": 106.33842647075653
+        },
+        {
+          "side": "Left",
+          "segment": "forearm",
+          "nativeVectorM": [
+            0.12339562177658081,
+            0.045925259590148926,
+            -0.02709782123565674
+          ],
+          "rigifyVectorM": [
+            0.11438798904418945,
+            0.0692325234413147,
+            -0.03626537322998047
+          ],
+          "worldDirectionDeltaDeg": 11.057663378138496,
+          "nativeLengthMm": 134.42433134582132,
+          "rigifyLengthMm": 138.53855649289687,
+          "nativePoseVsRestDeg": 69.98639904644392,
+          "rigifyPoseVsRestDeg": 68.37105539157172,
+          "nativeRestLengthMm": 134.4242319472164,
+          "rigifyRestLengthMm": 138.53851509111277,
+          "nativeDepthDeltaMm": 123.39562177658081,
+          "rigifyDepthDeltaMm": 114.38798904418945
+        }
+      ],
+      "neckToShoulder": [
+        {
+          "side": "Right",
+          "nativeMm": 42.80161329827021,
+          "rigifyMm": 28.249612971883604,
+          "nativeUpperarmMinusNeckMm": [
+            -77.00196071527898,
+            -68.93621385097504,
+            -67.80517101287842
+          ],
+          "rigifyUpperarmMinusNeckMm": [
+            -101.43972001969814,
+            -70.10847330093384,
+            -55.7822585105896
+          ]
+        },
+        {
+          "side": "Left",
+          "nativeMm": 42.80156858682049,
+          "rigifyMm": 28.249598626620436,
+          "nativeUpperarmMinusNeckMm": [
+            92.30075776576996,
+            65.50255417823792,
+            -48.454880714416504
+          ],
+          "rigifyUpperarmMinusNeckMm": [
+            103.91905158758163,
+            83.36855471134186,
+            -37.49215602874756
+          ]
+        }
+      ]
+    },
+    {
+      "phase": 0.5,
+      "limbs": [
+        {
+          "side": "Right",
+          "segment": "upperarm",
+          "nativeVectorM": [
+            -0.11096207797527313,
+            -0.04126614332199097,
+            -0.04927778244018555
+          ],
+          "rigifyVectorM": [
+            -0.12375171482563019,
+            -0.036559417843818665,
+            -0.08524912595748901
+          ],
+          "worldDirectionDeltaDeg": 11.392526059816797,
+          "nativeLengthMm": 128.23329199347552,
+          "rigifyLengthMm": 154.65604233872938,
+          "nativePoseVsRestDeg": 37.43291608867091,
+          "rigifyPoseVsRestDeg": 37.12220937592014,
+          "nativeRestLengthMm": 128.23330770538306,
+          "rigifyRestLengthMm": 154.65599983376075,
+          "nativeDepthDeltaMm": -110.96207797527313,
+          "rigifyDepthDeltaMm": -123.75171482563019
+        },
+        {
+          "side": "Right",
+          "segment": "forearm",
+          "nativeVectorM": [
+            0.0722179263830185,
+            -0.06810015439987183,
+            -0.09498375654220581
+          ],
+          "rigifyVectorM": [
+            0.053588613867759705,
+            -0.06305932253599167,
+            -0.11110681295394897
+          ],
+          "worldDirectionDeltaDeg": 10.447487179893528,
+          "nativeLengthMm": 137.38622175174075,
+          "rigifyLengthMm": 138.5385923840353,
+          "nativePoseVsRestDeg": 54.90286874444929,
+          "rigifyPoseVsRestDeg": 42.591132937879244,
+          "nativeRestLengthMm": 137.3861699424307,
+          "rigifyRestLengthMm": 138.5385133591625,
+          "nativeDepthDeltaMm": 72.2179263830185,
+          "rigifyDepthDeltaMm": 53.588613867759705
+        },
+        {
+          "side": "Left",
+          "segment": "upperarm",
+          "nativeVectorM": [
+            0.08908340334892273,
+            0.08402743935585022,
+            -0.03151130676269531
+          ],
+          "rigifyVectorM": [
+            0.09033194184303284,
+            0.11304539442062378,
+            -0.05458354949951172
+          ],
+          "worldDirectionDeltaDeg": 9.882104245929009,
+          "nativeLengthMm": 126.44930118755354,
+          "rigifyLengthMm": 154.65602087475648,
+          "nativePoseVsRestDeg": 64.01500948046224,
+          "rigifyPoseVsRestDeg": 68.45166197314072,
+          "nativeRestLengthMm": 126.44960835722632,
+          "rigifyRestLengthMm": 154.65599983376075,
+          "nativeDepthDeltaMm": 89.08340334892273,
+          "rigifyDepthDeltaMm": 90.33194184303284
+        },
+        {
+          "side": "Left",
+          "segment": "forearm",
+          "nativeVectorM": [
+            -0.027435988187789917,
+            -0.04802250862121582,
+            -0.12251949310302734
+          ],
+          "rigifyVectorM": [
+            -0.016598045825958252,
+            -0.027072399854660034,
+            -0.13484996557235718
+          ],
+          "worldDirectionDeltaDeg": 11.057657222363893,
+          "nativeLengthMm": 134.42440616323384,
+          "rigifyLengthMm": 138.53852595576842,
+          "nativePoseVsRestDeg": 31.674836899175215,
+          "rigifyPoseVsRestDeg": 24.074649644076608,
+          "nativeRestLengthMm": 134.4242319472164,
+          "rigifyRestLengthMm": 138.53851509111277,
+          "nativeDepthDeltaMm": -27.435988187789917,
+          "rigifyDepthDeltaMm": -16.598045825958252
+        }
+      ],
+      "neckToShoulder": [
+        {
+          "side": "Right",
+          "nativeMm": 42.80158779200764,
+          "rigifyMm": 28.24961438308086,
+          "nativeUpperarmMinusNeckMm": [
+            -72.26979732513428,
+            -65.04398584365845,
+            -75.45894384384155
+          ],
+          "rigifyUpperarmMinusNeckMm": [
+            -96.48965299129486,
+            -70.42084634304047,
+            -71.49296998977661
+          ]
+        },
+        {
+          "side": "Left",
+          "nativeMm": 42.80157875940123,
+          "rigifyMm": 28.249604583476394,
+          "nativeUpperarmMinusNeckMm": [
+            91.4144217967987,
+            67.00395047664642,
+            -49.030601978302
+          ],
+          "rigifyUpperarmMinusNeckMm": [
+            103.18818688392639,
+            82.30283856391907,
+            -33.94031524658203
+          ]
+        }
+      ]
+    },
+    {
+      "phase": 0.55,
+      "limbs": [
+        {
+          "side": "Right",
+          "segment": "upperarm",
+          "nativeVectorM": [
+            0.019265413284301758,
+            0.07657240331172943,
+            -0.10104101896286011
+          ],
+          "rigifyVectorM": [
+            0.020654141902923584,
+            0.0664384514093399,
+            -0.13812249898910522
+          ],
+          "worldDirectionDeltaDeg": 11.392503892752252,
+          "nativeLengthMm": 128.23328979248004,
+          "rigifyLengthMm": 154.65602519919068,
+          "nativePoseVsRestDeg": 58.581703643307904,
+          "rigifyPoseVsRestDeg": 44.19053480490249,
+          "nativeRestLengthMm": 128.23330770538306,
+          "rigifyRestLengthMm": 154.65599983376075,
+          "nativeDepthDeltaMm": 19.265413284301758,
+          "rigifyDepthDeltaMm": 20.654141902923584
+        },
+        {
+          "side": "Right",
+          "segment": "forearm",
+          "nativeVectorM": [
+            -0.03800421953201294,
+            0.0719301700592041,
+            -0.11070993542671204
+          ],
+          "rigifyVectorM": [
+            -0.014195054769515991,
+            0.0701640248298645,
+            -0.1186104416847229
+          ],
+          "worldDirectionDeltaDeg": 10.447486002707683,
+          "nativeLengthMm": 137.3861705892198,
+          "rigifyLengthMm": 138.53853917549606,
+          "nativePoseVsRestDeg": 53.77255570120201,
+          "rigifyPoseVsRestDeg": 45.06581068806949,
+          "nativeRestLengthMm": 137.3861699424307,
+          "rigifyRestLengthMm": 138.5385133591625,
+          "nativeDepthDeltaMm": -38.00421953201294,
+          "rigifyDepthDeltaMm": -14.195054769515991
+        },
+        {
+          "side": "Left",
+          "segment": "upperarm",
+          "nativeVectorM": [
+            0.05107748508453369,
+            -0.08101062476634979,
+            -0.0825698971748352
+          ],
+          "rigifyVectorM": [
+            0.038148462772369385,
+            -0.0997789055109024,
+            -0.11183637380599976
+          ],
+          "worldDirectionDeltaDeg": 9.882099092385774,
+          "nativeLengthMm": 126.44927333542866,
+          "rigifyLengthMm": 154.65610140865363,
+          "nativePoseVsRestDeg": 31.380114704655806,
+          "rigifyPoseVsRestDeg": 29.45626948206341,
+          "nativeRestLengthMm": 126.44960835722632,
+          "rigifyRestLengthMm": 154.65599983376075,
+          "nativeDepthDeltaMm": 51.07748508453369,
+          "rigifyDepthDeltaMm": 38.148462772369385
+        },
+        {
+          "side": "Left",
+          "segment": "forearm",
+          "nativeVectorM": [
+            0.012413561344146729,
+            -0.12767694890499115,
+            -0.04017961025238037
+          ],
+          "rigifyVectorM": [
+            0.024801433086395264,
+            -0.1209879219532013,
+            -0.0627673864364624
+          ],
+          "worldDirectionDeltaDeg": 11.057663408542316,
+          "nativeLengthMm": 134.42433138002139,
+          "rigifyLengthMm": 138.53856193044982,
+          "nativePoseVsRestDeg": 48.013452666308446,
+          "rigifyPoseVsRestDeg": 47.495191767425474,
+          "nativeRestLengthMm": 134.4242319472164,
+          "rigifyRestLengthMm": 138.53851509111277,
+          "nativeDepthDeltaMm": 12.413561344146729,
+          "rigifyDepthDeltaMm": 24.801433086395264
+        }
+      ],
+      "neckToShoulder": [
+        {
+          "side": "Right",
+          "nativeMm": 42.80160105755297,
+          "rigifyMm": 28.249779645889504,
+          "nativeUpperarmMinusNeckMm": [
+            -54.78385090827942,
+            84.25873145461082,
+            -70.85132598876953
+          ],
+          "rigifyUpperarmMinusNeckMm": [
+            -57.41247534751892,
+            108.96272957324982,
+            -65.90807437896729
+          ]
+        },
+        {
+          "side": "Left",
+          "nativeMm": 42.80161527907207,
+          "rigifyMm": 28.249762214145672,
+          "nativeUpperarmMinusNeckMm": [
+            53.54011058807373,
+            -84.92370322346687,
+            -70.11646032333374
+          ],
+          "rigifyUpperarmMinusNeckMm": [
+            71.58279418945312,
+            -100.13355314731598,
+            -65.97673892974854
+          ]
+        }
+      ]
+    }
+  ]
+}

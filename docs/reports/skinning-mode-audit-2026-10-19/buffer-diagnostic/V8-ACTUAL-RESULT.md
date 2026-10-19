@@ -1,0 +1,11 @@
+# V8 actual Greeting witness — raw stable, GPU pixels RED
+
+Sequential CPU build/player EXIT0(40.493/16.827s), GPU EXIT0(36.354/16.523s); explicit heavy release. Both runs independently passed known four-pose/heldout unique PNT layout/convention and all foreground ROI/outside0/held-state gates. No timing/V9 during this evidence.
+
+Both actors58949vertices: simultaneous current-buffer requests match each screenshot's EOF frame/draw IDs. All full raw buffers (including tangent w), decoded PNT and typed state agree byte-exact before↔after EACH PNG and across the TWO Greeting PNGs in each mode. Renderer/bind/bone/normal/blendshape/material/MPB/texture mip states unchanged; camera/light/post state unchanged except separately reported frame/global shader clock. Eighteen texture-property entries recorded; primary4k/derived2k maps are nonstreaming, loaded mip0, requested/desired-1, requestedLoaded=true. Runtime source inventory exact between CPU/GPU, compiled assembly maps exact, normalized scene identity exact SHA8e38d8a2... . No settings/threshold change.
+
+CPU Greeting repeat pixels exact. GPU Greeting repeat still fails existing strictmax16: maxRGB48,410pixels>2,26pixels>16,alphaMismatch0. Bbox[91,158,322,894]; opened actual actor crop and x8difference: sparse changes localized to left actor surfaces. Captured PNT variability is NOT observed during this failure. No claim that skeleton/skinning causes it. Raw current-buffer stability does not itself establish actual draw-bound buffer/constants; shader global clock advances and is reported, not silently held.
+
+CrossCPU/GPU firstGreeting maxRGB9/1pixel>2/alpha0; phase1 maxRGB2/alpha0. Greeting output-space crossPNT maximum vector differences actor0(P/N/T)=2.4303e-7/3.0084e-7/3.3750e-7, actor1=2.4257e-7/3.6041e-7/3.5763e-7, observational only. No fitted original tolerance, normal oracle or compute dispatch acceptance. Earlier V7/phase1 RED preserved.
+
+Small archive evidence/greeting-witness-v8 contains sources/manifests/logs, full JSON snapshots, reports, PNGs/crops/difference and actual-output SHA inventory. Raw/binary/full output retained under owned CurrentBufferBuildsV8. Next separately versioned V9 may inspect actual Metal commands/bindings, not infer dispatch from buffer existence. No timing permit.

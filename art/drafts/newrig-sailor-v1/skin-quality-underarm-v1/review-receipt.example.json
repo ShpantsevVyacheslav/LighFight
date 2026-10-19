@@ -1,0 +1,11 @@
+{
+  "reviewed": false,
+  "reviewedBy": "agent/name after viewing the actual mask images",
+  "maskSHA256": "copy exact region-proposals.npz hash after source run",
+  "images": [
+    {"path": "masks-clay-v1/mask-front.png", "sha256": "actual image hash"},
+    {"path": "masks-clay-v1/mask-backthreequarter.png", "sha256": "actual image hash"},
+    {"path": "masks-clay-v1/mask-side.png", "sha256": "actual image hash"}
+  ],
+  "limitations": "provisional anatomical envelopes; document overlap/collar boundary limitations before a correction"
+}

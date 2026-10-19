@@ -19,12 +19,20 @@ public static class CharacterQualityReview {
    var prefab=AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/LighFight/Art/Fighters/fighter-{id}.prefab");
    if(prefab==null)prefab=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset").fighters[id];
    var obj=Object.Instantiate(prefab);
+   if(tag.StartsWith("geometry-candidate")&&id==3){
+    var sourceSkin=obj.GetComponentInChildren<SkinnedMeshRenderer>();
+    var candidate=AssetDatabase.LoadAssetAtPath<Mesh>(IslandSurfaceRefinement.MeshPath);
+    if(candidate==null || candidate.vertexCount!=sourceSkin.sharedMesh.vertexCount)throw new System.Exception("Missing matching refined mesh");
+    sourceSkin.sharedMesh=candidate;
+    var materials=sourceSkin.sharedMaterials;for(int i=0;i<materials.Length;i++){materials[i]=new Material(materials[i]);if(materials[i].HasProperty("_NormalStrength"))materials[i].SetFloat("_NormalStrength",.06f);}if(tag.Contains("clay"))foreach(var material in materials){material.mainTexture=Texture2D.whiteTexture;if(material.HasProperty("_DetailSkinTex"))material.SetTexture("_DetailSkinTex",Texture2D.whiteTexture);if(material.HasProperty("_NormalStrength"))material.SetFloat("_NormalStrength",0);if(material.HasProperty("_DetailNormalStrength"))material.SetFloat("_DetailNormalStrength",0);material.color=new Color(.6f,.6f,.6f);}sourceSkin.sharedMaterials=materials;
+   }
    obj.GetComponent<FighterView>().Pose(new Fighter{Guard=true},1,0);var animator=obj.GetComponent<Animator>();if(animator!=null)animator.Update(0);var correctives=obj.GetComponent<JointCorrectives>();if(correctives!=null)correctives.Apply();
    Bounds bounds=new Bounds();bool first=true;
    foreach(var skin in obj.GetComponentsInChildren<SkinnedMeshRenderer>()) {var mesh=new Mesh();skin.BakeMesh(mesh);var frozen=new GameObject("Frozen");frozen.transform.SetParent(skin.transform,false);frozen.AddComponent<MeshFilter>().sharedMesh=mesh;var r=frozen.AddComponent<MeshRenderer>();r.sharedMaterials=skin.sharedMaterials;skin.enabled=false;if(first){bounds=r.bounds;first=false;}else bounds.Encapsulate(r.bounds);}
    if(first)foreach(var renderer in obj.GetComponentsInChildren<Renderer>()){if(first){bounds=renderer.bounds;first=false;}else bounds.Encapsulate(renderer.bounds);}
    camera.transform.position=bounds.center+new Vector3(.35f,.08f,-bounds.size.y*1.9f);camera.transform.LookAt(bounds.center);
    if(portraits){var target=bounds.center+Vector3.up*bounds.size.y*.28f;camera.transform.position=target+new Vector3(.12f,0,-bounds.size.y*.72f);camera.transform.LookAt(target);}
+   if(tag.Contains("close")){var focus=obj.GetComponent<FighterView>().BonePoint("Head",Vector3.up*1.6f)+Vector3.down*.10f;camera.transform.position=focus+new Vector3(.3f,.02f,-1.25f);camera.transform.LookAt(focus);}
    int width=portraits?180:900,height=portraits?200:1000;var rt=new RenderTexture(width,height,24);camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;var png=new Texture2D(width,height,TextureFormat.RGB24,false);png.ReadPixels(new Rect(0,0,width,height),0,0);png.Apply();File.WriteAllBytes(portraits?$"Assets/LighFight/Resources/Selection/fighter-{id}.png":Path.Combine(folder,$"fighter-{id}-{tag}.png"),png.EncodeToPNG());RenderTexture.active=null;camera.targetTexture=null;Object.DestroyImmediate(rt);Object.DestroyImmediate(png);Object.DestroyImmediate(obj);
   }
  }

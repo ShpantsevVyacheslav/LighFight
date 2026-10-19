@@ -1,0 +1,23 @@
+{
+  "pid": 92771,
+  "exit": 0,
+  "reason": "",
+  "seconds": 47.515846967697144,
+  "peakOwnedRSSBytes": 2372059136,
+  "command": [
+    "/Users/macbook1/Applications/Blender.app/Contents/MacOS/Blender",
+    "-b",
+    "--factory-startup",
+    "-t",
+    "6",
+    "--python-exit-code",
+    "1",
+    "-P",
+    "art/drafts/meeting-meshy-v1/tools/rebake_prop_lod.py",
+    "--",
+    "art/source/meeting-meshy-props-v1/cabinet/model.glb",
+    "art/drafts/meeting-meshy-v1/lod/cabinet-40k-weld.glb",
+    "art/drafts/meeting-meshy-v1/lod/cabinet-40k-rebaked-v2.glb",
+    "2048"
+  ]
+}

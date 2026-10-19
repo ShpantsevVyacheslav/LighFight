@@ -1,0 +1,47 @@
+{
+  "status": "V3_NEW_ARTIST_MODEL_NO_VOLUME_COMPENSATION",
+  "sourceView": "../weight-witness-v1/renders/worst-edge-side.png",
+  "sourceFrame": "dance50 original C1 ON",
+  "dimensions": [
+    640,
+    768
+  ],
+  "targetMeaning": "Fill the narrow visible internal under-sleeve groove into a continuous shallow concave garment transition, retaining outer sleeve cap and torso silhouette. Explicit surface targets, not max-ratio minimization or radial volume inflation.",
+  "creaseControls": [
+    {
+      "pixelTopLeft": [
+        178,
+        499
+      ],
+      "towardCameraMM": 1.0
+    },
+    {
+      "pixelTopLeft": [
+        226,
+        488
+      ],
+      "towardCameraMM": 3.0
+    },
+    {
+      "pixelTopLeft": [
+        276,
+        473
+      ],
+      "towardCameraMM": 3.0
+    },
+    {
+      "pixelTopLeft": [
+        322,
+        451
+      ],
+      "towardCameraMM": 1.0
+    }
+  ],
+  "creaseSupportRadiusM": 0.04,
+  "maximumTotalDeltaM": 0.0035,
+  "maskFeatherM": 0.006,
+  "inverseConditionMaximum": 50,
+  "scope": "Four explicit original-garment ray-hit controls; compact40mmC2 interpolating support, maximum3.5mm displacement, exact protected additional-zero. No source edits or original-map changes.",
+  "sourceViewSHA256": "8a3b2f1425234b31b2dd7af6de27280632f2f25959b323c5370cb75d1eddc4c2",
+  "physicalModel": "Free garment may change air gap. Signed surface volume and area are reported without forcing zero volume through an unrelated torso dent. Original R4 volume-constraint RED retained separately."
+}

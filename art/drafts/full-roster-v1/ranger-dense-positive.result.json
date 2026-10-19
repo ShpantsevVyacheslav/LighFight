@@ -1,0 +1,29 @@
+{
+  "pid": 18241,
+  "exit": 1,
+  "reason": "",
+  "seconds": 87.46673893928528,
+  "peakOwnedRSSBytes": 1887469568,
+  "command": [
+    "/Users/macbook1/Applications/Blender.app/Contents/MacOS/Blender",
+    "-b",
+    "--factory-startup",
+    "-t",
+    "6",
+    "--python-exit-code",
+    "1",
+    "-P",
+    "art/drafts/full-roster-v1/reconstruct_dense_preserving_weights.py",
+    "--",
+    "--source",
+    "art/source/ranger-tripo-v1/original.glb",
+    "--donor",
+    "art/source/ranger-tripo-v1/unity-pack/tripo_convert_2ffb9d33-6de4-4535-a60c-7eee8e972039.fbx",
+    "--out",
+    "art/drafts/full-roster-v1/ranger-dense-positive",
+    "--min-weight",
+    "0",
+    "--metrics-samples",
+    "5000"
+  ]
+}

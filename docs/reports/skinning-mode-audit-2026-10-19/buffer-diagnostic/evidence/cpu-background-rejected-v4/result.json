@@ -1,0 +1,37 @@
+{
+  "status": "REJECTED visibility/background contract; no original-actor/GPU/timing acceptance",
+  "sourceSnapshotSHA": "1ba15bd0ef44d7f56662c0cbc97162bc0cdca39e906be866745cacb2044085f9",
+  "scope": "frozen original RED snapshot, excludes new production Shadowless material fix",
+  "cpuBuildExit": 0,
+  "cpuPlayerExit": 1,
+  "foregroundGT2Pixels": 49952,
+  "outsideGT2Pixels": 750048,
+  "bothCapturesEOF": true,
+  "automaticRendersPerFence": 1,
+  "stableStateHashEqual": true,
+  "backgroundOnRGBA": [
+    25,
+    27,
+    30,
+    154
+  ],
+  "backgroundOffRGBA": [
+    22,
+    24,
+    29,
+    107
+  ],
+  "probeActuallySeenInPNG": true,
+  "gpuRun": false,
+  "timingRun": false,
+  "hypotheses": [
+    "empty-vs-nonempty camera HDR/resolve/clear path",
+    "screenshot active-render-target or sRGB/blend state"
+  ],
+  "notEstablished": [
+    "rootBone rigid output convention across heldout",
+    "actual original vertex-buffer parity",
+    "compute dispatch",
+    "cause of original phase1 GPU repeat failure"
+  ]
+}

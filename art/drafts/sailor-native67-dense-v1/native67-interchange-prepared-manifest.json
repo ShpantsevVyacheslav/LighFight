@@ -1,0 +1,35 @@
+{
+  "status": "PREPARED_OFFLINE_NOT_EXECUTED",
+  "budgetSeconds": 600,
+  "positiveBoundsTests": "4/4PASS (including994452-IDexactroundtrip)",
+  "referenceCompile": "py_compilePASS",
+  "files": [
+    {
+      "path": "NATIVE67-INTERCHANGE-PLAN.md",
+      "bytes": 6367,
+      "sha256": "ba639be99bba9d1a9052545fce986956f9c67d3b4d3ad779a51ca9f3d01c23c9"
+    },
+    {
+      "path": "tools/export_native67_interchange.py",
+      "bytes": 19534,
+      "sha256": "72f9837e0c64489145cdd6294adf18c5db64ab1addd2676e96d814234ee1b7ea"
+    },
+    {
+      "path": "tools/native67_interchange_core.py",
+      "bytes": 4383,
+      "sha256": "526880f0b506a0bd20f8ff37809eb1e751be79aeb1abd4589d81f429f8bef731"
+    },
+    {
+      "path": "tools/test_interchange_core.py",
+      "bytes": 1458,
+      "sha256": "2ff4c6cc7299604ff9dbcc46d0b55f63a24d7db3a6c8e702a2289db5b355ed82"
+    }
+  ],
+  "sourceIDSchema": {
+    "UVname": "__LF_SOURCE_VERTEX_ID_V1",
+    "denominator": 1048576,
+    "originalUVUnchanged": true,
+    "sourceOriginalIDCoverage": 994452
+  },
+  "engineLaunched": false
+}

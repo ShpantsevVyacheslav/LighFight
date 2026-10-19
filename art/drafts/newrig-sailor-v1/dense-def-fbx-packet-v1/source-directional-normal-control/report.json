@@ -1,0 +1,87 @@
+{
+  "status": "SOURCE_LIGHTING_CONTROL_NOT_ENGINE_PARITY",
+  "clip": "dance_01",
+  "phase": 0.5,
+  "sourceGeometryExact": true,
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sunEnergy": 1.1,
+  "ambientWorldStrength": 0.35,
+  "unityEulerDegrees": [
+    35,
+    -25,
+    0
+  ],
+  "unityForward": [
+    -0.34618860483169556,
+    -0.5735764503479004,
+    0.7424038648605347
+  ],
+  "blenderRayDirection": [
+    -0.34618860483169556,
+    -0.7424038648605347,
+    -0.5735764503479004
+  ],
+  "conversion": "canonical inverse B: Unity(x,y,z) -> Blender(x,-z,y); not actual Unity importer C reflection",
+  "cameraWorld": [
+    0.2809053659439087,
+    -1.7686489820480347,
+    0.8492043614387512
+  ],
+  "cameraTarget": [
+    0.2809053659439087,
+    0.23135103285312653,
+    0.7892043590545654
+  ],
+  "orthoScale": 0.6399999856948853,
+  "support": [
+    {
+      "side": "L",
+      "supportDeg": 10.5678028608327,
+      "armElevationDeg": -23.91399076138615,
+      "clavicleElevationDeg": -9.445916957509585
+    },
+    {
+      "side": "R",
+      "supportDeg": 13.492048168557229,
+      "armElevationDeg": -28.78080732088814,
+      "clavicleElevationDeg": -19.562687742860984
+    }
+  ],
+  "materials": [
+    {
+      "name": "tripo_mat_7b8f380e",
+      "normalLinks": 1
+    }
+  ],
+  "limitations": [
+    "Cycles SUN/world environment is a source control, not a calibrated Unity BRDF/IBL match.",
+    "PNG Standard display transfer; EXR stores scene-linear render.",
+    "No geometry, source file, texture or scalar changes."
+  ],
+  "files": [
+    {
+      "name": "normal-OFF-diagnostic.exr",
+      "bytes": 1991998,
+      "sha256": "0259b9c742fd927df232b0704f98ef959ccd1c6a67c3b7abe651828dbc6f5668"
+    },
+    {
+      "name": "normal-OFF-diagnostic.png",
+      "bytes": 574731,
+      "sha256": "9c94bf08d6f421bc75fd548970277573fb05a3a472ab4b7d6062c10fee46e197"
+    },
+    {
+      "name": "normal-source-1.exr",
+      "bytes": 1994864,
+      "sha256": "7136cfeb46527b46300f46956931d26965e3c7c28854493e28a012fc719f7627"
+    },
+    {
+      "name": "normal-source-1.png",
+      "bytes": 588651,
+      "sha256": "2a8e47e588a1da9134bb515c34817eebe90f5635c689dc535c4df1ccdb55ee24"
+    }
+  ],
+  "visualObservation": "Original normal1 visibly produces strongly rippled/specular cloth in Blender; diagnostic normalOFF is smoother and matte. This reproduces the normal-driven appearance outside Unity, without establishing calibrated BRDF/IBL equality or identifying a physically incorrect source normal.",
+  "processExitCode": 0,
+  "sourceFilesModified": false
+}

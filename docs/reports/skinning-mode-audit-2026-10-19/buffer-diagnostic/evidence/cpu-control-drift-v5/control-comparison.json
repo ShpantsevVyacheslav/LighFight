@@ -1,0 +1,68 @@
+{
+  "corners": {
+    "ON1": [
+      28,
+      29,
+      31,
+      205
+    ],
+    "ON2": [
+      26,
+      27,
+      30,
+      176
+    ],
+    "OFF1": [
+      25,
+      26,
+      30,
+      150
+    ],
+    "OFF2": [
+      23,
+      25,
+      29,
+      124
+    ],
+    "ON3": [
+      21,
+      24,
+      29,
+      98
+    ]
+  },
+  "comparisons": [
+    {
+      "a": "ON1",
+      "b": "ON2",
+      "maxRGB": 28,
+      "RGBgt2Pixels": 29991,
+      "alphaMismatchPixels": 769941,
+      "maxAlpha": 29
+    },
+    {
+      "a": "OFF1",
+      "b": "OFF2",
+      "maxRGB": 17,
+      "RGBgt2Pixels": 577,
+      "alphaMismatchPixels": 799389,
+      "maxAlpha": 26
+    },
+    {
+      "a": "ON2",
+      "b": "OFF1",
+      "maxRGB": 119,
+      "RGBgt2Pixels": 29943,
+      "alphaMismatchPixels": 799309,
+      "maxAlpha": 105
+    },
+    {
+      "a": "ON1",
+      "b": "ON3",
+      "maxRGB": 81,
+      "RGBgt2Pixels": 800000,
+      "alphaMismatchPixels": 770485,
+      "maxAlpha": 107
+    }
+  ]
+}

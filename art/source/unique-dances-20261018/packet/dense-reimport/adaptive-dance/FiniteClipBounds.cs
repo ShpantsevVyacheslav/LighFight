@@ -1,0 +1,36 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Globalization;
+namespace DenseRigifyReview.Adaptive {
+// Offline tool. FINITE sampled coverage only: no continuous-motion certificate.
+public static class FiniteClipBounds {
+ public static double[] Domain(double[] keys,double duration,int hz) {
+  if(keys==null||keys.Length<2||keys[0]!=0||keys[keys.Length-1]!=duration||hz<1||hz>1000)throw new ArgumentException("Complete domain");
+  var set=new SortedSet<double>();double previous=-1;
+  foreach(double t in keys){if(!MathD.Finite(t)||t<=previous||t>duration)throw new ArgumentException("Key order");set.Add(t);previous=t;}
+  for(int i=0;i<=Math.Ceiling(duration*hz);i++)set.Add(Math.Min(duration,(double)i/hz));
+  var result=new double[set.Count];set.CopyTo(result);return result;
+ }
+ public sealed class Accumulator {
+  public readonly double[] Min={double.PositiveInfinity,double.PositiveInfinity,double.PositiveInfinity},Max={double.NegativeInfinity,double.NegativeInfinity,double.NegativeInfinity};
+  public readonly double[] MinTime=new double[3],MaxTime=new double[3];public readonly int[] MinVertex=new int[3],MaxVertex=new int[3];
+  readonly int vertices,poses;int pose,count;double time;bool active;
+  public Accumulator(int vertices,int poses){if(vertices<1||poses<1)throw new ArgumentException();this.vertices=vertices;this.poses=poses;}
+  public void Begin(double t){if(active||pose>=poses||!MathD.Finite(t))throw new InvalidOperationException();active=true;count=0;time=t;}
+  public void Add(int index,double x,double y,double z){if(!active||index!=count||count>=vertices||!MathD.Finite(x)||!MathD.Finite(y)||!MathD.Finite(z))throw new InvalidOperationException("Incomplete/nonfinite surface");
+   for(int a=0;a<3;a++){double v=a==0?x:a==1?y:z;if(v<Min[a]){Min[a]=v;MinTime[a]=time;MinVertex[a]=index;}if(v>Max[a]){Max[a]=v;MaxTime[a]=time;MaxVertex[a]=index;}}count++;}
+  public void End(){if(!active||count!=vertices)throw new InvalidOperationException("All vertices required");active=false;pose++;}
+  public double[] Finish(double absoluteMargin,double relativeMargin){if(active||pose!=poses||absoluteMargin<0||relativeMargin<0||!MathD.Finite(absoluteMargin)||!MathD.Finite(relativeMargin))throw new InvalidOperationException("Partial bounds cannot publish");var r=new double[6];for(int a=0;a<3;a++){double m=absoluteMargin+relativeMargin*(Max[a]-Min[a]);r[a]=Min[a]-m;r[a+3]=Max[a]+m;}return r;}
+ }
+ public static int Main(string[] args){try {if(args.Length==1&&args[0]=="--test"){Test();return 0;}if(args.Length!=4)throw new ArgumentException("keys.nda original.mesh output.json absoluteNativeMargin");
+  AdaptiveDanceData data;using(var f=File.OpenRead(args[0]))data=AdaptiveDanceData.Read(f);double[] times=Domain(data.times,data.Duration,120);
+  int n;double[] p,w;int[] j;using(var r=new BinaryReader(File.OpenRead(args[1]))){if(r.ReadUInt32()!=0x314d4246)throw new InvalidDataException("FBM1");n=r.ReadInt32();if(n!=994452)throw new InvalidDataException("Expected complete original mesh");p=new double[n*3];w=new double[n*4];j=new int[n*4];for(int i=0;i<p.Length;i++)p[i]=r.ReadSingle();for(int i=0;i<j.Length;i++){j[i]=r.ReadInt32();if(j[i]<0||j[i]>=data.BoneCount)throw new InvalidDataException();}for(int i=0;i<w.Length;i++)w[i]=r.ReadSingle();if(r.BaseStream.Position!=r.BaseStream.Length)throw new InvalidDataException();}
+  var eval=new AdaptiveDanceEvaluator(data);var acc=new Accumulator(n,times.Length);var clock=System.Diagnostics.Stopwatch.StartNew();
+  int completed=0;double nextProgress=30;foreach(double t in times){eval.Evaluate(t);acc.Begin(t);var m=eval.WorldSkin;for(int v=0;v<n;v++){double x=0,y=0,z=0;for(int k=0;k<4;k++){int q=v*4+k,b=j[q]*16;double weight=w[q],px=p[v*3],py=p[v*3+1],pz=p[v*3+2];x+=weight*(m[b]*px+m[b+1]*py+m[b+2]*pz+m[b+3]);y+=weight*(m[b+4]*px+m[b+5]*py+m[b+6]*pz+m[b+7]);z+=weight*(m[b+8]*px+m[b+9]*py+m[b+10]*pz+m[b+11]);} // Fixed C=ReflectX*B, source metres -> Unity source frame.
+    acc.Add(v,-x,z,-y);}acc.End();completed++;if(clock.Elapsed.TotalSeconds>=nextProgress){Console.Error.WriteLine("PROGRESS poses="+completed+"/"+times.Length+" sourceSeconds="+t.ToString("R",CultureInfo.InvariantCulture)+" wallSeconds="+clock.Elapsed.TotalSeconds.ToString("F1",CultureInfo.InvariantCulture));nextProgress=clock.Elapsed.TotalSeconds+30;}if(clock.Elapsed.TotalSeconds>1200)throw new TimeoutException("Budget exhausted; no published bounds");}
+  double margin=double.Parse(args[3],CultureInfo.InvariantCulture);var bounds=acc.Finish(margin,0);string output="{\"coverage\":\"FINITE_120HZ_ALL_SOURCE_KEYS_NOT_CONTINUOUS\",\"vertices\":"+n+",\"poses\":"+times.Length+",\"seconds\":"+clock.Elapsed.TotalSeconds.ToString("R",CultureInfo.InvariantCulture)+",\"absoluteNativeMargin\":"+margin.ToString("R",CultureInfo.InvariantCulture)+",\"bounds\":"+ArrayJson(bounds)+",\"minTimes\":"+ArrayJson(acc.MinTime)+",\"maxTimes\":"+ArrayJson(acc.MaxTime)+"}";File.WriteAllText(args[2]+".pending",output);File.Move(args[2]+".pending",args[2]);Console.WriteLine(output);return 0;
+ }catch(Exception e){Console.Error.WriteLine(e);return 1;}}
+ static string ArrayJson(double[] a){return "["+string.Join(",",Array.ConvertAll(a,x=>x.ToString("R",CultureInfo.InvariantCulture)))+"]";}
+ static void Test(){var d=Domain(new[]{0.0,.003,1.0},1,120);if(Array.IndexOf(d,.003)<0||d[0]!=0||d[d.Length-1]!=1)throw new Exception("Domain");var a=new Accumulator(2,1);a.Begin(0);a.Add(0,-1,2,3);bool rejected=false;try{a.Finish(.1,0);}catch(InvalidOperationException){rejected=true;}if(!rejected)throw new Exception("Partial accepted");a.Add(1,4,-2,0);a.End();var b=a.Finish(.1,0);if(b[0]!=-1.1||b[4]!=2.1)throw new Exception("Margin");foreach(double yaw in new[]{-90.0,90.0,170.0})foreach(double scale in new[]{.7,1.0,1.8}){double r=yaw*Math.PI/180,c=Math.Cos(r),q=Math.Sin(r);double[] lo={double.PositiveInfinity,double.PositiveInfinity,double.PositiveInfinity},hi={double.NegativeInfinity,double.NegativeInfinity,double.NegativeInfinity};for(int k=0;k<8;k++){double x=b[(k&1)==0?0:3],y=b[(k&2)==0?1:4],z=b[(k&4)==0?2:5];double[] v={2.1+scale*(c*x+q*z),-.3+scale*y,1.7+scale*(-q*x+c*z)};for(int axis=0;axis<3;axis++){lo[axis]=Math.Min(lo[axis],v[axis]);hi[axis]=Math.Max(hi[axis],v[axis]);}}for(int k=0;k<100;k++){double u=k/99.0,x=b[0]*(1-u)+b[3]*u,y=b[1]*u+b[4]*(1-u),z=b[2]*(1-u)+b[5]*u;double[] v={2.1+scale*(c*x+q*z),-.3+scale*y,1.7+scale*(-q*x+c*z)};for(int axis=0;axis<3;axis++)if(v[axis]<lo[axis]-1e-12||v[axis]>hi[axis]+1e-12)throw new Exception("Root transform bounds");}}Console.WriteLine("PASS domain, key retention, incomplete fail-closed, all-vertex bounds, margin, yaw -90/90/170 and scale .7/1/1.8");}
+}}

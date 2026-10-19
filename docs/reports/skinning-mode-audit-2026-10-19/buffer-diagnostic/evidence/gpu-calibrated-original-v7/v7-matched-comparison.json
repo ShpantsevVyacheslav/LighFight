@@ -1,0 +1,302 @@
+{
+  "status": "OBSERVATIONAL ONLY; no original PNT tolerance/dispatch/performance acceptance",
+  "identity": {
+    "CPU": {
+      "sourceSnapshotSHA": "1ba15bd0ef44d7f56662c0cbc97162bc0cdca39e906be866745cacb2044085f9",
+      "sceneSHA": "e0ce5323be84ad72de61464b4856d5dd66c1656c8293de16f34167bd93ed7455",
+      "mode": "CPU",
+      "unity": "6000.3.26f1",
+      "api": "Metal",
+      "dependencySHA256": "b345fb8a9a4ac85aa79fcbbe2c2d53837cb90d664bb163ea12a40bb4737cb562",
+      "projectSettingsSHA256": "23e0805eaeba8d170eeedb24f5d5d3680d8d789baba688533b2fad650da4883c",
+      "scope": "Mac-only; configuration is not proof of GPU execution",
+      "numericMode": 0,
+      "width": 800,
+      "height": 1000,
+      "warmup": 120,
+      "frames": 200,
+      "development": true,
+      "automaticSingleCamera": true,
+      "frameTimingStats": true
+    },
+    "GPU": {
+      "sourceSnapshotSHA": "1ba15bd0ef44d7f56662c0cbc97162bc0cdca39e906be866745cacb2044085f9",
+      "sceneSHA": "1295f669f17abc9ca3b08ee47b7191ba1a9a9ec75fff3c70106af6c46c025b9f",
+      "mode": "GPU",
+      "unity": "6000.3.26f1",
+      "api": "Metal",
+      "dependencySHA256": "b345fb8a9a4ac85aa79fcbbe2c2d53837cb90d664bb163ea12a40bb4737cb562",
+      "projectSettingsSHA256": "23e0805eaeba8d170eeedb24f5d5d3680d8d789baba688533b2fad650da4883c",
+      "scope": "Mac-only; configuration is not proof of GPU execution",
+      "numericMode": 1,
+      "width": 800,
+      "height": 1000,
+      "warmup": 120,
+      "frames": 200,
+      "development": true,
+      "automaticSingleCamera": true,
+      "frameTimingStats": true
+    },
+    "compiledAssemblyMapsIdentical": true
+  },
+  "modes": {
+    "CPU": {
+      "layout": {
+        "positionOffset": 0,
+        "normalOffset": 12,
+        "tangentOffset": 24,
+        "stride": 40,
+        "status": "PASS controlled3pose+heldout4th Float32 layout/convention; original mesh still requires validation",
+        "convention": "rootBone-rigid-local-linear-normal"
+      },
+      "startup": [
+        {
+          "stage": "entry",
+          "utc": "2026-10-18T23:04:43.0704170Z",
+          "uptime": 2.0555836686507942,
+          "frame": 1,
+          "splashFinished": false
+        },
+        {
+          "stage": "finished",
+          "utc": "2026-10-18T23:04:43.5195890Z",
+          "uptime": 2.500368626650794,
+          "frame": 1171,
+          "splashFinished": true
+        },
+        {
+          "stage": "settled",
+          "utc": "2026-10-18T23:04:45.5214050Z",
+          "uptime": 4.502197793650794,
+          "frame": 5218,
+          "splashFinished": true
+        }
+      ],
+      "repeat": [
+        {
+          "actor": 0,
+          "suffix": ".raw",
+          "byteIdentical": true,
+          "sha256": [
+            "b806e2a6aaa60dd38f74dc136d4a9c6d0e0de8d69616aa745388983ed96e2ab5",
+            "b806e2a6aaa60dd38f74dc136d4a9c6d0e0de8d69616aa745388983ed96e2ab5",
+            "b806e2a6aaa60dd38f74dc136d4a9c6d0e0de8d69616aa745388983ed96e2ab5"
+          ]
+        },
+        {
+          "actor": 0,
+          "suffix": "-decoded-pnt.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "26081544b1c2ff62442d1914a85844316e81a301603c95bb6b622c9c76eae5ba",
+            "26081544b1c2ff62442d1914a85844316e81a301603c95bb6b622c9c76eae5ba",
+            "26081544b1c2ff62442d1914a85844316e81a301603c95bb6b622c9c76eae5ba"
+          ]
+        },
+        {
+          "actor": 0,
+          "suffix": "-world-oracle.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "7d6676b33f7c9ff04a85f16a56bd0b7b9f3337847185679c945173d5d31f591d",
+            "7d6676b33f7c9ff04a85f16a56bd0b7b9f3337847185679c945173d5d31f591d",
+            "7d6676b33f7c9ff04a85f16a56bd0b7b9f3337847185679c945173d5d31f591d"
+          ]
+        },
+        {
+          "actor": 1,
+          "suffix": ".raw",
+          "byteIdentical": true,
+          "sha256": [
+            "33ae21d61bb6b6b5ee41038eec0bedc0b64aeb84fab30d78e838d3efc78677f9",
+            "33ae21d61bb6b6b5ee41038eec0bedc0b64aeb84fab30d78e838d3efc78677f9",
+            "33ae21d61bb6b6b5ee41038eec0bedc0b64aeb84fab30d78e838d3efc78677f9"
+          ]
+        },
+        {
+          "actor": 1,
+          "suffix": "-decoded-pnt.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "aa32c814299d9eb9a16b739d0fd46c7df0cf0789e9386870ed5623ff2c4ae106",
+            "aa32c814299d9eb9a16b739d0fd46c7df0cf0789e9386870ed5623ff2c4ae106",
+            "aa32c814299d9eb9a16b739d0fd46c7df0cf0789e9386870ed5623ff2c4ae106"
+          ]
+        },
+        {
+          "actor": 1,
+          "suffix": "-world-oracle.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "680cb127b4206412f893457ef616dc99eda11353b9401770c11502eb4679eed2",
+            "680cb127b4206412f893457ef616dc99eda11353b9401770c11502eb4679eed2",
+            "680cb127b4206412f893457ef616dc99eda11353b9401770c11502eb4679eed2"
+          ]
+        }
+      ],
+      "PNG": [
+        {
+          "name": "100k-2actors-jab-Greeting0",
+          "repeatMaxRGBA": 0,
+          "repeatDifferingPixels": 0
+        },
+        {
+          "name": "100k-2actors-jab-phase1",
+          "repeatMaxRGBA": 0,
+          "repeatDifferingPixels": 0
+        }
+      ]
+    },
+    "GPU": {
+      "layout": {
+        "positionOffset": 0,
+        "normalOffset": 12,
+        "tangentOffset": 24,
+        "stride": 40,
+        "status": "PASS controlled3pose+heldout4th Float32 layout/convention; original mesh still requires validation",
+        "convention": "rootBone-rigid-local-linear-normal"
+      },
+      "startup": [
+        {
+          "stage": "entry",
+          "utc": "2026-10-18T23:08:23.0894710Z",
+          "uptime": 2.0688381718185944,
+          "frame": 1,
+          "splashFinished": false
+        },
+        {
+          "stage": "finished",
+          "utc": "2026-10-18T23:08:23.5265370Z",
+          "uptime": 2.5004151718185943,
+          "frame": 965,
+          "splashFinished": true
+        },
+        {
+          "stage": "settled",
+          "utc": "2026-10-18T23:08:25.5281060Z",
+          "uptime": 4.501994129818595,
+          "frame": 5382,
+          "splashFinished": true
+        }
+      ],
+      "repeat": [
+        {
+          "actor": 0,
+          "suffix": ".raw",
+          "byteIdentical": true,
+          "sha256": [
+            "f7dc8e6a2aa459473517e8542be195f03b0305b3ffd86287fa64f5206eb9244b",
+            "f7dc8e6a2aa459473517e8542be195f03b0305b3ffd86287fa64f5206eb9244b",
+            "f7dc8e6a2aa459473517e8542be195f03b0305b3ffd86287fa64f5206eb9244b"
+          ]
+        },
+        {
+          "actor": 0,
+          "suffix": "-decoded-pnt.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "c9f6b259efaaf4a3508dd0587f30fe9671de84b4d9948147ad683ae4ac7a301f",
+            "c9f6b259efaaf4a3508dd0587f30fe9671de84b4d9948147ad683ae4ac7a301f",
+            "c9f6b259efaaf4a3508dd0587f30fe9671de84b4d9948147ad683ae4ac7a301f"
+          ]
+        },
+        {
+          "actor": 0,
+          "suffix": "-world-oracle.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "7d6676b33f7c9ff04a85f16a56bd0b7b9f3337847185679c945173d5d31f591d",
+            "7d6676b33f7c9ff04a85f16a56bd0b7b9f3337847185679c945173d5d31f591d",
+            "7d6676b33f7c9ff04a85f16a56bd0b7b9f3337847185679c945173d5d31f591d"
+          ]
+        },
+        {
+          "actor": 1,
+          "suffix": ".raw",
+          "byteIdentical": true,
+          "sha256": [
+            "34baa84b10985bb3fe2b3d09d11e2da78751e15ab1da4130a6ecf84ec0f5e680",
+            "34baa84b10985bb3fe2b3d09d11e2da78751e15ab1da4130a6ecf84ec0f5e680",
+            "34baa84b10985bb3fe2b3d09d11e2da78751e15ab1da4130a6ecf84ec0f5e680"
+          ]
+        },
+        {
+          "actor": 1,
+          "suffix": "-decoded-pnt.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "81ad8a0d595a1b529d086ac88c8b8c7a03fd86fa5956e06e671544dc6acd454e",
+            "81ad8a0d595a1b529d086ac88c8b8c7a03fd86fa5956e06e671544dc6acd454e",
+            "81ad8a0d595a1b529d086ac88c8b8c7a03fd86fa5956e06e671544dc6acd454e"
+          ]
+        },
+        {
+          "actor": 1,
+          "suffix": "-world-oracle.bin",
+          "byteIdentical": true,
+          "sha256": [
+            "680cb127b4206412f893457ef616dc99eda11353b9401770c11502eb4679eed2",
+            "680cb127b4206412f893457ef616dc99eda11353b9401770c11502eb4679eed2",
+            "680cb127b4206412f893457ef616dc99eda11353b9401770c11502eb4679eed2"
+          ]
+        }
+      ],
+      "PNG": [
+        {
+          "name": "100k-2actors-jab-Greeting0",
+          "repeatMaxRGBA": 26,
+          "repeatDifferingPixels": 535
+        },
+        {
+          "name": "100k-2actors-jab-phase1",
+          "repeatMaxRGBA": 0,
+          "repeatDifferingPixels": 0
+        }
+      ]
+    }
+  },
+  "cross": [
+    {
+      "actor": 0,
+      "vertices": 58949,
+      "outputSpacePNTMaxAbsComponents": [
+        2.384185791015625e-07,
+        2.384185791015625e-07,
+        3.5762786865234375e-07
+      ],
+      "outputSpacePNTMaxVectorDistance": [
+        2.8115454709698567e-07,
+        2.980232238769531e-07,
+        3.65306457046606e-07
+      ],
+      "note": "Output-space comparison; interpret only after matched calibrated conventions/matrices."
+    },
+    {
+      "actor": 1,
+      "vertices": 58949,
+      "outputSpacePNTMaxAbsComponents": [
+        2.384185791015625e-07,
+        2.384185791015625e-07,
+        3.5762786865234375e-07
+      ],
+      "outputSpacePNTMaxVectorDistance": [
+        2.6656007498500226e-07,
+        2.9200193199910854e-07,
+        3.604110068812318e-07
+      ],
+      "note": "Output-space comparison; interpret only after matched calibrated conventions/matrices."
+    },
+    {
+      "image": "100k-2actors-jab-Greeting0",
+      "maxRGB": 9,
+      "RGBgt2Pixels": 1,
+      "alphaMismatchPixels": 0
+    },
+    {
+      "image": "100k-2actors-jab-phase1",
+      "maxRGB": 2,
+      "RGBgt2Pixels": 0,
+      "alphaMismatchPixels": 0
+    }
+  ]
+}

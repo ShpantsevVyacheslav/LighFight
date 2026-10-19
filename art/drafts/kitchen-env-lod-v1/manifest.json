@@ -1,0 +1,65 @@
+{
+  "status": "GEOMETRY_READY_RASTER_REVIEW_REQUIRED",
+  "scope": "STATIC_ENVIRONMENT_ONLY_NO_CHARACTER_CHANGES",
+  "baseBlendSHA256": "138c77a6329dc5cdb3781af1bc983f260c9663ba626eac74119a3333a9f3ef22",
+  "masterGLBSHA256": "9c2897c7955310c4d8e7c58cf9e5e25c74e20709db4bc7d92c72c54f3733e7d0",
+  "sourceFurnitureTriangles": 5930952,
+  "architectureObjects": 33,
+  "uniformComponentWrappers": {
+    "table": {
+      "name": "ROLE_TABLE",
+      "translation": [
+        1.5,
+        0.0020000000949949026,
+        -0.0
+      ],
+      "scale": [
+        3.200000047683716,
+        3.200000047683716,
+        3.200000047683716
+      ]
+    },
+    "fridge": {
+      "name": "ROLE_FRIDGE",
+      "translation": [
+        0.3499999940395355,
+        0.0020000000949949026,
+        -2.4000000953674316
+      ],
+      "scale": [
+        2.0249886512756348,
+        2.0249886512756348,
+        2.0249886512756348
+      ]
+    },
+    "coffee": {
+      "name": "ROLE_COFFEE",
+      "translation": [
+        -2.3499999046325684,
+        0.0020000000949949026,
+        -1.5
+      ],
+      "scale": [
+        1.681246280670166,
+        1.681246280670166,
+        1.681246280670166
+      ]
+    }
+  },
+  "sourceGeometryExactAfterDerivation": true,
+  "trials": {
+    "300000": {
+      "sourceFurnitureTriangles": 399448,
+      "GLBSHA256": "61d6c5710c1b9c70c78177aaaf2d4206ae4b3419f2b667cfc47ade759a0d9096",
+      "file": "kitchen-lod-300000.glb",
+      "status": "UNACCEPTED_PENDING_RENDER_HOLES_LEGS_UV_REVIEW"
+    },
+    "100000": {
+      "sourceFurnitureTriangles": 381372,
+      "GLBSHA256": "c5d6158cce6e9648175d26b0ec7e2441428d66ecc7b9ea1aea431be94a933c2d",
+      "file": "kitchen-lod-100000.glb",
+      "status": "UNACCEPTED_PENDING_RENDER_HOLES_LEGS_UV_REVIEW"
+    }
+  },
+  "method": "Original master assembled from untouched source GLB buffers; only derivative copies collapsed; original4Kimage bytes attached without encoding."
+}

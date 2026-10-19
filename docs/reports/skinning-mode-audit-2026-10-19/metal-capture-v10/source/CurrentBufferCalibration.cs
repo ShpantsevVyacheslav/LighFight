@@ -1,0 +1,68 @@
+using System;using System.IO;using System.Collections;using System.Collections.Generic;using UnityEngine;
+public static class CurrentBufferCalibration {
+ public static bool ControlOnly;
+ [Serializable]public sealed class Layout {public int positionOffset,normalOffset,tangentOffset,stride;public string status="UNVALIDATED",convention="UNVALIDATED";}
+ public static IEnumerator Run(string output,Action<Layout> done){
+  var root=new GameObject("Independent known skinned calibration");Mesh mesh=null;Material material=null;
+  try{
+   var a=new GameObject("known bone A").transform;a.SetParent(root.transform,false);var b=new GameObject("known bone B").transform;b.SetParent(root.transform,false);
+   mesh=new Mesh();mesh.vertices=new[]{new Vector3(-.23f,.82f,.13f),new Vector3(.31f,1.12f,-.17f),new Vector3(.17f,.73f,.26f),new Vector3(-.19f,1.27f,-.11f)};
+   var normals=new[]{new Vector3(.2f,.9f,.3f).normalized,new Vector3(-.7f,.3f,.5f).normalized,new Vector3(.4f,-.2f,.8f).normalized,new Vector3(-.1f,.6f,-.7f).normalized};mesh.normals=normals;
+   var tangents=new Vector4[4];for(int i=0;i<4;i++){var t=Vector3.Cross(normals[i],Vector3.right).normalized;tangents[i]=new Vector4(t.x,t.y,t.z,i%2==0?1:-1);}mesh.tangents=tangents;mesh.triangles=new[]{0,1,2,0,3,1,0,2,1,0,1,3};mesh.bindposes=new[]{Matrix4x4.identity,Matrix4x4.identity};
+   var weights=new BoneWeight[4];for(int i=0;i<4;i++)weights[i]=new BoneWeight{boneIndex0=i%2,weight0=1};mesh.boneWeights=weights;mesh.bounds=new Bounds(new Vector3(0,1,0),Vector3.one*4);
+   var skin=root.AddComponent<SkinnedMeshRenderer>();skin.sharedMesh=mesh;skin.bones=new[]{a,b};skin.rootBone=a;skin.updateWhenOffscreen=true;skin.forceMatrixRecalculationPerRender=true;skin.quality=SkinQuality.Auto;material=new Material(Shader.Find("Standard"));skin.sharedMaterial=material;
+   CurrentSkinningBufferLayoutChecks.Run();
+   var names=new[]{"renderer-property-local","renderer-transform-local","rootBone-local","rootBone-rigid-local-linear-normal","rootBone-rigid-local-inverseTranspose-normal"};
+   var allP=new Dictionary<string,List<CurrentSkinningBufferReadback.Layout>>();var allN=new Dictionary<string,List<CurrentSkinningBufferReadback.Layout>>();var allT=new Dictionary<string,List<CurrentSkinningBufferReadback.Layout>>();
+   for(int warm=0;warm<120;warm++)yield return new WaitForEndOfFrame();
+   for(int pose=0;pose<4;pose++){
+    a.localPosition=pose==0?Vector3.zero:new Vector3(.07f,-.03f,.02f);b.localPosition=pose==0?Vector3.zero:new Vector3(-.04f,.02f,-.03f);a.localRotation=Quaternion.Euler(pose*7,pose*11,pose*17);b.localRotation=Quaternion.Euler(-pose*13,pose*5,-pose*19);
+    if(pose>=2){root.transform.localScale=new Vector3(1.1f,.9f,1.2f);root.transform.localRotation=Quaternion.Euler(0,15,0);root.transform.localPosition=new Vector3(.02f,.03f,.01f);}
+    if(pose==3){root.transform.localScale=new Vector3(.83f,1.27f,.94f);root.transform.localRotation=Quaternion.Euler(-11,23,7);root.transform.localPosition=new Vector3(-.03f,.01f,-.02f);}
+    for(int f=0;f<8;f++)yield return new WaitForEndOfFrame();
+    CurrentSkinningBufferReadback.Capture capture=null;var read=CurrentSkinningBufferReadback.Read(skin,Path.Combine(output,"calibration-pose"+pose),c=>capture=c);while(read.MoveNext())yield return read.Current;
+    if(ControlOnly){var control=CurrentBufferCaptureControl.Run(skin,output);while(control.MoveNext())yield return control.Current;yield break;}
+    CurrentSkinningBufferReadback.WriteMatrixState(skin,Path.Combine(output,"calibration-matrices-pose"+pose+".bin"));
+    var camera=UnityEngine.Object.FindObjectsByType<Camera>(FindObjectsSortMode.None)[0];var counter=camera.GetComponent<CurrentSkinningRenderCounter>();
+    bool visible=skin.isVisible,frustum=GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(camera),skin.bounds);int rendersBefore=counter.renders;
+    var visibleWorld=CurrentSkinningBufferReadback.OriginalWorldPositions(skin);float left=Screen.width,right=0,bottom=Screen.height,top=0;foreach(var world in visibleWorld){var screen=camera.WorldToScreenPoint(world);left=Mathf.Min(left,screen.x);right=Mathf.Max(right,screen.x);bottom=Mathf.Min(bottom,screen.y);top=Mathf.Max(top,screen.y);}
+    // AsyncGPUReadback completes during Update. Re-enter actual EOF BEFORE both
+    // framebuffer captures; otherwise unrelated pre-render content can differ globally.
+    yield return new WaitForEndOfFrame();
+    if(counter.renders-rendersBefore!=1)throw new Exception("Calibration post-readback framebuffer fence requires exactly one automatic render");
+    rendersBefore=counter.renders;
+    string statePrefix=Path.Combine(output,"calibration-visibility-state-"+pose);
+    CurrentSkinningBufferReadback.WriteMatrixState(skin,statePrefix+"-before.matrices");CurrentBufferStateSnapshot.Write(skin,statePrefix+"-before.json");
+    var drawn=ScreenCapture.CaptureScreenshotAsTexture();var drawnPixels=drawn.GetPixels32();File.WriteAllBytes(Path.Combine(output,"calibration-visible-"+pose+".png"),drawn.EncodeToPNG());UnityEngine.Object.Destroy(drawn);
+    skin.enabled=false;yield return new WaitForEndOfFrame();
+    if(counter.renders-rendersBefore!=1)throw new Exception("Calibration visibility reference camera rendered other than once");
+    var blank=ScreenCapture.CaptureScreenshotAsTexture();var blankPixels=blank.GetPixels32();File.WriteAllBytes(Path.Combine(output,"calibration-background-"+pose+".png"),blank.EncodeToPNG());UnityEngine.Object.Destroy(blank);skin.enabled=true;
+    CurrentSkinningBufferReadback.WriteMatrixState(skin,statePrefix+"-after.matrices");CurrentBufferStateSnapshot.Write(skin,statePrefix+"-after.json");
+    var beforeMatrix=File.ReadAllBytes(statePrefix+"-before.matrices");var afterMatrix=File.ReadAllBytes(statePrefix+"-after.matrices");if(beforeMatrix.Length!=afterMatrix.Length)throw new Exception("Visibility pose shape changed");for(int k=4;k<beforeMatrix.Length;k++)if(beforeMatrix[k]!=afterMatrix[k])throw new Exception("Visibility pose/bone/normal matrices changed");
+    string beforeHash=CurrentBufferStateSnapshot.StableHash(statePrefix+"-before.json"),afterHash=CurrentBufferStateSnapshot.StableHash(statePrefix+"-after.json");File.WriteAllText(statePrefix+"-hashes.txt",beforeHash+"\n"+afterHash);if(beforeHash!=afterHash)throw new Exception("Visibility camera/light/material/probe/post state changed");
+    int changed=0,outside=0;for(int pixel=0;pixel<drawnPixels.Length;pixel++){var x=drawnPixels[pixel];var y=blankPixels[pixel];if(Math.Abs(x.r-y.r)>2||Math.Abs(x.g-y.g)>2||Math.Abs(x.b-y.b)>2){int px=pixel%Screen.width,py=pixel/Screen.width;if(px>=left-8&&px<=right+8&&py>=bottom-8&&py<=top+8)changed++;else outside++;}}
+    File.WriteAllText(Path.Combine(output,"calibration-visibility-"+pose+".txt"),"isVisible="+visible+" frustum="+frustum+" foregroundPixelDifference="+changed+" outsideForegroundDifference="+outside+" automaticDraws="+(counter.renders-rendersBefore)+" bufferRequestFrame="+capture.requestFrame+" completedFrame="+capture.completeFrame+" currentFrame="+Time.frameCount);
+    if(!visible||!frustum||changed<10||outside!=0)throw new Exception("Calibration actual visibility unproven; no layout acceptance");
+
+    var original=mesh.vertices;
+    foreach(string convention in names){
+     Matrix4x4 basis=convention.StartsWith("rootBone-rigid")?capture.rootBoneRigidToWorld:convention=="rootBone-local"?capture.rootBoneLocalToWorld:(convention=="renderer-transform-local"?capture.rendererTransformLocalToWorld:capture.rendererLocalToWorld);
+     var expectedP=new Vector3[4];var expectedN=new Vector3[4];var expectedT=new Vector3[4];
+     for(int i=0;i<4;i++){var m=basis.inverse*skin.bones[i%2].localToWorldMatrix*mesh.bindposes[i%2];expectedP[i]=m.MultiplyPoint3x4(original[i]);expectedN[i]=convention.EndsWith("linear-normal")?m.MultiplyVector(normals[i]):m.inverse.transpose.MultiplyVector(normals[i]);expectedT[i]=m.MultiplyVector(new Vector3(tangents[i].x,tangents[i].y,tangents[i].z));}
+     var p=CurrentSkinningBufferReadback.PositionCandidates(capture.raw,expectedP,.00001f);var n=CurrentSkinningBufferReadback.PositionCandidates(capture.raw,expectedN,.00001f);var t=CurrentSkinningBufferReadback.PositionCandidates(capture.raw,expectedT,.00001f);
+     if(pose==0){allP[convention]=p;allN[convention]=n;allT[convention]=t;}else{Intersect(allP[convention],p);Intersect(allN[convention],n);Intersect(allT[convention],t);}
+     File.WriteAllText(Path.Combine(output,"calibration-candidates-"+pose+"-"+convention+".txt"),"positions="+List(allP[convention])+" normals="+List(allN[convention])+" tangents="+List(allT[convention]));
+    }
+   }
+   Layout chosen=null;int candidates=0;
+   foreach(string convention in names){var pos=allP[convention];var norm=allN[convention];var tan=allT[convention];
+    if(pos.Count!=1||norm.Count!=1||tan.Count!=1||pos[0].stride!=norm[0].stride||pos[0].stride!=tan[0].stride)continue;
+    candidates++;chosen=new Layout{positionOffset=pos[0].offset,normalOffset=norm[0].offset,tangentOffset=tan[0].offset,stride=pos[0].stride,convention=convention,status="PASS controlled3pose+heldout4th Float32 layout/convention; original mesh still requires validation"};
+   }
+   if(candidates!=1)throw new Exception("Unsupported or ambiguous ALL3pose+heldout4th/all4knownvertex PNT layout+convention; no guess");
+   File.WriteAllText(Path.Combine(output,"calibrated-layout.json"),JsonUtility.ToJson(chosen,true));done(chosen);
+  }finally{UnityEngine.Object.Destroy(root);if(mesh)UnityEngine.Object.Destroy(mesh);if(material)UnityEngine.Object.Destroy(material);}
+ }
+ static void Intersect(List<CurrentSkinningBufferReadback.Layout> a,List<CurrentSkinningBufferReadback.Layout> b){a.RemoveAll(x=>!b.Exists(y=>x.offset==y.offset&&x.stride==y.stride));}
+ static string List(List<CurrentSkinningBufferReadback.Layout> a)=>string.Join(";",a.ConvertAll(x=>x.ToString()).ToArray());
+}

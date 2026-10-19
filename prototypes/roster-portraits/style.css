@@ -9,3 +9,8 @@
 .screen{position:relative}.detail-open .model-stage{position:static;z-index:2;background:none}.detail-open model-viewer{position:absolute;inset:0;width:100%;height:100%;z-index:2}.detail-open .fighter-info,.detail-open .fight-setup{position:relative;z-index:3;pointer-events:none}.detail-open .fight-setup button{pointer-events:auto}.detail-open header,.detail-open footer{position:relative;z-index:4;pointer-events:none}.detail-open header button,.detail-open footer button{pointer-events:auto}.detail-open .cycle{left:49%;bottom:73px;z-index:4;pointer-events:auto}.detail-open .dance{right:29%;bottom:73px;z-index:4;pointer-events:auto}.detail-open #modelStatus{z-index:3;pointer-events:none}.continue{justify-content:center}
 
 model-viewer{touch-action:none;overscroll-behavior:contain}
+
+.dense-preview{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2;pointer-events:none;background:transparent}
+
+/* The complete roster scrolls as a grid; cards keep their face size. */
+.fighters{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:240px;align-content:start;flex:1;overflow-y:auto;overscroll-behavior:contain;padding-bottom:12px;scrollbar-color:#766445 transparent}.fighter .name{font-size:22px;text-align:center}.fighter img{height:calc(100% - 52px)}@media(max-height:500px){.fighters{grid-auto-rows:195px}.fighter .name{font-size:17px}.fighter .style{font-size:8px}}@media(max-width:600px) and (orientation:portrait){.fighters{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:205px}.fighter .name{font-size:14px}}

@@ -1,0 +1,32 @@
+using System;using System.IO;using System.Collections;using System.Collections.Generic;using UnityEngine;
+public static class CurrentBufferCalibration {
+ [Serializable]public sealed class Layout {public int positionOffset,normalOffset,tangentOffset,stride;public string status="UNVALIDATED",convention="renderer local Float32 position/normal/tangent";}
+ public static IEnumerator Run(string output,Action<Layout> done){
+  var root=new GameObject("Independent known skinned calibration");Mesh mesh=null;Material material=null;
+  try{
+   var a=new GameObject("known bone A").transform;a.SetParent(root.transform,false);var b=new GameObject("known bone B").transform;b.SetParent(root.transform,false);
+   mesh=new Mesh();mesh.vertices=new[]{new Vector3(-.23f,.82f,.13f),new Vector3(.31f,1.12f,-.17f),new Vector3(.17f,.73f,.26f),new Vector3(-.19f,1.27f,-.11f)};
+   var normals=new[]{new Vector3(.2f,.9f,.3f).normalized,new Vector3(-.7f,.3f,.5f).normalized,new Vector3(.4f,-.2f,.8f).normalized,new Vector3(-.1f,.6f,-.7f).normalized};mesh.normals=normals;
+   var tangents=new Vector4[4];for(int i=0;i<4;i++){var t=Vector3.Cross(normals[i],Vector3.right).normalized;tangents[i]=new Vector4(t.x,t.y,t.z,i%2==0?1:-1);}mesh.tangents=tangents;mesh.triangles=new[]{0,1,2,0,3,1};mesh.bindposes=new[]{Matrix4x4.identity,Matrix4x4.identity};
+   var weights=new BoneWeight[4];for(int i=0;i<4;i++)weights[i]=new BoneWeight{boneIndex0=i%2,weight0=1};mesh.boneWeights=weights;mesh.bounds=new Bounds(new Vector3(0,1,0),Vector3.one*4);
+   var skin=root.AddComponent<SkinnedMeshRenderer>();skin.sharedMesh=mesh;skin.bones=new[]{a,b};skin.rootBone=a;skin.updateWhenOffscreen=true;skin.forceMatrixRecalculationPerRender=true;skin.quality=SkinQuality.Auto;material=new Material(Shader.Find("Standard"));skin.sharedMaterial=material;
+   CurrentSkinningBufferLayoutChecks.Run();List<CurrentSkinningBufferReadback.Layout> pos=null,norm=null,tan=null;
+   for(int pose=0;pose<3;pose++){
+    a.localPosition=pose==0?Vector3.zero:new Vector3(.07f,-.03f,.02f);b.localPosition=pose==0?Vector3.zero:new Vector3(-.04f,.02f,-.03f);a.localRotation=Quaternion.Euler(pose*7,pose*11,pose*17);b.localRotation=Quaternion.Euler(-pose*13,pose*5,-pose*19);
+    if(pose==2){root.transform.localScale=new Vector3(1.1f,.9f,1.2f);root.transform.localRotation=Quaternion.Euler(0,15,0);root.transform.localPosition=new Vector3(.02f,.03f,.01f);}
+    for(int f=0;f<8;f++)yield return new WaitForEndOfFrame();
+    CurrentSkinningBufferReadback.Capture capture=null;var read=CurrentSkinningBufferReadback.Read(skin,Path.Combine(output,"calibration-pose"+pose),c=>capture=c);while(read.MoveNext())yield return read.Current;
+    var original=mesh.vertices;var expectedP=new Vector3[4];var expectedN=new Vector3[4];var expectedT=new Vector3[4];
+    for(int i=0;i<4;i++){var m=skin.worldToLocalMatrix*skin.bones[i%2].localToWorldMatrix*mesh.bindposes[i%2];expectedP[i]=m.MultiplyPoint3x4(original[i]);expectedN[i]=m.MultiplyVector(normals[i]);expectedT[i]=m.MultiplyVector(new Vector3(tangents[i].x,tangents[i].y,tangents[i].z));}
+    var p=CurrentSkinningBufferReadback.PositionCandidates(capture.raw,expectedP,.00001f);var n=CurrentSkinningBufferReadback.PositionCandidates(capture.raw,expectedN,.00001f);var t=CurrentSkinningBufferReadback.PositionCandidates(capture.raw,expectedT,.00001f);
+    if(pose==0){pos=p;norm=n;tan=t;}else{Intersect(pos,p);Intersect(norm,n);Intersect(tan,t);}
+    File.WriteAllText(Path.Combine(output,"calibration-candidates-"+pose+".txt"),"positions="+List(pos)+" normals="+List(norm)+" tangents="+List(tan));
+    if(pos.Count==0||norm.Count==0||tan.Count==0)throw new Exception("Calibration Float32/layout/convention unsupported; never guess");
+   }
+   if(pos.Count!=1||norm.Count!=1||tan.Count!=1||pos[0].stride!=norm[0].stride||pos[0].stride!=tan[0].stride)throw new Exception("Ambiguous calibration output layout");
+   var layout=new Layout{positionOffset=pos[0].offset,normalOffset=norm[0].offset,tangentOffset=tan[0].offset,stride=pos[0].stride,status="PASS controlled3pose Float32 layout; original mesh still requires validation"};File.WriteAllText(Path.Combine(output,"calibrated-layout.json"),JsonUtility.ToJson(layout,true));done(layout);
+  }finally{UnityEngine.Object.Destroy(root);if(mesh)UnityEngine.Object.Destroy(mesh);if(material)UnityEngine.Object.Destroy(material);}
+ }
+ static void Intersect(List<CurrentSkinningBufferReadback.Layout> a,List<CurrentSkinningBufferReadback.Layout> b){a.RemoveAll(x=>!b.Exists(y=>x.offset==y.offset&&x.stride==y.stride));}
+ static string List(List<CurrentSkinningBufferReadback.Layout> a)=>string.Join(";",a.ConvertAll(x=>x.ToString()).ToArray());
+}

@@ -1,0 +1,57 @@
+{
+  "status": "INCOMPLETE_CORRECTION_ROLLOUT",
+  "rows": [
+    {
+      "role": "sailor",
+      "webTriangles": 1988914,
+      "webAnimations": [
+        "Guard",
+        "Dance_Original",
+        "Dance_Zero",
+        "Attack_Punch",
+        "Attack_Kick"
+      ],
+      "webZeroTwistConnected": true,
+      "webGuardLoopConnected": true,
+      "runtimeCatalogIndex": 9,
+      "runtimePrefab": "unity/Assets/LighFight/Art/Drafts/TripoSailorPlayable/SailorHumanoidCandidate.prefab",
+      "runtimePrefabSHA256": "593d51f31b02f212bc867fde390c5141af3bd2f4b3c21135ffc2127974be0722",
+      "runtimeFullRecipeConnected": false,
+      "runtimeEvidence": "Catalog points to existing HumanoidCandidate, components FighterView/NativeSupportOverlay/NativeFingerPose/NativeHighReaction/foot grounding; no reviewed full-density zero-twist driver installed."
+    },
+    {
+      "role": "retro",
+      "webTriangles": 100000,
+      "webAnimations": [
+        "box_02",
+        "cheer",
+        "dance_01",
+        "defeat_02",
+        "front_kick_01",
+        "greet_01",
+        "hit_to_head",
+        "walk",
+        "PreviewGuard"
+      ],
+      "webZeroTwistConnected": false,
+      "webGuardLoopConnected": false,
+      "runtimeCatalogIndex": 8,
+      "runtimePrefab": "unity/Assets/LighFight/Art/Drafts/TripoRetroPlayable/RetroHumanoidCandidate.prefab",
+      "runtimePrefabSHA256": "a0ab5ba1d0799769c9a3c06557957abd32b276e03c5600770b8ce0ecc01997fc",
+      "runtimeFullRecipeConnected": false,
+      "runtimeEvidence": "Catalog points to existing HumanoidCandidate, components FighterView/NativeSupportOverlay/NativeFingerPose/NativeHighReaction/foot grounding; no reviewed full-density zero-twist driver installed."
+    }
+  ],
+  "clavicleSupportExperiment": {
+    "path": "docs/reports/native67-clavicle-reference-2026-10-19/README.md",
+    "result": "Source-direction canonical and bounded16degree pose support are rejected/not production accepted. Do not count experimental support-prefab as applied shipping fix."
+  },
+  "next": [
+    "Retro original-density native67 rig with raw Float32 weights and same recipe",
+    "Verify shoulder/trapezius in multiple views and full motion, not only zero-twist metadata",
+    "Integrate accepted recipe in actual game prefabs and contact-pose update order",
+    "Keep rejected clavicle support disabled unless a new controlled surface review passes"
+  ],
+  "scope": "Static asset connection audit, not a new motion/phone acceptance.",
+  "connectedSailorBinarySHA256Verified": "870bddf33fa0ed929b3b41e39ea003fda2faa507cf6f8d3209037a3667d2095a"
+}

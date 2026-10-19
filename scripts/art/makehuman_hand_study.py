@@ -9,11 +9,13 @@ bpy.ops.wm.open_mainfile(filepath=str(source));scene=bpy.context.scene
 arm=next(o for o in scene.objects if o.type=='ARMATURE');body=next(o for o in scene.objects if o.type=='MESH' and o.data.shape_keys)
 rig=json.loads((assets/'default.mhskel').read_text());weight_data=json.loads((assets/'default_weights.mhw').read_text())
 assert rig['license']=='CC0' and weight_data['license']=='CC0'
-verts=[];faces=[];group=None
+verts=[];faces=[];face_uvs=[];texcoords=[];group=None
 for line in (assets/'base.obj').read_text().splitlines():
  if line.startswith('v '):verts.append(Vector(map(float,line.split()[1:])))
+ elif line.startswith('vt '):texcoords.append(tuple(map(float,line.split()[1:3])))
  elif line.startswith('g '):group=line.split()[1]
- elif line.startswith('f ') and group=='body':faces.append([int(x.split('/')[0])-1 for x in line.split()[1:]])
+ elif line.startswith('f ') and group=='body':
+  tokens=line.split()[1:];faces.append([int(x.split('/')[0])-1 for x in tokens]);face_uvs.append([texcoords[int(x.split('/')[1])-1] for x in tokens])
 def joint(name):
  ids=rig['joints'][name];return sum((verts[i] for i in ids),Vector())/len(ids)
 def bonepoint(name,key):return joint(rig['bones'][name][key])
@@ -36,9 +38,12 @@ for side,suffix,sign in [('Left','.L',1),('Right','.R',-1)]:
  for n in selected:
   for index,value in weight_data['weights'].get(n,[]):per_vertex.setdefault(index,[]).append((n,value))
  support={i for i,weights in per_vertex.items() if sum(w for _,w in weights)>.01}
- chosen=[f for f in faces if any(i in support for i in f) and all((verts[i]-original).length<2.6 for i in f)]
+ chosen_indices=[j for j,f in enumerate(faces) if any(i in support for i in f) and all((verts[i]-original).length<2.6 for i in f)];chosen=[faces[j] for j in chosen_indices]
  ids=sorted({i for f in chosen for i in f});mapping={i:k for k,i in enumerate(ids)}
  mesh=bpy.data.meshes.new('MakeHuman'+side+'Hand');mesh.from_pydata([fitted(verts[i]) for i in ids],[],[[mapping[i] for i in f] for f in chosen]);mesh.update()
+ uv_layer=mesh.uv_layers.new(name='MakeHumanHandUV')
+ for polygon,source_face in zip(mesh.polygons,chosen_indices):
+  for loop_index,uv in zip(polygon.loop_indices,face_uvs[source_face]):uv_layer.data[loop_index].uv=uv
  hand=bpy.data.objects.new('Rebuilt'+side+'Hand',mesh);bpy.context.collection.objects.link(hand);hand.matrix_world=body.matrix_world.copy();hand.data.materials.append(mat)
  for f in mesh.polygons:f.use_smooth=True
  # Copy source bone heads/tails and their authored bending planes, rather than guessing joint positions.
@@ -57,16 +62,30 @@ for side,suffix,sign in [('Left','.L',1),('Right','.R',-1)]:
  for src_id,i in mapping.items():
   pairs=per_vertex.get(src_id,[('wrist'+suffix,1)]);pairs=sorted(pairs,key=lambda p:-p[1])[:4];total=sum(w for _,w in pairs)
   for n,w in pairs:groups[n].add([i],w/total,'REPLACE')
+ # Add radial volume around each authored phalanx axis; preserve digit lengths and joint centers.
+ for vertex in mesh.vertices:
+  radial=Vector((0,0,0))
+  for membership in vertex.groups:
+   name=hand.vertex_groups[membership.group].name
+   if 'MH_finger' not in name or name.endswith('MH_finger1_1'):continue
+   bone=arm.data.bones[name];axis=(bone.tail_local-bone.head_local).normalized()
+   delta=vertex.co-bone.head_local;radial+=(delta-axis*delta.dot(axis))*membership.weight*.12
+  vertex.co+=radial
  # Trim the extra forearm to a single proximal wrist ring.
  bm=bmesh.new();bm.from_mesh(mesh);bmesh.ops.bisect_plane(bm,geom=list(bm.verts)+list(bm.edges)+list(bm.faces),dist=.00001,plane_co=(wrist.x-sign*.1,0,0),plane_no=(sign,0,0),clear_inner=True);bm.to_mesh(mesh);bm.free()
- mod=hand.modifiers.new('SourceHandSkin','ARMATURE');mod.object=arm;mod.use_deform_preserve_volume=True
+ mod=hand.modifiers.new('SourceHandSkin','ARMATURE');mod.object=arm;mod.use_deform_preserve_volume=False
  # Subdivision follows deformation in final review; capture base closed shape before subdivision.
  for n in selected:
   if not n.startswith('finger'):continue
   digit,phalanx=map(int,n.split('.')[0].replace('finger','').split('-'));p=arm.pose.bones[names[n]];p.rotation_mode='XYZ'
   if digit==1:
-   p.rotation_euler.x=math.radians([-5,20,20][phalanx-1]);p.rotation_euler.z=sign*math.radians([17,0,0][phalanx-1])
-  else:p.rotation_euler.x=math.radians(-[75,95,55][phalanx-1])
+   p.rotation_euler.x=math.radians([-65,40,80][phalanx-1]);p.rotation_euler.y=sign*math.radians([-30,0,0][phalanx-1]);p.rotation_euler.z=sign*math.radians([80,0,0][phalanx-1])
+   if phalanx==1:p.location=arm.data.bones[names[n]].matrix_local.to_3x3().inverted() @ Vector((0,0,.35))
+  else:
+   p.rotation_euler.x=math.radians(-[75,95,55][phalanx-1])
+   if phalanx==1:
+    shift={2:.24,3:0,4:-.16,5:-.35}[digit]
+    p.location=arm.data.bones[names[n]].matrix_local.to_3x3().inverted() @ Vector((0,shift,0))
  bpy.context.view_layer.update();ev=hand.evaluated_get(bpy.context.evaluated_depsgraph_get());posed=ev.to_mesh();closed=[v.co.copy() for v in posed.vertices];ev.to_mesh_clear()
  for n in selected:
   if not n.startswith('wrist'):arm.pose.bones[names[n]].matrix_basis=Matrix.Identity(4)

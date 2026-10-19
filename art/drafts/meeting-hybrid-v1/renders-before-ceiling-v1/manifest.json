@@ -1,0 +1,74 @@
+{
+  "status": "ACTUAL_GLB_LAYOUT_AND_FLOOR_REVIEWED_NOT_RUNTIME_ACCEPTED",
+  "masterSHA256": "f5f4813bcb9dfcd633ef2f08680f51b34d722bfed8ce90c97631086c9868af95",
+  "sourceUnchanged": true,
+  "CPUthreads": 6,
+  "samples": 16,
+  "views": [
+    {
+      "view": "whole",
+      "location": [
+        -8,
+        5.5,
+        -8
+      ],
+      "target": [
+        0,
+        1.2,
+        1.9
+      ],
+      "lensMm": 32.0,
+      "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
+      "seconds": 12.724601030349731,
+      "file": "whole.png"
+    },
+    {
+      "view": "fight",
+      "location": [
+        0,
+        2.1,
+        -6.4
+      ],
+      "target": [
+        0,
+        1.1,
+        2.3
+      ],
+      "lensMm": 32.0,
+      "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
+      "seconds": 21.34972906112671,
+      "file": "fight.png"
+    },
+    {
+      "view": "furniture",
+      "location": [
+        -1.8,
+        1.75,
+        0.75
+      ],
+      "target": [
+        0,
+        0.9,
+        3
+      ],
+      "lensMm": 32.0,
+      "coordinates": "authored glTF Y-up converted to Blender (x,-z,y)",
+      "seconds": 30.82510471343994,
+      "file": "furniture.png"
+    }
+  ],
+  "scope": "Geometry/material/layout review only; no gameplay/runtime/phone claim",
+  "visualReview": {
+    "reviewer": "root",
+    "viewsOpened": [
+      "fight",
+      "whole",
+      "furniture"
+    ],
+    "findings": [
+      "Furniture, windows, board and derived wood floor visible in actual GLB renders.",
+      "Ceiling deliberately cut away; sparse grid exposes background and is not final interior ceiling.",
+      "Expanded empty fight lane remains; no actor/collision/runtime/phone acceptance."
+    ]
+  }
+}

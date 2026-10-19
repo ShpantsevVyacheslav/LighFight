@@ -1,0 +1,1189 @@
+{
+  "status": "ARTIST_CANDIDATE_RENDERED_NOT_ACCEPTED",
+  "stage": "renders",
+  "cases": [],
+  "maskStatus": "PROVISIONAL_NOT_ANATOMICAL_TRUTH",
+  "maskSHA256": "56ecc40f8b3ddf7ec5bc6070faf51512e10c21601c127f6ffa33b4da28ba71c2",
+  "probeScriptSHA256": "ef0d03dfaaa04705300a4166077faad5a7a71fe34f1d740057f18e147c3b43b7",
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sourceAttributes": {
+    "positions": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "loopVertexIndices": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygonStarts": "7b638feadc801e5555a8882879c9d17a5b2e449938fae59482d0cda848f41592",
+    "polygonSizes": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "uv:UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+  },
+  "sourceHashes": {
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/stage02-bound-original-dense.blend": "dedd8c00b27278ef6f02a8753a61ed0636053d2733ede83357134a7a8033052d",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/tools/27_actual_arm_elevation.py": "97f88ea6dfbc7b87d0a638ba80cc5f76608b8ea3453ee7b933cc3bc81e7c7516"
+  },
+  "limits": [
+    "Metrics/masks only; no corrective or weight mutation.",
+    "Orientation opposition is a transported-normal witness, not a self-intersection proof.",
+    "Closed sections are not whole-garment volume.",
+    "C1 OFF/ON hand movement is measured natural girdle translation, not automatically an anchor failure."
+  ],
+  "referenceWeightStats": {
+    "unweighted": 0,
+    "maxInfluences": 4,
+    "maxSumDeviation": 1.825392246246338e-07,
+    "nonzeroInfluences": 3088451,
+    "reference": "untouched original-indexed sidecar; actual render readback separately checked"
+  },
+  "artistDesign": {
+    "status": "V3_NEW_ARTIST_MODEL_NO_VOLUME_COMPENSATION",
+    "sourceView": "../weight-witness-v1/renders/worst-edge-side.png",
+    "sourceFrame": "dance50 original C1 ON",
+    "dimensions": [
+      640,
+      768
+    ],
+    "targetMeaning": "Fill the narrow visible internal under-sleeve groove into a continuous shallow concave garment transition, retaining outer sleeve cap and torso silhouette. Explicit surface targets, not max-ratio minimization or radial volume inflation.",
+    "creaseControls": [
+      {
+        "pixelTopLeft": [
+          178,
+          499
+        ],
+        "towardCameraMM": 1.0
+      },
+      {
+        "pixelTopLeft": [
+          226,
+          488
+        ],
+        "towardCameraMM": 3.0
+      },
+      {
+        "pixelTopLeft": [
+          276,
+          473
+        ],
+        "towardCameraMM": 3.0
+      },
+      {
+        "pixelTopLeft": [
+          322,
+          451
+        ],
+        "towardCameraMM": 1.0
+      }
+    ],
+    "creaseSupportRadiusM": 0.04,
+    "maximumTotalDeltaM": 0.0035,
+    "maskFeatherM": 0.006,
+    "inverseConditionMaximum": 50,
+    "scope": "Four explicit original-garment ray-hit controls; compact40mmC2 interpolating support, maximum3.5mm displacement, exact protected additional-zero. No source edits or original-map changes.",
+    "sourceViewSHA256": "8a3b2f1425234b31b2dd7af6de27280632f2f25959b323c5370cb75d1eddc4c2",
+    "physicalModel": "Free garment may change air gap. Signed surface volume and area are reported without forcing zero volume through an unrelated torso dent. Original R4 volume-constraint RED retained separately."
+  },
+  "candidateStatus": "ARTIST_CANDIDATE_RENDERED_NOT_ACCEPTED",
+  "renders": [
+    {
+      "file": "source-before-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.21678107976913452,
+        -1.8727357387542725,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "original-source-normal1"
+    },
+    {
+      "file": "source-before-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -0.6332189440727234,
+        2.1272642612457275,
+        0.8073041439056396
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "original-source-normal1"
+    },
+    {
+      "file": "source-before-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -1.7832188606262207,
+        0.12726424634456635,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "original-source-normal1"
+    },
+    {
+      "file": "source-after-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.21678107976913452,
+        -1.8727357387542725,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "original-source-normal1"
+    },
+    {
+      "file": "source-after-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -0.6332189440727234,
+        2.1272642612457275,
+        0.8073041439056396
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "original-source-normal1"
+    },
+    {
+      "file": "source-after-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -1.7832188606262207,
+        0.12726424634456635,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "original-source-normal1"
+    },
+    {
+      "file": "clay-before-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.21678107976913452,
+        -1.8727357387542725,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "diagnostic-flat-clay"
+    },
+    {
+      "file": "clay-before-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -0.6332189440727234,
+        2.1272642612457275,
+        0.8073041439056396
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "diagnostic-flat-clay"
+    },
+    {
+      "file": "clay-before-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -1.7832188606262207,
+        0.12726424634456635,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "diagnostic-flat-clay"
+    },
+    {
+      "file": "clay-after-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.21678107976913452,
+        -1.8727357387542725,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "diagnostic-flat-clay"
+    },
+    {
+      "file": "clay-after-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -0.6332189440727234,
+        2.1272642612457275,
+        0.8073041439056396
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "diagnostic-flat-clay"
+    },
+    {
+      "file": "clay-after-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        -1.7832188606262207,
+        0.12726424634456635,
+        0.7473041415214539
+      ],
+      "cameraTarget": [
+        0.2167810741828959,
+        0.12726424497061356,
+        0.6873041445586632
+      ],
+      "orthoScale": 0.32,
+      "material": "diagnostic-flat-clay"
+    }
+  ],
+  "rayHitWitnesses": [
+    {
+      "pixel": [
+        178,
+        499
+      ],
+      "originalFace": 304975,
+      "originalVertexIndices": [
+        765822,
+        764385,
+        775740
+      ],
+      "restWorldM": [
+        [
+          -0.10985565930604935,
+          0.049388937151679385,
+          0.6703491189353925
+        ],
+        [
+          -0.1100616529583931,
+          0.04916005537577034,
+          0.6717224099610223
+        ],
+        [
+          -0.1093750074505806,
+          0.05093007485966456,
+          0.6706390358602148
+        ]
+      ],
+      "allowed": true,
+      "touchesProtected": false
+    },
+    {
+      "pixel": [
+        226,
+        488
+      ],
+      "originalFace": 225310,
+      "originalVertexIndices": [
+        705809,
+        707750,
+        708068
+      ],
+      "restWorldM": [
+        [
+          -0.1387329250574112,
+          0.03921513769671501,
+          0.6280822736769783
+        ],
+        [
+          -0.1398315578699112,
+          0.03955083104942018,
+          0.6279296857716797
+        ],
+        [
+          -0.1384124904870987,
+          0.03960423681980971,
+          0.6281280500271578
+        ]
+      ],
+      "allowed": true,
+      "touchesProtected": false
+    },
+    {
+      "pixel": [
+        276,
+        473
+      ],
+      "originalFace": 88778,
+      "originalVertexIndices": [
+        714033,
+        714838,
+        718765
+      ],
+      "restWorldM": [
+        [
+          -0.1581878811120987,
+          0.040645652905285455,
+          0.6282806378722611
+        ],
+        [
+          -0.1593322902917862,
+          0.04079061141471886,
+          0.6285858136471747
+        ],
+        [
+          -0.1593628078699112,
+          0.04146962753667089,
+          0.6287841778753065
+        ]
+      ],
+      "allowed": true,
+      "touchesProtected": false
+    },
+    {
+      "pixel": [
+        322,
+        451
+      ],
+      "originalFace": 129382,
+      "originalVertexIndices": [
+        742553,
+        740008,
+        740972
+      ],
+      "restWorldM": [
+        [
+          -0.1791687160730362,
+          0.04558950071427453,
+          0.6317749003514711
+        ],
+        [
+          -0.1795349270105362,
+          0.04517369870298365,
+          0.6315612773227713
+        ],
+        [
+          -0.1799163967370987,
+          0.045345360099279274,
+          0.6320037821980803
+        ]
+      ],
+      "allowed": true,
+      "touchesProtected": false
+    }
+  ],
+  "maskExpansion": "Distance to actual excluded zero vertices, not the last allowed cloth vertex; same6mmfixedmargin and identical221624protected vertices.",
+  "controlInteriorMarginsM": [
+    0.054467231035232544,
+    0.01401627529412508,
+    0.006605824455618858,
+    0.007199548184871674
+  ],
+  "skinDistanceWitness": {
+    "protectedOriginalVertices": 221624,
+    "minimumProposedSupportToProtectedM": 0.0002520446141716093,
+    "controlToProtectedM": [
+      0.054467231035232544,
+      0.01401627529412508,
+      0.006605824455618858,
+      0.007199548184871674
+    ],
+    "meaning": "Known/conservative skin/neck/distal protected envelope distances; membership still requires actual cloth-mask visual inspection. Original C1 motion unchanged."
+  },
+  "controls": {
+    "sourcePixels": [
+      [
+        178,
+        499
+      ],
+      [
+        226,
+        488
+      ],
+      [
+        276,
+        473
+      ],
+      [
+        322,
+        451
+      ]
+    ],
+    "sourceWorldM": [
+      [
+        0.16388583183288574,
+        0.18643058836460114,
+        0.6409532427787781
+      ],
+      [
+        0.031134188175201416,
+        0.16643060743808746,
+        0.6495211720466614
+      ],
+      [
+        0.013271152973175049,
+        0.14559727907180786,
+        0.6563099026679993
+      ],
+      [
+        0.0051634907722473145,
+        0.12643061578273773,
+        0.6657239198684692
+      ]
+    ],
+    "explicitTargetWorldM": [
+      [
+        0.16288628154993057,
+        0.18643058852920888,
+        0.6409832290317863
+      ],
+      [
+        0.02813553732633591,
+        0.1664306079319107,
+        0.6496111308056861
+      ],
+      [
+        0.01027250212430954,
+        0.1455972795656311,
+        0.656399861427024
+      ],
+      [
+        0.004163940489292145,
+        0.12643061594734548,
+        0.6657539061214774
+      ]
+    ],
+    "originalFaceIDs": [
+      304975,
+      225310,
+      88778,
+      129382
+    ],
+    "meaning": "Desired artist surface points, not corrected-render evidence"
+  },
+  "volume": {
+    "signedSurfaceTetraDifferenceM3": 2.8858615539149586e-06,
+    "constraint": false,
+    "claim": "Signed changed-surface tetra difference; open cloth/body topology may invalidate an anatomical volume interpretation. No compensation or volume-preserved claim."
+  },
+  "maxDeltaM": 0.0030106735838754304,
+  "additionalProtectedDeltaM": 0,
+  "actualControlResidualM": [
+    9.86063709178351e-06,
+    1.1601511905540741e-05,
+    8.811937419097383e-06,
+    3.3225848623054913e-07
+  ],
+  "metrics": {
+    "sleeve_armhole_R": {
+      "before": {
+        "edgeCount": 71949,
+        "degenerateRestEdges": 0,
+        "ratio": {
+          "min": 0.49964376216530043,
+          "median": 1.0000001372105967,
+          "p95": 1.465798538383791,
+          "p99": 1.871124214799114,
+          "max": 3.811197152338212
+        },
+        "logStrainAbs": {
+          "min": 4.023259503408314e-11,
+          "median": 0.07985092494020868,
+          "p95": 0.38566381168740865,
+          "p99": 0.6266299999129302,
+          "max": 1.3379433529961058
+        },
+        "worstEdgeCanonicalIDs": [
+          30480,
+          30590,
+          140373,
+          30417,
+          36884,
+          35546,
+          30641,
+          36577
+        ],
+        "worstEdgesVertexPairs": [
+          [
+            145536,
+            146384
+          ],
+          [
+            145855,
+            146794
+          ],
+          [
+            884093,
+            885368
+          ],
+          [
+            145354,
+            146219
+          ],
+          [
+            172375,
+            172387
+          ],
+          [
+            166565,
+            166798
+          ],
+          [
+            146080,
+            147045
+          ],
+          [
+            171185,
+            171455
+          ]
+        ],
+        "worstRatios": [
+          3.811197152338212,
+          3.496668241663028,
+          3.4723692269500774,
+          3.3921882540940698,
+          3.2740040386571194,
+          3.1019369374111343,
+          3.0489520265753627,
+          2.944676211318899
+        ],
+        "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+      },
+      "after": {
+        "edgeCount": 71949,
+        "degenerateRestEdges": 0,
+        "ratio": {
+          "min": 0.49964376216530043,
+          "median": 1.0000001372105967,
+          "p95": 1.465798538383791,
+          "p99": 1.871124214799114,
+          "max": 3.811197152338212
+        },
+        "logStrainAbs": {
+          "min": 4.023259503408314e-11,
+          "median": 0.07985092494020868,
+          "p95": 0.38566381168740865,
+          "p99": 0.6266299999129302,
+          "max": 1.3379433529961058
+        },
+        "worstEdgeCanonicalIDs": [
+          30480,
+          30590,
+          140373,
+          30417,
+          36884,
+          35546,
+          30641,
+          36577
+        ],
+        "worstEdgesVertexPairs": [
+          [
+            145536,
+            146384
+          ],
+          [
+            145855,
+            146794
+          ],
+          [
+            884093,
+            885368
+          ],
+          [
+            145354,
+            146219
+          ],
+          [
+            172375,
+            172387
+          ],
+          [
+            166565,
+            166798
+          ],
+          [
+            146080,
+            147045
+          ],
+          [
+            171185,
+            171455
+          ]
+        ],
+        "worstRatios": [
+          3.811197152338212,
+          3.496668241663028,
+          3.4723692269500774,
+          3.3921882540940698,
+          3.2740040386571194,
+          3.1019369374111343,
+          3.0489520265753627,
+          2.944676211318899
+        ],
+        "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+      },
+      "strictFence": {
+        "pass": true,
+        "failures": [],
+        "meaning": "numeric regression fence only; visual shape acceptance remains required"
+      },
+      "scope": "Full original edges incident to changed patch; global archived strict RED remains retained separately.",
+      "triangles": {
+        "before": {
+          "triangleCount": 48217,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.4489846719841485,
+            "median": 1.024361925387938,
+            "p95": 1.6726672419134136,
+            "p99": 1.988199041894698,
+            "max": 4.1573077980654105
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            468753,
+            131422,
+            468754,
+            375798,
+            375796,
+            468751,
+            375786,
+            131420
+          ],
+          "orientationAvailable": true,
+          "opposedTransportNormalCount": 0,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        },
+        "after": {
+          "triangleCount": 48217,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.4489846719841485,
+            "median": 1.024361925387938,
+            "p95": 1.6726672419134136,
+            "p99": 1.988199041894698,
+            "max": 4.1573077980654105
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            468753,
+            131422,
+            468754,
+            375798,
+            375796,
+            468751,
+            375786,
+            131420
+          ],
+          "orientationAvailable": true,
+          "opposedTransportNormalCount": 0,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "orientationReference": "Actual original C1 posed face normals; opposition is a witness, not a self-intersection proof"
+    },
+    "torso_underarm_R": {
+      "before": {
+        "edgeCount": 128183,
+        "degenerateRestEdges": 0,
+        "ratio": {
+          "min": 0.22252183825569763,
+          "median": 1.0380497591331228,
+          "p95": 2.0547949253007936,
+          "p99": 3.042651354412196,
+          "max": 23.427404943934988
+        },
+        "logStrainAbs": {
+          "min": 1.20254095497955e-09,
+          "median": 0.08560824869762226,
+          "p95": 0.7238371583494319,
+          "p99": 1.1161815812451203,
+          "max": 3.153906488550988
+        },
+        "worstEdgeCanonicalIDs": [
+          101430,
+          28027,
+          100807,
+          101428,
+          100485,
+          34879,
+          99225,
+          99699
+        ],
+        "worstEdgesVertexPairs": [
+          [
+            555893,
+            559213
+          ],
+          [
+            137268,
+            138293
+          ],
+          [
+            552042,
+            553438
+          ],
+          [
+            555893,
+            556269
+          ],
+          [
+            549937,
+            550710
+          ],
+          [
+            163225,
+            164727
+          ],
+          [
+            541643,
+            545004
+          ],
+          [
+            544907,
+            545004
+          ]
+        ],
+        "worstRatios": [
+          23.427404943934988,
+          22.210581320092444,
+          22.177540043750806,
+          21.053693451493633,
+          21.04482759270321,
+          20.606737212145305,
+          20.30468563512728,
+          20.251184576486544
+        ],
+        "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+      },
+      "after": {
+        "edgeCount": 128183,
+        "degenerateRestEdges": 0,
+        "ratio": {
+          "min": 0.22252183825569763,
+          "median": 1.0381498992529437,
+          "p95": 2.05466676727837,
+          "p99": 3.031508821936048,
+          "max": 23.427404943934988
+        },
+        "logStrainAbs": {
+          "min": 1.20254095497955e-09,
+          "median": 0.08557019113409879,
+          "p95": 0.7234979101478184,
+          "p99": 1.113095992017694,
+          "max": 3.153906488550988
+        },
+        "worstEdgeCanonicalIDs": [
+          101430,
+          28027,
+          100807,
+          101428,
+          100485,
+          34879,
+          99225,
+          99699
+        ],
+        "worstEdgesVertexPairs": [
+          [
+            555893,
+            559213
+          ],
+          [
+            137268,
+            138293
+          ],
+          [
+            552042,
+            553438
+          ],
+          [
+            555893,
+            556269
+          ],
+          [
+            549937,
+            550710
+          ],
+          [
+            163225,
+            164727
+          ],
+          [
+            541643,
+            545004
+          ],
+          [
+            544907,
+            545004
+          ]
+        ],
+        "worstRatios": [
+          23.427404943934988,
+          22.210581320092444,
+          22.177540043750806,
+          21.053693451493633,
+          21.04482759270321,
+          20.606737212145305,
+          20.30468563512728,
+          20.251184576486544
+        ],
+        "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+      },
+      "strictFence": {
+        "pass": true,
+        "failures": [],
+        "meaning": "numeric regression fence only; visual shape acceptance remains required"
+      },
+      "scope": "Full original edges incident to changed patch; global archived strict RED remains retained separately.",
+      "triangles": {
+        "before": {
+          "triangleCount": 85863,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.09631673772913663,
+            "median": 1.0801494086221683,
+            "p95": 2.1394579142726595,
+            "p99": 3.3479679638059525,
+            "max": 25.637237026720356
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            500784,
+            304679,
+            500552,
+            500612,
+            500777,
+            500792,
+            423252,
+            500772
+          ],
+          "orientationAvailable": true,
+          "opposedTransportNormalCount": 0,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        },
+        "after": {
+          "triangleCount": 85863,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.09631673772913663,
+            "median": 1.081293318349103,
+            "p95": 2.1385780809398782,
+            "p99": 3.3448940717459124,
+            "max": 25.637237026720356
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            500784,
+            500552,
+            500612,
+            304679,
+            500777,
+            500792,
+            423252,
+            500772
+          ],
+          "orientationAvailable": true,
+          "opposedTransportNormalCount": 0,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "orientationReference": "Actual original C1 posed face normals; opposition is a witness, not a self-intersection proof"
+    }
+  },
+  "absoluteStretch": {
+    "sleeve_armhole_R": {
+      "0MM": {
+        "originalEdgeCount": 71949,
+        "beforePositiveExcessMM": {
+          "min": 0.0,
+          "median": 1.3674864430927858e-07,
+          "p95": 0.4355996057178726,
+          "p99": 0.7437890830644778,
+          "max": 1.905991688209453
+        },
+        "afterPositiveExcessMM": {
+          "min": 0.0,
+          "median": 1.3674864430927858e-07,
+          "p95": 0.4355996057178726,
+          "p99": 0.7437890830644778,
+          "max": 1.905991688209453
+        },
+        "deltaPosedEdgeMM": {
+          "min": -0.0020526464451044776,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0005814758700360169
+        },
+        "ratioFenceNotWeakened": true
+      },
+      "0.1MM": {
+        "originalEdgeCount": 71947,
+        "beforePositiveExcessMM": {
+          "min": 0.0,
+          "median": 1.3674864430927858e-07,
+          "p95": 0.4356257956847879,
+          "p99": 0.7437962512529904,
+          "max": 1.905991688209453
+        },
+        "afterPositiveExcessMM": {
+          "min": 0.0,
+          "median": 1.3674864430927858e-07,
+          "p95": 0.4356257956847879,
+          "p99": 0.7437962512529904,
+          "max": 1.905991688209453
+        },
+        "deltaPosedEdgeMM": {
+          "min": -0.0020526464451044776,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0005814758700360169
+        },
+        "ratioFenceNotWeakened": true
+      },
+      "1.0MM": {
+        "originalEdgeCount": 37892,
+        "beforePositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.0,
+          "p95": 0.4550167904900995,
+          "p99": 0.8041092537315655,
+          "max": 1.905991688209453
+        },
+        "afterPositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.0,
+          "p95": 0.4550167904900995,
+          "p99": 0.8041092537315655,
+          "max": 1.905991688209453
+        },
+        "deltaPosedEdgeMM": {
+          "min": -0.0020526464451044776,
+          "median": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "max": 0.0002546269125579866
+        },
+        "ratioFenceNotWeakened": true
+      }
+    },
+    "torso_underarm_R": {
+      "0MM": {
+        "originalEdgeCount": 128183,
+        "beforePositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.0376907195331201,
+          "p95": 1.0948346465968728,
+          "p99": 2.4516027616028193,
+          "max": 15.831176707548966
+        },
+        "afterPositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.03776944308940056,
+          "p95": 1.094714008751295,
+          "p99": 2.445386948090568,
+          "max": 15.831176707548966
+        },
+        "deltaPosedEdgeMM": {
+          "min": -0.36678299807061004,
+          "median": 0.0,
+          "p95": 0.00027108336480758435,
+          "p99": 0.01609522760674069,
+          "max": 0.14078235944492076
+        },
+        "ratioFenceNotWeakened": true
+      },
+      "0.1MM": {
+        "originalEdgeCount": 128168,
+        "beforePositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.03768535189537203,
+          "p95": 1.0949134135113399,
+          "p99": 2.4516669489989114,
+          "max": 15.831176707548966
+        },
+        "afterPositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.03775407254677894,
+          "p95": 1.094802229961419,
+          "p99": 2.445622742379947,
+          "max": 15.831176707548966
+        },
+        "deltaPosedEdgeMM": {
+          "min": -0.36678299807061004,
+          "median": 0.0,
+          "p95": 0.0002712886023099368,
+          "p99": 0.016095296560902476,
+          "max": 0.14078235944492076
+        },
+        "ratioFenceNotWeakened": true
+      },
+      "1.0MM": {
+        "originalEdgeCount": 68672,
+        "beforePositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.04041201603543175,
+          "p95": 1.3779988202171112,
+          "p99": 3.070478464556704,
+          "max": 15.363434991399334
+        },
+        "afterPositiveExcessMM": {
+          "min": 0.0,
+          "median": 0.04047047219972899,
+          "p95": 1.3773162094416784,
+          "p99": 3.075364631529163,
+          "max": 15.363434991399334
+        },
+        "deltaPosedEdgeMM": {
+          "min": -0.36678299807061004,
+          "median": 0.0,
+          "p95": 0.00033001386717293826,
+          "p99": 0.02206673335657567,
+          "max": 0.14078235944492076
+        },
+        "ratioFenceNotWeakened": true
+      }
+    }
+  },
+  "poseDriver": {
+    "meaning": "Dance-only geometric humerus-elevation/elbow-flexion compact C2 driver; no bone motion change",
+    "referenceDegrees": [
+      -28.780807343718774,
+      76.10440532314381
+    ],
+    "bandwidthDegrees": [
+      15,
+      20
+    ],
+    "actualSamples": [
+      {
+        "clip": "dance_01",
+        "phase": 0.45,
+        "featuresDegrees": [
+          0.2352095372148196,
+          13.547299078891342
+        ],
+        "weight": 0.0,
+        "maxAddedWorldM": 0.0,
+        "additionalProtectedDeltaM": 0
+      },
+      {
+        "clip": "dance_01",
+        "phase": 0.475,
+        "featuresDegrees": [
+          -66.29118097410804,
+          12.287882909375803
+        ],
+        "weight": 0.0,
+        "maxAddedWorldM": 0.0,
+        "additionalProtectedDeltaM": 0
+      },
+      {
+        "clip": "dance_01",
+        "phase": 0.5,
+        "featuresDegrees": [
+          -28.780807343718774,
+          76.10440532314381
+        ],
+        "weight": 1.0,
+        "maxAddedWorldM": 0.00301067358387543,
+        "additionalProtectedDeltaM": 0
+      },
+      {
+        "clip": "dance_01",
+        "phase": 0.525,
+        "featuresDegrees": [
+          -11.875740174307337,
+          20.282086144831716
+        ],
+        "weight": 0.0,
+        "maxAddedWorldM": 0.0,
+        "additionalProtectedDeltaM": 0
+      },
+      {
+        "clip": "dance_01",
+        "phase": 0.55,
+        "featuresDegrees": [
+          -68.3923257520463,
+          14.416295692730461
+        ],
+        "weight": 0.0,
+        "maxAddedWorldM": 0.0,
+        "additionalProtectedDeltaM": 0
+      },
+      {
+        "clip": "box_02",
+        "phase": 0.5,
+        "featuresDegrees": [
+          -29.044652511234418,
+          81.38863201354064
+        ],
+        "weight": 0.0,
+        "maxAddedWorldM": 0.0,
+        "additionalProtectedDeltaM": 0
+      },
+      {
+        "clip": "front_kick_01",
+        "phase": 0.5,
+        "featuresDegrees": [
+          -74.2591382149384,
+          11.059321258331398
+        ],
+        "weight": 0.0,
+        "maxAddedWorldM": 0.0,
+        "additionalProtectedDeltaM": 0
+      },
+      {
+        "clip": "neutral",
+        "phase": 0,
+        "featuresDegrees": [
+          -69.41055937610331,
+          2.697571327198788
+        ],
+        "weight": 0.0,
+        "maxAddedWorldM": 0.0,
+        "additionalProtectedDeltaM": 0
+      }
+    ]
+  },
+  "sourceAttributesExact": true,
+  "seconds": 148.69336199999088,
+  "artistScriptSHA256": "e5a549fda932c510ab0718df4d827bbf00160489313bd6e034301c15d42df83f"
+}

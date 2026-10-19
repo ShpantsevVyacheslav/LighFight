@@ -1,0 +1,232 @@
+{
+  "status": "WIDER_TABLE_ACTUAL_SUPPORT_CONTACTS_CONTINUOUS_RUG_PENDING_REVIEW",
+  "catalogPublicationAllowed": false,
+  "base": "art/drafts/meeting-hybrid-v1/meeting-master.glb",
+  "assets": [
+    {
+      "id": "burner",
+      "source": "art/source/meeting-meshy-props-v1/burner/model.glb",
+      "heightMetres": 0.2,
+      "yawDegrees": 0,
+      "reviewCenter": [
+        3.2,
+        1.025,
+        1.04
+      ],
+      "gameplayCenter": [
+        5.95,
+        1.025,
+        2.84
+      ]
+    },
+    {
+      "id": "cabinet",
+      "source": "art/source/meeting-meshy-props-v1/cabinet/model.glb",
+      "heightMetres": 0.62,
+      "yawDegrees": 180,
+      "reviewCenter": [
+        2.54,
+        2.47,
+        4.88
+      ],
+      "gameplayCenter": [
+        5.25,
+        2.47,
+        6.77
+      ],
+      "notes": "Smaller cabinet in upper LEFT corner of whole-camera rear wall, next to window wall. Front faces room -Z."
+    },
+    {
+      "id": "beanbag",
+      "source": "art/source/meeting-meshy-props-v1/beanbag/model.glb",
+      "heightMetres": 0.9,
+      "yawDegrees": 0,
+      "reviewCenter": [
+        -2.75,
+        0.2015,
+        4.45
+      ],
+      "gameplayCenter": [
+        -5.5,
+        0.2015,
+        6.25
+      ],
+      "normalizeAxis": 0,
+      "targetSpanMetres": 1.2,
+      "notes": "Reference is a collapsed beanbag: preserve squat shape, normalize WIDTH to1.2m, never force .9m height.",
+      "materialOverride": {
+        "baseColorFactor": [
+          0.26,
+          0.29,
+          0.34,
+          1
+        ],
+        "roughnessFactor": 0.94,
+        "metallicFactor": 0
+      },
+      "anchorBottomToY": 0
+    },
+    {
+      "id": "ceramic",
+      "source": "art/source/meeting-meshy-props-v1/ceramic/model.glb",
+      "heightMetres": 0.34,
+      "yawDegrees": 180,
+      "reviewCenter": [
+        3.225,
+        1.1,
+        3.12
+      ],
+      "gameplayCenter": [
+        5.975,
+        1.1,
+        4.92
+      ],
+      "anchorBottomToY": 0.925,
+      "notes": "Yaw180 aligns extra tin along long windowsill. Contact-base X becomes[3.099,3.389] inside sill[3.095,3.445]; body maxX3.407 below glassX3.43. Uniform scale preserved."
+    },
+    {
+      "id": "plant",
+      "source": "art/source/meeting-meshy-props-v1/plant/model.glb",
+      "heightMetres": 0.44,
+      "yawDegrees": 0,
+      "reviewCenter": [
+        0.25,
+        1.27,
+        2.8
+      ],
+      "gameplayCenter": [
+        0.3375,
+        1.27,
+        4.569999999999999
+      ],
+      "contactSourceY": -0.528318,
+      "surfaceY": 0.9425231218338013,
+      "notes": "Source saucer contact measured from lower white/saucer vertices in pot region, not hanging low vine bbox. Source original remains unmodified."
+    },
+    {
+      "id": "laptop-1",
+      "sourceGroup": "laptop",
+      "source": "art/source/meeting-meshy-props-v1/laptop/model.glb",
+      "heightMetres": 0.22,
+      "normalizeAxis": 0,
+      "targetSpanMetres": 0.34,
+      "yawDegrees": 90,
+      "reviewCenter": [
+        0.4,
+        1.16,
+        2.1793
+      ],
+      "gameplayCenter": [
+        0.54,
+        1.16,
+        3.8561950000000005
+      ],
+      "anchorBottomToY": 0.9425231218338013,
+      "notes": "Open laptop width34cm; keyboard/screen faces nearest actual chair, shared geometry/images across three instances."
+    },
+    {
+      "id": "laptop-2",
+      "sourceGroup": "laptop",
+      "source": "art/source/meeting-meshy-props-v1/laptop/model.glb",
+      "heightMetres": 0.22,
+      "normalizeAxis": 0,
+      "targetSpanMetres": 0.34,
+      "yawDegrees": -90,
+      "reviewCenter": [
+        -0.4,
+        1.16,
+        1.9406
+      ],
+      "gameplayCenter": [
+        -0.54,
+        1.16,
+        3.58169
+      ],
+      "anchorBottomToY": 0.9425231218338013,
+      "notes": "Open laptop width34cm; keyboard/screen faces nearest actual chair, shared geometry/images across three instances."
+    },
+    {
+      "id": "laptop-3",
+      "sourceGroup": "laptop",
+      "source": "art/source/meeting-meshy-props-v1/laptop/model.glb",
+      "heightMetres": 0.22,
+      "normalizeAxis": 0,
+      "targetSpanMetres": 0.34,
+      "yawDegrees": -85,
+      "reviewCenter": [
+        -0.4,
+        1.16,
+        4.0922
+      ],
+      "gameplayCenter": [
+        -0.54,
+        1.16,
+        6.05603
+      ],
+      "anchorBottomToY": 0.9425231218338013,
+      "notes": "Open laptop width34cm; keyboard/screen faces nearest actual chair, shared geometry/images across three instances."
+    },
+    {
+      "id": "hookah",
+      "sourceGroup": "hookah",
+      "source": "art/drafts/meeting-meshy-v1/hookah-body-source.glb",
+      "heightMetres": 0.65,
+      "yawDegrees": 0,
+      "reviewCenter": [
+        0.08,
+        1.375,
+        3.08
+      ],
+      "gameplayCenter": [
+        0.10800000000000001,
+        1.375,
+        4.8919999999999995
+      ],
+      "anchorBottomToY": 0.9425231218338013,
+      "notes": "65cm source-derived body, embedded source hose removed via geometric cut/cap. Original source unchanged. Dynamic hose attaches to actual cap submesh socket; review renders in hookah-body-review."
+    }
+  ],
+  "rug": {
+    "texture": "art/source/meeting-meshy-props-v1/inputs/rug-coherent-wide.png",
+    "reviewCenter": [
+      -3.38,
+      1.5,
+      1.7
+    ],
+    "gameplayCenter": [
+      -6.42,
+      1.5,
+      2.3625
+    ],
+    "sizeAlongZ": 2.48,
+    "height": 2.8,
+    "normal": [
+      1,
+      0,
+      0
+    ],
+    "reviewSizeAlongZ": 6.8,
+    "gameplaySizeAlongZ": 8.796666666666667,
+    "notes": "One continuous complete generated textile. Uniform aspect2184/720 preserved; no repeated sidebands and no text/logo stretch. Gameplayheight2.9,width8.7967 leaves smallwallmargins.",
+    "reviewTexture": "art/source/meeting-meshy-props-v1/inputs/rug-coherent-wide.png",
+    "gameplayTexture": "art/source/meeting-meshy-props-v1/inputs/rug-coherent-wide.png",
+    "gameplayHeight": 2.9,
+    "reviewHeight": 2.241758241758242
+  },
+  "notes": "Source paths are project-relative. All scaling uniform by measured scene world-space Y height. Centers target generated bbox center. Facing must be checked in actual renders; set yaw per asset. Review and gameplay placement separate. Missing assets skipped and explicitly reported. Never publish catalog in adapter.",
+  "gameplayBase": "art/drafts/meeting-meshy-v1/gameplay-shell.glb",
+  "auxiliaryCup": {
+    "source": "art/drafts/meeting-meshy-v1/aux-red-cup.glb",
+    "reviewBottom": [
+      3.22,
+      0.925,
+      3.75
+    ],
+    "gameplayBottom": [
+      5.97,
+      0.925,
+      5.55
+    ],
+    "provenance": "Authored auxiliary open tapered plastic cup, 256triangles, not Meshy"
+  }
+}

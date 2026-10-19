@@ -1,0 +1,136 @@
+{
+  "status": "EXPLORATORY_HYBRID_V3_NOT_PROMOTED",
+  "provenance": "Three unchanged Tripo components + manually reconstructed photo-based architecture",
+  "baseBlend": "art/drafts/kitchen-hybrid-v2/kitchen-hybrid-v2.blend",
+  "baseBlendSHA256": "ba2882a00d0d590afcc12820a83b85fdbea74d5e9cbdfa074f2c180d9ecc7f0d",
+  "newSource": "art/source/kitchen-tripo-v1/coffee-original-v5.glb",
+  "newSourceSHA256": "02a063da6e13e062cc524e6b891c93aea9419c0532ebc958cc2d46f0f63bd520",
+  "newSourceMeshHashes": {
+    "positionSHA256": "d4c020eda5a347002c79f2702549e75265567f565c93812246b362d26e67e9d1",
+    "triangleSHA256": "ef810fac91cbc55b6932f20b31bb53157d6f98674bd9656215161e9e2fbc4471",
+    "loopUVSHA256": "4ac91d6351783fc06213fdca53ff5ce044a110961083e0829b8bd5566239795b",
+    "vertices": 1044438,
+    "triangles": 1967143
+  },
+  "newSourceEmbeddedImages": [
+    {
+      "name": "lighfight-coffee-cabinet-v5-original_basecolor.jpg",
+      "SHA256": "35d154252a50327f93163b26b9ea2488114b29b94b93e6aa5564a03bbdbf0aad",
+      "bytes": 4221866
+    },
+    {
+      "name": "lighfight-coffee-cabinet-v5-original_rm.jpg",
+      "SHA256": "8f9f15432446a24f71eb7e533071933730b2c95a5bafeb488f0643e675dde603",
+      "bytes": 1514601
+    },
+    {
+      "name": "lighfight-coffee-cabinet-v5-original_normal.png",
+      "SHA256": "4ced27b105e1ea6a71fbcba0ca88f06161b214233b6692246db2323c9238df20",
+      "bytes": 3463455
+    }
+  ],
+  "newSourceMaterials": [
+    "tripo_material_6cbc2103-e478-4745-867d-b143a10c7d93"
+  ],
+  "uniformParentScale": 1.681246307410056,
+  "parentTranslation": [
+    -2.3499999046325684,
+    1.5,
+    0.0020000000949949026
+  ],
+  "newComponentWorldBoundsMin": [
+    -2.677919387817383,
+    1.223477840423584,
+    0.0020000000949949026
+  ],
+  "newComponentWorldBoundsMax": [
+    -2.022080421447754,
+    1.776522159576416,
+    1.6519999504089355
+  ],
+  "removedOnlyNamedBlockouts": [
+    "BLOCKOUT_CoffeeCupboard",
+    "BLOCKOUT_CoffeeMachine"
+  ],
+  "existingFurnitureHashes": {
+    "positionSHA256": "3bb4bfe4f28f80410f2a833edf784c69358933af717817a5bbb8ed5b1ef822f9",
+    "triangleSHA256": "f3624ca5495048b41e676655cc0068393908599fccd4a71cd3550902d2451e72",
+    "loopUVSHA256": "8568ef998a1bf1e74893fc3b299dc163f7312fb8748e1d24b21c81a1b0406a42",
+    "vertices": 1076312,
+    "triangles": 1988865
+  },
+  "allOtherObjectWorldMatricesExact": true,
+  "tableGeometryUVUnchanged": true,
+  "newGeometryUVUnchanged": true,
+  "remainingBlockouts": [],
+  "limits": [
+    "Exploratory layout only, not finished arena.",
+    "No appliance blockouts remain; generated component visual fidelity still needs review.",
+    "Custom floor now uses a baked base-color PNG and scalar PBR material; actual glTF player export not yet tested.",
+    "No Unity/mobile/performance acceptance."
+  ],
+  "floorBake": {
+    "source": "actual procedural top-face color evaluated as emission",
+    "candidate": "actual saved PNG reloaded sRGB evaluated as emission",
+    "probePixels": 262144,
+    "savedPNGNormalizedRGB_MAE": 0.001275933813303709,
+    "savedPNGNormalizedRGB_Max": 0.007843166589736938,
+    "savedPNGNormalizedRGB_P95": 0.003921568393707275,
+    "bakeResolution": [
+      2048,
+      2048
+    ],
+    "roughness": 0.55,
+    "metallic": 0.0,
+    "lightingBaked": false,
+    "normalMapAdded": false,
+    "limits": "Procedural-floor lookdev bake only. Source Tripo maps unchanged. Probe compares512px rendered filtered samples, not mathematical identity.",
+    "portableFloor": {
+      "file": "portable-floor.glb",
+      "SHA256": "ced88d3c78cc695a85c3d3eb874f2b4a81f27e56e7d3bbbb088d10d97ba48d9a",
+      "triangles": 12,
+      "meshes": 1,
+      "images": 1,
+      "hasPBRBaseColorTexture": true,
+      "scope": "Only manually authored floor exported; full master remains source-exact blend."
+    },
+    "independentSavedPNGByteComparison": {
+      "pixels": 262144,
+      "RGB8_MAE": 0.3253631591796875,
+      "RGB8_P95": 1.0,
+      "RGB8_Max": 2,
+      "pixelsOver2Fraction": 0.0,
+      "metricSpace": "Saved display PNG byte values; not linear radiometry."
+    }
+  },
+  "totalSourceFurnitureTriangles": 5930952,
+  "runtimeBudget": "Full master ~5.93M source triangles plus architecture; not mobile accepted, no LOD or reduction performed.",
+  "sourceAndBasePreservedAfterRenders": true,
+  "portableFloorAudit": {
+    "status": "PASS",
+    "GLBSHA256": "ced88d3c78cc695a85c3d3eb874f2b4a81f27e56e7d3bbbb088d10d97ba48d9a",
+    "meshes": 1,
+    "triangles": 12,
+    "embeddedPNGBytesExact": true,
+    "embeddedPNGSHA256": "6ca498f42596725c574bf47f703e63adcabdd84b149231f003b0d55764ec567d",
+    "material": {
+      "doubleSided": true,
+      "name": "Portable_Floor_BakedBaseColor",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.550000011920929
+      }
+    },
+    "scope": "Authored floor only; no source furniture exported, no browser/runtime proof."
+  },
+  "savedMasterProof": {
+    "status": "PASS",
+    "sourceTriangles": 5930952,
+    "sourceVertices": 3147019,
+    "packedOriginalImageBytesExact": 9,
+    "savedMasterSHA256": "138c77a6329dc5cdb3781af1bc983f260c9663ba626eac74119a3333a9f3ef22"
+  }
+}

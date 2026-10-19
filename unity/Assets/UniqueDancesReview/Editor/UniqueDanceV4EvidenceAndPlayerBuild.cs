@@ -1,0 +1,4 @@
+using UnityEngine;using UnityEditor;using LighFight.Runtime;
+public static class UniqueDanceV4EvidenceAndPlayerBuild {
+ public static void Run(){var original=AssetDatabase.LoadAssetAtPath<GameContent>("Assets/LighFight/Content/GameContent.asset").fighters[9];var source=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/UniqueDancesReview/GenericSources/action-74.fbx");foreach(var prefab in new[]{original,source}){var actor=(GameObject)PrefabUtility.InstantiatePrefab(prefab);try{UniqueDanceExactGenericSetup.RestoreMathematicalSkinBind(actor,actor.GetComponentInChildren<Animator>());}finally{foreach(var b in actor.GetComponents<MonoBehaviour>())if(b is IActorCurveWarmup w)w.Dispose();Object.DestroyImmediate(actor);}}UniqueDanceExactGenericSetup.ParityV3();ExactGenericDancePlayerBuild.Build();}
+}

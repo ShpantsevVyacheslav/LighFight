@@ -1,0 +1,42 @@
+{
+  "status": "UNPROMOTED_NATIVE67_CANDIDATE",
+  "sourceGLB": "prototypes/roster-portraits/models/sailor.glb",
+  "sourceSHA256": "3984974ec6475885ed14b99ccc6acfd04c175dd0b79d58fbcd549c44385ca29f",
+  "candidateSHA256": "676e23630e0ae9e810c37d0bb9fd53d330e57da4d96900140cf49880432efbd8",
+  "sourceFBXUnmodified": true,
+  "meshUVSkinBindImagesMaterialsNodeDefaultsExact": true,
+  "originalAnimationsJSONExact": true,
+  "originalBINPrefixExact": true,
+  "sourceAnimationNames": [
+    "box_02",
+    "cheer",
+    "dance_01",
+    "defeat_02",
+    "front_kick_01",
+    "greet_01",
+    "hit_to_head",
+    "walk",
+    "PreviewGuard"
+  ],
+  "derivedAnimation": "Dance_TrapeziusSupport_v1",
+  "changedJointRotationTracks": [
+    "Left_Shoulder",
+    "Left_UpperArm",
+    "Right_Shoulder",
+    "Right_UpperArm"
+  ],
+  "addedPayloadBytes": 174180,
+  "sourceFrames": 557,
+  "correctionSamples": 2225,
+  "correctionSamplingHz": 96,
+  "durationSeconds": 23.16666603088379,
+  "maxHandMovementM": 0.02110575480715942,
+  "maxUpperArmOrientationErrorDeg": 3.4150945850063755e-06,
+  "boneCount": 67,
+  "triangleCount": 99999,
+  "limits": [
+    "Original67-bone native100k geometry retained exactly; this is not full2M newrig promotion.",
+    "Deriveddance changes shoulder jointmotion deliberately; originaldance retained and allotherclips untouched.",
+    "Need independentrender/half-frameorientation/sourceentryreturn/floorgates beforeacceptance."
+  ]
+}

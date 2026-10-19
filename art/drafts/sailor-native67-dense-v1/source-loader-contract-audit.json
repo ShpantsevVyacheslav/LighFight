@@ -1,0 +1,46 @@
+{
+  "status": "OFFLINE_STATIC_CONTRACT_CHECK_ONLY",
+  "outerRequiredKeys": [
+    "OUT",
+    "start",
+    "args",
+    "body",
+    "donor",
+    "dm",
+    "scene",
+    "cam",
+    "cd",
+    "nativeNames",
+    "nativeJoint",
+    "nativeWeight",
+    "rawDm",
+    "meta",
+    "report",
+    "actual",
+    "group_hash",
+    "ns"
+  ],
+  "nestedKeys": [
+    "clips",
+    "ref",
+    "clay"
+  ],
+  "staticDeclarationCheck": true,
+  "tests": "4/4 field +4/4 namespace PASS",
+  "runtimeContractUnexecuted": true,
+  "sourcePaths": [
+    {
+      "path": "art/drafts/sailor-native67-dense-v1/tools/compare_raw_native_rigify.py",
+      "sha256": "a3caaa2de954894af349b83340ab37adfd1f3790657f1ac9abfd202cfbdedec3"
+    },
+    {
+      "path": "art/drafts/newrig-sailor-v1/tools/05_full_motion_gallery.py",
+      "sha256": "601251199a5105c35eca0b74299dcbe6691062b34e0f781e6702ac59867cc9c2"
+    },
+    {
+      "path": "art/drafts/newrig-sailor-v1/skin-quality-underarm-v1/tools/probe_source_off_on.py",
+      "sha256": "ef0d03dfaaa04705300a4166077faad5a7a71fe34f1d740057f18e147c3b43b7"
+    }
+  ],
+  "retainedRED": "spatial-all-rest-audit-v1/spatial-report.json"
+}

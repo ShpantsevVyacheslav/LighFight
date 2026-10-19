@@ -48,7 +48,7 @@ public sealed class DenseSkinningBenchmark : MonoBehaviour {
   while(true){bool more;try{more=run.MoveNext();if(Time.realtimeSinceStartupAsDouble>deadline)throw new TimeoutException("Benchmark deadline");}catch(Exception e){File.WriteAllText(output+"/failure.txt",e.ToString());Application.Quit(1);yield break;}if(!more)yield break;yield return run.Current;}
  }
  IEnumerator Run(){
-  Application.targetFrameRate=-1;QualitySettings.vSyncCount=0;QualitySettings.skinWeights=SkinWeights.Unlimited;
+  Application.runInBackground=true;Application.targetFrameRate=-1;QualitySettings.vSyncCount=0;QualitySettings.skinWeights=SkinWeights.Unlimited;
   if(SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Metal)throw new Exception("Metal required");
   if(!Debug.isDebugBuild)throw new Exception("Development player required");
   if(Camera.allCameras.Count(c=>c.enabled)!=1||!benchmarkCamera.enabled||benchmarkCamera.targetTexture)throw new Exception("Exactly one automatic backbuffer camera required");
@@ -167,4 +167,4 @@ public sealed class DenseSkinningBenchmark : MonoBehaviour {
  static string N(double x)=>double.IsNaN(x)?"unavailable":x.ToString("R",CultureInfo.InvariantCulture);
  static double Q(double[] xs,double q){if(xs.Length==0)return double.NaN;var a=(double[])xs.Clone();Array.Sort(a);return a[Math.Min(a.Length-1,(int)Math.Ceiling(q*a.Length)-1)];}
 }
-public sealed class DenseBenchmarkRenderCounter:MonoBehaviour {public int renders;void OnPreCull(){renders++;}}
+

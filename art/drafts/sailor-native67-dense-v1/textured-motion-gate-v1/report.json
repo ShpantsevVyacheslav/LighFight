@@ -1,0 +1,902 @@
+{
+  "status": "COMPLETED_TEXTURED_SELECTED_GATE_VISUAL_REVIEW_REQUIRED",
+  "candidateCSR_SHA256": "4a80d2d2ee2578a9c3ed35a88eb0c3e9024bcc3e9c9d0585b0f98c629c79ad1a",
+  "sourceGeometryBefore": {
+    "vertices": 994452,
+    "polygons": 1988914,
+    "triangles": 1988914,
+    "corners": 5966742,
+    "positions_sha256": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "triangle_corner_indices_sha256": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygon_sizes_sha256": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "material_indices_sha256": "00b59321048ce9ddca825cbff0f1fd3494c65dfb2de9ca03099b4d06f4b0ac32",
+    "uv_sha256": {
+      "UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+    },
+    "object_world_matrix_sha256": "c405f74280b8db1fd038b5c18ac23fc4eb0be58a5bb6e5c0aabefada40ec0450"
+  },
+  "materialSHA256": "d423c11a9f62cac1470dd9545665d99672545ae3a53a5bba2903df0b02e2f1c9",
+  "nativeBindBefore": {
+    "bone_count": 67,
+    "local_rest_matrices_sha256": "fd1487c748f127f902b7ce261d13984ba97e93515ff36a5b162d3eab67103568",
+    "parent_names": {
+      "Hips": null,
+      "Spine": "Hips",
+      "Chest": "Spine",
+      "UpperChest": "Chest",
+      "Neck": "UpperChest",
+      "Neck_Twist_A": "Neck",
+      "Head": "Neck",
+      "Left_Eye": "Head",
+      "Right_Eye": "Head",
+      "Left_Shoulder": "UpperChest",
+      "Left_UpperArm": "Left_Shoulder",
+      "Left_LowerArm": "Left_UpperArm",
+      "Left_Hand": "Left_LowerArm",
+      "Left_ThumbProximal": "Left_Hand",
+      "Left_ThumbIntermediate": "Left_ThumbProximal",
+      "Left_ThumbDistal": "Left_ThumbIntermediate",
+      "Left_ThumbDistalEnd": "Left_ThumbDistal",
+      "Left_IndexProximal": "Left_Hand",
+      "Left_IndexIntermediate": "Left_IndexProximal",
+      "Left_IndexDistal": "Left_IndexIntermediate",
+      "Left_IndexDistalEnd": "Left_IndexDistal",
+      "Left_MiddleProximal": "Left_Hand",
+      "Left_MiddleIntermediate": "Left_MiddleProximal",
+      "Left_MiddleDistal": "Left_MiddleIntermediate",
+      "Left_MiddleDistalEnd": "Left_MiddleDistal",
+      "Left_RingProximal": "Left_Hand",
+      "Left_RingIntermediate": "Left_RingProximal",
+      "Left_RingDistal": "Left_RingIntermediate",
+      "Left_RingDistalEnd": "Left_RingDistal",
+      "Left_PinkyProximal": "Left_Hand",
+      "Left_PinkyIntermediate": "Left_PinkyProximal",
+      "Left_PinkyDistal": "Left_PinkyIntermediate",
+      "Left_PinkyDistalEnd": "Left_PinkyDistal",
+      "Right_Shoulder": "UpperChest",
+      "Right_UpperArm": "Right_Shoulder",
+      "Right_LowerArm": "Right_UpperArm",
+      "Right_Hand": "Right_LowerArm",
+      "Right_ThumbProximal": "Right_Hand",
+      "Right_ThumbIntermediate": "Right_ThumbProximal",
+      "Right_ThumbDistal": "Right_ThumbIntermediate",
+      "Right_ThumbDistalEnd": "Right_ThumbDistal",
+      "Right_IndexProximal": "Right_Hand",
+      "Right_IndexIntermediate": "Right_IndexProximal",
+      "Right_IndexDistal": "Right_IndexIntermediate",
+      "Right_IndexDistalEnd": "Right_IndexDistal",
+      "Right_MiddleProximal": "Right_Hand",
+      "Right_MiddleIntermediate": "Right_MiddleProximal",
+      "Right_MiddleDistal": "Right_MiddleIntermediate",
+      "Right_MiddleDistalEnd": "Right_MiddleDistal",
+      "Right_RingProximal": "Right_Hand",
+      "Right_RingIntermediate": "Right_RingProximal",
+      "Right_RingDistal": "Right_RingIntermediate",
+      "Right_RingDistalEnd": "Right_RingDistal",
+      "Right_PinkyProximal": "Right_Hand",
+      "Right_PinkyIntermediate": "Right_PinkyProximal",
+      "Right_PinkyDistal": "Right_PinkyIntermediate",
+      "Right_PinkyDistalEnd": "Right_PinkyDistal",
+      "Left_UpperLeg": "Hips",
+      "Left_LowerLeg": "Left_UpperLeg",
+      "Left_Foot": "Left_LowerLeg",
+      "Left_Toes": "Left_Foot",
+      "Left_ToesEnd": "Left_Toes",
+      "Right_UpperLeg": "Hips",
+      "Right_LowerLeg": "Right_UpperLeg",
+      "Right_Foot": "Right_LowerLeg",
+      "Right_Toes": "Right_Foot",
+      "Right_ToesEnd": "Right_Toes"
+    },
+    "armature_world_matrix_sha256": "ada6a147b7eb5afd405f829c4cbe91737b2058e9da7587da0195332ad7ade501"
+  },
+  "frames": [
+    {
+      "file": "dance45-before-RigifyOFF-front.png",
+      "phase": 0.45,
+      "cameraWorld": [
+        -0.011113743297755718,
+        -1.7984031438827515,
+        0.8050262331962585
+      ],
+      "target": [
+        -0.011113743530586362,
+        0.20159685611724854,
+        0.7450262109438578
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.2703787937105023,
+          1.564451849449325
+        ],
+        "y": [
+          -0.7732579936232712,
+          0.9087507279929712
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance45-before-RigifyOFF-side.png",
+      "phase": 0.45,
+      "cameraWorld": [
+        -2.0111136436462402,
+        0.20159685611724854,
+        0.8050262331962585
+      ],
+      "target": [
+        -0.011113743530586362,
+        0.20159685611724854,
+        0.7450262109438578
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.25500861257075474,
+          0.9190812050543307
+        ],
+        "y": [
+          -0.7651909138572618,
+          0.9124138806767463
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance50-before-RigifyOFF-front.png",
+      "phase": 0.5,
+      "cameraWorld": [
+        0.19020649790763855,
+        -1.815416693687439,
+        0.7557018399238586
+      ],
+      "target": [
+        0.1902065028746923,
+        0.18458334108193716,
+        0.6957018176714579
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.11594311250325642,
+          1.1952164252421567
+        ],
+        "y": [
+          -0.7108144305616687,
+          0.9332092260049494
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance50-before-RigifyOFF-side.png",
+      "phase": 0.5,
+      "cameraWorld": [
+        -1.809793472290039,
+        0.18458333611488342,
+        0.7557018399238586
+      ],
+      "target": [
+        0.1902065028746923,
+        0.18458334108193716,
+        0.6957018176714579
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.1265570902871748,
+          0.830434103731527
+        ],
+        "y": [
+          -0.7039374639947861,
+          0.9366522765879572
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance55-before-RigifyOFF-front.png",
+      "phase": 0.55,
+      "cameraWorld": [
+        0.4806312322616577,
+        -1.8756769895553589,
+        0.7562066912651062
+      ],
+      "target": [
+        0.4806312322616577,
+        0.12432302162051201,
+        0.6962066888809204
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.24974802906445884,
+          0.860345478293889
+        ],
+        "y": [
+          -0.6950457880550023,
+          0.9387792650610588
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance55-before-RigifyOFF-side.png",
+      "phase": 0.55,
+      "cameraWorld": [
+        -1.5193687677383423,
+        0.12432302534580231,
+        0.7562066912651062
+      ],
+      "target": [
+        0.4806312322616577,
+        0.12432302162051201,
+        0.6962066888809204
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.07670671469824021,
+          1.627270918539745
+        ],
+        "y": [
+          -0.6878189117256474,
+          0.943008385969811
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance45-after-native67-front.png",
+      "phase": 0.45,
+      "cameraWorld": [
+        -0.011113743297755718,
+        -1.7984031438827515,
+        0.8050262331962585
+      ],
+      "target": [
+        -0.011113743530586362,
+        0.20159685611724854,
+        0.7450262109438578
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.2001329194053974,
+          1.554540264721063
+        ],
+        "y": [
+          -0.7694351455702767,
+          0.8998660933669291
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance45-after-native67-side.png",
+      "phase": 0.45,
+      "cameraWorld": [
+        -2.0111136436462402,
+        0.20159685611724854,
+        0.8050262331962585
+      ],
+      "target": [
+        -0.011113743530586362,
+        0.20159685611724854,
+        0.7450262109438578
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.18498662437002458,
+          0.8006806618667613
+        ],
+        "y": [
+          -0.7609737883957073,
+          0.9029075316529902
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance50-after-native67-front.png",
+      "phase": 0.5,
+      "cameraWorld": [
+        0.19020649790763855,
+        -1.815416693687439,
+        0.7557018399238586
+      ],
+      "target": [
+        0.1902065028746923,
+        0.18458334108193716,
+        0.6957018176714579
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.22272027642168643,
+          1.1327707309841908
+        ],
+        "y": [
+          -0.7049519692783314,
+          0.9165245963214521
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance50-after-native67-side.png",
+      "phase": 0.5,
+      "cameraWorld": [
+        -1.809793472290039,
+        0.18458333611488342,
+        0.7557018399238586
+      ],
+      "target": [
+        0.1902065028746923,
+        0.18458334108193716,
+        0.6957018176714579
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.022382861584758173,
+          0.7873129933337895
+        ],
+        "y": [
+          -0.696930556772536,
+          0.9197098998336708
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance55-after-native67-front.png",
+      "phase": 0.55,
+      "cameraWorld": [
+        0.4806312322616577,
+        -1.8756769895553589,
+        0.7562066912651062
+      ],
+      "target": [
+        0.4806312322616577,
+        0.12432302162051201,
+        0.6962066888809204
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.22388616386036686,
+          0.8707512420632045
+        ],
+        "y": [
+          -0.6917162298949412,
+          0.939242046513325
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "dance55-after-native67-side.png",
+      "phase": 0.55,
+      "cameraWorld": [
+        -1.5193687677383423,
+        0.12432302534580231,
+        0.7562066912651062
+      ],
+      "target": [
+        0.4806312322616577,
+        0.12432302162051201,
+        0.6962066888809204
+      ],
+      "orthoScale": 0.5799999833106995,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.06164896050209214,
+          1.5295655449901435
+        ],
+        "y": [
+          -0.6850731525079736,
+          0.9442969734328783
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "BOX-start-diagnostic-after-native67-front.png",
+      "phase": 0,
+      "cameraWorld": [
+        0.0307493656873703,
+        -2.0484812259674072,
+        0.4228561222553253
+      ],
+      "target": [
+        0.0307493656873703,
+        -0.048481284465163074,
+        0.3628561169685553
+      ],
+      "orthoScale": 0.8553833961486816,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.0823054906982655,
+          0.9176945093017345
+        ],
+        "y": [
+          0.0800000137909187,
+          0.9130468529385712
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "detail-head-front.png",
+      "phase": 0,
+      "cameraWorld": [
+        0.07973968982696533,
+        -2.22100830078125,
+        0.7159451842308044
+      ],
+      "target": [
+        0.07973968982696533,
+        -0.2210083156824112,
+        0.6559451603889466
+      ],
+      "orthoScale": 0.23999999463558197,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -1.2438619634049215,
+          1.7335460137764338
+        ],
+        "y": [
+          -2.196020003340887,
+          0.7730402064437948
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "detail-handR-front.png",
+      "phase": 0,
+      "cameraWorld": [
+        -0.04013758897781372,
+        -2.123875617980957,
+        0.3241244852542877
+      ],
+      "target": [
+        -0.04013758897781372,
+        -0.12387556582689285,
+        0.26412448287010193
+      ],
+      "orthoScale": 0.18000000715255737,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.992668034124071,
+          2.9772090633823955
+        ],
+        "y": [
+          -0.9350720478026542,
+          3.0236746527855716
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "detail-handL-front.png",
+      "phase": 0,
+      "cameraWorld": [
+        0.22864830493927002,
+        -1.9714823961257935,
+        0.5868801474571228
+      ],
+      "target": [
+        0.22864830493927002,
+        0.02851765789091587,
+        0.526880145072937
+      ],
+      "orthoScale": 0.18000000715255737,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -2.8592365514700044,
+          1.1106405460364621
+        ],
+        "y": [
+          -2.419556628247232,
+          1.5391900723409937
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "detail-feet-front.png",
+      "phase": 0,
+      "cameraWorld": [
+        0.0037799030542373657,
+        -1.9532517194747925,
+        0.1423647701740265
+      ],
+      "target": [
+        0.0037799030542373657,
+        0.046748317778110504,
+        0.0823647677898407
+      ],
+      "orthoScale": 0.30000001192092896,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          -0.578590397394085,
+          1.8033359104062752
+        ],
+        "y": [
+          0.22749544430051705,
+          2.6027434646534524
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "BOX35-after-native67-front.png",
+      "phase": 0.35,
+      "cameraWorld": [
+        -0.028474852442741394,
+        -2.195526361465454,
+        0.4715178608894348
+      ],
+      "target": [
+        -0.028474852442741394,
+        -0.19552632372141984,
+        0.41151786458288514
+      ],
+      "orthoScale": 0.981240451335907,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.1476865732669288,
+          0.8523134267330712
+        ],
+        "y": [
+          0.07999999592525203,
+          0.918178360978959
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "BOX70-after-native67-front.png",
+      "phase": 0.7,
+      "cameraWorld": [
+        0.028013303875923157,
+        -2.0637431144714355,
+        0.5134111046791077
+      ],
+      "target": [
+        0.028013303875923157,
+        -0.06374321704600688,
+        0.45341114027373103
+      ],
+      "orthoScale": 1.0781042575836182,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.22360261743014254,
+          0.7763973825698575
+        ],
+        "y": [
+          0.08000000910799435,
+          0.9168008819728621
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "kick35-after-native67-front.png",
+      "phase": 0.35,
+      "cameraWorld": [
+        0.5002968907356262,
+        -2.0066795349121094,
+        0.4846099317073822
+      ],
+      "target": [
+        0.5002969056367874,
+        -0.006679584724442772,
+        0.42460993346763154
+      ],
+      "orthoScale": 1.2576088905334473,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.08000006753817773,
+          0.9199999620838301
+        ],
+        "y": [
+          0.15399746358564712,
+          0.8503169956263726
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    },
+    {
+      "file": "kick70-after-native67-front.png",
+      "phase": 0.7,
+      "cameraWorld": [
+        0.3517165184020996,
+        -1.9673010110855103,
+        0.5370312929153442
+      ],
+      "target": [
+        0.3517165333032608,
+        0.0326989392609639,
+        0.477031319659807
+      ],
+      "orthoScale": 1.156239628791809,
+      "actualAllVertexProjectedBounds": {
+        "x": [
+          0.28646126056509835,
+          0.7135387072158866
+        ],
+        "y": [
+          0.0807149228136046,
+          0.9200000004329052
+        ]
+      },
+      "sourceColor": "original4K node graph, unchanged"
+    }
+  ],
+  "nativeClips": [
+    {
+      "name": "Armature|box_02",
+      "startFrame": 1.0,
+      "endFrame": 68.0,
+      "fps": 24,
+      "durationSeconds": 2.7916666666666665,
+      "curveKeySHA256": "6d09950a24373bd38f90363efea4ed0df3e64dfb2f6f939501325bf7de5cb1a0"
+    },
+    {
+      "name": "Armature|cheer",
+      "startFrame": 1.0,
+      "endFrame": 291.0,
+      "fps": 24,
+      "durationSeconds": 12.083333333333334,
+      "curveKeySHA256": "a89d45afe47c0a3b54cb5869c31eb2d83b7f8ebacd547d3eb74830d23462ca71"
+    },
+    {
+      "name": "Armature|dance_01",
+      "startFrame": 1.0,
+      "endFrame": 557.0,
+      "fps": 24,
+      "durationSeconds": 23.166666666666668,
+      "curveKeySHA256": "35189933cf4fa754bc6af980a5e93db5ab30d2f59279b67431b223c2ab888fcf"
+    },
+    {
+      "name": "Armature|defeat_02",
+      "startFrame": 1.0,
+      "endFrame": 204.0,
+      "fps": 24,
+      "durationSeconds": 8.458333333333334,
+      "curveKeySHA256": "cb93b60f9d68c209d5e25588cb775b18c3dd214f2ed7c8a433381ad235b351b1"
+    },
+    {
+      "name": "Armature|front_kick_01",
+      "startFrame": 1.0,
+      "endFrame": 61.0,
+      "fps": 24,
+      "durationSeconds": 2.5,
+      "curveKeySHA256": "a2d816887da9b2fa47f72a4b9c11f0eac8bfc5d713d69becb3c495ec70cede97"
+    },
+    {
+      "name": "Armature|greet_01",
+      "startFrame": 1.0,
+      "endFrame": 85.0,
+      "fps": 24,
+      "durationSeconds": 3.5,
+      "curveKeySHA256": "159fd3212a4cac5fbc08189781853c85ad020d88340c32b1833945ea650745bf"
+    },
+    {
+      "name": "Armature|hit_to_head",
+      "startFrame": 1.0,
+      "endFrame": 45.0,
+      "fps": 24,
+      "durationSeconds": 1.8333333333333333,
+      "curveKeySHA256": "cf8165e81ecfa8c5d3c53fae4de9d2158cc3e71b456d751cdae5cb732f6d929d"
+    },
+    {
+      "name": "Armature|walk",
+      "startFrame": 1.0,
+      "endFrame": 57.0,
+      "fps": 24,
+      "durationSeconds": 2.3333333333333335,
+      "curveKeySHA256": "2c1b9edd836b2be6074a83bacbde27596e47383c8806f2d9ba4abf2c728bb849"
+    }
+  ],
+  "poseComparisonLimit": "Rigify BEFORE and native67 AFTER share authored time, NOT identical anatomical limb pose;10\u201311degree prior bias remains explicit.",
+  "display": {
+    "view": "AgX",
+    "exposureStops": -2,
+    "sourceMaterialsUnmodified": true
+  },
+  "elapsedSeconds": 213.40303691697773,
+  "weights": {
+    "maxInfluences": 10,
+    "histogram": {
+      "1": 102548,
+      "2": 379375,
+      "3": 191198,
+      "4": 180277,
+      "5": 95357,
+      "6": 33325,
+      "7": 10362,
+      "8": 1375,
+      "9": 571,
+      "10": 64
+    },
+    "unweighted": 0,
+    "minPositiveDonor": 0.003921568682234659,
+    "donorRawSumMaxErrorBeforeExplicitNormalization": 5.21540641784668e-08,
+    "minPositiveBaseline": 3.216800010050827e-10,
+    "minPositiveStored": 4.958639233886919e-18,
+    "sumMaxError": 5.21540641784668e-08,
+    "positiveInfluences": 2922048,
+    "stableBaryOnly": 159748,
+    "transition": 80145,
+    "fieldOnly": 754559,
+    "stableBaryOnlyBounds": {
+      "min": [
+        -0.2477112114429474,
+        -0.0926055489551536,
+        1.6774613880305317e-09
+      ],
+      "max": [
+        0.2477875053882599,
+        0.021764742220750095,
+        0.9773254400708347
+      ]
+    }
+  },
+  "poseGates": [
+    {
+      "name": "dance45",
+      "phase": 0.45,
+      "wholeOriginalLBSMaxM": 2.2232199767398132e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "6d4cc9347417e1346397d1923b40362b04bee0efa12d6decbe39dde35ec35bcb"
+    },
+    {
+      "name": "dance50",
+      "phase": 0.5,
+      "wholeOriginalLBSMaxM": 2.322069137665495e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "7f5f29491accade1c9b824598ddc7d4a8944122507c0171506afa332b5295335"
+    },
+    {
+      "name": "dance55",
+      "phase": 0.55,
+      "wholeOriginalLBSMaxM": 2.0603563354024018e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "f1867fa6e9754c7300af6d0972cd49e7af5925291bdbd850e899bc6e74a320ca"
+    },
+    {
+      "name": "BOX-start-diagnostic",
+      "phase": 0,
+      "wholeOriginalLBSMaxM": 2.0054702834091025e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "c85f8442dd1d78d05932fd9c51af69b6dd79601802d7512baa9fc3e54c330d9b"
+    },
+    {
+      "name": "BOX35",
+      "phase": 0.35,
+      "wholeOriginalLBSMaxM": 1.6487942177891016e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "88d02f13025e9910d0a4b66bac9115af9f262820cc41d1f0ee0b53262d1ccccd"
+    },
+    {
+      "name": "BOX70",
+      "phase": 0.7,
+      "wholeOriginalLBSMaxM": 1.8583655517192177e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "68c6578dc83f6cd7d3548a7b3e781e7ca004f3121297299d4883e137d8bfa401"
+    },
+    {
+      "name": "kick35",
+      "phase": 0.35,
+      "wholeOriginalLBSMaxM": 2.3606020047862906e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "978b01b41053c0568b10c2aeb33c2a9f64e87cc35050654b933fcc3cc07ebfcb"
+    },
+    {
+      "name": "kick70",
+      "phase": 0.7,
+      "wholeOriginalLBSMaxM": 2.5906754052553055e-07,
+      "normals": {
+        "polygonCount": 1988914,
+        "finite": true,
+        "lengthQuantiles": [
+          0.9999998211860657,
+          0.9999998807907104,
+          1.0,
+          1.0000001192092896,
+          1.0000001192092896
+        ],
+        "zeroLength": 0
+      },
+      "nativeMatrixSHA256": "39906c620e20a35048287015c6c9236b0be1a069334d87b6e988900900a0fb6d"
+    }
+  ],
+  "sourcePostExitSHA": {
+    "original": "2148fa7a80a0a8be70c4a32f3fe61aa8344c059c2b9183f52818f943917c3b23",
+    "nativeDonor": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99"
+  },
+  "preservationPassed": true
+}

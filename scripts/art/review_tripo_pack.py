@@ -3,8 +3,10 @@ import bpy,json,math,sys
 from pathlib import Path
 from mathutils import Vector
 root=Path('/Users/macbook1/Documents/ChatGPT/LighFight')
-source=root/'art/source/island-tripo-v1/unity-pack'
-out=root/'art/previews/island-tripo-v1/native-pack';out.mkdir(parents=True,exist_ok=True)
+args=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
+tag=next((a.split('=',1)[1] for a in args if a.startswith('tag=')),'island')
+source=root/'art/source'/f'{tag}-tripo-v1'/'unity-pack'
+out=root/'art/previews'/f'{tag}-tripo-v1'/'native-pack';out.mkdir(parents=True,exist_ok=True)
 bpy.ops.wm.read_factory_settings(use_empty=True)
 bpy.ops.import_scene.fbx(filepath=str(next(source.glob('*.fbx'))))
 scene=bpy.context.scene;scene.render.engine='BLENDER_EEVEE_NEXT';scene.render.resolution_x=800;scene.render.resolution_y=1000;scene.render.resolution_percentage=100;scene.view_settings.view_transform='Standard'
@@ -27,7 +29,8 @@ def bounds():
 bpy.ops.object.camera_add();cam=bpy.context.object;scene.camera=cam;cam.data.type='ORTHO'
 reports=[]
 for action in actions:
- if "--" in sys.argv and action.name.split("|")[-1] not in sys.argv[sys.argv.index("--")+1:]:continue
+ filters=[a for a in args if not a.startswith("tag=")]
+ if filters and action.name.split("|")[-1] not in filters:continue
  arm.animation_data.action=action;lo_f,hi_f=action.frame_range
  all_lo=[];all_hi=[]
  for phase in [0,.35,.7,1]:

@@ -1,0 +1,373 @@
+{
+    "status": "SURFACE_NUMERIC_PASS_FRAMEBUFFER_REPEAT_RED_NO_PROMOTION",
+    "error": "",
+    "device": "Apple M1",
+    "api": "Metal",
+    "unity": "6000.3.26f1",
+    "allPositiveInputsExact": true,
+    "originalMapsBytesUnchanged": true,
+    "seamVertices": 1305574,
+    "originalVertices": 994452,
+    "triangles": 1988914,
+    "positiveCoefficients": 2608534,
+    "maximumInfluences": 7,
+    "smallestWeight": 1.7814954844652676e-7,
+    "weightPacket": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/native67-bary-weight-packet-v1",
+    "weightPacketSHA256": "393fa311fbc639a310bfe0b4946a844aa9e478c3a5a81ad291b91e899490e59c",
+    "skinningMethod": "LinearBlend_all_positive_Float32",
+    "poseAdjustment": "NONE",
+    "maxRigidMatrixOrthogonalityError": 0.0,
+    "rigidProjectionGate": "DQS variant2 explicitly projects near-rigid matrices to unit quaternion+original translation. Every positive-support seam/bone point must move <=10um world from original matrix; orthogonality guard2e-4/determinant positive. Does not alter source bones or curves. Variant1 exact-near-rigidity1e-5 gate rejected and retained.",
+    "normalConvention": "Linear blended bone normal; normalize. Linear blended tangent; Gram-Schmidt to normal; preserve source tangent.w. Not corrective geometry or a proof of surface derivative normals.",
+    "poses": [
+        {
+            "clip": "dance_01",
+            "phase": 0.0,
+            "seconds": 0.0,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.5382701784720644e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.0000026870914098253708,
+            "maxTangentOrthogonality": 0.000002684772425709525,
+            "prunedMaxWorldPositionDifferenceM": 0.00705545162782073,
+            "prunedDifferenceQuantilesM": [
+                0.000038026206311769783,
+                0.0005173401441425085,
+                0.0013388240477070213,
+                0.00705545162782073
+            ],
+            "files": [
+                "dance_01-0-front-full-pruned-emulated.png",
+                "dance_01-0-front-full-full-float.png",
+                "dance_01-0-front-shoulders-pruned-emulated.png",
+                "dance_01-0-front-shoulders-full-float.png",
+                "dance_01-0-quarter-shoulders-pruned-emulated.png",
+                "dance_01-0-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 77,
+            "repeatChangedBytes": 4831
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.10000000149011612,
+            "seconds": 2.316666603088379,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.6072304789366568e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000004876392267760821,
+            "maxTangentOrthogonality": 0.000004849335255130427,
+            "prunedMaxWorldPositionDifferenceM": 0.008685481734573841,
+            "prunedDifferenceQuantilesM": [
+                0.00006447079067584127,
+                0.0008613151730969548,
+                0.0022003264166414739,
+                0.008685481734573841
+            ],
+            "files": [
+                "dance_01-10-front-full-pruned-emulated.png",
+                "dance_01-10-front-full-full-float.png",
+                "dance_01-10-front-shoulders-pruned-emulated.png",
+                "dance_01-10-front-shoulders-full-float.png",
+                "dance_01-10-quarter-shoulders-pruned-emulated.png",
+                "dance_01-10-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 73,
+            "repeatChangedBytes": 8263
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.20000000298023225,
+            "seconds": 4.633333206176758,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.967171299243303e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000004175517005933216,
+            "maxTangentOrthogonality": 0.000004160461685387418,
+            "prunedMaxWorldPositionDifferenceM": 0.02315395139157772,
+            "prunedDifferenceQuantilesM": [
+                0.00006055000631022267,
+                0.000946260814089328,
+                0.00340098375454545,
+                0.02315395139157772
+            ],
+            "files": [
+                "dance_01-20-front-full-pruned-emulated.png",
+                "dance_01-20-front-full-full-float.png",
+                "dance_01-20-front-shoulders-pruned-emulated.png",
+                "dance_01-20-front-shoulders-full-float.png",
+                "dance_01-20-quarter-shoulders-pruned-emulated.png",
+                "dance_01-20-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 59,
+            "repeatChangedBytes": 2336
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.30000001192092898,
+            "seconds": 6.950000286102295,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.5456374810337225e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.884864389012364e-7,
+            "maxTangentVectorError": 0.0000026415855245431887,
+            "maxTangentOrthogonality": 0.000002641941819092608,
+            "prunedMaxWorldPositionDifferenceM": 0.009557103738188744,
+            "prunedDifferenceQuantilesM": [
+                0.00005668712401529774,
+                0.0007380530587397516,
+                0.0018072105012834073,
+                0.009557103738188744
+            ],
+            "files": [
+                "dance_01-30-front-full-pruned-emulated.png",
+                "dance_01-30-front-full-full-float.png",
+                "dance_01-30-front-shoulders-pruned-emulated.png",
+                "dance_01-30-front-shoulders-full-float.png",
+                "dance_01-30-quarter-shoulders-pruned-emulated.png",
+                "dance_01-30-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 22,
+            "repeatChangedBytes": 178
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.6499999761581421,
+            "seconds": 15.058332443237305,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.7242658383151273e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000002918802465501358,
+            "maxTangentOrthogonality": 0.0000029029279176029378,
+            "prunedMaxWorldPositionDifferenceM": 0.0060805706307291988,
+            "prunedDifferenceQuantilesM": [
+                0.00004479768904275261,
+                0.0006085488712415099,
+                0.0014622480375692249,
+                0.0060805706307291988
+            ],
+            "files": [
+                "dance_01-65-front-full-pruned-emulated.png",
+                "dance_01-65-front-full-full-float.png",
+                "dance_01-65-front-shoulders-pruned-emulated.png",
+                "dance_01-65-front-shoulders-full-float.png",
+                "dance_01-65-quarter-shoulders-pruned-emulated.png",
+                "dance_01-65-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 95,
+            "repeatChangedBytes": 7770
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.800000011920929,
+            "seconds": 18.53333282470703,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 2.2469645024717826e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.0000028758854568877725,
+            "maxTangentOrthogonality": 0.000002803120196404052,
+            "prunedMaxWorldPositionDifferenceM": 0.017327595502138139,
+            "prunedDifferenceQuantilesM": [
+                0.00007622929842909798,
+                0.0009286341373808682,
+                0.0025077243335545065,
+                0.017327595502138139
+            ],
+            "files": [
+                "dance_01-80-front-full-pruned-emulated.png",
+                "dance_01-80-front-full-full-float.png",
+                "dance_01-80-front-shoulders-pruned-emulated.png",
+                "dance_01-80-front-shoulders-full-float.png",
+                "dance_01-80-quarter-shoulders-pruned-emulated.png",
+                "dance_01-80-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 30,
+            "repeatChangedBytes": 850
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.949999988079071,
+            "seconds": 22.008333206176759,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.4831595268295217e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.884864389012364e-7,
+            "maxTangentVectorError": 0.0000034970457818417346,
+            "maxTangentOrthogonality": 0.00000349265746990568,
+            "prunedMaxWorldPositionDifferenceM": 0.00586318364366889,
+            "prunedDifferenceQuantilesM": [
+                0.00004634161450667307,
+                0.0005515594966709614,
+                0.0012534065172076226,
+                0.00586318364366889
+            ],
+            "files": [
+                "dance_01-95-front-full-pruned-emulated.png",
+                "dance_01-95-front-full-full-float.png",
+                "dance_01-95-front-shoulders-pruned-emulated.png",
+                "dance_01-95-front-shoulders-full-float.png",
+                "dance_01-95-quarter-shoulders-pruned-emulated.png",
+                "dance_01-95-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 5,
+            "repeatChangedBytes": 259
+        },
+        {
+            "clip": "box_02",
+            "phase": 0.15000000596046449,
+            "seconds": 0.41875001788139346,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.0699427308458657e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.0000043040372474933978,
+            "maxTangentOrthogonality": 0.000004234705556882545,
+            "prunedMaxWorldPositionDifferenceM": 0.012690822593867779,
+            "prunedDifferenceQuantilesM": [
+                0.00009929564112098888,
+                0.001187341520562768,
+                0.002647911664098501,
+                0.012690822593867779
+            ],
+            "files": [
+                "box_02-15-front-full-pruned-emulated.png",
+                "box_02-15-front-full-full-float.png",
+                "box_02-15-front-shoulders-pruned-emulated.png",
+                "box_02-15-front-shoulders-full-float.png",
+                "box_02-15-quarter-shoulders-pruned-emulated.png",
+                "box_02-15-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 15,
+            "repeatChangedBytes": 615
+        },
+        {
+            "clip": "box_02",
+            "phase": 0.6499999761581421,
+            "seconds": 1.8145833015441895,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.4256143121312576e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.0000040819663809088528,
+            "maxTangentOrthogonality": 0.000004066473138664151,
+            "prunedMaxWorldPositionDifferenceM": 0.014888813719153405,
+            "prunedDifferenceQuantilesM": [
+                0.00008003675611689687,
+                0.0008802721276879311,
+                0.0024245865643024446,
+                0.014888813719153405
+            ],
+            "files": [
+                "box_02-65-front-full-pruned-emulated.png",
+                "box_02-65-front-full-full-float.png",
+                "box_02-65-front-shoulders-pruned-emulated.png",
+                "box_02-65-front-shoulders-full-float.png",
+                "box_02-65-quarter-shoulders-pruned-emulated.png",
+                "box_02-65-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 1,
+            "repeatChangedBytes": 1
+        },
+        {
+            "clip": "walk",
+            "phase": 0.25,
+            "seconds": 0.5833333134651184,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 1.5432874558874302e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.8907454091277033e-7,
+            "maxTangentVectorError": 0.00000535916160515626,
+            "maxTangentOrthogonality": 0.000005354078894015402,
+            "prunedMaxWorldPositionDifferenceM": 0.005925471428781748,
+            "prunedDifferenceQuantilesM": [
+                0.000032135762012330815,
+                0.0005597308045253158,
+                0.001313046202994883,
+                0.005925471428781748
+            ],
+            "files": [
+                "walk-25-front-full-pruned-emulated.png",
+                "walk-25-front-full-full-float.png",
+                "walk-25-front-shoulders-pruned-emulated.png",
+                "walk-25-front-shoulders-full-float.png",
+                "walk-25-quarter-shoulders-pruned-emulated.png",
+                "walk-25-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 74,
+            "repeatChangedBytes": 4683
+        },
+        {
+            "clip": "greet_01",
+            "phase": 0.4000000059604645,
+            "seconds": 1.399999976158142,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 2.1749477722064888e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9768624781590916e-7,
+            "maxTangentVectorError": 0.000003023292947545997,
+            "maxTangentOrthogonality": 0.000003018654069819604,
+            "prunedMaxWorldPositionDifferenceM": 0.014578177593648434,
+            "prunedDifferenceQuantilesM": [
+                0.00003995289443992078,
+                0.0007516963523812592,
+                0.0020813446026295425,
+                0.014578177593648434
+            ],
+            "files": [
+                "greet_01-40-front-full-pruned-emulated.png",
+                "greet_01-40-front-full-full-float.png",
+                "greet_01-40-front-shoulders-pruned-emulated.png",
+                "greet_01-40-front-shoulders-full-float.png",
+                "greet_01-40-quarter-shoulders-pruned-emulated.png",
+                "greet_01-40-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 41,
+            "repeatChangedBytes": 1380
+        },
+        {
+            "clip": "cheer",
+            "phase": 0.6000000238418579,
+            "seconds": 7.25,
+            "shoulderCorrection": [],
+            "maxWorldPositionErrorM": 2.051420793934989e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.8907454091277033e-7,
+            "maxTangentVectorError": 0.000004360550519777462,
+            "maxTangentOrthogonality": 0.000004358942987892078,
+            "prunedMaxWorldPositionDifferenceM": 0.020305197685956956,
+            "prunedDifferenceQuantilesM": [
+                0.00006352679338306189,
+                0.001081000198610127,
+                0.002879106206819415,
+                0.020305197685956956
+            ],
+            "files": [
+                "cheer-60-front-full-pruned-emulated.png",
+                "cheer-60-front-full-full-float.png",
+                "cheer-60-front-shoulders-pruned-emulated.png",
+                "cheer-60-front-shoulders-full-float.png",
+                "cheer-60-quarter-shoulders-pruned-emulated.png",
+                "cheer-60-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 53,
+            "repeatChangedBytes": 1001
+        }
+    ],
+    "limits": "Editor snapshot harness with synchronous GPU readback then owned Mesh clone upload; NOT realtime implementation/performance/mobile acceptance. Normals/tangents checked vs independent CPU for full seam surface. Baseline is explicit CPU linear blend skinning of all imported typed weights, with normalized linear normals/orthogonalized linear tangents. DQS candidate has different positional AND normal deformation. NOT SMR.BakeMesh or whole-renderer parity. Blender native pose oracle remains separate. No production writes."
+}

@@ -104,6 +104,7 @@ namespace LighFight.Runtime
             if(selectionLighting)selectionLighting.SetSelectedRenderers(player.GetComponentsInChildren<Renderer>(true));
             player.transform.SetParent(transform,true);opponent.transform.SetParent(transform,true);arena.transform.SetParent(transform,true);
             player.gameObject.SetActive(false);opponent.gameObject.SetActive(false);arena.gameObject.SetActive(false);
+            var spectators=arena.GetComponentInChildren<MeetingSpectators>(true);if(spectators)spectators.Configure(selectedFighter,OpponentIndex,SelectedAssetProvider);
             foreach(var fighter in new[]{player,opponent}){
                 var materials=fighter.GetComponent<ShadowlessFighterMaterials>();if(!materials)materials=fighter.gameObject.AddComponent<ShadowlessFighterMaterials>();materials.SetShadows(shadowsEnabled);
             }

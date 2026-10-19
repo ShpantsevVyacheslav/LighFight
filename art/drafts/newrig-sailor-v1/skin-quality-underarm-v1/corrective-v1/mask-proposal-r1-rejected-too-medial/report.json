@@ -1,0 +1,116 @@
+{
+  "status": "MASK_ONLY_NO_CORRECTION",
+  "stage": "renders",
+  "cases": [],
+  "maskStatus": "PROVISIONAL_NOT_ANATOMICAL_TRUTH",
+  "maskSHA256": "03780bb62f3e6e500aec31ea3a7c7f33eb13d157e4e5834ebc40796e6f0e8a45",
+  "probeScriptSHA256": "ef0d03dfaaa04705300a4166077faad5a7a71fe34f1d740057f18e147c3b43b7",
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sourceAttributes": {
+    "positions": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "loopVertexIndices": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygonStarts": "7b638feadc801e5555a8882879c9d17a5b2e449938fae59482d0cda848f41592",
+    "polygonSizes": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "uv:UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+  },
+  "sourceHashes": {
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/stage02-bound-original-dense.blend": "dedd8c00b27278ef6f02a8753a61ed0636053d2733ede83357134a7a8033052d",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/tools/27_actual_arm_elevation.py": "97f88ea6dfbc7b87d0a638ba80cc5f76608b8ea3453ee7b933cc3bc81e7c7516"
+  },
+  "limits": [
+    "Metrics/masks only; no corrective or weight mutation.",
+    "Orientation opposition is a transported-normal witness, not a self-intersection proof.",
+    "Closed sections are not whole-garment volume.",
+    "C1 OFF/ON hand movement is measured natural girdle translation, not automatically an anchor failure."
+  ],
+  "referenceWeightStats": {
+    "unweighted": 0,
+    "maxInfluences": 4,
+    "maxSumDeviation": 1.825392246246338e-07,
+    "nonzeroInfluences": 3088451,
+    "reference": "untouched original-indexed sidecar; actual render readback separately checked"
+  },
+  "candidate": {
+    "mode": "prepare-mask",
+    "sourceCase": {
+      "name": "dance50",
+      "clip": "dance_01",
+      "phase": 0.5
+    },
+    "baseline": "Fixed C1 ON",
+    "side": "R",
+    "originalAffectedCandidates": 9902,
+    "maskSHA256": "703fd4ae7e6ddaae8e24c4e998a95a12d361121b8c30aaf30a1b07d69aac640a",
+    "maxWorldDisplacementM": 0.003,
+    "scope": "One local under-sleeve contour; no Laplacian, weights or original-rest edits",
+    "garmentStatus": "PROVISIONAL_REQUIRES_VISUAL_REVIEW",
+    "boundary": "No whole broad-head zero assumption: this target excludes all neck/head by independent spatial limit; original C1 neck motion retained.",
+    "restWorldBoundsM": [
+      [
+        -0.1665802150964737,
+        -0.05009456950407689,
+        0.6995086642277093
+      ],
+      [
+        -0.062217723578214645,
+        0.08229833462553324,
+        0.799438475806891
+      ]
+    ]
+  },
+  "renders": [
+    {
+      "file": "garment-mask-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.2814183831214905,
+        -1.7731956243515015,
+        0.8282329440116882
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "diagnostic-source-albedo-candidate-mask"
+    },
+    {
+      "file": "garment-mask-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        1.1314184665679932,
+        2.226804256439209,
+        0.888232946395874
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "diagnostic-source-albedo-candidate-mask"
+    },
+    {
+      "file": "garment-mask-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        2.2814183235168457,
+        0.22680434584617615,
+        0.8282329440116882
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "diagnostic-source-albedo-candidate-mask"
+    }
+  ],
+  "sourceAttributesExact": true,
+  "seconds": 39.014845124969725,
+  "candidateScriptSHA256": "f24e3385152fc221735c23a590ca2048dd9be3c12d4a23377cd03d235254c89f"
+}

@@ -30,9 +30,11 @@ def rest(arm,meshes):
  bpy.context.view_layer.update();return surface_snapshot(meshes)
 
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('source',type=Path);parser.add_argument('target',type=Path);parser.add_argument('--step',type=float,default=0.0625);args=parser.parse_args(sys.argv[sys.argv.index('--')+1:]);source,target=args.source,args.target;assert 0<args.step<=1
+ parser=argparse.ArgumentParser();parser.add_argument('source',type=Path);parser.add_argument('--clip');parser.add_argument('target',type=Path);parser.add_argument('--step',type=float,default=0.0625);args=parser.parse_args(sys.argv[sys.argv.index('--')+1:]);source,target=args.source,args.target;assert 0<args.step<=1
  bpy.ops.wm.read_factory_settings(use_empty=True)
- bpy.ops.import_scene.gltf(filepath=str(source));arm,meshes=character();actions=list(bpy.data.actions)
+ if source.suffix.lower()=='.fbx':bpy.ops.import_scene.fbx(filepath=str(source))
+ else:bpy.ops.import_scene.gltf(filepath=str(source))
+ arm,meshes=character();actions=[a for a in bpy.data.actions if not args.clip or a.name.split('|')[-1]==args.clip]
  assert len(actions)==1,'One direct native clip required';action=actions[0];name=action.name
  reference,duration,bone_samples=poses(arm,meshes[0],action);surface=rest(arm,meshes)
  vertex_uv={}

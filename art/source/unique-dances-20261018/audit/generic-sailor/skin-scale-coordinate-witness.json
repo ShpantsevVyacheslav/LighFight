@@ -1,0 +1,9 @@
+{
+  "status": "QA_COORDINATE_ORACLE_CORRECTED_NOT_DANCE_VISUAL_ACCEPTANCE",
+  "method": "Independent original four-influence LBS: sum(weight * bone.localToWorldMatrix * originalBindPose * originalVertex); all rendered original vertex indices. No geometry/weights/caps changed.",
+  "cases": 9,
+  "maxSupportVsIndependentWorldMinimumM": 9.999999994736442e-09,
+  "maxGroundedAbsoluteIndependentMinimumM": 1.674737e-08,
+  "finding": "At nativeRig/renderer lossyScale 2, BakeMesh(default/false) then TransformPoint yielded double-scale skin coordinates in this source setup. BakeMesh(true) then TransformPoint agrees with original LBS. The prior -94mm apparent grounded floor failure was a QA-space error.",
+  "limits": "Frozen 3 phases x 3 variants; exhaustive full-clip corrected oracle gate and visual trapezius review remain separate."
+}

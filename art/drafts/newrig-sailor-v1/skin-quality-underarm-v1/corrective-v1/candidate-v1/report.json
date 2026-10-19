@@ -1,0 +1,2848 @@
+{
+  "status": "CANDIDATE_RENDERED_NOT_ACCEPTED",
+  "stage": "renders",
+  "cases": [],
+  "maskStatus": "PROVISIONAL_NOT_ANATOMICAL_TRUTH",
+  "maskSHA256": "03780bb62f3e6e500aec31ea3a7c7f33eb13d157e4e5834ebc40796e6f0e8a45",
+  "probeScriptSHA256": "ef0d03dfaaa04705300a4166077faad5a7a71fe34f1d740057f18e147c3b43b7",
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sourceAttributes": {
+    "positions": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "loopVertexIndices": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygonStarts": "7b638feadc801e5555a8882879c9d17a5b2e449938fae59482d0cda848f41592",
+    "polygonSizes": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "uv:UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+  },
+  "sourceHashes": {
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/stage02-bound-original-dense.blend": "dedd8c00b27278ef6f02a8753a61ed0636053d2733ede83357134a7a8033052d",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/tools/27_actual_arm_elevation.py": "97f88ea6dfbc7b87d0a638ba80cc5f76608b8ea3453ee7b933cc3bc81e7c7516"
+  },
+  "limits": [
+    "Metrics/masks only; no corrective or weight mutation.",
+    "Orientation opposition is a transported-normal witness, not a self-intersection proof.",
+    "Closed sections are not whole-garment volume.",
+    "C1 OFF/ON hand movement is measured natural girdle translation, not automatically an anchor failure."
+  ],
+  "referenceWeightStats": {
+    "unweighted": 0,
+    "maxInfluences": 4,
+    "maxSumDeviation": 1.825392246246338e-07,
+    "nonzeroInfluences": 3088451,
+    "reference": "untouched original-indexed sidecar; actual render readback separately checked"
+  },
+  "candidate": {
+    "mode": "build",
+    "sourceCase": {
+      "name": "dance50",
+      "clip": "dance_01",
+      "phase": 0.5
+    },
+    "baseline": "Fixed C1 ON",
+    "side": "R",
+    "originalAffectedCandidates": 8590,
+    "maskSHA256": "9d6bc50001a83a5e0501df3925aeabcff68342500c7b8fedd7e45835700ccf58",
+    "maxWorldDisplacementM": 0.003,
+    "scope": "One local under-sleeve contour; no Laplacian, weights or original-rest edits",
+    "garmentStatus": "EXPLICIT_RECEIPT",
+    "boundary": "No whole broad-head zero assumption: this target excludes all neck/head by independent spatial limit; original C1 neck motion retained.",
+    "actualTargetVertices": 1657,
+    "actualMaxWorldM": 0.0003407164231250827,
+    "conditionMax": 1.113061945196024,
+    "profileKnotsT": [
+      -0.08,
+      0.04,
+      0.2,
+      0.34,
+      0.44
+    ],
+    "profileRadiiSourceM": [
+      0.046941082041072675,
+      0.05387168616012984,
+      0.06313800034233641,
+      0.0629754917028219,
+      0.06061678211237523
+    ],
+    "targetSHA256": "efb6cc04188777d164bf3067a6421f2092ebc2388d42d68a222556f0c1529ebd"
+  },
+  "renders": [
+    {
+      "file": "before-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.2814183831214905,
+        -1.7731956243515015,
+        0.8282329440116882
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "source-normal1"
+    },
+    {
+      "file": "before-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        1.1314184665679932,
+        2.226804256439209,
+        0.888232946395874
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "source-normal1"
+    },
+    {
+      "file": "before-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        2.2814183235168457,
+        0.22680434584617615,
+        0.8282329440116882
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "source-normal1"
+    },
+    {
+      "file": "after-front.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        0.2814183831214905,
+        -1.7731956243515015,
+        0.8282329440116882
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "source-normal1"
+    },
+    {
+      "file": "after-backthreequarter.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        1.1314184665679932,
+        2.226804256439209,
+        0.888232946395874
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "source-normal1"
+    },
+    {
+      "file": "after-side.png",
+      "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+      "cameraWorld": [
+        2.2814183235168457,
+        0.22680434584617615,
+        0.8282329440116882
+      ],
+      "cameraTarget": [
+        0.2814183831214905,
+        0.22680434584617615,
+        0.7682329177856445
+      ],
+      "orthoScale": 0.64,
+      "material": "source-normal1"
+    }
+  ],
+  "metrics": {
+    "sleeve_armhole_R": {
+      "before": {
+        "edge": {
+          "edgeCount": 71949,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.49964376216530043,
+            "median": 1.0000001372105967,
+            "p95": 1.465798538383791,
+            "p99": 1.871124214799114,
+            "max": 3.811197152338212
+          },
+          "logStrainAbs": {
+            "min": 4.023259503408314e-11,
+            "median": 0.07985092494020868,
+            "p95": 0.38566381168740865,
+            "p99": 0.6266299999129302,
+            "max": 1.3379433529961058
+          },
+          "worstEdgeCanonicalIDs": [
+            447006,
+            447976,
+            2655810,
+            446460,
+            527132,
+            509895,
+            448644,
+            523572
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              145536,
+              146384
+            ],
+            [
+              145855,
+              146794
+            ],
+            [
+              884093,
+              885368
+            ],
+            [
+              145354,
+              146219
+            ],
+            [
+              172375,
+              172387
+            ],
+            [
+              166565,
+              166798
+            ],
+            [
+              146080,
+              147045
+            ],
+            [
+              171185,
+              171455
+            ]
+          ],
+          "worstRatios": [
+            3.811197152338212,
+            3.496668241663028,
+            3.4723692269500774,
+            3.3921882540940698,
+            3.2740040386571194,
+            3.1019369374111343,
+            3.0489520265753627,
+            2.944676211318899
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 48217,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.4489846719841485,
+            "median": 1.024361925387938,
+            "p95": 1.6726672419134136,
+            "p99": 1.988199041894698,
+            "max": 4.1573077980654105
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            468753,
+            131422,
+            468754,
+            375798,
+            375796,
+            468751,
+            375786,
+            131420
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "after": {
+        "edge": {
+          "edgeCount": 71949,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.49964376216530043,
+            "median": 1.00000013642378,
+            "p95": 1.465810837495284,
+            "p99": 1.871124214799114,
+            "max": 3.8117004467979503
+          },
+          "logStrainAbs": {
+            "min": 4.023259503408314e-11,
+            "median": 0.0800647588513485,
+            "p95": 0.3856449456623438,
+            "p99": 0.6266299999129302,
+            "max": 1.3380754010667832
+          },
+          "worstEdgeCanonicalIDs": [
+            447006,
+            447976,
+            2655810,
+            446460,
+            527132,
+            509895,
+            448644,
+            523572
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              145536,
+              146384
+            ],
+            [
+              145855,
+              146794
+            ],
+            [
+              884093,
+              885368
+            ],
+            [
+              145354,
+              146219
+            ],
+            [
+              172375,
+              172387
+            ],
+            [
+              166565,
+              166798
+            ],
+            [
+              146080,
+              147045
+            ],
+            [
+              171185,
+              171455
+            ]
+          ],
+          "worstRatios": [
+            3.8117004467979503,
+            3.4969729434455474,
+            3.4723692269500774,
+            3.392691265633836,
+            3.2740040386571194,
+            3.1019369374111343,
+            3.0490041055688515,
+            2.944676211318899
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 48217,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.4489846719841485,
+            "median": 1.0246519146713176,
+            "p95": 1.6726672419134136,
+            "p99": 1.9883174591731063,
+            "max": 4.1573077980654105
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            468753,
+            131422,
+            468754,
+            375798,
+            375796,
+            468751,
+            375786,
+            131420
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      }
+    },
+    "torso_underarm_R": {
+      "before": {
+        "edge": {
+          "edgeCount": 128183,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.22252183825569763,
+            "median": 1.0380497591331228,
+            "p95": 2.0547949253007936,
+            "p99": 3.042651354412196,
+            "max": 23.427404943934988
+          },
+          "logStrainAbs": {
+            "min": 1.20254095497955e-09,
+            "median": 0.08560824869762226,
+            "p95": 0.7238371583494319,
+            "p99": 1.1161815812451203,
+            "max": 3.153906488550988
+          },
+          "worstEdgeCanonicalIDs": [
+            1672488,
+            422074,
+            1660968,
+            1672486,
+            1654619,
+            499942,
+            1629859,
+            1639597
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              555893,
+              559213
+            ],
+            [
+              137268,
+              138293
+            ],
+            [
+              552042,
+              553438
+            ],
+            [
+              555893,
+              556269
+            ],
+            [
+              549937,
+              550710
+            ],
+            [
+              163225,
+              164727
+            ],
+            [
+              541643,
+              545004
+            ],
+            [
+              544907,
+              545004
+            ]
+          ],
+          "worstRatios": [
+            23.427404943934988,
+            22.210581320092444,
+            22.177540043750806,
+            21.053693451493633,
+            21.04482759270321,
+            20.606737212145305,
+            20.30468563512728,
+            20.251184576486544
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 85863,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.09631673772913663,
+            "median": 1.0801494086221683,
+            "p95": 2.1394579142726595,
+            "p99": 3.3479679638059525,
+            "max": 25.637237026720356
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            500784,
+            304679,
+            500552,
+            500612,
+            500777,
+            500792,
+            423252,
+            500772
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "after": {
+        "edge": {
+          "edgeCount": 128183,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.22252183825569763,
+            "median": 1.0380497591331228,
+            "p95": 2.0547949253007936,
+            "p99": 3.042651354412196,
+            "max": 23.427404943934988
+          },
+          "logStrainAbs": {
+            "min": 1.20254095497955e-09,
+            "median": 0.08560824869762226,
+            "p95": 0.7238371583494319,
+            "p99": 1.1161815812451203,
+            "max": 3.153906488550988
+          },
+          "worstEdgeCanonicalIDs": [
+            1672488,
+            422074,
+            1660968,
+            1672486,
+            1654619,
+            499942,
+            1629859,
+            1639597
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              555893,
+              559213
+            ],
+            [
+              137268,
+              138293
+            ],
+            [
+              552042,
+              553438
+            ],
+            [
+              555893,
+              556269
+            ],
+            [
+              549937,
+              550710
+            ],
+            [
+              163225,
+              164727
+            ],
+            [
+              541643,
+              545004
+            ],
+            [
+              544907,
+              545004
+            ]
+          ],
+          "worstRatios": [
+            23.427404943934988,
+            22.210581320092444,
+            22.177540043750806,
+            21.053693451493633,
+            21.04482759270321,
+            20.606737212145305,
+            20.30468563512728,
+            20.251184576486544
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 85863,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.09631673772913663,
+            "median": 1.0801494086221683,
+            "p95": 2.1394579142726595,
+            "p99": 3.3479679638059525,
+            "max": 25.637237026720356
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            500784,
+            304679,
+            500552,
+            500612,
+            500777,
+            500792,
+            423252,
+            500772
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      }
+    },
+    "medial_trapezius_R": {
+      "before": {
+        "edge": {
+          "edgeCount": 83018,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.16996842067292603,
+            "median": 1.002546677383879,
+            "p95": 1.227228875162794,
+            "p99": 1.4933787323945948,
+            "max": 4.954038831067121
+          },
+          "logStrainAbs": {
+            "min": 3.649280877548983e-11,
+            "median": 0.037142127576672415,
+            "p95": 0.23259798462463627,
+            "p99": 0.4692190073389726,
+            "max": 1.7721426199350339
+          },
+          "worstEdgeCanonicalIDs": [
+            209930,
+            235759,
+            259685,
+            864662,
+            267158,
+            867196,
+            896477,
+            911935
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              66631,
+              70851
+            ],
+            [
+              75225,
+              79129
+            ],
+            [
+              83198,
+              87098
+            ],
+            [
+              285411,
+              286460
+            ],
+            [
+              85686,
+              91233
+            ],
+            [
+              286270,
+              286661
+            ],
+            [
+              295996,
+              296167
+            ],
+            [
+              301152,
+              301843
+            ]
+          ],
+          "worstRatios": [
+            0.16996842067292603,
+            0.17637182870580295,
+            0.19344797135313657,
+            4.954038831067121,
+            0.20499584895791062,
+            4.740913777149394,
+            4.7222300200342,
+            4.700759744023444
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 55652,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.09641978437011986,
+            "median": 1.0106623760136966,
+            "p95": 1.3768844357947214,
+            "p99": 1.63364752617258,
+            "max": 5.255092633036016
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            836862,
+            873974,
+            873975,
+            873970,
+            909523,
+            873979,
+            909507,
+            909512
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "after": {
+        "edge": {
+          "edgeCount": 83018,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.16996842067292603,
+            "median": 1.002547309053237,
+            "p95": 1.2271316177092333,
+            "p99": 1.4933787323945948,
+            "max": 4.954038831067121
+          },
+          "logStrainAbs": {
+            "min": 3.649280877548983e-11,
+            "median": 0.037142127576672415,
+            "p95": 0.23259798462463627,
+            "p99": 0.4692190073389726,
+            "max": 1.7721426199350339
+          },
+          "worstEdgeCanonicalIDs": [
+            209930,
+            235759,
+            259685,
+            864662,
+            267158,
+            867196,
+            896477,
+            911935
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              66631,
+              70851
+            ],
+            [
+              75225,
+              79129
+            ],
+            [
+              83198,
+              87098
+            ],
+            [
+              285411,
+              286460
+            ],
+            [
+              85686,
+              91233
+            ],
+            [
+              286270,
+              286661
+            ],
+            [
+              295996,
+              296167
+            ],
+            [
+              301152,
+              301843
+            ]
+          ],
+          "worstRatios": [
+            0.16996842067292603,
+            0.17637182870580295,
+            0.19344797135313657,
+            4.954038831067121,
+            0.20499584895791062,
+            4.740913777149394,
+            4.7222300200342,
+            4.700759744023444
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 55652,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.09641978437011986,
+            "median": 1.0106632389638364,
+            "p95": 1.3768844357947214,
+            "p99": 1.63364752617258,
+            "max": 5.255092633036016
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            836862,
+            873974,
+            873975,
+            873970,
+            909523,
+            873979,
+            909507,
+            909512
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      }
+    },
+    "collar_proposal": {
+      "before": {
+        "edge": {
+          "edgeCount": 131705,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.1297672672940618,
+            "median": 0.9999998687853339,
+            "p95": 1.1391829776577735,
+            "p99": 1.3243212007919583,
+            "max": 11.198904939527727
+          },
+          "logStrainAbs": {
+            "min": 5.981548589790845e-12,
+            "median": 0.025896241691454266,
+            "p95": 0.17975655329876883,
+            "p99": 0.4349861256187771,
+            "max": 2.4158160002644795
+          },
+          "worstEdgeCanonicalIDs": [
+            2358966,
+            2449346,
+            2473867,
+            2353377,
+            2353382,
+            2535872,
+            2349082,
+            2354123
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              784821,
+              785963
+            ],
+            [
+              815014,
+              816992
+            ],
+            [
+              823248,
+              826548
+            ],
+            [
+              782971,
+              784092
+            ],
+            [
+              782972,
+              783972
+            ],
+            [
+              844024,
+              845607
+            ],
+            [
+              781536,
+              783020
+            ],
+            [
+              783225,
+              784140
+            ]
+          ],
+          "worstRatios": [
+            11.198904939527727,
+            8.238706716699426,
+            0.1297672672940618,
+            7.646139155355087,
+            7.601569723275375,
+            7.3618291183136,
+            7.292910607390129,
+            7.125090259083588
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 88179,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.13871462909498475,
+            "median": 0.9999998891122668,
+            "p95": 1.1989776709103692,
+            "p99": 1.4649921254345681,
+            "max": 7.139302947855655
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            915524,
+            1043257,
+            992140,
+            1043268,
+            1043410,
+            838300,
+            1043254,
+            954874
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "after": {
+        "edge": {
+          "edgeCount": 131705,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.1297672672940618,
+            "median": 0.9999998687853339,
+            "p95": 1.1391829776577735,
+            "p99": 1.3243212007919583,
+            "max": 11.198904939527727
+          },
+          "logStrainAbs": {
+            "min": 5.981548589790845e-12,
+            "median": 0.025896241691454266,
+            "p95": 0.17976286619378254,
+            "p99": 0.4349861256187771,
+            "max": 2.4158160002644795
+          },
+          "worstEdgeCanonicalIDs": [
+            2358966,
+            2449346,
+            2473867,
+            2353377,
+            2353382,
+            2535872,
+            2349082,
+            2354123
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              784821,
+              785963
+            ],
+            [
+              815014,
+              816992
+            ],
+            [
+              823248,
+              826548
+            ],
+            [
+              782971,
+              784092
+            ],
+            [
+              782972,
+              783972
+            ],
+            [
+              844024,
+              845607
+            ],
+            [
+              781536,
+              783020
+            ],
+            [
+              783225,
+              784140
+            ]
+          ],
+          "worstRatios": [
+            11.198904939527727,
+            8.238706716699426,
+            0.1297672672940618,
+            7.646139155355087,
+            7.601569723275375,
+            7.3618291183136,
+            7.292910607390129,
+            7.125090259083588
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 88179,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.13871462909498475,
+            "median": 0.9999998891122668,
+            "p95": 1.1990253397805593,
+            "p99": 1.4649921254345681,
+            "max": 7.139302947855655
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            915524,
+            1043257,
+            992140,
+            1043268,
+            1043410,
+            838300,
+            1043254,
+            954874
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      }
+    },
+    "head_anchor_proposal": {
+      "before": {
+        "edge": {
+          "edgeCount": 321728,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.08933658453551144,
+            "median": 1.0000006283356493,
+            "p95": 1.0208499128431425,
+            "p99": 1.5694167784667787,
+            "max": 16.980128002779775
+          },
+          "logStrainAbs": {
+            "min": 4.9202864005458735e-12,
+            "median": 2.3429632445963786e-05,
+            "p95": 0.09795795640069027,
+            "p99": 0.5025287285140017,
+            "max": 2.832043719298826
+          },
+          "worstEdgeCanonicalIDs": [
+            2432432,
+            2429006,
+            2459659,
+            1976328,
+            2459750,
+            2429004,
+            2426579,
+            2286168
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              809365,
+              809442
+            ],
+            [
+              808212,
+              809045
+            ],
+            [
+              818483,
+              818543
+            ],
+            [
+              657279,
+              658915
+            ],
+            [
+              818514,
+              818991
+            ],
+            [
+              808212,
+              808310
+            ],
+            [
+              807407,
+              808406
+            ],
+            [
+              760527,
+              763045
+            ]
+          ],
+          "worstRatios": [
+            16.980128002779775,
+            14.32978524758424,
+            13.399404134916388,
+            13.304566399263242,
+            12.751029591605132,
+            12.491103506453708,
+            11.792062542671847,
+            0.08933658453551144
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 214599,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.009137465124006572,
+            "median": 1.0000019164041487,
+            "p95": 1.0215706536750475,
+            "p99": 1.7011675932841606,
+            "max": 19.544777610386014
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            1095904,
+            808792,
+            1095890,
+            912633,
+            1095885,
+            912792,
+            1095886,
+            920179
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "after": {
+        "edge": {
+          "edgeCount": 321728,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.08933658453551144,
+            "median": 1.0000006283356493,
+            "p95": 1.0208499128431425,
+            "p99": 1.5694167784667787,
+            "max": 16.980128002779775
+          },
+          "logStrainAbs": {
+            "min": 4.9202864005458735e-12,
+            "median": 2.3429632445963786e-05,
+            "p95": 0.09795795640069027,
+            "p99": 0.5025287285140017,
+            "max": 2.832043719298826
+          },
+          "worstEdgeCanonicalIDs": [
+            2432432,
+            2429006,
+            2459659,
+            1976328,
+            2459750,
+            2429004,
+            2426579,
+            2286168
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              809365,
+              809442
+            ],
+            [
+              808212,
+              809045
+            ],
+            [
+              818483,
+              818543
+            ],
+            [
+              657279,
+              658915
+            ],
+            [
+              818514,
+              818991
+            ],
+            [
+              808212,
+              808310
+            ],
+            [
+              807407,
+              808406
+            ],
+            [
+              760527,
+              763045
+            ]
+          ],
+          "worstRatios": [
+            16.980128002779775,
+            14.32978524758424,
+            13.399404134916388,
+            13.304566399263242,
+            12.751029591605132,
+            12.491103506453708,
+            11.792062542671847,
+            0.08933658453551144
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 214599,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.009137465124006572,
+            "median": 1.0000019164041487,
+            "p95": 1.0215706536750475,
+            "p99": 1.7011675932841606,
+            "max": 19.544777610386014
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            1095904,
+            808792,
+            1095890,
+            912633,
+            1095885,
+            912792,
+            1095886,
+            920179
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      }
+    },
+    "elbow_distal_anchor_R": {
+      "before": {
+        "edge": {
+          "edgeCount": 136713,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.09288928617603595,
+            "median": 1.0046025278907693,
+            "p95": 1.2861026921482779,
+            "p99": 1.5384323041655446,
+            "max": 4.580141460081179
+          },
+          "logStrainAbs": {
+            "min": 4.0704395401534277e-10,
+            "median": 0.05266501493396919,
+            "p95": 0.3092497167011773,
+            "p99": 0.5211654111061819,
+            "max": 2.37634696622806
+          },
+          "worstEdgeCanonicalIDs": [
+            507210,
+            489147,
+            477766,
+            469511,
+            481901,
+            426067,
+            479796,
+            946873
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              165662,
+              166479
+            ],
+            [
+              159618,
+              160750
+            ],
+            [
+              155805,
+              156475
+            ],
+            [
+              153024,
+              155111
+            ],
+            [
+              157177,
+              159932
+            ],
+            [
+              138568,
+              143477
+            ],
+            [
+              156475,
+              159353
+            ],
+            [
+              312810,
+              313552
+            ]
+          ],
+          "worstRatios": [
+            0.09288928617603595,
+            0.11901260992762666,
+            0.1385667417641748,
+            0.15134663698915607,
+            0.1539490724847163,
+            0.18630310044725812,
+            0.20011657157425675,
+            0.20417592931962994
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 91408,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.04447587607511917,
+            "median": 1.0089953052526508,
+            "p95": 1.3456839779380942,
+            "p99": 1.6205807034232165,
+            "max": 3.534378607410946
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            129139,
+            129003,
+            78001,
+            128997,
+            129051,
+            128985,
+            129143,
+            129007
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      },
+      "after": {
+        "edge": {
+          "edgeCount": 136713,
+          "degenerateRestEdges": 0,
+          "ratio": {
+            "min": 0.09288928617603595,
+            "median": 1.0046025278907693,
+            "p95": 1.2861026921482779,
+            "p99": 1.5384323041655446,
+            "max": 4.580141460081179
+          },
+          "logStrainAbs": {
+            "min": 4.0704395401534277e-10,
+            "median": 0.05266501493396919,
+            "p95": 0.3092497167011773,
+            "p99": 0.5211654111061819,
+            "max": 2.37634696622806
+          },
+          "worstEdgeCanonicalIDs": [
+            507210,
+            489147,
+            477766,
+            469511,
+            481901,
+            426067,
+            479796,
+            946873
+          ],
+          "worstEdgesVertexPairs": [
+            [
+              165662,
+              166479
+            ],
+            [
+              159618,
+              160750
+            ],
+            [
+              155805,
+              156475
+            ],
+            [
+              153024,
+              155111
+            ],
+            [
+              157177,
+              159932
+            ],
+            [
+              138568,
+              143477
+            ],
+            [
+              156475,
+              159353
+            ],
+            [
+              312810,
+              313552
+            ]
+          ],
+          "worstRatios": [
+            0.09288928617603595,
+            0.11901260992762666,
+            0.1385667417641748,
+            0.15134663698915607,
+            0.1539490724847163,
+            0.18630310044725812,
+            0.20011657157425675,
+            0.20417592931962994
+          ],
+          "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+        },
+        "triangle": {
+          "triangleCount": 91408,
+          "degenerateRestTriangles": 0,
+          "areaRatio": {
+            "min": 0.04447587607511917,
+            "median": 1.0089953052526508,
+            "p95": 1.3456839779380942,
+            "p99": 1.6205807034232165,
+            "max": 3.534378607410946
+          },
+          "collapsedCount": 0,
+          "collapsedOriginalTriangleIDs": [],
+          "worstOriginalTriangleIDs": [
+            129139,
+            129003,
+            78001,
+            128997,
+            129051,
+            128985,
+            129143,
+            129007
+          ],
+          "orientationAvailable": false,
+          "opposedTransportNormalCount": null,
+          "opposedOriginalTriangleIDs": [],
+          "interpretation": "orientation witness; not a self-intersection proof"
+        }
+      }
+    }
+  },
+  "numericFences": {
+    "sleeve_armhole_R": {
+      "pass": false,
+      "failures": [
+        "worst_strain_worsened"
+      ],
+      "meaning": "numeric regression fence only; visual shape acceptance remains required"
+    },
+    "torso_underarm_R": {
+      "pass": true,
+      "failures": [],
+      "meaning": "numeric regression fence only; visual shape acceptance remains required"
+    },
+    "medial_trapezius_R": {
+      "pass": true,
+      "failures": [],
+      "meaning": "numeric regression fence only; visual shape acceptance remains required"
+    },
+    "collar_proposal": {
+      "pass": true,
+      "failures": [],
+      "meaning": "numeric regression fence only; visual shape acceptance remains required"
+    },
+    "head_anchor_proposal": {
+      "pass": true,
+      "failures": [],
+      "meaning": "numeric regression fence only; visual shape acceptance remains required"
+    },
+    "elbow_distal_anchor_R": {
+      "pass": true,
+      "failures": [],
+      "meaning": "numeric regression fence only; visual shape acceptance remains required"
+    }
+  },
+  "projectedContours": {
+    "front": {
+      "before": {
+        "heightBoundsM": [
+          -0.12544028150842304,
+          -0.023200320369155217
+        ],
+        "bins": [
+          {
+            "count": 25,
+            "minX": -0.132030739202956,
+            "maxX": -0.05281081154880782,
+            "minOriginalVertexID": 865405,
+            "maxOriginalVertexID": 215559
+          },
+          {
+            "count": 196,
+            "minX": -0.13484084339452362,
+            "maxX": -0.015683005768901304,
+            "minOriginalVertexID": 877877,
+            "maxOriginalVertexID": 298927
+          },
+          {
+            "count": 276,
+            "minX": -0.1153240031046675,
+            "maxX": -0.016726824843481036,
+            "minOriginalVertexID": 153750,
+            "maxOriginalVertexID": 296606
+          },
+          {
+            "count": 305,
+            "minX": -0.12353080898027288,
+            "maxX": -0.016240245068345482,
+            "minOriginalVertexID": 163046,
+            "maxOriginalVertexID": 298372
+          },
+          {
+            "count": 333,
+            "minX": -0.1518133787768992,
+            "maxX": -0.01716685080726088,
+            "minOriginalVertexID": 901998,
+            "maxOriginalVertexID": 295718
+          },
+          {
+            "count": 351,
+            "minX": -0.15527600833271812,
+            "maxX": -0.017326901847789233,
+            "minOriginalVertexID": 898638,
+            "maxOriginalVertexID": 295960
+          },
+          {
+            "count": 422,
+            "minX": -0.15812624121066507,
+            "maxX": -0.018591604756961533,
+            "minOriginalVertexID": 899523,
+            "maxOriginalVertexID": 293888
+          },
+          {
+            "count": 455,
+            "minX": -0.161258796256747,
+            "maxX": -0.01993805869584475,
+            "minOriginalVertexID": 902474,
+            "maxOriginalVertexID": 290727
+          },
+          {
+            "count": 493,
+            "minX": -0.16549284178747214,
+            "maxX": -0.0211753132974698,
+            "minOriginalVertexID": 903096,
+            "maxOriginalVertexID": 286528
+          },
+          {
+            "count": 532,
+            "minX": -0.16843352786632593,
+            "maxX": -0.02124728069912385,
+            "minOriginalVertexID": 901242,
+            "maxOriginalVertexID": 282614
+          },
+          {
+            "count": 573,
+            "minX": -0.17026464756668974,
+            "maxX": -0.021556981887939253,
+            "minOriginalVertexID": 899162,
+            "maxOriginalVertexID": 277721
+          },
+          {
+            "count": 636,
+            "minX": -0.17215434113378633,
+            "maxX": -0.021897966440341143,
+            "minOriginalVertexID": 896918,
+            "maxOriginalVertexID": 275820
+          },
+          {
+            "count": 650,
+            "minX": -0.17423287281615712,
+            "maxX": -0.022269406977724393,
+            "minOriginalVertexID": 894780,
+            "maxOriginalVertexID": 269965
+          },
+          {
+            "count": 675,
+            "minX": -0.17720851072079508,
+            "maxX": -0.022282643932476254,
+            "minOriginalVertexID": 889533,
+            "maxOriginalVertexID": 262080
+          },
+          {
+            "count": 737,
+            "minX": -0.180229008934909,
+            "maxX": -0.022232897657701867,
+            "minOriginalVertexID": 880667,
+            "maxOriginalVertexID": 259505
+          },
+          {
+            "count": 799,
+            "minX": -0.18103925769709028,
+            "maxX": -0.02252605829222276,
+            "minOriginalVertexID": 861503,
+            "maxOriginalVertexID": 255411
+          },
+          {
+            "count": 851,
+            "minX": -0.18212293968080176,
+            "maxX": -0.022327665950114817,
+            "minOriginalVertexID": 840427,
+            "maxOriginalVertexID": 250535
+          },
+          {
+            "count": 912,
+            "minX": -0.1828126105898337,
+            "maxX": -0.02234070832879187,
+            "minOriginalVertexID": 809756,
+            "maxOriginalVertexID": 246864
+          },
+          {
+            "count": 965,
+            "minX": -0.18322854171453257,
+            "maxX": -0.022168853861449234,
+            "minOriginalVertexID": 785248,
+            "maxOriginalVertexID": 244131
+          },
+          {
+            "count": 1068,
+            "minX": -0.18325120535676814,
+            "maxX": -0.022247419645279543,
+            "minOriginalVertexID": 749919,
+            "maxOriginalVertexID": 237799
+          },
+          {
+            "count": 1203,
+            "minX": -0.1830049310985304,
+            "maxX": -0.02189389107146139,
+            "minOriginalVertexID": 690714,
+            "maxOriginalVertexID": 231302
+          },
+          {
+            "count": 1338,
+            "minX": -0.18114492667281706,
+            "maxX": -0.021965079295882428,
+            "minOriginalVertexID": 669386,
+            "maxOriginalVertexID": 224737
+          },
+          {
+            "count": 1250,
+            "minX": -0.1719363269731668,
+            "maxX": -0.02186768470066064,
+            "minOriginalVertexID": 703715,
+            "maxOriginalVertexID": 209699
+          },
+          {
+            "count": 1352,
+            "minX": -0.1623915563816694,
+            "maxX": -0.022023684574479507,
+            "minOriginalVertexID": 680880,
+            "maxOriginalVertexID": 203956
+          },
+          {
+            "count": 1478,
+            "minX": -0.1542536008507418,
+            "maxX": -0.022421948297686012,
+            "minOriginalVertexID": 668609,
+            "maxOriginalVertexID": 187102
+          },
+          {
+            "count": 1829,
+            "minX": -0.14350069276632607,
+            "maxX": -0.022710832188981733,
+            "minOriginalVertexID": 678629,
+            "maxOriginalVertexID": 179954
+          },
+          {
+            "count": 997,
+            "minX": -0.12793627602577104,
+            "maxX": -0.02381971355321777,
+            "minOriginalVertexID": 676920,
+            "maxOriginalVertexID": 161818
+          },
+          {
+            "count": 738,
+            "minX": -0.11387445629023957,
+            "maxX": -0.02411279724169174,
+            "minOriginalVertexID": 788609,
+            "maxOriginalVertexID": 144906
+          },
+          {
+            "count": 735,
+            "minX": -0.11073115811246909,
+            "maxX": -0.0244285097950806,
+            "minOriginalVertexID": 787313,
+            "maxOriginalVertexID": 135407
+          },
+          {
+            "count": 709,
+            "minX": -0.10781859447013986,
+            "maxX": -0.02587663740686419,
+            "minOriginalVertexID": 753293,
+            "maxOriginalVertexID": 114992
+          },
+          {
+            "count": 603,
+            "minX": -0.10521057545439888,
+            "maxX": -0.03012085033452705,
+            "minOriginalVertexID": 764968,
+            "maxOriginalVertexID": 91027
+          },
+          {
+            "count": 249,
+            "minX": -0.10211912064248593,
+            "maxX": -0.0587831181193659,
+            "minOriginalVertexID": 741223,
+            "maxOriginalVertexID": 508066
+          }
+        ],
+        "interpretation": "all-point projected envelope; not an occlusion-qualified raster silhouette or hole proof"
+      },
+      "after": {
+        "heightBoundsM": [
+          -0.12544028150842304,
+          -0.023200320369155217
+        ],
+        "bins": [
+          {
+            "count": 25,
+            "minX": -0.132030739202956,
+            "maxX": -0.05281081154880782,
+            "minOriginalVertexID": 865405,
+            "maxOriginalVertexID": 215559
+          },
+          {
+            "count": 196,
+            "minX": -0.13484084339452362,
+            "maxX": -0.015683005768901304,
+            "minOriginalVertexID": 877877,
+            "maxOriginalVertexID": 298927
+          },
+          {
+            "count": 276,
+            "minX": -0.1153239863104305,
+            "maxX": -0.016726824843481036,
+            "minOriginalVertexID": 153750,
+            "maxOriginalVertexID": 296606
+          },
+          {
+            "count": 305,
+            "minX": -0.12353080898027288,
+            "maxX": -0.016240245068345482,
+            "minOriginalVertexID": 163046,
+            "maxOriginalVertexID": 298372
+          },
+          {
+            "count": 333,
+            "minX": -0.1518133787768992,
+            "maxX": -0.01716685080726088,
+            "minOriginalVertexID": 901998,
+            "maxOriginalVertexID": 295718
+          },
+          {
+            "count": 351,
+            "minX": -0.15527600833271812,
+            "maxX": -0.017326901847789233,
+            "minOriginalVertexID": 898638,
+            "maxOriginalVertexID": 295960
+          },
+          {
+            "count": 422,
+            "minX": -0.15812624121066507,
+            "maxX": -0.018591604756961533,
+            "minOriginalVertexID": 899523,
+            "maxOriginalVertexID": 293888
+          },
+          {
+            "count": 455,
+            "minX": -0.161258796256747,
+            "maxX": -0.01993805869584475,
+            "minOriginalVertexID": 902474,
+            "maxOriginalVertexID": 290727
+          },
+          {
+            "count": 493,
+            "minX": -0.16549284178747214,
+            "maxX": -0.0211753132974698,
+            "minOriginalVertexID": 903096,
+            "maxOriginalVertexID": 286528
+          },
+          {
+            "count": 532,
+            "minX": -0.1684335278734595,
+            "maxX": -0.02124728069912385,
+            "minOriginalVertexID": 901242,
+            "maxOriginalVertexID": 282614
+          },
+          {
+            "count": 573,
+            "minX": -0.1702646493487174,
+            "maxX": -0.021556981887939253,
+            "minOriginalVertexID": 899162,
+            "maxOriginalVertexID": 277721
+          },
+          {
+            "count": 639,
+            "minX": -0.17215434113378633,
+            "maxX": -0.021897966440341143,
+            "minOriginalVertexID": 896918,
+            "maxOriginalVertexID": 275820
+          },
+          {
+            "count": 647,
+            "minX": -0.17423287281615712,
+            "maxX": -0.022269406977724393,
+            "minOriginalVertexID": 894780,
+            "maxOriginalVertexID": 269965
+          },
+          {
+            "count": 677,
+            "minX": -0.17720851072079508,
+            "maxX": -0.022282643932476254,
+            "minOriginalVertexID": 889533,
+            "maxOriginalVertexID": 262080
+          },
+          {
+            "count": 735,
+            "minX": -0.180229008934909,
+            "maxX": -0.022232897657701867,
+            "minOriginalVertexID": 880667,
+            "maxOriginalVertexID": 259505
+          },
+          {
+            "count": 799,
+            "minX": -0.18103925769709028,
+            "maxX": -0.02252605829222276,
+            "minOriginalVertexID": 861503,
+            "maxOriginalVertexID": 255411
+          },
+          {
+            "count": 852,
+            "minX": -0.18212293968080176,
+            "maxX": -0.022327665950114817,
+            "minOriginalVertexID": 840427,
+            "maxOriginalVertexID": 250535
+          },
+          {
+            "count": 911,
+            "minX": -0.1828126105898337,
+            "maxX": -0.02234070832879187,
+            "minOriginalVertexID": 809756,
+            "maxOriginalVertexID": 246864
+          },
+          {
+            "count": 965,
+            "minX": -0.18322854171453257,
+            "maxX": -0.022168853861449234,
+            "minOriginalVertexID": 785248,
+            "maxOriginalVertexID": 244131
+          },
+          {
+            "count": 1068,
+            "minX": -0.18325120535676814,
+            "maxX": -0.022247419645279543,
+            "minOriginalVertexID": 749919,
+            "maxOriginalVertexID": 237799
+          },
+          {
+            "count": 1203,
+            "minX": -0.1830049310985304,
+            "maxX": -0.02189389107146139,
+            "minOriginalVertexID": 690714,
+            "maxOriginalVertexID": 231302
+          },
+          {
+            "count": 1338,
+            "minX": -0.18114492667281706,
+            "maxX": -0.021965079295882428,
+            "minOriginalVertexID": 669386,
+            "maxOriginalVertexID": 224737
+          },
+          {
+            "count": 1250,
+            "minX": -0.1719363269731668,
+            "maxX": -0.02186768470066064,
+            "minOriginalVertexID": 703715,
+            "maxOriginalVertexID": 209699
+          },
+          {
+            "count": 1352,
+            "minX": -0.1623915563816694,
+            "maxX": -0.022023684574479507,
+            "minOriginalVertexID": 680880,
+            "maxOriginalVertexID": 203956
+          },
+          {
+            "count": 1478,
+            "minX": -0.1542536008507418,
+            "maxX": -0.022421948297686012,
+            "minOriginalVertexID": 668609,
+            "maxOriginalVertexID": 187102
+          },
+          {
+            "count": 1829,
+            "minX": -0.14350069276632607,
+            "maxX": -0.022710832188981733,
+            "minOriginalVertexID": 678629,
+            "maxOriginalVertexID": 179954
+          },
+          {
+            "count": 997,
+            "minX": -0.12793627602577104,
+            "maxX": -0.02381971355321777,
+            "minOriginalVertexID": 676920,
+            "maxOriginalVertexID": 161818
+          },
+          {
+            "count": 738,
+            "minX": -0.11387445629023957,
+            "maxX": -0.02411279724169174,
+            "minOriginalVertexID": 788609,
+            "maxOriginalVertexID": 144906
+          },
+          {
+            "count": 735,
+            "minX": -0.11073115811246909,
+            "maxX": -0.0244285097950806,
+            "minOriginalVertexID": 787313,
+            "maxOriginalVertexID": 135407
+          },
+          {
+            "count": 709,
+            "minX": -0.10781859447013986,
+            "maxX": -0.02587663740686419,
+            "minOriginalVertexID": 753293,
+            "maxOriginalVertexID": 114992
+          },
+          {
+            "count": 603,
+            "minX": -0.10521057545439888,
+            "maxX": -0.03012085033452705,
+            "minOriginalVertexID": 764968,
+            "maxOriginalVertexID": 91027
+          },
+          {
+            "count": 249,
+            "minX": -0.10211912064248593,
+            "maxX": -0.0587831181193659,
+            "minOriginalVertexID": 741223,
+            "maxOriginalVertexID": 508066
+          }
+        ],
+        "interpretation": "all-point projected envelope; not an occlusion-qualified raster silhouette or hole proof"
+      }
+    },
+    "backthreequarter": {
+      "before": {
+        "heightBoundsM": [
+          -0.12027783176850204,
+          -0.017317659386325485
+        ],
+        "bins": [
+          {
+            "count": 19,
+            "minX": 0.10533321517397123,
+            "maxX": 0.11025165618377575,
+            "minOriginalVertexID": 859845,
+            "maxOriginalVertexID": 865405
+          },
+          {
+            "count": 24,
+            "minX": 0.10910063982165737,
+            "maxX": 0.11340120560247254,
+            "minOriginalVertexID": 875192,
+            "maxOriginalVertexID": 877877
+          },
+          {
+            "count": 100,
+            "minX": -0.025000989014901026,
+            "maxX": 0.04459898495265207,
+            "minOriginalVertexID": 295431,
+            "maxOriginalVertexID": 181292
+          },
+          {
+            "count": 237,
+            "minX": -0.026116462331437044,
+            "maxX": 0.060590039039274846,
+            "minOriginalVertexID": 298927,
+            "maxOriginalVertexID": 152607
+          },
+          {
+            "count": 290,
+            "minX": -0.025423625684255755,
+            "maxX": 0.12927327372950984,
+            "minOriginalVertexID": 298372,
+            "maxOriginalVertexID": 901998
+          },
+          {
+            "count": 329,
+            "minX": -0.024215706557720092,
+            "maxX": 0.13132316280269551,
+            "minOriginalVertexID": 295718,
+            "maxOriginalVertexID": 898733
+          },
+          {
+            "count": 362,
+            "minX": -0.023894010322982533,
+            "maxX": 0.13432726500316783,
+            "minOriginalVertexID": 295960,
+            "maxOriginalVertexID": 899523
+          },
+          {
+            "count": 406,
+            "minX": -0.022294165556080336,
+            "maxX": 0.13708974958950185,
+            "minOriginalVertexID": 293888,
+            "maxOriginalVertexID": 902474
+          },
+          {
+            "count": 432,
+            "minX": -0.020506902833877256,
+            "maxX": 0.1396807766339542,
+            "minOriginalVertexID": 290727,
+            "maxOriginalVertexID": 903537
+          },
+          {
+            "count": 502,
+            "minX": -0.01911965558216882,
+            "maxX": 0.14168218693163787,
+            "minOriginalVertexID": 287219,
+            "maxOriginalVertexID": 902654
+          },
+          {
+            "count": 534,
+            "minX": -0.018112529276213006,
+            "maxX": 0.1434895471174945,
+            "minOriginalVertexID": 282614,
+            "maxOriginalVertexID": 899960
+          },
+          {
+            "count": 603,
+            "minX": -0.017205211075084485,
+            "maxX": 0.14542729221078246,
+            "minOriginalVertexID": 279526,
+            "maxOriginalVertexID": 896918
+          },
+          {
+            "count": 675,
+            "minX": -0.01661478224873186,
+            "maxX": 0.14687426963752617,
+            "minOriginalVertexID": 275820,
+            "maxOriginalVertexID": 894780
+          },
+          {
+            "count": 722,
+            "minX": -0.015435781692282047,
+            "maxX": 0.14852830881642481,
+            "minOriginalVertexID": 269965,
+            "maxOriginalVertexID": 890707
+          },
+          {
+            "count": 766,
+            "minX": -0.014496511740627941,
+            "maxX": 0.14963290966003912,
+            "minOriginalVertexID": 264427,
+            "maxOriginalVertexID": 885368
+          },
+          {
+            "count": 770,
+            "minX": -0.01386018915072803,
+            "maxX": 0.15050045883524607,
+            "minOriginalVertexID": 259505,
+            "maxOriginalVertexID": 880667
+          },
+          {
+            "count": 828,
+            "minX": -0.012678768327621454,
+            "maxX": 0.15023083046568358,
+            "minOriginalVertexID": 252718,
+            "maxOriginalVertexID": 870723
+          },
+          {
+            "count": 884,
+            "minX": -0.01255344806202011,
+            "maxX": 0.14961161783167753,
+            "minOriginalVertexID": 250535,
+            "maxOriginalVertexID": 840427
+          },
+          {
+            "count": 933,
+            "minX": -0.012076124352908606,
+            "maxX": 0.1482911206354288,
+            "minOriginalVertexID": 246864,
+            "maxOriginalVertexID": 817684
+          },
+          {
+            "count": 1024,
+            "minX": -0.011118998513700469,
+            "maxX": 0.14726760540724967,
+            "minOriginalVertexID": 237799,
+            "maxOriginalVertexID": 789754
+          },
+          {
+            "count": 1148,
+            "minX": -0.01065096158688059,
+            "maxX": 0.1452616382445705,
+            "minOriginalVertexID": 231302,
+            "maxOriginalVertexID": 766149
+          },
+          {
+            "count": 1237,
+            "minX": -0.010042310428183546,
+            "maxX": 0.1423646768446437,
+            "minOriginalVertexID": 226643,
+            "maxOriginalVertexID": 721370
+          },
+          {
+            "count": 1464,
+            "minX": -0.008540976010320632,
+            "maxX": 0.13960457657076347,
+            "minOriginalVertexID": 215830,
+            "maxOriginalVertexID": 683551
+          },
+          {
+            "count": 1404,
+            "minX": -0.007921835248743014,
+            "maxX": 0.1329022167179183,
+            "minOriginalVertexID": 203956,
+            "maxOriginalVertexID": 700232
+          },
+          {
+            "count": 1465,
+            "minX": -0.006723651721229049,
+            "maxX": 0.12353648971272382,
+            "minOriginalVertexID": 194578,
+            "maxOriginalVertexID": 707851
+          },
+          {
+            "count": 1571,
+            "minX": -0.005489423957582007,
+            "maxX": 0.11541879381927642,
+            "minOriginalVertexID": 179954,
+            "maxOriginalVertexID": 670319
+          },
+          {
+            "count": 1840,
+            "minX": -0.003430064495107795,
+            "maxX": 0.10415809656331892,
+            "minOriginalVertexID": 161818,
+            "maxOriginalVertexID": 668210
+          },
+          {
+            "count": 792,
+            "minX": -0.0021107466511540857,
+            "maxX": 0.0938464130267147,
+            "minOriginalVertexID": 144906,
+            "maxOriginalVertexID": 882563
+          },
+          {
+            "count": 757,
+            "minX": -0.000562229558254055,
+            "maxX": 0.09142492169096675,
+            "minOriginalVertexID": 133004,
+            "maxOriginalVertexID": 869696
+          },
+          {
+            "count": 724,
+            "minX": 0.0017892767975002978,
+            "maxX": 0.08902778063488624,
+            "minOriginalVertexID": 110340,
+            "maxOriginalVertexID": 850863
+          },
+          {
+            "count": 616,
+            "minX": 0.0077235121525730845,
+            "maxX": 0.08496215381174348,
+            "minOriginalVertexID": 86887,
+            "maxOriginalVertexID": 792981
+          },
+          {
+            "count": 277,
+            "minX": 0.03275326315209326,
+            "maxX": 0.07897023911456709,
+            "minOriginalVertexID": 508066,
+            "maxOriginalVertexID": 733068
+          }
+        ],
+        "interpretation": "all-point projected envelope; not an occlusion-qualified raster silhouette or hole proof"
+      },
+      "after": {
+        "heightBoundsM": [
+          -0.12027783176850204,
+          -0.017317659386325485
+        ],
+        "bins": [
+          {
+            "count": 19,
+            "minX": 0.10533321517397123,
+            "maxX": 0.11025165618377575,
+            "minOriginalVertexID": 859845,
+            "maxOriginalVertexID": 865405
+          },
+          {
+            "count": 24,
+            "minX": 0.10910063982165737,
+            "maxX": 0.11340120560247254,
+            "minOriginalVertexID": 875192,
+            "maxOriginalVertexID": 877877
+          },
+          {
+            "count": 100,
+            "minX": -0.025000989014901026,
+            "maxX": 0.04459898495265207,
+            "minOriginalVertexID": 295431,
+            "maxOriginalVertexID": 181292
+          },
+          {
+            "count": 237,
+            "minX": -0.026116462331437044,
+            "maxX": 0.06058999276863,
+            "minOriginalVertexID": 298927,
+            "maxOriginalVertexID": 152607
+          },
+          {
+            "count": 290,
+            "minX": -0.025423625684255755,
+            "maxX": 0.12927327372950984,
+            "minOriginalVertexID": 298372,
+            "maxOriginalVertexID": 901998
+          },
+          {
+            "count": 329,
+            "minX": -0.024215706557720092,
+            "maxX": 0.13132316280269551,
+            "minOriginalVertexID": 295718,
+            "maxOriginalVertexID": 898733
+          },
+          {
+            "count": 362,
+            "minX": -0.023894010322982533,
+            "maxX": 0.13432726500316783,
+            "minOriginalVertexID": 295960,
+            "maxOriginalVertexID": 899523
+          },
+          {
+            "count": 406,
+            "minX": -0.022294165556080336,
+            "maxX": 0.13708974958950185,
+            "minOriginalVertexID": 293888,
+            "maxOriginalVertexID": 902474
+          },
+          {
+            "count": 432,
+            "minX": -0.020506902833877256,
+            "maxX": 0.1396807766339542,
+            "minOriginalVertexID": 290727,
+            "maxOriginalVertexID": 903537
+          },
+          {
+            "count": 502,
+            "minX": -0.01911965558216882,
+            "maxX": 0.14168218693163787,
+            "minOriginalVertexID": 287219,
+            "maxOriginalVertexID": 902654
+          },
+          {
+            "count": 534,
+            "minX": -0.018112529276213006,
+            "maxX": 0.14348954853177626,
+            "minOriginalVertexID": 282614,
+            "maxOriginalVertexID": 899960
+          },
+          {
+            "count": 605,
+            "minX": -0.017205211075084485,
+            "maxX": 0.14542729221078246,
+            "minOriginalVertexID": 279526,
+            "maxOriginalVertexID": 896918
+          },
+          {
+            "count": 673,
+            "minX": -0.01661478224873186,
+            "maxX": 0.14687426963752617,
+            "minOriginalVertexID": 275820,
+            "maxOriginalVertexID": 894780
+          },
+          {
+            "count": 724,
+            "minX": -0.015435781692282047,
+            "maxX": 0.14852830881642481,
+            "minOriginalVertexID": 269965,
+            "maxOriginalVertexID": 890707
+          },
+          {
+            "count": 765,
+            "minX": -0.014496511740627941,
+            "maxX": 0.14963290966003912,
+            "minOriginalVertexID": 264427,
+            "maxOriginalVertexID": 885368
+          },
+          {
+            "count": 771,
+            "minX": -0.01386018915072803,
+            "maxX": 0.15050045883524607,
+            "minOriginalVertexID": 259505,
+            "maxOriginalVertexID": 880667
+          },
+          {
+            "count": 826,
+            "minX": -0.012678768327621454,
+            "maxX": 0.15023083046568358,
+            "minOriginalVertexID": 252718,
+            "maxOriginalVertexID": 870723
+          },
+          {
+            "count": 884,
+            "minX": -0.01255344806202011,
+            "maxX": 0.14961161783167753,
+            "minOriginalVertexID": 250535,
+            "maxOriginalVertexID": 840427
+          },
+          {
+            "count": 933,
+            "minX": -0.012076124352908606,
+            "maxX": 0.1482911206354288,
+            "minOriginalVertexID": 246864,
+            "maxOriginalVertexID": 817684
+          },
+          {
+            "count": 1024,
+            "minX": -0.011118998513700469,
+            "maxX": 0.14726760540724967,
+            "minOriginalVertexID": 237799,
+            "maxOriginalVertexID": 789754
+          },
+          {
+            "count": 1148,
+            "minX": -0.01065096158688059,
+            "maxX": 0.1452616382445705,
+            "minOriginalVertexID": 231302,
+            "maxOriginalVertexID": 766149
+          },
+          {
+            "count": 1237,
+            "minX": -0.010042310428183546,
+            "maxX": 0.1423646768446437,
+            "minOriginalVertexID": 226643,
+            "maxOriginalVertexID": 721370
+          },
+          {
+            "count": 1464,
+            "minX": -0.008540976010320632,
+            "maxX": 0.13960457657076347,
+            "minOriginalVertexID": 215830,
+            "maxOriginalVertexID": 683551
+          },
+          {
+            "count": 1404,
+            "minX": -0.007921835248743014,
+            "maxX": 0.1329022167179183,
+            "minOriginalVertexID": 203956,
+            "maxOriginalVertexID": 700232
+          },
+          {
+            "count": 1465,
+            "minX": -0.006723651721229049,
+            "maxX": 0.12353648971272382,
+            "minOriginalVertexID": 194578,
+            "maxOriginalVertexID": 707851
+          },
+          {
+            "count": 1571,
+            "minX": -0.005489423957582007,
+            "maxX": 0.11541879381927642,
+            "minOriginalVertexID": 179954,
+            "maxOriginalVertexID": 670319
+          },
+          {
+            "count": 1840,
+            "minX": -0.003430064495107795,
+            "maxX": 0.10415809656331892,
+            "minOriginalVertexID": 161818,
+            "maxOriginalVertexID": 668210
+          },
+          {
+            "count": 792,
+            "minX": -0.0021107466511540857,
+            "maxX": 0.0938464130267147,
+            "minOriginalVertexID": 144906,
+            "maxOriginalVertexID": 882563
+          },
+          {
+            "count": 757,
+            "minX": -0.000562229558254055,
+            "maxX": 0.09142492169096675,
+            "minOriginalVertexID": 133004,
+            "maxOriginalVertexID": 869696
+          },
+          {
+            "count": 724,
+            "minX": 0.0017892767975002978,
+            "maxX": 0.08902778063488624,
+            "minOriginalVertexID": 110340,
+            "maxOriginalVertexID": 850863
+          },
+          {
+            "count": 616,
+            "minX": 0.0077235121525730845,
+            "maxX": 0.08496215381174348,
+            "minOriginalVertexID": 86887,
+            "maxOriginalVertexID": 792981
+          },
+          {
+            "count": 277,
+            "minX": 0.03275326315209326,
+            "maxX": 0.07897023911456709,
+            "minOriginalVertexID": 508066,
+            "maxOriginalVertexID": 733068
+          }
+        ],
+        "interpretation": "all-point projected envelope; not an occlusion-qualified raster silhouette or hole proof"
+      }
+    },
+    "side": {
+      "before": {
+        "heightBoundsM": [
+          -0.12079109989542568,
+          -0.019063672193180538
+        ],
+        "bins": [
+          {
+            "count": 23,
+            "minX": -0.09952676525487156,
+            "maxX": -0.02769891937388852,
+            "minOriginalVertexID": 215559,
+            "maxOriginalVertexID": 872509
+          },
+          {
+            "count": 184,
+            "minX": -0.10367119458404617,
+            "maxX": -0.02701673100596383,
+            "minOriginalVertexID": 298927,
+            "maxOriginalVertexID": 885134
+          },
+          {
+            "count": 244,
+            "minX": -0.10341835343160012,
+            "maxX": -0.02689912353553489,
+            "minOriginalVertexID": 295432,
+            "maxOriginalVertexID": 885685
+          },
+          {
+            "count": 281,
+            "minX": -0.10347076089677565,
+            "maxX": -0.09665141585737064,
+            "minOriginalVertexID": 195012,
+            "maxOriginalVertexID": 144339
+          },
+          {
+            "count": 320,
+            "minX": -0.10454959306989203,
+            "maxX": -0.026045158787888628,
+            "minOriginalVertexID": 195239,
+            "maxOriginalVertexID": 903177
+          },
+          {
+            "count": 345,
+            "minX": -0.10523360609806709,
+            "maxX": -0.02249235932259369,
+            "minOriginalVertexID": 195719,
+            "maxOriginalVertexID": 912693
+          },
+          {
+            "count": 395,
+            "minX": -0.10568308073560094,
+            "maxX": -0.024837164747566975,
+            "minOriginalVertexID": 191947,
+            "maxOriginalVertexID": 919542
+          },
+          {
+            "count": 427,
+            "minX": -0.10584342779197631,
+            "maxX": -0.023476846529518453,
+            "minOriginalVertexID": 190458,
+            "maxOriginalVertexID": 928242
+          },
+          {
+            "count": 467,
+            "minX": -0.10580149634915896,
+            "maxX": -0.02254348128703948,
+            "minOriginalVertexID": 187943,
+            "maxOriginalVertexID": 934157
+          },
+          {
+            "count": 504,
+            "minX": -0.10553829146762876,
+            "maxX": -0.021356704433828477,
+            "minOriginalVertexID": 181148,
+            "maxOriginalVertexID": 939864
+          },
+          {
+            "count": 575,
+            "minX": -0.10507511374183902,
+            "maxX": -0.01985051979400304,
+            "minOriginalVertexID": 174561,
+            "maxOriginalVertexID": 945011
+          },
+          {
+            "count": 627,
+            "minX": -0.10449407535294933,
+            "maxX": -0.01867616548359302,
+            "minOriginalVertexID": 126578,
+            "maxOriginalVertexID": 948337
+          },
+          {
+            "count": 639,
+            "minX": -0.10398559469194019,
+            "maxX": -0.017080866002645523,
+            "minOriginalVertexID": 118080,
+            "maxOriginalVertexID": 952002
+          },
+          {
+            "count": 674,
+            "minX": -0.10327769842321494,
+            "maxX": -0.013007717136347297,
+            "minOriginalVertexID": 109788,
+            "maxOriginalVertexID": 952497
+          },
+          {
+            "count": 726,
+            "minX": -0.10237991576808488,
+            "maxX": -0.011886073595941793,
+            "minOriginalVertexID": 100359,
+            "maxOriginalVertexID": 953829
+          },
+          {
+            "count": 765,
+            "minX": -0.1013035946613382,
+            "maxX": -0.009228204230206705,
+            "minOriginalVertexID": 88282,
+            "maxOriginalVertexID": 953800
+          },
+          {
+            "count": 823,
+            "minX": -0.10061426060590337,
+            "maxX": -0.007191515994591696,
+            "minOriginalVertexID": 30309,
+            "maxOriginalVertexID": 954376
+          },
+          {
+            "count": 848,
+            "minX": -0.09980891431316177,
+            "maxX": -0.004994223978022516,
+            "minOriginalVertexID": 20127,
+            "maxOriginalVertexID": 955675
+          },
+          {
+            "count": 931,
+            "minX": -0.09766407452522319,
+            "maxX": -0.0031540952720351956,
+            "minOriginalVertexID": 7611,
+            "maxOriginalVertexID": 955255
+          },
+          {
+            "count": 1033,
+            "minX": -0.09529793801682362,
+            "maxX": -0.0017047430169970512,
+            "minOriginalVertexID": 500167,
+            "maxOriginalVertexID": 954490
+          },
+          {
+            "count": 1126,
+            "minX": -0.0927935285288358,
+            "maxX": -0.0013443701077793246,
+            "minOriginalVertexID": 39352,
+            "maxOriginalVertexID": 953681
+          },
+          {
+            "count": 1259,
+            "minX": -0.09104502885399626,
+            "maxX": 0.00033927893179638846,
+            "minOriginalVertexID": 22543,
+            "maxOriginalVertexID": 950932
+          },
+          {
+            "count": 1415,
+            "minX": -0.08914485436243816,
+            "maxX": 0.0009372988288467721,
+            "minOriginalVertexID": 5477,
+            "maxOriginalVertexID": 948159
+          },
+          {
+            "count": 1382,
+            "minX": -0.08698352315179125,
+            "maxX": 0.0015827980056696,
+            "minOriginalVertexID": 501883,
+            "maxOriginalVertexID": 947339
+          },
+          {
+            "count": 1463,
+            "minX": -0.08428920258199152,
+            "maxX": 0.0023384916140773426,
+            "minOriginalVertexID": 524067,
+            "maxOriginalVertexID": 943551
+          },
+          {
+            "count": 1674,
+            "minX": -0.08082776948933887,
+            "maxX": 0.00249014044799567,
+            "minOriginalVertexID": 546843,
+            "maxOriginalVertexID": 939866
+          },
+          {
+            "count": 1566,
+            "minX": -0.07547593134749264,
+            "maxX": 0.002468603738809444,
+            "minOriginalVertexID": 583349,
+            "maxOriginalVertexID": 935731
+          },
+          {
+            "count": 753,
+            "minX": -0.07181019304817352,
+            "maxX": 0.002411240353334898,
+            "minOriginalVertexID": 512154,
+            "maxOriginalVertexID": 931685
+          },
+          {
+            "count": 780,
+            "minX": -0.06849520701645093,
+            "maxX": -0.005047991764168952,
+            "minOriginalVertexID": 535196,
+            "maxOriginalVertexID": 907452
+          },
+          {
+            "count": 698,
+            "minX": -0.06473505043880348,
+            "maxX": -0.013732014060171216,
+            "minOriginalVertexID": 532840,
+            "maxOriginalVertexID": 868045
+          },
+          {
+            "count": 540,
+            "minX": -0.06077138523520792,
+            "maxX": -0.021492080185519458,
+            "minOriginalVertexID": 562796,
+            "maxOriginalVertexID": 823968
+          },
+          {
+            "count": 248,
+            "minX": -0.05579801656475103,
+            "maxX": -0.03396037872488103,
+            "minOriginalVertexID": 589050,
+            "maxOriginalVertexID": 748412
+          }
+        ],
+        "interpretation": "all-point projected envelope; not an occlusion-qualified raster silhouette or hole proof"
+      },
+      "after": {
+        "heightBoundsM": [
+          -0.12079109989542568,
+          -0.019063672193180538
+        ],
+        "bins": [
+          {
+            "count": 23,
+            "minX": -0.09952676525487156,
+            "maxX": -0.02769891937388852,
+            "minOriginalVertexID": 215559,
+            "maxOriginalVertexID": 872509
+          },
+          {
+            "count": 184,
+            "minX": -0.10367119458404617,
+            "maxX": -0.02701673100596383,
+            "minOriginalVertexID": 298927,
+            "maxOriginalVertexID": 885134
+          },
+          {
+            "count": 244,
+            "minX": -0.10341835343160012,
+            "maxX": -0.02689912353553489,
+            "minOriginalVertexID": 295432,
+            "maxOriginalVertexID": 885685
+          },
+          {
+            "count": 281,
+            "minX": -0.1034707610427286,
+            "maxX": -0.09665152708586908,
+            "minOriginalVertexID": 195012,
+            "maxOriginalVertexID": 144339
+          },
+          {
+            "count": 320,
+            "minX": -0.10454959306989203,
+            "maxX": -0.026045158787888628,
+            "minOriginalVertexID": 195239,
+            "maxOriginalVertexID": 903177
+          },
+          {
+            "count": 345,
+            "minX": -0.10523360609806709,
+            "maxX": -0.02249235932259369,
+            "minOriginalVertexID": 195719,
+            "maxOriginalVertexID": 912693
+          },
+          {
+            "count": 395,
+            "minX": -0.10568308073560094,
+            "maxX": -0.024837164747566975,
+            "minOriginalVertexID": 191947,
+            "maxOriginalVertexID": 919542
+          },
+          {
+            "count": 427,
+            "minX": -0.10584342779197631,
+            "maxX": -0.023476846529518453,
+            "minOriginalVertexID": 190458,
+            "maxOriginalVertexID": 928242
+          },
+          {
+            "count": 467,
+            "minX": -0.10580149634915896,
+            "maxX": -0.02254348128703948,
+            "minOriginalVertexID": 187943,
+            "maxOriginalVertexID": 934157
+          },
+          {
+            "count": 504,
+            "minX": -0.10553829146762876,
+            "maxX": -0.021356704433828477,
+            "minOriginalVertexID": 181148,
+            "maxOriginalVertexID": 939864
+          },
+          {
+            "count": 575,
+            "minX": -0.10507511374183902,
+            "maxX": -0.01985051979400304,
+            "minOriginalVertexID": 174561,
+            "maxOriginalVertexID": 945011
+          },
+          {
+            "count": 629,
+            "minX": -0.10449407535294933,
+            "maxX": -0.01867616548359302,
+            "minOriginalVertexID": 126578,
+            "maxOriginalVertexID": 948337
+          },
+          {
+            "count": 638,
+            "minX": -0.10398559469194019,
+            "maxX": -0.017080866002645523,
+            "minOriginalVertexID": 118080,
+            "maxOriginalVertexID": 952002
+          },
+          {
+            "count": 674,
+            "minX": -0.10327769842321494,
+            "maxX": -0.013007717136347297,
+            "minOriginalVertexID": 109788,
+            "maxOriginalVertexID": 952497
+          },
+          {
+            "count": 725,
+            "minX": -0.10237991576808488,
+            "maxX": -0.011886073595941793,
+            "minOriginalVertexID": 100359,
+            "maxOriginalVertexID": 953829
+          },
+          {
+            "count": 765,
+            "minX": -0.1013035946613382,
+            "maxX": -0.009228204230206705,
+            "minOriginalVertexID": 88282,
+            "maxOriginalVertexID": 953800
+          },
+          {
+            "count": 823,
+            "minX": -0.10061426060590337,
+            "maxX": -0.007191515994591696,
+            "minOriginalVertexID": 30309,
+            "maxOriginalVertexID": 954376
+          },
+          {
+            "count": 848,
+            "minX": -0.09980891431316177,
+            "maxX": -0.004994223978022516,
+            "minOriginalVertexID": 20127,
+            "maxOriginalVertexID": 955675
+          },
+          {
+            "count": 932,
+            "minX": -0.09766407452522319,
+            "maxX": -0.0031540952720351956,
+            "minOriginalVertexID": 7611,
+            "maxOriginalVertexID": 955255
+          },
+          {
+            "count": 1032,
+            "minX": -0.09529793801682362,
+            "maxX": -0.0017047430169970512,
+            "minOriginalVertexID": 500167,
+            "maxOriginalVertexID": 954490
+          },
+          {
+            "count": 1126,
+            "minX": -0.0927935285288358,
+            "maxX": -0.0013443701077793246,
+            "minOriginalVertexID": 39352,
+            "maxOriginalVertexID": 953681
+          },
+          {
+            "count": 1259,
+            "minX": -0.09104502885399626,
+            "maxX": 0.00033927893179638846,
+            "minOriginalVertexID": 22543,
+            "maxOriginalVertexID": 950932
+          },
+          {
+            "count": 1415,
+            "minX": -0.08914485436243816,
+            "maxX": 0.0009372988288467721,
+            "minOriginalVertexID": 5477,
+            "maxOriginalVertexID": 948159
+          },
+          {
+            "count": 1382,
+            "minX": -0.08698352315179125,
+            "maxX": 0.0015827980056696,
+            "minOriginalVertexID": 501883,
+            "maxOriginalVertexID": 947339
+          },
+          {
+            "count": 1463,
+            "minX": -0.08428920258199152,
+            "maxX": 0.0023384916140773426,
+            "minOriginalVertexID": 524067,
+            "maxOriginalVertexID": 943551
+          },
+          {
+            "count": 1674,
+            "minX": -0.08082776948933887,
+            "maxX": 0.00249014044799567,
+            "minOriginalVertexID": 546843,
+            "maxOriginalVertexID": 939866
+          },
+          {
+            "count": 1566,
+            "minX": -0.07547593134749264,
+            "maxX": 0.002468603738809444,
+            "minOriginalVertexID": 583349,
+            "maxOriginalVertexID": 935731
+          },
+          {
+            "count": 753,
+            "minX": -0.07181051065583302,
+            "maxX": 0.002411240353334898,
+            "minOriginalVertexID": 512154,
+            "maxOriginalVertexID": 931685
+          },
+          {
+            "count": 780,
+            "minX": -0.06849520701645093,
+            "maxX": -0.005047991764168952,
+            "minOriginalVertexID": 535196,
+            "maxOriginalVertexID": 907452
+          },
+          {
+            "count": 698,
+            "minX": -0.06473505043880348,
+            "maxX": -0.013732014060171216,
+            "minOriginalVertexID": 532840,
+            "maxOriginalVertexID": 868045
+          },
+          {
+            "count": 540,
+            "minX": -0.06077138523520792,
+            "maxX": -0.021492080185519458,
+            "minOriginalVertexID": 562796,
+            "maxOriginalVertexID": 823968
+          },
+          {
+            "count": 248,
+            "minX": -0.05579801656475103,
+            "maxX": -0.03396037872488103,
+            "minOriginalVertexID": 589050,
+            "maxOriginalVertexID": 748412
+          }
+        ],
+        "interpretation": "all-point projected envelope; not an occlusion-qualified raster silhouette or hole proof"
+      }
+    }
+  },
+  "sourceAttributesExact": true,
+  "seconds": 66.1843204999459,
+  "candidateScriptSHA256": "1937f55d9494a55f4e7b0fd5014c75b7e251deb618ba2e5fe880815eaab5bcdb"
+}

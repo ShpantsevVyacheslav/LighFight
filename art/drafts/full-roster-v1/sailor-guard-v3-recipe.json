@@ -1,0 +1,94 @@
+{
+  "schema": "sailor-guard-v3-recipe/1",
+  "status": "REFERENCE_FROZEN_NOT_ROSTER_PROMOTED",
+  "dependencies": [
+    {
+      "path": "prototypes/roster-portraits/twist-review/guard-v3/manifest.json",
+      "sha256": "62edfa79223d89d7010d611ef362f0b5dc9efed23a1cc8effaa6ea4888fe71ed"
+    },
+    {
+      "path": "art/drafts/sailor-native67-dense-v1/native67-zero-twist-web-guard-loop-v1/export.json",
+      "sha256": "615fdac4701de6046f419b974cd5a71aa25e867b525183052e74cdf7ee1c359b"
+    },
+    {
+      "path": "art/drafts/sailor-native67-dense-v1/native67-zero-twist-web-guard-loop-v1/loop-derivation.json",
+      "sha256": "58b8ffc4e7c9606c2f9c301515eaecd72d6648001612f2c21957c472a5f37cd7"
+    },
+    {
+      "path": ".tools/native67-bary-weight-packet-v1/manifest.json",
+      "sha256": "5278c0dd789788b396f090f9bf7f8acb20ccdd3d52327aad59c0d98c125feb9b"
+    },
+    {
+      "path": "unity/Assets/Native67SpatialReview/Editor/Native67AlternativeDanceReview.cs",
+      "sha256": "daa33e70c21da7481767cb9aeeecc44208cf91cba107dec548a27484dabc29e8"
+    },
+    {
+      "path": "unity/Assets/Native67SpatialReview/Editor/Native67WebPreviewExport.cs",
+      "sha256": "b517dd01c194d8ce613700540a76688fb93dfc88446cee3ddfd851d170ac0770"
+    },
+    {
+      "path": "art/drafts/sailor-native67-dense-v1/tools/build_zero_twist_gltf_v2.py",
+      "sha256": "52b011765489d93eb4dd649587496a2e5948c62fa1588a64d5427304a2c79ad2"
+    },
+    {
+      "path": "art/drafts/sailor-native67-dense-v1/tools/close_guard_loop.py",
+      "sha256": "2700f776cc2de3a80335ed1e4bf8b79cdf82c87c5729b1259092ec4d7c872888"
+    },
+    {
+      "path": "prototypes/roster-portraits/twist-review/app.js",
+      "sha256": "8d7e546fa4ebe5e43120cefad2b1c2b11a701c167fe01e3a9c5455280aaeaaef"
+    }
+  ],
+  "geometry": "Original full-density, original UV/maps, no simplification",
+  "weights": {
+    "kind": "DERIVED_FULL_CLOSED_TRIANGLE_BARY_NO_SPATIAL_AVERAGE",
+    "csrSHA256": "b584aa8f36b163372b564746e36621c00b8d068a9c4d1ff0525ccb4176b84911",
+    "positivePruning": false,
+    "fixedInfluenceCap": null
+  },
+  "retarget": {
+    "method": "Generic FK, true inverse bind, virtual T canonical, anatomical height scale",
+    "clavicleReference": "native rest",
+    "footReference": "native rest",
+    "hipHorizontalMotion": "projected away",
+    "sourceJoints": 22
+  },
+  "dance": {
+    "source": "action-67",
+    "upperArmTwistGain": 0,
+    "swingPreserved": true,
+    "forearmWorldOrientationCompensated": true,
+    "endpointGateM": 1e-06,
+    "boundaryTwistFadeSeconds": 0.25
+  },
+  "guard": {
+    "source": "action-guard",
+    "upperArmTwistGain": 1,
+    "sampleHz": 96,
+    "loopOverlapKeys": 24
+  },
+  "presentation": {
+    "blendSeconds": 0.35,
+    "rotation": "horizontal only"
+  },
+  "nativeAttacks": {
+    "sources": [
+      "box_02",
+      "front_kick_01"
+    ],
+    "upperArmTwistCorrectionInCurrentExport": false
+  },
+  "excludedExperiments": [
+    "clavicle raise16deg",
+    "clavicle damping0.65",
+    "source matched clavicle axial twist",
+    "delta mush",
+    "dual quaternion skinning",
+    "top4 pruning"
+  ],
+  "limits": [
+    "Current Sailor web artifact is not proof of runtime/phone integration.",
+    "Apply calibrated recipe per fighter; do not copy absolute Sailor transforms.",
+    "Native attacks currently exported unchanged: full-move correction must be validated separately."
+  ]
+}

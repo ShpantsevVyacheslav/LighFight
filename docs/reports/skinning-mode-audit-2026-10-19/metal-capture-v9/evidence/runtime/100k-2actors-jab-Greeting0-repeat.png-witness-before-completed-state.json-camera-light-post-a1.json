@@ -1,0 +1,636 @@
+{
+    "ambientMode": "Flat",
+    "lightProbeUsage": "BlendProbes",
+    "postShader": "Hidden/LighFight/FittedFilmic",
+    "postExposure": 1.0,
+    "ambientProbe": [
+        0.17064493894577027,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.15487249195575715,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.13286833465099336,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "frame": 7013,
+    "aa": 4,
+    "hdr": true,
+    "allowMSAA": true,
+    "view": {
+        "e00": -0.9994449615478516,
+        "e01": 0.0,
+        "e02": 0.03331483155488968,
+        "e03": 0.0,
+        "e10": -0.0005548620829358697,
+        "e11": 0.9998612999916077,
+        "e12": -0.01664586178958416,
+        "e13": -1.0598528385162354,
+        "e20": 0.033310212194919589,
+        "e21": 0.016655107960104944,
+        "e22": 0.999306321144104,
+        "e23": -6.021820068359375,
+        "e30": 0.0,
+        "e31": 0.0,
+        "e32": 0.0,
+        "e33": 1.0
+    },
+    "projection": {
+        "e00": 0.9469695687294006,
+        "e01": 0.0,
+        "e02": 0.0,
+        "e03": 0.0,
+        "e10": 0.0,
+        "e11": 0.7575757503509522,
+        "e12": 0.0,
+        "e13": 0.0,
+        "e20": 0.0,
+        "e21": 0.0,
+        "e22": -0.0020006000995635988,
+        "e23": -1.0006000995635987,
+        "e30": 0.0,
+        "e31": 0.0,
+        "e32": 0.0,
+        "e33": 1.0
+    },
+    "nonJitteredProjection": {
+        "e00": 0.9469695687294006,
+        "e01": 0.0,
+        "e02": 0.0,
+        "e03": 0.0,
+        "e10": 0.0,
+        "e11": 0.7575757503509522,
+        "e12": 0.0,
+        "e13": 0.0,
+        "e20": 0.0,
+        "e21": 0.0,
+        "e22": -0.0020006000995635988,
+        "e23": -1.0006000995635987,
+        "e30": 0.0,
+        "e31": 0.0,
+        "e32": 0.0,
+        "e33": 1.0
+    },
+    "shaderTime": {
+        "x": 0.26620516180992129,
+        "y": 5.324103355407715,
+        "z": 10.64820671081543,
+        "w": 15.972310066223145
+    },
+    "ambient": {
+        "r": 0.44999998807907107,
+        "g": 0.4300000071525574,
+        "b": 0.4000000059604645,
+        "a": 1.0
+    },
+    "materials": [
+        {
+            "name": "Standard",
+            "shader": "Standard",
+            "keywords": [
+                "_METALLICGLOSSMAP",
+                "_NORMALMAP"
+            ],
+            "propertyBlockEmpty": true,
+            "properties": [
+                {
+                    "name": "_Color",
+                    "type": "Color",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0,
+                        "w": 1.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_MainTex",
+                    "type": "Texture",
+                    "texture": "master-h31-unity-native-pack_basecolor",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_Cutoff",
+                    "type": "Range",
+                    "texture": "",
+                    "value": {
+                        "x": 0.5,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_Glossiness",
+                    "type": "Range",
+                    "texture": "",
+                    "value": {
+                        "x": 0.5,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_GlossMapScale",
+                    "type": "Range",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_SmoothnessTextureChannel",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_Metallic",
+                    "type": "Range",
+                    "texture": "",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_MetallicGlossMap",
+                    "type": "Texture",
+                    "texture": "derived-metal-smooth",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_SpecularHighlights",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_GlossyReflections",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_BumpScale",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_BumpMap",
+                    "type": "Texture",
+                    "texture": "master-h31-unity-native-pack_normal",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_Parallax",
+                    "type": "Range",
+                    "texture": "",
+                    "value": {
+                        "x": 0.019999999552965165,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_ParallaxMap",
+                    "type": "Texture",
+                    "texture": "none",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_OcclusionStrength",
+                    "type": "Range",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_OcclusionMap",
+                    "type": "Texture",
+                    "texture": "none",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_EmissionColor",
+                    "type": "Color",
+                    "texture": "",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_EmissionMap",
+                    "type": "Texture",
+                    "texture": "none",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_DetailMask",
+                    "type": "Texture",
+                    "texture": "none",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_DetailAlbedoMap",
+                    "type": "Texture",
+                    "texture": "none",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_DetailNormalMapScale",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_DetailNormalMap",
+                    "type": "Texture",
+                    "texture": "none",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_UVSec",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_Mode",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_SrcBlend",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_DstBlend",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                },
+                {
+                    "name": "_ZWrite",
+                    "type": "Float",
+                    "texture": "",
+                    "value": {
+                        "x": 1.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockValue": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "blockOverrides": false
+                }
+            ]
+        }
+    ],
+    "lights": [
+        {
+            "name": "Identical key",
+            "type": "Directional",
+            "shadows": "None",
+            "intensity": 1.2000000476837159,
+            "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "localToWorld": {
+                "e00": 0.866025447845459,
+                "e01": -0.3535534143447876,
+                "e02": -0.35355332493782046,
+                "e03": 0.0,
+                "e10": 0.0,
+                "e11": 0.7071067094802856,
+                "e12": -0.7071067690849304,
+                "e13": 0.0,
+                "e20": 0.4999999701976776,
+                "e21": 0.6123724579811096,
+                "e22": 0.6123723983764648,
+                "e23": 0.0,
+                "e30": 0.0,
+                "e31": 0.0,
+                "e32": 0.0,
+                "e33": 1.0
+            }
+        }
+    ]
+}

@@ -1,0 +1,5857 @@
+{
+  "status": "COMPLETED_DIAGNOSTIC_NOT_QUALITY_ACCEPTANCE",
+  "cases": [
+    {
+      "case": {
+        "name": "dance45",
+        "clip": "dance_01",
+        "phase": 0.45
+      },
+      "modes": {
+        "LBS": {
+          "preserveVolume": false,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.48889541348037197,
+                  "median": 1.0411562973156732,
+                  "p95": 1.6938308017084132,
+                  "p99": 2.2996818885816146,
+                  "max": 4.810149830403864
+                },
+                "logStrainAbs": {
+                  "min": 4.660562835414827e-09,
+                  "median": 0.09278780270692495,
+                  "p95": 0.5275238917117192,
+                  "p99": 0.8327708038933269,
+                  "max": 1.5707282334046389
+                },
+                "worstEdgeCanonicalIDs": [
+                  447006,
+                  527132,
+                  447976,
+                  446460,
+                  523572,
+                  509895,
+                  515026,
+                  546270
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    145536,
+                    146384
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    145855,
+                    146794
+                  ],
+                  [
+                    145354,
+                    146219
+                  ],
+                  [
+                    171185,
+                    171455
+                  ],
+                  [
+                    166565,
+                    166798
+                  ],
+                  [
+                    168313,
+                    169087
+                  ],
+                  [
+                    178808,
+                    180021
+                  ]
+                ],
+                "worstRatios": [
+                  4.810149830403864,
+                  4.508513086251563,
+                  4.378822941732255,
+                  4.2426514951606284,
+                  4.112934076280686,
+                  4.049120361808037,
+                  4.040607388840444,
+                  3.9618683493818123
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.515340344826649,
+                  "median": 1.1726395682978485,
+                  "p95": 1.9830411765877063,
+                  "p99": 2.3577989522839387,
+                  "max": 5.018735736647702
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  468753,
+                  468754,
+                  468751,
+                  491998,
+                  375786,
+                  492000,
+                  375798,
+                  375796
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 9.319234513094484e-05,
+                "p95": 0.0006472078157766178,
+                "p99": 0.0011342011733403796,
+                "max": 0.0029132637329270174
+              },
+              "absoluteExcessM": {
+                "median": 3.867055607498194e-05,
+                "p95": 0.0006374080618533117,
+                "p99": 0.00113164604131748,
+                "max": 0.0029132637329270174
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.3308445053029793,
+                  "median": 1.0511808128882472,
+                  "p95": 2.451018156368173,
+                  "p99": 3.7478991084017803,
+                  "max": 27.977180179341868
+                },
+                "logStrainAbs": {
+                  "min": 1.171156838861395e-09,
+                  "median": 0.07300253020458607,
+                  "p95": 0.8966731206385792,
+                  "p99": 1.3211954452139099,
+                  "max": 3.331389184292437
+                },
+                "worstEdgeCanonicalIDs": [
+                  422074,
+                  499942,
+                  1672488,
+                  538560,
+                  1660968,
+                  1629859,
+                  1672486,
+                  1654619
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    163225,
+                    164727
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    176221,
+                    177693
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    549937,
+                    550710
+                  ]
+                ],
+                "worstRatios": [
+                  27.977180179341868,
+                  26.658576779874668,
+                  26.629596165798475,
+                  25.276176845821325,
+                  25.000926210101298,
+                  24.387370183153063,
+                  24.235743737356966,
+                  24.215761413121157
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.04941973922010251,
+                  "median": 1.1488403609015034,
+                  "p95": 2.762765294526292,
+                  "p99": 4.767994673180892,
+                  "max": 43.297068786030664
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  304682,
+                  423252,
+                  500546,
+                  500547,
+                  500777,
+                  486396,
+                  486366,
+                  486401
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 8.002145352883363e-05,
+                "p95": 0.0014463730928907944,
+                "p99": 0.0030311219333731573,
+                "max": 0.01809155659596723
+              },
+              "absoluteExcessM": {
+                "median": 5.39012492890682e-05,
+                "p95": 0.0014459705019342667,
+                "p99": 0.0030311219333731573,
+                "max": 0.01809155659596723
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.14901860200417738,
+                  "median": 1.0116810430286616,
+                  "p95": 1.313968967422123,
+                  "p99": 1.695889704743384,
+                  "max": 5.671387693214393
+                },
+                "logStrainAbs": {
+                  "min": 3.980331833980309e-09,
+                  "median": 0.041983694315834555,
+                  "p95": 0.29440661203402024,
+                  "p99": 0.5657020565899888,
+                  "max": 1.9036841351636296
+                },
+                "worstEdgeCanonicalIDs": [
+                  185820,
+                  864662,
+                  2545916,
+                  911935,
+                  867196,
+                  896477,
+                  904474,
+                  923607
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    58615,
+                    63718
+                  ],
+                  [
+                    285411,
+                    286460
+                  ],
+                  [
+                    847399,
+                    847425
+                  ],
+                  [
+                    301152,
+                    301843
+                  ],
+                  [
+                    286270,
+                    286661
+                  ],
+                  [
+                    295996,
+                    296167
+                  ],
+                  [
+                    298669,
+                    298735
+                  ],
+                  [
+                    305048,
+                    306436
+                  ]
+                ],
+                "worstRatios": [
+                  0.14901860200417738,
+                  5.671387693214393,
+                  0.17873888619922065,
+                  5.346024540971925,
+                  5.333560002788295,
+                  5.252013940859109,
+                  5.212576816812188,
+                  5.097244929246235
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.12010731669687058,
+                  "median": 1.0247884053441263,
+                  "p95": 1.6103857326731872,
+                  "p99": 1.969449304456243,
+                  "max": 7.115555282394182
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  623156,
+                  542284,
+                  837931,
+                  838112,
+                  873967,
+                  736565,
+                  542298,
+                  736567
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 4.1757264372700123e-05,
+                "p95": 0.00037200244662031047,
+                "p99": 0.0007194021471735876,
+                "max": 0.003475518428508455
+              },
+              "absoluteExcessM": {
+                "median": 1.1316086953882501e-05,
+                "p95": 0.000358116975778869,
+                "p99": 0.0007120886760004835,
+                "max": 0.003475518428508455
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "dance45-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.9170633554458618,
+                0.23927508294582367,
+                0.8641796112060547
+              ],
+              "cameraTarget": [
+                0.08293663710355759,
+                0.23927508294582367,
+                0.804179584980011
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        },
+        "DQS": {
+          "preserveVolume": true,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.6521154955408401,
+                  "median": 1.10994746077086,
+                  "p95": 1.8969344504515857,
+                  "p99": 2.5592149343899893,
+                  "max": 5.476937051126097
+                },
+                "logStrainAbs": {
+                  "min": 3.076650929286763e-09,
+                  "median": 0.12244872295889518,
+                  "p95": 0.6402391345467713,
+                  "p99": 0.9397005449925587,
+                  "max": 1.700546012422791
+                },
+                "worstEdgeCanonicalIDs": [
+                  447006,
+                  527132,
+                  447976,
+                  446460,
+                  523572,
+                  509895,
+                  515026,
+                  546270
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    145536,
+                    146384
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    145855,
+                    146794
+                  ],
+                  [
+                    145354,
+                    146219
+                  ],
+                  [
+                    171185,
+                    171455
+                  ],
+                  [
+                    166565,
+                    166798
+                  ],
+                  [
+                    168313,
+                    169087
+                  ],
+                  [
+                    178808,
+                    180021
+                  ]
+                ],
+                "worstRatios": [
+                  5.476937051126097,
+                  5.149828341684724,
+                  4.998299241238857,
+                  4.801069415872693,
+                  4.716177382324388,
+                  4.6960191391583,
+                  4.627243023174378,
+                  4.554605274180485
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.6352814399716478,
+                  "median": 1.2861262870975594,
+                  "p95": 2.6983392439809526,
+                  "p99": 3.1643969592167123,
+                  "max": 7.567171677374534
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  468753,
+                  468754,
+                  468751,
+                  375786,
+                  491998,
+                  492000,
+                  375796,
+                  375798
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.00012691960515849013,
+                "p95": 0.0008566667542374314,
+                "p99": 0.0013647513219868896,
+                "max": 0.003263659097048966
+              },
+              "absoluteExcessM": {
+                "median": 0.00010074571078937198,
+                "p95": 0.0008566218873402662,
+                "p99": 0.0013647513219868896,
+                "max": 0.003263659097048966
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.10269119400459036,
+                  "median": 1.0995668980808766,
+                  "p95": 2.6498982422815067,
+                  "p99": 4.201277569142791,
+                  "max": 27.61972451207401
+                },
+                "logStrainAbs": {
+                  "min": 1.4750744059447653e-07,
+                  "median": 0.11047305704617218,
+                  "p95": 0.9758134950910173,
+                  "p99": 1.436675716842809,
+                  "max": 3.3185301737125044
+                },
+                "worstEdgeCanonicalIDs": [
+                  422074,
+                  499942,
+                  1672488,
+                  538560,
+                  1629859,
+                  1660968,
+                  1654619,
+                  1672486
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    163225,
+                    164727
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    176221,
+                    177693
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    555893,
+                    556269
+                  ]
+                ],
+                "worstRatios": [
+                  27.61972451207401,
+                  26.782299290294514,
+                  26.576256072188098,
+                  25.43127367350328,
+                  25.20662152934837,
+                  24.63539602208287,
+                  24.064660117597214,
+                  24.020747076258587
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.07266889588819297,
+                  "median": 1.2307178785289166,
+                  "p95": 3.3041085629041365,
+                  "p99": 5.201513431988245,
+                  "max": 98.20832916866554
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  304682,
+                  423252,
+                  500612,
+                  500784,
+                  500546,
+                  500547,
+                  500614,
+                  500772
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.00012069289328338643,
+                "p95": 0.0015996342177479871,
+                "p99": 0.0034107518875380327,
+                "max": 0.018053904605036756
+              },
+              "absoluteExcessM": {
+                "median": 0.00010522513454294961,
+                "p95": 0.0015991552277025498,
+                "p99": 0.0034107518875380327,
+                "max": 0.018053904605036756
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.10269119400459036,
+                  "median": 1.0194215991847146,
+                  "p95": 1.4451024681245617,
+                  "p99": 1.8483222389391583,
+                  "max": 5.236753626678974
+                },
+                "logStrainAbs": {
+                  "min": 2.5173747499285136e-09,
+                  "median": 0.05130875137327545,
+                  "p95": 0.386272201477564,
+                  "p99": 0.6467387957978149,
+                  "max": 2.27602891056725
+                },
+                "worstEdgeCanonicalIDs": [
+                  2965167,
+                  896477,
+                  904474,
+                  911935,
+                  867196,
+                  864662,
+                  2967115,
+                  923607
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    988209,
+                    988308
+                  ],
+                  [
+                    295996,
+                    296167
+                  ],
+                  [
+                    298669,
+                    298735
+                  ],
+                  [
+                    301152,
+                    301843
+                  ],
+                  [
+                    286270,
+                    286661
+                  ],
+                  [
+                    285411,
+                    286460
+                  ],
+                  [
+                    988858,
+                    989043
+                  ],
+                  [
+                    305048,
+                    306436
+                  ]
+                ],
+                "worstRatios": [
+                  0.10269119400459036,
+                  5.236753626678974,
+                  5.0751437956125445,
+                  5.039347015717197,
+                  4.994908821310463,
+                  4.955474229175694,
+                  0.21265577415737502,
+                  4.670307419720558
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.07266889588819297,
+                  "median": 1.036540170013788,
+                  "p95": 2.041237397792509,
+                  "p99": 2.558839251255134,
+                  "max": 6.439989798911709
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  542321,
+                  549233,
+                  542336,
+                  542284,
+                  542292,
+                  542298,
+                  542290,
+                  542295
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.2300079770476436e-05,
+                "p95": 0.0005131739304525723,
+                "p99": 0.0009490255969819376,
+                "max": 0.003023920640984925
+              },
+              "absoluteExcessM": {
+                "median": 1.894827717065055e-05,
+                "p95": 0.0005034530387788035,
+                "p99": 0.0009399917119557653,
+                "max": 0.003023920640984925
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "dance45-DQS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.9170633554458618,
+                0.23927508294582367,
+                0.8641796112060547
+              ],
+              "cameraTarget": [
+                0.08293663710355759,
+                0.23927508294582367,
+                0.804179584980011
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        }
+      },
+      "bonePoseSHA256": "3bf6ae5bad5ca667538c3d07a9883276c5a9cba4e15ffc040baa5958eb6550c1",
+      "independentLBSAllVerticesMaxM": 2.6488745632854795e-07,
+      "DQSvsLBSAllVerticesM": {
+        "median": 0.00016184220397769334,
+        "p95": 0.004071572510888305,
+        "p99": 0.016831844991460315,
+        "max": 0.03232570117396393
+      },
+      "anchorMovement": {
+        "head_anchor_proposal": {
+          "count": 107125,
+          "maxM": 0.004393058233396359,
+          "p99M": 0.003752489990272121,
+          "worstOriginalVertexIDs": [
+            766336,
+            767437,
+            767050,
+            764566,
+            767622,
+            766152,
+            766017,
+            762289
+          ]
+        },
+        "upper_neck_anchor_proposal": {
+          "count": 2701,
+          "maxM": 0.004381160547429569,
+          "p99M": 0.004340550270153909,
+          "worstOriginalVertexIDs": [
+            762289,
+            761049,
+            762733,
+            758036,
+            758674,
+            764166,
+            763005,
+            752855
+          ]
+        },
+        "elbow_distal_anchor_L": {
+          "count": 46256,
+          "maxM": 0.005783726296629633,
+          "p99M": 0.003017106103127213,
+          "worstOriginalVertexIDs": [
+            496073,
+            497578,
+            491530,
+            493760,
+            35,
+            502115,
+            493710,
+            489470
+          ]
+        },
+        "elbow_distal_anchor_R": {
+          "count": 45308,
+          "maxM": 0.024813786194385755,
+          "p99M": 0.01454598841262648,
+          "worstOriginalVertexIDs": [
+            494272,
+            488492,
+            2983,
+            6874,
+            492589,
+            488432,
+            3106,
+            8324
+          ]
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "dance50",
+        "clip": "dance_01",
+        "phase": 0.5
+      },
+      "modes": {
+        "LBS": {
+          "preserveVolume": false,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.49962306155236474,
+                  "median": 1.000009080116776,
+                  "p95": 1.465808716274781,
+                  "p99": 1.8710949669794037,
+                  "max": 3.81116779045388
+                },
+                "logStrainAbs": {
+                  "min": 2.868801259952833e-08,
+                  "median": 0.07986631195836386,
+                  "p95": 0.3856611663944776,
+                  "p99": 0.6266114338133123,
+                  "max": 1.3379356488558414
+                },
+                "worstEdgeCanonicalIDs": [
+                  447006,
+                  447976,
+                  2655810,
+                  446460,
+                  527132,
+                  509895,
+                  448644,
+                  523572
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    145536,
+                    146384
+                  ],
+                  [
+                    145855,
+                    146794
+                  ],
+                  [
+                    884093,
+                    885368
+                  ],
+                  [
+                    145354,
+                    146219
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    166565,
+                    166798
+                  ],
+                  [
+                    146080,
+                    147045
+                  ],
+                  [
+                    171185,
+                    171455
+                  ]
+                ],
+                "worstRatios": [
+                  3.81116779045388,
+                  3.4967847681838324,
+                  3.472378908906371,
+                  3.3922175581285896,
+                  3.274004099352069,
+                  3.102010390150712,
+                  3.0487905887350717,
+                  2.944722461311235
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.44902415627414244,
+                  "median": 1.0243174597293097,
+                  "p95": 1.6726508916002836,
+                  "p99": 1.9882134534246563,
+                  "max": 4.157824840294381
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  468753,
+                  131422,
+                  468754,
+                  375798,
+                  375796,
+                  468751,
+                  375786,
+                  131420
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 7.828198663812139e-05,
+                "p95": 0.0004612940327145187,
+                "p99": 0.0007528129543948105,
+                "max": 0.001906022367414651
+              },
+              "absoluteExcessM": {
+                "median": 1.0053228601805339e-08,
+                "p95": 0.0004355783170655449,
+                "p99": 0.000743765700707322,
+                "max": 0.001906022367414651
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.2225164310769699,
+                  "median": 1.0380663382530195,
+                  "p95": 2.0548319622037132,
+                  "p99": 3.0426525035317082,
+                  "max": 23.427474944257476
+                },
+                "logStrainAbs": {
+                  "min": 3.968394436308233e-08,
+                  "median": 0.08559983960072902,
+                  "p95": 0.7238456471513721,
+                  "p99": 1.1161932326462873,
+                  "max": 3.1539094765139346
+                },
+                "worstEdgeCanonicalIDs": [
+                  1672488,
+                  422074,
+                  1660968,
+                  1672486,
+                  1654619,
+                  499942,
+                  1629859,
+                  1639597
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    163225,
+                    164727
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    544907,
+                    545004
+                  ]
+                ],
+                "worstRatios": [
+                  23.427474944257476,
+                  22.210571730715554,
+                  22.177541572312894,
+                  21.053709298988032,
+                  21.04480898483277,
+                  20.606701650137097,
+                  20.30466903099744,
+                  20.251138658405555
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.09631963009637873,
+                  "median": 1.0801312494339166,
+                  "p95": 2.139435948960488,
+                  "p99": 3.3481571971736175,
+                  "max": 25.638249782492345
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  500784,
+                  304679,
+                  500552,
+                  500612,
+                  500777,
+                  500792,
+                  423252,
+                  500772
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 9.00588202631448e-05,
+                "p95": 0.0010956242741519198,
+                "p99": 0.0024516250680063356,
+                "max": 0.015831226119751476
+              },
+              "absoluteExcessM": {
+                "median": 3.76970729626503e-05,
+                "p95": 0.0010948177188619852,
+                "p99": 0.0024516250680063356,
+                "max": 0.015831226119751476
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.1699054822812309,
+                  "median": 1.0025499508201077,
+                  "p95": 1.227222002097165,
+                  "p99": 1.4933640033627003,
+                  "max": 4.954172741728554
+                },
+                "logStrainAbs": {
+                  "min": 1.3529048983059542e-09,
+                  "median": 0.0371283503229668,
+                  "p95": 0.23257530415618838,
+                  "p99": 0.46920319134921196,
+                  "max": 1.772512983130722
+                },
+                "worstEdgeCanonicalIDs": [
+                  209930,
+                  235759,
+                  259685,
+                  864662,
+                  267158,
+                  867196,
+                  896477,
+                  911935
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    66631,
+                    70851
+                  ],
+                  [
+                    75225,
+                    79129
+                  ],
+                  [
+                    83198,
+                    87098
+                  ],
+                  [
+                    285411,
+                    286460
+                  ],
+                  [
+                    85686,
+                    91233
+                  ],
+                  [
+                    286270,
+                    286661
+                  ],
+                  [
+                    295996,
+                    296167
+                  ],
+                  [
+                    301152,
+                    301843
+                  ]
+                ],
+                "worstRatios": [
+                  0.1699054822812309,
+                  0.17639528303836405,
+                  0.19323888177130752,
+                  4.954172741728554,
+                  0.2049518853709617,
+                  4.740895549331718,
+                  4.722271371056801,
+                  4.700816122058354
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.096346074024818,
+                  "median": 1.010636111474584,
+                  "p95": 1.3768770998530795,
+                  "p99": 1.6337243979849898,
+                  "max": 5.255385622360635
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  836862,
+                  873974,
+                  873975,
+                  873970,
+                  909523,
+                  873979,
+                  909507,
+                  909512
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 3.7579405766827785e-05,
+                "p95": 0.0002744285308241429,
+                "p99": 0.0005490405758240403,
+                "max": 0.0026242134145483356
+              },
+              "absoluteExcessM": {
+                "median": 2.3037461466435434e-06,
+                "p95": 0.00024040874269606196,
+                "p99": 0.0005107190747783966,
+                "max": 0.0026242134145483356
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "dance50-LBS-clay-front.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                0.2548523247241974,
+                -1.7427030801773071,
+                0.5293723344802856
+              ],
+              "cameraTarget": [
+                0.2548523242585361,
+                0.2572969639144711,
+                0.4693723345719701
+              ],
+              "orthoScale": 1.0877513148414604,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7185816764831543,
+                0.22680434584617615,
+                0.8282329440116882
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-LBS-clay-backthreequarter.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -0.5685816407203674,
+                2.226804256439209,
+                0.888232946395874
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-LBS-source-front.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                0.2548523247241974,
+                -1.7427030801773071,
+                0.5293723344802856
+              ],
+              "cameraTarget": [
+                0.2548523242585361,
+                0.2572969639144711,
+                0.4693723345719701
+              ],
+              "orthoScale": 1.0877513148414604,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-LBS-source-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7185816764831543,
+                0.22680434584617615,
+                0.8282329440116882
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-LBS-source-backthreequarter.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -0.5685816407203674,
+                2.226804256439209,
+                0.888232946395874
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        },
+        "DQS": {
+          "preserveVolume": true,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.4876273813307718,
+                  "median": 1.0135755280069771,
+                  "p95": 1.5486989524637909,
+                  "p99": 1.954065130265253,
+                  "max": 4.044001524635122
+                },
+                "logStrainAbs": {
+                  "min": 2.302409487939137e-09,
+                  "median": 0.07345238172801555,
+                  "p95": 0.4377860416606997,
+                  "p99": 0.6699682630619341,
+                  "max": 1.3972346781698062
+                },
+                "worstEdgeCanonicalIDs": [
+                  447006,
+                  447976,
+                  446460,
+                  527132,
+                  2655810,
+                  509895,
+                  448644,
+                  523572
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    145536,
+                    146384
+                  ],
+                  [
+                    145855,
+                    146794
+                  ],
+                  [
+                    145354,
+                    146219
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    884093,
+                    885368
+                  ],
+                  [
+                    166565,
+                    166798
+                  ],
+                  [
+                    146080,
+                    147045
+                  ],
+                  [
+                    171185,
+                    171455
+                  ]
+                ],
+                "worstRatios": [
+                  4.044001524635122,
+                  3.729812417201005,
+                  3.5979143854082487,
+                  3.4631094462404226,
+                  3.3672684793103014,
+                  3.3381246045733333,
+                  3.19619077999109,
+                  3.113349583906273
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.4753789792561118,
+                  "median": 1.0792349800580916,
+                  "p95": 1.9008422155134317,
+                  "p99": 2.3137508434209404,
+                  "max": 4.994411097547708
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  468753,
+                  468754,
+                  131422,
+                  375798,
+                  375796,
+                  375786,
+                  468751,
+                  375787
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 7.570959111679611e-05,
+                "p95": 0.0005220288239288036,
+                "p99": 0.0008327082503137795,
+                "max": 0.0020717841825634888
+              },
+              "absoluteExcessM": {
+                "median": 1.3306550655419955e-05,
+                "p95": 0.0005182304133735769,
+                "p99": 0.0008323452010903733,
+                "max": 0.0020717841825634888
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.018220006725053865,
+                  "median": 1.0542205595409568,
+                  "p95": 2.1061201310980273,
+                  "p99": 3.158460280243204,
+                  "max": 23.52423076758024
+                },
+                "logStrainAbs": {
+                  "min": 1.9008713755564893e-08,
+                  "median": 0.08074647179650829,
+                  "p95": 0.7503663774091749,
+                  "p99": 1.1530686928952083,
+                  "max": 4.0052350180475464
+                },
+                "worstEdgeCanonicalIDs": [
+                  1605311,
+                  1672488,
+                  1660968,
+                  422074,
+                  1654619,
+                  1672486,
+                  1629859,
+                  499942
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    533463,
+                    536687
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    163225,
+                    164727
+                  ]
+                ],
+                "worstRatios": [
+                  0.018220006725053865,
+                  23.52423076758024,
+                  22.097872877407013,
+                  21.90445817196837,
+                  20.88502213833209,
+                  20.88027331558685,
+                  20.530774282237935,
+                  20.40736324197953
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.025801884816031864,
+                  "median": 1.1094225212890583,
+                  "p95": 2.3875356188723607,
+                  "p99": 3.6335397144087005,
+                  "max": 30.84202790109283
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  387860,
+                  387866,
+                  500612,
+                  304682,
+                  500784,
+                  500546,
+                  500547,
+                  387650
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 8.56129722378177e-05,
+                "p95": 0.0011469026670872392,
+                "p99": 0.002545690839590709,
+                "max": 0.015899524638476055
+              },
+              "absoluteExcessM": {
+                "median": 5.409664564454456e-05,
+                "p95": 0.0011465948455675447,
+                "p99": 0.002545690839590709,
+                "max": 0.015899524638476055
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.07601111852510013,
+                  "median": 1.0074839015373427,
+                  "p95": 1.2727774228297661,
+                  "p99": 1.5727679930115228,
+                  "max": 4.547110038095832
+                },
+                "logStrainAbs": {
+                  "min": 2.6212658675923275e-09,
+                  "median": 0.03871478910196964,
+                  "p95": 0.26736559546653216,
+                  "p99": 0.512106997842889,
+                  "max": 2.5768756530131816
+                },
+                "worstEdgeCanonicalIDs": [
+                  524481,
+                  2942537,
+                  505762,
+                  2931248,
+                  896477,
+                  864662,
+                  904474,
+                  867196
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    171492,
+                    183977
+                  ],
+                  [
+                    980642,
+                    980844
+                  ],
+                  [
+                    165179,
+                    179563
+                  ],
+                  [
+                    976863,
+                    976992
+                  ],
+                  [
+                    295996,
+                    296167
+                  ],
+                  [
+                    285411,
+                    286460
+                  ],
+                  [
+                    298669,
+                    298735
+                  ],
+                  [
+                    286270,
+                    286661
+                  ]
+                ],
+                "worstRatios": [
+                  0.07601111852510013,
+                  0.12195134758603969,
+                  0.14331113505027818,
+                  0.18071926317383355,
+                  4.547110038095832,
+                  4.437575951041194,
+                  4.4339330670023,
+                  4.3900728772029325
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.05294791174433331,
+                  "median": 1.0178846373397663,
+                  "p95": 1.5496773673798336,
+                  "p99": 1.868986461086063,
+                  "max": 4.89335874597266
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  909618,
+                  909658,
+                  836762,
+                  836761,
+                  909652,
+                  909663,
+                  909676,
+                  836862
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 3.922378450471771e-05,
+                "p95": 0.0003246202914804003,
+                "p99": 0.0006539692554501832,
+                "max": 0.0024972360825800486
+              },
+              "absoluteExcessM": {
+                "median": 7.109122532501604e-06,
+                "p95": 0.00029534107917821885,
+                "p99": 0.000631262665192806,
+                "max": 0.0024972360825800486
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "dance50-DQS-clay-front.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                0.2548523247241974,
+                -1.7427030801773071,
+                0.5293723344802856
+              ],
+              "cameraTarget": [
+                0.2548523242585361,
+                0.2572969639144711,
+                0.4693723345719701
+              ],
+              "orthoScale": 1.0877513148414604,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-DQS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7185816764831543,
+                0.22680434584617615,
+                0.8282329440116882
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-DQS-clay-backthreequarter.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -0.5685816407203674,
+                2.226804256439209,
+                0.888232946395874
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-DQS-source-front.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                0.2548523247241974,
+                -1.7427030801773071,
+                0.5293723344802856
+              ],
+              "cameraTarget": [
+                0.2548523242585361,
+                0.2572969639144711,
+                0.4693723345719701
+              ],
+              "orthoScale": 1.0877513148414604,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-DQS-source-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7185816764831543,
+                0.22680434584617615,
+                0.8282329440116882
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            },
+            {
+              "file": "dance50-DQS-source-backthreequarter.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -0.5685816407203674,
+                2.226804256439209,
+                0.888232946395874
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        }
+      },
+      "bonePoseSHA256": "7676174ae7d937726550a375b0fc999092936e8c878047162beb39f0f6171e4c",
+      "independentLBSAllVerticesMaxM": 3.171580051096265e-07,
+      "DQSvsLBSAllVerticesM": {
+        "median": 0.00037601776649415545,
+        "p95": 0.008733748542567706,
+        "p99": 0.01605389800475973,
+        "max": 0.023816243707151435
+      },
+      "anchorMovement": {
+        "head_anchor_proposal": {
+          "count": 107125,
+          "maxM": 0.003410735183136356,
+          "p99M": 0.0029613338491560467,
+          "worstOriginalVertexIDs": [
+            764566,
+            762289,
+            762733,
+            766336,
+            767050,
+            763005,
+            761049,
+            767437
+          ]
+        },
+        "upper_neck_anchor_proposal": {
+          "count": 2701,
+          "maxM": 0.003409587573013656,
+          "p99M": 0.0033782964792994303,
+          "worstOriginalVertexIDs": [
+            762289,
+            762733,
+            763005,
+            761049,
+            760094,
+            764166,
+            760974,
+            764057
+          ]
+        },
+        "elbow_distal_anchor_L": {
+          "count": 46256,
+          "maxM": 0.017655652768372405,
+          "p99M": 0.015263768308918345,
+          "worstOriginalVertexIDs": [
+            710032,
+            496073,
+            706749,
+            709713,
+            706907,
+            703553,
+            707008,
+            497578
+          ]
+        },
+        "elbow_distal_anchor_R": {
+          "count": 45308,
+          "maxM": 0.01257557312947378,
+          "p99M": 0.010918482175041834,
+          "worstOriginalVertexIDs": [
+            709425,
+            707335,
+            707847,
+            707720,
+            704275,
+            704354,
+            708889,
+            702083
+          ]
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "dance55",
+        "clip": "dance_01",
+        "phase": 0.55
+      },
+      "modes": {
+        "LBS": {
+          "preserveVolume": false,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.40617732151119473,
+                  "median": 0.9962966361294211,
+                  "p95": 1.1814393954421252,
+                  "p99": 1.3181893702824732,
+                  "max": 2.311386821371173
+                },
+                "logStrainAbs": {
+                  "min": 2.868201227962473e-09,
+                  "median": 0.05499425666767278,
+                  "p95": 0.25015668978346345,
+                  "p99": 0.34098199446489325,
+                  "max": 0.9009654622383846
+                },
+                "worstEdgeCanonicalIDs": [
+                  2820295,
+                  447006,
+                  447976,
+                  2826562,
+                  1756463,
+                  446460,
+                  448644,
+                  2864269
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    939350,
+                    939523
+                  ],
+                  [
+                    145536,
+                    146384
+                  ],
+                  [
+                    145855,
+                    146794
+                  ],
+                  [
+                    941470,
+                    941875
+                  ],
+                  [
+                    583908,
+                    588627
+                  ],
+                  [
+                    145354,
+                    146219
+                  ],
+                  [
+                    146080,
+                    147045
+                  ],
+                  [
+                    954175,
+                    954376
+                  ]
+                ],
+                "worstRatios": [
+                  0.40617732151119473,
+                  2.311386821371173,
+                  2.1652066094850806,
+                  0.4638376248663338,
+                  0.46713229523910627,
+                  2.0918053546338284,
+                  2.03736988711093,
+                  0.4914308030160168
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.04401783032130707,
+                  "median": 1.0012342559703682,
+                  "p95": 1.2341538907541059,
+                  "p99": 1.3172255269485165,
+                  "max": 2.1045352218272186
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  490034,
+                  490583,
+                  490051,
+                  490047,
+                  490048,
+                  490044,
+                  490035,
+                  490582
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.405030287701615e-05,
+                "p95": 0.00028215945331132487,
+                "p99": 0.0004243376650410214,
+                "max": 0.0008677983269987277
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00016423526335436776,
+                "p99": 0.00029548921033786726,
+                "max": 0.0007813440320750893
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.08347843067709326,
+                  "median": 1.0007673826282988,
+                  "p95": 1.2844816350699568,
+                  "p99": 1.6317738510009552,
+                  "max": 10.017491639672192
+                },
+                "logStrainAbs": {
+                  "min": 5.011019611821024e-09,
+                  "median": 0.05766725297508134,
+                  "p95": 0.3217973867860968,
+                  "p99": 0.6067875067987417,
+                  "max": 2.4831669957388485
+                },
+                "worstEdgeCanonicalIDs": [
+                  829659,
+                  849198,
+                  1672488,
+                  2934817,
+                  1660968,
+                  1672486,
+                  1654619,
+                  2921431
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    273699,
+                    280783
+                  ],
+                  [
+                    280236,
+                    286844
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    978063,
+                    978810
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    973498,
+                    974978
+                  ]
+                ],
+                "worstRatios": [
+                  0.08347843067709326,
+                  0.09282025473095372,
+                  10.017491639672192,
+                  0.1049049524968846,
+                  9.466002354144088,
+                  8.769849831896495,
+                  8.631853733141588,
+                  0.11598192035469931
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.02029544686107243,
+                  "median": 0.9983711406788072,
+                  "p95": 1.2639462556520438,
+                  "p99": 1.5285701574173278,
+                  "max": 10.648097347612993
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  668171,
+                  522512,
+                  680050,
+                  580875,
+                  490034,
+                  478756,
+                  401183,
+                  581660
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.901617096843305e-05,
+                "p95": 0.0003689687994565906,
+                "p99": 0.0007990090878040423,
+                "max": 0.006484440623859073
+              },
+              "absoluteExcessM": {
+                "median": 7.727231235854374e-07,
+                "p95": 0.00030569730458505597,
+                "p99": 0.0007364146198403175,
+                "max": 0.006484440623859073
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.13292346411759293,
+                  "median": 0.9999819157965298,
+                  "p95": 1.1800044571399408,
+                  "p99": 1.4547184358552878,
+                  "max": 4.588589304856533
+                },
+                "logStrainAbs": {
+                  "min": 3.5081733135630192e-09,
+                  "median": 0.03616652914187482,
+                  "p95": 0.21049047462721962,
+                  "p99": 0.4038571915904867,
+                  "max": 2.0179817741622093
+                },
+                "worstEdgeCanonicalIDs": [
+                  2931033,
+                  2928673,
+                  2878508,
+                  2100269,
+                  2955875,
+                  2103476,
+                  2884915,
+                  2101727
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    976787,
+                    976970
+                  ],
+                  [
+                    975970,
+                    976177
+                  ],
+                  [
+                    958985,
+                    959326
+                  ],
+                  [
+                    698591,
+                    699512
+                  ],
+                  [
+                    985102,
+                    985445
+                  ],
+                  [
+                    699655,
+                    702262
+                  ],
+                  [
+                    961156,
+                    961395
+                  ],
+                  [
+                    699077,
+                    702344
+                  ]
+                ],
+                "worstRatios": [
+                  0.13292346411759293,
+                  0.13545001032080228,
+                  0.14632916900945592,
+                  4.588589304856533,
+                  0.22293545451682056,
+                  4.201409251813364,
+                  0.24729914694771166,
+                  3.80437732620961
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.04401783032130707,
+                  "median": 1.000006991903745,
+                  "p95": 1.2346777569300993,
+                  "p99": 1.4845470345790872,
+                  "max": 4.244532946381502
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  490034,
+                  490439,
+                  490583,
+                  539817,
+                  490051,
+                  539828,
+                  539830,
+                  490606
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 3.753755367816259e-05,
+                "p95": 0.00024327250963427453,
+                "p99": 0.0005842300491025879,
+                "max": 0.0035469892947952897
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00018448817088623896,
+                "p99": 0.0005429775644969146,
+                "max": 0.0035469892947952897
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "dance55-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.5137977600097656,
+                0.02384856343269348,
+                0.8409925699234009
+              ],
+              "cameraTarget": [
+                0.4862022399902344,
+                0.02384856343269348,
+                0.7809925436973572
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        },
+        "DQS": {
+          "preserveVolume": true,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.43529973921694254,
+                  "median": 0.999069116125487,
+                  "p95": 1.1990054210166048,
+                  "p99": 1.337036188093735,
+                  "max": 2.332879663951961
+                },
+                "logStrainAbs": {
+                  "min": 5.752447090781823e-09,
+                  "median": 0.05569292100906663,
+                  "p95": 0.24677368037836683,
+                  "p99": 0.33637120614870164,
+                  "max": 0.8471034117484185
+                },
+                "worstEdgeCanonicalIDs": [
+                  447006,
+                  2820295,
+                  447976,
+                  2826562,
+                  446460,
+                  448644,
+                  2853645,
+                  2734376
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    145536,
+                    146384
+                  ],
+                  [
+                    939350,
+                    939523
+                  ],
+                  [
+                    145855,
+                    146794
+                  ],
+                  [
+                    941470,
+                    941875
+                  ],
+                  [
+                    145354,
+                    146219
+                  ],
+                  [
+                    146080,
+                    147045
+                  ],
+                  [
+                    950610,
+                    951438
+                  ],
+                  [
+                    910452,
+                    913723
+                  ]
+                ],
+                "worstRatios": [
+                  2.332879663951961,
+                  0.43529973921694254,
+                  2.1918478102547367,
+                  0.46764885632636854,
+                  2.110906576683797,
+                  2.053441227168199,
+                  0.4968185145974174,
+                  0.5110255441777236
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.1757270690206628,
+                  "median": 1.0019475868967191,
+                  "p95": 1.2701110330580927,
+                  "p99": 1.3564932929605802,
+                  "max": 2.1489863679398677
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  490034,
+                  490051,
+                  490583,
+                  490044,
+                  490047,
+                  490048,
+                  490035,
+                  490582
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.415883447975212e-05,
+                "p95": 0.00028310261288473675,
+                "p99": 0.0004198675975667068,
+                "max": 0.0008508067238681481
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00018298722251217,
+                "p99": 0.00032732312593649585,
+                "max": 0.0008508067238681481
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.11709403798671698,
+                  "median": 1.0036485899154277,
+                  "p95": 1.2946396980431254,
+                  "p99": 1.6444192513857367,
+                  "max": 10.054214002314582
+                },
+                "logStrainAbs": {
+                  "min": 8.297175668701277e-08,
+                  "median": 0.057551304204052404,
+                  "p95": 0.32603047635109994,
+                  "p99": 0.601646451290271,
+                  "max": 2.3079918503347425
+                },
+                "worstEdgeCanonicalIDs": [
+                  1672488,
+                  1660968,
+                  1672486,
+                  2742317,
+                  1654619,
+                  422074,
+                  1639597,
+                  1629135
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    913117,
+                    917904
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    544907,
+                    545004
+                  ],
+                  [
+                    541404,
+                    541643
+                  ]
+                ],
+                "worstRatios": [
+                  10.054214002314582,
+                  9.442320718047352,
+                  8.669733871311081,
+                  0.11709403798671698,
+                  8.534930788074444,
+                  8.325909721777164,
+                  8.1946889381424,
+                  8.154577662965686
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.052839220876737654,
+                  "median": 0.999748475013738,
+                  "p95": 1.2864983294492174,
+                  "p99": 1.5411866279362503,
+                  "max": 10.629236260149547
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  478756,
+                  304723,
+                  304535,
+                  680073,
+                  680076,
+                  639371,
+                  535380,
+                  500784
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.9082064572313006e-05,
+                "p95": 0.00037562147554190395,
+                "p99": 0.0008010605378294346,
+                "max": 0.006435175439451896
+              },
+              "absoluteExcessM": {
+                "median": 3.727157270611817e-06,
+                "p95": 0.0003156440562347188,
+                "p99": 0.0007518818634068483,
+                "max": 0.006435175439451896
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.23402039114679135,
+                  "median": 0.9999898075708722,
+                  "p95": 1.186662021706183,
+                  "p99": 1.4868252743933332,
+                  "max": 4.552636330205176
+                },
+                "logStrainAbs": {
+                  "min": 2.017070730628486e-09,
+                  "median": 0.037500254646673004,
+                  "p95": 0.2104257798093879,
+                  "p99": 0.43027307895944245,
+                  "max": 1.5157064783997312
+                },
+                "worstEdgeCanonicalIDs": [
+                  2100269,
+                  2931033,
+                  2103476,
+                  2101727,
+                  263534,
+                  2878508,
+                  2928673,
+                  2052635
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    698591,
+                    699512
+                  ],
+                  [
+                    976787,
+                    976970
+                  ],
+                  [
+                    699655,
+                    702262
+                  ],
+                  [
+                    699077,
+                    702344
+                  ],
+                  [
+                    84483,
+                    84861
+                  ],
+                  [
+                    958985,
+                    959326
+                  ],
+                  [
+                    975970,
+                    976177
+                  ],
+                  [
+                    682710,
+                    686269
+                  ]
+                ],
+                "worstRatios": [
+                  4.552636330205176,
+                  0.23402039114679135,
+                  4.20835838128241,
+                  3.8453521816619696,
+                  3.832833294208593,
+                  0.2621394391337675,
+                  0.2716454714259643,
+                  3.579946370575852
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.1757270690206628,
+                  "median": 0.9999836238563564,
+                  "p95": 1.270230150231418,
+                  "p99": 1.5682033360331649,
+                  "max": 4.21486652976626
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  490034,
+                  490439,
+                  539817,
+                  490622,
+                  490051,
+                  490608,
+                  490583,
+                  522966
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 3.881079220428515e-05,
+                "p95": 0.0002541900764952911,
+                "p99": 0.0006229734439671502,
+                "max": 0.0035181002330896744
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.0002015958418171094,
+                "p99": 0.0005785212224083896,
+                "max": 0.0035181002330896744
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "dance55-DQS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.5137977600097656,
+                0.02384856343269348,
+                0.8409925699234009
+              ],
+              "cameraTarget": [
+                0.4862022399902344,
+                0.02384856343269348,
+                0.7809925436973572
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        }
+      },
+      "bonePoseSHA256": "c9f7669c9106fc1573ce8f1b5238d0fbbb2565135a48b494d507806523e5148a",
+      "independentLBSAllVerticesMaxM": 2.92892379930882e-07,
+      "DQSvsLBSAllVerticesM": {
+        "median": 0.00025347025784214607,
+        "p95": 0.003533540509558866,
+        "p99": 0.00552483849629251,
+        "max": 0.00752935549984248
+      },
+      "anchorMovement": {
+        "head_anchor_proposal": {
+          "count": 107125,
+          "maxM": 0.005000405118342548,
+          "p99M": 0.00436016118257811,
+          "worstOriginalVertexIDs": [
+            767437,
+            766336,
+            767050,
+            764566,
+            752855,
+            767622,
+            758036,
+            753811
+          ]
+        },
+        "upper_neck_anchor_proposal": {
+          "count": 2701,
+          "maxM": 0.004989923078674478,
+          "p99M": 0.004941240359082171,
+          "worstOriginalVertexIDs": [
+            752855,
+            758036,
+            753811,
+            758674,
+            749443,
+            761049,
+            762289,
+            754484
+          ]
+        },
+        "elbow_distal_anchor_L": {
+          "count": 46256,
+          "maxM": 0.0032021421283843295,
+          "p99M": 0.0019976517264069264,
+          "worstOriginalVertexIDs": [
+            496073,
+            497578,
+            491530,
+            493760,
+            35,
+            502115,
+            493710,
+            489470
+          ]
+        },
+        "elbow_distal_anchor_R": {
+          "count": 45308,
+          "maxM": 0.001826753571927238,
+          "p99M": 0.0010621105294029238,
+          "worstOriginalVertexIDs": [
+            494272,
+            488492,
+            2983,
+            6874,
+            492589,
+            488432,
+            496123,
+            3106
+          ]
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "synthetic-arm65",
+        "clip": "dance_01",
+        "phase": 0.5,
+        "synthetic": true
+      },
+      "modes": {
+        "LBS": {
+          "preserveVolume": false,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.08320135062536291,
+                  "median": 1.0000060761251535,
+                  "p95": 1.8159356558735413,
+                  "p99": 2.570126425550505,
+                  "max": 6.593775322451811
+                },
+                "logStrainAbs": {
+                  "min": 1.990969946447329e-09,
+                  "median": 0.14928039474600036,
+                  "p95": 0.8257348313269744,
+                  "p99": 1.1810388013036535,
+                  "max": 2.486491697808816
+                },
+                "worstEdgeCanonicalIDs": [
+                  2083108,
+                  1839742,
+                  1765420,
+                  1854607,
+                  2742223,
+                  1833627,
+                  2091948,
+                  1850508
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    692867,
+                    693169
+                  ],
+                  [
+                    611661,
+                    611782
+                  ],
+                  [
+                    586873,
+                    587533
+                  ],
+                  [
+                    616605,
+                    617094
+                  ],
+                  [
+                    913087,
+                    913723
+                  ],
+                  [
+                    609619,
+                    609786
+                  ],
+                  [
+                    695813,
+                    695904
+                  ],
+                  [
+                    615231,
+                    615756
+                  ]
+                ],
+                "worstRatios": [
+                  0.08320135062536291,
+                  0.08640764882816594,
+                  0.08718063754761844,
+                  0.08941383341750474,
+                  0.08941474869397147,
+                  0.09554765886563968,
+                  0.09566165000012325,
+                  0.09711179119543074
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.02982257770387585,
+                  "median": 0.9905136046019188,
+                  "p95": 1.6278764181918144,
+                  "p99": 2.2344588565331196,
+                  "max": 4.8293167651782545
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  244098,
+                  244097,
+                  200304,
+                  200556,
+                  200300,
+                  207928,
+                  200301,
+                  200311
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.00014672589290444038,
+                "p95": 0.0008996430243759569,
+                "p99": 0.0014903686740085301,
+                "max": 0.004136197140561064
+              },
+              "absoluteExcessM": {
+                "median": 6.886455185609042e-09,
+                "p95": 0.000743185399868174,
+                "p99": 0.0013815680852214086,
+                "max": 0.004136197140561064
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.1388595614770927,
+                  "median": 1.0514049757428228,
+                  "p95": 3.167754433222434,
+                  "p99": 5.023326791346281,
+                  "max": 41.01303723483391
+                },
+                "logStrainAbs": {
+                  "min": 3.968394436308233e-08,
+                  "median": 0.13061850210746004,
+                  "p95": 1.1687657456006024,
+                  "p99": 1.6221358279012184,
+                  "max": 3.7138899974963695
+                },
+                "worstEdgeCanonicalIDs": [
+                  1672488,
+                  422074,
+                  1660968,
+                  1672486,
+                  1654619,
+                  499942,
+                  1629859,
+                  1639597
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    163225,
+                    164727
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    544907,
+                    545004
+                  ]
+                ],
+                "worstRatios": [
+                  41.01303723483391,
+                  39.820852458509385,
+                  38.611614951234415,
+                  37.55144952345705,
+                  37.50895950016638,
+                  37.331673680743116,
+                  37.17257455376056,
+                  36.224639237496724
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.052438449676040985,
+                  "median": 1.0742229875527356,
+                  "p95": 3.5233072815871673,
+                  "p99": 6.276771629757931,
+                  "max": 65.54444368946211
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  304682,
+                  500777,
+                  478623,
+                  500789,
+                  423252,
+                  486396,
+                  486402,
+                  500792
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.00014101982561124217,
+                "p95": 0.002191745985815988,
+                "p99": 0.004850235668670442,
+                "max": 0.028244617005575404
+              },
+              "absoluteExcessM": {
+                "median": 5.099927176587904e-05,
+                "p95": 0.002191745985815988,
+                "p99": 0.004850235668670442,
+                "max": 0.028244617005575404
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.16269439967272945,
+                  "median": 1.002677223667293,
+                  "p95": 1.3385672598306793,
+                  "p99": 1.891037776669414,
+                  "max": 9.67843327774147
+                },
+                "logStrainAbs": {
+                  "min": 1.6490377938442042e-09,
+                  "median": 0.04567231824037661,
+                  "p95": 0.4181406956019664,
+                  "p99": 0.8170027453421939,
+                  "max": 2.269900036716134
+                },
+                "worstEdgeCanonicalIDs": [
+                  864662,
+                  867196,
+                  911935,
+                  896477,
+                  904474,
+                  923607,
+                  860777,
+                  858303
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    285411,
+                    286460
+                  ],
+                  [
+                    286270,
+                    286661
+                  ],
+                  [
+                    301152,
+                    301843
+                  ],
+                  [
+                    295996,
+                    296167
+                  ],
+                  [
+                    298669,
+                    298735
+                  ],
+                  [
+                    305048,
+                    306436
+                  ],
+                  [
+                    284118,
+                    285602
+                  ],
+                  [
+                    283279,
+                    285306
+                  ]
+                ],
+                "worstRatios": [
+                  9.67843327774147,
+                  7.888585798061354,
+                  7.802061155911185,
+                  7.644606255194517,
+                  7.560390372781603,
+                  7.435659603672287,
+                  6.905120840328366,
+                  6.683996954140583
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.0638471505803651,
+                  "median": 1.0195596604829822,
+                  "p95": 1.3118111893919713,
+                  "p99": 1.9556599832441575,
+                  "max": 8.178065566280624
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  720095,
+                  719934,
+                  719933,
+                  719912,
+                  542284,
+                  873974,
+                  736565,
+                  542339
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 4.7718623924212947e-05,
+                "p95": 0.0004615461379755815,
+                "p99": 0.0009241890724862363,
+                "max": 0.005750919619928033
+              },
+              "absoluteExcessM": {
+                "median": 2.548522555503063e-06,
+                "p95": 0.00035340036789216646,
+                "p99": 0.000853906011368788,
+                "max": 0.005750919619928033
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "synthetic-arm65-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7185816764831543,
+                0.22680434584617615,
+                0.8282329440116882
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        },
+        "DQS": {
+          "preserveVolume": true,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.4429802734032054,
+                  "median": 1.1103705957563872,
+                  "p95": 2.6491957186724413,
+                  "p99": 3.7820869002261346,
+                  "max": 9.672495674649122
+                },
+                "logStrainAbs": {
+                  "min": 1.101680969280541e-09,
+                  "median": 0.13225577892888965,
+                  "p95": 0.9742560881167016,
+                  "p99": 1.3302758839102375,
+                  "max": 2.2692863604121905
+                },
+                "worstEdgeCanonicalIDs": [
+                  447006,
+                  447976,
+                  527132,
+                  446460,
+                  509895,
+                  523572,
+                  515026,
+                  546270
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    145536,
+                    146384
+                  ],
+                  [
+                    145855,
+                    146794
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    145354,
+                    146219
+                  ],
+                  [
+                    166565,
+                    166798
+                  ],
+                  [
+                    171185,
+                    171455
+                  ],
+                  [
+                    168313,
+                    169087
+                  ],
+                  [
+                    178808,
+                    180021
+                  ]
+                ],
+                "worstRatios": [
+                  9.672495674649122,
+                  8.695073333711935,
+                  8.312555241567315,
+                  8.202726600851888,
+                  7.864741240984083,
+                  7.482802465637463,
+                  7.372112618449166,
+                  7.186486621050448
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.42900144720951444,
+                  "median": 1.354408562193796,
+                  "p95": 3.6853254587339075,
+                  "p99": 5.4664023990648,
+                  "max": 12.970771427112357
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  468753,
+                  468754,
+                  492081,
+                  375798,
+                  375786,
+                  492083,
+                  375796,
+                  492079
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.00014058581526455382,
+                "p95": 0.001546597146806898,
+                "p99": 0.0024895694633075274,
+                "max": 0.006329887134700993
+              },
+              "absoluteExcessM": {
+                "median": 0.00010897094472142035,
+                "p95": 0.001546125675645103,
+                "p99": 0.0024895694633075274,
+                "max": 0.006329887134700993
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.3080301088388175,
+                  "median": 1.1259049833275236,
+                  "p95": 4.2783946217099835,
+                  "p99": 7.068019881365356,
+                  "max": 43.42018985932156
+                },
+                "logStrainAbs": {
+                  "min": 1.9008713755564893e-08,
+                  "median": 0.1387911367422189,
+                  "p95": 1.4535778508449433,
+                  "p99": 1.9555803659997415,
+                  "max": 3.7709245370642974
+                },
+                "worstEdgeCanonicalIDs": [
+                  1672488,
+                  422074,
+                  1660968,
+                  1629859,
+                  1672486,
+                  1654619,
+                  499942,
+                  1639597
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    163225,
+                    164727
+                  ],
+                  [
+                    544907,
+                    545004
+                  ]
+                ],
+                "worstRatios": [
+                  43.42018985932156,
+                  40.465811859066136,
+                  39.86725836563308,
+                  39.16801476731648,
+                  38.70620805478086,
+                  38.40984614102645,
+                  38.12743110043291,
+                  37.33583435911887
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.14281249761663034,
+                  "median": 1.3698938370722513,
+                  "p95": 6.251244765523548,
+                  "p99": 11.013064605741548,
+                  "max": 199.88400055393348
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  304682,
+                  401027,
+                  478623,
+                  423252,
+                  154214,
+                  498980,
+                  500612,
+                  154219
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.00016070858042244797,
+                "p95": 0.0032558953473457368,
+                "p99": 0.006925903945250404,
+                "max": 0.030873752101371842
+              },
+              "absoluteExcessM": {
+                "median": 0.00013801167880960136,
+                "p95": 0.0032558953473457368,
+                "p99": 0.006925903945250404,
+                "max": 0.030873752101371842
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.09137991894424013,
+                  "median": 1.0217433986641584,
+                  "p95": 1.7099705312535962,
+                  "p99": 2.59712059373005,
+                  "max": 8.729590326229172
+                },
+                "logStrainAbs": {
+                  "min": 1.101680969280541e-09,
+                  "median": 0.05049523603817804,
+                  "p95": 0.5559958530040425,
+                  "p99": 0.9675944561268688,
+                  "max": 2.392729529866007
+                },
+                "worstEdgeCanonicalIDs": [
+                  524481,
+                  864662,
+                  896477,
+                  867196,
+                  904474,
+                  911935,
+                  923607,
+                  505762
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    171492,
+                    183977
+                  ],
+                  [
+                    285411,
+                    286460
+                  ],
+                  [
+                    295996,
+                    296167
+                  ],
+                  [
+                    286270,
+                    286661
+                  ],
+                  [
+                    298669,
+                    298735
+                  ],
+                  [
+                    301152,
+                    301843
+                  ],
+                  [
+                    305048,
+                    306436
+                  ],
+                  [
+                    165179,
+                    179563
+                  ]
+                ],
+                "worstRatios": [
+                  0.09137991894424013,
+                  8.729590326229172,
+                  7.676172448601153,
+                  7.3886372819929305,
+                  7.352921203608937,
+                  7.309655463802723,
+                  6.735547032599915,
+                  0.159477909234655
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.07604638026992722,
+                  "median": 1.0410737688476095,
+                  "p95": 2.437070184064366,
+                  "p99": 3.274700934137606,
+                  "max": 9.099478851882852
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  909658,
+                  909618,
+                  909663,
+                  909676,
+                  909652,
+                  909642,
+                  542488,
+                  542492
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.3426610819386254e-05,
+                "p95": 0.0007631231744680557,
+                "p99": 0.0017149764070259245,
+                "max": 0.0046947671594734265
+              },
+              "absoluteExcessM": {
+                "median": 2.104321052120642e-05,
+                "p95": 0.0007545181155211153,
+                "p99": 0.00171391670734312,
+                "max": 0.0046947671594734265
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "synthetic-arm65-DQS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.7185816764831543,
+                0.22680434584617615,
+                0.8282329440116882
+              ],
+              "cameraTarget": [
+                0.2814183831214905,
+                0.22680434584617615,
+                0.7682329177856445
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        }
+      },
+      "bonePoseSHA256": "098d6534e7748325243b29ecf3b61364faaded043f70475ca336476386f61d93",
+      "independentLBSAllVerticesMaxM": 3.2785502121228707e-07,
+      "DQSvsLBSAllVerticesM": {
+        "median": 0.0003951163772702177,
+        "p95": 0.024677067701931347,
+        "p99": 0.06127002883626974,
+        "max": 0.092930436934221
+      },
+      "anchorMovement": {
+        "head_anchor_proposal": {
+          "count": 107125,
+          "maxM": 0.003469204702463413,
+          "p99M": 0.002963610851461482,
+          "worstOriginalVertexIDs": [
+            764566,
+            762289,
+            762733,
+            766336,
+            767050,
+            761049,
+            763005,
+            760094
+          ]
+        },
+        "upper_neck_anchor_proposal": {
+          "count": 2701,
+          "maxM": 0.0034682235987270097,
+          "p99M": 0.003435840076396667,
+          "worstOriginalVertexIDs": [
+            762289,
+            762733,
+            761049,
+            763005,
+            760094,
+            758674,
+            758795,
+            764166
+          ]
+        },
+        "elbow_distal_anchor_L": {
+          "count": 46256,
+          "maxM": 0.0717855421477176,
+          "p99M": 0.031037741214784326,
+          "worstOriginalVertexIDs": [
+            496073,
+            491530,
+            35,
+            497578,
+            493760,
+            489470,
+            493710,
+            502115
+          ]
+        },
+        "elbow_distal_anchor_R": {
+          "count": 45308,
+          "maxM": 0.05584264037322177,
+          "p99M": 0.029071562746558727,
+          "worstOriginalVertexIDs": [
+            494272,
+            488492,
+            2983,
+            6874,
+            492589,
+            488432,
+            3106,
+            8324
+          ]
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "neutral",
+        "clip": "neutral",
+        "phase": 0
+      },
+      "modes": {
+        "LBS": {
+          "preserveVolume": false,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.9998656533761016,
+                  "median": 1.0,
+                  "p95": 1.0000017923422364,
+                  "p99": 1.0000288094188077,
+                  "max": 1.000251412372939
+                },
+                "logStrainAbs": {
+                  "min": 0.0,
+                  "median": 5.551115123125785e-16,
+                  "p95": 3.842985954940088e-06,
+                  "p99": 3.206049259229601e-05,
+                  "max": 0.00025138077414438265
+                },
+                "worstEdgeCanonicalIDs": [
+                  560348,
+                  2760655,
+                  508064,
+                  580867,
+                  340913,
+                  1922982,
+                  288117,
+                  2759048
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    183525,
+                    183942
+                  ],
+                  [
+                    919263,
+                    919785
+                  ],
+                  [
+                    165942,
+                    166179
+                  ],
+                  [
+                    190374,
+                    191048
+                  ],
+                  [
+                    110265,
+                    110547
+                  ],
+                  [
+                    639485,
+                    639622
+                  ],
+                  [
+                    92725,
+                    93654
+                  ],
+                  [
+                    918722,
+                    919264
+                  ]
+                ],
+                "worstRatios": [
+                  1.000251412372939,
+                  1.0001421654603486,
+                  1.0001377871563502,
+                  0.9998656533761016,
+                  1.0001319365668055,
+                  1.0001184627002089,
+                  1.0001180415345552,
+                  1.000115225035928
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.9998397388132524,
+                  "median": 1.0,
+                  "p95": 1.0000058826525393,
+                  "p99": 1.0000410261611723,
+                  "max": 1.00021383131728
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  369722,
+                  489146,
+                  213137,
+                  369725,
+                  369719,
+                  171700,
+                  200554,
+                  369720
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 6.505213034913027e-19,
+                "p95": 4.479800926157802e-09,
+                "p99": 4.3038387484862404e-08,
+                "max": 8.164130223470636e-08
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 2.1439344675229087e-09,
+                "p99": 4.037819145210142e-08,
+                "max": 8.164130223470636e-08
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.9998656533761016,
+                  "median": 1.0,
+                  "p95": 1.0000003755264575,
+                  "p99": 1.0000045505689608,
+                  "max": 1.000251412372939
+                },
+                "logStrainAbs": {
+                  "min": 0.0,
+                  "median": 0.0,
+                  "p95": 1.2266926956764605e-06,
+                  "p99": 5.5882875448589855e-06,
+                  "max": 0.00025138077414438265
+                },
+                "worstEdgeCanonicalIDs": [
+                  560348,
+                  2032374,
+                  508064,
+                  580867,
+                  241092,
+                  256735,
+                  560290,
+                  566680
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    183525,
+                    183942
+                  ],
+                  [
+                    675951,
+                    676379
+                  ],
+                  [
+                    165942,
+                    166179
+                  ],
+                  [
+                    190374,
+                    191048
+                  ],
+                  [
+                    77016,
+                    78050
+                  ],
+                  [
+                    82221,
+                    82539
+                  ],
+                  [
+                    183508,
+                    183942
+                  ],
+                  [
+                    185636,
+                    186173
+                  ]
+                ],
+                "worstRatios": [
+                  1.000251412372939,
+                  1.0001976130539028,
+                  1.0001377871563502,
+                  0.9998656533761016,
+                  1.000130959984615,
+                  1.0001308589275415,
+                  0.9998898883510511,
+                  1.000106608035257
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.9998643526190873,
+                  "median": 1.0,
+                  "p95": 1.000001553867548,
+                  "p99": 1.0000105993720647,
+                  "max": 1.000211003290963
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  272590,
+                  272591,
+                  154628,
+                  154626,
+                  171700,
+                  376663,
+                  154607,
+                  171559
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.0,
+                "p95": 1.4963713555358658e-09,
+                "p99": 5.253389705290783e-09,
+                "max": 5.975737283041987e-08
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 4.098091526284056e-10,
+                "p99": 4.5903808228403095e-09,
+                "max": 5.975737283041987e-08
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.9999195534053466,
+                  "median": 1.0,
+                  "p95": 1.0000011189494067,
+                  "p99": 1.000006571229934,
+                  "max": 1.0001421654603486
+                },
+                "logStrainAbs": {
+                  "min": 0.0,
+                  "median": 0.0,
+                  "p95": 1.7491781947215478e-06,
+                  "p99": 1.301394715396575e-05,
+                  "max": 0.00014215535579722936
+                },
+                "worstEdgeCanonicalIDs": [
+                  2760655,
+                  508064,
+                  2759048,
+                  520918,
+                  2759946,
+                  512427,
+                  2802016,
+                  743030
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    919263,
+                    919785
+                  ],
+                  [
+                    165942,
+                    166179
+                  ],
+                  [
+                    918722,
+                    919264
+                  ],
+                  [
+                    170298,
+                    171093
+                  ],
+                  [
+                    919024,
+                    919785
+                  ],
+                  [
+                    167434,
+                    167899
+                  ],
+                  [
+                    933163,
+                    934398
+                  ],
+                  [
+                    244703,
+                    246004
+                  ]
+                ],
+                "worstRatios": [
+                  1.0001421654603486,
+                  1.0001377871563502,
+                  1.000115225035928,
+                  1.0001014511035549,
+                  1.000099569580413,
+                  1.0000961308111207,
+                  1.0000947993105362,
+                  1.000088761027549
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.9995663739590831,
+                  "median": 1.0,
+                  "p95": 1.0000027709869488,
+                  "p99": 1.0000218359235646,
+                  "max": 1.0012962572061193
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  838456,
+                  914956,
+                  369722,
+                  489146,
+                  369725,
+                  369719,
+                  171700,
+                  369720
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.0,
+                "p95": 1.8621590213937533e-09,
+                "p99": 1.3883053608064817e-08,
+                "max": 5.962316921063159e-08
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 1.3165378520110938e-09,
+                "p99": 6.414040416967029e-09,
+                "max": 5.9137308045962775e-08
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "neutral-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -2.0,
+                0.011045048013329506,
+                0.8639193177223206
+              ],
+              "cameraTarget": [
+                -1.4444204033599328e-16,
+                0.011045048013329506,
+                0.8039192914962768
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        },
+        "DQS": {
+          "preserveVolume": true,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.9997808319082058,
+                  "median": 1.0,
+                  "p95": 1.000012938405833,
+                  "p99": 1.0000395228559669,
+                  "max": 1.0001897531735586
+                },
+                "logStrainAbs": {
+                  "min": 0.0,
+                  "median": 1.8143207111712867e-07,
+                  "p95": 1.9751691153610436e-05,
+                  "p99": 4.9164684527275845e-05,
+                  "max": 0.000219192112630259
+                },
+                "worstEdgeCanonicalIDs": [
+                  555834,
+                  162422,
+                  1532072,
+                  649841,
+                  562489,
+                  1839358,
+                  532240,
+                  2170644
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    182016,
+                    182565
+                  ],
+                  [
+                    50802,
+                    51252
+                  ],
+                  [
+                    508979,
+                    509594
+                  ],
+                  [
+                    213536,
+                    214149
+                  ],
+                  [
+                    184232,
+                    184539
+                  ],
+                  [
+                    611534,
+                    612026
+                  ],
+                  [
+                    174103,
+                    174499
+                  ],
+                  [
+                    722054,
+                    722662
+                  ]
+                ],
+                "worstRatios": [
+                  0.9997808319082058,
+                  1.0001897531735586,
+                  1.000159884744949,
+                  0.9998414148590754,
+                  0.999856290398138,
+                  0.9998655842255194,
+                  0.9998691307255979,
+                  0.9998701401338271
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.9996667628498754,
+                  "median": 1.0000000000001232,
+                  "p95": 1.0000225859903231,
+                  "p99": 1.0000533806998264,
+                  "max": 1.0002526709787767
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  212919,
+                  210087,
+                  195014,
+                  193663,
+                  195013,
+                  195007,
+                  209188,
+                  133468
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 1.899083555342851e-10,
+                "p95": 2.2304248206922796e-08,
+                "p99": 5.62585983449309e-08,
+                "max": 1.216252787823724e-07
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 1.3182210166886077e-08,
+                "p99": 4.917478931641865e-08,
+                "max": 1.0788529078561634e-07
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.9997808319082058,
+                  "median": 1.0,
+                  "p95": 1.0000037139110087,
+                  "p99": 1.000010895403288,
+                  "max": 1.0001238035743554
+                },
+                "logStrainAbs": {
+                  "min": 0.0,
+                  "median": 9.32587340685127e-15,
+                  "p95": 4.905008105176902e-06,
+                  "p99": 2.8035928675321097e-05,
+                  "max": 0.000219192112630259
+                },
+                "worstEdgeCanonicalIDs": [
+                  555834,
+                  2824789,
+                  649841,
+                  532240,
+                  1281003,
+                  483894,
+                  542668,
+                  557813
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    182016,
+                    182565
+                  ],
+                  [
+                    940885,
+                    941116
+                  ],
+                  [
+                    213536,
+                    214149
+                  ],
+                  [
+                    174103,
+                    174499
+                  ],
+                  [
+                    424531,
+                    424951
+                  ],
+                  [
+                    157854,
+                    159286
+                  ],
+                  [
+                    177614,
+                    178223
+                  ],
+                  [
+                    182677,
+                    182857
+                  ]
+                ],
+                "worstRatios": [
+                  0.9997808319082058,
+                  0.9998345710265191,
+                  0.9998414148590754,
+                  0.9998691307255979,
+                  0.9998755077999351,
+                  1.0001238035743554,
+                  0.9998762400650647,
+                  0.9998831890288848
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.9997881642671084,
+                  "median": 1.0,
+                  "p95": 1.000008786690355,
+                  "p99": 1.0000181795870384,
+                  "max": 1.00019721515798
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  434281,
+                  195014,
+                  152994,
+                  195013,
+                  195007,
+                  480936,
+                  468757,
+                  544758
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 8.565197162635485e-18,
+                "p95": 4.862737372165503e-09,
+                "p99": 3.305623285025904e-08,
+                "max": 6.004186388071202e-08
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 3.961431201127123e-09,
+                "p99": 8.021966718344611e-09,
+                "max": 5.971096817794681e-08
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.9997808319082058,
+                  "median": 1.0,
+                  "p95": 1.0000052382038584,
+                  "p99": 1.000016916795836,
+                  "max": 1.0001270588593316
+                },
+                "logStrainAbs": {
+                  "min": 0.0,
+                  "median": 2.9753977059953754e-14,
+                  "p95": 6.35662404044376e-06,
+                  "p99": 3.03507236451752e-05,
+                  "max": 0.000219192112630259
+                },
+                "worstEdgeCanonicalIDs": [
+                  555834,
+                  649841,
+                  532240,
+                  345255,
+                  483894,
+                  542668,
+                  548108,
+                  533421
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    182016,
+                    182565
+                  ],
+                  [
+                    213536,
+                    214149
+                  ],
+                  [
+                    174103,
+                    174499
+                  ],
+                  [
+                    111698,
+                    112092
+                  ],
+                  [
+                    157854,
+                    159286
+                  ],
+                  [
+                    177614,
+                    178223
+                  ],
+                  [
+                    179415,
+                    180712
+                  ],
+                  [
+                    174499,
+                    175271
+                  ]
+                ],
+                "worstRatios": [
+                  0.9997808319082058,
+                  0.9998414148590754,
+                  0.9998691307255979,
+                  1.0001270588593316,
+                  1.0001238035743554,
+                  0.9998762400650647,
+                  0.9998834618278734,
+                  0.9998969717154786
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.9997953245754602,
+                  "median": 1.0,
+                  "p95": 1.000010465628039,
+                  "p99": 1.0000266518184298,
+                  "max": 1.0001444349525552
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  195014,
+                  195013,
+                  195007,
+                  544758,
+                  507434,
+                  195008,
+                  172081,
+                  195003
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 3.3068166260807885e-17,
+                "p95": 6.82385926447053e-09,
+                "p99": 4.007644135448432e-08,
+                "max": 6.690734514688823e-08
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 5.886722127476389e-09,
+                "p99": 1.5437789124533187e-08,
+                "max": 6.690734514688823e-08
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "neutral-DQS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -2.0,
+                0.011045048013329506,
+                0.8639193177223206
+              ],
+              "cameraTarget": [
+                -1.4444204033599328e-16,
+                0.011045048013329506,
+                0.8039192914962768
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        }
+      },
+      "bonePoseSHA256": "41c1d718c555b0c78cd660d25ba933021f1cfbb0ffc855d393831a1df283dd2d",
+      "independentLBSAllVerticesMaxM": 2.6670122994769417e-07,
+      "DQSvsLBSAllVerticesM": {
+        "median": 1.3682520147301567e-07,
+        "p95": 5.728235772310073e-07,
+        "p99": 8.21884799379473e-07,
+        "max": 3.2561372091823084e-06
+      },
+      "anchorMovement": {
+        "head_anchor_proposal": {
+          "count": 107125,
+          "maxM": 3.2561372091823084e-06,
+          "p99M": 1.768906622658808e-06,
+          "worstOriginalVertexIDs": [
+            365578,
+            365965,
+            363381,
+            365419,
+            367859,
+            368332,
+            369111,
+            368130
+          ]
+        },
+        "upper_neck_anchor_proposal": {
+          "count": 2701,
+          "maxM": 2.8935219688909354e-07,
+          "p99M": 2.4550906681693816e-07,
+          "worstOriginalVertexIDs": [
+            210866,
+            199779,
+            205275,
+            210826,
+            195947,
+            192330,
+            186450,
+            199750
+          ]
+        },
+        "elbow_distal_anchor_L": {
+          "count": 46256,
+          "maxM": 3.411845309770991e-07,
+          "p99M": 3.1961601348843767e-07,
+          "worstOriginalVertexIDs": [
+            275786,
+            275308,
+            271990,
+            273203,
+            267365,
+            270776,
+            266139,
+            269286
+          ]
+        },
+        "elbow_distal_anchor_R": {
+          "count": 45308,
+          "maxM": 4.7268634813648e-07,
+          "p99M": 4.4829035817481265e-07,
+          "worstOriginalVertexIDs": [
+            274715,
+            277670,
+            274667,
+            278581,
+            288732,
+            261945,
+            268567,
+            283204
+          ]
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "box-extreme",
+        "clip": "box_02",
+        "phase": 0.664179104477612
+      },
+      "modes": {
+        "LBS": {
+          "preserveVolume": false,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.465658413024943,
+                  "median": 1.048675564638647,
+                  "p95": 1.4507461402590465,
+                  "p99": 1.7488532854125833,
+                  "max": 2.8291114976323195
+                },
+                "logStrainAbs": {
+                  "min": 1.7812640250104487e-10,
+                  "median": 0.06186449786299128,
+                  "p95": 0.3750087075102273,
+                  "p99": 0.5599041230459987,
+                  "max": 1.0399627039260697
+                },
+                "worstEdgeCanonicalIDs": [
+                  2655810,
+                  527132,
+                  515026,
+                  531951,
+                  532587,
+                  548282,
+                  524369,
+                  546270
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    884093,
+                    885368
+                  ],
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    168313,
+                    169087
+                  ],
+                  [
+                    174008,
+                    175911
+                  ],
+                  [
+                    174221,
+                    176752
+                  ],
+                  [
+                    179474,
+                    181303
+                  ],
+                  [
+                    171455,
+                    174221
+                  ],
+                  [
+                    178808,
+                    180021
+                  ]
+                ],
+                "worstRatios": [
+                  2.8291114976323195,
+                  2.6500482238925116,
+                  2.6191337896007356,
+                  2.6081810658475835,
+                  2.5975307984058023,
+                  2.5837747409938654,
+                  2.569867743160908,
+                  2.536737623245608
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.6763547935836962,
+                  "median": 1.1134819907834947,
+                  "p95": 1.7043804849438526,
+                  "p99": 1.9588701309105,
+                  "max": 3.950628298886708
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  131422,
+                  471441,
+                  131420,
+                  490583,
+                  468753,
+                  490582,
+                  490047,
+                  490048
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 6.217628354277525e-05,
+                "p95": 0.0004662217784935127,
+                "p99": 0.0007793345748126968,
+                "max": 0.0017830149092467598
+              },
+              "absoluteExcessM": {
+                "median": 4.802005941661916e-05,
+                "p95": 0.00046580196304144445,
+                "p99": 0.0007793345748126968,
+                "max": 0.0017830149092467598
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.4007459784488043,
+                  "median": 1.038514380085354,
+                  "p95": 1.7704508709032774,
+                  "p99": 2.5669481774377236,
+                  "max": 15.518321613057305
+                },
+                "logStrainAbs": {
+                  "min": 1.864544590216695e-08,
+                  "median": 0.10309382050194875,
+                  "p95": 0.5746330948533117,
+                  "p99": 0.9427177039548623,
+                  "max": 2.742021365418568
+                },
+                "worstEdgeCanonicalIDs": [
+                  1629859,
+                  1672488,
+                  1654619,
+                  1660968,
+                  1672486,
+                  1639597,
+                  1629135,
+                  1682075
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    544907,
+                    545004
+                  ],
+                  [
+                    541404,
+                    541643
+                  ],
+                  [
+                    559072,
+                    559075
+                  ]
+                ],
+                "worstRatios": [
+                  15.518321613057305,
+                  15.388665205176263,
+                  15.114824093850212,
+                  14.971981027972413,
+                  14.686569945695588,
+                  14.225820818216064,
+                  13.710725578508214,
+                  13.186111134627664
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.042299432456241966,
+                  "median": 1.126974547849063,
+                  "p95": 1.97902013643115,
+                  "p99": 3.2839822215918746,
+                  "max": 26.16592439885779
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  304682,
+                  520710,
+                  500612,
+                  500547,
+                  500546,
+                  500614,
+                  529027,
+                  500784
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.00010494578038490248,
+                "p95": 0.0007484762172782348,
+                "p99": 0.0018534745970205206,
+                "max": 0.010206573781882274
+              },
+              "absoluteExcessM": {
+                "median": 4.0742491005213996e-05,
+                "p95": 0.0007446021792310874,
+                "p99": 0.0018504051558418991,
+                "max": 0.010206573781882274
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.31313999079020405,
+                  "median": 1.0091428228124055,
+                  "p95": 1.232786579087068,
+                  "p99": 1.3731725366343344,
+                  "max": 4.375380476160735
+                },
+                "logStrainAbs": {
+                  "min": 1.7812640250104487e-10,
+                  "median": 0.035008514508741206,
+                  "p95": 0.22377503109726057,
+                  "p99": 0.33398689508677354,
+                  "max": 1.4759934820078526
+                },
+                "worstEdgeCanonicalIDs": [
+                  2964717,
+                  2927911,
+                  2966974,
+                  2962985,
+                  2965168,
+                  2964714,
+                  2964590,
+                  2015594
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    988059,
+                    988308
+                  ],
+                  [
+                    975728,
+                    976177
+                  ],
+                  [
+                    988813,
+                    988944
+                  ],
+                  [
+                    987486,
+                    987573
+                  ],
+                  [
+                    988209,
+                    988487
+                  ],
+                  [
+                    988058,
+                    988360
+                  ],
+                  [
+                    988018,
+                    988417
+                  ],
+                  [
+                    670357,
+                    672190
+                  ]
+                ],
+                "worstRatios": [
+                  4.375380476160735,
+                  3.971876389903224,
+                  3.7400599035436244,
+                  3.582326524698428,
+                  3.4076261038021505,
+                  3.222091551988495,
+                  3.204508482056946,
+                  0.31313999079020405
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.05916698780315898,
+                  "median": 1.0348311241935044,
+                  "p95": 1.427217868005222,
+                  "p99": 1.6200247320254364,
+                  "max": 4.77058128092983
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  914083,
+                  549225,
+                  539827,
+                  539830,
+                  580429,
+                  549232,
+                  490444,
+                  914082
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 3.524082424612694e-05,
+                "p95": 0.0002827479693955516,
+                "p99": 0.0004914224924098058,
+                "max": 0.0022363601686031897
+              },
+              "absoluteExcessM": {
+                "median": 8.494291967645973e-06,
+                "p95": 0.0002668318907670664,
+                "p99": 0.00047955559234524723,
+                "max": 0.0022363601686031897
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "box-extreme-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.9239273071289062,
+                -0.0739574134349823,
+                0.7975865602493286
+              ],
+              "cameraTarget": [
+                0.07607267796993256,
+                -0.0739574134349823,
+                0.7375865340232849
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        },
+        "DQS": {
+          "preserveVolume": true,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.511698075512646,
+                  "median": 1.06791531182329,
+                  "p95": 1.4911737235023004,
+                  "p99": 1.8015308808771398,
+                  "max": 2.7614532953180384
+                },
+                "logStrainAbs": {
+                  "min": 1.4107989209796786e-08,
+                  "median": 0.07350880430715491,
+                  "p95": 0.40197156181694504,
+                  "p99": 0.5893678114671304,
+                  "max": 1.0157570974216004
+                },
+                "worstEdgeCanonicalIDs": [
+                  527132,
+                  515026,
+                  531951,
+                  532587,
+                  548282,
+                  524369,
+                  524970,
+                  546270
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    172375,
+                    172387
+                  ],
+                  [
+                    168313,
+                    169087
+                  ],
+                  [
+                    174008,
+                    175911
+                  ],
+                  [
+                    174221,
+                    176752
+                  ],
+                  [
+                    179474,
+                    181303
+                  ],
+                  [
+                    171455,
+                    174221
+                  ],
+                  [
+                    171658,
+                    174008
+                  ],
+                  [
+                    178808,
+                    180021
+                  ]
+                ],
+                "worstRatios": [
+                  2.7614532953180384,
+                  2.7352488778015562,
+                  2.716131162050526,
+                  2.7074341124466206,
+                  2.686776082861525,
+                  2.6810143096104473,
+                  2.639969778800822,
+                  2.6374870285519285
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.7349937163225987,
+                  "median": 1.1442883866327187,
+                  "p95": 1.8585034098080155,
+                  "p99": 2.1280475068602227,
+                  "max": 4.081915251712154
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  471441,
+                  131422,
+                  490583,
+                  131420,
+                  468753,
+                  490582,
+                  491998,
+                  490047
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 7.716299689862309e-05,
+                "p95": 0.0005136627546551611,
+                "p99": 0.0008488462434802581,
+                "max": 0.0018665115632917392
+              },
+              "absoluteExcessM": {
+                "median": 6.95507621178953e-05,
+                "p95": 0.0005136197683382015,
+                "p99": 0.0008488462434802581,
+                "max": 0.0018665115632917392
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.307506869449562,
+                  "median": 1.0521957103269461,
+                  "p95": 1.7935806163300656,
+                  "p99": 2.595606567999885,
+                  "max": 15.539530972368256
+                },
+                "logStrainAbs": {
+                  "min": 1.8019286789095486e-08,
+                  "median": 0.10404605629070882,
+                  "p95": 0.5866609320776002,
+                  "p99": 0.9553035735933427,
+                  "max": 2.7433871625257322
+                },
+                "worstEdgeCanonicalIDs": [
+                  1629859,
+                  1672488,
+                  1654619,
+                  1660968,
+                  1672486,
+                  1639597,
+                  1629135,
+                  499942
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    544907,
+                    545004
+                  ],
+                  [
+                    541404,
+                    541643
+                  ],
+                  [
+                    163225,
+                    164727
+                  ]
+                ],
+                "worstRatios": [
+                  15.539530972368256,
+                  15.42560407614655,
+                  14.936810504225361,
+                  14.890714121005905,
+                  14.519565557986159,
+                  14.071471083162013,
+                  13.538624778388115,
+                  13.080166396710029
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.05514224793132415,
+                  "median": 1.1505456663954596,
+                  "p95": 2.0823643526337308,
+                  "p99": 3.323433888171584,
+                  "max": 31.728735078153008
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  304682,
+                  500612,
+                  520710,
+                  500547,
+                  500784,
+                  500546,
+                  529027,
+                  500792
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 0.0001073885651925433,
+                "p95": 0.0007737393410523662,
+                "p99": 0.001863873291732179,
+                "max": 0.010182822658863775
+              },
+              "absoluteExcessM": {
+                "median": 5.338888190406705e-05,
+                "p95": 0.000771406496819717,
+                "p99": 0.0018613338308575143,
+                "max": 0.010182822658863775
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.1897871975451934,
+                  "median": 1.0165427661222082,
+                  "p95": 1.264115981113438,
+                  "p99": 1.395893536674871,
+                  "max": 4.139126114624865
+                },
+                "logStrainAbs": {
+                  "min": 2.2480581815242775e-09,
+                  "median": 0.03777593303624574,
+                  "p95": 0.24533313452395913,
+                  "p99": 0.3465378588870892,
+                  "max": 1.6618518474248754
+                },
+                "worstEdgeCanonicalIDs": [
+                  2015594,
+                  2964717,
+                  2927911,
+                  2966974,
+                  2962985,
+                  2025174,
+                  2965168,
+                  2964714
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    670357,
+                    672190
+                  ],
+                  [
+                    988059,
+                    988308
+                  ],
+                  [
+                    975728,
+                    976177
+                  ],
+                  [
+                    988813,
+                    988944
+                  ],
+                  [
+                    987486,
+                    987573
+                  ],
+                  [
+                    673547,
+                    676689
+                  ],
+                  [
+                    988209,
+                    988487
+                  ],
+                  [
+                    988058,
+                    988360
+                  ]
+                ],
+                "worstRatios": [
+                  0.1897871975451934,
+                  4.139126114624865,
+                  3.94704204413737,
+                  3.5179282820060878,
+                  3.361750200779574,
+                  0.30126540142333075,
+                  3.2557513964336255,
+                  3.110669409085356
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.07144677241336006,
+                  "median": 1.047336547327396,
+                  "p95": 1.512077181501013,
+                  "p99": 1.7477167688792796,
+                  "max": 4.599368412407006
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  914083,
+                  914082,
+                  539827,
+                  539830,
+                  490444,
+                  549225,
+                  539820,
+                  490608
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 3.7913159528790556e-05,
+                "p95": 0.0003160897411916285,
+                "p99": 0.0005264739691002606,
+                "max": 0.0020568852954532726
+              },
+              "absoluteExcessM": {
+                "median": 1.4982105359603718e-05,
+                "p95": 0.0003033045307850956,
+                "p99": 0.0005155593096885752,
+                "max": 0.0020568852954532726
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "box-extreme-DQS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.9239273071289062,
+                -0.0739574134349823,
+                0.7975865602493286
+              ],
+              "cameraTarget": [
+                0.07607267796993256,
+                -0.0739574134349823,
+                0.7375865340232849
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        }
+      },
+      "bonePoseSHA256": "5d183fd3087619042eef214344532a9ae1dd4e4d2e8a508bcda973413adb0f4a",
+      "independentLBSAllVerticesMaxM": 2.4494347491750527e-07,
+      "DQSvsLBSAllVerticesM": {
+        "median": 0.0003776078224138852,
+        "p95": 0.006547619727642102,
+        "p99": 0.018067969174511422,
+        "max": 0.0344530390205591
+      },
+      "anchorMovement": {
+        "head_anchor_proposal": {
+          "count": 107125,
+          "maxM": 0.001215337679026489,
+          "p99M": 0.0010130246381568583,
+          "worstOriginalVertexIDs": [
+            767050,
+            766336,
+            764566,
+            764783,
+            766017,
+            767311,
+            767437,
+            766277
+          ]
+        },
+        "upper_neck_anchor_proposal": {
+          "count": 2701,
+          "maxM": 0.0012138900884908974,
+          "p99M": 0.0012019199797473742,
+          "worstOriginalVertexIDs": [
+            764783,
+            764057,
+            763005,
+            762733,
+            764166,
+            763341,
+            764603,
+            762289
+          ]
+        },
+        "elbow_distal_anchor_L": {
+          "count": 46256,
+          "maxM": 0.014485905718203037,
+          "p99M": 0.012211109514094745,
+          "worstOriginalVertexIDs": [
+            710032,
+            709713,
+            706749,
+            706907,
+            707008,
+            707035,
+            706936,
+            706747
+          ]
+        },
+        "elbow_distal_anchor_R": {
+          "count": 45308,
+          "maxM": 0.007159840112207108,
+          "p99M": 0.006303731631022224,
+          "worstOriginalVertexIDs": [
+            707335,
+            707847,
+            709425,
+            702083,
+            704275,
+            704354,
+            699888,
+            707720
+          ]
+        }
+      }
+    },
+    {
+      "case": {
+        "name": "kick-high-flexion",
+        "clip": "front_kick_01",
+        "phase": 0.45
+      },
+      "modes": {
+        "LBS": {
+          "preserveVolume": false,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.26062718453572425,
+                  "median": 0.9696011689466149,
+                  "p95": 1.1213906315345827,
+                  "p99": 1.2208879365576346,
+                  "max": 2.0403453945128827
+                },
+                "logStrainAbs": {
+                  "min": 1.204069170447086e-08,
+                  "median": 0.07011728067077264,
+                  "p95": 0.3750201198519411,
+                  "p99": 0.6482652523511916,
+                  "max": 1.3446643045525473
+                },
+                "worstEdgeCanonicalIDs": [
+                  553296,
+                  684853,
+                  636557,
+                  674844,
+                  643210,
+                  650918,
+                  645288,
+                  647139
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    181166,
+                    182026
+                  ],
+                  [
+                    225287,
+                    225564
+                  ],
+                  [
+                    209096,
+                    210251
+                  ],
+                  [
+                    221931,
+                    222190
+                  ],
+                  [
+                    211324,
+                    212692
+                  ],
+                  [
+                    213901,
+                    214996
+                  ],
+                  [
+                    212021,
+                    212639
+                  ],
+                  [
+                    212639,
+                    213901
+                  ]
+                ],
+                "worstRatios": [
+                  0.26062718453572425,
+                  0.26986139936162296,
+                  0.29029441849392357,
+                  0.294578891405428,
+                  0.2979541239323156,
+                  0.302856908139943,
+                  0.3108024725974479,
+                  0.3131229977829902
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.09804391123876752,
+                  "median": 0.8676647758510061,
+                  "p95": 1.0449783514196314,
+                  "p99": 1.1545858857056692,
+                  "max": 1.4085072870695625
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  379051,
+                  379291,
+                  379294,
+                  379167,
+                  379295,
+                  379063,
+                  379298,
+                  574345
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 6.691145718313701e-05,
+                "p95": 0.0003715198116177533,
+                "p99": 0.0005795132526853175,
+                "max": 0.0013389093386227107
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00011321258702759483,
+                "p99": 0.00022405700782859658,
+                "max": 0.000603125048940075
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.06514288152728914,
+                  "median": 0.9504145973560472,
+                  "p95": 1.1747347446484269,
+                  "p99": 1.4042695354980808,
+                  "max": 9.681657071489726
+                },
+                "logStrainAbs": {
+                  "min": 2.3835299227826595e-08,
+                  "median": 0.083300726127091,
+                  "p95": 0.37135142702193413,
+                  "p99": 0.69945141297782,
+                  "max": 2.7311722442007134
+                },
+                "worstEdgeCanonicalIDs": [
+                  2920583,
+                  2935718,
+                  1672488,
+                  1660968,
+                  2921431,
+                  422074,
+                  1672486,
+                  1654619
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    973209,
+                    974656
+                  ],
+                  [
+                    978361,
+                    978810
+                  ],
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    973498,
+                    974978
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    549937,
+                    550710
+                  ]
+                ],
+                "worstRatios": [
+                  0.06514288152728914,
+                  0.10254925776061076,
+                  9.681657071489726,
+                  9.099303079557124,
+                  0.1100194066430948,
+                  8.769375253534456,
+                  8.507557366899759,
+                  8.492917701459337
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.01062788572183607,
+                  "median": 0.8444154250130582,
+                  "p95": 1.0521257331461102,
+                  "p99": 1.2970147288937015,
+                  "max": 13.964368482752477
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  640394,
+                  639884,
+                  581028,
+                  587477,
+                  581029,
+                  644645,
+                  640392,
+                  587334
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 8.286458030771484e-05,
+                "p95": 0.0003708617066006541,
+                "p99": 0.0006820645543344923,
+                "max": 0.006128254586595131
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00018365352903229628,
+                "p99": 0.00046831732621243325,
+                "max": 0.006128254586595131
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.1386599851590744,
+                  "median": 0.9947857147678754,
+                  "p95": 1.1785112701708451,
+                  "p99": 1.3974651905056537,
+                  "max": 4.319655804022089
+                },
+                "logStrainAbs": {
+                  "min": 1.0856590796450773e-08,
+                  "median": 0.05867025157166367,
+                  "p95": 0.30154147333306824,
+                  "p99": 0.5364791434631242,
+                  "max": 1.97573049249885
+                },
+                "worstEdgeCanonicalIDs": [
+                  331683,
+                  201145,
+                  259741,
+                  229766,
+                  2100269,
+                  263534,
+                  384995,
+                  406388
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    107181,
+                    114697
+                  ],
+                  [
+                    63718,
+                    66497
+                  ],
+                  [
+                    83217,
+                    87290
+                  ],
+                  [
+                    73246,
+                    77839
+                  ],
+                  [
+                    698591,
+                    699512
+                  ],
+                  [
+                    84483,
+                    84861
+                  ],
+                  [
+                    124925,
+                    135713
+                  ],
+                  [
+                    132037,
+                    138732
+                  ]
+                ],
+                "worstRatios": [
+                  0.1386599851590744,
+                  0.14961975337024025,
+                  0.19343105638083724,
+                  0.2105741649513254,
+                  4.319655804022089,
+                  4.241704404366929,
+                  0.24685814148671495,
+                  0.2566018178679943
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.08274930622894307,
+                  "median": 0.9391642888726768,
+                  "p95": 1.2385889170191668,
+                  "p99": 1.4450820724580076,
+                  "max": 4.491377649628511
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  909540,
+                  909537,
+                  909534,
+                  909557,
+                  909545,
+                  909524,
+                  909582,
+                  909518
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.951266859230528e-05,
+                "p95": 0.00032706284513200646,
+                "p99": 0.0005914839565525279,
+                "max": 0.002859325127620413
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00018018444765051077,
+                "p99": 0.0004619642498818084,
+                "max": 0.002859325127620413
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "kick-high-flexion-LBS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.843976616859436,
+                0.08313325047492981,
+                0.6181730628013611
+              ],
+              "cameraTarget": [
+                0.15602341294288635,
+                0.08313325047492981,
+                0.5581730365753174
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        },
+        "DQS": {
+          "preserveVolume": true,
+          "regions": {
+            "sleeve_armhole_R": {
+              "edge": {
+                "edgeCount": 71949,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.23105844761180983,
+                  "median": 0.976980424055937,
+                  "p95": 1.1305269055809517,
+                  "p99": 1.2390928757065973,
+                  "max": 2.009449486519618
+                },
+                "logStrainAbs": {
+                  "min": 3.9652658926268944e-10,
+                  "median": 0.06806003834025756,
+                  "p95": 0.37230336169904843,
+                  "p99": 0.6359682206148306,
+                  "max": 1.4650845804999517
+                },
+                "worstEdgeCanonicalIDs": [
+                  680167,
+                  684853,
+                  674844,
+                  665170,
+                  553296,
+                  709396,
+                  636728,
+                  707417
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    223716,
+                    224801
+                  ],
+                  [
+                    225287,
+                    225564
+                  ],
+                  [
+                    221931,
+                    222190
+                  ],
+                  [
+                    218676,
+                    219597
+                  ],
+                  [
+                    181166,
+                    182026
+                  ],
+                  [
+                    233490,
+                    234056
+                  ],
+                  [
+                    209155,
+                    209208
+                  ],
+                  [
+                    232825,
+                    233449
+                  ]
+                ],
+                "worstRatios": [
+                  0.23105844761180983,
+                  0.2608878620500456,
+                  0.27154231717012844,
+                  0.2763479997389988,
+                  0.2883705869698301,
+                  0.29907434537458,
+                  0.31402549020230286,
+                  0.3151477012779342
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 48217,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.03660924705081845,
+                  "median": 0.8857970827047141,
+                  "p95": 1.055315628665888,
+                  "p99": 1.194940926272225,
+                  "max": 1.471289369353395
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  379051,
+                  379167,
+                  379295,
+                  379298,
+                  379294,
+                  379291,
+                  379063,
+                  131422
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 6.510372242621309e-05,
+                "p95": 0.00036425654992708356,
+                "p99": 0.0005729500553261734,
+                "max": 0.0012763490373288032
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00012558582766898575,
+                "p99": 0.00024667555621402484,
+                "max": 0.0007068220835186891
+              }
+            },
+            "torso_underarm_R": {
+              "edge": {
+                "edgeCount": 128183,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.10026502249113096,
+                  "median": 0.9580367116066741,
+                  "p95": 1.1800080602869185,
+                  "p99": 1.4161573453407945,
+                  "max": 10.140019179756775
+                },
+                "logStrainAbs": {
+                  "min": 1.034807401129856e-07,
+                  "median": 0.08002602668468141,
+                  "p95": 0.375630390666188,
+                  "p99": 0.6992361012133523,
+                  "max": 2.3164898896559993
+                },
+                "worstEdgeCanonicalIDs": [
+                  1672488,
+                  2929209,
+                  1660968,
+                  422074,
+                  1654619,
+                  1672486,
+                  1629859,
+                  499942
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    555893,
+                    559213
+                  ],
+                  [
+                    976152,
+                    977248
+                  ],
+                  [
+                    552042,
+                    553438
+                  ],
+                  [
+                    137268,
+                    138293
+                  ],
+                  [
+                    549937,
+                    550710
+                  ],
+                  [
+                    555893,
+                    556269
+                  ],
+                  [
+                    541643,
+                    545004
+                  ],
+                  [
+                    163225,
+                    164727
+                  ]
+                ],
+                "worstRatios": [
+                  10.140019179756775,
+                  0.10026502249113096,
+                  9.682128377121705,
+                  9.21898733218354,
+                  9.069369823885904,
+                  8.89873947701462,
+                  8.723317546326587,
+                  8.555271757395438
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 85863,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.031089217619582526,
+                  "median": 0.8513056246645538,
+                  "p95": 1.056324384025714,
+                  "p99": 1.3266351471584408,
+                  "max": 15.267589247144508
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  520688,
+                  379051,
+                  581092,
+                  581072,
+                  668177,
+                  433170,
+                  486446,
+                  529212
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 7.89548161674149e-05,
+                "p95": 0.0003720296024759693,
+                "p99": 0.0006935554864877212,
+                "max": 0.006451805686250228
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00018870902465822426,
+                "p99": 0.00047643564585523267,
+                "max": 0.006451805686250228
+              }
+            },
+            "medial_trapezius_R": {
+              "edge": {
+                "edgeCount": 83018,
+                "degenerateRestEdges": 0,
+                "ratio": {
+                  "min": 0.16962631681855367,
+                  "median": 0.9965517991535109,
+                  "p95": 1.1790775096917043,
+                  "p99": 1.3816270587152475,
+                  "max": 4.444319743989422
+                },
+                "logStrainAbs": {
+                  "min": 3.9652658926268944e-10,
+                  "median": 0.05899594952019459,
+                  "p95": 0.2945753655183492,
+                  "p99": 0.5227666624907781,
+                  "max": 1.774157397741224
+                },
+                "worstEdgeCanonicalIDs": [
+                  406388,
+                  384995,
+                  331683,
+                  263534,
+                  2853572,
+                  2100269,
+                  2811455,
+                  2928673
+                ],
+                "worstEdgesVertexPairs": [
+                  [
+                    132037,
+                    138732
+                  ],
+                  [
+                    124925,
+                    135713
+                  ],
+                  [
+                    107181,
+                    114697
+                  ],
+                  [
+                    84483,
+                    84861
+                  ],
+                  [
+                    950584,
+                    952449
+                  ],
+                  [
+                    698591,
+                    699512
+                  ],
+                  [
+                    936346,
+                    939351
+                  ],
+                  [
+                    975970,
+                    976177
+                  ]
+                ],
+                "worstRatios": [
+                  0.16962631681855367,
+                  0.20238594564692575,
+                  0.20246052529513633,
+                  4.444319743989422,
+                  0.22646317999239668,
+                  4.212472989335861,
+                  0.24344044947213261,
+                  0.24953296641372003
+                ],
+                "boundaryPolicy": "any original endpoint in mask; no edge subsampling"
+              },
+              "triangle": {
+                "triangleCount": 55652,
+                "degenerateRestTriangles": 0,
+                "areaRatio": {
+                  "min": 0.09010107169214608,
+                  "median": 0.9436348293315866,
+                  "p95": 1.2056337738130076,
+                  "p99": 1.3983042432003416,
+                  "max": 5.144350480495754
+                },
+                "collapsedCount": 0,
+                "collapsedOriginalTriangleIDs": [],
+                "worstOriginalTriangleIDs": [
+                  875114,
+                  564134,
+                  909600,
+                  909675,
+                  909596,
+                  909595,
+                  909591,
+                  579233
+                ],
+                "orientationAvailable": false,
+                "opposedTransportNormalCount": null,
+                "opposedOriginalTriangleIDs": [],
+                "interpretation": "orientation witness; not a self-intersection proof"
+              },
+              "absoluteDeltaM": {
+                "median": 5.9799409317724925e-05,
+                "p95": 0.0003214736232233614,
+                "p99": 0.000575833799316651,
+                "max": 0.002695845864005697
+              },
+              "absoluteExcessM": {
+                "median": 0.0,
+                "p95": 0.00018087177260801127,
+                "p99": 0.00044126118439318066,
+                "max": 0.002695845864005697
+              }
+            }
+          },
+          "renders": [
+            {
+              "file": "kick-high-flexion-DQS-clay-side.png",
+              "surfaceWitnessAllVerticesMaxM": 0.0,
+              "cameraWorld": [
+                -1.843976616859436,
+                0.08313325047492981,
+                0.6181730628013611
+              ],
+              "cameraTarget": [
+                0.15602341294288635,
+                0.08313325047492981,
+                0.5581730365753174
+              ],
+              "orthoScale": 0.64,
+              "material": "source-normal1"
+            }
+          ]
+        }
+      },
+      "bonePoseSHA256": "aa8eba606319c06c6b17f3ff4407a99ffd8b1a07909872d8b1fea352b9dc30d8",
+      "independentLBSAllVerticesMaxM": 3.0742879362934803e-07,
+      "DQSvsLBSAllVerticesM": {
+        "median": 0.0003049180105425326,
+        "p95": 0.013250525007539116,
+        "p99": 0.02347933477518256,
+        "max": 0.033215291184387305
+      },
+      "anchorMovement": {
+        "head_anchor_proposal": {
+          "count": 107125,
+          "maxM": 0.003815512661180176,
+          "p99M": 0.00326506480469122,
+          "worstOriginalVertexIDs": [
+            712658,
+            709074,
+            712373,
+            708839,
+            712395,
+            716027,
+            705380,
+            705135
+          ]
+        },
+        "upper_neck_anchor_proposal": {
+          "count": 2701,
+          "maxM": 0.0037889659023911714,
+          "p99M": 0.0036951083595967347,
+          "worstOriginalVertexIDs": [
+            723555,
+            727375,
+            723521,
+            728028,
+            728133,
+            732436,
+            731359,
+            735134
+          ]
+        },
+        "elbow_distal_anchor_L": {
+          "count": 46256,
+          "maxM": 0.026064962729953053,
+          "p99M": 0.022010986560990972,
+          "worstOriginalVertexIDs": [
+            710032,
+            709713,
+            706749,
+            706907,
+            707008,
+            707035,
+            703553,
+            706936
+          ]
+        },
+        "elbow_distal_anchor_R": {
+          "count": 45308,
+          "maxM": 0.001845992371333677,
+          "p99M": 0.0013994921647232466,
+          "worstOriginalVertexIDs": [
+            420551,
+            417797,
+            423281,
+            415058,
+            426651,
+            415012,
+            420506,
+            423841
+          ]
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Blender Preserve Volume comparison only; no Unity DQS path or shipping acceptance.",
+    "Region envelopes are provisional, not anatomical ground truth.",
+    "DQ surface is evaluated by Blender, not an independent DQ implementation."
+  ],
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sourceAttributes": {
+    "positions": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "loopVertexIndices": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygonStarts": "7b638feadc801e5555a8882879c9d17a5b2e449938fae59482d0cda848f41592",
+    "polygonSizes": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "uv:UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+  },
+  "actualVertexGroupsSHA256": "fec208ccb7b6eacb13555f3bb3eb0a8493a956ae4958e87f9c10d198089f930d",
+  "bindSHA256": "bcecbf198966d516a81657858f930d0c7a6eeb9fa193d985945c51b9146cc71d",
+  "sourceHashes": {
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/stage02-bound-original-dense.blend": "dedd8c00b27278ef6f02a8753a61ed0636053d2733ede83357134a7a8033052d",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/source/tripo-striped-sailor-native-full-pack/unpacked/tripo_convert_f24a44a7-a87f-4f34-9d47-6924c6224646.fbx": "0795bd2591aa704232e7befe540acff811f8d2e20598cc151b61c4249b2beb99",
+    "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/tools/27_actual_arm_elevation.py": "97f88ea6dfbc7b87d0a638ba80cc5f76608b8ea3453ee7b933cc3bc81e7c7516"
+  },
+  "scriptSHA256": "af2a23b61012b89721a369bfdc8b3027017bc72e76a123bad0f2850d35b1d94a",
+  "sameModeParameters": {
+    "BboneSegments": 1,
+    "onlyVariable": "ArmatureModifier.use_deform_preserve_volume"
+  },
+  "sourceAttributesWeightsBindUnchanged": true,
+  "elapsedSeconds": 164.68347625003662
+}

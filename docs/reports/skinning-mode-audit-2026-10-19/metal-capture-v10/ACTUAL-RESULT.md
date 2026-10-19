@@ -1,0 +1,11 @@
+# V10 actual explicit capture: completion gate RED, native trace pending Xcode
+
+GPU build EXIT0/41.686s, player EXIT1/18.399s. Runner no wall/disk/trace stop. Explicit heavy release sent immediately after actual exit. No rerun/timing/native fallback. V9 and V8 evidence unchanged.
+
+Exact failure: `GPU completion cannot fit6frame capture budget`. Explicit Begin at frame7141/draw7141/uptime10.637468,3changed actual poses at7142/7143/7144. At frame7146(Update)/draw7145 all six request completionIDs still0; allReadbacksCompleted=false. EndCapture ran in finally at10.793814. No claim End followed GPU completion: that planned gate FAILED. Source pose SHA each pair:896f83a5... /8812c32f... /recorded third SHA in requestJSON. Splash finished2.516424, so real startup fence retained. Readbacks not completed and no decoded-PNT capture claim for these dynamic frames. Source helper/driver/Resources/DLL/scene hashes retained.
+
+Trace452617163logicalbytes <1GiB. Native metadata deviceId1, capture151140bytes, nonempty buffer/texture resources; captured_frames_count1 is native capture metadata, not a claim of one Unity frame. Unlike V9's deviceId0/8bytecapture, this passes only the plausible-metadata screen. Root Xcode must inspect actual compute/draw commands, bound buffers and shader constants; none read/attributed by this agent. Do not infer dispatch or its absence from file existence or native resource names.
+
+New review source manifestSHA4ce8b1eb2e35aa41bce05d5235de97bcdea560911963d4e278dd779408ce5ff2; runtime source identity795dcaeaab5f9da1024e365a43fb329327e97cc14aae33f2fb08dbf2d3a442ff; layoutff84087e65d1d70956e872c264cd6204a7178b7bea094872e62e4e89c3148adf. Frozen original snapshot remains1ba15bd0... (old material scope deliberate).
+
+Actual bundle: `.tools/skinning-current100k-review/CurrentBufferBuildsV10/Traces/explicit-dynamic-v10.gputrace`. Durable small evidence in evidence/: full native fileSHA/size inventory and metadata, actual failure/request/pose snapshots, source/build/DLL/scene hashes, logs/process exit results and runtime output inventories. Large trace remains only at original owned path; not duplicated. Next action is root Xcode inspection, no automatic experiment.

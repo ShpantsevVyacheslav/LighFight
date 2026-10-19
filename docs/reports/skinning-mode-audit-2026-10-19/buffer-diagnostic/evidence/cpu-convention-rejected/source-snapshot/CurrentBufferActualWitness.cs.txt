@@ -1,0 +1,19 @@
+using System;using System.IO;using System.Collections;using UnityEngine;
+public static class CurrentBufferActualWitness {
+ public static IEnumerator Run(GameObject[] actors,CurrentBufferCalibration.Layout layout,string output){
+  for(int repeat=0;repeat<3;repeat++)for(int actor=0;actor<actors.Length;actor++){
+   var skin=actors[actor].GetComponentInChildren<SkinnedMeshRenderer>();string path=Path.Combine(output,"actual-phase1-a"+actor+"-r"+repeat);
+   CurrentSkinningBufferReadback.WriteMatrixState(skin,path+"-before.matrices");CurrentBufferStateSnapshot.Write(skin,path+"-before-state.json");
+   var world=CurrentSkinningBufferReadback.OriginalWorldPositions(skin);using(var w=new BinaryWriter(File.Create(path+"-world-oracle.bin"))){w.Write(world.Length);foreach(var p in world){w.Write(p.x);w.Write(p.y);w.Write(p.z);}}
+   CurrentSkinningBufferReadback.Capture capture=null;var read=CurrentSkinningBufferReadback.Read(skin,path,c=>capture=c);while(read.MoveNext())yield return read.Current;
+   CurrentSkinningBufferReadback.WriteMatrixState(skin,path+"-after.matrices");CurrentBufferStateSnapshot.Write(skin,path+"-after-state.json");var before=File.ReadAllBytes(path+"-before.matrices");var after=File.ReadAllBytes(path+"-after.matrices");if(before.Length!=after.Length)throw new Exception("Matrix state shape changed during request");for(int j=4;j<before.Length;j++)if(before[j]!=after[j])throw new Exception("CPU matrix state changed during request; no buffer parity claim");
+   if((long)(world.Length-1)*layout.stride+Math.Max(layout.positionOffset,Math.Max(layout.normalOffset,layout.tangentOffset))+12>capture.raw.Length)throw new Exception("Original buffer does not fit calibrated layout; UNSUPPORTED");
+   float max=0;int arg=-1;using(var w=new BinaryWriter(File.Create(path+"-decoded-pnt.bin"))){w.Write(world.Length);
+    for(int i=0;i<world.Length;i++){var p=Get(capture.raw,i*layout.stride+layout.positionOffset);var n=Get(capture.raw,i*layout.stride+layout.normalOffset);var t=Get(capture.raw,i*layout.stride+layout.tangentOffset);float error=Vector3.Distance(capture.rendererLocalToWorld.MultiplyPoint3x4(p),world[i]);if(error>max){max=error;arg=i;}foreach(var v in new[]{p,n,t}){w.Write(v.x);w.Write(v.y);w.Write(v.z);}}
+   }
+   File.WriteAllText(path+"-comparison.txt","vertices="+world.Length+" maxWorldPositionError="+max.ToString("R",System.Globalization.CultureInfo.InvariantCulture)+" arg="+arg+"; finite decoded positions/normals/tangents; no dispatch/performance acceptance");
+   yield return new WaitForEndOfFrame();var image=ScreenCapture.CaptureScreenshotAsTexture();File.WriteAllBytes(path+"-completed.png",image.EncodeToPNG());UnityEngine.Object.Destroy(image);
+  }
+ }
+ static Vector3 Get(byte[] b,int n){var p=new Vector3(BitConverter.ToSingle(b,n),BitConverter.ToSingle(b,n+4),BitConverter.ToSingle(b,n+8));if(float.IsNaN(p.x)||float.IsNaN(p.y)||float.IsNaN(p.z)||float.IsInfinity(p.x)||float.IsInfinity(p.y)||float.IsInfinity(p.z))throw new Exception("Nonfinite output/layout");return p;}
+}

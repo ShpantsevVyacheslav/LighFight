@@ -44,6 +44,15 @@ namespace LighFight.Editor {
     string path=AssetDatabase.GetAssetPath(source.arenas[i]);if(string.IsNullOrEmpty(path))throw new InvalidOperationException("Arena must be a saved prefab");
     string key="lighfight/arena/"+AssetDatabase.AssetPathToGUID(path);catalog.arenaAddresses[i]=key;var entry=settings.CreateOrMoveEntry(AssetDatabase.AssetPathToGUID(path),arenaGroup);entry.address=key;entry.SetLabel("lighfight-starter",false);entry.SetLabel("lighfight-arena",true,true);
    }
+   var spectatorGroup=Group(settings,local?"LighFight Embedded Spectators":"LighFight Spectators",true,local);
+   foreach(var entry in spectatorGroup.entries.ToArray())if(entry.address.StartsWith("lighfight/spectator/",StringComparison.Ordinal))settings.RemoveAssetEntry(entry.guid);
+   foreach(var arena in source.arenas)foreach(var crowd in arena.GetComponentsInChildren<MeetingSpectators>(true))foreach(var candidate in crowd.candidates)foreach(var address in new[]{candidate.address,candidate.smokingAddress}){
+    if(string.IsNullOrEmpty(address))continue;
+    const string prefix="lighfight/spectator/";if(!address.StartsWith(prefix,StringComparison.Ordinal))throw new InvalidOperationException("Unexpected seated spectator address");
+    string guid=address.Substring(prefix.Length);string path=AssetDatabase.GUIDToAssetPath(guid);var prefab=AssetDatabase.LoadAssetAtPath<GameObject>(path);var pose=prefab?prefab.GetComponent<SeatedSpectatorPose>():null;
+    if(!pose||!pose.seatedPoseVisuallyAccepted||prefab.GetComponentInChildren<Animator>(true)||prefab.GetComponentInChildren<SkinnedMeshRenderer>(true))throw new InvalidOperationException("Unaccepted/non-static seated spectator "+path);
+    var entry=settings.CreateOrMoveEntry(guid,spectatorGroup);entry.address=address;entry.SetLabel("lighfight-spectator",true,true);
+   }
    // Explicit entries stop common standalone clips/controllers from duplicating into every character bundle.
    foreach(var pair in dependencyUse)if(pair.Value>1&&(pair.Key.EndsWith(".anim")||pair.Key.EndsWith(".controller"))){var entry=settings.CreateOrMoveEntry(AssetDatabase.AssetPathToGUID(pair.Key),sharedGroup);entry.address="lighfight/shared/"+entry.guid;entry.SetLabel("lighfight-starter",false);}
    // Remove only the obsolete direct-root entry, never its approved asset or unrelated addressable content.

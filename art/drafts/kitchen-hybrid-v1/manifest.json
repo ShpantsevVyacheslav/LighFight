@@ -1,0 +1,111 @@
+{
+  "status": "EXPLORATORY_HYBRID_NOT_PROMOTED",
+  "provenance": "Tripo furniture + manually reconstructed photo-based architecture",
+  "sourceFurniture": "art/source/kitchen-tripo-v1/original-v2.glb",
+  "sourceSHA256": "fce37d2145ef34dac5a39f7ddffcecb46c1d384162019b1948e3ea864640b2ff",
+  "sourceFurnitureLocalGeometryHashes": {
+    "positionSHA256": "3bb4bfe4f28f80410f2a833edf784c69358933af717817a5bbb8ed5b1ef822f9",
+    "triangleSHA256": "f3624ca5495048b41e676655cc0068393908599fccd4a71cd3550902d2451e72",
+    "loopUVSHA256": "8568ef998a1bf1e74893fc3b299dc163f7312fb8748e1d24b21c81a1b0406a42",
+    "vertices": 1076312,
+    "triangles": 1988865
+  },
+  "sourceMaterialsUnchanged": [
+    "tripo_material_3cf0b96f-1642-45b4-9782-01274c45f2db"
+  ],
+  "sourceEmbeddedImages": [
+    {
+      "name": "lighfight-kitchen-tripo-room-v2-original_basecolor.jpg",
+      "SHA256": "73e8973e02385a0ff34e467fab747dd033d01bb00867ce63bb79ce150387aa19",
+      "bytes": 2069390
+    },
+    {
+      "name": "lighfight-kitchen-tripo-room-v2-original_rm.jpg",
+      "SHA256": "ed4aa88a3934cb2a23ab44d3c0016f7786eaedb360af0451b380852b275e5019",
+      "bytes": 1088321
+    },
+    {
+      "name": "lighfight-kitchen-tripo-room-v2-original_normal.png",
+      "SHA256": "2fe559988682affe9c13ec32bc7afd275f376b593c01b19fdf1b5456eebff09f",
+      "bytes": 2175029
+    }
+  ],
+  "geometryUVIndicesMaterialsUnchanged": true,
+  "furnitureUniformParentScale": 3.2,
+  "furnitureParentTranslation": [
+    1.5,
+    0.0,
+    0.0020000000949949026
+  ],
+  "roomDimensions": [
+    5.4,
+    5.6,
+    3.0
+  ],
+  "dimensionsAssumedNotMeasured": true,
+  "singleWindow": {
+    "wall": "RIGHT +X",
+    "openingY": [
+      -1.75,
+      1.65
+    ],
+    "openingZ": [
+      0.88,
+      2.65
+    ],
+    "backWallOpeningCount": 0,
+    "rightWallOpeningCount": 1,
+    "blinds": 19
+  },
+  "clearFloor": {
+    "minXY": [
+      -1.9,
+      -2.5
+    ],
+    "maxXY": [
+      0.6,
+      1.1
+    ],
+    "width": 2.5,
+    "depth": 3.6,
+    "furnitureBoundsMin": [
+      0.7183836698532104,
+      -1.57177734375,
+      0.0020000000949949026
+    ],
+    "furnitureBoundsMax": [
+      2.2816162109375,
+      1.57177734375,
+      1.0255839824676514
+    ],
+    "furnitureWidth": 1.5632325410842896,
+    "clearWidthGreaterThanFurniture": true,
+    "scope": "expanded playable blockout, not photo-calibrated dimensions"
+  },
+  "floorGrid": {
+    "rays": 10201,
+    "hits": 10201,
+    "minZ": -7.450580596923828e-09,
+    "maxZ": 7.450580596923828e-09,
+    "fullFloorComponentTriangles": 12,
+    "scope": "floor itself including beneath furniture; not a navigation collision test"
+  },
+  "architectureObjects": 33,
+  "blockoutObjects": [
+    "BLOCKOUT_Fridge",
+    "BLOCKOUT_Fridge_FreezerSeam",
+    "BLOCKOUT_MicrowaveCupboard",
+    "BLOCKOUT_Microwave",
+    "BLOCKOUT_Microwave_Front",
+    "BLOCKOUT_CoffeeCupboard",
+    "BLOCKOUT_CoffeeMachine"
+  ],
+  "limits": [
+    "Not a fully generated Tripo room.",
+    "Floor/architecture materials are procedural lookdev, not texture reconstruction from the photograph.",
+    "Fridge/cupboard/coffee machine are explicitly unfinished blockouts.",
+    "Room expanded for clear play space, no photogrammetric metric claim.",
+    "No Unity/mobile/runtime/lighting acceptance."
+  ],
+  "sourcePreservedAfterRenders": true
+}

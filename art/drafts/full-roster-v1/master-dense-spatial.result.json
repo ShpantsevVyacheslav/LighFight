@@ -1,0 +1,29 @@
+{
+  "pid": 12458,
+  "exit": -15,
+  "reason": "",
+  "seconds": 101.6808831691742,
+  "peakOwnedRSSBytes": 1099579392,
+  "command": [
+    "/Users/macbook1/Applications/Blender.app/Contents/MacOS/Blender",
+    "-b",
+    "--factory-startup",
+    "-t",
+    "6",
+    "--python-exit-code",
+    "1",
+    "-P",
+    ".tools/tripo-dense-review/reconstruct_spatial_weights.py",
+    "--",
+    "--source",
+    "art/source/master-tripo-v1/original.glb",
+    "--donor",
+    "art/source/tripo-master-native-pack/unpacked/tripo_convert_24406674-838c-4bb3-8c8b-9102c9451b04.fbx",
+    "--out",
+    "art/drafts/full-roster-v1/master-dense-spatial",
+    "--min-weight",
+    "0",
+    "--metrics-samples",
+    "5000"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "fullGrid5PercentMarginPass": false,
+  "fullGridRays": 10201,
+  "fullGridFloorHits": 9981,
+  "fullGridMissing": 108,
+  "fullGridWallOrHighHits": 112,
+  "centralSubsetBoundingMarginFraction": 0.104,
+  "centralSubsetExpectedRays": 7921,
+  "centralSubsetFloorHits": 7921,
+  "centralSubsetContinuousAtSampledGrid": true,
+  "centralSubsetFloorMinMax": [
+    0.04417891055345535,
+    0.04714619740843773
+  ],
+  "centralSubsetFloorP01P50P99": [
+    0.04690554738044739,
+    0.04693606495857239,
+    0.04699709936976433
+  ],
+  "interpretation": "Full5% rectangular test remains RED. Missing samples lie near visibly beveled front corner; high hits mostly right wall. Central10.4% bounding-margin subset has no sampled low-floor gaps; this does not assert continuum/watertightness or fix cut-corner mismatch."
+}

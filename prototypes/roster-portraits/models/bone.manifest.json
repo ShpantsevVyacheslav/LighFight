@@ -1,0 +1,263 @@
+{
+  "role": "bone",
+  "blenderVersion": "4.2.22 LTS",
+  "sourceFBX": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbx",
+  "sourceSHA256": "3415e4a213e6a266986e09935ab092ef992e66bdd56728927ff73cd45d46fad3",
+  "glb": "prototypes/roster-portraits/models/bone.glb",
+  "glbSHA256": "f022df218a757dbd27a94bb0dfbadfcd639a42ab41c0cf374c38e6637c474563",
+  "bytes": 13903408,
+  "sourceTriangles": 100000,
+  "glbTriangles": 100000,
+  "sourceControlVertices": 49936,
+  "sourceBones": 67,
+  "glbSkinJoints": [
+    67
+  ],
+  "sourcePreservationHashBeforeAfter": "e41f97e89f241d39d73da9ea76bb60a35990ebf83b53c1dfba041e3166c22046",
+  "framesPerSecond": 24.0,
+  "sourceClips": [
+    {
+      "name": "box_02",
+      "sourceAction": "Armature|box_02",
+      "firstFrame": 1.0,
+      "lastFrame": 68.0,
+      "durationSeconds": 2.7916666666666665,
+      "fcurves": 679
+    },
+    {
+      "name": "cheer",
+      "sourceAction": "Armature|cheer",
+      "firstFrame": 1.0,
+      "lastFrame": 291.0,
+      "durationSeconds": 12.083333333333334,
+      "fcurves": 679
+    },
+    {
+      "name": "dance_01",
+      "sourceAction": "Armature|dance_01",
+      "firstFrame": 1.0,
+      "lastFrame": 557.0,
+      "durationSeconds": 23.166666666666668,
+      "fcurves": 679
+    },
+    {
+      "name": "fall",
+      "sourceAction": "Armature|fall",
+      "firstFrame": 1.0,
+      "lastFrame": 73.0,
+      "durationSeconds": 3.0,
+      "fcurves": 679
+    },
+    {
+      "name": "front_kick_01",
+      "sourceAction": "Armature|front_kick_01",
+      "firstFrame": 1.0,
+      "lastFrame": 61.0,
+      "durationSeconds": 2.5,
+      "fcurves": 679
+    },
+    {
+      "name": "greet_01",
+      "sourceAction": "Armature|greet_01",
+      "firstFrame": 1.0,
+      "lastFrame": 85.0,
+      "durationSeconds": 3.5,
+      "fcurves": 679
+    },
+    {
+      "name": "hit_to_head",
+      "sourceAction": "Armature|hit_to_head",
+      "firstFrame": 1.0,
+      "lastFrame": 45.0,
+      "durationSeconds": 1.8333333333333333,
+      "fcurves": 679
+    },
+    {
+      "name": "walk",
+      "sourceAction": "Armature|walk",
+      "firstFrame": 1.0,
+      "lastFrame": 57.0,
+      "durationSeconds": 2.3333333333333335,
+      "fcurves": 679
+    }
+  ],
+  "animations": [
+    {
+      "name": "box_02",
+      "durationSeconds": 2.7916666666666665,
+      "channels": 204
+    },
+    {
+      "name": "cheer",
+      "durationSeconds": 12.083333333333334,
+      "channels": 204
+    },
+    {
+      "name": "dance_01",
+      "durationSeconds": 23.166666666666668,
+      "channels": 204
+    },
+    {
+      "name": "fall",
+      "durationSeconds": 3,
+      "channels": 204
+    },
+    {
+      "name": "front_kick_01",
+      "durationSeconds": 2.5,
+      "channels": 204
+    },
+    {
+      "name": "greet_01",
+      "durationSeconds": 3.5,
+      "channels": 204
+    },
+    {
+      "name": "hit_to_head",
+      "durationSeconds": 1.8333333333333333,
+      "channels": 204
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 2.3333333333333335,
+      "channels": 204
+    },
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "channels": 204,
+      "derived": true
+    }
+  ],
+  "defaultAnimation": "PreviewGuard",
+  "defaultAnimationTimeSeconds": 0,
+  "defaultAnimationPlayback": "loop constant clip; fullnative motions only ongesture",
+  "firstFrameGuardCandidate": {
+    "animation": "box_02",
+    "seconds": 0,
+    "sourceFrame": 1,
+    "poseValidity": "native authored crouched/open-hand combat-start; not A/T pose; not closed-fist standalone guard",
+    "derivedClip": "PreviewGuard"
+  },
+  "danceAnimation": "dance_01",
+  "punchAnimation": "box_02",
+  "boxingIdleAnimation": null,
+  "inputs": {
+    "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbx": "3415e4a213e6a266986e09935ab092ef992e66bdd56728927ff73cd45d46fad3",
+    "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_basecolor.JPEG": "0a59152d229a2ece1674985a9f94a977f90e8d541f71d1b4a493075280801d89",
+    "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_metallic.JPEG": "f8ad72f22016e500f8f8d8037dc5813c55eef9ca86226c08d30a542c65158dfe",
+    "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_normal.JPEG": "ad08e22a8f6e0123a02111d8aba684fb3e2f7d9501fa723831ae5e9d0f17b827",
+    "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_rm.PNG": "adb9a2ea0fe1e60cbe85268fa8ac709346f1742ae3a9a438f787dd7a5f77a4ee",
+    "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_roughness.JPEG": "542056790fb6aaaf2ccbfd63cfae96c0f398dfd96780a61a73b2b5f6d0756da2"
+  },
+  "sourceImages": [
+    {
+      "name": "bone-h31-unity-native-pack_basecolor",
+      "file": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_basecolor.JPEG",
+      "sha256": "0a59152d229a2ece1674985a9f94a977f90e8d541f71d1b4a493075280801d89",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorSpace": "sRGB"
+    },
+    {
+      "name": "bone-h31-unity-native-pack_normal",
+      "file": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_normal.JPEG",
+      "sha256": "ad08e22a8f6e0123a02111d8aba684fb3e2f7d9501fa723831ae5e9d0f17b827",
+      "size": [
+        1024,
+        1024
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "bone-h31-unity-native-pack_roughness",
+      "file": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_roughness.JPEG",
+      "sha256": "542056790fb6aaaf2ccbfd63cfae96c0f398dfd96780a61a73b2b5f6d0756da2",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    },
+    {
+      "name": "bone-h31-unity-native-pack_metallic",
+      "file": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_metallic.JPEG",
+      "sha256": "f8ad72f22016e500f8f8d8037dc5813c55eef9ca86226c08d30a542c65158dfe",
+      "size": [
+        2048,
+        2048
+      ],
+      "colorSpace": "Non-Color"
+    }
+  ],
+  "embeddedImages": [
+    {
+      "name": "bone-h31-unity-native-pack_normal",
+      "mimeType": "image/jpeg",
+      "bytes": 344996,
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "ad08e22a8f6e0123a02111d8aba684fb3e2f7d9501fa723831ae5e9d0f17b827",
+      "source": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_normal.JPEG",
+      "method": "untouched original normal bytes; no gamma/Y-flip"
+    },
+    {
+      "name": "bone-h31-unity-native-pack_basecolor",
+      "mimeType": "image/jpeg",
+      "bytes": 1284459,
+      "dimensions": [
+        4096,
+        4096
+      ],
+      "sha256": "0a59152d229a2ece1674985a9f94a977f90e8d541f71d1b4a493075280801d89",
+      "source": "art/source/bone-tripo-v1/unity-pack/tripo_convert_1b0fb949-65e3-489a-b406-ac3344ffd6a7.fbm/bone-h31-unity-native-pack_basecolor.JPEG",
+      "method": "untouched original basecolor bytes"
+    },
+    {
+      "name": "bone-h31-unity-native-pack_roughness",
+      "mimeType": "image/png",
+      "bytes": 3793827,
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "sha256": "ab4c086b259df826dda5a91d6c7ea77abc45bae7963ee3bcdcd1fce617d0ea48",
+      "source": null,
+      "method": "derivedglTF ORM R=255,G=original roughnessR,B=original metallicR; raw scalar values, no gamma conversion"
+    }
+  ],
+  "limits": [
+    "Original native FBX imported by Blender; glTF baked at source24fps, not original FBX tangent/curve serialization.",
+    "No standalone boxing idle in these8takes. box_02 is a punch loop, not guard.",
+    "Native source material scalar encoding retained; no guessed gamma correction, normalYflip, recolor or originaldense-atlas substitution.",
+    "Portable prototype export, not shipping Unity/native-phone parity proof."
+  ],
+  "derivedClips": [
+    {
+      "name": "PreviewGuard",
+      "durationSeconds": 1,
+      "sourceAnimation": "box_02",
+      "sourceSeconds": 0,
+      "identicalKeyframes": 2,
+      "authoredIdle": false
+    }
+  ],
+  "validation": {
+    "triangles": 100000,
+    "sourceClips": 8,
+    "totalClips": 9,
+    "skinJoints": [
+      67
+    ],
+    "glbSplitVertices": 59802,
+    "weightsSumMin": 0.9999999031424522,
+    "weightsSumMax": 1.0000000521540642,
+    "maxInfluences": 4,
+    "originalBasecolorNormalBytesPreserved": true,
+    "finiteNormalizedWeights": true
+  }
+}

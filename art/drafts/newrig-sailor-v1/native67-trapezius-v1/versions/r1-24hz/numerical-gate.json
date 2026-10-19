@@ -1,0 +1,57 @@
+{
+  "status": "FAIL",
+  "actualSubframeSamples": 1113,
+  "rotationMaxErrorDegAt48Hz": 0.27439366918026925,
+  "handMovementMedianM": 0.0211056951483017,
+  "handMovementP95M": 0.02111392815127907,
+  "handMovementMaxM": 0.021158482498286554,
+  "bindRestSurfaceMaxErrorM": 1.2582351033027152e-06,
+  "entryReturnSurfaceMaxM": 1.0358876924136597e-07,
+  "headVertices": 7148,
+  "fullFootVertices": 11286,
+  "poseSurfaceRows": [
+    {
+      "phase": 0,
+      "maxSurfaceMovementM": 1.0358876924136597e-07,
+      "headSurfaceMaxM": 1.5981071096445439e-10,
+      "fullFootSurfaceMaxM": 0.0,
+      "originalFullMeshFloorY": 0.006701090376887744,
+      "correctedFullMeshFloorY": 0.006701090376887744
+    },
+    {
+      "phase": 0.25,
+      "maxSurfaceMovementM": 0.0244056143142637,
+      "headSurfaceMaxM": 0.0001897005597163298,
+      "fullFootSurfaceMaxM": 0.0,
+      "originalFullMeshFloorY": -0.002651254268694954,
+      "correctedFullMeshFloorY": -0.002651254268694954
+    },
+    {
+      "phase": 0.5,
+      "maxSurfaceMovementM": 0.02439854195069779,
+      "headSurfaceMaxM": 0.00016171558582609038,
+      "fullFootSurfaceMaxM": 0.0,
+      "originalFullMeshFloorY": -0.0036200459316521206,
+      "correctedFullMeshFloorY": -0.0036200459316521206
+    },
+    {
+      "phase": 0.75,
+      "maxSurfaceMovementM": 0.024412955575564072,
+      "headSurfaceMaxM": 0.00018138965895060625,
+      "fullFootSurfaceMaxM": 0.0,
+      "originalFullMeshFloorY": 0.007208802936852609,
+      "correctedFullMeshFloorY": 0.007208802936852609
+    },
+    {
+      "phase": 1,
+      "maxSurfaceMovementM": 1.372713448199027e-08,
+      "headSurfaceMaxM": 0.0,
+      "fullFootSurfaceMaxM": 0.0,
+      "originalFullMeshFloorY": 0.007000015410013708,
+      "correctedFullMeshFloorY": 0.007000015410013708
+    }
+  ],
+  "originalClipPayloadsBitExact": true,
+  "originalSourceFileStillExact": true,
+  "limits": "GLB numerical proof, not Unity/iPhone/visual acceptance. Derivedanimationintentionallymovesarmsviajointgirdle."
+}

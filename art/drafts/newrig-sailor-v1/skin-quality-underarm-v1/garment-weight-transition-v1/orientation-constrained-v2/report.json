@@ -1,0 +1,270 @@
+{
+  "status": "OFFLINE_ORIENTATION_CONSTRAINED_NO_ENGINE_ACCEPTANCE",
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "rejectedCandidatesPreserved": "../offline-candidates-v1/",
+  "fieldModel": "Per-vertex local backtracking; WendlandC2 six-mm intrinsic support; half attenuation at offending triangle/one-ring neighborhood.",
+  "orientationCriterion": "dot(original posed normal,new normal)>=0; no new area<1e-18m\u00b2. Opposed-baseline-normal is NOT a self-intersection proof.",
+  "allIncidentTriangles": 14456,
+  "history": [
+    {
+      "iteration": 0,
+      "opposed": 7,
+      "newCollapsed": 0,
+      "fieldMin": 0.5,
+      "fieldMedian": 0.5,
+      "fieldMax": 0.5,
+      "witnesses": [
+        {
+          "originalTriangleID": 211516,
+          "vertexIDs": [
+            607497,
+            609781,
+            609526
+          ],
+          "baselineNormal": [
+            -5.120047219072335e-08,
+            2.16339153647867e-07,
+            -1.157366506154476e-07
+          ],
+          "candidateNormal": [
+            1.9322839308144652e-08,
+            -1.4532582177009192e-07,
+            1.395180814603369e-07
+          ],
+          "normalDot": -4.857635923007749e-14,
+          "cosine": -0.9576534618519809,
+          "beforeAreaMm2": 0.12531868381182296,
+          "afterAreaMm2": 0.10119073777581389
+        },
+        {
+          "originalTriangleID": 211519,
+          "vertexIDs": [
+            604169,
+            607497,
+            609526
+          ],
+          "baselineNormal": [
+            -6.387524945695438e-08,
+            1.9707682639036733e-07,
+            -1.2111868074928814e-07
+          ],
+          "candidateNormal": [
+            1.559404367255045e-08,
+            -4.196710667915418e-08,
+            1.3142993392143084e-07
+          ],
+          "normalDot": -2.5185437834270313e-14,
+          "cosine": -0.7558677739471463,
+          "beforeAreaMm2": 0.11998860135418604,
+          "afterAreaMm2": 0.06942305051579158
+        },
+        {
+          "originalTriangleID": 271766,
+          "vertexIDs": [
+            696528,
+            697728,
+            706631
+          ],
+          "baselineNormal": [
+            -4.219060935339515e-07,
+            -5.807408159353687e-07,
+            1.964640554045029e-07
+          ],
+          "candidateNormal": [
+            -9.69312180125811e-07,
+            6.51455263500771e-07,
+            -1.5266604348418897e-06
+          ],
+          "normalDot": -2.6930184619370906e-13,
+          "cosine": -0.18825714382288636,
+          "beforeAreaMm2": 0.3721097862594925,
+          "afterAreaMm2": 0.9610738975483023
+        },
+        {
+          "originalTriangleID": 271835,
+          "vertexIDs": [
+            665364,
+            663302,
+            667291
+          ],
+          "baselineNormal": [
+            1.902977929868287e-07,
+            -5.11876817032533e-07,
+            1.5129235519614454e-06
+          ],
+          "candidateNormal": [
+            -1.4148743103126076e-07,
+            1.5645189115767802e-06,
+            -6.159202640817676e-08
+          ],
+          "normalDot": -9.209497338717123e-13,
+          "cosine": -0.36420042810635844,
+          "beforeAreaMm2": 0.8042339211806866,
+          "afterAreaMm2": 0.7860552931470987
+        },
+        {
+          "originalTriangleID": 271842,
+          "vertexIDs": [
+            665726,
+            667291,
+            663302
+          ],
+          "baselineNormal": [
+            1.8493942311257778e-07,
+            -4.1671960786965407e-07,
+            1.4712487927292805e-06
+          ],
+          "candidateNormal": [
+            -1.0250869724316031e-07,
+            1.0316007131404444e-06,
+            2.0944062897695473e-07
+          ],
+          "normalDot": -1.4070687145930764e-13,
+          "cosine": -0.08637464498177104,
+          "beforeAreaMm2": 0.7701348634998315,
+          "afterAreaMm2": 0.5288131620498457
+        },
+        {
+          "originalTriangleID": 271843,
+          "vertexIDs": [
+            671060,
+            665726,
+            667008
+          ],
+          "baselineNormal": [
+            1.1933832005469753e-07,
+            -1.697802032281923e-07,
+            1.1004294804514646e-06
+          ],
+          "candidateNormal": [
+            -1.6953667804992557e-07,
+            1.3457729093823337e-06,
+            -1.482419102915694e-07
+          ],
+          "normalDot": -4.1184758872334477e-13,
+          "cosine": -0.26953581351801603,
+          "beforeAreaMm2": 0.5599133847052515,
+          "afterAreaMm2": 0.6822431884596739
+        },
+        {
+          "originalTriangleID": 478899,
+          "vertexIDs": [
+            655226,
+            657834,
+            661217
+          ],
+          "baselineNormal": [
+            1.2977511135131365e-08,
+            -1.3616261337061469e-09,
+            3.964454060112432e-08
+          ],
+          "candidateNormal": [
+            -4.8207496069235244e-08,
+            3.052849372951162e-10,
+            -1.2153090940758343e-07
+          ],
+          "normalDot": -5.444066073284653e-15,
+          "cosine": -0.9976652262657614,
+          "beforeAreaMm2": 0.020868393687971318,
+          "afterAreaMm2": 0.06537166400205927
+        }
+      ]
+    },
+    {
+      "iteration": 1,
+      "opposed": 1,
+      "newCollapsed": 0,
+      "fieldMin": 0.25,
+      "fieldMedian": 0.5,
+      "fieldMax": 0.5,
+      "witnesses": [
+        {
+          "originalTriangleID": 478899,
+          "vertexIDs": [
+            655226,
+            657834,
+            661217
+          ],
+          "baselineNormal": [
+            1.2977511135131365e-08,
+            -1.3616261337061469e-09,
+            3.964454060112432e-08
+          ],
+          "candidateNormal": [
+            -1.7466110140948153e-08,
+            6.23243344492915e-11,
+            -4.0858765167425866e-08
+          ],
+          "normalDot": -1.8465784758759567e-15,
+          "cosine": -0.9956790049681786,
+          "beforeAreaMm2": 0.020868393687971318,
+          "afterAreaMm2": 0.022217715784848636
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "opposed": 1,
+      "newCollapsed": 0,
+      "fieldMin": 0.125,
+      "fieldMedian": 0.5,
+      "fieldMax": 0.5,
+      "witnesses": [
+        {
+          "originalTriangleID": 478899,
+          "vertexIDs": [
+            655226,
+            657834,
+            661217
+          ],
+          "baselineNormal": [
+            1.2977511135131365e-08,
+            -1.3616261337061469e-09,
+            3.964454060112432e-08
+          ],
+          "candidateNormal": [
+            -2.1990294698725963e-09,
+            -5.000357132802666e-10,
+            -5.864041022133509e-10
+          ],
+          "normalDot": -5.1104788975627884e-17,
+          "cosine": -0.5254812457283824,
+          "beforeAreaMm2": 0.020868393687971318,
+          "afterAreaMm2": 0.0011650789774749718
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "opposed": 0,
+      "newCollapsed": 0,
+      "fieldMin": 0.0625,
+      "fieldMedian": 0.5,
+      "fieldMax": 0.5,
+      "witnesses": []
+    }
+  ],
+  "backtrackingSteps": 3,
+  "protectedWeightChanges": 0,
+  "fixedWeightChanges": 0,
+  "max4ProjectionResidual": 0,
+  "positiveOriginalSupportRetained": true,
+  "float32StorageMaxComponentError": 2.9800342304930894e-08,
+  "sumMaxDeviation": 2.384185791015625e-07,
+  "freeVertexLambdaQuantiles": {
+    "min": 0.0625,
+    "p25": 0.5,
+    "median": 0.5,
+    "p75": 0.5,
+    "max": 0.5
+  },
+  "freeVerticesStillExactlyHalf": 4478,
+  "maxPredictedDance50DeltaM": 0.0024878866004103355,
+  "elapsedSeconds": 0.1754403329687193,
+  "limits": [
+    "Only frozen dance50 source checked; all other poses and actual Blender readback/visual review pending.",
+    "No strict strain/contour/skin-intersection acceptance inferred from orientation feasibility.",
+    "Field changes weights only within reviewed cloth graph; no geometry/UV/maps/bind/source file mutation."
+  ]
+}

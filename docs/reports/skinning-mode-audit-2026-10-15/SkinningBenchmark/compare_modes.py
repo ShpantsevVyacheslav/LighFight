@@ -14,7 +14,7 @@ def matrices(path):
  if offset!=len(data):raise ValueError('Invalid pose matrix fixture')
  return np.asarray(out)
 rows=[];fail=[]
-builds=root.parent/'DenseSkinningBuilds'
+builds=root.parent if (root.parent/'input-dependencies-CPU.txt').is_file() else root.parent/'DenseSkinningBuilds'
 reference=(builds/'input-dependencies-CPU.txt').read_bytes()
 for mode,value in [('CPU',0),('GPU',1),('GPUBatched',2)]:
  if (builds/f'input-dependencies-{mode}.txt').read_bytes()!=reference:fail.append(mode+': dependency SHA list differs')

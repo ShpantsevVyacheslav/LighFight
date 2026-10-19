@@ -1,0 +1,39 @@
+{
+  "schema": "native67-full-density-recipe/2",
+  "status": "MASTER_CANDIDATE_ROSTER_TRANSFER_PENDING",
+  "parent": {
+    "path": "art/drafts/full-roster-v1/sailor-guard-v3-recipe.json",
+    "sha256": "3fc26210140bcdf87efead8ed26837b6bd0bf1b2936e4d30fa7ed68d839172bd"
+  },
+  "weightTransport": {
+    "authority": "all positive source Float32 coefficients from derived rig FBX oracle",
+    "unityImportedWeights": "Never authority: import can quantize and drop positive support despite Custom255/minWeight0",
+    "geometryCorrespondence": "Exact integer source-ID UV, complete original coverage; UV seams reuse named source coefficients",
+    "GPUInput": "StructuredBuffer<float>, bit-exact readback required",
+    "supportPruning": false,
+    "topNLimit": null
+  },
+  "motion": {
+    "guardLoopOverlapKeys": 24,
+    "sampleHz": 96,
+    "twistBoundaryFadeSeconds": 0.25,
+    "guardDanceReturnBlendSeconds": 0.35,
+    "nativeStrikes": "Uncorrected in baseline; separate per-character verification required"
+  },
+  "gates": [
+    "Full geometry/UV/maps preserved",
+    "Named positive coefficient support and values preserved across export",
+    "Source-ID coverage across Unity UV seams",
+    "Float32 buffer readback bit exact",
+    "GPU position vs independent CPU double max1um on actual hardware",
+    "Guard seam local TRS endpoints and guard-return boundaries",
+    "Full-density surface inspection with source weights, multiple views",
+    "Combat contact pose ordering and phone validation separately"
+  ],
+  "masterEvidence": {
+    "motion": "master-motion-continuity/report.json",
+    "gpu": "master-float32-gpu.json",
+    "surface": "master-unity-recipe/report.json"
+  },
+  "promotion": "No game catalog promotion by these review scripts"
+}

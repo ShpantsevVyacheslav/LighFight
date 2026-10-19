@@ -1,0 +1,54 @@
+{
+  "status": "PREPARED_OFFLINE_NO_ENGINE_NO_CANDIDATE",
+  "pureKernelTests": "4/4 PASS",
+  "referenceCompile": "Python py_compile PASS, Blender API not executed",
+  "sourceGeometryVertices": 994452,
+  "sourceTriangles": 1988914,
+  "nativeBones": 67,
+  "influenceCap": null,
+  "minWeightThreshold": null,
+  "files": [
+    {
+      "path": "SPATIAL-CANDIDATE-PLAN.md",
+      "bytes": 6784,
+      "sha256": "314c4bb73459c82d75a46f14bf9cb3648a27e6de17fe6c72b042b17fbca16663"
+    },
+    {
+      "path": "tools/build_spatial_candidate.py",
+      "bytes": 13159,
+      "sha256": "bddca9c662e52c4a4cde18260bad74acb77216da896957a886530f169047d04e"
+    },
+    {
+      "path": "tools/spatial_core.py",
+      "bytes": 1066,
+      "sha256": "d9c1007b09121d5d880b86ae92dac5bb53dd37b2ce8be0ad3ca901f7e596aa31"
+    },
+    {
+      "path": "tools/test_spatial_core.py",
+      "bytes": 1171,
+      "sha256": "5a05b9f585a2c64717c9a735960e4482f1dc9599fdbec5558165881ab66430ea"
+    },
+    {
+      "path": "tools/source_loader_contract.py",
+      "bytes": 1054,
+      "sha256": "56067874db2d85e4832b518a5978c0c0069aa6afdd9ae9a24c2a8c31abc60663"
+    },
+    {
+      "path": "tools/test_loader_contract.py",
+      "bytes": 1144,
+      "sha256": "ff55015801e1a26dad6fe20e6366d8f1458e4eac039ee73fcd27483eb6b1f60a"
+    },
+    {
+      "path": "source-loader-contract-audit.json",
+      "bytes": 1140,
+      "sha256": "543647209db1c10124597442f59842d488854844c1331e833a098c6f841e2946"
+    }
+  ],
+  "allRestBudgetSeconds": 180,
+  "fullCandidateProposedBudgetSeconds": 900,
+  "fullCandidateAuthorized": false,
+  "engineLaunched": false,
+  "requiredFreeDiskGiB": 8,
+  "latestPreflightFailure": "v1 KeyError clips before BVH; fixed nested loader namespace offline, not rerun",
+  "namespaceTests": "4/4 PASS; static expected keys verified; runtime namespace validation pending"
+}

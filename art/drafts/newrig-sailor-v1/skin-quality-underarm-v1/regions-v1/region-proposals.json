@@ -1,0 +1,232 @@
+{
+  "status": "PROVISIONAL_ENVELOPES_REQUIRE_VISUAL_REVIEW",
+  "sourceIndexedNPZ": "/Users/macbook1/Documents/ChatGPT/LighFight/art/drafts/newrig-sailor-v1/dense-def-fbx-packet-v1/original-indexed-attributes.npz",
+  "sourceIndexedSHA256": "83c3bf5070bd8e73e755c659789a29beebc997e765fdd4a9575a3ebd13c6b437",
+  "sourceVertices": 994452,
+  "sourceTriangles": 1988914,
+  "sourceAttributes": {
+    "positions": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+    "loopVertexIndices": "913bf15127fcfb278aedde385f25f3c9082a01c51b25830273d9bc54580f6ece",
+    "polygonStarts": "7b638feadc801e5555a8882879c9d17a5b2e449938fae59482d0cda848f41592",
+    "polygonSizes": "fe358a84c21edb88d379da0bc51c52f6ec4a2f16b1202228d5983c9e4bd4f3ef",
+    "uv:UVMap": "fc17a82cdb13bbd091ec2a28116a5fa5100a762bb23a273e2b614c24fe30eec4"
+  },
+  "selectionConfig": {
+    "HworldM": 0.979980466815771,
+    "neckWorld": [
+      6.468378748410489e-16,
+      0.011045069433748722,
+      0.8289192914962769
+    ],
+    "chestUp": [
+      4.440892286626485e-15,
+      -0.0035890469297358064,
+      0.9999935593503272
+    ],
+    "lateralL": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "forward": [
+      0.0,
+      -0.9999935593503272,
+      -0.0035890469297358064
+    ],
+    "units": "Blender world metres",
+    "selection": "bone-derived geometry envelopes, NOT manually verified garment boundaries"
+  },
+  "maskNPZ": "region-proposals.npz",
+  "maskSHA256": "03780bb62f3e6e500aec31ea3a7c7f33eb13d157e4e5834ebc40796e6f0e8a45",
+  "regions": {
+    "head_anchor_proposal": {
+      "count": 107125,
+      "worldBoundsMin": [
+        -0.05681610852479935,
+        -0.07933803948261531,
+        0.8531799342078423
+      ],
+      "worldBoundsMax": [
+        0.06010819226503372,
+        0.06559758202141575,
+        0.9799804684932324
+      ]
+    },
+    "upper_neck_anchor_proposal": {
+      "count": 2701,
+      "worldBoundsMin": [
+        -0.027431484311819077,
+        -0.03305813727176387,
+        0.8366699227243195
+      ],
+      "worldBoundsMax": [
+        0.027439119294285774,
+        0.05503467777781324,
+        0.8633422831367923
+      ]
+    },
+    "collar_proposal": {
+      "count": 43526,
+      "worldBoundsMin": [
+        -0.11269380152225494,
+        -0.05862423818990863,
+        0.7846679701978528
+      ],
+      "worldBoundsMax": [
+        0.11269380897283554,
+        0.0876999244556545,
+        0.8437499977711097
+      ]
+    },
+    "central_chest_measure": {
+      "count": 23921,
+      "worldBoundsMin": [
+        -0.053894057869911194,
+        -0.0863799904227215,
+        0.6423950231844825
+      ],
+      "worldBoundsMax": [
+        0.05389785394072533,
+        0.09780125333744825,
+        0.7703552206616696
+      ]
+    },
+    "sleeve_armhole_L": {
+      "count": 22987,
+      "worldBoundsMin": [
+        0.05578995123505592,
+        -0.05150221509947853,
+        0.6999206514707023
+      ],
+      "worldBoundsMax": [
+        0.1695709377527237,
+        0.08325197887015602,
+        0.8117065419052463
+      ]
+    },
+    "lateral_deltoid_L": {
+      "count": 18773,
+      "worldBoundsMin": [
+        0.1105041652917862,
+        -0.0329971176234384,
+        0.6980438241583726
+      ],
+      "worldBoundsMax": [
+        0.1796875149011612,
+        0.08394625341232903,
+        0.8085021957425701
+      ]
+    },
+    "medial_trapezius_L": {
+      "count": 26411,
+      "worldBoundsMin": [
+        0.02449989505112171,
+        -0.05575177913086788,
+        0.7453918481234395
+      ],
+      "worldBoundsMax": [
+        0.11959841102361679,
+        0.09597019389998124,
+        0.846618650564073
+      ]
+    },
+    "torso_underarm_L": {
+      "count": 40930,
+      "worldBoundsMin": [
+        0.03900529444217682,
+        -0.08915709208240179,
+        0.6231536891751954
+      ],
+      "worldBoundsMax": [
+        0.12089540809392929,
+        0.09764102985363822,
+        0.775512691312437
+      ]
+    },
+    "elbow_distal_anchor_L": {
+      "count": 46256,
+      "worldBoundsMin": [
+        0.1148224025964737,
+        -0.08189393660619981,
+        0.4819240595915627
+      ],
+      "worldBoundsMax": [
+        0.2423858940601349,
+        0.039955144508879346,
+        0.6858367918876077
+      ]
+    },
+    "sleeve_armhole_R": {
+      "count": 23735,
+      "worldBoundsMin": [
+        -0.1737976223230362,
+        -0.05009456950407689,
+        0.6995086642277093
+      ],
+      "worldBoundsMax": [
+        -0.056312572211027145,
+        0.08229833462553324,
+        0.8116149889660229
+      ]
+    },
+    "lateral_deltoid_R": {
+      "count": 19784,
+      "worldBoundsMin": [
+        -0.1817627102136612,
+        -0.03511424474150848,
+        0.6975402838613531
+      ],
+      "worldBoundsMax": [
+        -0.1105041578412056,
+        0.08325963677706483,
+        0.8091125474186227
+      ]
+    },
+    "medial_trapezius_R": {
+      "count": 27367,
+      "worldBoundsMin": [
+        -0.1195984035730362,
+        -0.05651852583067791,
+        0.7453918480652447
+      ],
+      "worldBoundsMax": [
+        -0.024520879611372948,
+        0.0962448669775881,
+        0.8465576153497951
+      ]
+    },
+    "torso_underarm_R": {
+      "count": 42321,
+      "worldBoundsMin": [
+        -0.12089540809392929,
+        -0.08824154982681887,
+        0.6231842075940515
+      ],
+      "worldBoundsMax": [
+        -0.039001476019620895,
+        0.0972672035616933,
+        0.7755737265784051
+      ]
+    },
+    "elbow_distal_anchor_R": {
+      "count": 45308,
+      "worldBoundsMin": [
+        -0.2418365776538849,
+        -0.08190150640659126,
+        0.4819355036593459
+      ],
+      "worldBoundsMax": [
+        -0.11481477320194244,
+        0.03985982919595281,
+        0.6870422368105193
+      ]
+    }
+  },
+  "reviewed": false,
+  "limitations": [
+    "No weights were used to infer leakage.",
+    "Envelopes may overlap and may include torso/sleeve together; inspect mask renders before anatomical interpretation.",
+    "Collar proposal is not a proven clothing seam or an automatic pinned region.",
+    "No vertex/weight/material/source-file mutation."
+  ]
+}

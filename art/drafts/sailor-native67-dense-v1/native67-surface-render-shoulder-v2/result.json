@@ -1,0 +1,305 @@
+{
+    "status": "SURFACE_NUMERIC_PASS_FRAMEBUFFER_REPEAT_RED_NO_PROMOTION",
+    "error": "",
+    "device": "Apple M1",
+    "api": "Metal",
+    "unity": "6000.3.26f1",
+    "allPositiveInputsExact": true,
+    "originalMapsBytesUnchanged": true,
+    "seamVertices": 1305574,
+    "originalVertices": 994452,
+    "triangles": 1988914,
+    "positiveCoefficients": 2608534,
+    "maximumInfluences": 7,
+    "smallestWeight": 1.7814954844652676e-7,
+    "weightPacket": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/native67-bary-weight-packet-v1",
+    "weightPacketSHA256": "393fa311fbc639a310bfe0b4946a844aa9e478c3a5a81ad291b91e899490e59c",
+    "skinningMethod": "LinearBlend_all_positive_Float32",
+    "poseAdjustment": "DERIVED clavicle raise<=16deg; upper-arm world orientation retained; wrist translation<=3cm gate. Source curves/bind unchanged.",
+    "maxRigidMatrixOrthogonalityError": 0.0,
+    "rigidProjectionGate": "DQS variant2 explicitly projects near-rigid matrices to unit quaternion+original translation. Every positive-support seam/bone point must move <=10um world from original matrix; orthogonality guard2e-4/determinant positive. Does not alter source bones or curves. Variant1 exact-near-rigidity1e-5 gate rejected and retained.",
+    "normalConvention": "Linear blended bone normal; normalize. Linear blended tangent; Gram-Schmidt to normal; preserve source tangent.w. Not corrective geometry or a proof of surface derivative normals.",
+    "poses": [
+        {
+            "clip": "dance_01",
+            "phase": 0.44999998807907107,
+            "seconds": 10.424999237060547,
+            "shoulderCorrection": [
+                {
+                    "side": "Left",
+                    "armElevationDeg": 63.66659164428711,
+                    "raiseDeg": 7.4669880867004398,
+                    "clavicleLengthBeforeM": 0.08084835112094879,
+                    "clavicleLengthAfterM": 0.0808483436703682,
+                    "neckGapBeforeM": 0.06561890244483948,
+                    "neckGapAfterM": 0.05663424730300903,
+                    "acromionShiftM": 0.010529041290283203,
+                    "wristShiftM": 0.010528912767767907,
+                    "upperArmRotationChangeDeg": 0.000006389057034539292,
+                    "neckShiftM": 0.0
+                },
+                {
+                    "side": "Right",
+                    "armElevationDeg": 88.57991027832031,
+                    "raiseDeg": 15.489635467529297,
+                    "clavicleLengthBeforeM": 0.08084864169359207,
+                    "clavicleLengthAfterM": 0.0808485820889473,
+                    "neckGapBeforeM": 0.051391322165727618,
+                    "neckGapAfterM": 0.030426673591136934,
+                    "acromionShiftM": 0.02179049886763096,
+                    "wristShiftM": 0.02179054357111454,
+                    "upperArmRotationChangeDeg": 0.000014286365512816701,
+                    "neckShiftM": 0.0
+                }
+            ],
+            "maxWorldPositionErrorM": 1.633522955894223e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9082797564351495e-7,
+            "maxTangentVectorError": 0.000004508826350502204,
+            "maxTangentOrthogonality": 0.000004462146080186358,
+            "prunedMaxWorldPositionDifferenceM": 0.014759967103600502,
+            "prunedDifferenceQuantilesM": [
+                0.00005247049193712883,
+                0.0009125936776399612,
+                0.002988736145198345,
+                0.014759967103600502
+            ],
+            "files": [
+                "dance_01-45-front-full-pruned-emulated.png",
+                "dance_01-45-front-full-full-float.png",
+                "dance_01-45-front-shoulders-pruned-emulated.png",
+                "dance_01-45-front-shoulders-full-float.png",
+                "dance_01-45-quarter-shoulders-pruned-emulated.png",
+                "dance_01-45-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 83,
+            "repeatChangedBytes": 978
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.5,
+            "seconds": 11.583333015441895,
+            "shoulderCorrection": [
+                {
+                    "side": "Left",
+                    "armElevationDeg": 72.15239715576172,
+                    "raiseDeg": 10.80675220489502,
+                    "clavicleLengthBeforeM": 0.08084836602210999,
+                    "clavicleLengthAfterM": 0.08084839582443237,
+                    "neckGapBeforeM": 0.057460229843854907,
+                    "neckGapAfterM": 0.04343912750482559,
+                    "acromionShiftM": 0.015226513147354126,
+                    "wristShiftM": 0.015226442366838456,
+                    "upperArmRotationChangeDeg": 0.000023412709197145887,
+                    "neckShiftM": 0.0
+                },
+                {
+                    "side": "Right",
+                    "armElevationDeg": 74.08290100097656,
+                    "raiseDeg": 11.522148132324219,
+                    "clavicleLengthBeforeM": 0.08084847778081894,
+                    "clavicleLengthAfterM": 0.08084852248430252,
+                    "neckGapBeforeM": 0.06811903417110443,
+                    "neckGapAfterM": 0.05429377406835556,
+                    "acromionShiftM": 0.01623116247355938,
+                    "wristShiftM": 0.016231108456850053,
+                    "upperArmRotationChangeDeg": 0.000016018213500501588,
+                    "neckShiftM": 0.0
+                }
+            ],
+            "maxWorldPositionErrorM": 1.6243555537977365e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9768624781590916e-7,
+            "maxTangentVectorError": 0.000002988342430398916,
+            "maxTangentOrthogonality": 0.0000029270624963828597,
+            "prunedMaxWorldPositionDifferenceM": 0.012393158860504628,
+            "prunedDifferenceQuantilesM": [
+                0.0000804409573902376,
+                0.0010133007308468223,
+                0.002749611623585224,
+                0.012393158860504628
+            ],
+            "files": [
+                "dance_01-50-front-full-pruned-emulated.png",
+                "dance_01-50-front-full-full-float.png",
+                "dance_01-50-front-shoulders-pruned-emulated.png",
+                "dance_01-50-front-shoulders-full-float.png",
+                "dance_01-50-quarter-shoulders-pruned-emulated.png",
+                "dance_01-50-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 61,
+            "repeatChangedBytes": 7745
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.550000011920929,
+            "seconds": 12.741666793823243,
+            "shoulderCorrection": [
+                {
+                    "side": "Left",
+                    "armElevationDeg": 48.74822998046875,
+                    "raiseDeg": 2.1352057456970217,
+                    "clavicleLengthBeforeM": 0.08084851503372193,
+                    "clavicleLengthAfterM": 0.08084845542907715,
+                    "neckGapBeforeM": 0.07097609341144562,
+                    "neckGapAfterM": 0.06863079220056534,
+                    "acromionShiftM": 0.003012743778526783,
+                    "wristShiftM": 0.0030127118807286026,
+                    "upperArmRotationChangeDeg": 0.000020773210053448565,
+                    "neckShiftM": 0.0
+                },
+                {
+                    "side": "Right",
+                    "armElevationDeg": 36.74369430541992,
+                    "raiseDeg": 0.039754170924425128,
+                    "clavicleLengthBeforeM": 0.08084850758314133,
+                    "clavicleLengthAfterM": 0.08084854483604431,
+                    "neckGapBeforeM": 0.06981410086154938,
+                    "neckGapAfterM": 0.0697704404592514,
+                    "acromionShiftM": 0.0000561052693228703,
+                    "wristShiftM": 0.000056075528846122324,
+                    "upperArmRotationChangeDeg": 0.000002414836444586399,
+                    "neckShiftM": 0.0
+                }
+            ],
+            "maxWorldPositionErrorM": 1.7094588934027349e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.8907454091277033e-7,
+            "maxTangentVectorError": 0.0000056095104810083289,
+            "maxTangentOrthogonality": 0.000005597247309196973,
+            "prunedMaxWorldPositionDifferenceM": 0.008978244848549366,
+            "prunedDifferenceQuantilesM": [
+                0.00007649984763702378,
+                0.000911251176148653,
+                0.0021231207065284254,
+                0.008978244848549366
+            ],
+            "files": [
+                "dance_01-55-front-full-pruned-emulated.png",
+                "dance_01-55-front-full-full-float.png",
+                "dance_01-55-front-shoulders-pruned-emulated.png",
+                "dance_01-55-front-shoulders-full-float.png",
+                "dance_01-55-quarter-shoulders-pruned-emulated.png",
+                "dance_01-55-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 34,
+            "repeatChangedBytes": 175
+        },
+        {
+            "clip": "box_02",
+            "phase": 0.3499999940395355,
+            "seconds": 0.9770833253860474,
+            "shoulderCorrection": [
+                {
+                    "side": "Left",
+                    "armElevationDeg": 75.23340606689453,
+                    "raiseDeg": 11.93459701538086,
+                    "clavicleLengthBeforeM": 0.0808483436703682,
+                    "clavicleLengthAfterM": 0.0808483436703682,
+                    "neckGapBeforeM": 0.04889614135026932,
+                    "neckGapAfterM": 0.032712146639823917,
+                    "acromionShiftM": 0.016810106113553048,
+                    "wristShiftM": 0.01681012660264969,
+                    "upperArmRotationChangeDeg": 0.000016378218788304366,
+                    "neckShiftM": 0.0
+                },
+                {
+                    "side": "Right",
+                    "armElevationDeg": 56.1417236328125,
+                    "raiseDeg": 4.559667587280273,
+                    "clavicleLengthBeforeM": 0.08084863424301148,
+                    "clavicleLengthAfterM": 0.08084864914417267,
+                    "neckGapBeforeM": 0.046731866896152499,
+                    "neckGapAfterM": 0.04060516506433487,
+                    "acromionShiftM": 0.006432338152080774,
+                    "wristShiftM": 0.006432345602661371,
+                    "upperArmRotationChangeDeg": 0.000020843270249315538,
+                    "neckShiftM": 0.0
+                }
+            ],
+            "maxWorldPositionErrorM": 1.1568995429383171e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.9768624781590916e-7,
+            "maxTangentVectorError": 0.0000032150960578292144,
+            "maxTangentOrthogonality": 0.000003214168373233406,
+            "prunedMaxWorldPositionDifferenceM": 0.012796569615602494,
+            "prunedDifferenceQuantilesM": [
+                0.00011042238475056365,
+                0.0011306572705507279,
+                0.002718189265578985,
+                0.012796569615602494
+            ],
+            "files": [
+                "box_02-35-front-full-pruned-emulated.png",
+                "box_02-35-front-full-full-float.png",
+                "box_02-35-front-shoulders-pruned-emulated.png",
+                "box_02-35-front-shoulders-full-float.png",
+                "box_02-35-quarter-shoulders-pruned-emulated.png",
+                "box_02-35-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 38,
+            "repeatChangedBytes": 1916
+        },
+        {
+            "clip": "front_kick_01",
+            "phase": 0.3499999940395355,
+            "seconds": 0.875,
+            "shoulderCorrection": [
+                {
+                    "side": "Left",
+                    "armElevationDeg": 47.03709030151367,
+                    "raiseDeg": 1.673506259918213,
+                    "clavicleLengthBeforeM": 0.08084843307733536,
+                    "clavicleLengthAfterM": 0.08084838092327118,
+                    "neckGapBeforeM": 0.06403015553951264,
+                    "neckGapAfterM": 0.06204874813556671,
+                    "acromionShiftM": 0.0023613472003489734,
+                    "wristShiftM": 0.0023612978402525188,
+                    "upperArmRotationChangeDeg": 0.00001183023505291203,
+                    "neckShiftM": 0.0
+                },
+                {
+                    "side": "Right",
+                    "armElevationDeg": 35.41881561279297,
+                    "raiseDeg": 0.0023278703447431328,
+                    "clavicleLengthBeforeM": 0.08084858953952789,
+                    "clavicleLengthAfterM": 0.08084860444068909,
+                    "neckGapBeforeM": 0.06303608417510987,
+                    "neckGapAfterM": 0.06303337216377258,
+                    "acromionShiftM": 0.000003241199465264799,
+                    "wristShiftM": 0.00000342623025062494,
+                    "upperArmRotationChangeDeg": 0.000012778114069078583,
+                    "neckShiftM": 0.0
+                }
+            ],
+            "maxWorldPositionErrorM": 1.4662327965511944e-7,
+            "maxRigidProjectionWorldErrorM": 0.0,
+            "maxNormalVectorError": 1.884864389012364e-7,
+            "maxTangentVectorError": 0.000004273698777979007,
+            "maxTangentOrthogonality": 0.000004294904556445545,
+            "prunedMaxWorldPositionDifferenceM": 0.020978661254048349,
+            "prunedDifferenceQuantilesM": [
+                0.00007430458936141804,
+                0.0010049997363239527,
+                0.0025287787429988386,
+                0.020978661254048349
+            ],
+            "files": [
+                "front_kick_01-35-front-full-pruned-emulated.png",
+                "front_kick_01-35-front-full-full-float.png",
+                "front_kick_01-35-front-shoulders-pruned-emulated.png",
+                "front_kick_01-35-front-shoulders-full-float.png",
+                "front_kick_01-35-quarter-shoulders-pruned-emulated.png",
+                "front_kick_01-35-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 49,
+            "repeatChangedBytes": 4864
+        }
+    ],
+    "limits": "Editor snapshot harness with synchronous GPU readback then owned Mesh clone upload; NOT realtime implementation/performance/mobile acceptance. Normals/tangents checked vs independent CPU for full seam surface. Baseline is explicit CPU linear blend skinning of all imported typed weights, with normalized linear normals/orthogonalized linear tangents. DQS candidate has different positional AND normal deformation. NOT SMR.BakeMesh or whole-renderer parity. Blender native pose oracle remains separate. No production writes."
+}

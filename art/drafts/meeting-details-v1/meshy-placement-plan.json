@@ -1,0 +1,197 @@
+{
+  "status": "PLACEMENT_SPEC_ONLY_NOT_APPLIED",
+  "coordinates": "Authored glTF Y-up metres, camera looking +Z. Unity FBX handedness must be confirmed by import capture. Do not assume raw FBX node local axes.",
+  "fightVolumeGameplay": {
+    "x": [
+      -5.5,
+      5.5
+    ],
+    "y": [
+      0,
+      2.2
+    ],
+    "z": [
+      -2,
+      2
+    ]
+  },
+  "walls": {
+    "currentReview": {
+      "windowWallX": 3.46,
+      "oppositeWallX": -3.46,
+      "rugCenter": [
+        -3.38,
+        1.82,
+        3.25
+      ],
+      "rugPlane": "YZ",
+      "rugInwardNormal": [
+        1,
+        0,
+        0
+      ],
+      "rugWidthAlongZ": 2.48,
+      "rugHeight": 1.65
+    },
+    "gameplayDerivative": {
+      "windowWallX": 6.574,
+      "oppositeWallX": -6.574,
+      "rugCenter": [
+        -6.46,
+        1.82,
+        4.8
+      ],
+      "rugPlane": "YZ",
+      "rugInwardNormal": [
+        1,
+        0,
+        0
+      ],
+      "rugWidthAlongZ": 2.48,
+      "rugHeight": 1.65
+    }
+  },
+  "packages": [
+    {
+      "id": "coal-heater",
+      "source": "d0db36e9-f637-418d-b574-3f251abea789",
+      "dimensionsXYZ": [
+        0.17,
+        0.3,
+        0.19
+      ],
+      "reviewCenter": [
+        3.2,
+        1.07,
+        1.04
+      ],
+      "gameplayCenter": [
+        5.95,
+        1.07,
+        2.84
+      ],
+      "notes": "Black electric charcoal heater, silver upper lip and red coals. Generate appliance alone; box/tongs/cable separate props. Seat on sill y=.925."
+    },
+    {
+      "id": "yellow-ceramic",
+      "source": "5afeb6ae-6963-432b-9e74-e9afbbaa2281",
+      "dimensionsXYZ": [
+        0.18,
+        0.34,
+        0.16
+      ],
+      "reviewCenter": [
+        3.18,
+        1.1,
+        3.12
+      ],
+      "gameplayCenter": [
+        5.93,
+        1.1,
+        4.92
+      ],
+      "notes": "Yellow figurative ceramic bowl, black eye and red cheek details, dark metal top. Reference-derived recognizable silhouette."
+    },
+    {
+      "id": "red-cup",
+      "source": "5afeb6ae-6963-432b-9e74-e9afbbaa2281",
+      "dimensionsXYZ": [
+        0.15,
+        0.3,
+        0.15
+      ],
+      "reviewCenter": [
+        3.17,
+        1.08,
+        3.45
+      ],
+      "gameplayCenter": [
+        5.92,
+        1.08,
+        5.25
+      ],
+      "notes": "Tapered red plastic cup, white rim, open top; bottom on sill."
+    },
+    {
+      "id": "network-cabinet",
+      "source": "c9452e33-9bde-47b6-aad1-17e19d8b448c",
+      "dimensionsXYZ": [
+        1.04,
+        0.62,
+        0.24
+      ],
+      "reviewCenter": [
+        0.05,
+        2.05,
+        5.05
+      ],
+      "gameplayCenter": [
+        0.05,
+        2.05,
+        6.85
+      ],
+      "notes": "Wall mounted white cabinet with dark glass and blue vertical trims; top black WiFi router and vertical antennas. Door faces -Z."
+    },
+    {
+      "id": "beanbag",
+      "source": "f744a707-98b4-4f09-bfd6-cf93abe3885d",
+      "dimensionsXYZ": [
+        1.14,
+        0.9,
+        1.08
+      ],
+      "reviewCenter": [
+        -2.75,
+        0.45,
+        4.45
+      ],
+      "gameplayCenter": [
+        -5.5,
+        0.45,
+        6.25
+      ],
+      "notes": "Soft creased slate-grey beanbag, ground contact y=0, not regular spheres."
+    },
+    {
+      "id": "trailing-plant",
+      "source": "e01f4ea1-60b3-431f-8e06-dbd2356ddbc8",
+      "dimensionsXYZ": [
+        0.4,
+        0.44,
+        1.5
+      ],
+      "reviewCenter": [
+        0.25,
+        1.23,
+        2.8
+      ],
+      "gameplayCenter": [
+        0.25,
+        1.23,
+        4.6
+      ],
+      "notes": "Terra cotta pot and white saucer, visibly dark soil, irregular bent leaves and long vine along tabletop +Z. Table top about y=1.05. Leaf and stem surfaces must stay above tabletop."
+    },
+    {
+      "id": "rug",
+      "source": "6b06ad70-dbcf-4e91-b4eb-d3a2c63c3f43",
+      "dimensionsXYZ": [
+        0.02,
+        1.65,
+        2.48
+      ],
+      "reviewCenter": [
+        -3.38,
+        1.82,
+        3.25
+      ],
+      "gameplayCenter": [
+        -6.46,
+        1.82,
+        4.8
+      ],
+      "notes": "Flat textile mounted on wall opposite windows, normal+X. Improve border reconstruction; exclude photographed laptop/table/chair. Keep reference emblem and pink lettering."
+    }
+  ],
+  "pending": "Meshy output exact paths and scale normalization. Keep old manual objects hidden/replaced per package, never duplicate them."
+}

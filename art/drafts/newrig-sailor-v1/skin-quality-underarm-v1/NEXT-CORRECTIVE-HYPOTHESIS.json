@@ -1,0 +1,113 @@
+{
+  "status": "OFFLINE_HYPOTHESIS_NOT_EXECUTED_NOT_ACCEPTED",
+  "baseline": "fixed current C1 ON; original rest geometry/maps/weights archived unchanged",
+  "hypothesis": "At raised-arm/elbow-down phases, source surface preserves severe local sleeve/underarm strain after girdle lift. A localized posed-space cloth-contour corrective may redistribute the inner sleeve/armpit transition without reducing original triangles. This is not proof of a bone or weight root cause.",
+  "targetFirstCases": [
+    "dance50",
+    "selected-R-2",
+    "selected-L-0"
+  ],
+  "provisionalSpatialEnvelopes": {
+    "sleeve_armhole_L": {
+      "count": 22987,
+      "worldBoundsMin": [
+        0.05578995123505592,
+        -0.05150221509947853,
+        0.6999206514707023
+      ],
+      "worldBoundsMax": [
+        0.1695709377527237,
+        0.08325197887015602,
+        0.8117065419052463
+      ]
+    },
+    "sleeve_armhole_R": {
+      "count": 23735,
+      "worldBoundsMin": [
+        -0.1737976223230362,
+        -0.05009456950407689,
+        0.6995086642277093
+      ],
+      "worldBoundsMax": [
+        -0.056312572211027145,
+        0.08229833462553324,
+        0.8116149889660229
+      ]
+    },
+    "torso_underarm_L": {
+      "count": 40930,
+      "worldBoundsMin": [
+        0.03900529444217682,
+        -0.08915709208240179,
+        0.6231536891751954
+      ],
+      "worldBoundsMax": [
+        0.12089540809392929,
+        0.09764102985363822,
+        0.775512691312437
+      ]
+    },
+    "torso_underarm_R": {
+      "count": 42321,
+      "worldBoundsMin": [
+        -0.12089540809392929,
+        -0.08824154982681887,
+        0.6231842075940515
+      ],
+      "worldBoundsMax": [
+        -0.039001476019620895,
+        0.0972672035616933,
+        0.7755737265784051
+      ]
+    },
+    "medial_trapezius_L": {
+      "count": 26411,
+      "worldBoundsMin": [
+        0.02449989505112171,
+        -0.05575177913086788,
+        0.7453918481234395
+      ],
+      "worldBoundsMax": [
+        0.11959841102361679,
+        0.09597019389998124,
+        0.846618650564073
+      ]
+    },
+    "medial_trapezius_R": {
+      "count": 27367,
+      "worldBoundsMin": [
+        -0.1195984035730362,
+        -0.05651852583067791,
+        0.7453918480652447
+      ],
+      "worldBoundsMax": [
+        -0.024520879611372948,
+        0.0962448669775881,
+        0.8465576153497951
+      ]
+    }
+  },
+  "coordinateSpace": "Original Blender world metres, meshWorld applied exactly once; these AABBs are broad diagnostics, not final target masks.",
+  "designedCorrection": [
+    "Use fixed C1 ON source pose, source-albedo plus clay front/back/side contours.",
+    "Paint a garment-only inner-sleeve/side-torso transition mask after anatomical review; separate front/back cloth rather than all shoulder vertices.",
+    "Create one localized posed-space target per side initially, pulling stretched inner-sleeve contour toward a smooth continuous armpit-to-upperarm section; do not lower medial trapezius or flatten entire sleeve cap.",
+    "Invert the local LBS linear map to a rest-space morph delta only where well-conditioned; fail closed on singular/ill-conditioned vertices.",
+    "Smooth falloff must remain inside reviewed mask; unaffected vertex deltas exact zero. Keep original base rest surface unchanged.",
+    "Continuous pose-dependent activation from actual humerus elevation plus elbow flexion, with bounded C1 entry/exit; activation0 at neutral. No authored motion clamping."
+  ],
+  "anchorPolicy": "Do not force broad head/upper-neck envelope to zero: marker664129 is real lateral upper-neck/jaw boundary and its movement may be natural. Separate stable head core from naturally deforming neck only after explicit anatomical review, retain both original masks/evidence. Preserve elbows/distal arms beyond reviewed support and collar boundary appropriate to actual cloth; no pinning whole upper chest.",
+  "fences": [
+    "Compare to fixed C1 baseline at all11 poses; no source OFF baseline cherry-picking.",
+    "All original counts/UV/maps/bind/weights exact; only new versioned morph deltas.",
+    "No worsening local p99/worst strain or new collapse; report absolute edge lengths and worst original IDs.",
+    "Front/back/side silhouette continuity plus visible stripe flow; no concave notch, lifted sleeve ball or hidden underside tear.",
+    "Few targets (2 initially, maximum8); no per-frame fullmesh morph targets.",
+    "Full game-LBS export and independent Unity morph/pose parity before any promotion."
+  ],
+  "limits": [
+    "AABBs and existing masks overlap body/sleeve; no correction should run from these boxes alone.",
+    "The present8-sample source renders are diagnostic material/light witnesses, not calibrated final studio renders.",
+    "Shoulder sleeve residual remains open; no full-skin acceptance."
+  ]
+}

@@ -12,9 +12,10 @@ namespace LighFight.Runtime {
   private void LoadOptionsForDevice(bool mobile){attackBindings.Load("lf.attackButton.");shadowsEnabled=PlayerPrefs.GetInt("lf.shadows",1)==1;controlsScale=PlayerPrefs.GetFloat("lf.controlScale",1);controlsOpacity=PlayerPrefs.GetFloat("lf.controlOpacity",.75f);gesturesEnabled=PlayerPrefs.GetInt("lf.swipes",1)==1;graphicsQuality=PlayerPrefs.GetInt("lf.graphics",mobile?1:2);frameRate=PlayerPrefs.GetInt("lf.fps",mobile?30:60);soundEnabled=PlayerPrefs.GetInt("lf.sound",1)==1;cameraShake=PlayerPrefs.GetInt("lf.shake",1)==1;leftHanded=PlayerPrefs.GetInt("lf.left",0)==1;ApplyOptions();SetFightDiagnostics(PlayerPrefs.GetInt("lf.diagnostics",0)==1);}
   private void ApplyVisualQuality(){
    FightGraphicsQuality.ApplyGlobal(graphicsQuality,frameRate,shadowsEnabled);
+   if(arena){var spectators=arena.GetComponentInChildren<MeetingSpectators>(true);if(spectators)spectators.SetBudget(MeetingSpectators.BudgetForQuality(graphicsQuality));}
    FightGraphicsQuality.ApplyLights(gameObject,graphicsQuality,shadowsEnabled);
    foreach(var materials in GetComponentsInChildren<ShadowlessFighterMaterials>(true))materials.SetShadows(shadowsEnabled);
-   if(arena)foreach(var renderer in arena.GetComponentsInChildren<Renderer>(true)){renderer.receiveShadows=shadowsEnabled;renderer.shadowCastingMode=shadowsEnabled?UnityEngine.Rendering.ShadowCastingMode.On:UnityEngine.Rendering.ShadowCastingMode.Off;}
+   if(arena)foreach(var renderer in arena.GetComponentsInChildren<Renderer>(true)){renderer.receiveShadows=shadowsEnabled;renderer.shadowCastingMode=shadowsEnabled&&!renderer.GetComponentInParent<SeatedSpectatorPose>()?UnityEngine.Rendering.ShadowCastingMode.On:UnityEngine.Rendering.ShadowCastingMode.Off;}
    if(Application.isMobilePlatform&&!Application.isEditor){var resolution=GetComponent<MobileFightResolution>();if(!resolution)resolution=gameObject.AddComponent<MobileFightResolution>();resolution.Configure(FightGraphicsQuality.RenderScale(graphicsQuality));}
   }
   private void ApplyOptions(){graphicsQuality=FightGraphicsQuality.Tier(graphicsQuality);frameRate=FightGraphicsQuality.FrameRate(frameRate);ApplyVisualQuality();var audio=GetComponentsInChildren<AudioSource>(true);foreach(var source in audio)source.mute=!soundEnabled;

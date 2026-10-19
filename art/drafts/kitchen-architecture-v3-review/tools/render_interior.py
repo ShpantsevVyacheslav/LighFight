@@ -1,0 +1,10 @@
+"""Extra interior three-quarter view; read-only source, bounded six CPU threads."""
+import bpy,hashlib,json
+from pathlib import Path
+from mathutils import Vector
+ROOT=Path(__file__).resolve().parents[4];OUT=ROOT/'art/drafts/kitchen-architecture-v3-review';SOURCE=ROOT/'art/source/kitchen-tripo-v1/architecture-original-v3.glb';before=hashlib.sha256(SOURCE.read_bytes()).hexdigest()
+bpy.ops.object.select_all(action='SELECT');bpy.ops.object.delete(use_global=False);bpy.ops.import_scene.gltf(filepath=str(SOURCE));obj=next(o for o in bpy.context.scene.objects if o.type=='MESH');points=[obj.matrix_world@Vector(p) for p in obj.bound_box];lo=Vector([min(p[i] for p in points) for i in range(3)]);hi=Vector([max(p[i] for p in points) for i in range(3)]);center=(lo+hi)/2;span=max(hi-lo)
+s=bpy.context.scene;s.render.engine='CYCLES';s.cycles.device='CPU';s.cycles.samples=12;s.cycles.use_denoising=True;s.render.threads_mode='FIXED';s.render.threads=6;s.render.resolution_x=1000;s.render.resolution_y=1000;s.render.resolution_percentage=100;s.render.image_settings.file_format='PNG';s.world.color=(.14,.14,.14);s.view_settings.view_transform='AgX'
+for name,direction,power in [('ReviewKey',(-1,-2,3),120),('ReviewFill',(2,1,2),70)]:
+ d=bpy.data.lights.new(name,'AREA');d.energy=power;d.size=span*2;o=bpy.data.objects.new(name,d);s.collection.objects.link(o);o.location=center+Vector(direction)*span;o.rotation_euler=(center-o.location).to_track_quat('-Z','Y').to_euler()
+d=bpy.data.cameras.new('InteriorReview');camera=bpy.data.objects.new('InteriorReview',d);s.collection.objects.link(camera);s.camera=camera;d.type='ORTHO';d.ortho_scale=span*1.3;camera.location=center+Vector((-2,-3,2.1))*span;camera.rotation_euler=(center-camera.location).to_track_quat('-Z','Y').to_euler();s.render.filepath=str(OUT/'interior-threequarter.png');bpy.ops.render.render(write_still=True);assert hashlib.sha256(SOURCE.read_bytes()).hexdigest()==before;print('RESULT '+json.dumps({'sourceUnchanged':True,'sourceSHA256':before,'view':'interior-threequarter','threads':6}),flush=True)

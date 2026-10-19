@@ -1,0 +1,28 @@
+{
+  "status": "DIAGNOSTIC_NOT_ACCEPTED",
+  "method": "posed humeral radial envelope capped at1.15x original-rest radius with smooth local mask; inverse exact final LBS to rest-space morph",
+  "sides": [
+    {
+      "side": "L",
+      "maskedVertices": 30030,
+      "movedVertices": 7296,
+      "maxDesiredDisplacementM": 0.005423117812286124
+    },
+    {
+      "side": "R",
+      "maskedVertices": 30758,
+      "movedVertices": 2890,
+      "maxDesiredDisplacementM": 0.001536323366202503
+    }
+  ],
+  "targetCount": 1,
+  "changedVertices": 10331,
+  "maxRestSpaceDeltaM": 0.005634833465406091,
+  "collarCentralChestExactZero": true,
+  "basePositionsSHA256": "4ceb84eee0b245cd3891e32d249f541e7d7cdc2e8a92aaa8768caed34eef4314",
+  "limitations": [
+    "One selected dance pose only; not portable animation accepted.",
+    "15% radial-envelope design parameter, not source-authored anatomy.",
+    "No source mesh/UV/skin weight changes; proposed art corrective may alter silhouette."
+  ]
+}

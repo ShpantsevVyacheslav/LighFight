@@ -1,0 +1,63 @@
+{
+  "character.fbx": {
+    "sourceVertices": 63240,
+    "fbxVertices": 63240,
+    "surfaceNearestMax": 1.213438594049876e-07,
+    "weightMeanDifference": 0.0,
+    "weightMaxDifference": 0.0,
+    "verticesDifferingOverOnePercent": 0,
+    "worstExamples": []
+  },
+  "Meshy_AI_Island_Pattern_Portra_biped_Animation_Wave_One_Hand_withSkin.fbx": {
+    "sourceVertices": 63240,
+    "fbxVertices": 51540,
+    "surfaceNearestMax": 4.2535245370345365e-07,
+    "weightMeanDifference": 1.9402405898331393e-05,
+    "weightMaxDifference": 0.5,
+    "verticesDifferingOverOnePercent": 2,
+    "worstExamples": [
+      {
+        "position": [
+          0.23741749852315935,
+          -0.03699365930434333,
+          0.4426473146995027
+        ],
+        "weightMaxDifference": 0.5,
+        "glb": {
+          "LeftHandIndex2": 0.4983846843242645,
+          "LeftHandIndex1": 0.17963388562202454,
+          "LeftHandThumb3": 0.16593854129314423,
+          "LeftHandIndex3": 0.15604287385940552
+        },
+        "fbx": {
+          "LeftHandThumb3": 0.08296927064657211,
+          "LeftHandThumb4": 0.5,
+          "LeftHandIndex1": 0.08981694281101227,
+          "LeftHandIndex2": 0.24919234216213226,
+          "LeftHandIndex3": 0.07802143692970276
+        }
+      },
+      {
+        "position": [
+          -0.23637483818407734,
+          -0.038783849395237796,
+          0.43884709860655485
+        ],
+        "weightMaxDifference": 0.5,
+        "glb": {
+          "RightHandIndex4": 0.4135131239891052,
+          "RightHandThumb3": 0.24065710604190826,
+          "RightHandIndex1": 0.1948685497045517,
+          "RightHandIndex3": 0.150961235165596
+        },
+        "fbx": {
+          "RightHandThumb3": 0.12032855302095413,
+          "RightHandIndex1": 0.09743427485227585,
+          "RightHandIndex2": 0.5,
+          "RightHandIndex3": 0.075480617582798,
+          "RightHandIndex4": 0.2067565619945526
+        }
+      }
+    ]
+  }
+}

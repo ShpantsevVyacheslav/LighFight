@@ -1,0 +1,9 @@
+{
+  "name": "lightfight",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Local office fighting game",
+  "scripts": {
+    "test": "node --check fight-core.js && node --check game.js && node tests/combat.cjs && node tests/app.cjs"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "status": "TOPOLOGY_PROPOSAL_NOT_REVIEWED_NO_WEIGHT_CHANGE",
+  "sourceIndexedSHA256": "83c3bf5070bd8e73e755c659789a29beebc997e765fdd4a9575a3ebd13c6b437",
+  "vertices": 994452,
+  "triangles": 1988914,
+  "protected": 221624,
+  "allowedClothVertices": 93077,
+  "controlFaces": [
+    304975,
+    225310,
+    88778,
+    129382
+  ],
+  "intrinsicRadiusM": 0.025,
+  "patchVertices": 6380,
+  "fixedOuterBoundary": 343,
+  "componentSizes": [
+    4249,
+    2131
+  ],
+  "control0to1OriginalEdgeDistanceM": 0.07732027872069053,
+  "routeVertexCount": 74,
+  "controlCore4mmCounts": [
+    50,
+    69,
+    59,
+    120
+  ],
+  "unreachableAllowedVertices": 1,
+  "weightAudit": {
+    "wholePatch": [
+      [
+        "DEF-upper_arm.R.001",
+        0.4307718276977539
+      ],
+      [
+        "DEF-forearm.R",
+        0.29046279191970825
+      ],
+      [
+        "DEF-breast.R",
+        0.21805693209171295
+      ],
+      [
+        "DEF-spine.002",
+        0.0355435311794281
+      ],
+      [
+        "DEF-upper_arm.R",
+        0.013014682568609715
+      ],
+      [
+        "DEF-spine.001",
+        0.010584407486021519
+      ],
+      [
+        "DEF-forearm.R.001",
+        0.0015658632619306445
+      ]
+    ],
+    "domains": [
+      {
+        "control": 0,
+        "vertices": 2131,
+        "meanNamedWeights": [
+          [
+            "DEF-breast.R",
+            0.5857191681861877
+          ],
+          [
+            "DEF-upper_arm.R.001",
+            0.2397366464138031
+          ],
+          [
+            "DEF-spine.002",
+            0.10641376674175262
+          ],
+          [
+            "DEF-spine.001",
+            0.03168865293264389
+          ],
+          [
+            "DEF-upper_arm.R",
+            0.028590179979801178
+          ],
+          [
+            "DEF-forearm.R",
+            0.007851611822843552
+          ]
+        ]
+      },
+      {
+        "control": 1,
+        "vertices": 1922,
+        "meanNamedWeights": [
+          [
+            "DEF-upper_arm.R.001",
+            0.608288586139679
+          ],
+          [
+            "DEF-forearm.R",
+            0.31776732206344604
+          ],
+          [
+            "DEF-breast.R",
+            0.06530505418777466
+          ],
+          [
+            "DEF-upper_arm.R",
+            0.008639049716293812
+          ]
+        ]
+      },
+      {
+        "control": 2,
+        "vertices": 1272,
+        "meanNamedWeights": [
+          [
+            "DEF-forearm.R",
+            0.5132326483726501
+          ],
+          [
+            "DEF-upper_arm.R.001",
+            0.4633682072162628
+          ],
+          [
+            "DEF-breast.R",
+            0.013424603268504143
+          ],
+          [
+            "DEF-forearm.R.001",
+            0.005730114411562681
+          ],
+          [
+            "DEF-upper_arm.R",
+            0.004244422540068626
+          ]
+        ]
+      },
+      {
+        "control": 3,
+        "vertices": 1055,
+        "meanNamedWeights": [
+          [
+            "DEF-forearm.R",
+            0.5429762601852417
+          ],
+          [
+            "DEF-upper_arm.R.001",
+            0.45394355058670044
+          ],
+          [
+            "DEF-forearm.R.001",
+            0.0025606658309698105
+          ],
+          [
+            "DEF-breast.R",
+            0.0004201814881525934
+          ],
+          [
+            "DEF-upper_arm.R",
+            9.937789582181722e-05
+          ]
+        ]
+      }
+    ]
+  },
+  "camera": {
+    "file": "worst-edge-side.png",
+    "surfaceWitnessAllVerticesMaxM": 3.171580051096265e-07,
+    "cameraWorld": [
+      -1.7832188606262207,
+      0.12726424634456635,
+      0.7473041415214539
+    ],
+    "cameraTarget": [
+      0.2167810741828959,
+      0.12726424497061356,
+      0.6873041445586632
+    ],
+    "orthoScale": 0.32,
+    "material": "source-normal1",
+    "hemisphere": "correct R side -X",
+    "marker": "red145536/green146384/yellow ratio edge; cyan290465/magenta300366 absolute-excess edge; natural occlusion"
+  },
+  "limits": [
+    "Unreviewed control Voronoi domains, not anatomical partitions.",
+    "25mm is a diagnostic support proposal, not accepted correction radius.",
+    "Original connectivity avoids spatial nearest-neighbor bridges; a real topological seam may still need manual classification.",
+    "Vertex z-buffer overlay approximates visibility, not full triangle rasterization.",
+    "No bone family automatically assigned; review named distributions with actual geometry before choosing torso/sleeve anchors."
+  ],
+  "elapsedSeconds": 3.0800883329939097
+}

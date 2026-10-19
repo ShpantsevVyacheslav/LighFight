@@ -1,0 +1,140 @@
+{
+  "status": "FAIL",
+  "sourceSnapshotSHA": "1ba15bd0ef44d7f56662c0cbc97162bc0cdca39e906be866745cacb2044085f9",
+  "failures": [
+    "GPU repeat 100k-2actors-jab-phase1.png: unchanged parity threshold",
+    "GPU repeat 100k-2actors-jab-phase1.png: same-mode frozen framebuffer not exactly repeatable",
+    "CPU/GPU 100k-2actors-jab-phase1.png: unchanged parity threshold",
+    "CPU/GPU 100k-2actors-jab-phase0.png: unchanged parity threshold",
+    "CPU/GPU 100k-2actors-jab-phase2.png: unchanged parity threshold",
+    "CPU/GPU 100k-2actors-jab-Greeting0.png: unchanged parity threshold"
+  ],
+  "pairs": [
+    {
+      "pair": "CPU repeat 100k-2actors-jab-phase1.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU repeat 100k-2actors-jab-phase0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU repeat 100k-2actors-jab-phase2.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU repeat 100k-2actors-jab-phase3.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU repeat 100k-2actors-guard-Greeting0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU repeat 100k-2actors-jab-Greeting0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "GPU repeat 100k-2actors-jab-phase1.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 78,
+      "over2Fraction": 0.00105125,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "GPU repeat 100k-2actors-jab-phase0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "GPU repeat 100k-2actors-jab-phase2.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "GPU repeat 100k-2actors-jab-phase3.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "GPU repeat 100k-2actors-guard-Greeting0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "GPU repeat 100k-2actors-jab-Greeting0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 0,
+      "over2Fraction": 0.0,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU/GPU 100k-2actors-jab-phase1.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 32,
+      "over2Fraction": 0.0002325,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU/GPU 100k-2actors-jab-phase0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 19,
+      "over2Fraction": 7.5e-06,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU/GPU 100k-2actors-jab-phase2.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 20,
+      "over2Fraction": 3.75e-06,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU/GPU 100k-2actors-jab-phase3.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 9,
+      "over2Fraction": 3.75e-06,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU/GPU 100k-2actors-guard-Greeting0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 7,
+      "over2Fraction": 5e-06,
+      "alphaMismatch": 0
+    },
+    {
+      "pair": "CPU/GPU 100k-2actors-jab-Greeting0.png",
+      "maxMatrixDelta": 0.0,
+      "maxChannel": 87,
+      "over2Fraction": 6.25e-06,
+      "alphaMismatch": 2
+    }
+  ]
+}
