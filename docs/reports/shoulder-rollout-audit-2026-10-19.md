@@ -26,3 +26,6 @@
 **Ретро не принят визуально:** изменение твиста уменьшает часть складок, но проблемная подмышечная/плечевая зона остаётся. Лучшийgainне назначен. Следующая проверка должна разделить вклад весов, поверхности и нормалей; нельзя автоматически объявлять причиной только высоту ключицы или только твист. Веб/игровые prefab не заменены.
 
 Evidence: `art/drafts/full-roster-v1/retro-shoulder-ab/{report.json,visual-review.json,four-gains-front.jpg,four-gains-upper-50.jpg}`.
+
+
+После push выполнена отдельная normal-only диагностика Ретро в Blender4.2.22: original1 921 472tris,960 718vertices, native dance_01/box_02/hit_to_head на50%,6рендеров. Геометрия между парными вариантами побитно совпадает; исходный blendSHA не изменился. Просмотрена normal-comparison.jpg: пересчёт custom normals даёт небольшие различия освещения, но не существенное исправление плеч. **Это own-native позы, не canonical action67 из проблемного preview**, поэтому нельзя переносить вывод на неё без отдельного одинакового кадра. Подготовлен воспроизводимый audit_native_surface_normals.py; отчёт art/drafts/full-roster-v1/retro-native-normal-diagnostic/report.json. Процесс114.8s,peakRSS1.17GiB; Unity cache не восстанавливался. Следующий шаг — такой же контроль точной canonical pose. Никакого изменения игровых prefab/весов или визуальной приёмки исправления не произведено.

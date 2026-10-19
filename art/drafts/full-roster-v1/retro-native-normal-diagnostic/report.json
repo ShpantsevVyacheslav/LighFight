@@ -1,0 +1,70 @@
+{
+  "status": "VISUALLY_REVIEWED_DIAGNOSTIC_NOT_A_FIX",
+  "blender": "4.2.22 LTS",
+  "role": "retro",
+  "sourceSHA256": "3e15618caebf43dcdd5dc8ed5e046973e2e27631435adba6f5a5401f31a3a689",
+  "sourceUnchanged": true,
+  "cases": [
+    {
+      "clip": "dance_01",
+      "phase": 0.5,
+      "vertices": 960718,
+      "triangles": 1921472,
+      "poseDisplacementMaxObjectUnits": 0.6192218661308289,
+      "normalAngleDegP50P95Max": [
+        0.5278605222702026,
+        5.741804361343384,
+        179.95152282714844
+      ],
+      "positionsIdenticalBetweenNormalModes": true,
+      "captures": [
+        "dance_01-50-transported-normals.png",
+        "dance_01-50-geometric-normals.png"
+      ]
+    },
+    {
+      "clip": "box_02",
+      "phase": 0.5,
+      "vertices": 960718,
+      "triangles": 1921472,
+      "poseDisplacementMaxObjectUnits": 0.45937344431877136,
+      "normalAngleDegP50P95Max": [
+        0.5282310843467712,
+        5.742214202880859,
+        179.97201538085938
+      ],
+      "positionsIdenticalBetweenNormalModes": true,
+      "captures": [
+        "box_02-50-transported-normals.png",
+        "box_02-50-geometric-normals.png"
+      ]
+    },
+    {
+      "clip": "hit_to_head",
+      "phase": 0.5,
+      "vertices": 960718,
+      "triangles": 1921472,
+      "poseDisplacementMaxObjectUnits": 0.48893457651138306,
+      "normalAngleDegP50P95Max": [
+        0.5278605222702026,
+        5.740951061248779,
+        179.95152282714844
+      ],
+      "positionsIdenticalBetweenNormalModes": true,
+      "captures": [
+        "hit_to_head-50-transported-normals.png",
+        "hit_to_head-50-geometric-normals.png"
+      ]
+    }
+  ],
+  "scope": "Own native animations on full original mesh. Normal-only A/B; not the canonical retarget dance, not a shoulder fix or runtime acceptance.",
+  "visualReview": {
+    "contactSheet": "normal-comparison.jpg",
+    "observations": [
+      "Normal-only replacement causes modest lighting differences in these sampled own-native poses.",
+      "No substantial shoulder correction from normals alone is visible in this sheet.",
+      "Own-native dance_01 is not action67 canonical retarget: this does not identify or exonerate the cause of the reported canonical-pose defect."
+    ],
+    "next": "Repeat geometry/normal isolation on the exact canonical retarget pose before changing weights or deploying a fix."
+  }
+}
