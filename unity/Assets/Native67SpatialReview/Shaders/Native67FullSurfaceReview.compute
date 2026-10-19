@@ -1,0 +1,44 @@
+#pragma kernel SkinSurface
+StructuredBuffer<float4> _RestP;
+StructuredBuffer<float4> _RestN;
+StructuredBuffer<float4> _RestT;
+StructuredBuffer<uint> _OriginalIds;
+StructuredBuffer<uint> _Offsets;
+StructuredBuffer<uint> _BoneIndices;
+StructuredBuffer<float> _Weights;
+StructuredBuffer<float4> _Rows;
+RWStructuredBuffer<float4> _OutP;
+RWStructuredBuffer<float4> _OutN;
+RWStructuredBuffer<float4> _OutT;
+uint _Count;
+[numthreads(256,1,1)]
+void SkinSurface(uint3 tid:SV_DispatchThreadID){
+ uint v=tid.x;if(v>=_Count)return;
+ uint original=_OriginalIds[v];float4 p=_RestP[v];float3 n=_RestN[v].xyz,t=_RestT[v].xyz;
+ float3 qp=0,qn=0,qt=0;
+ for(uint k=_Offsets[original];k<_Offsets[original+1];k++){
+  uint b=_BoneIndices[k]*3;float w=_Weights[k];float4 a=_Rows[b],c=_Rows[b+1],d=_Rows[b+2];
+  qp+=w*float3(dot(a,p),dot(c,p),dot(d,p));
+  qn+=w*float3(dot(a.xyz,n),dot(c.xyz,n),dot(d.xyz,n));
+  qt+=w*float3(dot(a.xyz,t),dot(c.xyz,t),dot(d.xyz,t));
+ }
+ qn=normalize(qn);qt=normalize(qt-qn*dot(qn,qt));
+ _OutP[v]=float4(qp,1);_OutN[v]=float4(qn,0);_OutT[v]=float4(qt,_RestT[v].w);
+}
+
+#pragma kernel SkinSurfaceDqs
+StructuredBuffer<float4> _RealQ;
+StructuredBuffer<float4> _DualQ;
+float4 QMul(float4 a,float4 b){return float4(a.w*b.xyz+b.w*a.xyz+cross(a.xyz,b.xyz),a.w*b.w-dot(a.xyz,b.xyz));}
+float3 QRotate(float4 q,float3 v){return v+2*cross(q.xyz,cross(q.xyz,v)+q.w*v);}
+[numthreads(256,1,1)]
+void SkinSurfaceDqs(uint3 tid:SV_DispatchThreadID){
+ uint v=tid.x;if(v>=_Count)return;uint id=_OriginalIds[v];uint begin=_Offsets[id],end=_Offsets[id+1];uint refBone=_BoneIndices[begin];float largest=0;
+ for(uint k=begin;k<end;k++)if(_Weights[k]>largest){largest=_Weights[k];refBone=_BoneIndices[k];}
+ float4 reference=_RealQ[refBone],real=0,dual=0;
+ for(uint k=begin;k<end;k++){uint b=_BoneIndices[k];float sign=dot(reference,_RealQ[b])<0?-1:1;real+=_RealQ[b]*(_Weights[k]*sign);dual+=_DualQ[b]*(_Weights[k]*sign);}
+ float len=length(real);real/=len;dual/=len;dual-=real*dot(real,dual);
+ float4 conjugate=float4(-real.xyz,real.w);float3 translation=2*QMul(dual,conjugate).xyz;
+ float3 n=normalize(QRotate(real,_RestN[v].xyz));float3 t=QRotate(real,_RestT[v].xyz);t=normalize(t-n*dot(n,t));
+ _OutP[v]=float4(QRotate(real,_RestP[v].xyz)+translation,1);_OutN[v]=float4(n,0);_OutT[v]=float4(t,_RestT[v].w);
+}

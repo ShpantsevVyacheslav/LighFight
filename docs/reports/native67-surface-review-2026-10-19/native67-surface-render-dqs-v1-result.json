@@ -1,0 +1,38 @@
+{
+    "status": "FAILED_NO_PROMOTION",
+    "error": "System.Exception: DQS requires rigid positive rotation, bone 57 orth=1.001358E-05\n  at Native67SurfaceRenderReview.Run () [0x00d9b] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/skinning-current100k-review/Assets/Native67SpatialReview/Editor/Native67SurfaceRenderReview.cs:47 ",
+    "device": "Apple M1",
+    "api": "Metal",
+    "unity": "6000.3.26f1",
+    "allPositiveInputsExact": true,
+    "originalMapsBytesUnchanged": true,
+    "seamVertices": 1305574,
+    "originalVertices": 994452,
+    "triangles": 1988914,
+    "positiveCoefficients": 2608534,
+    "maximumInfluences": 7,
+    "smallestWeight": 1.7814954844652676e-7,
+    "weightPacket": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/native67-bary-weight-packet-v1",
+    "weightPacketSHA256": "393fa311fbc639a310bfe0b4946a844aa9e478c3a5a81ad291b91e899490e59c",
+    "skinningMethod": "DualQuaternion_all_positive_Float32",
+    "maxRigidMatrixOrthogonalityError": 0.000010013580322265625,
+    "normalConvention": "Unit dual quaternion rotation of source normal/tangent, normalize/Gram-Schmidt/preserve w. Rigid skin matrices required; no bone/animation changes.",
+    "poses": [
+        {
+            "clip": "dance_01",
+            "phase": 0.44999998807907107,
+            "seconds": 10.424999237060547,
+            "maxWorldPositionErrorM": 0.0,
+            "maxNormalVectorError": 0.0,
+            "maxTangentVectorError": 0.0,
+            "maxTangentOrthogonality": 0.0,
+            "prunedMaxWorldPositionDifferenceM": 0.0,
+            "prunedDifferenceQuantilesM": [],
+            "files": [],
+            "repeatFramebufferExact": true,
+            "repeatMaxByteDifference": 0,
+            "repeatChangedBytes": 0
+        }
+    ],
+    "limits": "Editor snapshot harness with synchronous GPU readback then owned Mesh clone upload; NOT realtime implementation/performance/mobile acceptance. Normals/tangents checked vs independent CPU for full seam surface. Baseline is an explicit CPU emulation of all imported typed weights with the SAME normal/tangent rule but linear positional skinning even for DQS candidate, NOT SMR.BakeMesh or a whole-renderer parity claim. Blender native pose oracle remains separate. No production writes."
+}

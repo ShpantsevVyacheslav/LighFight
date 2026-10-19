@@ -256,3 +256,8 @@
 ### 2026-10-19 — full-positive Float32 weight mechanism
 
 Full seam/oriented-triangle/cornerUV/true-bind coordinate verification PASS. Standard SetBoneWeights remains rejected: UNorm16 loses119,731 positive seam coefficients. Actual Metal Float32 CSR preserves all2,922,048 source positives/max10 and full994,452vertex positions across5poses within0.0002mm CPU reference. Review mechanism only; real renderer/normals/Blenderoffkey/phonebudget remain OPEN, no production promotion. Evidence: `docs/reports/native67-float-weights-2026-10-19/README.md`.
+
+
+### 2026-10-19 — broader dance/shoulder visual review
+
+Full Float32 PNT snapshot rendering and alternative bary/DQS transfer tested. Neither alone removes shoulder fold. Experimental C1 clavicle correction passes6816finite pose-only holds on8clips, but translates wrists<=2.251cm at sourceheight and remains NOT DEPLOYED. User suggested dance-specific issue; new12frame survey plus16frame gallery without corrections supports pose-sensitive defect strongest45–50%, with neutral/walk/greet calmer. Global skeleton adjustment deferred in favor of same-model alternative-dance comparison. Actual uncorrected Unity-vs-Blender temporal gate RED (.1704mm/.07949deg); static pixel repeats also RED. No game/phone/user acceptance changes. Evidence: `docs/reports/native67-surface-review-2026-10-19/README.md`.

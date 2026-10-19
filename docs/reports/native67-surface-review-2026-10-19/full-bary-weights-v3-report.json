@@ -1,0 +1,20 @@
+{
+  "status": "BUILT_SEPARATE_BARY_CANDIDATE_PENDING_VISUAL",
+  "originalVertices": 994452,
+  "donorVertices": 49992,
+  "donorTriangles": 99999,
+  "positiveCoefficients": 2608534,
+  "maxInfluences": 7,
+  "minPositive": 1.7814954844652675e-07,
+  "baryRawMinBeforeNumericalClamp": 0.0,
+  "nearestRestMaxM": 0.0009450355907237061,
+  "BVHPointVsFloat64ClosedTriangleMaxM": 5.62298583743851e-07,
+  "BVHRestMaxM": 0.000945033913012594,
+  "nearestPointReconstructionMaxM": 0.0,
+  "weightSumMaxError": 5.21540641784668e-08,
+  "sourceBlendSHA256": "627d34d22298ee24e3fa7bcc8970d85351cac8d22b1412d24c65553349a63ede",
+  "restCheckpointSHA256": "29512399b8a405d25e0c492889bcde84626a9d42986a2c592d1ae5c344fc1787",
+  "csrSHA256": "b584aa8f36b163372b564746e36621c00b8d068a9c4d1ff0525ccb4176b84911",
+  "elapsedSeconds": 10.18946387496544,
+  "method": "All original vertices interpolate all positive weights at Float64 closest CLOSED points on BVH-selected native donor triangles; not a new global nearest-triangle proof. No spatial neighbor averaging, threshold, topK or influence cap. Derived donor normalization explicit; closed-triangle interior/edge/vertex calculation uses original points, no approximate BVH-point bary clamp. No mesh/bind/animation edits."
+}

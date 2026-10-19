@@ -1,0 +1,164 @@
+{
+    "status": "SURFACE_NUMERIC_PASS_FRAMEBUFFER_REPEAT_RED_NO_PROMOTION",
+    "error": "",
+    "device": "Apple M1",
+    "api": "Metal",
+    "unity": "6000.3.26f1",
+    "allPositiveInputsExact": true,
+    "originalMapsBytesUnchanged": true,
+    "seamVertices": 1305574,
+    "originalVertices": 994452,
+    "triangles": 1988914,
+    "positiveCoefficients": 2608534,
+    "maximumInfluences": 7,
+    "smallestWeight": 1.7814954844652676e-7,
+    "weightPacket": "/Users/macbook1/Documents/ChatGPT/LighFight/.tools/native67-bary-weight-packet-v1",
+    "weightPacketSHA256": "393fa311fbc639a310bfe0b4946a844aa9e478c3a5a81ad291b91e899490e59c",
+    "skinningMethod": "DualQuaternion_all_positive_Float32",
+    "maxRigidMatrixOrthogonalityError": 0.000035881996154785156,
+    "rigidProjectionGate": "DQS variant2 explicitly projects near-rigid matrices to unit quaternion+original translation. Every positive-support seam/bone point must move <=10um world from original matrix; orthogonality guard2e-4/determinant positive. Does not alter source bones or curves. Variant1 exact-near-rigidity1e-5 gate rejected and retained.",
+    "normalConvention": "Unit dual quaternion rotation of source normal/tangent, normalize/Gram-Schmidt/preserve w. Explicit near-rigid projection, full positive-support world bound <=10um; no source bone/animation changes.",
+    "poses": [
+        {
+            "clip": "dance_01",
+            "phase": 0.44999998807907107,
+            "seconds": 10.424999237060547,
+            "maxWorldPositionErrorM": 3.9649626954944478e-7,
+            "maxRigidProjectionWorldErrorM": 0.000003125160446870723,
+            "maxNormalVectorError": 4.1086423152592035e-7,
+            "maxTangentVectorError": 0.000004326574526203331,
+            "maxTangentOrthogonality": 0.000004222561528877122,
+            "prunedMaxWorldPositionDifferenceM": 0.04189649224281311,
+            "prunedDifferenceQuantilesM": [
+                0.000351696799043566,
+                0.014511803165078164,
+                0.02972869947552681,
+                0.04189649224281311
+            ],
+            "files": [
+                "dance_01-45-front-full-pruned-emulated.png",
+                "dance_01-45-front-full-full-float.png",
+                "dance_01-45-front-shoulders-pruned-emulated.png",
+                "dance_01-45-front-shoulders-full-float.png",
+                "dance_01-45-quarter-shoulders-pruned-emulated.png",
+                "dance_01-45-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 64,
+            "repeatChangedBytes": 6153
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.5,
+            "seconds": 11.583333015441895,
+            "maxWorldPositionErrorM": 3.2008919069072117e-7,
+            "maxRigidProjectionWorldErrorM": 0.000004053263637615601,
+            "maxNormalVectorError": 4.49264462076826e-7,
+            "maxTangentVectorError": 0.000002480450348230079,
+            "maxTangentOrthogonality": 0.0000016861650919963723,
+            "prunedMaxWorldPositionDifferenceM": 0.020605813711881639,
+            "prunedDifferenceQuantilesM": [
+                0.0008492990746162832,
+                0.008212733082473278,
+                0.013800305314362049,
+                0.020605813711881639
+            ],
+            "files": [
+                "dance_01-50-front-full-pruned-emulated.png",
+                "dance_01-50-front-full-full-float.png",
+                "dance_01-50-front-shoulders-pruned-emulated.png",
+                "dance_01-50-front-shoulders-full-float.png",
+                "dance_01-50-quarter-shoulders-pruned-emulated.png",
+                "dance_01-50-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 2,
+            "repeatChangedBytes": 27
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.550000011920929,
+            "seconds": 12.741666793823243,
+            "maxWorldPositionErrorM": 2.9816869364842169e-7,
+            "maxRigidProjectionWorldErrorM": 0.000003469689318080782,
+            "maxNormalVectorError": 4.702727096628223e-7,
+            "maxTangentVectorError": 0.000006449449301726418,
+            "maxTangentOrthogonality": 0.0000064199507505691148,
+            "prunedMaxWorldPositionDifferenceM": 0.012649577111005783,
+            "prunedDifferenceQuantilesM": [
+                0.0007109031430445612,
+                0.006016277242451906,
+                0.009109667502343655,
+                0.012649577111005783
+            ],
+            "files": [
+                "dance_01-55-front-full-pruned-emulated.png",
+                "dance_01-55-front-full-full-float.png",
+                "dance_01-55-front-shoulders-pruned-emulated.png",
+                "dance_01-55-front-shoulders-full-float.png",
+                "dance_01-55-quarter-shoulders-pruned-emulated.png",
+                "dance_01-55-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 6,
+            "repeatChangedBytes": 213
+        },
+        {
+            "clip": "box_02",
+            "phase": 0.3499999940395355,
+            "seconds": 0.9770833253860474,
+            "maxWorldPositionErrorM": 2.841016798578657e-7,
+            "maxRigidProjectionWorldErrorM": 0.000004215456101519521,
+            "maxNormalVectorError": 4.097142038972379e-7,
+            "maxTangentVectorError": 0.0000047320572775788609,
+            "maxTangentOrthogonality": 0.0000047240910134860318,
+            "prunedMaxWorldPositionDifferenceM": 0.015440289862453938,
+            "prunedDifferenceQuantilesM": [
+                0.0015185459051281214,
+                0.008173664100468159,
+                0.009400994516909123,
+                0.015440289862453938
+            ],
+            "files": [
+                "box_02-35-front-full-pruned-emulated.png",
+                "box_02-35-front-full-full-float.png",
+                "box_02-35-front-shoulders-pruned-emulated.png",
+                "box_02-35-front-shoulders-full-float.png",
+                "box_02-35-quarter-shoulders-pruned-emulated.png",
+                "box_02-35-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": true,
+            "repeatMaxByteDifference": 0,
+            "repeatChangedBytes": 0
+        },
+        {
+            "clip": "front_kick_01",
+            "phase": 0.3499999940395355,
+            "seconds": 0.875,
+            "maxWorldPositionErrorM": 4.005769816391509e-7,
+            "maxRigidProjectionWorldErrorM": 0.000003968038072343916,
+            "maxNormalVectorError": 4.267043323125108e-7,
+            "maxTangentVectorError": 0.0000034736010547931075,
+            "maxTangentOrthogonality": 0.000003317762775623123,
+            "prunedMaxWorldPositionDifferenceM": 0.031200619414448739,
+            "prunedDifferenceQuantilesM": [
+                0.0008862137328833342,
+                0.009302265010774136,
+                0.01460837572813034,
+                0.031200619414448739
+            ],
+            "files": [
+                "front_kick_01-35-front-full-pruned-emulated.png",
+                "front_kick_01-35-front-full-full-float.png",
+                "front_kick_01-35-front-shoulders-pruned-emulated.png",
+                "front_kick_01-35-front-shoulders-full-float.png",
+                "front_kick_01-35-quarter-shoulders-pruned-emulated.png",
+                "front_kick_01-35-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 42,
+            "repeatChangedBytes": 1000
+        }
+    ],
+    "limits": "Editor snapshot harness with synchronous GPU readback then owned Mesh clone upload; NOT realtime implementation/performance/mobile acceptance. Normals/tangents checked vs independent CPU for full seam surface. Baseline is explicit CPU linear blend skinning of all imported typed weights, with normalized linear normals/orthogonalized linear tangents. DQS candidate has different positional AND normal deformation. NOT SMR.BakeMesh or whole-renderer parity. Blender native pose oracle remains separate. No production writes."
+}

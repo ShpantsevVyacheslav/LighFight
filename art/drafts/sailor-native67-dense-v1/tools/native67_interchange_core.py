@@ -33,3 +33,17 @@ def raw_fbx_attributes(path,positions,loop_indices,uv,ptr,indices,weights,names,
  for name in names:
   ii,ww=actual[name];order=np.argsort(ii);ei,ew=expected[name];assert np.array_equal(ii[order],ei) and np.array_equal(ww[order],ew),'Raw positive named weights changed: '+name
  return {'rawPositionsExact':True,'rawOrientedTrianglesExact':True,'rawCornerUVExact':True,'rawAllPositiveNamedWeightsExact':True,'positiveWeights':len(weights),'bones':len(names),'UVLayers':layer_info,'allOriginalUVLayersExact':original_uvs is not None,'reviewUVExact':review_aux is not None,'rawTangentLayerPresent':a.child(g,'LayerElementTangent') is not None,'rawBinormalLayerPresent':a.child(g,'LayerElementBinormal') is not None}
+
+def closest_barycentric_closed(points,a,b,c):
+ """Float64 closest point on each specified closed triangle, including edges.
+ Does NOT find global nearest triangle. No approximate BVH point used as bary input.
+ """
+ points,a,b,c=[np.asarray(x,dtype=np.float64) for x in (points,a,b,c)]
+ v0=b-a;v1=c-a;v2=points-a;d00=np.einsum('ij,ij->i',v0,v0);d01=np.einsum('ij,ij->i',v0,v1);d11=np.einsum('ij,ij->i',v1,v1);den=d00*d11-d01*d01
+ assert np.all(den>1e-30),'Degenerate selected triangle'
+ d20=np.einsum('ij,ij->i',v2,v0);d21=np.einsum('ij,ij->i',v2,v1);v=(d11*d20-d01*d21)/den;w=(d00*d21-d01*d20)/den;inside=(v>=0)&(w>=0)&(v+w<=1)
+ bary=np.zeros((len(points),4,3));bary[:,0,:]=np.column_stack((1-v-w,v,w))
+ for j,(x,y,u,k) in enumerate([(a,b,0,1),(b,c,1,2),(c,a,2,0)],1):
+  e=y-x;t=np.clip(np.einsum('ij,ij->i',points-x,e)/np.einsum('ij,ij->i',e,e),0,1);bary[:,j,u]=1-t;bary[:,j,k]=t
+ corners=np.stack((a,b,c),1);q=np.einsum('nki,nij->nkj',bary,corners);distance=np.sum((q-points[:,None])**2,axis=2);distance[~inside,0]=np.inf;choice=np.argmin(distance,axis=1);rows=np.arange(len(points));result=bary[rows,choice];assert np.all(result>=0) and np.max(abs(result.sum(1)-1))<1e-14
+ return result,q[rows,choice]

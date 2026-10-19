@@ -1,0 +1,66 @@
+{
+    "status": "FAILED_NO_PROMOTION",
+    "error": "System.Exception: Unstable repeated framebuffer dance_01-50front-fullfull-float\n  at Native67SurfaceRenderReview.Run () [0x0188d] in /Users/macbook1/Documents/ChatGPT/LighFight/.tools/skinning-current100k-review/Assets/Native67SpatialReview/Editor/Native67SurfaceRenderReview.cs:50 ",
+    "device": "Apple M1",
+    "api": "Metal",
+    "unity": "6000.3.26f1",
+    "allPositiveInputsExact": true,
+    "originalMapsBytesUnchanged": true,
+    "seamVertices": 1305574,
+    "originalVertices": 994452,
+    "triangles": 1988914,
+    "positiveCoefficients": 2922048,
+    "normalConvention": "Linear blended bone normal; normalize. Linear blended tangent; Gram-Schmidt to normal; preserve source tangent.w. Not corrective geometry or a proof of surface derivative normals.",
+    "poses": [
+        {
+            "clip": "dance_01",
+            "phase": 0.44999998807907107,
+            "seconds": 10.424999237060547,
+            "maxWorldPositionErrorM": 1.7066599578591663e-7,
+            "maxNormalVectorError": 2.230201658903752e-7,
+            "maxTangentVectorError": 0.000004508826350502204,
+            "maxTangentOrthogonality": 0.000004462146080186358,
+            "prunedMaxWorldPositionDifferenceM": 0.00032516068313270807,
+            "prunedDifferenceQuantilesM": [
+                1.0428759367187013e-7,
+                0.000008554521627957001,
+                0.000036184566852170974,
+                0.00032516068313270807
+            ],
+            "files": [
+                "dance_01-45-front-full-pruned-emulated.png",
+                "dance_01-45-front-full-full-float.png",
+                "dance_01-45-front-shoulders-pruned-emulated.png",
+                "dance_01-45-front-shoulders-full-float.png",
+                "dance_01-45-quarter-shoulders-pruned-emulated.png",
+                "dance_01-45-quarter-shoulders-full-float.png"
+            ],
+            "repeatFramebufferExact": true,
+            "repeatMaxByteDifference": 0,
+            "repeatChangedBytes": 0
+        },
+        {
+            "clip": "dance_01",
+            "phase": 0.5,
+            "seconds": 11.583333015441895,
+            "maxWorldPositionErrorM": 1.6563137247304552e-7,
+            "maxNormalVectorError": 2.1490760104825314e-7,
+            "maxTangentVectorError": 0.000005216726094658952,
+            "maxTangentOrthogonality": 0.000004066282144776778,
+            "prunedMaxWorldPositionDifferenceM": 0.00023195717949420214,
+            "prunedDifferenceQuantilesM": [
+                1.4352643518122933e-7,
+                0.000011311112757539377,
+                0.00004816418731934391,
+                0.00023195717949420214
+            ],
+            "files": [
+                "dance_01-50-front-full-pruned-emulated.png"
+            ],
+            "repeatFramebufferExact": false,
+            "repeatMaxByteDifference": 26,
+            "repeatChangedBytes": 81
+        }
+    ],
+    "limits": "Editor snapshot harness with synchronous GPU readback then owned Mesh clone upload; NOT realtime implementation/performance/mobile acceptance. Normals/tangents checked vs independent CPU for full seam surface. Baseline is an explicit CPU emulation of all imported typed weights with the SAME PNT rule, NOT SMR.BakeMesh or a whole-renderer parity claim. Blender native pose oracle remains separate. No production writes."
+}

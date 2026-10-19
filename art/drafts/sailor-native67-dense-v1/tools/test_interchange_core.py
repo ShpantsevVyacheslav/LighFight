@@ -11,4 +11,12 @@ class ProvenanceTests(unittest.TestCase):
  def test_invalid_id_or_capacity_rejected(self):
   for ids,total in [(np.array([-1]),5),(np.array([5]),5),(np.array([0]),1048577)]:
    with self.assertRaises(AssertionError):source_id_uv(ids,total)
+class ClosedTriangleTests(unittest.TestCase):
+ def test_interior_edges_vertices_and_offplane(self):
+  from native67_interchange_core import closest_barycentric_closed
+  p=np.array([[-1,-1,1],[.2,.2,3],[1,1,2],[2,-.2,.1],[.5,-1,0]],float);a=np.zeros_like(p);b=a+[1,0,0];c=a+[0,1,0];bb,q=closest_barycentric_closed(p,a,b,c)
+  np.testing.assert_allclose(q,[[0,0,0],[.2,.2,0],[.5,.5,0],[1,0,0],[.5,0,0]],atol=1e-14);self.assertTrue((bb>=0).all());np.testing.assert_allclose(bb.sum(1),1,atol=1e-14)
+ def test_degenerate_triangle_rejected(self):
+  from native67_interchange_core import closest_barycentric_closed
+  with self.assertRaises(AssertionError):closest_barycentric_closed(np.zeros((1,3)),np.zeros((1,3)),np.ones((1,3)),np.ones((1,3))*2)
 if __name__=='__main__':unittest.main()
